@@ -6,7 +6,7 @@ import { api } from '../utils/api'
 import styles from './index.module.scss'
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: 'from tRPC' })
+  const liveMetricsQuery = api.ckb.liveMetrics.useQuery()
 
   return (
     <>
@@ -34,7 +34,9 @@ const Home: NextPage = () => {
               </div>
             </Link>
           </div>
-          <p className={styles.showcaseText}>{hello.data ? hello.data.greeting : 'Loading tRPC query...'}</p>
+          <p className={styles.showcaseText}>
+            {liveMetricsQuery.data ? JSON.stringify(liveMetricsQuery.data) : 'Loading tRPC query...'}
+          </p>
         </div>
       </main>
     </>
