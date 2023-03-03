@@ -1,0 +1,36 @@
+$headerHeight: 90;
+
+:export {
+  headerHeight: $headerHeight;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  height: #{$headerHeight}px;
+  margin: 0 auto;
+  color: var(--colorPrimary);
+  background: var(--colorPrimaryBg);
+  transition: color 0.2s, background-color 0.2s;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 32px;
+
+    .text {
+      margin-top: 2px;
+      font-weight: 600;
+      font-size: 9px;
+    }
+  }
+
+  .language {
+    margin: 0 32px;
+  }
+}

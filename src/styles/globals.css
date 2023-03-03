@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --colorPrimary: #000;
+  --colorPrimaryBg: #fff;
+  --colorSecond: #5700ff;
+}
