@@ -1,7 +1,7 @@
 import { type AppType } from 'next/app'
 import localFont from 'next/font/local'
 import { api } from '../utils/api'
-
+import 'swiper/css'
 import '../styles/globals.css'
 
 const fontArticulatCF = localFont({

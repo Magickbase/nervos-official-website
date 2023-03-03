@@ -1,0 +1,101 @@
+@import '../../components/Header/index.module';
+
+.blendModeHeader {
+  position: absolute;
+
+  // .swiper-wrapper z-index is 1; which is higher here than .swiper-wrapper
+  z-index: 2;
+  width: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+.footer {
+  background: var(--colorPrimaryBg);
+}
+
+.swiper {
+  // If the height is not set, there is a chance that the default slide will be
+  // random instead of the first one when the page is initialized, which may be
+  // related to the Swiper's autoHeight or cssMode properties.
+  height: 100vh;
+}
+
+.fullScreenSlide {
+  background: var(--colorPrimaryBg);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+
+    .headerMixLayer {
+      position: sticky;
+      top: 0;
+      flex-shrink: 0;
+      height: #{$headerHeight}px;
+      background: var(--colorPrimaryBg);
+    }
+
+    .content {
+      flex-grow: 1;
+      color: var(--colorPrimary);
+    }
+  }
+}
+
+.slideCKBIntro {
+  padding: 80px 0 0 200px;
+
+  .text1 {
+    width: 512px;
+    font-weight: 800;
+    font-size: 90px;
+    line-height: 72px;
+  }
+
+  .text2 {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 23px;
+  }
+
+  .text3 {
+    width: 384px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 14px;
+
+    .bold {
+      font-weight: 600;
+    }
+  }
+
+  .text4 {
+    width: 384px;
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.slideCKBSecurity {
+  padding: 80px 0 0 200px;
+
+  .text1 {
+    width: 578px;
+    font-weight: 800;
+    font-size: 90px;
+    line-height: 72px;
+  }
+
+  .text2 {
+    width: 312px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+}
