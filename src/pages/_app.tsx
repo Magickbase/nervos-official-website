@@ -1,4 +1,5 @@
 import { type AppType } from 'next/app'
+import { appWithTranslation } from 'next-i18next'
 import localFont from 'next/font/local'
 import { api } from '../utils/api'
 import 'swiper/css'
@@ -22,4 +23,4 @@ const App: AppType = ({ Component, pageProps }) => {
   )
 }
 
-export default api.withTRPC(App)
+export default api.withTRPC(appWithTranslation(App))

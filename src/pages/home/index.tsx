@@ -1,11 +1,21 @@
-import { type NextPage } from 'next'
+import { GetServerSideProps, type NextPage } from 'next'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { FC, PropsWithChildren } from 'react'
 import clsx from 'clsx'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Page } from '../../components/Page'
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
 import { SlideFooter } from './SlideFooter'
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'home'])),
+    },
+  }
+}
 
 const Home: NextPage = () => {
   return (
@@ -49,20 +59,18 @@ const FullScreenSlide: FC<PropsWithChildren<SwiperSlideProps & { isFirstSlide?: 
 allowCustomDescendantOfSwiper(FullScreenSlide)
 
 const SlideCKBIntro: FC = () => {
+  const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_intro' })
+
   return (
     <FullScreenSlide isFirstSlide>
       <div className={styles.slideCKBIntro}>
-        <div className={styles.text1}>Common Knowledge Base.</div>
-        <div className={styles.text2}>Layer 1 Built for Modularity.</div>
+        <div className={styles.text1}>{t('text1')}</div>
+        <div className={styles.text2}>{t('text2')}</div>
         <div className={styles.text3}>
-          <span className={styles.bold}>Nervos</span> is a modular blockchain network built from the ground up to ensure
-          outstanding security, decentralization, flexibility, and interoperability on the base layer and unbounded
-          scalability on the upper layers.
+          <span className={styles.bold}>Nervos</span>
+          {t('text3')}
         </div>
-        <div className={styles.text4}>
-          Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable Layer 1 in the
-          blockchain industry.
-        </div>
+        <div className={styles.text4}>{t('text4')}</div>
       </div>
     </FullScreenSlide>
   )
@@ -70,15 +78,13 @@ const SlideCKBIntro: FC = () => {
 allowCustomDescendantOfSwiper(SlideCKBIntro)
 
 const SlideCKBSecurity: FC = () => {
+  const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_security' })
+
   return (
     <FullScreenSlide className={presets.themeNight}>
       <div className={styles.slideCKBSecurity}>
-        <div className={styles.text1}>Supreme Security and Decentralization.</div>
-        <div className={styles.text2}>
-          CKB is among the few smart contract platforms that leverage the battle-tested Proof-of-Work consensus
-          algorithm to ensure exceptional security and decentralization under all circumstances. It is truly
-          decentralized, permissionless, and uniquely resistant to capture by hostile actors.
-        </div>
+        <div className={styles.text1}>{t('text1')}</div>
+        <div className={styles.text2}>{t('text2')}</div>
       </div>
     </FullScreenSlide>
   )

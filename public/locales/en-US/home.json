@@ -1,0 +1,20 @@
+{
+  "slide_ckb_intro": {
+    "text1": "Common Knowledge Base.",
+    "text2": "Layer 1 Built for Modularity.",
+    "text3": " is a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability on the base layer and unbounded scalability on the upper layers.",
+    "text4": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable Layer 1 in the blockchain industry."
+  },
+  "slide_ckb_security": {
+    "text1": "Supreme Security and Decentralization.",
+    "text2": "CKB is among the few smart contract platforms that leverage the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all circumstances. It is truly decentralized, permissionless, and uniquely resistant to capture by hostile actors."
+  },
+  "slide_footer": {
+    "scroll_down": "Scroll Down",
+    "live_metrics": "Live Metrics",
+    "live_cells": "Live Cells",
+    "common_knowledge_stored": "Common Knowledge Stored",
+    "ckb_in_nervos_dao": "CKB in Nervos DAO",
+    "loading": "loading"
+  }
+}
