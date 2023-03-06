@@ -17,16 +17,20 @@ $headerHeight: 90;
   background: var(--colorPrimaryBg);
   transition: color 0.2s, background-color 0.2s;
 
-  .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .menuPopover {
     margin: 0 32px;
 
-    .text {
-      margin-top: 2px;
-      font-weight: 600;
-      font-size: 9px;
+    .trigger {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      .text {
+        margin-top: 2px;
+        font-weight: 600;
+        font-size: 9px;
+      }
     }
   }
 
@@ -36,6 +40,64 @@ $headerHeight: 90;
     .trigger {
       display: flex;
       cursor: pointer;
+    }
+  }
+}
+
+// Because Portal is used, it is no longer a child of header
+.menuPopoverContent {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 5px;
+  padding: 30px;
+  background: var(--colorPrimary);
+  border: 0.5px solid #484d4e;
+  box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    padding: 0 15px;
+    background: var(--colorPrimaryBg);
+
+    .title {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      height: 40px;
+      font-weight: 600;
+      font-size: 16px;
+
+      .ckbHint {
+        position: relative;
+        top: 1px;
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: flex-end;
+      padding-bottom: 15px;
+      border-top: 1px solid var(--colorPrimary);
+
+      .link {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+      }
     }
   }
 }
