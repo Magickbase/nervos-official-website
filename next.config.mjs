@@ -12,6 +12,8 @@ const i18nConfig = (await import('./next-i18next.config.js')).default
 const config = {
   reactStrictMode: true,
 
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'].map(suffix => `page.${suffix}`),
+
   /**
    * If you have the "experimental: { appDir: true }" setting enabled, then you
    * must comment the below `i18n` config out.
