@@ -30,7 +30,39 @@ $headerHeight: 90;
     }
   }
 
-  .language {
+  .languagePopover {
     margin: 0 32px;
+
+    .trigger {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+}
+
+// Because Portal is used, it is no longer a child of header
+.languagePopoverContent {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  gap: 2px;
+  padding: 30px;
+  background: var(--colorPrimaryBg);
+  box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
+
+  .language {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 15px;
+    color: var(--colorPrimaryBg);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 135%;
+    background: var(--colorPrimary);
+    cursor: pointer;
   }
 }
