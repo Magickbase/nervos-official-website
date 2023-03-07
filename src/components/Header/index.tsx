@@ -28,10 +28,10 @@ export const Header: FC<HeaderProps> = props => {
       <LogoIcon />
       <LanguagePopover
         languages={[
-          { name: 'English', localeName: 'en-US' },
-          { name: '中文', englishName: 'Chinese', localeName: 'zh-CN' },
-          { name: '한국어', englishName: 'Korean', localeName: 'en-US' },
-          { name: 'Türkçe', englishName: 'Turkish', localeName: 'en-US' },
+          { name: 'English', localeName: 'en' },
+          { name: '中文', englishName: 'Chinese', localeName: 'zh' },
+          { name: '한국어', englishName: 'Korean', localeName: 'ko' },
+          { name: 'Türkçe', englishName: 'Turkish', localeName: 'tr' },
         ]}
       />
     </div>
