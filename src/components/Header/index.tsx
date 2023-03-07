@@ -1,8 +1,8 @@
 import { ComponentProps, FC } from 'react'
 import clsx from 'clsx'
 import { Popover, Portal } from '@headlessui/react'
-import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import styles from './index.module.scss'
 import ArrowIcon from './arrow.svg'
 import ObliqueArrowIcon from './oblique_arrow.svg'
@@ -151,7 +151,8 @@ const LanguagePopover: FC<{
     localeName: string
   }[]
 }> = props => {
-  const { i18n } = useTranslation()
+  const router = useRouter()
+  const { pathname, query } = router
 
   return (
     <Popover className={styles.languagePopover}>
@@ -165,18 +166,16 @@ const LanguagePopover: FC<{
           <Portal>
             <Popover.Panel className={styles.languagePopoverContent}>
               {props.languages.map(language => (
-                <div
+                <Link
                   key={language.name}
                   className={styles.language}
-                  // TODO: Maybe it would be better to use link.
-                  onClick={() => {
-                    void i18n.changeLanguage(language.localeName)
-                    close()
-                  }}
+                  href={{ pathname, query }}
+                  locale={language.localeName}
+                  onClick={() => close()}
                 >
                   {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
                   <div className={styles.name}>{language.name}</div>
-                </div>
+                </Link>
               ))}
             </Popover.Panel>
           </Portal>
