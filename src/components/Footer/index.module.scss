@@ -1,3 +1,5 @@
+@import '../../styles/variables.module';
+
 .footer {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,5 +23,16 @@
         font-weight: 500;
       }
     }
+
+    @media (max-width: $mobileBreakPoint) {
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    padding: 80px 24px 40px;
   }
 }

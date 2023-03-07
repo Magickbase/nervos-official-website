@@ -1,4 +1,4 @@
-import { ComponentProps, FC } from 'react'
+import { ComponentProps, FC, useMemo } from 'react'
 import clsx from 'clsx'
 import { Popover, Portal } from '@headlessui/react'
 import Link from 'next/link'
@@ -14,8 +14,9 @@ import LearnIcon from './learn.svg'
 import MenuIcon from './menu.svg'
 import LogoIcon from './logo.svg'
 import LanguageIcon from './language.svg'
+import { useIsMobile } from '../../hooks'
 
-export const headerHeight = Number(styles.headerHeight)
+const headerHeightVarName = (styles.headerHeightVarName ?? '').replaceAll('"', '')
 
 export type HeaderProps = ComponentProps<'div'>
 
@@ -25,7 +26,7 @@ export const Header: FC<HeaderProps> = props => {
   return (
     <div className={clsx(styles.header, className)} {...divProps}>
       <MenuPopover />
-      <LogoIcon />
+      <LogoIcon className={styles.logo} />
       <LanguagePopover
         languages={[
           { name: 'English', localeName: 'en' },
@@ -36,6 +37,16 @@ export const Header: FC<HeaderProps> = props => {
       />
     </div>
   )
+}
+
+export function useHeaderHeight(): number {
+  const isMobile = useIsMobile()
+  return useMemo(() => {
+    const cssValue = getComputedStyle(document.documentElement).getPropertyValue(headerHeightVarName)
+    // TODO: You can use CSSUnitValue instead, but it requires polyfill
+    return parseFloat(cssValue.replace('px', ''))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile])
 }
 
 const MenuPopover: FC = () => {

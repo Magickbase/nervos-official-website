@@ -83,7 +83,8 @@ const SlideCKBSecurity: FC = () => {
   return (
     <FullScreenSlide className={presets.themeNight}>
       <div className={styles.slideCKBSecurity}>
-        <div className={styles.text1}>{t('text1')}</div>
+        {/* html here is for the hyphen */}
+        <div className={styles.text1} dangerouslySetInnerHTML={{ __html: t('text1') }} />
         <div className={styles.text2}>{t('text2')}</div>
       </div>
     </FullScreenSlide>

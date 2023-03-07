@@ -1,7 +1,17 @@
-$headerHeight: 90;
+@import '../../styles/variables.module';
+
+$headerHeightVarName: '--headerHeight';
 
 :export {
-  headerHeight: $headerHeight;
+  headerHeightVarName: $headerHeightVarName;
+}
+
+:root {
+  #{$headerHeightVarName}: 90px;
+
+  @media (max-width: $mobileBreakPoint) {
+    #{$headerHeightVarName}: 65px;
+  }
 }
 
 .header {
@@ -11,7 +21,7 @@ $headerHeight: 90;
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
-  height: #{$headerHeight}px;
+  height: var(#{$headerHeightVarName});
   margin: 0 auto;
   color: var(--colorPrimary);
   background: var(--colorPrimaryBg);
@@ -34,12 +44,30 @@ $headerHeight: 90;
     }
   }
 
+  .logo {
+    margin: 0 32px;
+  }
+
   .languagePopover {
     margin: 0 32px;
 
     .trigger {
       display: flex;
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    flex-direction: row-reverse;
+
+    .languagePopover {
+      display: none;
+    }
+
+    .menuPopover {
+      .text {
+        display: none;
+      }
     }
   }
 }
@@ -99,6 +127,11 @@ $headerHeight: 90;
         letter-spacing: 0.03em;
       }
     }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    right: 26px;
+    left: unset;
   }
 }
 

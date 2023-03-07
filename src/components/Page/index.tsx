@@ -1,7 +1,7 @@
 import { ComponentProps, FC, ReactNode } from 'react'
 import { clsx } from 'clsx'
 import { Footer, FooterProps } from '../Footer'
-import { Header, headerHeight, HeaderProps } from '../Header'
+import { Header, HeaderProps } from '../Header'
 import styles from './index.module.scss'
 
 export const Page: FC<
@@ -9,7 +9,6 @@ export const Page: FC<
     children?:
       | ReactNode
       | ((opts: {
-          headerHeight: number
           renderHeader: (props?: HeaderProps) => ReactNode
           renderFooter: (props?: FooterProps) => ReactNode
         }) => JSX.Element | undefined)
@@ -20,7 +19,6 @@ export const Page: FC<
   const finalChildren =
     typeof children === 'function' ? (
       children({
-        headerHeight,
         renderHeader: props => <Header {...props} />,
         renderFooter: props => <Footer {...props} />,
       })

@@ -1,4 +1,3 @@
-// @ts-check
 /**
  * next-i18next not support mjs config
  */

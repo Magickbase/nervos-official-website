@@ -19,6 +19,8 @@ const config = {
     'import/order': ['error', { groups: [['builtin', 'external', 'internal']] }],
     'import/newline-after-import': 'error',
   },
+  // This is because `next.config.mjs` is excluded from tsconfig.
+  ignorePatterns: ['next.config.mjs', 'next-i18next.config.js'],
 }
 
 module.exports = config

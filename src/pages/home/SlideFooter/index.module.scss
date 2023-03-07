@@ -1,9 +1,15 @@
+@import '../../../styles/variables.module';
+
 .slideFooter {
   display: flex;
   justify-content: space-between;
   padding: 0 50px;
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
+
+  @media (max-width: $mobileBreakPoint) {
+    display: none;
+  }
 }
 
 .liveMetrics {
