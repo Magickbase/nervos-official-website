@@ -1,5 +1,6 @@
-import { FC, useMemo } from 'react'
+import { ComponentProps, FC, useMemo } from 'react'
 import { useTranslation } from 'next-i18next'
+import clsx from 'clsx'
 import { formatNumber } from '../../../utils/number'
 import { api } from '../../../utils/api'
 import styles from './index.module.scss'
@@ -11,14 +12,15 @@ import MinusIcon from './minus.svg'
 import RandomizeIcon from './randomize.svg'
 import InfoIcon from './info.svg'
 
-export const SlideFooter: FC<{ isFirstSlide?: boolean }> = props => {
+export const SlideFooter: FC<ComponentProps<'div'> & { isFirstSlide?: boolean }> = props => {
+  const { children, isFirstSlide, className, ...divProps } = props
   const { t } = useTranslation('home', { keyPrefix: 'slide_footer' })
 
   return (
-    <div className={styles.slideFooter}>
+    <div className={clsx(styles.slideFooter, className)} {...divProps}>
       <LiveMetrics />
       <div className={styles.scrollTip}>
-        {props.isFirstSlide && <span>{t('scroll_down')}</span>}
+        {isFirstSlide && <span>{t('scroll_down')}</span>}
         <div className={styles.verticalLine} />
       </div>
       <div className={styles.gameControl}>

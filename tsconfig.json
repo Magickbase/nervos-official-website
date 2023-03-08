@@ -19,5 +19,9 @@
     "baseUrl": "."
   },
   "include": [".eslintrc.cjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    // This is because next.config.mjs has too many `noImplicitAny` prompts.
+    "next.config.mjs"
+  ]
 }
