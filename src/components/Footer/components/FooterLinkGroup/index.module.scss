@@ -1,0 +1,28 @@
+@import 'src/styles/presets.module';
+@import 'src/styles/variables.module';
+
+.footerLinkGroup {
+  margin-top: 70px;
+
+  @media screen and (max-width: $mobileBreakPoint) {
+    margin-top: 80px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+  }
+
+  .links {
+    display: grid;
+    gap: 17px;
+
+    .linksNav {
+      font-weight: 400;
+      font-size: 11px;
+      font-style: normal;
+    }
+  }
+}

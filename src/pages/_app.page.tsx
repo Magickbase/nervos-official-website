@@ -3,7 +3,7 @@ import { appWithTranslation } from 'next-i18next'
 import localFont from 'next/font/local'
 import { api } from '../utils/api'
 import 'swiper/css'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 const fontArticulatCF = localFont({
   src: [

@@ -1,0 +1,56 @@
+@import 'src/styles/presets.module';
+@import 'src/styles/variables.module';
+
+.footerMedia {
+  .title {
+    font-weight: 500;
+    font-size: 19px;
+  }
+
+  .description {
+    margin-top: 26px;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+  }
+
+  .medias {
+    display: flex;
+    gap: 30px;
+    margin-top: 26px;
+
+    svg path {
+      fill: var(--colorPrimary);
+    }
+
+    @media screen and (max-width: $mobileBreakPoint) {
+      gap: 25px;
+    }
+  }
+
+  .inputWrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 26px;
+    padding-left: 10px;
+    background: var(--footerInputBackground);
+    border-radius: unset;
+
+    svg {
+      margin: 0 12px;
+
+      path {
+        stroke: var(--colorPrimary);
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 34px;
+      background: none;
+      border: none;
+    }
+  }
+}

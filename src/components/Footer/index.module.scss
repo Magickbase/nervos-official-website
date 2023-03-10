@@ -1,10 +1,49 @@
-@import '../../styles/variables.module';
+@import 'src/styles/presets.module';
+@import 'src/styles/variables.module';
 
 .footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 70px 0 60px;
+  min-width: 1200px;
+  margin: 0 120px;
+  padding-bottom: 60px;
   color: var(--colorPrimary);
+  border-top: 0.5px solid #6a7171;
+
+  .guide {
+    display: flex;
+
+    .guideLinks {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .guideMedias {
+      max-width: 374px;
+      margin-top: 70px;
+      margin-left: 140px;
+    }
+  }
+
+  @media screen and (max-width: $mobileBreakPoint) {
+    min-width: unset;
+    margin: 0 24px;
+
+    .guide {
+      display: block;
+
+      .guideLinks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .guideMedias {
+        width: 100%;
+        max-width: unset;
+        margin: 80px 0 0;
+      }
+    }
+  }
 
   .bottom {
     display: flex;
@@ -33,6 +72,6 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
-    padding: 80px 24px 40px;
+    padding: 80px 0 40px;
   }
 }

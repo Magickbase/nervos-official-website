@@ -29,6 +29,12 @@
       {
         "message": "Expected variable to be lowerCamelCase"
       }
+    ],
+    "scss/percent-placeholder-pattern": [
+      "^[a-z][a-zA-Z0-9]*$",
+      {
+        "message": "Expected placeholder to be lowerCamelCase"
+      }
     ]
   }
 }
