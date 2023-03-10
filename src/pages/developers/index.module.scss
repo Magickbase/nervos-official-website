@@ -1,0 +1,138 @@
+@import '../../styles/variables.module';
+@import '../../components/Header/index.module';
+
+.blendModeHeader {
+  position: absolute;
+
+  // .swiper-wrapper z-index is 1; which is higher here than .swiper-wrapper
+  z-index: 2;
+  width: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+.footer {
+  background: var(--colorPrimaryBg);
+}
+
+.swiper {
+  // If the height is not set, there is a chance that the default slide will be
+  // random instead of the first one when the page is initialized, which may be
+  // related to the Swiper's autoHeight or cssMode properties.
+  height: 100vh;
+}
+
+.fullScreenSlide {
+  background: var(--colorPrimaryBg);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    height: 100vh;
+    margin: 0 auto;
+
+    .headerMixLayer {
+      position: sticky;
+      top: 0;
+      flex-shrink: 0;
+      height: var(#{$headerHeightVarName});
+      background: var(--colorPrimaryBg);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      color: var(--colorPrimary);
+    }
+  }
+}
+
+.slideCKBIntro {
+  flex-grow: 1;
+  padding: 80px 0 0 200px;
+
+  .text1 {
+    max-width: 512px;
+    font-weight: 800;
+    font-size: 90px;
+    line-height: 72px;
+  }
+
+  .text2 {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 23px;
+  }
+
+  .text3 {
+    max-width: 384px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 14px;
+
+    .bold {
+      font-weight: 600;
+    }
+  }
+
+  .text4 {
+    max-width: 384px;
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 314px;
+    margin: -16vh auto 0;
+    padding: 0;
+
+    .text1 {
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 40px;
+      letter-spacing: -0.025em;
+    }
+  }
+}
+
+.slideCKBSecurity {
+  flex-grow: 1;
+  padding: 80px 0 0 200px;
+
+  .text1 {
+    max-width: 740px;
+    font-weight: 800;
+    font-size: 90px;
+    line-height: 72px;
+  }
+
+  .text2 {
+    max-width: 312px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 314px;
+    margin: -16vh auto 0;
+    padding: 0;
+
+    .text1 {
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 40px;
+      letter-spacing: -0.025em;
+    }
+  }
+}

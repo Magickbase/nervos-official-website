@@ -1,0 +1,38 @@
+@import '../../styles/variables.module';
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 0 60px;
+  color: var(--colorPrimary);
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+
+    .copyright {
+      color: #6a7072;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+
+      .bold {
+        color: var(--colorPrimary);
+        font-weight: 500;
+      }
+    }
+
+    @media (max-width: $mobileBreakPoint) {
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    padding: 80px 24px 40px;
+  }
+}

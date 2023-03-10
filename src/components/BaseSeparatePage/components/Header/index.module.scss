@@ -1,0 +1,21 @@
+.headerContent {
+  position: relative;
+
+  .title {
+    font-weight: 700;
+    font-size: 65px;
+    font-style: normal;
+    line-height: 90%;
+    background-color: var(--colorPrimaryBg);
+
+    // @media (max-width: $mobileBreakPoint) {
+    //   padding: 80px 24px 40px;
+    // }
+  }
+
+  .floatIcons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}
