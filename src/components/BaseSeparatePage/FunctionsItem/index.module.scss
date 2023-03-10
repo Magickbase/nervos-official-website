@@ -1,0 +1,65 @@
+@import '../../../styles/presets.module';
+@import '../../../styles/variables.module';
+
+.functionsItem {
+  display: flex;
+  margin-right: 70px;
+  padding: 120px 0;
+  font-weight: 400;
+  border-bottom: 0.5px solid;
+
+  .titleWrap {
+    display: inline-block;
+    min-width: 350px;
+
+    .title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 135%;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+
+      .tagItem {
+        display: flex;
+        align-items: center;
+        height: 23px;
+        padding: 0 10px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 105%;
+        letter-spacing: 0.06em;
+        border: 1px solid;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .content {
+    margin-left: 70px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: block;
+    width: calc(100% - 48px);
+    margin: 0 24px;
+    padding: 80px 0;
+
+    .content {
+      margin-top: 30px;
+      margin-left: unset;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: 0.05em;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../../styles/presets.module';
+@import '../../../styles/variables.module';
+
+.resources {
+  align-items: flex-start;
+  width: 100%;
+
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 135%;
+  }
+
+  .resourceItemGroup {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    min-width: 1200px;
+
+    .resourcesItem {
+      width: 290px;
+      height: 290px;
+      margin-top: 60px;
+      padding: 28px;
+      background-color: var(--colorPrimaryBg);
+      filter: invert(1);
+
+      .itemTitle {
+        padding-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 160%;
+        border-bottom: 1px solid;
+
+        svg {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .itemContent {
+        padding: 30px 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    .title {
+      margin-bottom: 60px;
+    }
+
+    .resourceItemGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-width: unset;
+
+      .resourcesItem {
+        width: 100%;
+        margin-top: unset;
+      }
+    }
+  }
+}

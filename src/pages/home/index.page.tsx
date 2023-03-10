@@ -37,7 +37,7 @@ const Home: NextPage = () => {
             <SlideCKBIntro />
             <SlideCKBSecurity />
             {/* TODO: Need to implement other slides */}
-            <SwiperSlide className={clsx(styles.footer, presets.themeLight)}>{renderFooter()}</SwiperSlide>
+            <SwiperSlide className={clsx(styles.footer, presets.themeDark)}>{renderFooter()}</SwiperSlide>
           </Swiper>
         </>
       )}
