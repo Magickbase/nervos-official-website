@@ -8,7 +8,7 @@ import styles from './index.module.scss'
 
 const Developers: NextPage = () => {
   const floatIcons = <>icons</>
-  const title = 'titleeeeeee'
+  const title = 'Build on hardware, not software.'
 
   return (
     <Page>
