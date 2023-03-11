@@ -1,5 +1,15 @@
-.themeNight {
+.themeDark,
+%themeDark {
   --colorPrimary: #fff;
   --colorPrimaryBg: #000;
   --colorSecond: #18efb1;
+  --footerInputBackground: #141717;
+}
+
+.themeLight,
+%themeLight {
+  --colorPrimary: #000;
+  --colorPrimaryBg: #fff;
+  --colorSecond: #5700ff;
+  --footerInputBackground: #e7eaeb;
 }

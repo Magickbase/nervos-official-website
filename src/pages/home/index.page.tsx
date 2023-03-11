@@ -1,13 +1,14 @@
-import { GetServerSideProps, type NextPage } from 'next'
-import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { FC, PropsWithChildren } from 'react'
+import { GetServerSideProps, type NextPage } from 'next'
 import clsx from 'clsx'
+import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Page } from '../../components/Page'
-import styles from './index.module.scss'
-import presets from '../../styles/presets.module.scss'
 import { SlideFooter } from './SlideFooter'
+
+import presets from '../../styles/presets.module.scss'
+import styles from './index.module.scss'
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
     <Page>
       {({ renderHeader, renderFooter }) => (
         <>
-          <div className={styles.blendModeHeader}>{renderHeader()}</div>
+          <div className={clsx(styles.blendModeHeader, presets.themeDark)}>{renderHeader()}</div>
           <Swiper
             className={styles.swiper}
             direction="vertical"
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
             <SlideCKBIntro />
             <SlideCKBSecurity />
             {/* TODO: Need to implement other slides */}
-            <SwiperSlide className={clsx(styles.footer, presets.themeNight)}>{renderFooter()}</SwiperSlide>
+            <SwiperSlide className={clsx(styles.footer, presets.themeLight)}>{renderFooter()}</SwiperSlide>
           </Swiper>
         </>
       )}
@@ -81,7 +82,7 @@ const SlideCKBSecurity: FC = () => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_security' })
 
   return (
-    <FullScreenSlide className={presets.themeNight}>
+    <FullScreenSlide className={presets.themeDark}>
       <div className={styles.slideCKBSecurity}>
         {/* html here is for the hyphen */}
         <div className={styles.text1} dangerouslySetInnerHTML={{ __html: t('text1') }} />
