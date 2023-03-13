@@ -1,19 +1,19 @@
-import React, { ComponentProps, FC } from 'react'
+import React, { FC } from 'react'
+import clsx from 'clsx'
 
 import styles from './index.module.scss'
 
-export type HeaderType = ComponentProps<'div'> & {
+export type HeaderType = {
   title: string | React.ReactNode
   floatIcons?: React.ReactNode
+  className?: string
 }
 
-export const Header: FC<HeaderType> = ({ title, floatIcons }) => {
+export const Header: FC<HeaderType> = ({ title, floatIcons, className }) => {
   return (
-    <div className={styles.headerContent}>
-      <div className={styles.title}>
-        {title}
-        <div className={styles.floatIcons}>{floatIcons}</div>
-      </div>
+    <div className={clsx(styles.headerContent, className)}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.floatIcons}>{floatIcons}</div>
     </div>
   )
 }

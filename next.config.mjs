@@ -10,6 +10,16 @@ const i18nConfig = (await import('./next-i18next.config.js')).default
 const config = {
   reactStrictMode: true,
 
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'hbimg.b0.upaiyun.com',
+      },
+    ],
+  },
+
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].map(suffix => `page.${suffix}`),
 
   /**
