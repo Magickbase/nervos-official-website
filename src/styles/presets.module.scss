@@ -4,6 +4,9 @@
   --colorPrimaryBg: #000;
   --colorSecond: #18efb1;
   --footerInputBackground: #141717;
+
+  color: var(--colorPrimary);
+  background-color: var(--colorPrimaryBg);
 }
 
 .themeLight,
@@ -12,4 +15,7 @@
   --colorPrimaryBg: #fff;
   --colorSecond: #5700ff;
   --footerInputBackground: #e7eaeb;
+
+  color: var(--colorPrimary);
+  background-color: var(--colorPrimaryBg);
 }

@@ -1,0 +1,70 @@
+@import 'src/styles/presets.module';
+@import '../../../../styles/variables.module';
+
+.resources {
+  align-items: flex-start;
+  width: 100%;
+
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 135%;
+  }
+
+  .resourceItemGroup {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    min-width: 1200px;
+
+    .resourcesItem {
+      width: 290px;
+      height: 290px;
+      margin-top: 60px;
+      padding: 28px;
+      background-color: var(--colorPrimaryBg);
+      filter: invert(1);
+
+      .itemTitle {
+        padding-right: 8px;
+        padding-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 160%;
+        border-bottom: 1px solid;
+
+        &::after {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin-left: 8px;
+          background-image: url('../../../../styles/icons/arrow.svg');
+          background-size: 100% 100%;
+          content: '  ';
+        }
+      }
+
+      .itemContent {
+        padding: 30px 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    .resourceItemGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-width: unset;
+
+      .resourcesItem {
+        width: 100%;
+      }
+    }
+  }
+}

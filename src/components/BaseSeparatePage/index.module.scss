@@ -1,0 +1,59 @@
+@import '../../styles/variables.module';
+
+.baseSeparatePage {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  svg {
+    width: 47px;
+    height: 47px;
+  }
+
+  .headerClassName,
+  .descriptionWrap,
+  .infoWrap,
+  .functionsWrap,
+  .resourcesWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 1200px;
+    margin: 0 120px;
+  }
+
+  .infoWrap {
+    margin: 20px 120px;
+    border-bottom: 0.5px solid #6a7171;
+  }
+
+  .resourcesWrap {
+    align-items: flex-start;
+    padding: 120px 0;
+    border-top: 0.5px solid;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    .headerClassName,
+    .descriptionWrap,
+    .infoWrap,
+    .functionsWrap,
+    .resourcesWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-width: unset;
+      margin: unset;
+    }
+
+    .infoWrap {
+      border-bottom: none;
+    }
+
+    .resourcesWrap {
+      width: calc(100% - 48px);
+      margin: 0 24px;
+    }
+  }
+}
