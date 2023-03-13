@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import clsx from 'clsx'
-// import { ArrowIcon } from 'src/styles/icons'
 import { FunctionsItem, FunctionsItemType } from '../FunctionsItem'
 import GithubIcon from './githubIcon.svg'
 import ProgressBar from './progressBar.svg'

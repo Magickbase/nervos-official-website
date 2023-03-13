@@ -1,8 +1,3 @@
-// import { FC } from 'react'
-// import clsx from 'clsx'
-
-// import styles from './index.module.scss'
-
 const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
 const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes CKB the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`

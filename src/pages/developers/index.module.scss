@@ -3,8 +3,6 @@
 
 .blendModeHeader {
   position: absolute;
-
-  // .swiper-wrapper z-index is 1; which is higher here than .swiper-wrapper
   z-index: 2;
   width: 100%;
   filter: invert(1);
