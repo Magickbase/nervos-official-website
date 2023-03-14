@@ -23,7 +23,7 @@ const Home: NextPage = () => {
     <Page>
       {({ renderHeader, renderFooter }) => (
         <>
-          <div className={clsx(styles.blendModeHeader, presets.themeDark)}>{renderHeader()}</div>
+          <div className={clsx(styles.blendModeHeader)}>{renderHeader()}</div>
           <Swiper
             className={styles.swiper}
             direction="vertical"
