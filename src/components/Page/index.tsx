@@ -1,19 +1,19 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, forwardRef, ReactNode } from 'react'
 import { clsx } from 'clsx'
 import { Footer, FooterProps } from '../Footer'
 import { Header, HeaderProps } from '../Header'
 import styles from './index.module.scss'
 
-export const Page: FC<
-  Omit<ComponentProps<'div'>, 'children'> & {
-    children?:
-      | ReactNode
-      | ((opts: {
-          renderHeader: (props?: HeaderProps) => ReactNode
-          renderFooter: (props?: FooterProps) => ReactNode
-        }) => JSX.Element | undefined)
-  }
-> = props => {
+type PageProps = Omit<ComponentProps<'div'>, 'children'> & {
+  children?:
+    | ReactNode
+    | ((opts: {
+        renderHeader: (props?: HeaderProps) => ReactNode
+        renderFooter: (props?: FooterProps) => ReactNode
+      }) => JSX.Element | undefined)
+}
+
+export const Page = forwardRef<HTMLDivElement, PageProps>(function Page(props, ref) {
   const { children, className, ...divProps } = props
 
   const finalChildren =
@@ -31,8 +31,8 @@ export const Page: FC<
     )
 
   return (
-    <div className={clsx(styles.page, className)} {...divProps}>
+    <div ref={ref} className={clsx(styles.page, className)} {...divProps}>
       {finalChildren}
     </div>
   )
-}
+})

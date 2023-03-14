@@ -1,13 +1,15 @@
 @import '../../styles/variables.module';
 
 $headerHeightVarName: '--headerHeight';
+$defaultHeaderHeight: 90px;
 
 :export {
   headerHeightVarName: $headerHeightVarName;
+  defaultHeaderHeight: $defaultHeaderHeight;
 }
 
 :root {
-  #{$headerHeightVarName}: 90px;
+  #{$headerHeightVarName}: $defaultHeaderHeight;
 
   @media (max-width: $mobileBreakPoint) {
     #{$headerHeightVarName}: 65px;

@@ -2,7 +2,7 @@
 %themeDark {
   --colorPrimary: #fff;
   --colorPrimaryBg: #000;
-  --colorSecond: #18efb1;
+  --colorSecond: #{invert(#5700ff)};
   --footerInputBackground: #141717;
 }
 

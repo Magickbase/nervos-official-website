@@ -1,11 +1,12 @@
 @import 'src/styles/variables.module';
 @import '../../components/Header/index.module';
 
+// .swiper-wrapper z-index is 1, which is higher here than .swiper-wrapper
+$blendModeHeaderZ: 2;
+
 .blendModeHeader {
   position: absolute;
-
-  // .swiper-wrapper z-index is 1; which is higher here than .swiper-wrapper
-  z-index: 2;
+  z-index: $blendModeHeaderZ;
   width: 100%;
   filter: invert(1);
   mix-blend-mode: difference;
@@ -22,25 +23,54 @@
   height: 100vh;
 }
 
+.golContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $blendModeHeaderZ + 1;
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+  pointer-events: none;
+
+  .indicator {
+    position: absolute;
+    top: calc(48px + var(#{$headerHeightVarName}));
+    left: 50%;
+    width: 50%;
+    height: 100%;
+
+    @media (max-width: $mobileBreakPoint) {
+      top: var(#{$headerHeightVarName});
+      left: 0;
+      width: 100%;
+      height: 200px;
+      margin: 0 36px;
+    }
+  }
+}
+
 .fullScreenSlide {
   background: var(--colorPrimaryBg);
 
   .container {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
     height: 100vh;
     margin: 0 auto;
 
     .headerMixLayer {
       position: sticky;
       top: 0;
+      z-index: 1;
       flex-shrink: 0;
       height: var(#{$headerHeightVarName});
       background: var(--colorPrimaryBg);
     }
 
     .content {
+      position: relative;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -49,9 +79,29 @@
   }
 }
 
+// Because Portal is used, it is no longer a child of fullScreenSlide.
+.fixedSlideFooter {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
 .slideCKBIntro {
   flex-grow: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 80px 0 0 200px;
+
+  .texts {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 
   .text1 {
     max-width: 512px;
@@ -61,6 +111,8 @@
   }
 
   .text2 {
+    // Reduce coverage area to avoid affecting game operation.
+    width: max-content;
     margin-top: 20px;
     font-weight: 500;
     font-size: 23px;
@@ -103,6 +155,9 @@
 
 .slideCKBSecurity {
   flex-grow: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 80px 0 0 200px;
 
   .text1 {

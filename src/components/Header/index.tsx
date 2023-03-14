@@ -15,8 +15,10 @@ import MenuIcon from './menu.svg'
 import LogoIcon from './logo.svg'
 import LanguageIcon from './language.svg'
 import { useIsMobile } from '../../hooks'
+import { isClient } from '../../utils'
 
 const headerHeightVarName = (styles.headerHeightVarName ?? '').replaceAll('"', '')
+const defaultHeaderHeight = parseFloat((styles.defaultHeaderHeight ?? '').replace('px', ''))
 
 export type HeaderProps = ComponentProps<'div'>
 
@@ -42,6 +44,8 @@ export const Header: FC<HeaderProps> = props => {
 export function useHeaderHeight(): number {
   const isMobile = useIsMobile()
   return useMemo(() => {
+    if (!isClient()) return defaultHeaderHeight
+
     const cssValue = getComputedStyle(document.documentElement).getPropertyValue(headerHeightVarName)
     // TODO: You can use CSSUnitValue instead, but it requires polyfill
     return parseFloat(cssValue.replace('px', ''))
