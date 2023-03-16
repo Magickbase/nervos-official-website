@@ -22,6 +22,7 @@ export const FooterMedia: React.FC = () => {
   const description =
     'The Nervos Network is an ambitious project with a strong mission that is always moving forward. Signing up to our monthly newsletter will give you all the updates you need.'
 
+  // Todo: the url is temporarily filled with placeholders
   const medias: MediasProps[] = [
     {
       label: <TwitterIcon />,

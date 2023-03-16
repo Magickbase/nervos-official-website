@@ -10,6 +10,8 @@ body {
 
 body {
   @extend %themeDark;
+
+  --baseMobileMargin: 24px;
 }
 
 a {

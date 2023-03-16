@@ -10,6 +10,8 @@ export type FooterProps = ComponentProps<'div'>
 
 export const Footer: FC<FooterProps> = props => {
   const { className, ...divProps } = props
+
+  // Todo: the url is temporarily filled with placeholders
   const footerLinkGroups: FooterLinkGroupProps[] = [
     {
       title: 'DISCOVER',

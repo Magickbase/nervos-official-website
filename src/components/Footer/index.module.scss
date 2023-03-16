@@ -1,11 +1,12 @@
-@import 'src/styles/presets.module';
-@import 'src/styles/variables.module';
+@import '../../styles/presets.module';
+@import '../../styles/variables.module';
 
 .footer {
   min-width: 1200px;
   margin: 0 120px;
   padding-bottom: 60px;
   color: var(--colorPrimary);
+  background-color: var(--colorPrimaryBg);
   border-top: 0.5px solid #6a7171;
 
   .guide {
