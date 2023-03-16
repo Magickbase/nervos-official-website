@@ -99,14 +99,14 @@ const LiveMetrics: FC = () => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_footer' })
 
   const liveMetricsQuery = api.ckb.liveMetrics.useQuery()
-  const { liveCells, stored, dao } = liveMetricsQuery.data ?? {}
+  const { liveCells, stored, daoDeposit } = liveMetricsQuery.data ?? {}
   const dataList = useMemo(
     () => [
       { name: t('live_cells'), value: liveCells },
       { name: t('common_knowledge_stored'), value: stored },
-      { name: t('ckb_in_nervos_dao'), value: dao },
+      { name: t('ckb_in_nervos_dao'), value: daoDeposit },
     ],
-    [dao, liveCells, stored, t],
+    [daoDeposit, liveCells, stored, t],
   )
 
   return (

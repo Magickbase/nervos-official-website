@@ -16,6 +16,7 @@
     "@trpc/next": "^10.9.0",
     "@trpc/react-query": "^10.9.0",
     "@trpc/server": "^10.9.0",
+    "camelcase-keys": "^8.0.2",
     "clsx": "^1.2.1",
     "gray-matter": "4.0.3",
     "i18next": "^22.4.10",
