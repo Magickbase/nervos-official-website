@@ -262,6 +262,7 @@
   align-items: center;
   margin: 85px auto 70px;
   padding: 18px 30px;
+  overflow: auto;
   color: #fff;
   white-space: nowrap;
   background-color: #000;
@@ -307,7 +308,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px 13px;
-  margin-bottom: 176px;
   color: #000;
 
   .title {

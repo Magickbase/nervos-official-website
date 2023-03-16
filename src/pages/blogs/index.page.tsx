@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import Pagination from 'src/components/Pagination'
 import type { BlogType } from './[slug].page'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
@@ -18,16 +19,20 @@ type Props = {
   pageCount: number
 }
 
-const PAGE_SIZE = 12
-// const pageSize = 24
+const PAGE_SIZE = 24
 
-const Index = ({ blogs, populars, categories }: Props) => {
+const Index = ({ blogs, populars, categories, pageCount }: Props) => {
   const [t] = useTranslation(['blog'])
   /* eslint-disable @typescript-eslint/unbound-method */
   const formatTime = getTimeFormatter().format
   const {
     query: { sort_by = 'all' },
+    push,
   } = useRouter()
+
+  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    push(`/blogs?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
+  }
 
   return (
     <>
@@ -83,9 +88,6 @@ const Index = ({ blogs, populars, categories }: Props) => {
 
           <div className={styles.categories}>
             <div>{t('sort_by')}</div>
-            {/* <Link href={'/blogs'} className={styles.category} data-selected={sort_by === 'all'}> */}
-            {/*   {t('all')} */}
-            {/* </Link> */}
             {categories.map(category => (
               <Link
                 key={category}
@@ -98,8 +100,7 @@ const Index = ({ blogs, populars, categories }: Props) => {
             ))}
           </div>
 
-          <select className={styles.categorySelect}>
-            <option value="all">{t('all')}</option>
+          <select className={styles.categorySelect} onChange={handleSortChange}>
             {categories.map(category => (
               <option key={category} value={category}>
                 {t(category)}
@@ -127,6 +128,7 @@ const Index = ({ blogs, populars, categories }: Props) => {
               </Link>
             ))}
           </div>
+          <Pagination pageCount={pageCount} />
         </div>
       </Page>
     </>
