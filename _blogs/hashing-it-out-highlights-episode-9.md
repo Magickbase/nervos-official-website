@@ -3,8 +3,7 @@ title: 'Hashing it Out: Highlights'
 excerpt: 'The Nervos Network has been ticking off major milestones since its foundation and last year was arguably the biggest year for Nervos in terms of growth through major releases such as Force Bridge and Godwoken. With these major milestones achieved in 2021, the doors are open for even more projects to take advantage of a much more flexible and broad reaching multi-chain ecosystem this year.'
 coverImage: 'https://www.nervos.org/wp-content/uploads/Hashing-it-out-2023-template-1536x864.png'
 date: '2020-03-16T05:35:07.322Z'
-category: learning resources
-popular: true
+category: learning resources,news,popular
 ---
 
 In the 9th “Hashing it Out” episode, Jordan, one of our Senior Software Developers, chats with Matt, our Ecosystem Development Manager, and Travis Richardson, DevRel Engineer, about the accomplishments of Nervos Network during 2022.

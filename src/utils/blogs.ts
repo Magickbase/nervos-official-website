@@ -1,3 +1,4 @@
+/* this module is only available on server side */
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
@@ -60,9 +61,9 @@ export const getAllBlogs = (sortBy = 'all', fields: string[] = []) => {
           }
         }
         default: {
-          if (blog1?.category === sortBy && blog2?.category !== sortBy) {
+          if (blog1?.category?.startsWith(sortBy) && !blog2?.category?.startsWith(sortBy)) {
             return -1
-          } else if (blog1?.category !== sortBy && blog2?.category === sortBy) {
+          } else if (!blog1?.category?.startsWith(sortBy) && blog2?.category?.startsWith(sortBy)) {
             return 1
           } else if (blog1?.date && blog2?.date) {
             return blog1?.date > blog2?.date ? -1 : 1
@@ -73,3 +74,6 @@ export const getAllBlogs = (sortBy = 'all', fields: string[] = []) => {
     })
   return blogs
 }
+
+export const getCategoriesFromBlogs = (blogs: Array<Record<string, string>>) =>
+  [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())].sort()

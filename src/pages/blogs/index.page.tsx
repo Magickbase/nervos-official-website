@@ -8,8 +8,8 @@ import Pagination from 'src/components/Pagination'
 import type { BlogType } from './[slug].page'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
-import { getAllBlogs } from '../../utils'
-import { getTimeFormatter } from '../../utils/time'
+import { getTimeFormatter } from '../../utils'
+import { getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
 
 type Props = {
@@ -149,8 +149,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
     'popular',
     'readingTime',
   ])
-  const populars = blogs.filter(blog => blog.popular)
-  const categories = [...new Set(blogs.map(blog => blog.category))].sort()
+  const populars = blogs.filter(blog => blog.category?.includes('popular'))
+  const categories = getCategoriesFromBlogs(blogs)
   const pageCount = Math.ceil(blogs.length / PAGE_SIZE)
   const lng = await serverSideTranslations(locale ?? 'en', ['blogs'])
 

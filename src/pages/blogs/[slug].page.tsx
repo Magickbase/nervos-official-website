@@ -7,8 +7,8 @@ import { TwitterShareButton, LinkedinShareButton, RedditShareButton, FacebookSha
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Page } from '../../components/Page'
-import { getBlogBySlug, getAllBlogs, markdownToHtml } from '../../utils'
-import { getTimeFormatter } from '../../utils/time'
+import { markdownToHtml, getTimeFormatter } from '../../utils'
+import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './blog.module.scss'
 
 export type BlogType = {
@@ -26,9 +26,10 @@ export type BlogType = {
 type Props = {
   blog: BlogType
   recents: Array<Record<'title' | 'slug', string>>
+  categories: Array<string>
 }
 
-const Blog = ({ blog, recents }: Props) => {
+const Blog = ({ blog, recents, categories }: Props) => {
   const router = useRouter()
   const [t] = useTranslation(['blogs'])
 
@@ -91,9 +92,13 @@ const Blog = ({ blog, recents }: Props) => {
                   </Link>
                 ))}
               </div>
-              <div className={styles.title}>{`${t('category')}:`}</div>
+              <div className={styles.title}>{`${t('categories')}:`}</div>
               <div className={styles.category}>
-                <div>{blog.category}</div>
+                {categories.map(c => (
+                  <Link key={c} href={`/blogs?sort_by=${c}`}>
+                    {t(c)}
+                  </Link>
+                ))}
               </div>
 
               <div className={styles.subtitle}>{`${t('share_this_post')}:`}</div>
@@ -142,7 +147,9 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const content = await markdownToHtml(blog.content || '')
   const lng = await serverSideTranslations(locale ?? 'en', ['blogs'])
 
-  const recents = getAllBlogs('all', ['title', 'slug']).slice(0, 3)
+  const blogs = getAllBlogs('all', ['title', 'slug', 'category'])
+  const categories = getCategoriesFromBlogs(blogs)
+  const recents = blogs.slice(0, 3)
 
   return {
     props: {
@@ -152,6 +159,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
         content,
       },
       recents,
+      categories,
     },
   }
 }
