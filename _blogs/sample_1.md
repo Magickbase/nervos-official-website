@@ -19,7 +19,7 @@ Despite the bear market, the unique addresses used on the Nervos CKB blockchain 
 
 ### CKB Burnt
 
-Over 68.2% of the secondary issuance, amounting to more than 2.8 billion CKB, has been burnt since launch. Based on how CKB is used, the fixed 1.344 billion CKB annual secondary issuance is divided among miners, Nervos DAO depositors, and a treasury fund (which is currently being burned). Click here to learn more.
+Over [68.2%](https://explorer.nervos.org/nervosdao) of the secondary issuance, amounting to more than 2.8 billion CKB, has been burnt since launch. Based on how CKB is used, the fixed 1.344 billion CKB annual secondary issuance is divided among miners, Nervos DAO depositors, and a treasury fund (which is currently being burned). Click here to learn more.
 
 ### Nervos DAO
 

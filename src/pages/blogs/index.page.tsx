@@ -2,7 +2,7 @@ import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
 import type { BlogType } from './[slug].page'
@@ -22,8 +22,8 @@ type Props = {
 const PAGE_SIZE = 24
 
 const Index = ({ blogs, populars, categories, pageCount }: Props) => {
-  const [t] = useTranslation(['blog'])
-  /* eslint-disable @typescript-eslint/unbound-method */
+  const [t] = useTranslation(['blogs'])
+  /* eslint-disable-next-line @typescript-eslint/unbound-method */
   const formatTime = getTimeFormatter().format
   const {
     query: { sort_by = 'all' },
@@ -151,8 +151,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   ])
   const populars = blogs.filter(blog => blog.popular)
   const categories = [...new Set(blogs.map(blog => blog.category))].sort()
-  const lng = await serverSideTranslations(locale ?? 'en', ['blog'])
   const pageCount = Math.ceil(blogs.length / PAGE_SIZE)
+  const lng = await serverSideTranslations(locale ?? 'en', ['blogs'])
 
   return {
     props: {

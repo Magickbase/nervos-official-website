@@ -16,7 +16,7 @@ module.exports = {
     // so switching to other languages is temporarily disabled.
     localeDetection: false,
   },
-
+  react: { useSuspense: false },
   localePath: typeof window === 'undefined' ? path.resolve('./public/locales') : '/locales',
 
   reloadOnPrerender: process.env.NODE_ENV === 'development',

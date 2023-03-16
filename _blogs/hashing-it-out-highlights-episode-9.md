@@ -1,5 +1,5 @@
 ---
-title: 'Hashing it Out: Highlights – Episode 9'
+title: 'Hashing it Out: Highlights'
 excerpt: 'The Nervos Network has been ticking off major milestones since its foundation and last year was arguably the biggest year for Nervos in terms of growth through major releases such as Force Bridge and Godwoken. With these major milestones achieved in 2021, the doors are open for even more projects to take advantage of a much more flexible and broad reaching multi-chain ecosystem this year.'
 coverImage: 'https://www.nervos.org/wp-content/uploads/Hashing-it-out-2023-template-1536x864.png'
 date: '2020-03-16T05:35:07.322Z'
@@ -51,7 +51,7 @@ The team is now working on Force Bridge 2. This is a very different version from
 
 ## Axon
 
-Axon, a configurable high-performance sidechain framework with built-in interoperability, became “mainnet ready” and several early projects are now working with it. The word “mainnet ready” here doesn’t mean there will be an Axon mainnet, because it is a framework that’s intended for developers to launch their own chains.
+[Axon](https://github.com/axonweb3/axon-devops), a configurable high-performance sidechain framework with built-in interoperability, became “mainnet ready” and several early projects are now working with it. The word “mainnet ready” here doesn’t mean there will be an Axon mainnet, because it is a framework that’s intended for developers to launch their own chains.
 
 The first release of Axon will have limited features, and tools and documentation are still being worked on. Follow @AxonWeb3 for more updates.
 
