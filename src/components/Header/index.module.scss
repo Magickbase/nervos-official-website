@@ -22,7 +22,6 @@ $defaultHeaderHeight: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
   height: var(#{$headerHeightVarName});
   margin: 0 auto;
   color: var(--colorPrimary);
@@ -42,11 +41,13 @@ $defaultHeaderHeight: 90px;
         margin-top: 2px;
         font-weight: 600;
         font-size: 9px;
+        letter-spacing: 0.15em;
       }
     }
   }
 
   .logo {
+    display: flex;
     margin: 0 32px;
   }
 
@@ -161,5 +162,9 @@ $defaultHeaderHeight: 90px;
     line-height: 135%;
     background: var(--colorPrimary);
     cursor: pointer;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
   }
 }

@@ -3,6 +3,9 @@
   --colorPrimary: #fff;
   --colorPrimaryBg: #000;
   --colorSecond: #{invert(#5700ff)};
+
+  // TODO: Should be calculated automatically with sass via --colorSecond
+  --colorSecondTuple: 168 255 00;
   --footerInputBackground: #141717;
 }
 
@@ -10,6 +13,7 @@
 %themeLight {
   --colorPrimary: #000;
   --colorPrimaryBg: #fff;
+  --colorSecondTuple: 87 00 255;
   --colorSecond: #5700ff;
   --footerInputBackground: #e7eaeb;
 }

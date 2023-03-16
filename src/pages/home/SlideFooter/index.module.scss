@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   padding: 16px 50px 0;
   color: var(--colorPrimary);
@@ -27,11 +26,31 @@
     align-items: center;
 
     .dot {
+      position: relative;
       display: inline-block;
       width: 6px;
       height: 6px;
       background: var(--colorSecond);
       border-radius: 50%;
+
+      &::after {
+        $size: 12px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        box-sizing: border-box;
+        width: $size;
+        height: $size;
+        margin-top: -$size / 2;
+        margin-left: -$size / 2;
+        border: 1px solid rgb(var(--colorSecondTuple) / 20%);
+        border-radius: 50%;
+        filter: drop-shadow(0 0 2px rgb(var(--colorSecondTuple)));
+        animation: zoom-in-zoom-out 1s ease infinite;
+        content: '';
+      }
     }
 
     .text {
@@ -62,6 +81,20 @@
       letter-spacing: 0.15em;
     }
   }
+
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+
+    50% {
+      transform: scale(1.2, 1.2);
+    }
+
+    100% {
+      transform: scale(1, 1);
+    }
+  }
 }
 
 .scrollTip {
@@ -86,7 +119,8 @@
   justify-content: flex-end;
   padding-bottom: 56px;
 
-  svg {
+  & > span {
+    display: flex;
     cursor: pointer;
 
     &:hover {

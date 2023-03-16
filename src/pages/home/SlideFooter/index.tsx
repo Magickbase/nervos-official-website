@@ -70,12 +70,24 @@ export const SlideFooter: FC<
       </div>
 
       <div className={styles.gameControl}>
-        <PlayIcon onClick={() => toggleRunning()} />
-        <BackIcon onClick={() => gameControllerRef?.current?.rewind()} />
-        <StopIcon onClick={() => gameControllerRef?.current?.clear()} />
-        <PlusIcon onClick={() => gameControllerRef?.current?.zoomIn()} />
-        <MinusIcon onClick={() => gameControllerRef?.current?.zoomOut()} />
-        <RandomizeIcon onClick={() => gameControllerRef?.current?.randomPattern()} />
+        <span title="RUN / PAUSE">
+          <PlayIcon onClick={() => toggleRunning()} />
+        </span>
+        <span title="REWIND">
+          <BackIcon onClick={() => gameControllerRef?.current?.rewind()} />
+        </span>
+        <span title="CLEAR">
+          <StopIcon onClick={() => gameControllerRef?.current?.clear()} />
+        </span>
+        <span title="ZOOM IN">
+          <PlusIcon onClick={() => gameControllerRef?.current?.zoomIn()} />
+        </span>
+        <span title="ZOOM OUT">
+          <MinusIcon onClick={() => gameControllerRef?.current?.zoomOut()} />
+        </span>
+        <span title="RANDOMIZE PATTERN">
+          <RandomizeIcon onClick={() => gameControllerRef?.current?.randomPattern()} />
+        </span>
 
         <InfoDialog />
       </div>
@@ -135,7 +147,9 @@ const InfoDialog: FC = () => {
 
   return (
     <>
-      <InfoIcon onClick={() => setIsOpen(true)} />
+      <span title="INSTRUCTIONS">
+        <InfoIcon onClick={() => setIsOpen(true)} />
+      </span>
       <Dialog className={styles.infoDialog} open={isOpen} onClose={() => setIsOpen(false)}>
         <Dialog.Panel className={styles.panel}>
           <div className={styles.title}>How to play.</div>
