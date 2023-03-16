@@ -34,6 +34,14 @@
     display: none;
   }
 
+  .subTitle {
+    padding-top: 50px;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 160%;
+    letter-spacing: 0.03em;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     display: block;
     width: 100%;

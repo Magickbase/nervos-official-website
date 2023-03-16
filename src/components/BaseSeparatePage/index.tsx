@@ -11,7 +11,7 @@ export type BaseSeparatePageType = HeaderType &
   DescriptionType &
   InfoType &
   FunctionsType &
-  ResourcesType & {
+  Partial<ResourcesType> & {
     headerClassName?: string
     descriptionClassName?: string
     infoClassName?: string
@@ -31,7 +31,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     info,
     editor,
     functions,
-    resources,
+    resourceData,
     ...rest
   } = props
 
@@ -47,9 +47,11 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
       <div className={styles.functionsWrap}>
         <Functions functions={functions} className={functionsClassName} />
       </div>
-      <div className={styles.resourcesWrap}>
-        <Resources resources={resources} />
-      </div>
+      {resourceData ? (
+        <div className={styles.resourcesWrap}>
+          <Resources resourceData={resourceData} />
+        </div>
+      ) : null}
     </div>
   )
 }

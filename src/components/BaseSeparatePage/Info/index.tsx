@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react'
 import clsx from 'clsx'
+import { StyledLink } from 'src/components/StyledLink'
 
 import styles from './index.module.scss'
 
@@ -35,7 +36,13 @@ export const Info: FC<InfoType> = ({ info, editor, className }) => {
             <div>
               <span className={clsx(styles.lastEdit)}>Last edit: </span>
               {/* Todo: need turn to the homepage of the editor */}
-              <a href="http:placeholder">{id}</a>
+              <StyledLink
+                linkData={{ label: id, url: 'http://pladeholder' }}
+                isSpaced
+                isColored
+                isIconed
+                isUnderlined
+              />
             </div>
             <div className={clsx(styles.timeString)}>{time}</div>
           </div>

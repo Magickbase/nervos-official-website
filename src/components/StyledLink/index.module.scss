@@ -2,7 +2,7 @@
 @import '../../styles/variables.module';
 
 .styledLink {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   color: var(--colorPrimary);
 
@@ -32,8 +32,8 @@
     &[data-spaced='true'] {
       &::after {
         display: inline-block;
-        width: 9px;
-        height: 9px;
+        width: 8px;
+        height: 8px;
         content: '';
       }
     }
