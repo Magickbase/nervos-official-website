@@ -1,11 +1,12 @@
 @import 'src/styles/variables.module';
 @import '../../components/Header/index.module';
 
+// .swiper-wrapper z-index is 1, which is higher here than .swiper-wrapper
+$blendModeHeaderZ: 2;
+
 .blendModeHeader {
   position: absolute;
-
-  // .swiper-wrapper z-index is 1; which is higher here than .swiper-wrapper
-  z-index: 2;
+  z-index: $blendModeHeaderZ;
   width: 100%;
   filter: invert(1);
   mix-blend-mode: difference;
@@ -22,55 +23,130 @@
   height: 100vh;
 }
 
-.fullScreenSlide {
+.golContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $blendModeHeaderZ + 1;
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+  pointer-events: none;
+
+  .indicator {
+    position: absolute;
+    top: calc(48px + var(#{$headerHeightVarName}));
+    left: 50%;
+    width: 50%;
+    height: 100%;
+
+    @media (max-width: $mobileBreakPoint) {
+      top: var(#{$headerHeightVarName});
+      left: 0;
+      width: 100%;
+      height: 200px;
+      margin: 0 36px;
+    }
+  }
+}
+
+.screenSlide {
   background: var(--colorPrimaryBg);
 
   .container {
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
     height: 100vh;
     margin: 0 auto;
 
     .headerMixLayer {
       position: sticky;
       top: 0;
+      z-index: 1;
       flex-shrink: 0;
       height: var(#{$headerHeightVarName});
       background: var(--colorPrimaryBg);
     }
 
     .content {
+      position: relative;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       color: var(--colorPrimary);
     }
   }
+
+  &.autoHeight {
+    .container {
+      height: auto;
+    }
+  }
+}
+
+// Because Portal is used, it is no longer a child of screenSlide.
+.fixedSlideFooter {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+.titleText {
+  font-weight: 800;
+  font-size: 90px;
+  line-height: 80%;
+  letter-spacing: -0.025em;
+
+  @media (max-width: $mobileBreakPoint) {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+  }
+}
+
+.subjectTitleText {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+}
+
+.descriptionText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0.05em;
 }
 
 .slideCKBIntro {
   flex-grow: 1;
-  padding: 80px 0 0 200px;
+  margin: 80px 0 0 12%;
 
-  .text1 {
+  .texts {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .titleText {
     max-width: 512px;
-    font-weight: 800;
-    font-size: 90px;
-    line-height: 72px;
   }
 
-  .text2 {
+  .subjectTitleText {
+    // Reduce coverage area to avoid affecting game operation.
+    width: max-content;
     margin-top: 20px;
-    font-weight: 500;
-    font-size: 23px;
   }
 
-  .text3 {
-    max-width: 384px;
+  .descriptionText {
+    max-width: 440px;
     margin-top: 40px;
-    font-weight: 400;
-    font-size: 14px;
 
     .bold {
       font-weight: 600;
@@ -78,10 +154,7 @@
   }
 
   .text4 {
-    max-width: 384px;
     margin-top: 24px;
-    font-weight: 400;
-    font-size: 14px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -92,32 +165,82 @@
     margin: -16vh auto 0;
     padding: 0;
 
-    .text1 {
-      font-weight: 800;
-      font-size: 50px;
-      line-height: 40px;
-      letter-spacing: -0.025em;
+    .descriptionText {
+      margin-top: 30px;
     }
   }
 }
 
 .slideCKBSecurity {
   flex-grow: 1;
-  padding: 80px 0 0 200px;
+  margin: 80px 0 0 12%;
 
-  .text1 {
+  .titleText {
     max-width: 740px;
-    font-weight: 800;
-    font-size: 90px;
-    line-height: 72px;
   }
 
-  .text2 {
+  .descriptionText {
     max-width: 312px;
     margin-top: 40px;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 314px;
+    margin: -8vh auto 0;
+    padding: 0;
+
+    .descriptionText {
+      margin-top: 30px;
+    }
+  }
+}
+
+.slideCKBFlexibility {
+  flex-grow: 1;
+  margin: 80px 0 0 12%;
+
+  .titleText {
+    max-width: 700px;
+  }
+
+  .descriptionText {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 680px;
+    margin-top: 40px;
+    padding-left: 1em;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 314px;
+    margin: 0 auto;
+    padding: 0;
+
+    .descriptionText {
+      gap: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.slideCKBSustainability {
+  flex-grow: 1;
+  margin: 80px 0 0 12%;
+
+  .titleText {
+    max-width: 640px;
+  }
+
+  .descriptionText {
+    max-width: 380px;
+    margin-top: 40px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -128,11 +251,106 @@
     margin: -16vh auto 0;
     padding: 0;
 
-    .text1 {
-      font-weight: 800;
-      font-size: 50px;
-      line-height: 40px;
-      letter-spacing: -0.025em;
+    .descriptionText {
+      margin-top: 30px;
+    }
+  }
+}
+
+.slideCKBModular {
+  flex-grow: 1;
+  margin: 80px 0 0 12%;
+
+  .titleText {
+    max-width: 640px;
+  }
+
+  .descriptionText {
+    max-width: 512px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 314px;
+    margin: -16vh auto 0;
+    padding: 0;
+
+    .descriptionText {
+      margin-top: 30px;
+    }
+  }
+}
+
+.slideGetStarted {
+  flex-grow: 1;
+  margin: 80px 0 0 12%;
+  overflow: auto;
+
+  .titleText {
+    max-width: 376px;
+  }
+
+  .link {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px;
+    color: var(--colorPrimaryBg);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 105%;
+    letter-spacing: 0.11em;
+    background: transparent;
+    border: 1px solid var(--colorPrimaryBg);
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--colorPrimary);
+      background: var(--colorPrimaryBg);
+    }
+  }
+
+  .cards {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+
+    .card {
+      width: 312px;
+      padding: 32px;
+      color: var(--colorPrimaryBg);
+      background: var(--colorPrimary);
+
+      .title {
+        padding-bottom: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 110%;
+        border-bottom: 1px solid var(--colorPrimaryBg);
+      }
+
+      .content {
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: flex;
+    flex-direction: column;
+    max-width: 314px;
+    padding: 88px 0 0;
+
+    .cards {
+      flex-direction: column;
     }
   }
 }

@@ -15,8 +15,10 @@ import MenuIcon from './menu.svg'
 import LogoIcon from './logo.svg'
 import LanguageIcon from './language.svg'
 import { useIsMobile } from '../../hooks'
+import { isClient } from '../../utils'
 
 const headerHeightVarName = (styles.headerHeightVarName ?? '').replaceAll('"', '')
+const defaultHeaderHeight = parseFloat((styles.defaultHeaderHeight ?? '').replace('px', ''))
 
 export type HeaderProps = ComponentProps<'div'>
 
@@ -26,13 +28,17 @@ export const Header: FC<HeaderProps> = props => {
   return (
     <div className={clsx(styles.header, className)} {...divProps}>
       <MenuPopover />
-      <LogoIcon className={styles.logo} />
+      <Link className={styles.logo} href="/">
+        <LogoIcon />
+      </Link>
       <LanguagePopover
         languages={[
           { name: 'English', localeName: 'en' },
-          { name: '中文', englishName: 'Chinese', localeName: 'zh' },
-          { name: '한국어', englishName: 'Korean', localeName: 'ko' },
-          { name: 'Türkçe', englishName: 'Turkish', localeName: 'tr' },
+          // TODO: This is because there is currently no full i18n translation support,
+          // so switching to other languages is temporarily disabled.
+          { name: '中文', englishName: 'Chinese', localeName: 'zh', disabled: true },
+          { name: '한국어', englishName: 'Korean', localeName: 'ko', disabled: true },
+          { name: 'Türkçe', englishName: 'Turkish', localeName: 'tr', disabled: true },
         ]}
       />
     </div>
@@ -42,6 +48,8 @@ export const Header: FC<HeaderProps> = props => {
 export function useHeaderHeight(): number {
   const isMobile = useIsMobile()
   return useMemo(() => {
+    if (!isClient()) return defaultHeaderHeight
+
     const cssValue = getComputedStyle(document.documentElement).getPropertyValue(headerHeightVarName)
     // TODO: You can use CSSUnitValue instead, but it requires polyfill
     return parseFloat(cssValue.replace('px', ''))
@@ -160,6 +168,7 @@ const LanguagePopover: FC<{
     name: string
     englishName?: string
     localeName: string
+    disabled?: boolean
   }[]
 }> = props => {
   const router = useRouter()
@@ -176,18 +185,25 @@ const LanguagePopover: FC<{
           {/* Use Portal to prevent being influenced by mix-blend-mode */}
           <Portal>
             <Popover.Panel className={styles.languagePopoverContent}>
-              {props.languages.map(language => (
-                <Link
-                  key={language.name}
-                  className={styles.language}
-                  href={{ pathname, query }}
-                  locale={language.localeName}
-                  onClick={() => close()}
-                >
-                  {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
-                  <div className={styles.name}>{language.name}</div>
-                </Link>
-              ))}
+              {props.languages.map(language =>
+                language.disabled ? (
+                  <div key={language.name} className={clsx(styles.language, styles.disabled)} title="Coming soon">
+                    {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                    <div className={styles.name}>{language.name}</div>
+                  </div>
+                ) : (
+                  <Link
+                    key={language.name}
+                    className={styles.language}
+                    href={{ pathname, query }}
+                    locale={language.localeName}
+                    onClick={() => close()}
+                  >
+                    {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                    <div className={styles.name}>{language.name}</div>
+                  </Link>
+                ),
+              )}
             </Popover.Panel>
           </Portal>
         </>

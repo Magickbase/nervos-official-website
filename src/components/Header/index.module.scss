@@ -1,13 +1,15 @@
 @import '../../styles/variables.module';
 
 $headerHeightVarName: '--headerHeight';
+$defaultHeaderHeight: 90px;
 
 :export {
   headerHeightVarName: $headerHeightVarName;
+  defaultHeaderHeight: $defaultHeaderHeight;
 }
 
 :root {
-  #{$headerHeightVarName}: 90px;
+  #{$headerHeightVarName}: $defaultHeaderHeight;
 
   @media (max-width: $mobileBreakPoint) {
     #{$headerHeightVarName}: 65px;
@@ -20,7 +22,6 @@ $headerHeightVarName: '--headerHeight';
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
   height: var(#{$headerHeightVarName});
   margin: 0 auto;
   color: var(--colorPrimary);
@@ -40,11 +41,13 @@ $headerHeightVarName: '--headerHeight';
         margin-top: 2px;
         font-weight: 600;
         font-size: 9px;
+        letter-spacing: 0.15em;
       }
     }
   }
 
   .logo {
+    display: flex;
     margin: 0 32px;
   }
 
@@ -159,5 +162,9 @@ $headerHeightVarName: '--headerHeight';
     line-height: 135%;
     background: var(--colorPrimary);
     cursor: pointer;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
   }
 }
