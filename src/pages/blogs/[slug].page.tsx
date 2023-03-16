@@ -12,12 +12,11 @@ export type BlogType = {
   content: string
   category: string
   popular: string
+  readingTime: string
 }
 
 type Props = {
   blog: BlogType
-  moreBlogs: BlogType[]
-  preview?: boolean
 }
 
 const Blog = ({ blog }: Props) => {
@@ -71,7 +70,7 @@ export const getStaticProps = async ({ params }: Params) => {
 }
 
 export const getStaticPaths = () => {
-  const blogs = getAllBlogs(['slug'])
+  const blogs = getAllBlogs('all', ['slug'])
 
   return {
     paths: blogs.map(blog => {

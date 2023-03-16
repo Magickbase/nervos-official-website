@@ -28,6 +28,9 @@ export const getBlogBySlug = (slug: string, fields: string[] = []) => {
     if (field === 'content') {
       items[field] = content
     }
+    if (field === 'readingTime') {
+      items[field] = Math.round(content.length / 1300).toString()
+    }
 
     if (typeof data[field] !== 'undefined') {
       /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -38,13 +41,33 @@ export const getBlogBySlug = (slug: string, fields: string[] = []) => {
   return items
 }
 
-export const getAllBlogs = (fields: string[] = []) => {
+export const getAllBlogs = (sortBy = 'all', fields: string[] = []) => {
   const slugs = getBlogSlugs()
   const blogs = slugs
     .map(slug => getBlogBySlug(slug, fields))
     .sort((blog1, blog2) => {
-      if (blog1?.date && blog2?.date) {
-        return blog1?.date > blog2?.date ? -1 : 1
+      switch (sortBy) {
+        case 'oldest post': {
+          if (blog1?.date && blog2?.date) {
+            return blog1?.date > blog2?.date ? 1 : -1
+          }
+          break
+        }
+        case 'newest post':
+        case 'all': {
+          if (blog1?.date && blog2?.date) {
+            return blog1?.date > blog2?.date ? -1 : 1
+          }
+        }
+        default: {
+          if (blog1?.category === sortBy && blog2?.category !== sortBy) {
+            return -1
+          } else if (blog1?.category !== sortBy && blog2?.category === sortBy) {
+            return 1
+          } else if (blog1?.date && blog2?.date) {
+            return blog1?.date > blog2?.date ? -1 : 1
+          }
+        }
       }
       return 0
     })

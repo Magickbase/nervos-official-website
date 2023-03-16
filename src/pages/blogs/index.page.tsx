@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -15,20 +15,24 @@ type Props = {
   categories: Array<string>
   blogs: Array<BlogType>
   populars: Array<BlogType>
+  pageCount: number
 }
+
+const PAGE_SIZE = 12
+// const pageSize = 24
 
 const Index = ({ blogs, populars, categories }: Props) => {
   const [t] = useTranslation(['blog'])
   /* eslint-disable @typescript-eslint/unbound-method */
   const formatTime = getTimeFormatter().format
   const {
-    query: { sorted = 'all' },
+    query: { sort_by = 'all' },
   } = useRouter()
 
   return (
     <>
       <Head>
-        <title>{t('blog')}</title>
+        <title>{t('blogs')}</title>
       </Head>
       <Page>
         <div className={styles.container}>
@@ -69,7 +73,7 @@ const Index = ({ blogs, populars, categories }: Props) => {
                     </div>
                     <div>
                       <img src="/images/clock.svg" className={styles.clock} />
-                      <span>4 mins</span>
+                      <span>{blog.readingTime} mins</span>
                     </div>
                   </div>
                 </Link>
@@ -79,13 +83,18 @@ const Index = ({ blogs, populars, categories }: Props) => {
 
           <div className={styles.categories}>
             <div>{t('sort_by')}</div>
-            <div className={styles.category} data-selected={sorted === 'all'}>
-              {t('all')}
-            </div>
+            {/* <Link href={'/blogs'} className={styles.category} data-selected={sort_by === 'all'}> */}
+            {/*   {t('all')} */}
+            {/* </Link> */}
             {categories.map(category => (
-              <div key={category} className={styles.category} data-selected={sorted === category}>
+              <Link
+                key={category}
+                href={`/blogs?sort_by=${category}`}
+                className={styles.category}
+                data-selected={sort_by === category}
+              >
                 {t(category)}
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -113,7 +122,7 @@ const Index = ({ blogs, populars, categories }: Props) => {
                   <span className={styles.separator}>·</span>
                   <time>{formatTime(new Date(blog.date))}</time>
                   <img src="/images/clock.svg" className={styles.clock} />
-                  <span>4 mins</span>
+                  <span>{blog.readingTime} mins</span>
                 </div>
               </Link>
             ))}
@@ -124,14 +133,33 @@ const Index = ({ blogs, populars, categories }: Props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const blogs = getAllBlogs(['title', 'date', 'slug', 'coverImage', 'excerpt', 'category', 'popular'])
+export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
+  const pageNo = +(query.page ?? '1')
+  const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
+
+  const blogs = getAllBlogs(sortBy, [
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'excerpt',
+    'category',
+    'popular',
+    'readingTime',
+  ])
   const populars = blogs.filter(blog => blog.popular)
-  const categories = [...new Set(blogs.map(blog => blog.category))]
+  const categories = [...new Set(blogs.map(blog => blog.category))].sort()
   const lng = await serverSideTranslations(locale ?? 'en', ['blog'])
+  const pageCount = Math.ceil(blogs.length / PAGE_SIZE)
 
   return {
-    props: { ...lng, blogs, populars, categories },
+    props: {
+      ...lng,
+      blogs: blogs.slice(PAGE_SIZE * (pageNo - 1), PAGE_SIZE * pageNo),
+      populars,
+      categories: ['all', ...categories, 'newest post', 'oldest post'],
+      pageCount,
+    },
   }
 }
 
