@@ -11,44 +11,50 @@ export type FooterProps = ComponentProps<'div'>
 export const Footer: FC<FooterProps> = props => {
   const { className, ...divProps } = props
 
-  // Todo: the url is temporarily filled with placeholders
   const footerLinkGroups: FooterLinkGroupProps[] = [
     {
       title: 'DISCOVER',
-      links: ['Mining', 'Wallets', 'Wiki', 'Press Kit'].map((item, index) => ({
-        label: item,
-        url: `http://placeholders${index}`,
-      })),
+      links: [
+        { label: 'Mining', url: '/mining' },
+        { label: 'Wallets', url: '/wallets' },
+        { label: 'Wiki', url: 'https://www.wikiwand.com/en/Nervos_Network' },
+        { label: 'Press Kit', url: '/' },
+      ],
     },
     {
       title: 'DEVELOPERS',
-      links: ['Documentation', 'Github', 'Explorer'].map((item, index) => ({
-        label: item,
-        url: `http://placeholders${index}`,
-      })),
+      links: [
+        { label: 'Documentation', url: 'https://docs.nervos.org/' },
+        { label: 'GitHub', url: 'https://github.com/nervosnetwork/' },
+        { label: 'Explorer', url: 'https://explorer.nervos.org/' },
+      ],
     },
     {
       title: 'ECOSYSTEM',
-      links: ['Nervos Foundation,', 'Cryptape', 'Godwoken', 'Nervina Labs', 'Tunnel Vision Labs'].map(
-        (item, index) => ({
-          label: item,
-          url: `http://placeholders${index}`,
-        }),
-      ),
+      links: [
+        { label: 'Nervos Foundation', url: 'https://www.nervos.org/' },
+        { label: 'Cryptape', url: 'https://cryptape.com/' },
+        { label: 'Godwoken', url: 'https://twitter.com/GodwokenRises' },
+        { label: 'Nervina Labs', url: 'https://nervina.io/' },
+        { label: 'Tunnel Vision Labs', url: '/' },
+      ],
     },
     {
       title: 'COMMUNITY',
-      links: ['Community Fund DAO', 'Nervos Talk Forum', 'RFCs'].map((item, index) => ({
-        label: item,
-        url: `http://placeholders${index}`,
-      })),
+      links: [
+        { label: 'Community Fund DAO', url: 'https://dao.ckb.community/' },
+        { label: 'Nervos Talk Forum', url: 'https://talk.nervos.org/' },
+        { label: 'RFCs', url: 'https://github.com/nervosnetwork/rfcs/' },
+      ],
     },
     {
       title: 'LEARN',
-      links: ['Knowledge Base', 'Blog', 'Medium', 'Youtube'].map((item, index) => ({
-        label: item,
-        url: `http://placeholders${index}`,
-      })),
+      links: [
+        { label: 'Knowledge Base', url: '/' },
+        { label: 'Blog', url: '/blogs' },
+        { label: 'Medium', url: 'https://medium.com/nervosnetwork' },
+        { label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' },
+      ],
     },
   ]
 

@@ -71,66 +71,91 @@ const MenuPopover: FC = () => {
           <Portal>
             <Popover.Panel className={styles.menuPopoverContent}>
               <div className={styles.menu}>
-                <div className={styles.title}>
+                <Link href="/developers" className={styles.title}>
                   <CodeIcon />
                   Developers
                   <ArrowIcon />
-                </div>
+                </Link>
                 <div className={styles.links}>
-                  <div className={styles.link}>
+                  <Link
+                    href="https://docs.nervos.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Docs <ObliqueArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link
+                    href="https://github.com/nervosnetwork/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Github <ObliqueArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link
+                    href="https://explorer.nervos.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Explorer <ObliqueArrowIcon />
-                  </div>
+                  </Link>
                 </div>
               </div>
 
               <div className={styles.menu}>
-                <div className={styles.title}>
+                <Link href="/community" className={styles.title}>
                   <CommunityIcon />
                   Community
                   <ArrowIcon />
-                </div>
+                </Link>
                 <div className={styles.links}>
-                  <div className={styles.link}>
+                  <Link
+                    href="https://dao.ckb.community/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     <div>
                       Community
                       <br />
                       Fund DAO
                     </div>
                     <ObliqueArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link
+                    href="https://talk.nervos.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Forum <ObliqueArrowIcon />
-                  </div>
-                  <a
+                  </Link>
+                  <Link
                     href="https://github.com/nervosnetwork/rfcs"
                     className={styles.link}
                     target="_blank"
                     rel="noreferrer"
                   >
                     RFCs <ObliqueArrowIcon />
-                  </a>
+                  </Link>
                 </div>
               </div>
 
               <div className={styles.menu}>
-                <div className={styles.title}>
+                <Link href="/ckbpage" className={styles.title}>
                   <CircleIcon />
                   CKB <span className={styles.ckbHint}>(Token)</span>
                   <ArrowIcon />
-                </div>
+                </Link>
                 <div className={styles.links}>
-                  <div className={styles.link}>
+                  <Link href="mining" className={styles.link}>
                     Mining <ThinArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link href="/wallets" className={styles.link}>
                     Wallets <ThinArrowIcon />
-                  </div>
+                  </Link>
                 </div>
               </div>
 
@@ -144,15 +169,25 @@ const MenuPopover: FC = () => {
                   <div className={styles.link}>
                     Knowledge Base <ThinArrowIcon />
                   </div>
-                  <div className={styles.link}>
+                  <Link href="/blogs" className={styles.link}>
                     Blog <ObliqueArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link
+                    href="https://medium.com/nervosnetwork"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Medium <ObliqueArrowIcon />
-                  </div>
-                  <div className={styles.link}>
+                  </Link>
+                  <Link
+                    href="https://www.youtube.com/c/NervosNetwork"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Youtube <ObliqueArrowIcon />
-                  </div>
+                  </Link>
                 </div>
               </div>
             </Popover.Panel>
