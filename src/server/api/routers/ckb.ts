@@ -1,12 +1,30 @@
+import { explorerService } from '../../../services/ExplorerService'
 import { createTRPCRouter, publicProcedure } from '../trpc'
 
 export const ckbRouter = createTRPCRouter({
-  liveMetrics: publicProcedure.query(() => {
-    // TODO: mock data, need to implement
+  // TODO: need cache?
+  liveMetrics: publicProcedure.query(async () => {
+    const { data: cellCountRecords } = await explorerService.fetchStatisticCellCount()
+    const lastCellCountRecord = cellCountRecords[cellCountRecords.length - 1]
+    const liveCells = BigInt(lastCellCountRecord?.attributes.liveCellsCount ?? '0')
+
+    const { data: totalSupplyRecords } = await explorerService.fetchStatisticTotalSupply()
+    const lastTotalSupplyRecord = totalSupplyRecords[totalSupplyRecords.length - 1]
+
+    const stored = !lastTotalSupplyRecord
+      ? 0n
+      : // The decimal places are discarded here, but it shouldn't have any effect?
+        BigInt(lastTotalSupplyRecord.attributes.burnt.replace(/\.\d*/, '')) +
+        BigInt(lastTotalSupplyRecord.attributes.circulatingSupply.replace(/\.\d*/, '')) +
+        BigInt(lastTotalSupplyRecord.attributes.lockedCapacity.replace(/\.\d*/, ''))
+
+    const { data: nervosDao } = await explorerService.fetchNervosDao()
+    const daoDeposit = BigInt(nervosDao.attributes.totalDeposit)
+
     return {
-      liveCells: 8263135529.34,
-      stored: 42263135529,
-      dao: 9263009336.34,
+      liveCells,
+      stored,
+      daoDeposit,
     }
   }),
 })
