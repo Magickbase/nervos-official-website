@@ -10,6 +10,7 @@ export type StyledLinkType = {
   isSpaced?: boolean
   isColored?: boolean
   isUnderlined?: boolean
+  isIconed?: boolean
   className?: string
 }
 
@@ -18,6 +19,7 @@ export const StyledLink: FC<StyledLinkType> = ({
   isSpaced = false,
   isColored = false,
   isUnderlined = false,
+  isIconed = false,
   className,
 }) => {
   const { label, url = '' } = linkData
@@ -34,7 +36,7 @@ export const StyledLink: FC<StyledLinkType> = ({
           <Link href="/">{linkLabel}</Link>
         )}
       </span>
-      <ArrowIcon className={clsx(styles.arrowIcon)} />
+      {isIconed ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}
     </div>
   )
 }

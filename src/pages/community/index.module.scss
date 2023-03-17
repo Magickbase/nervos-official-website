@@ -1,0 +1,42 @@
+@import 'src/styles/variables.module';
+@import 'src/components/Header/index.module';
+
+.blendModeHeader {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+.footer {
+  background: var(--colorPrimaryBg);
+}
+
+.icons {
+  transform: translate(345px, 80px);
+
+  svg > path,
+  circle {
+    stroke: var(--colorPrimary);
+  }
+}
+
+.involvedItemLink {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+}
+
+.involvedItemsWrap {
+  margin-bottom: 40px;
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .icons {
+    position: absolute;
+    top: 380px;
+    left: 24px;
+    transform: unset;
+  }
+}
