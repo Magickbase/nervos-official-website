@@ -3,20 +3,32 @@
 $linkColor: #5700ff;
 
 .container {
+  --paddingH: 120px;
+
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 var(--paddingH);
   color: #000;
+
+  .header {
+    position: sticky;
+    top: 90px;
+    z-index: 1;
+    background: #fff;
+  }
 
   .banner {
     margin-bottom: 20px;
-    padding: 80px 0 20px;
+    padding: 50px 0 20px;
     font-weight: 700;
     font-size: 1.875rem;
     border-bottom: 0.5px solid #6a7171;
   }
 
   .back {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
     color: #6a7171;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -65,7 +77,8 @@ $linkColor: #5700ff;
 
   .content {
     display: flex;
-    margin-top: 88px;
+    margin-top: 120px;
+    padding-left: 100px;
 
     a {
       color: $linkColor;
@@ -120,7 +133,11 @@ $linkColor: #5700ff;
     }
 
     aside {
+      position: sticky;
+      top: 300px;
       width: 440px;
+      height: min-content;
+      padding-bottom: 120px;
       padding-left: 130px;
 
       a {
@@ -186,7 +203,7 @@ $linkColor: #5700ff;
     }
   }
   @media screen and (max-width: 1080px) {
-    padding: 0 26px;
+    --paddingH: 26px;
 
     .back {
       display: none;

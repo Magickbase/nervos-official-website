@@ -40,16 +40,15 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
         <title>{t('blogs')}</title>
       </Head>
       <Page>
+        <div className={styles.banner}>
+          <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
+          {t('blog_banner')}
+        </div>
         <div className={styles.container}>
-          <div className={styles.banner}>
-            <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
-            <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
-            <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
-            <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
-            <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
-            {t('blog_banner')}
-          </div>
-
           <div className={styles.popularTitle}>
             <img src="/images/hot.svg" alt="hot" />
             {t('popular_posts')}

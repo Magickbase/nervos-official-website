@@ -49,9 +49,11 @@ const Blog = ({ blog, recents, categories }: Props) => {
         <div>Loading…</div>
       ) : (
         <div className={styles.container}>
-          <div className={styles.banner}>{t('blog_banner')}</div>
-          <div className={styles.back} onClick={handleBack}>
-            {t('back')}
+          <div className={styles.header}>
+            <div className={styles.banner}>{t('blog_banner')}</div>
+            <div className={styles.back} onClick={handleBack}>
+              {t('back')}
+            </div>
           </div>
           <div className={styles.content}>
             <article>
