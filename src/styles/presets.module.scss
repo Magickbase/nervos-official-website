@@ -7,6 +7,12 @@
   // TODO: Should be calculated automatically with sass via --colorSecond
   --colorSecondTuple: 168 255 00;
   --footerInputBackground: #141717;
+  --newsColor: #98ffff;
+  --guideAndTutorialsColor: #ff90d9;
+  --learnResourceColor: #b2ffba;
+  --releaseAndUpdateColor: #ffe99b;
+  --eventsColor: #bb9bff;
+  --colorPagination: #5700ff;
 }
 
 .themeLight,
@@ -16,4 +22,10 @@
   --colorSecondTuple: 87 00 255;
   --colorSecond: #5700ff;
   --footerInputBackground: #e7eaeb;
+  --newsColor: #98ffff;
+  --guideAndTutorialsColor: #ff90d9;
+  --learnResourceColor: #b2ffba;
+  --releaseAndUpdateColor: #ffe99b;
+  --eventsColor: #bb9bff;
+  --colorPagination: #18efb1;
 }

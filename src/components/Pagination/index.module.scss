@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  margin: 60px auto 100px;
+  color: #000;
+  user-select: none;
+
+  .indicator {
+    margin: 0 12px;
+    font-size: 0.875rem;
+
+    &[data-active='true'] {
+      color: var(--colorPagination);
+    }
+  }
+
+  .prev {
+    margin-right: 54px;
+  }
+
+  .next {
+    margin-left: 54px;
+    transform: rotate(0.5turn);
+  }
+
+  .prev,
+  .next {
+    display: flex;
+    align-items: center;
+
+    &[data-disabled='true'] {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+  }
+}
