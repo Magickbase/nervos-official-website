@@ -135,7 +135,7 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
-  const pageNo = +(query.page ?? '1')
+  const pageNo = Number(query.page ?? '1')
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
 
   const blogs = getAllBlogs(sortBy, [

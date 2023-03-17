@@ -1,3 +1,4 @@
+import type { FC } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from './index.module.scss'
@@ -5,10 +6,10 @@ import styles from './index.module.scss'
 const INDICATOR_COUNT = 5
 const SIBLING_COUNT = (INDICATOR_COUNT - 1) / 2
 
-const Pagination = ({ pageCount }: Record<'pageCount', number>) => {
+const Pagination: FC<{ pageCount: number }> = ({ pageCount }) => {
   const { query, pathname } = useRouter()
 
-  const page = +(query.page ?? '1')
+  const page = Number(query.page ?? '1')
   const prev = `${page - 1}`
   const next = `${page + 1}`
   const getHref = (p: string) => `${pathname}?${new URLSearchParams({ ...query, page: p }).toString()}`
