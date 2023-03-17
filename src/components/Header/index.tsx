@@ -1,6 +1,6 @@
-import { ComponentProps, FC, useMemo } from 'react'
+import { ComponentProps, FC, Fragment, useMemo } from 'react'
 import clsx from 'clsx'
-import { Popover, Portal } from '@headlessui/react'
+import { Popover, Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './index.module.scss'
@@ -38,7 +38,7 @@ export const Header: FC<HeaderProps> = props => {
           // so switching to other languages is temporarily disabled.
           { name: '中文', englishName: 'Chinese', localeName: 'zh', disabled: true },
           { name: '한국어', englishName: 'Korean', localeName: 'ko', disabled: true },
-          { name: 'Türkçe', englishName: 'Turkish', localeName: 'tr', disabled: true },
+          null,
         ]}
       />
     </div>
@@ -69,129 +69,139 @@ const MenuPopover: FC = () => {
 
           {/* Use Portal to prevent being influenced by mix-blend-mode */}
           <Portal>
-            <Popover.Panel className={styles.menuPopoverContent}>
-              <div className={styles.menu}>
-                <Link href="/developers" className={styles.title}>
-                  <CodeIcon />
-                  Developers
-                  <ArrowIcon />
-                </Link>
-                <div className={styles.links}>
-                  <Link
-                    href="https://docs.nervos.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Docs <ObliqueArrowIcon />
+            <Transition
+              as={Fragment}
+              enter={styles.enter}
+              enterFrom={styles.enterFrom}
+              enterTo={styles.enterTo}
+              leave={styles.leave}
+              leaveFrom={styles.leaveFrom}
+              leaveTo={styles.leaveTo}
+            >
+              <Popover.Panel className={styles.menuPopoverContent}>
+                <div className={styles.menu}>
+                  <Link href="/developers" className={styles.title}>
+                    <CodeIcon />
+                    Developers
+                    <ArrowIcon />
                   </Link>
-                  <Link
-                    href="https://github.com/nervosnetwork/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Github <ObliqueArrowIcon />
-                  </Link>
-                  <Link
-                    href="https://explorer.nervos.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Explorer <ObliqueArrowIcon />
-                  </Link>
+                  <div className={styles.links}>
+                    <Link
+                      href="https://docs.nervos.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Docs <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://github.com/nervosnetwork/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Github <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://explorer.nervos.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Explorer <ObliqueArrowIcon />
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.menu}>
-                <Link href="/community" className={styles.title}>
-                  <CommunityIcon />
-                  Community
-                  <ArrowIcon />
-                </Link>
-                <div className={styles.links}>
-                  <Link
-                    href="https://dao.ckb.community/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    <div>
-                      Community
-                      <br />
-                      Fund DAO
-                    </div>
-                    <ObliqueArrowIcon />
+                <div className={styles.menu}>
+                  <Link href="/community" className={styles.title}>
+                    <CommunityIcon />
+                    Community
+                    <ArrowIcon />
                   </Link>
-                  <Link
-                    href="https://talk.nervos.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Forum <ObliqueArrowIcon />
-                  </Link>
-                  <Link
-                    href="https://github.com/nervosnetwork/rfcs"
-                    className={styles.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    RFCs <ObliqueArrowIcon />
-                  </Link>
+                  <div className={styles.links}>
+                    <Link
+                      href="https://dao.ckb.community/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      <div>
+                        Community
+                        <br />
+                        Fund DAO
+                      </div>
+                      <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://talk.nervos.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Forum <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://github.com/nervosnetwork/rfcs"
+                      className={styles.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      RFCs <ObliqueArrowIcon />
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.menu}>
-                <Link href="/ckbpage" className={styles.title}>
-                  <CircleIcon />
-                  CKB <span className={styles.ckbHint}>(Token)</span>
-                  <ArrowIcon />
-                </Link>
-                <div className={styles.links}>
-                  <Link href="mining" className={styles.link}>
-                    Mining <ThinArrowIcon />
+                <div className={styles.menu}>
+                  <Link href="/ckbpage" className={styles.title}>
+                    <CircleIcon />
+                    CKB <span className={styles.ckbHint}>(Token)</span>
+                    <ArrowIcon />
                   </Link>
-                  <Link href="/wallets" className={styles.link}>
-                    Wallets <ThinArrowIcon />
-                  </Link>
+                  <div className={styles.links}>
+                    <Link href="/mining" className={styles.link}>
+                      Mining <ThinArrowIcon />
+                    </Link>
+                    <Link href="/wallets" className={styles.link}>
+                      Wallets <ThinArrowIcon />
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.menu}>
-                <Link className={styles.title} href="/learn">
-                  <LearnIcon />
-                  Learn
-                  <ArrowIcon />
-                </Link>
-                <div className={styles.links}>
-                  {/* not ready yet */}
-                  {/* <div className={styles.link}> */}
-                  {/*   Knowledge Base <ThinArrowIcon /> */}
-                  {/* </div> */}
-                  <Link href="/blogs" className={styles.link}>
-                    Blog <ObliqueArrowIcon />
+                <div className={styles.menu}>
+                  <Link className={styles.title} href="/learn">
+                    <LearnIcon />
+                    Learn
+                    <ArrowIcon />
                   </Link>
-                  <Link
-                    href="https://medium.com/nervosnetwork"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Medium <ObliqueArrowIcon />
-                  </Link>
-                  <Link
-                    href="https://www.youtube.com/c/NervosNetwork"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.link}
-                  >
-                    Youtube <ObliqueArrowIcon />
-                  </Link>
+                  <div className={styles.links}>
+                    {/* not ready yet */}
+                    {/* <div className={styles.link}> */}
+                    {/*   Knowledge Base <ThinArrowIcon /> */}
+                    {/* </div> */}
+                    <Link href="/blogs" className={styles.link}>
+                      Blog <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://medium.com/nervosnetwork"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Medium <ObliqueArrowIcon />
+                    </Link>
+                    <Link
+                      href="https://www.youtube.com/c/NervosNetwork"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      Youtube <ObliqueArrowIcon />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </Popover.Panel>
+              </Popover.Panel>
+            </Transition>
           </Portal>
         </>
       )}
@@ -200,12 +210,12 @@ const MenuPopover: FC = () => {
 }
 
 const LanguagePopover: FC<{
-  languages: {
+  languages: ({
     name: string
     englishName?: string
     localeName: string
     disabled?: boolean
-  }[]
+  } | null)[]
 }> = props => {
   const router = useRouter()
   const { pathname, query } = router
@@ -221,11 +231,16 @@ const LanguagePopover: FC<{
           {/* Use Portal to prevent being influenced by mix-blend-mode */}
           <Portal>
             <Popover.Panel className={styles.languagePopoverContent}>
-              {props.languages.map(language =>
-                language.disabled ? (
-                  <div key={language.name} className={clsx(styles.language, styles.disabled)} title="Coming soon">
-                    {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
-                    <div className={styles.name}>{language.name}</div>
+              {props.languages.map((language, idx) =>
+                language == null ? (
+                  <div key={idx} className={clsx(styles.language, styles.placeholder)} />
+                ) : language.disabled ? (
+                  <div key={language.name} className={clsx(styles.language, styles.disabled)}>
+                    <div>
+                      {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                      <div className={styles.name}>{language.name}</div>
+                    </div>
+                    <div className={styles.tip}>Coming soon</div>
                   </div>
                 ) : (
                   <Link
@@ -235,8 +250,10 @@ const LanguagePopover: FC<{
                     locale={language.localeName}
                     onClick={() => close()}
                   >
-                    {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
-                    <div className={styles.name}>{language.name}</div>
+                    <div>
+                      {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                      <div className={styles.name}>{language.name}</div>
+                    </div>
                   </Link>
                 ),
               )}

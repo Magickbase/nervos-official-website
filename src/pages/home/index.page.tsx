@@ -321,31 +321,61 @@ function useGameMouseHandler(gameControllerRef?: RefObject<GameController>) {
       },
     })
 
-    const onDragStart = (e: HTMLElementEventMap['pointerdown'] | HTMLElementEventMap['touchstart']) => {
-      // This is the allowed move behavior, and to avoid triggering the text selection style, here preventDefault.
-      if (e.currentTarget === e.target) e.preventDefault()
+    const preventTriggerInteract = (e: HTMLElementEventMap['pointerdown'] | HTMLElementEventMap['touchstart']) => {
       // The InteractEvent received by move listener does not contain the original event,
       // so there is no way to tell if this is a text selection,
       // so in order to cancel the move, we have to stopPropagation here to
       // prevent the event from being passed to interactable and then triggering the move.
-      else e.stopPropagation()
+      // Since interactable internally listens to the pointerdown event,
+      // it must stop bubbling in pointerdown and not in mousedown.
+      if (e.currentTarget !== e.target) e.stopPropagation()
     }
-    dragger.addEventListener('pointerdown', onDragStart)
-    dragger.addEventListener('touchstart', onDragStart)
+    dragger.addEventListener('pointerdown', preventTriggerInteract)
+    dragger.addEventListener('touchstart', preventTriggerInteract)
+
+    const preventTextSelect = (e: HTMLElementEventMap['mousedown'] | HTMLElementEventMap['touchstart']) => {
+      // This is the allowed move behavior, and to avoid triggering the text selection style, here preventDefault.
+      // This preventDefault cannot be executed in pointerdown, otherwise the mousedown event will not be triggered,
+      // and the `useOutsideClick` in `@headlessui/react/Popover` is dependent on mousedown.
+      if (e.currentTarget === e.target) e.preventDefault()
+    }
+    dragger.addEventListener('mousedown', preventTextSelect)
+    dragger.addEventListener('touchstart', preventTextSelect)
 
     const onContextMenu = (e: HTMLElementEventMap['contextmenu']) => {
-      if (e.target === draggerRef.current) {
-        e.preventDefault()
-        gameControllerRef?.current?.onExternalMouseControllerEvent(e)
-      }
+      if (e.target !== draggerRef.current) return
+      e.preventDefault()
     }
     dragger.addEventListener('contextmenu', onContextMenu)
 
+    const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
+      if (e.target !== draggerRef.current) return
+      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
+    }
+    dragger.addEventListener('mousedown', onMouseDown)
+
+    const onMouseMove = (e: HTMLElementEventMap['mousemove']) => {
+      if (e.target !== draggerRef.current) return
+      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
+    }
+    dragger.addEventListener('mousemove', onMouseMove)
+
+    const onMouseUp = (e: HTMLElementEventMap['mouseup']) => {
+      if (e.target !== draggerRef.current) return
+      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
+    }
+    dragger.addEventListener('mouseup', onMouseUp)
+
     return () => {
       interactable.unset()
-      dragger.removeEventListener('pointerdown', onDragStart)
-      dragger.removeEventListener('touchstart', onDragStart)
+      dragger.removeEventListener('pointerdown', preventTriggerInteract)
+      dragger.removeEventListener('touchstart', preventTriggerInteract)
+      dragger.removeEventListener('mousedown', preventTextSelect)
+      dragger.removeEventListener('touchstart', preventTextSelect)
       dragger.removeEventListener('contextmenu', onContextMenu)
+      dragger.removeEventListener('mousedown', onMouseDown)
+      dragger.removeEventListener('mousemove', onMouseMove)
+      dragger.removeEventListener('mouseup', onMouseUp)
     }
   }, [gameControllerRef])
 

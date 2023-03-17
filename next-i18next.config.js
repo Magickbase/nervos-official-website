@@ -11,7 +11,7 @@ const path = require('path')
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh', 'ko', 'tr'],
+    locales: ['en', 'zh', 'ko'],
     // TODO: This is because there is currently no full i18n translation support,
     // so switching to other languages is temporarily disabled.
     localeDetection: false,
