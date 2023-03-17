@@ -31,7 +31,7 @@
   .left,
   .right {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     filter: invert(1);
     mix-blend-mode: darken;
   }
