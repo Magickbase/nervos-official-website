@@ -57,13 +57,23 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
           <div className={styles.populars}>
             {populars.map(blog => {
               return (
-                <Link href={`/blogs/${blog.slug}`} key={blog.title} className={styles.popular}>
+                <Link
+                  href={blog.link || `/blogs/${blog.slug}`}
+                  key={blog.title}
+                  className={styles.popular}
+                  target={blog.link ? '_blank' : '_self'}
+                >
                   <div className={styles.introduction}>
                     <div>
                       <div className={styles.title}>{blog.title}</div>
                       <div className={styles.excerpt}>{blog.excerpt}</div>
                     </div>
-                    <img src={blog.coverImage} alt="cover" loading="lazy" data-type={blog.category} />
+                    <img
+                      src={blog.coverImage}
+                      alt="cover"
+                      loading="lazy"
+                      data-type={blog.category.split(',')[0]?.toLowerCase()}
+                    />
                   </div>
                   <div className={styles.category}>
                     <Category category={blog.category} />
@@ -75,10 +85,12 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
                       <span className={styles.separator}>·</span>
                       <time>{formatTime(new Date(blog.date))}</time>
                     </div>
-                    <div>
-                      <img src="/images/clock.svg" className={styles.clock} />
-                      <span>{blog.readingTime} mins</span>
-                    </div>
+                    {+blog.readingTime ? (
+                      <div>
+                        <img src="/images/clock.svg" className={styles.clock} />
+                        <span>{blog.readingTime} mins</span>
+                      </div>
+                    ) : null}
                   </div>
                 </Link>
               )
@@ -90,7 +102,7 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
             {categories.map(category => (
               <Link
                 key={category}
-                href={`/blogs?sort_by=${category}`}
+                href={`/blogs?sort_by=${encodeURIComponent(category)}`}
                 className={styles.category}
                 data-selected={sort_by === category}
               >
@@ -109,7 +121,12 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
 
           <div className={styles.list}>
             {blogs.map(blog => (
-              <Link href={`/blogs/${blog.slug}`} key={blog.title} className={styles.blog}>
+              <Link
+                href={blog.link || `/blogs/${blog.slug}`}
+                key={blog.title}
+                className={styles.blog}
+                target={blog.link ? '_blank' : '_self'}
+              >
                 <div className={styles.title}>{blog.title}</div>
                 <div className={styles.excerpt}>{blog.excerpt}</div>
                 <img src={blog.coverImage} alt="cover" loading="lazy" className={styles.cover} />
@@ -121,8 +138,12 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
                   <span>Nervos</span>
                   <span className={styles.separator}>·</span>
                   <time>{formatTime(new Date(blog.date))}</time>
-                  <img src="/images/clock.svg" className={styles.clock} />
-                  <span>{blog.readingTime} mins</span>
+                  {+blog.readingTime ? (
+                    <>
+                      <img src="/images/clock.svg" className={styles.clock} />
+                      <span>{blog.readingTime} mins</span>
+                    </>
+                  ) : null}
                 </div>
               </Link>
             ))}
@@ -147,8 +168,9 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
     'category',
     'popular',
     'readingTime',
+    'link',
   ])
-  const populars = blogs.filter(blog => blog.category?.includes('popular'))
+  const populars = blogs.filter(blog => blog.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(blogs)
   const pageCount = Math.ceil(blogs.length / PAGE_SIZE)
   const lng = await serverSideTranslations(locale ?? 'en', ['blogs'])

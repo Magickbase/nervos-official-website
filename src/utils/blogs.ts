@@ -76,4 +76,7 @@ export const getAllBlogs = (sortBy = 'all', fields: string[] = []) => {
 }
 
 export const getCategoriesFromBlogs = (blogs: Array<Record<string, string>>) =>
-  [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())].sort()
+  [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())]
+    .filter(v => v)
+    .map(v => v.toLowerCase())
+    .sort()

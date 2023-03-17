@@ -4,9 +4,10 @@ import styles from './index.module.scss'
 
 const Category: FC<{ category: string }> = ({ category }) => {
   const [t] = useTranslation(['blogs'])
+  const c = (category.split(',')[0] ?? '').toLowerCase()
   return (
-    <div data-type={category} className={styles.container}>
-      {t(category)}
+    <div data-type={c} className={styles.container}>
+      {t(c)}
     </div>
   )
 }

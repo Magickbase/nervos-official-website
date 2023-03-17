@@ -21,6 +21,7 @@ export type BlogType = {
   category: string
   popular: string
   readingTime: string
+  link?: string
 }
 
 type Props = {
@@ -97,7 +98,7 @@ const Blog = ({ blog, recents, categories }: Props) => {
               <div className={styles.title}>{`${t('categories')}:`}</div>
               <div className={styles.category}>
                 {categories.map(c => (
-                  <Link key={c} href={`/blogs?sort_by=${c}`}>
+                  <Link key={c} href={`/blogs?sort_by=${encodeURIComponent(c)}`}>
                     {t(c)}
                   </Link>
                 ))}
@@ -146,6 +147,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     'popular',
     'readingTime',
   ])
+
   const content = await markdownToHtml(blog.content || '')
   const lng = await serverSideTranslations(locale ?? 'en', ['blogs'])
 

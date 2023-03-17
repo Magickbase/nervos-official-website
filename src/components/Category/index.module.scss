@@ -23,11 +23,15 @@
     background-color: var(--learnResourceColor);
   }
 
-  &[data-type='release & update'] {
-    background-color: var(--releaseAndUpdateColor);
+  &[data-type='releases & updates'] {
+    background-color: var(--releasesAndUpdateColor);
   }
 
   &[data-type='events'] {
     background-color: var(--eventsColor);
+  }
+
+  &[data-type='guides & tutorials'] {
+    background-color: var(--guideAndTutorialsColor);
   }
 }
