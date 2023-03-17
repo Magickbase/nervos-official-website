@@ -1,9 +1,10 @@
+import { useEffect } from 'react'
 import { type AppType } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import localFont from 'next/font/local'
 import { api } from '../utils/api'
 import 'swiper/css'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 const fontArticulatCF = localFont({
   src: [
@@ -16,8 +17,16 @@ const fontArticulatCF = localFont({
 })
 
 const App: AppType = ({ Component, pageProps }) => {
+  useEffect(() => {
+    document.body.classList.add(fontArticulatCF.className)
+    return () => document.body.classList.remove(fontArticulatCF.className)
+  }, [])
+
   return (
-    <main className={fontArticulatCF.className}>
+    <main
+      // Here as redundancy in server-side rendering.
+      className={fontArticulatCF.className}
+    >
       <Component {...pageProps} />
     </main>
   )

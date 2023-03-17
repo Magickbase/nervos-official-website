@@ -1,0 +1,27 @@
+@import '../../../styles/presets.module';
+@import '../../../styles/variables.module';
+
+.descriptionContent {
+  min-width: 1200px;
+  margin-bottom: 60px;
+  padding: 60px 120px;
+  color: var(--colorPrimary);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  background-color: var(--colorPrimaryBg);
+  border-radius: 35px;
+  filter: invert(1);
+
+  @media (max-width: $mobileBreakPoint) {
+    min-width: unset;
+    margin: 0 24px;
+    padding: 60px 40px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.03em;
+    border-radius: 35px;
+  }
+}

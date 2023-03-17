@@ -1,0 +1,41 @@
+@import '../../styles/presets.module';
+@import '../../styles/variables.module';
+
+.styledLink {
+  display: flex;
+  align-items: center;
+  color: var(--colorPrimary);
+
+  svg path {
+    stroke: var(--colorPrimary);
+  }
+
+  .arrowIcon {
+    path {
+      fill: unset;
+    }
+  }
+
+  &[data-colored='true'] {
+    color: var(--colorSecond);
+
+    svg path {
+      stroke: var(--colorSecond);
+    }
+  }
+
+  &[data-underlined='true'] {
+    text-decoration: underline;
+  }
+
+  .label {
+    &[data-spaced='true'] {
+      &::after {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        content: '';
+      }
+    }
+  }
+}

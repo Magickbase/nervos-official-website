@@ -1,0 +1,39 @@
+@import 'src/styles/variables.module';
+@import 'src/components/Header/index.module';
+
+.blendModeHeader {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+.footer {
+  background: var(--colorPrimaryBg);
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  gap: 4px;
+  transform: translate(-320px, 98px);
+
+  .quoteIcon {
+    grid-column-start: 2;
+  }
+
+  svg > path,
+  circle {
+    stroke: var(--colorPrimary);
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .icons {
+    position: absolute;
+    top: 380px;
+    left: 24px;
+    transform: unset;
+  }
+}

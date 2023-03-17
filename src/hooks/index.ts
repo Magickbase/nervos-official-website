@@ -1,5 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, DependencyList, RefObject } from 'react'
+import { useResizeDetector } from 'react-resize-detector'
 import cssVars from '../styles/variables.module.scss'
+import { useMemoizedFn } from './useMemoizedFn'
+
+export * from './useMemoizedFn'
 
 /**
  * copied from https://usehooks-ts.com/react-hook/use-media-query
@@ -45,4 +49,101 @@ export const useIsMobile = () => {
   const { mobileBreakPoint } = cssVars
   if (mobileBreakPoint == null) throw new Error('Incorrect css variable')
   return useMediaQuery(`(max-width: ${mobileBreakPoint})`)
+}
+
+export function useDevicePixelRatio() {
+  const [pixelRatio, setPixelRatio] = useState(globalThis.devicePixelRatio ?? 1)
+
+  const matched = useMediaQuery(`(resolution: ${pixelRatio}dppx)`)
+  useEffect(() => {
+    if (matched) return
+    setPixelRatio(globalThis.devicePixelRatio ?? 1)
+  }, [matched])
+
+  return pixelRatio
+}
+
+export function useBoolean(initialState: boolean): [
+  boolean,
+  {
+    on: () => void
+    off: () => void
+    toggle: (newState?: boolean) => void
+  },
+] {
+  const [state, setState] = useState(initialState)
+
+  const on = useCallback(() => setState(true), [])
+  const off = useCallback(() => setState(false), [])
+  const toggle = useCallback((newState?: boolean) => {
+    setState(oldState => (newState != null ? newState : !oldState))
+  }, [])
+
+  return [
+    state,
+    {
+      on,
+      off,
+      toggle,
+    },
+  ]
+}
+
+export const useInterval = (callback: () => void, delay: number, deps: DependencyList) => {
+  const wrappedCallback = useMemoizedFn(callback)
+
+  useEffect(() => {
+    const listener = setInterval(wrappedCallback, delay)
+    return () => clearInterval(listener)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [delay, wrappedCallback, ...deps])
+}
+
+export function useElementSize(
+  ref: RefObject<HTMLElement>,
+  callback?: (size: { width: number; height: number }) => void | (() => void),
+) {
+  const { width: resizedWidth, height: resizedHeight } = useResizeDetector({
+    targetRef: ref,
+  })
+  const width = resizedWidth ?? ref.current?.clientWidth ?? null
+  const height = resizedHeight ?? ref.current?.clientHeight ?? null
+
+  const wrappedCallback = useMemoizedFn(callback)
+  useEffect(() => {
+    if (ref.current == null) return
+    const width = resizedWidth ?? ref.current.clientWidth
+    const height = resizedHeight ?? ref.current.clientHeight
+    // TODO: called only when the last value is different.
+    wrappedCallback({ width, height })
+  }, [resizedWidth, resizedHeight, ref, wrappedCallback])
+
+  return { width, height }
+}
+
+export function useElementIntersecting(
+  ref: RefObject<HTMLElement>,
+  opts: IntersectionObserverInit = {},
+  defaultValue = false,
+) {
+  const [isIntersecting, setIntersecting] = useState(defaultValue)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry == null) return
+      setIntersecting(entry.isIntersecting)
+    }, opts)
+    observer.observe(el)
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      observer.unobserve(el)
+      observer.disconnect()
+    }
+  }, [opts, ref])
+
+  return isIntersecting
 }
