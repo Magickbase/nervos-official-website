@@ -18,7 +18,7 @@ export const Footer: FC<FooterProps> = props => {
         { label: 'Mining', url: '/mining' },
         { label: 'Wallets', url: '/wallets' },
         { label: 'Wiki', url: 'https://www.wikiwand.com/en/Nervos_Network' },
-        { label: 'Press Kit', url: '/' },
+        { label: 'Press Kit', url: 'https://projects.invisionapp.com/boards/WK3VAZJUYCM/' },
       ],
     },
     {
@@ -34,9 +34,9 @@ export const Footer: FC<FooterProps> = props => {
       links: [
         { label: 'Nervos Foundation', url: 'https://www.nervos.org/' },
         { label: 'Cryptape', url: 'https://cryptape.com/' },
-        { label: 'Godwoken', url: 'https://twitter.com/GodwokenRises' },
+        { label: 'Godwoken', url: 'https://godwoken.com/' },
         { label: 'Nervina Labs', url: 'https://nervina.io/' },
-        { label: 'Tunnel Vision Labs', url: '/' },
+        { label: 'Tunnel Vision Labs', url: 'https://tunnelvisionlabs.xyz/' },
       ],
     },
     {
@@ -50,7 +50,8 @@ export const Footer: FC<FooterProps> = props => {
     {
       title: 'LEARN',
       links: [
-        { label: 'Knowledge Base', url: '/' },
+        /* not ready yet */
+        // { label: 'Knowledge Base', url: '/' },
         { label: 'Blog', url: '/blogs' },
         { label: 'Medium', url: 'https://medium.com/nervosnetwork' },
         { label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' },

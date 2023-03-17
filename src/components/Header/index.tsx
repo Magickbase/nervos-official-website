@@ -166,9 +166,10 @@ const MenuPopover: FC = () => {
                   <ArrowIcon />
                 </Link>
                 <div className={styles.links}>
-                  <div className={styles.link}>
-                    Knowledge Base <ThinArrowIcon />
-                  </div>
+                  {/* not ready yet */}
+                  {/* <div className={styles.link}> */}
+                  {/*   Knowledge Base <ThinArrowIcon /> */}
+                  {/* </div> */}
                   <Link href="/blogs" className={styles.link}>
                     Blog <ObliqueArrowIcon />
                   </Link>
