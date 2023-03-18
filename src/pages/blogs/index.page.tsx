@@ -41,10 +41,10 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
       </Head>
       <Page>
         <div className={styles.banner}>
-          <img src="/images/blog_banner_left.svg" alt="cell" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_left.svg" alt="cell" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_right.svg" alt="cell" loading="lazy" className={styles.right} />
-          <img src="/images/blog_banner_right.svg" alt="cell" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_left.png" alt="cell" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_left.png" alt="cell" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_right.png" alt="cell" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_right.png" alt="cell" loading="lazy" className={styles.right} />
           <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
           <span>{t('blog_banner')}</span>
         </div>

@@ -81,14 +81,16 @@
     }
   }
   @media screen and (max-width: 1280px) {
-    .left,
-    .right {
-      height: 400px;
-    }
-
     .left {
       top: 295px;
       left: -164px;
+      width: 362px;
+      height: 400px;
+    }
+
+    .right {
+      width: 440px;
+      height: 400px;
     }
   }
   @media screen and (max-width: 980px) {
@@ -103,11 +105,11 @@
 
     .left {
       top: 380px;
-      left: -200px;
+      left: -142px;
     }
 
     .right {
-      right: -150px;
+      right: -83px;
     }
   }
 
@@ -123,12 +125,12 @@
     }
 
     .left {
-      left: -215px;
+      left: -147px;
     }
 
     .right {
       top: 40px;
-      right: -200px;
+      right: -122px;
     }
   }
 }
