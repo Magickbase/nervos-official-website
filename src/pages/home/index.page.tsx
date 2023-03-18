@@ -349,7 +349,7 @@ function useGameMouseHandler(gameControllerRef?: RefObject<GameController>) {
     dragger.addEventListener('contextmenu', onContextMenu)
 
     const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
-      if (e.target !== draggerRef.current) return
+      if (e.target !== draggerRef.current || e.button !== 2) return
       gameControllerRef?.current?.onExternalMouseControllerEvent(e)
     }
     dragger.addEventListener('mousedown', onMouseDown)
@@ -361,7 +361,7 @@ function useGameMouseHandler(gameControllerRef?: RefObject<GameController>) {
     dragger.addEventListener('mousemove', onMouseMove)
 
     const onMouseUp = (e: HTMLElementEventMap['mouseup']) => {
-      if (e.target !== draggerRef.current) return
+      if (e.target !== draggerRef.current || e.button !== 2) return
       gameControllerRef?.current?.onExternalMouseControllerEvent(e)
     }
     dragger.addEventListener('mouseup', onMouseUp)
