@@ -48,6 +48,16 @@ const config = {
 
     return config
   },
+  redirects: async () => {
+    const ARCHIVE_URL = 'https://www.nervos.org'
+    return [
+      {
+        source: '/blog/:slug',
+        destination: `${ARCHIVE_URL}/blog/:slug`,
+        permanent: false,
+      },
+    ]
+  },
 }
 
 /**

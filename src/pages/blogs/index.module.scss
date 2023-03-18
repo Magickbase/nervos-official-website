@@ -337,13 +337,17 @@
   color: #000;
 
   .title {
+    display: -webkit-box;
     height: 38px;
     margin-bottom: 7px;
     padding-bottom: 12px;
+    overflow: hidden;
     font-weight: 600;
     font-size: 14px;
     line-height: 1.3em;
     border-bottom: 1px solid #000;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .excerpt {
