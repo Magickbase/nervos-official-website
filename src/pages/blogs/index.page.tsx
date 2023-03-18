@@ -41,12 +41,12 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
       </Head>
       <Page>
         <div className={styles.banner}>
-          <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_left.svg" alt="blog" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
-          <img src="/images/blog_banner_right.svg" alt="blog" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_left.svg" alt="cell" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_left.svg" alt="cell" loading="lazy" className={styles.left} />
+          <img src="/images/blog_banner_right.svg" alt="cell" loading="lazy" className={styles.right} />
+          <img src="/images/blog_banner_right.svg" alt="cell" loading="lazy" className={styles.right} />
           <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
-          {t('blog_banner')}
+          <span>{t('blog_banner')}</span>
         </div>
         <div className={styles.container}>
           <div className={styles.popularTitle}>
@@ -111,7 +111,7 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
             ))}
           </div>
 
-          <select className={styles.categorySelect} onChange={handleSortChange}>
+          <select className={styles.categorySelect} onChange={handleSortChange} value={sort_by}>
             {categories.map(category => (
               <option key={category} value={category}>
                 {t(category)}
