@@ -54,7 +54,7 @@ const config = {
       {
         source: '/blog/:slug',
         destination: `${ARCHIVE_URL}/blog/:slug`,
-        permanent: true,
+        permanent: false,
       },
     ]
   },
