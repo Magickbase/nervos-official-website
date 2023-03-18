@@ -18,14 +18,11 @@ export type FooterLinkGroupProps = {
 export const FooterLinkGroup: React.FC<FooterLinkGroupProps> = props => {
   const { title, links, ...restProps } = props
 
-  const LinkNav = ({ label, url = '', className }: LinkNavProps) =>
-    url.startsWith('http') ? (
-      <a href={url} target="_self" className={className}>
-        {label}
-      </a>
-    ) : (
-      <Link href="/">{label}</Link>
-    )
+  const LinkNav = ({ label, url = '', className }: LinkNavProps) => (
+    <Link href={url} target={url.startsWith('/') ? '_self' : '_blank'} className={className}>
+      {label}
+    </Link>
+  )
 
   return (
     <div className={clsx(styles.footerLinkGroup)} {...restProps}>

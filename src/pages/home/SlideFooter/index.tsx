@@ -1,12 +1,15 @@
-import { ComponentProps, FC, Fragment, RefObject, useCallback, useMemo, useRef, useState } from 'react'
+import { ComponentProps, FC, Fragment, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { Dialog } from '@headlessui/react'
+import { useObservableState } from 'observable-hooks'
+import { of } from 'rxjs'
 import { GameController, useGameKeyboardHandler } from '../../../components/ConwayGameOfLife'
 import { formatNumber } from '../../../utils/number'
 import { api } from '../../../utils/api'
 import styles from './index.module.scss'
 import PlayIcon from './play.svg'
+import PauseIcon from './pause.svg'
 import BackIcon from './back.svg'
 import StopIcon from './stop.svg'
 import PlusIcon from './plus.svg'
@@ -15,15 +18,14 @@ import RandomizeIcon from './randomize.svg'
 import InfoIcon from './info.svg'
 import { useInterval } from '../../../hooks'
 
-export const SlideFooter: FC<
-  ComponentProps<'div'> & { isFirstSlide?: boolean; gameControllerRef: RefObject<GameController> }
-> = props => {
-  const { children, isFirstSlide, gameControllerRef, className, ...divProps } = props
+export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObject<GameController> }> = props => {
+  const { children, gameControllerRef, className, ...divProps } = props
   const { t } = useTranslation('home', { keyPrefix: 'slide_footer' })
 
   const ref = useRef<HTMLDivElement>(null)
 
   const [autoMode, setAutoMode] = useState(true)
+  const [paused] = useObservableState(() => gameControllerRef.current?.paused$ ?? of(true))
 
   const toggleRunning = useCallback(
     (isByAuto?: boolean) => {
@@ -64,14 +66,13 @@ export const SlideFooter: FC<
       <LiveMetrics />
 
       <div className={styles.scrollTip}>
-        {/* TODO: Currently unused, needs to be refactored and adjusted */}
-        {isFirstSlide && <span>{t('scroll_down')}</span>}
+        <span>{t('scroll_down')}</span>
         <div className={styles.verticalLine} />
       </div>
 
       <div className={styles.gameControl}>
-        <span title="RUN / PAUSE">
-          <PlayIcon onClick={() => toggleRunning()} />
+        <span title="RUN / PAUSE" onClick={() => toggleRunning()}>
+          {paused ? <PlayIcon /> : <PauseIcon />}
         </span>
         <span title="REWIND">
           <BackIcon onClick={() => gameControllerRef?.current?.rewind()} />
@@ -99,14 +100,14 @@ const LiveMetrics: FC = () => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_footer' })
 
   const liveMetricsQuery = api.ckb.liveMetrics.useQuery()
-  const { liveCells, stored, dao } = liveMetricsQuery.data ?? {}
+  const { liveCells, stored, daoDeposit } = liveMetricsQuery.data ?? {}
   const dataList = useMemo(
     () => [
       { name: t('live_cells'), value: liveCells },
       { name: t('common_knowledge_stored'), value: stored },
-      { name: t('ckb_in_nervos_dao'), value: dao },
+      { name: t('ckb_in_nervos_dao'), value: daoDeposit },
     ],
-    [dao, liveCells, stored, t],
+    [daoDeposit, liveCells, stored, t],
   )
 
   return (

@@ -1,4 +1,4 @@
-export function formatNumber(num: number) {
+export function formatNumber(num: number | bigint) {
   return num.toLocaleString('en', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,

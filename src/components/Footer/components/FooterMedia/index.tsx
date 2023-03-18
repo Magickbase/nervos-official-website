@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import {
   TwitterIcon,
   DiscordIcon,
@@ -14,7 +15,7 @@ import styles from './index.module.scss'
 
 export type MediasProps = {
   label: string | React.ReactNode
-  url?: string
+  url: string
 }
 
 export const FooterMedia: React.FC = () => {
@@ -26,31 +27,31 @@ export const FooterMedia: React.FC = () => {
   const medias: MediasProps[] = [
     {
       label: <TwitterIcon />,
-      url: 'http://placeholders1',
+      url: 'https://twitter.com/NervosNetwork',
     },
     {
       label: <DiscordIcon />,
-      url: 'http://placeholders2',
+      url: 'https://discord.gg/FKh8Zzvwqa',
     },
     {
       label: <TelegramIcon />,
-      url: 'http://placeholders3',
+      url: 'https://t.me/NervosNetwork',
     },
     {
       label: <LinkedInIcon />,
-      url: 'http://placeholders4',
+      url: 'https://www.linkedin.com/company/nervos',
     },
     {
       label: <RedditIcon />,
-      url: 'http://placeholders5',
+      url: 'https://www.reddit.com/r/NervosNetwork/',
     },
     {
       label: <YoutubeIcon />,
-      url: 'http://placeholders6',
+      url: 'https://www.youtube.com/c/NervosNetwork',
     },
     {
       label: <TIcon />,
-      url: 'http://placeholders7',
+      url: 'https://talk.nervos.org/',
     },
   ]
 
@@ -64,9 +65,9 @@ export const FooterMedia: React.FC = () => {
       </div>
       <div className={styles.medias}>
         {medias?.map(({ label, url }) => (
-          <a href={url} key={url}>
+          <Link href={url} key={url} target="_blank" rel="noopener noreferrer">
             {label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

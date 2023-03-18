@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  height: 22px;
+  padding: 0 5px;
+  color: #000;
+  font-size: 0.625rem;
+  white-space: nowrap;
+  text-transform: capitalize;
+  border-radius: 8px;
+
+  &[data-type='news'] {
+    background-color: var(--newsColor);
+  }
+
+  &[data-type='guide & tutorials'] {
+    background-color: var(--guideAndTutorialsColor);
+  }
+
+  &[data-type='learning resources'] {
+    background-color: var(--learnResourceColor);
+  }
+
+  &[data-type='releases & updates'] {
+    background-color: var(--releasesAndUpdateColor);
+  }
+
+  &[data-type='events'] {
+    background-color: var(--eventsColor);
+  }
+
+  &[data-type='guides & tutorials'] {
+    background-color: var(--guideAndTutorialsColor);
+  }
+}

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs'
 import { GOLPattern } from './patterns'
 
 export interface GameState {
@@ -11,7 +12,8 @@ export interface GameController {
   rewind: () => void
   play: () => void
   pause: () => void
-  paused?: boolean
+  paused: boolean
+  paused$: Observable<boolean>
   speedDown: () => void
   speedUp: () => void
   randomPattern: () => void

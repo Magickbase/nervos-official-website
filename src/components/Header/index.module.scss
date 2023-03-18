@@ -19,6 +19,7 @@ $defaultHeaderHeight: 90px;
 .header {
   position: sticky;
   top: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,6 +90,30 @@ $defaultHeaderHeight: 90px;
   border: 0.5px solid #484d4e;
   box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
 
+  &.enter {
+    transition: opacity 0.2s, left 0.2s;
+  }
+
+  &.leave {
+    transition: opacity 0.2s, left 0.2s;
+  }
+
+  &.enterFrom,
+  &.leaveTo {
+    left: 26px;
+    opacity: 0;
+  }
+
+  &.leaveTo {
+    left: 76px;
+  }
+
+  &.enterTo,
+  &.leaveFrom {
+    left: 76px;
+    opacity: 1;
+  }
+
   .menu {
     display: flex;
     flex-direction: column;
@@ -140,12 +165,14 @@ $defaultHeaderHeight: 90px;
 
 // Because Portal is used, it is no longer a child of header
 .languagePopoverContent {
+  $cardSize: 100px;
+
   position: absolute;
   top: 26px;
   right: 26px;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(2, 100px);
+  grid-template-columns: repeat(2, $cardSize);
   gap: 2px;
   padding: 30px;
   background: var(--colorPrimaryBg);
@@ -154,7 +181,8 @@ $defaultHeaderHeight: 90px;
   .language {
     display: flex;
     flex-direction: column;
-    height: 100px;
+    justify-content: space-between;
+    height: $cardSize;
     padding: 15px;
     color: var(--colorPrimaryBg);
     font-weight: 500;
@@ -163,8 +191,18 @@ $defaultHeaderHeight: 90px;
     background: var(--colorPrimary);
     cursor: pointer;
 
+    .tip {
+      color: #6c6c6c;
+      font-size: 10px;
+      line-height: 14px;
+    }
+
     &.disabled {
       cursor: not-allowed;
+    }
+
+    &.placeholder {
+      cursor: unset;
     }
   }
 }

@@ -17,7 +17,7 @@ const EditPageButton = () => (
   <button className={clsx(styles.editPageButton)}>
     <GithubIcon />
     {/* Todo: the url is temporarily filled with placeholders*/}
-    <StyledLink linkData={{ label: 'EDIT PAGE', url: 'http://pladeholder' }} isSpaced />
+    <StyledLink linkData={{ label: 'EDIT PAGE', url: 'http://pladeholder' }} isSpaced isIconed />
   </button>
 )
 
@@ -33,6 +33,7 @@ export const Functions: FC<FunctionsType> = ({ functions, className }) => {
           <DownArrow />
         </span>
       </div>
+
       <div className={clsx(styles.functionsItemGroup)}>
         {functions?.map(({ title, tags, content }, index) => (
           <FunctionsItem title={title} tags={tags} content={content} key={index} />
