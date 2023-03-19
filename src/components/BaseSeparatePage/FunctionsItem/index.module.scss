@@ -39,7 +39,19 @@
     }
   }
 
+  &[data-is-progress-bar='false'] {
+    margin-right: unset;
+    padding: 0 0 140px;
+    border: none;
+
+    .titleWrap {
+      width: 450px;
+      min-width: unset;
+    }
+  }
+
   .content {
+    flex: 1;
     margin-left: 70px;
     font-weight: 400;
     font-size: 14px;
@@ -49,9 +61,16 @@
 
   @media (max-width: $mobileBreakPoint) {
     display: block;
-    width: calc(100% - 48px);
-    margin: 0 24px;
+    width: calc(100% - var(--baseMobileMargin) * 2);
+    margin: 0 var(--baseMobileMargin);
     padding: 80px 0;
+
+    &[data-is-progress-bar='false'] {
+      .titleWrap {
+        width: 100%;
+        min-width: unset;
+      }
+    }
 
     .content {
       margin-top: 30px;
