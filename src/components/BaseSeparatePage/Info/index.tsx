@@ -6,14 +6,14 @@ import styles from './index.module.scss'
 
 export type InfoType = {
   info: string | React.ReactNode
-  editor: {
+  editor?: {
     id: string
   }
   className?: string
 }
 
-export const Info: FC<InfoType> = ({ info, editor, className }) => {
-  const { id } = editor
+export const Info: FC<InfoType> = ({ info, editor = {}, className }) => {
+  const { id = '' } = editor
   const time = new Date().toDateString()
 
   const ContributorsButton = () => (

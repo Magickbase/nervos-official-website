@@ -1,0 +1,58 @@
+@import '../../../styles/presets.module';
+@import '../../../styles/variables.module';
+
+.supports {
+  align-items: flex-start;
+  width: 100%;
+
+  .supportsItemEcosystemGroup {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    margin-top: 60px;
+
+    .supportsItemEcosystemWrap {
+      display: flex;
+      flex-direction: column;
+      grid-column-start: span 2;
+      margin-top: 60px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 160%;
+
+      .supportsItemEcosystemTitle {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 135%;
+      }
+
+      .supportsItemEcosystemContent {
+        width: 300px;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    :last-child {
+      grid-column-start: 2;
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    .title {
+      margin-bottom: 60px;
+    }
+
+    .supportsItemEcosystemGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% - var(--baseMobileMargin) * 2);
+      min-width: unset;
+      margin: 40px var(--baseMobileMargin);
+
+      .supportsItemEcosystemWrap {
+        margin: 80px auto;
+      }
+    }
+  }
+}

@@ -101,6 +101,7 @@ const functions = [
         and trade. It is now serving more than 6 million users across the globe.
         <div className="oneLineGap">
           <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+          <br />
           <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
         </div>
       </>
@@ -128,6 +129,7 @@ const functions = [
         the Opera browser on Android.
         <div className="oneLineGap">
           <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'http://placeholder' }} />
+          <br />
           <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
         </div>
       </>
@@ -146,6 +148,7 @@ const functions = [
           receive and store CKB.
         </p>
         <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+        <br />
         <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
       </>
     ),
