@@ -9698,12 +9698,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^9.1.0":
+"swiper@npm:9.1.0":
   version: 9.1.0
   resolution: "swiper@npm:9.1.0"
   dependencies:
     ssr-window: ^4.0.2
   checksum: 470254dc2f3975221263c57e4243d0ff0914fdffe4aa30793f84beb5bb44bfa507b950eb73c283f3516e907282993448d4a2b857ce0353d47ef0f9c2d89ed2b9
+  languageName: node
+  linkType: hard
+
+"swiper@patch:swiper@npm%3A9.1.0#./.yarn/patches/swiper-npm-9.1.0-44c74ddb4a.patch::locator=nervos-official-website%40workspace%3A.":
+  version: 9.1.0
+  resolution: "swiper@patch:swiper@npm%3A9.1.0#./.yarn/patches/swiper-npm-9.1.0-44c74ddb4a.patch::version=9.1.0&hash=db6a16&locator=nervos-official-website%40workspace%3A."
+  dependencies:
+    ssr-window: ^4.0.2
+  checksum: 3e29acd335599ab74b7487bf451d8d0d9c78879cbf077401e74debb0a99197b6294e406596009a8591b0e769fb477c757ca243a1e1466287c80f6936261a4932
   languageName: node
   linkType: hard
 
