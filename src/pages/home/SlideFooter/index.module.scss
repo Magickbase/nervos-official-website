@@ -63,11 +63,16 @@
   }
 
   .data {
+    $fontSize: 11px;
+    $scale: $fontSize / 12px;
+
     display: flex;
     margin-top: 8px;
     font-weight: 500;
-    font-size: 11px;
-    line-height: 1;
+    font-size: 12px;
+    line-height: 1 * $scale;
+    transform: scale($scale);
+    transform-origin: left;
 
     .name {
       padding-right: 8px;
