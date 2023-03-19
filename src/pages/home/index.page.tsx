@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, RefObject, useEffect, useMemo, useRef, useState 
 import { GetServerSideProps, type NextPage } from 'next'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
+import { Mousewheel } from 'swiper'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal } from '@headlessui/react'
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
       // The tab index is set so that it can receive keyboard events.
       tabIndex={0}
       onKeyDown={onKeyDown}
-      style={{ cursor: isOnOperableArea ? 'default' : '' }}
+      className={clsx({ [styles.isOnOperableArea ?? '']: isOnOperableArea })}
     >
       {({ renderHeader, renderFooter }) => (
         <>
@@ -58,8 +59,11 @@ const Home: NextPage = () => {
             direction="vertical"
             slidesPerView="auto"
             autoHeight
-            cssMode={true}
-            mousewheel={true}
+            mousewheel={{
+              // Supports operations from some Portal to elements outside the swiper container, such as SlideFooter.
+              eventsTarget: 'body',
+            }}
+            modules={[Mousewheel]}
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
           >

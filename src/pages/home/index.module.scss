@@ -27,6 +27,10 @@ $blendModeHeaderZ: 2;
   height: 100vh;
 }
 
+.isOnOperableArea {
+  cursor: default;
+}
+
 .golContainer {
   position: fixed;
   top: 0;
