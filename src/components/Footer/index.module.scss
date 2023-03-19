@@ -53,10 +53,15 @@
     margin-top: 100px;
 
     .copyright {
+      $fontSize: 11px;
+      $scale: $fontSize / 12px;
+
       color: #6a7072;
       font-weight: 400;
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.03em;
+      transform: scale($scale);
+      transform-origin: right;
 
       .bold {
         color: var(--colorPrimary);

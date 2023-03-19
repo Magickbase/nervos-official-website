@@ -36,13 +36,20 @@ $defaultHeaderHeight: 90px;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      // This is to prevent the actual width deviation caused by `transform: scale` from affecting the layout.
+      max-width: 32px;
       cursor: pointer;
 
       .text {
+        $fontSize: 9px;
+        $scale: $fontSize / 12px;
+
         margin-top: 2px;
         font-weight: 600;
-        font-size: 9px;
+        font-size: 12px;
         letter-spacing: 0.15em;
+        transform: scale($scale);
       }
     }
   }
@@ -192,9 +199,16 @@ $defaultHeaderHeight: 90px;
     cursor: pointer;
 
     .tip {
+      $fontSize: 10px;
+      $scale: $fontSize / 12px;
+
+      // Prevent unintended text line breaks from occurring.
+      width: 100% / $scale;
       color: #6c6c6c;
-      font-size: 10px;
+      font-size: 12px;
       line-height: 14px;
+      transform: scale($scale);
+      transform-origin: left bottom;
     }
 
     &.disabled {
