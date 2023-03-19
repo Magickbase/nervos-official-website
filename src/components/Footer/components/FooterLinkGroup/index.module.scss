@@ -16,13 +16,18 @@
   }
 
   .links {
+    $fontSize: 11px;
+    $scale: $fontSize / 12px;
+
     display: grid;
-    gap: 17px;
+    gap: 17px * $scale;
 
     .linksNav {
       font-weight: 400;
-      font-size: 11px;
+      font-size: 12px;
       font-style: normal;
+      transform: scale($scale);
+      transform-origin: left;
     }
   }
 }

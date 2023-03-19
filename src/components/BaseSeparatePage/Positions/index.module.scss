@@ -1,0 +1,74 @@
+@import '../../../styles/presets.module';
+@import '../../../styles/variables.module';
+
+.positionsBox {
+  width: 100%;
+
+  .positionsTitle {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 135%;
+  }
+
+  .positionsContent {
+    display: flex;
+    justify-content: space-between;
+
+    .positionsItem {
+      width: 370px;
+
+      .positionItemTitle {
+        margin: 50px 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+      }
+
+      .positionItemContent {
+        padding: 25px 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.05em;
+        border-top: 4px solid;
+      }
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    width: calc(100% - var(--baseMobileMargin) * 2);
+    margin: 0 var(--baseMobileMargin);
+    margin-top: 120px;
+
+    .positionsTitle {
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 135%;
+    }
+
+    .positionsContent {
+      display: flex;
+      flex-direction: column;
+
+      .positionsItem {
+        width: 100%;
+
+        .positionItemTitle {
+          margin: 50px 0;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 100%;
+        }
+
+        .positionItemContent {
+          padding: 25px 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 160%;
+          letter-spacing: 0.05em;
+          border-top: 4px solid;
+        }
+      }
+    }
+  }
+}

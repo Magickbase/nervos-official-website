@@ -3,8 +3,10 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
+import embellishedLeft from './embellished_left.png'
+import embellishedRight from './embellished_right.png'
 
-import presets from 'src/styles/presets.module.scss'
+import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup, DataPieIcon } from './icons'
@@ -80,6 +82,10 @@ const CkbPage: NextPage = () => {
   return (
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
+        embellishedElements={[
+          { image: embellishedLeft, top: 360, right: 518 },
+          { image: embellishedRight, top: 292, left: 142 },
+        ]}
         title={title}
         floatIcons={floatIcons}
         description={description}

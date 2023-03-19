@@ -1,0 +1,13 @@
+diff --git a/modules/mousewheel/mousewheel.js b/modules/mousewheel/mousewheel.js
+index a4d69606901602a831f051424de33abf9533bf82..f66339b7b13b2a186723880970978125448372ce 100644
+--- a/modules/mousewheel/mousewheel.js
++++ b/modules/mousewheel/mousewheel.js
+@@ -342,7 +342,7 @@ export default function Mousewheel({
+     }
+     targetEl[method]('mouseenter', handleMouseEnter);
+     targetEl[method]('mouseleave', handleMouseLeave);
+-    targetEl[method]('wheel', handle);
++    targetEl[method]('wheel', handle, { passive: false });
+   }
+   function enable() {
+     if (swiper.params.cssMode) {

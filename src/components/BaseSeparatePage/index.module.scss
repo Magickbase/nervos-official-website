@@ -8,14 +8,40 @@
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
 
+  // Create a new stacking context to avoid embellishedElements overwriting the header.
+  isolation: isolate;
+
+  .embellishedElements {
+    position: relative;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    mix-blend-mode: difference;
+
+    .embellishedElement {
+      position: absolute;
+      display: flex;
+
+      &.left {
+        flex-direction: row-reverse;
+      }
+
+      .image:nth-child(even) {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
   .headerClassName,
   .descriptionWrap,
   .infoWrap,
+  .positionsWrap,
   .functionsWrap,
-  .resourcesWrap {
+  .functionsTitleWrap,
+  .resourcesWrap,
+  .supportsWrap {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     min-width: 1200px;
     margin: 0 120px;
   }
@@ -25,24 +51,64 @@
     border-bottom: 0.5px solid #6a7171;
   }
 
+  .descriptionWrap {
+    justify-content: center;
+  }
+
   .resourcesWrap {
     align-items: flex-start;
     padding: 120px 0;
     border-top: 0.5px solid;
   }
 
+  .functionsWrap {
+    .progressBar {
+      width: 195px;
+      height: 220px;
+    }
+  }
+
+  .functionsTitleWrap {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 100%;
+    letter-spacing: -0.025em;
+  }
+
+  .supportsWrap {
+    padding-bottom: 80px;
+    border-bottom: 0.5px solid;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     .headerClassName,
     .descriptionWrap,
     .infoWrap,
+    .positionsWrap,
     .functionsWrap,
-    .resourcesWrap {
+    .functionsTitleWrap,
+    .resourcesWrap,
+    .supportsWrap {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
       min-width: unset;
       margin: unset;
+    }
+
+    .functionsWrap {
+      .progressBar {
+        width: 100%;
+        height: unset;
+      }
+    }
+
+    .functionsTitleWrap {
+      padding: 80px var(--baseMobileMargin);
     }
 
     .infoWrap {
@@ -53,6 +119,11 @@
       width: calc(100% - var(--baseMobileMargin) * 2);
       margin: 0 var(--baseMobileMargin);
       padding: 80px 0;
+    }
+
+    .supportsWrap {
+      padding-bottom: unset;
+      border: none;
     }
   }
 }

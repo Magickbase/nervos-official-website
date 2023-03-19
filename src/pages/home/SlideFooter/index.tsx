@@ -4,7 +4,11 @@ import clsx from 'clsx'
 import { Dialog } from '@headlessui/react'
 import { useObservableState } from 'observable-hooks'
 import { of } from 'rxjs'
-import { GameController, useGameKeyboardHandler } from '../../../components/ConwayGameOfLife'
+import {
+  DISABLE_CGOL_MOUSE_CONTROLLER,
+  GameController,
+  useGameKeyboardHandler,
+} from '../../../components/ConwayGameOfLife'
 import { formatNumber } from '../../../utils/number'
 import { api } from '../../../utils/api'
 import styles from './index.module.scss'
@@ -151,7 +155,11 @@ const InfoDialog: FC = () => {
       <span title="INSTRUCTIONS">
         <InfoIcon onClick={() => setIsOpen(true)} />
       </span>
-      <Dialog className={styles.infoDialog} open={isOpen} onClose={() => setIsOpen(false)}>
+      <Dialog
+        className={clsx(styles.infoDialog, DISABLE_CGOL_MOUSE_CONTROLLER)}
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
         <Dialog.Panel className={styles.panel}>
           <div className={styles.title}>How to play.</div>
           <div className={styles.subtitle1}>About</div>

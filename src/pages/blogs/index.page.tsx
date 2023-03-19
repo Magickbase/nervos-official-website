@@ -5,12 +5,15 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
+import Image from 'next/image'
 import type { BlogType } from './[slug].page'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
+import blogBannerLeft from '../../../public/images/blog_banner_left.png'
+import blogBannerRight from '../../../public/images/blog_banner_right.png'
 
 type Props = {
   categories: Array<string>
@@ -41,10 +44,10 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
       </Head>
       <Page>
         <div className={styles.banner}>
-          <img src="/images/blog_banner_left.png" alt="cell" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_left.png" alt="cell" loading="lazy" className={styles.left} />
-          <img src="/images/blog_banner_right.png" alt="cell" loading="lazy" className={styles.right} />
-          <img src="/images/blog_banner_right.png" alt="cell" loading="lazy" className={styles.right} />
+          <Image src={blogBannerLeft} alt="cell" className={styles.left} />
+          <Image src={blogBannerLeft} alt="cell" className={styles.left} />
+          <Image src={blogBannerRight} alt="cell" className={styles.right} />
+          <Image src={blogBannerRight} alt="cell" className={styles.right} />
           <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
           <span>{t('blog_banner')}</span>
         </div>

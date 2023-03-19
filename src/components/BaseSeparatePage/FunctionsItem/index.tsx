@@ -7,13 +7,14 @@ export type FunctionsItemType = {
   title: string | React.ReactNode
   tags?: string[]
   content?: string | React.ReactNode
+  isProgressBar?: boolean
   className?: string
 }
 
 const TagItem = ({ tag }: { tag: string }) => <div className={clsx(styles.tagItem)}>{tag}</div>
 
-export const FunctionsItem: FC<FunctionsItemType> = ({ title, tags, content, className }) => (
-  <div className={clsx(styles.functionsItem, className)}>
+export const FunctionsItem: FC<FunctionsItemType> = ({ title, tags, content, isProgressBar, className }) => (
+  <div data-is-progress-bar={isProgressBar} className={clsx(styles.functionsItem, className)}>
     <div className={clsx(styles.titleWrap)}>
       <div className={clsx(styles.title)}>{title}</div>
       <div className={clsx(styles.tags)}>

@@ -169,8 +169,6 @@ export const ConwayGameOfLife = forwardRef<GameController, { initializationIndic
     const paused$ = useMemo(() => new BehaviorSubject(!running), [])
     useEffect(() => paused$.next(!running), [paused$, running])
 
-    const mouseControllerData = useRef<{ affectedCellIndexes: Point[]; mode?: number }>()
-
     useImperativeHandle(
       ref,
       () => ({
@@ -211,6 +209,21 @@ export const ConwayGameOfLife = forwardRef<GameController, { initializationIndic
             }
           })
         },
+        getCellLiving(row, col) {
+          return (gameState.cellLifeStates[row]?.[col] ?? 0) !== 0
+        },
+        setCellLiving(row, col, value) {
+          setGameState(state => ({
+            ...state,
+            cellLifeStates: {
+              ...state.cellLifeStates,
+              [row]: {
+                ...state.cellLifeStates[row],
+                [col]: value ? 1 : 0,
+              },
+            },
+          }))
+        },
 
         zoomIn() {
           setZoomLevel(level => Math.min(level + 1, 3))
@@ -225,18 +238,9 @@ export const ConwayGameOfLife = forwardRef<GameController, { initializationIndic
             y: offset.y - y / zoom,
           }))
         },
-        onExternalMouseControllerEvent(e) {
-          if (canvasRef.current == null) return
-
-          if (e.type === 'mouseup') {
-            mouseControllerData.current = undefined
-            return
-          }
-
-          if (e.type === 'mousedown') {
-            mouseControllerData.current = { affectedCellIndexes: [] }
-          }
-
+        getCellIndexFromExternalMouseControlEvent(e) {
+          if (e == null) return null
+          if (canvasRef.current == null) return null
           const coordsInCanvas = mouseEventOffset(e, canvasRef.current)
           const coordsInViewport = {
             x: (coordsInCanvas.x * pixelRatio) / zoom,
@@ -247,37 +251,14 @@ export const ConwayGameOfLife = forwardRef<GameController, { initializationIndic
             y: coordsInViewport.y + offset.y * pixelRatio,
           }
           const cellIndex = {
-            x: Math.floor(coordsInScene.x / ((cellSize + cellGap) * pixelRatio)),
-            y: Math.floor(coordsInScene.y / ((cellSize + cellGap) * pixelRatio)),
+            row: Math.floor(coordsInScene.y / ((cellSize + cellGap) * pixelRatio)),
+            col: Math.floor(coordsInScene.x / ((cellSize + cellGap) * pixelRatio)),
           }
-
-          const ctlData = mouseControllerData.current
-          if (ctlData == null) return
-          const isAffected = ctlData.affectedCellIndexes.some(
-            index => index.x === cellIndex.x && index.y === cellIndex.y,
-          )
-          if (isAffected) return
-          ctlData.affectedCellIndexes.push(cellIndex)
-
-          setGameState(state => {
-            if (e.type === 'mousedown') {
-              ctlData.mode = (state.cellLifeStates[cellIndex.y]?.[cellIndex.x] ?? 0) === 0 ? 1 : 0
-            }
-
-            return {
-              ...state,
-              cellLifeStates: {
-                ...state.cellLifeStates,
-                [cellIndex.y]: {
-                  ...state.cellLifeStates[cellIndex.y],
-                  [cellIndex.x]: ctlData.mode ?? 1,
-                },
-              },
-            }
-          })
+          return cellIndex
         },
       }),
       [
+        gameState.cellLifeStates,
         numberOfCellsAllowedWithinRadius,
         offset.x,
         offset.y,

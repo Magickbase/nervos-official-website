@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import clsx from 'clsx'
+import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../../../../components/ConwayGameOfLife'
 import {
   TwitterIcon,
   DiscordIcon,
@@ -56,7 +58,7 @@ export const FooterMedia: React.FC = () => {
   ]
 
   return (
-    <div className={styles.footerMedia}>
+    <div className={clsx(styles.footerMedia, DISABLE_CGOL_MOUSE_CONTROLLER)}>
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
       <div className={styles.inputWrap}>

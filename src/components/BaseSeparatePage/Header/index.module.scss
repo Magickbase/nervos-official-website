@@ -1,3 +1,4 @@
+@import '../../../styles/presets.module';
 @import '../../../styles/variables.module';
 
 .headerContent {
@@ -5,10 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 700px;
+  height: 610px;
 
   .title {
-    max-width: 683px;
+    max-width: 700px;
+    margin-top: -100px;
     font-weight: 700;
     font-size: 65px;
     font-style: normal;
@@ -26,8 +28,8 @@
     height: 600px;
 
     .title {
-      width: 310px;
-      margin: 0 24px;
+      width: calc(100% - var(--baseMobileMargin) * 2);
+      margin: 0 var(--baseMobileMargin);
       font-weight: 700;
       font-size: 50px;
       line-height: 80%;
