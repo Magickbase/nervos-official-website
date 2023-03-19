@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       // The tab index is set so that it can receive keyboard events.
       tabIndex={0}
       onKeyDown={onKeyDown}
-      style={{ cursor: isOnOperableArea ? 'default' : '' }}
+      className={clsx({ [styles.isOnOperableArea ?? '']: isOnOperableArea })}
     >
       {({ renderHeader, renderFooter }) => (
         <>
