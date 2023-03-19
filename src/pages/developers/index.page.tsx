@@ -4,6 +4,8 @@ import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import presets from 'src/styles/presets.module.scss'
 import { StyledLink } from 'src/components/StyledLink'
+import embellishedLeft from './embellished_left.png'
+import embellishedRight from './embellished_right.png'
 
 import styles from './index.module.scss'
 
@@ -116,6 +118,10 @@ const Developers: NextPage = () => {
   return (
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
+        embellishedElements={[
+          { image: embellishedLeft, top: 384, right: 488 },
+          { image: embellishedRight, top: 12, left: 96 },
+        ]}
         title={title}
         floatIcons={floatIcons}
         description={description}

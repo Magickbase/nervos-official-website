@@ -3,8 +3,10 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
+import embellishedLeft from './embellished_left.png'
+import embellishedRight from './embellished_right.png'
 
-import presets from 'src/styles/presets.module.scss'
+import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CkbPowFloatIconGroup, HeartIcon } from './icons'
@@ -111,6 +113,10 @@ const Mining: NextPage = () => {
   return (
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
+        embellishedElements={[
+          { image: embellishedLeft, top: 56, right: 84 },
+          { image: embellishedRight, top: 307, left: 210 },
+        ]}
         title={title}
         floatIcons={floatIcons}
         description={description}
