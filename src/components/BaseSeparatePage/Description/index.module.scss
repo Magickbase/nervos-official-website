@@ -2,7 +2,7 @@
 @import '../../../styles/variables.module';
 
 .descriptionContent {
-  min-width: 1200px;
+  width: 100%;
   margin-bottom: 60px;
   padding: 60px 120px;
   color: var(--colorPrimary);
@@ -19,8 +19,9 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
+    width: calc(100% - var(--basemobilemargin) * 2);
     min-width: unset;
-    margin: 0 24px;
+    margin: 0 var(--baseMobileMargin);
     padding: 60px 40px;
     font-weight: 500;
     font-size: 18px;

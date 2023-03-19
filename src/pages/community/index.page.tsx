@@ -118,7 +118,7 @@ const Community: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
+    <Page className={clsx(presets.themeDark)}>
       <BaseSeparatePage
         embellishedElements={[
           { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },

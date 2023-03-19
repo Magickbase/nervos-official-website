@@ -34,6 +34,8 @@
   .resourcesWrap,
   .supportsWrap {
     display: flex;
+
+    // Todo: we need more response designs to adjust more situations and we’ll update this width someday later
     min-width: 1200px;
     margin: 0 120px;
   }
@@ -76,6 +78,8 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
+    overflow: hidden;
+
     .headerClassName,
     .descriptionWrap,
     .infoWrap,

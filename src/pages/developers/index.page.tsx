@@ -116,7 +116,7 @@ const Developers: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
+    <Page className={clsx(presets.themeDark)}>
       <BaseSeparatePage
         embellishedElements={[
           {
