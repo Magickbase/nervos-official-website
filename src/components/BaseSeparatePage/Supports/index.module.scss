@@ -5,54 +5,80 @@
   align-items: flex-start;
   width: 100%;
 
-  .supportsItemEcosystemGroup {
+  .supportsItemEcosystemGroup,
+  .supportsItemParticipantsGroup {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    margin-top: 60px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 120px 0;
 
-    .supportsItemEcosystemWrap {
+    .supportsItemEcosystemWrap,
+    .supportsItemParticipantsWrap {
       display: flex;
       flex-direction: column;
       grid-column-start: span 2;
-      margin-top: 60px;
       font-weight: 400;
       font-size: 14px;
       line-height: 160%;
 
-      .supportsItemEcosystemTitle {
+      .supportsItemEcosystemTitle,
+      .supportsItemParticipantsTitle {
         font-weight: 600;
         font-size: 30px;
         line-height: 135%;
       }
 
-      .supportsItemEcosystemContent {
+      .supportsItemEcosystemContent,
+      .supportsItemParticipantsContent {
         width: 300px;
         letter-spacing: 0.05em;
       }
     }
+  }
+
+  .supportsItemEcosystemGroup {
+    border-bottom: 0.5px solid;
+
+    :not(:first-child) {
+      margin-top: unset;
+    }
 
     :last-child {
       grid-column-start: 2;
-      margin-top: 10px;
+    }
+  }
+
+  .supportsItemParticipantsGroup {
+    @for $i from 1 to 7 {
+      :nth-child(#{$i}) {
+        grid-area: item#{$i};
+        margin: unset;
+      }
+    }
+
+    grid-template-areas:
+      'item2 . item1 item1 '
+      '. item3 item4 .'
+      'item5 item6 . item7';
+
+    :last-child {
+      grid-row-start: 3;
+      grid-column-start: 4;
+      margin: unset;
     }
   }
 
   @media (max-width: $mobileBreakPoint) {
-    .title {
-      margin-bottom: 60px;
-    }
+    padding: 0 var(--baseMobileMargin);
 
-    .supportsItemEcosystemGroup {
+    .supportsItemEcosystemGroup,
+    .supportsItemParticipantsGroup {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: calc(100% - var(--baseMobileMargin) * 2);
-      min-width: unset;
-      margin: 40px var(--baseMobileMargin);
+    }
 
-      .supportsItemEcosystemWrap {
-        margin: 80px auto;
-      }
+    .supportsItemParticipantsGroup {
+      border-bottom: 0.5px solid;
     }
   }
 }

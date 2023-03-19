@@ -31,6 +31,34 @@ const supports1 = [
       'Nervos Grants Program was created to empower innovation and development of infrastructure of the Nervos network and to support the growth of a diverse and thriving ecosystem.',
   },
 ]
+const supports2 = [
+  {
+    title: 'Nervos Docs',
+    content: 'Foundational information about Nervos and technical reference materials.',
+  },
+  {
+    title: 'Developer Training Course',
+    content: 'Foundational information about Nervos and technical reference materials.',
+  },
+  {
+    title: 'RFCs',
+    content:
+      'For anyone who is interested in making contributions to protocol improvements and standards, join the discussion and participate in the RFC process on Github.',
+  },
+  {
+    title: 'Nervos Talk Forum',
+    content: 'For the community to participate and discuss developments on Nervos.',
+  },
+  {
+    title: 'Build Club',
+    content: 'Build Club provides support for teams and individuals who would like to launch a new project on Nervos.',
+  },
+  {
+    title: 'Start with Nervos',
+    content:
+      'Documentation focused on the EVM-equivalent Godwoken network, the easiest way to launch a dApp on Nervos!',
+  },
+]
 
 export const Supports: FC<ResourcesType> = ({ className }) => {
   return (
@@ -44,6 +72,17 @@ export const Supports: FC<ResourcesType> = ({ className }) => {
           </div>
         </div>
         {supports1?.map(({ title, content }, index) => (
+          <ResourcesItem title={title} content={content} key={index} />
+        ))}
+      </div>
+      <div className={clsx(styles.supportsItemParticipantsGroup)}>
+        <div className={clsx(styles.supportsItemParticipantsWrap)}>
+          <div className={clsx(styles.supportsItemParticipantsTitle)}>Resources for Participants.</div>
+          <div className={clsx(styles.supportsItemParticipantsContent)}>
+            Explore resources for participants within the community to drive the advancement of Nervos.
+          </div>
+        </div>
+        {supports2?.map(({ title, content }, index) => (
           <ResourcesItem title={title} content={content} key={index} />
         ))}
       </div>

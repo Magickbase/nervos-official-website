@@ -80,23 +80,18 @@ const extensionTitleFunctions = [
 
 const functions = [
   {
-    title: 'An Open Bazaar.',
-    tags: ['LEARN', 'BLOCKCHAIN', 'EDUCATION', 'CRYPTO'],
+    title: 'Team.',
+    tags: ['PEOPLE OF NERVOS'],
     content: (
       <>
-        The Common Knowledge Base Education Hub, your go-to platform for insightful articles about blockchain and Nervos
-        technology.
-        <p>
-          Our platform is designed to provide accessible and engaging educational content to help you better understand
-          the complexities of blockchain technology and the unique features of Nervos.
-        </p>
-        <p>
-          We believe that education is the key to unlocking the true potential of blockchain, we&apos;ve created
-          articles that are informative, engaging, and easy to understand. Whether you are new to the world of
-          blockchain or an experienced professional, our articles will help you deepen your knowledge and stay
-          up-to-date on the latest developments in the field.
-        </p>
-        <StyledLink isColored isUnderlined linkData={{ label: 'Start learning', url: 'http://placeholder' }} />
+        All the participants within the community including developers, miners, creators and enthusiasts play critical
+        roles in the growth of the network. The teams ​​are aligned on the vision but can be quite independent from each
+        other. The Nervos Foundation pushes out resources to teams in the community and supports them in reaching their
+        goals.
+        <div className="oneLineGap">
+          Visit this <StyledLink isColored isUnderlined linkData={{ label: 'link', url: 'http://placeholder' }} /> to
+          see open positions with the Nervos Foundation.
+        </div>
       </>
     ),
   },
