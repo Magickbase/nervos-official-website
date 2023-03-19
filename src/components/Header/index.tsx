@@ -16,6 +16,7 @@ import LogoIcon from './logo.svg'
 import LanguageIcon from './language.svg'
 import { useIsMobile } from '../../hooks'
 import { isClient } from '../../utils'
+import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../ConwayGameOfLife'
 
 const headerHeightVarName = (styles.headerHeightVarName ?? '').replaceAll('"', '')
 const defaultHeaderHeight = parseFloat((styles.defaultHeaderHeight ?? '').replace('px', ''))
@@ -28,7 +29,7 @@ export const Header: FC<HeaderProps> = props => {
   return (
     <div className={clsx(styles.header, className)} {...divProps}>
       <MenuPopover />
-      <Link className={styles.logo} href="/">
+      <Link className={clsx(styles.logo, DISABLE_CGOL_MOUSE_CONTROLLER)} href="/">
         <LogoIcon />
       </Link>
       <LanguagePopover
@@ -62,7 +63,7 @@ const MenuPopover: FC = () => {
     <Popover className={styles.menuPopover}>
       {({ close }) => (
         <>
-          <Popover.Button as={'div'} className={styles.trigger}>
+          <Popover.Button as={'div'} className={clsx(styles.trigger, DISABLE_CGOL_MOUSE_CONTROLLER)}>
             <MenuIcon />
             <span className={styles.text}>MENU</span>
           </Popover.Button>
@@ -224,7 +225,7 @@ const LanguagePopover: FC<{
     <Popover className={styles.languagePopover}>
       {({ close }) => (
         <>
-          <Popover.Button as={'div'} className={styles.trigger}>
+          <Popover.Button as={'div'} className={clsx(styles.trigger, DISABLE_CGOL_MOUSE_CONTROLLER)}>
             <LanguageIcon />
           </Popover.Button>
 

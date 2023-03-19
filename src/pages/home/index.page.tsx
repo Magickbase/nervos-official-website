@@ -4,12 +4,16 @@ import clsx from 'clsx'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import interact from 'interactjs'
-import type { InteractEvent } from '@interactjs/core/InteractEvent'
 import { Portal } from '@headlessui/react'
 import Link from 'next/link'
 import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
-import { ConwayGameOfLife, GameController, useGameKeyboardHandler } from '../../components/ConwayGameOfLife'
+import {
+  ConwayGameOfLife,
+  DISABLE_CGOL_MOUSE_CONTROLLER,
+  GameController,
+  useGameKeyboardHandler,
+  useGameMouseHandler,
+} from '../../components/ConwayGameOfLife'
 import { Page } from '../../components/Page'
 import { SlideFooter } from './SlideFooter'
 import { Card } from './Card'
@@ -32,6 +36,7 @@ const Home: NextPage = () => {
   const controllerRef = useRef<GameController>(null)
   const initializationIndicatorRef = useRef<HTMLDivElement>(null)
 
+  const isOnOperableArea = useGameMouseHandler(controllerRef)
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
 
   // Default focus on body, auto-focus this to respond to keyboard events.
@@ -43,6 +48,7 @@ const Home: NextPage = () => {
       // The tab index is set so that it can receive keyboard events.
       tabIndex={0}
       onKeyDown={onKeyDown}
+      style={{ cursor: isOnOperableArea ? 'default' : '' }}
     >
       {({ renderHeader, renderFooter }) => (
         <>
@@ -145,18 +151,16 @@ allowCustomDescendantOfSwiper(ScreenSlide)
 const SlideCKBIntro: FC<ScreenSlideProps> = props => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_intro' })
 
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
-
   return (
     <ScreenSlide {...props}>
-      <div ref={draggerRef} className={styles.slideCKBIntro}>
-        <div className={styles.titleText}>{t('text1')}</div>
-        <div className={styles.subjectTitleText}>{t('text2')}</div>
-        <div className={styles.descriptionText}>
+      <div className={styles.slideCKBIntro}>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
+        <div className={clsx(styles.subjectTitleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           <span className={styles.bold}>Nervos</span>
           {t('text3')}
         </div>
-        <div className={clsx(styles.descriptionText, styles.text4)}>{t('text4')}</div>
+        <div className={clsx(styles.descriptionText, styles.text4, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text4')}</div>
       </div>
     </ScreenSlide>
   )
@@ -166,14 +170,15 @@ allowCustomDescendantOfSwiper(SlideCKBIntro)
 const SlideCKBSecurity: FC<ScreenSlideProps> = props => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_security' })
 
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
-
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
-      <div ref={draggerRef} className={styles.slideCKBSecurity}>
+      <div className={styles.slideCKBSecurity}>
         {/* html here is for the hyphen */}
-        <div className={styles.titleText} dangerouslySetInnerHTML={{ __html: t('text1') }} />
-        <div className={styles.descriptionText}>{t('text2')}</div>
+        <div
+          className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}
+          dangerouslySetInnerHTML={{ __html: t('text1') }}
+        />
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
       </div>
     </ScreenSlide>
   )
@@ -181,13 +186,13 @@ const SlideCKBSecurity: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBSecurity)
 
 const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
-
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
-      <div ref={draggerRef} className={styles.slideCKBFlexibility}>
-        <div className={styles.titleText}>Unbounded Flexibility and Interopera&shy;bility.</div>
-        <ul className={styles.descriptionText}>
+      <div className={styles.slideCKBFlexibility}>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          Unbounded Flexibility and Interopera&shy;bility.
+        </div>
+        <ul className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           <li>CKB supports all programming languages and current and future cryptographic primitives.</li>
           <li>
             Layer 2 networks built on CKB can deploy different consensus mechanisms, programming languages, execution
@@ -203,13 +208,13 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBFlexibility)
 
 const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
-
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
-      <div ref={draggerRef} className={styles.slideCKBSustainability}>
-        <div className={styles.titleText}>Guaranteed Long-term Sustaina&shy;bility.</div>
-        <div className={styles.descriptionText}>
+      <div className={styles.slideCKBSustainability}>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          Guaranteed Long-term Sustaina&shy;bility.
+        </div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           CKB leverages a novel tokenomic model that aligns the interests of all network stakeholders. It ensures the
           miners are paid for providing security in perpetuity, while token holders are protected from inflation.
         </div>
@@ -220,13 +225,11 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBSustainability)
 
 const SlideCKBModular: FC<ScreenSlideProps> = props => {
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
-
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
-      <div ref={draggerRef} className={styles.slideCKBModular}>
-        <div className={styles.titleText}>Modular Architecture.</div>
-        <div className={styles.descriptionText}>
+      <div className={styles.slideCKBModular}>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture.</div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
           transactions per second through many diverse Layer 2 networks without sacrificing security or
           decentralization.
@@ -238,13 +241,12 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBModular)
 
 const SlideGetStarted: FC<ScreenSlideProps> = props => {
-  const draggerRef = useGameMouseHandler(props.gameControllerRef)
   const isMobile = useIsMobile()
 
   return (
     <ScreenSlide autoHeight={isMobile} {...props} className={clsx(presets.themeDark, props.className)}>
-      <div ref={draggerRef} className={styles.slideGetStarted}>
-        <div className={styles.titleText}>Get Started.</div>
+      <div className={styles.slideGetStarted}>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
         <div className={styles.cards}>
           <Card
             title="Build on hardware, not software."
@@ -299,87 +301,6 @@ function allowCustomDescendantOfSwiper(comp: { displayName?: string }) {
   if (!comp.displayName.includes('SwiperSlide')) {
     comp.displayName = comp.displayName + '_SwiperSlide'
   }
-}
-
-function useGameMouseHandler(gameControllerRef?: RefObject<GameController>) {
-  const draggerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const dragger = draggerRef.current
-    if (dragger == null) return
-
-    const interactable = interact(dragger, {
-      // Avoid not being able to select the text of sub-level elements.
-      preventDefault: 'never',
-    }).draggable({
-      // Default cursor is `move`, here empty string means no setting.
-      cursorChecker: () => '',
-      listeners: {
-        move(e: InteractEvent) {
-          gameControllerRef?.current?.addCameraOffset(e.dx, e.dy)
-        },
-      },
-    })
-
-    const preventTriggerInteract = (e: HTMLElementEventMap['pointerdown'] | HTMLElementEventMap['touchstart']) => {
-      // The InteractEvent received by move listener does not contain the original event,
-      // so there is no way to tell if this is a text selection,
-      // so in order to cancel the move, we have to stopPropagation here to
-      // prevent the event from being passed to interactable and then triggering the move.
-      // Since interactable internally listens to the pointerdown event,
-      // it must stop bubbling in pointerdown and not in mousedown.
-      if (e.currentTarget !== e.target) e.stopPropagation()
-    }
-    dragger.addEventListener('pointerdown', preventTriggerInteract)
-    dragger.addEventListener('touchstart', preventTriggerInteract)
-
-    const preventTextSelect = (e: HTMLElementEventMap['mousedown'] | HTMLElementEventMap['touchstart']) => {
-      // This is the allowed move behavior, and to avoid triggering the text selection style, here preventDefault.
-      // This preventDefault cannot be executed in pointerdown, otherwise the mousedown event will not be triggered,
-      // and the `useOutsideClick` in `@headlessui/react/Popover` is dependent on mousedown.
-      if (e.currentTarget === e.target) e.preventDefault()
-    }
-    dragger.addEventListener('mousedown', preventTextSelect)
-    dragger.addEventListener('touchstart', preventTextSelect)
-
-    const onContextMenu = (e: HTMLElementEventMap['contextmenu']) => {
-      if (e.target !== draggerRef.current) return
-      e.preventDefault()
-    }
-    dragger.addEventListener('contextmenu', onContextMenu)
-
-    const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
-      if (e.target !== draggerRef.current) return
-      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
-    }
-    dragger.addEventListener('mousedown', onMouseDown)
-
-    const onMouseMove = (e: HTMLElementEventMap['mousemove']) => {
-      if (e.target !== draggerRef.current) return
-      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
-    }
-    dragger.addEventListener('mousemove', onMouseMove)
-
-    const onMouseUp = (e: HTMLElementEventMap['mouseup']) => {
-      if (e.target !== draggerRef.current) return
-      gameControllerRef?.current?.onExternalMouseControllerEvent(e)
-    }
-    dragger.addEventListener('mouseup', onMouseUp)
-
-    return () => {
-      interactable.unset()
-      dragger.removeEventListener('pointerdown', preventTriggerInteract)
-      dragger.removeEventListener('touchstart', preventTriggerInteract)
-      dragger.removeEventListener('mousedown', preventTextSelect)
-      dragger.removeEventListener('touchstart', preventTextSelect)
-      dragger.removeEventListener('contextmenu', onContextMenu)
-      dragger.removeEventListener('mousedown', onMouseDown)
-      dragger.removeEventListener('mousemove', onMouseMove)
-      dragger.removeEventListener('mouseup', onMouseUp)
-    }
-  }, [gameControllerRef])
-
-  return draggerRef
 }
 
 export default Home

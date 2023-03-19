@@ -19,11 +19,17 @@ export interface GameController {
   randomPattern: () => void
   clear: () => void
 
+  getCellLiving: (row: number, col: number) => boolean
+  setCellLiving: (row: number, col: number, value: boolean) => void
+
   zoomIn: () => void
   zoomOut: () => void
 
   addCameraOffset: (x: number, y: number) => void
-  onExternalMouseControllerEvent: (e: MouseEvent) => void
+  getCellIndexFromExternalMouseControlEvent: (e?: {
+    clientX: number
+    clientY: number
+  }) => { row: number; col: number } | null
 }
 
 const operations = [
