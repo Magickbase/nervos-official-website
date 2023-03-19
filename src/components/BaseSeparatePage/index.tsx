@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import React, { FC } from 'react'
+import { FC, ReactNode } from 'react'
+import Image, { StaticImageData } from 'next/image'
 import { Description, DescriptionType } from './Description'
 import { Functions, FunctionsType } from './Functions'
 import { Header, HeaderType } from './Header'
@@ -12,6 +13,8 @@ import { FunctionsItemType } from './FunctionsItem'
 import styles from './index.module.scss'
 import { Supports } from './Supports'
 
+const screenWidth = globalThis.screen?.width ?? 1920
+
 export type BaseSeparatePageType = HeaderType &
   DescriptionType &
   Partial<PositionsType> &
@@ -19,7 +22,7 @@ export type BaseSeparatePageType = HeaderType &
   FunctionsType &
   Partial<ResourcesType> & {
     functionsExtensionTitle?: {
-      extensionTitle: string | React.ReactNode
+      extensionTitle: string | ReactNode
       extensionTitleFunctions: FunctionsItemType[]
     }
     isProgressBar?: boolean
@@ -30,6 +33,13 @@ export type BaseSeparatePageType = HeaderType &
     functionsClassName?: string
     functionsTitleClassName?: string
     extensionTitleFunctionsClassName?: string
+    embellishedElements?: {
+      image: StaticImageData
+      top?: number
+      right?: number
+      left?: number
+      fill?: boolean
+    }[]
   }
 
 export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
@@ -41,6 +51,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     functionsClassName,
     functionsTitleClassName,
     extensionTitleFunctionsClassName,
+    embellishedElements,
     title,
     floatIcons,
     description,
@@ -73,6 +84,28 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
 
   return (
     <div className={clsx(styles.baseSeparatePage, className)} {...rest}>
+      <div className={styles.embellishedElements}>
+        {embellishedElements?.map((embellishedElement, idx) => {
+          // TODO: At present, it is expected that all incoming graphs are 4x,
+          // and will be improved to automatically assign.
+          const imageWidth = embellishedElement.image.width / 4
+          const widthToBeFilled = screenWidth / 2 - (embellishedElement.left ?? embellishedElement.right ?? 0)
+          const amountOfFilled = embellishedElement.fill ?? true ? Math.ceil(widthToBeFilled / imageWidth) : 1
+
+          return (
+            <div
+              key={idx}
+              className={clsx(styles.embellishedElement, { [styles.left ?? '']: embellishedElement.left == null })}
+              style={{ top: embellishedElement.top, right: embellishedElement.right, left: embellishedElement.left }}
+            >
+              {new Array(amountOfFilled).fill(0).map((_, idx) => (
+                <Image key={idx} src={embellishedElement.image} width={imageWidth} className={styles.image} alt="" />
+              ))}
+            </div>
+          )
+        })}
+      </div>
+
       <Header className={clsx(styles.headerClassName, headerClassName)} title={title} floatIcons={floatIcons} />
       <div className={styles.descriptionWrap}>
         <Description className={descriptionClassName} description={description} />

@@ -3,8 +3,10 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
+import embellishedLeft from './embellished_left.png'
+import embellishedRight from './embellished_right.png'
 
-import presets from 'src/styles/presets.module.scss'
+import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import {
@@ -165,6 +167,10 @@ const Wallets: NextPage = () => {
   return (
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
+        embellishedElements={[
+          { image: embellishedLeft, top: 27, right: 396 },
+          { image: embellishedRight, top: -90, left: 82, fill: false },
+        ]}
         title={title}
         floatIcons={floatIcons}
         description={description}

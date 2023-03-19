@@ -8,6 +8,31 @@
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
 
+  // Create a new stacking context to avoid embellishedElements overwriting the header.
+  isolation: isolate;
+
+  .embellishedElements {
+    position: relative;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    mix-blend-mode: difference;
+
+    .embellishedElement {
+      position: absolute;
+      display: flex;
+
+      &.left {
+        flex-direction: row-reverse;
+      }
+
+      .image:nth-child(even) {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
   .headerClassName,
   .descriptionWrap,
   .infoWrap,
