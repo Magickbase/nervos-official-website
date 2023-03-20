@@ -32,8 +32,7 @@
   }
 
   @media screen and (max-width: $mobileBreakPoint) {
-    min-width: unset;
-    margin: 0 24px;
+    padding: 0 24px;
 
     .guide {
       display: block;

@@ -248,7 +248,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
   const isMobile = useIsMobile()
 
   return (
-    <ScreenSlide autoHeight={isMobile} {...props} className={clsx(presets.themeDark, props.className)}>
+    <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideGetStarted}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
         <div className={styles.cards}>
