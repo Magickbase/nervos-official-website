@@ -14,6 +14,10 @@
   border-radius: 35px;
   filter: invert(1);
 
+  .content {
+    margin: 0;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     min-width: unset;
     margin: 0 24px;

@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
-import embellishedLeft from './embellished_left.png'
-import embellishedRight from './embellished_right.png'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -114,8 +114,12 @@ const Mining: NextPage = () => {
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
         embellishedElements={[
-          { image: embellishedLeft, top: 56, right: 84 },
-          { image: embellishedRight, top: 307, left: 210 },
+          { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
+          {
+            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+            top: 307,
+            left: 210,
+          },
         ]}
         title={title}
         floatIcons={floatIcons}
