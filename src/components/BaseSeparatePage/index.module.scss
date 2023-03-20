@@ -5,6 +5,9 @@
   width: 100%;
   margin: 0;
   padding: 0;
+
+  // Avoid affecting the body by the width of the `.embellishedElement`.
+  overflow: hidden;
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
 
@@ -78,8 +81,6 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
-    overflow: hidden;
-
     .headerClassName,
     .descriptionWrap,
     .infoWrap,
