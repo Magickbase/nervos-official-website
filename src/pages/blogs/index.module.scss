@@ -33,22 +33,18 @@
     position: absolute;
     z-index: 0;
     filter: invert(1);
-    mix-blend-mode: darken;
+    mix-blend-mode: difference;
   }
 
   .left {
     top: 205px;
     left: -430px;
-    width: 906px;
-    height: 527px;
-    transform: rotate(0.5turn);
+    transform: rotate(-0.5turn);
   }
 
   .right {
     top: 0;
     right: -350px;
-    width: 960px;
-    height: 553px;
   }
 
   @media screen and (max-width: 1280px) {

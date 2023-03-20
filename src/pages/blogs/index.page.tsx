@@ -5,15 +5,14 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
-import Image from 'next/image'
 import type { BlogType } from './[slug].page'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
-import blogBannerLeft from '../../../public/images/blog_banner_left.png'
-import blogBannerRight from '../../../public/images/blog_banner_right.png'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 type Props = {
   categories: Array<string>
@@ -44,8 +43,9 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
       </Head>
       <Page>
         <div className={styles.banner}>
-          <Image src={blogBannerLeft} alt="cell" className={styles.left} />
-          <Image src={blogBannerRight} alt="cell" className={styles.right} />
+          <EmbellishedLeft width={906} height={527} className={styles.left} />
+          <EmbellishedRight width={906} height={521} className={styles.right} />
+
           <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
           <span>{t('blog_banner')}</span>
         </div>
