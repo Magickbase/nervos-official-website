@@ -45,8 +45,6 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
       <Page>
         <div className={styles.banner}>
           <Image src={blogBannerLeft} alt="cell" className={styles.left} />
-          <Image src={blogBannerLeft} alt="cell" className={styles.left} />
-          <Image src={blogBannerRight} alt="cell" className={styles.right} />
           <Image src={blogBannerRight} alt="cell" className={styles.right} />
           <img src="/images/blog_banner_icons.svg" alt="blog" loading="lazy" className={styles.icons} />
           <span>{t('blog_banner')}</span>
