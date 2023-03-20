@@ -2,27 +2,32 @@
 @import '../../styles/variables.module';
 
 .footer {
-  min-width: 1200px;
-  margin: 0 120px;
-  padding-bottom: 60px;
+  padding: 0 120px 60px;
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
-  border-top: 0.5px solid #6a7171;
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 0.5px solid #6a7171;
+  }
 
   .guide {
     display: flex;
+    flex-wrap: wrap;
+    gap: 140px;
+    margin-top: 70px;
 
     .guideLinks {
       display: flex;
-      flex: 1;
+      flex: 1 1 max-content;
+      gap: 12px;
       justify-content: space-between;
       width: 100%;
     }
 
     .guideMedias {
-      max-width: 374px;
-      margin-top: 70px;
-      margin-left: 140px;
+      flex: 1 1 374px;
     }
   }
 
