@@ -61,22 +61,25 @@ export const Footer: FC<FooterProps> = props => {
 
   return (
     <div className={clsx(styles.footer, className)} {...divProps}>
-      <div className={styles.guide}>
-        <div className={styles.guideLinks}>
-          {footerLinkGroups?.map(({ title, links }, index) => (
-            <FooterLinkGroup title={title} links={links} key={index} />
-          ))}
-        </div>
-        <div className={styles.guideMedias}>
-          <FooterMedia />
-        </div>
-      </div>
+      <div className={styles.content}>
+        <div className={styles.guide}>
+          <div className={styles.guideLinks}>
+            {footerLinkGroups?.map(({ title, links }, index) => (
+              <FooterLinkGroup title={title} links={links} key={index} />
+            ))}
+          </div>
 
-      <div className={styles.bottom}>
-        <LogoIcon />
-        <div className={styles.copyright}>
-          ©Nervos is an open-source project funded by the <span className={styles.bold}>Nervos Foundation</span>. All
-          Rights Reserved.
+          <div className={styles.guideMedias}>
+            <FooterMedia />
+          </div>
+        </div>
+
+        <div className={styles.bottom}>
+          <LogoIcon />
+          <div className={styles.copyright}>
+            ©Nervos is an open-source project funded by the <span className={styles.bold}>Nervos Foundation</span>. All
+            Rights Reserved.
+          </div>
         </div>
       </div>
     </div>
