@@ -3,8 +3,7 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
-import embellishedLeft from './embellished_left.png'
-import embellishedRight from './embellished_right.png'
+import Embellished from './embellished.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -83,8 +82,12 @@ const CkbPage: NextPage = () => {
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
         embellishedElements={[
-          { image: embellishedLeft, top: 360, right: 518 },
-          { image: embellishedRight, top: 292, left: 142 },
+          {
+            content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+            top: 360,
+            right: 518,
+          },
+          { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
         ]}
         title={title}
         floatIcons={floatIcons}

@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
-import embellishedLeft from './embellished_left.png'
-import embellishedRight from './embellished_right.png'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -168,8 +168,28 @@ const Wallets: NextPage = () => {
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
         embellishedElements={[
-          { image: embellishedLeft, top: 27, right: 396 },
-          { image: embellishedRight, top: -90, left: 82, fill: false },
+          {
+            content: (
+              <EmbellishedLeft
+                width={744}
+                height={459}
+                style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+              />
+            ),
+            top: 27,
+            right: 396 + 459,
+          },
+          {
+            content: (
+              <EmbellishedRight
+                width={595}
+                height={310}
+                style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
+              />
+            ),
+            top: -170,
+            left: 82,
+          },
         ]}
         title={title}
         floatIcons={floatIcons}

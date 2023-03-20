@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
-import embellishedLeft from './embellished_left.png'
-import embellishedRight from './embellished_right.png'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -115,8 +115,8 @@ const Learn: NextPage = () => {
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
         embellishedElements={[
-          { image: embellishedLeft, top: 435, right: 370 },
-          { image: embellishedRight, top: -90, left: 100 },
+          { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
+          { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
         ]}
         title={title}
         floatIcons={floatIcons}

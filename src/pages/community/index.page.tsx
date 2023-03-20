@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
-import embellishedLeft from './embellished_left.png'
-import embellishedRight from './embellished_right.png'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -121,8 +121,12 @@ const Community: NextPage = () => {
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
         embellishedElements={[
-          { image: embellishedLeft, top: 64, right: -204 },
-          { image: embellishedRight, top: 478, left: 344 },
+          { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
+          {
+            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+            top: 478,
+            left: 344,
+          },
         ]}
         title={title}
         floatIcons={floatIcons}
