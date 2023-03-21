@@ -14,7 +14,7 @@ import { ArticlesIcon, BallsIcon, QuoteIcon, SunIcon } from './icons'
 const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
 const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes CKB the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const functions = [
   {
@@ -34,7 +34,7 @@ const functions = [
         </b>
         <div className="oneLineGap">
           Applications that run on CKB are widely accessible to users from other blockchains. For example,
-          <StyledLink isColored isUnderlined linkData={{ label: '.bit', url: 'http://placeholder' }} /> is a
+          <StyledLink isNewTab isColored isUnderlined linkData={{ label: '.bit', url: 'https://www.did.id/' }} /> is a
           decentralized identity running on CKB that can be accessed with Ethereum, Polygon, Dogecoin, and Bitcoin
           wallets.
         </div>
@@ -130,6 +130,7 @@ const Developers: NextPage = () => {
             left: 96,
           },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/developers/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

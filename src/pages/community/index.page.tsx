@@ -14,7 +14,7 @@ import { CommunityHubFloatIconGroup } from './icons'
 const title = <div>Community Hub.</div>
 const description = `Nervos is a community-driven project that abides by the cypherpunk values of openness and decentralization across all verticals. If you're passionate about crypto and continually seeking to improve the status quo, Nervos is the perfect place to be.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const InvolvedItem = ({
   titleLink: { label, url },
@@ -128,6 +128,7 @@ const Community: NextPage = () => {
             left: 344,
           },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

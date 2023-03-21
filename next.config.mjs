@@ -20,6 +20,15 @@ const config = {
    */
   i18n: i18nConfig.i18n,
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+    ],
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

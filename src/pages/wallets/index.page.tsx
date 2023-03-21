@@ -24,7 +24,7 @@ import {
 const title = <div>Wallets.</div>
 const description = `Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const FunctionsItemTitle = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
   <div className={styles.functionsItemTitle}>
@@ -191,6 +191,7 @@ const Wallets: NextPage = () => {
             left: 82,
           },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/wallets/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}
