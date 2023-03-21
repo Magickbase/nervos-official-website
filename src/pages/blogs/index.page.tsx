@@ -98,18 +98,20 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
             })}
           </div>
 
-          <div className={styles.categories}>
-            <div>{t('sort_by')}</div>
-            {categories.map(category => (
-              <Link
-                key={category}
-                href={`/blogs?sort_by=${encodeURIComponent(category)}`}
-                className={styles.category}
-                data-selected={sort_by === category}
-              >
-                {t(category)}
-              </Link>
-            ))}
+          <div className={styles.categoriesContainer}>
+            <div className={styles.label}>{t('sort_by')}</div>
+            <div className={styles.categories}>
+              {categories.map(category => (
+                <Link
+                  key={category}
+                  href={`/blogs?sort_by=${encodeURIComponent(category)}`}
+                  className={styles.category}
+                  data-selected={sort_by === category}
+                >
+                  {t(category)}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <select className={styles.categorySelect} onChange={handleSortChange} value={sort_by}>

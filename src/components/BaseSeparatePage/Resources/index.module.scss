@@ -12,10 +12,10 @@
   }
 
   .resourceItemGroup {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 13px;
-    justify-content: center;
-    min-width: 1200px;
+    margin-top: 60px;
   }
 
   @media (max-width: $mobileBreakPoint) {

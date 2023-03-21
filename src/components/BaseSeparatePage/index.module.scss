@@ -3,8 +3,7 @@
 
 .baseSeparatePage {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  padding: 0 min(10%, 120px);
 
   // Avoid affecting the body by the width of the `.embellishedElement`.
   overflow: hidden;
@@ -13,6 +12,11 @@
 
   // Create a new stacking context to avoid embellishedElements overwriting the header.
   isolation: isolate;
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   .embellishedElements {
     position: relative;
@@ -37,14 +41,9 @@
   .resourcesWrap,
   .supportsWrap {
     display: flex;
-
-    // Todo: we need more response designs to adjust more situations and we’ll update this width someday later
-    min-width: 1200px;
-    margin: 0 120px;
   }
 
   .infoWrap {
-    margin: 20px 120px;
     border-bottom: 0.5px solid #6a7171;
   }
 
@@ -81,6 +80,8 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
+    padding: 0;
+
     .headerClassName,
     .descriptionWrap,
     .infoWrap,
@@ -93,8 +94,6 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      min-width: unset;
-      margin: unset;
     }
 
     .functionsWrap {

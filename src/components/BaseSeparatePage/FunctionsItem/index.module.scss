@@ -3,6 +3,8 @@
 
 .functionsItem {
   display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
   margin-right: 70px;
   padding: 120px 0;
   font-weight: 400;
@@ -10,7 +12,7 @@
 
   .titleWrap {
     display: inline-block;
-    width: 350px;
+    flex: 1 1 350px;
 
     .title {
       font-weight: 600;
@@ -51,8 +53,7 @@
   }
 
   .content {
-    flex: 1;
-    margin-left: 70px;
+    flex: 10 1 400px;
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
@@ -61,7 +62,6 @@
 
   @media (max-width: $mobileBreakPoint) {
     display: block;
-    width: calc(100% - var(--baseMobileMargin) * 2);
     margin: 0 var(--baseMobileMargin);
     padding: 80px 0;
 
