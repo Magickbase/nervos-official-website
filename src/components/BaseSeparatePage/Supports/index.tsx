@@ -17,19 +17,19 @@ export type ResourcesType = {
 const supports1 = [
   {
     title: 'Build Club',
-    url: 'http://placeholder',
+    url: 'https://www.buildclub.xyz/',
     content:
       'Build Club is an incubation program to help developers and entrepreneurs to launch Nervos dApps, tooling or infrastructure on Nervos.',
   },
   {
     title: 'Trailblazers',
-    url: 'http://placeholder',
+    url: 'https://www.nervos.org/trailblazer',
     content:
       'Nervos Trailblazers is a program supporting individuals going above and beyond to support the growth of the Nervos Network through content and community organization.',
   },
   {
     title: 'Grants Program',
-    url: 'http://placeholder',
+    url: 'https://www.nervos.org/developer/grants',
     content:
       'Nervos Grants Program was created to empower innovation and development of infrastructure of the Nervos network and to support the growth of a diverse and thriving ecosystem.',
   },
@@ -42,7 +42,7 @@ const supports2 = [
   },
   {
     title: 'Developer Training Course',
-    url: 'http://placeholder',
+    url: 'https://nervos.gitbook.io/developer-training-course/',
     content: 'Foundational information about Nervos and technical reference materials.',
   },
   {
@@ -58,12 +58,12 @@ const supports2 = [
   },
   {
     title: 'Build Club',
-    url: 'http://placeholder',
+    url: 'https://www.buildclub.xyz/',
     content: 'Build Club provides support for teams and individuals who would like to launch a new project on Nervos.',
   },
   {
-    title: 'Start with Nervos',
-    url: 'http://placeholder',
+    title: 'Start with Godwoken',
+    url: 'https://docs.godwoken.io/',
     content:
       'Documentation focused on the EVM-equivalent Godwoken network, the easiest way to launch a dApp on Nervos!',
   },
