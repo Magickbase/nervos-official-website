@@ -45,9 +45,17 @@ const functions = [
           Neuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation,
           as you open the Neuron Wallet, the bundled Mainnet node will run.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isIconed
+          linkData={{ label: 'Download', url: 'https://github.com/nervosnetwork/neuron/releases' }}
+        />
         <br />
-        <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isIconed
+          linkData={{ label: 'Tutorials', url: 'https://docs.nervos.org/docs/basics/guides/crypto%20wallets/neuron/' }}
+        />
       </>
     ),
   },
@@ -59,9 +67,9 @@ const functions = [
         CKBull is a mobile wallet that allows you to access and manage your CKB, tokens bridged from Force Bridge, NFTs,
         as well as deposits into the Nervos DAO, all in one place.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'https://ckbull.app/#download' }} />
           <br />
-          <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'https://ckbull.app/' }} />
         </div>
       </>
     ),
@@ -73,7 +81,7 @@ const functions = [
       <>
         JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'https://joy.id/' }} />
         </div>
       </>
     ),
@@ -87,7 +95,7 @@ const functions = [
         Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use
         their existing Ethereum addresses and wallets to receive and send CKB directly.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Portal Wallet', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Portal Wallet', url: 'https://ckb.pw/' }} />
         </div>
       </>
     ),
@@ -102,9 +110,9 @@ const functions = [
         wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap,
         and trade. It is now serving more than 6 million users across the globe.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'https://www.safepal.com/' }} />
           <br />
-          <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'https://blog.safepal.com/ckb/' }} />
         </div>
       </>
     ),
@@ -117,7 +125,7 @@ const functions = [
         Ledger is the most popular hardware wallet and has support for Nervos CKB. You can store, send and receive CKB
         using your Ledger Nano X and Ledger Nano S hardware wallets. Click here for the guide.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'https://www.ledger.com/' }} />
         </div>
       </>
     ),
@@ -130,9 +138,16 @@ const functions = [
         Starting today, Opera’s millions of users can send and receive Nervos CKB within the crypto wallet built into
         the Opera browser on Android.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'http://placeholder' }} />
+          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'https://www.opera.com/download' }} />
           <br />
-          <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
+          <StyledLink
+            isColored
+            isIconed
+            linkData={{
+              label: 'Tutorials',
+              url: 'https://medium.com/@nervosnetwork/sending-and-receiving-ckb-via-operas-android-wallet-28bfc6481390',
+            }}
+          />
         </div>
       </>
     ),
@@ -149,9 +164,9 @@ const functions = [
           As a strategic partner of Nervos, imToken provides a built-in CKB wallet that enables users to safely send,
           receive and store CKB.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'http://placeholder' }} />
+        <StyledLink isColored isIconed linkData={{ label: 'Official website', url: 'https://token.im/' }} />
         <br />
-        <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'http://placeholder' }} />
+        <StyledLink isColored isIconed linkData={{ label: 'Tutorials', url: 'https://token.im/ckb-wallet' }} />
       </>
     ),
   },

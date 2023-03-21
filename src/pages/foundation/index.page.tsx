@@ -89,8 +89,13 @@ const functions = [
         other. The Nervos Foundation pushes out resources to teams in the community and supports them in reaching their
         goals.
         <div className="oneLineGap">
-          Visit this <StyledLink isColored isUnderlined linkData={{ label: 'link', url: 'http://placeholder' }} /> to
-          see open positions with the Nervos Foundation.
+          Visit this{' '}
+          <StyledLink
+            isColored
+            isUnderlined
+            linkData={{ label: 'link', url: 'https://jobs.gohire.io/nervos-network-tzqhh93f/' }}
+          />{' '}
+          to see open positions with the Nervos Foundation.
         </div>
       </>
     ),
@@ -100,7 +105,6 @@ const extensionTitle = 'Vision for the Future.'
 
 const Foundation: NextPage = () => {
   const isMobile = useIsMobile()
-  console.log(isMobile, 'isMobile')
 
   const floatIcons = (
     <div className={styles.icons}>{isMobile ? <FoundationMobileFloatIconGroup /> : <FoundationFloatIconGroup />}</div>
