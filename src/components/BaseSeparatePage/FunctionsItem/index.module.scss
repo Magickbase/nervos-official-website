@@ -47,7 +47,7 @@
 
   &[data-is-progress-bar='false'] {
     margin-right: unset;
-    padding: 0 0 140px;
+    padding: 0 0 120px;
     border: none;
 
     .titleWrap {
@@ -70,6 +70,8 @@
     padding: 80px 0;
 
     &[data-is-progress-bar='false'] {
+      padding-bottom: 80px;
+
       .titleWrap {
         width: 100%;
         min-width: unset;

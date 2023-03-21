@@ -2,16 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../../../../components/ConwayGameOfLife'
-import {
-  TwitterIcon,
-  DiscordIcon,
-  TelegramIcon,
-  LinkedInIcon,
-  RedditIcon,
-  YoutubeIcon,
-  TIcon,
-  ArrowIcon,
-} from './icons'
+import { SubscribeWrap } from './SubscribeWrap'
+import { TwitterIcon, DiscordIcon, TelegramIcon, LinkedInIcon, RedditIcon, YoutubeIcon, TIcon } from './icons'
 
 import styles from './index.module.scss'
 
@@ -61,10 +53,7 @@ export const FooterMedia: React.FC = () => {
     <div className={clsx(styles.footerMedia, DISABLE_CGOL_MOUSE_CONTROLLER)}>
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
-      <div className={styles.inputWrap}>
-        <input type="text" placeholder="Your Email" />
-        <ArrowIcon />
-      </div>
+      <SubscribeWrap />
       <div className={styles.medias}>
         {medias?.map(({ label, url }) => (
           <Link href={url} key={url} target="_blank" rel="noopener noreferrer">
