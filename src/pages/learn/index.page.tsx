@@ -37,7 +37,11 @@ const functions = [
           blockchain or an experienced professional, our articles will help you deepen your knowledge and stay
           up-to-date on the latest developments in the field.
         </p>
-        <StyledLink isColored isUnderlined linkData={{ label: 'Start learning', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isUnderlined
+          linkData={{ label: 'Start learning', url: 'https://nervos.gitbook.io/developer-training-course/' }}
+        />
       </>
     ),
   },
@@ -51,9 +55,17 @@ const functions = [
         community-driven and open. This process encourages active participation from users and developers alike,
         fostering collaboration, and generating valuable feedback.
         <p>For more information on this process, we encourage you to explore and learn more about it.</p>
-        <StyledLink isColored isUnderlined linkData={{ label: 'Learn More ', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isUnderlined
+          linkData={{ label: 'Learn More ', url: 'https://github.com/nervosnetwork/rfcs' }}
+        />
         &nbsp;|&nbsp;
-        <StyledLink isColored isUnderlined linkData={{ label: 'Contribute', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isUnderlined
+          linkData={{ label: 'Contribute', url: 'https://github.com/nervosnetwork/rfcs/pulls' }}
+        />
       </>
     ),
   },
@@ -69,7 +81,11 @@ const functions = [
           Nervos strive to be a reliable source of information for crypto enthusiasts, investors, and anyone interested
           in learning about this exciting and dynamic field.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Youtube', url: 'http://placeholder' }} />
+        <StyledLink
+          isColored
+          isIconed
+          linkData={{ label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' }}
+        />
       </>
     ),
   },
@@ -85,7 +101,7 @@ const functions = [
           As a community-driven platform, we feature articles written by members of the Nervos community, covering a
           diverse range of topics related to blockchain technology, cryptocurrency, and everything in between.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Medium', url: 'http://placeholder' }} />
+        <StyledLink isColored isIconed linkData={{ label: 'Medium', url: 'https://medium.com/nervosnetwork' }} />
       </>
     ),
   },
@@ -98,7 +114,7 @@ const functions = [
           The Nervos blog is your go-to source for updates, partnership news, and announcements related to the Nervos
           Network and its ecosystem. Stay tuned for the latest developments in the world of Nervos.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Go to blog', url: 'http://placeholder' }} />
+        <StyledLink isColored isIconed linkData={{ label: 'Go to blog', url: '/blogs' }} />
       </>
     ),
   },

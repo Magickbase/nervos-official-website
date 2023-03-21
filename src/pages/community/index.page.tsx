@@ -32,38 +32,38 @@ const InvolvedItem = ({
 const involvedList = [
   {
     label: 'Nervos Meetups',
-    url: 'http://placeholder',
+    url: 'https://www.meetup.com/pro/nervos-community/',
     description:
       'Join Nervos meet-ups around the world! We love bringing our community together and regularly host meet-ups, or you can host your own in your neighborhood – just let us know.',
   },
   {
     label: 'Nervos Talk',
-    url: 'http://placeholder',
+    url: 'https://talk.nervos.org/',
     description: 'Participate and discuss technical developments on Nervos.',
   },
   {
     label: 'Twitter',
-    url: 'http://placeholder',
+    url: 'https://twitter.com/NervosNetwork',
     description: 'Stay up to date with the latest news and updates in our ecosystem.',
   },
   {
     label: 'Discord',
-    url: 'http://placeholder',
+    url: 'https://discord.gg/FKh8Zzvwqa',
     description: 'Connect with Nervos core developers and contributors.',
   },
   {
     label: 'Telegram',
-    url: 'http://placeholder',
+    url: 'https://t.me/NervosNetwork',
     description: 'Become a part of our vibrant community of meme connoisseurs.',
   },
   {
     label: 'Reddit',
-    url: 'http://placeholder',
+    url: 'https://www.reddit.com/r/NervosNetwork/',
     description: 'Participate in regular AMAs with Nervos project developers.',
   },
   {
     label: 'Youtube',
-    url: 'http://placeholder',
+    url: 'https://www.youtube.com/c/NervosNetwork',
     description: 'Listen to podcasts and interviews with Nervos core and project developers.',
   },
 ]
@@ -88,9 +88,19 @@ const functions = [
         technical specifications. For this reason, an RFC (request for comment) process is utilized. The process is open
         and community-driven. You can learn more here! Learn
         <div className="oneLineGap">
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'More', url: 'http://placeholder' }} />
+          <StyledLink
+            isColored
+            isUnderlined
+            isIconed
+            linkData={{ label: 'More', url: 'https://github.com/nervosnetwork/rfcs' }}
+          />
           &nbsp;|&nbsp;
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'Contribute', url: 'http://placeholder' }} />
+          <StyledLink
+            isColored
+            isUnderlined
+            isIconed
+            linkData={{ label: 'Contribute', url: 'https://github.com/nervosnetwork/rfcs/pulls' }}
+          />
         </div>
       </>
     ),
