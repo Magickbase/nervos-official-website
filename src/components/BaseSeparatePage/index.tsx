@@ -22,6 +22,7 @@ export type BaseSeparatePageType = HeaderType &
       extensionTitle: string | ReactNode
       extensionTitleFunctions: FunctionsItemType[]
     }
+    editLink?: string
     isProgressBar?: boolean
     isNeedSupports?: boolean
     headerClassName?: string
@@ -56,6 +57,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     editor,
     functions,
     functionsExtensionTitle,
+    editLink,
     isProgressBar = true,
     isNeedSupports = false,
     resourceData,
@@ -74,7 +76,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     <div className={styles.functionsWrap}>
       <Functions isProgressBar={isProgressBar} functions={functions} className={className} />
       {/* Todo: progressbar need complete later*/}
-      {isProgressBar ? <ProgressBar className={clsx(styles.progressBar)} /> : null}
+      {isProgressBar ? <ProgressBar className={clsx(styles.progressBar)} editLink={editLink} /> : null}
     </div>
   )
 
@@ -109,7 +111,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
         ) : null}
         {info ? (
           <div className={styles.infoWrap}>
-            <Info className={infoClassName} info={info} editor={editor} />
+            <Info className={infoClassName} info={info} editor={editor} editLink={editLink} />
           </div>
         ) : null}
 

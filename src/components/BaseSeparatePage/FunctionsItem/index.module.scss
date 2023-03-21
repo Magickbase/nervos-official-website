@@ -10,6 +10,10 @@
   font-weight: 400;
   border-bottom: 0.5px solid;
 
+  &:last-child {
+    border-bottom: 0;
+  }
+
   .titleWrap {
     display: inline-block;
     flex: 1 1 350px;

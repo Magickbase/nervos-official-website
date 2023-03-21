@@ -13,7 +13,7 @@ import { CkbPageFloatIconGroup, DataPieIcon } from './icons'
 const title = <div>1 CKB = 1 Byte.</div>
 const description = `CKByte (CKB) is Nervos' native coin. One CKB allows an owner to store one byte of data on the Common Knowledge Base blockchain and pay transaction fees.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const functions = [
   {
@@ -24,8 +24,17 @@ const functions = [
         CKB token issuance includes an initial supply of 33.6 billion coins (of which 8.4 billion was burned at launch),
         a base issuance of 33.6 billion (which halves every four years), and a fixed secondary issuance of 1.344 billion
         per year. Check out the detailed CKB supply and issuance information{' '}
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'here', url: 'http://placeholder' }} />.
-        <p>02/14/2023</p>
+        <StyledLink
+          linkData={{
+            label: 'here',
+            url: 'https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9',
+          }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
+        .<p>02/14/2023</p>
         <DataPieIcon />
         <p>
           When miners mine a block, they&apos;re rewarded CKB from two sources: the base and secondary issuance. The
@@ -39,18 +48,34 @@ const functions = [
         </p>
         <div className="oneLineGap">
           Long term holders can lock their CKB in the &nbsp;
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'Nervos DAO', url: 'http://placeholder' }} />
+          <StyledLink
+            linkData={{ label: 'Nervos DAO', url: 'https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c' }}
+            isNewTab
+            isColored
+            isUnderlined
+            isIconed
+          />
           &nbsp; to seek shelter from inflation of secondary issuance, for them CKB is effectively a “hard-capped”
           asset.
         </div>
         Learn more about tokenomics via this&nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'video', url: 'http://placeholder' }} />
-        &nbsp;or the&nbsp;
         <StyledLink
+          linkData={{ label: 'video', url: 'https://www.youtube.com/watch?v=Ed-s-iCZDrw' }}
+          isNewTab
           isColored
           isUnderlined
           isIconed
-          linkData={{ label: 'CKB tokenomics paper', url: 'http://placeholder' }}
+        />
+        &nbsp;or the&nbsp;
+        <StyledLink
+          linkData={{
+            label: 'CKB tokenomics paper',
+            url: 'https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0015-ckb-cryptoeconomics/0015-ckb-cryptoeconomics.md',
+          }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
         />
         &nbsp;.
       </>
@@ -62,9 +87,15 @@ const functions = [
     content: (
       <>
         You can buy or sell CKB using cryptocurrency&nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'exchanges', url: 'http://placeholder' }} />
+        <StyledLink
+          linkData={{ label: 'exchanges', url: 'https://docs.nervos.org/docs/basics/guides/mining-ckb/' }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
         &nbsp;. However, keeping it there is risky, so we recommend moving it to a non-custodial cryptocurrency &nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'wallet', url: 'http://placeholder' }} />
+        <StyledLink isColored isUnderlined linkData={{ label: 'wallet', url: '/wallets' }} />
         &nbsp;.
       </>
     ),
@@ -89,6 +120,7 @@ const CkbPage: NextPage = () => {
           },
           { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/ckbpage/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

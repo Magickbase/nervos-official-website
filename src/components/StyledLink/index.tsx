@@ -11,6 +11,7 @@ export type StyledLinkType = {
   isColored?: boolean
   isUnderlined?: boolean
   isIconed?: boolean
+  isNewTab?: boolean
   className?: string
 }
 
@@ -20,6 +21,7 @@ export const StyledLink: FC<StyledLinkType> = ({
   isColored = false,
   isUnderlined = false,
   isIconed = false,
+  isNewTab,
   className,
 }) => {
   const { label, url = '' } = linkData
@@ -29,11 +31,13 @@ export const StyledLink: FC<StyledLinkType> = ({
     <div data-colored={isColored} data-underlined={isUnderlined} className={clsx(styles.styledLink, className)}>
       <span data-spaced={isSpaced} className={clsx(styles.label)}>
         {url.startsWith('http') ? (
-          <a href={url} target="_self">
+          <a href={url} target="_self" {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}>
             {linkLabel}
           </a>
         ) : (
-          <Link href="/">{linkLabel}</Link>
+          <Link href={url} {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}>
+            {linkLabel}
+          </Link>
         )}
       </span>
       {isIconed ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}

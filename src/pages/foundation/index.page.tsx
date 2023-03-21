@@ -12,7 +12,7 @@ import { FoundationFloatIconGroup, FoundationMobileFloatIconGroup, LadderIcon } 
 
 const title = <div>The Nervos Foundation.</div>
 const description = `The Nervos Foundation is a non-profit organization whose mission is to support the long-term growth of the Nervos Network. We work to ensure the future success of Nervos by seeding the community to grow independently while driving meaningful innovation in the industry.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 const positionsData = {
   positionsTitle: 'Foundation Positioning.',
   positions: [
@@ -109,6 +109,7 @@ const Foundation: NextPage = () => {
   return (
     <Page className={clsx(presets.themeLight)}>
       <BaseSeparatePage
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

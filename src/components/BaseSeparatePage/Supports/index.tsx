@@ -17,16 +17,19 @@ export type ResourcesType = {
 const supports1 = [
   {
     title: 'Build Club',
+    url: 'http://placeholder',
     content:
       'Build Club is an incubation program to help developers and entrepreneurs to launch Nervos dApps, tooling or infrastructure on Nervos.',
   },
   {
     title: 'Trailblazers',
+    url: 'http://placeholder',
     content:
       'Nervos Trailblazers is a program supporting individuals going above and beyond to support the growth of the Nervos Network through content and community organization.',
   },
   {
     title: 'Grants Program',
+    url: 'http://placeholder',
     content:
       'Nervos Grants Program was created to empower innovation and development of infrastructure of the Nervos network and to support the growth of a diverse and thriving ecosystem.',
   },
@@ -34,27 +37,33 @@ const supports1 = [
 const supports2 = [
   {
     title: 'Nervos Docs',
+    url: 'https://docs.nervos.org/',
     content: 'Foundational information about Nervos and technical reference materials.',
   },
   {
     title: 'Developer Training Course',
+    url: 'http://placeholder',
     content: 'Foundational information about Nervos and technical reference materials.',
   },
   {
     title: 'RFCs',
+    url: 'https://github.com/nervosnetwork/rfcs',
     content:
       'For anyone who is interested in making contributions to protocol improvements and standards, join the discussion and participate in the RFC process on Github.',
   },
   {
     title: 'Nervos Talk Forum',
+    url: 'https://talk.nervos.org/',
     content: 'For the community to participate and discuss developments on Nervos.',
   },
   {
     title: 'Build Club',
+    url: 'http://placeholder',
     content: 'Build Club provides support for teams and individuals who would like to launch a new project on Nervos.',
   },
   {
     title: 'Start with Nervos',
+    url: 'http://placeholder',
     content:
       'Documentation focused on the EVM-equivalent Godwoken network, the easiest way to launch a dApp on Nervos!',
   },
@@ -71,8 +80,8 @@ export const Supports: FC<ResourcesType> = ({ className }) => {
             vision:
           </div>
         </div>
-        {supports1?.map(({ title, content }, index) => (
-          <ResourcesItem title={title} content={content} key={index} />
+        {supports1?.map(({ title, url, content }, index) => (
+          <ResourcesItem title={title} titleLink={url} content={content} key={index} />
         ))}
       </div>
       <div className={clsx(styles.supportsItemParticipantsGroup)}>
@@ -82,8 +91,8 @@ export const Supports: FC<ResourcesType> = ({ className }) => {
             Explore resources for participants within the community to drive the advancement of Nervos.
           </div>
         </div>
-        {supports2?.map(({ title, content }, index) => (
-          <ResourcesItem title={title} content={content} key={index} />
+        {supports2?.map(({ title, url, content }, index) => (
+          <ResourcesItem title={title} titleLink={url} content={content} key={index} />
         ))}
       </div>
     </div>

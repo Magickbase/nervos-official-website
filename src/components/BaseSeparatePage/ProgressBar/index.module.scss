@@ -31,6 +31,10 @@
     border: 1px solid;
     border-radius: 3px;
 
+    .link {
+      font-weight: 500;
+    }
+
     .githubIcon {
       path {
         fill: var(--colorPrimary);

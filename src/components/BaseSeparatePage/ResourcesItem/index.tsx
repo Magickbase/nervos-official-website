@@ -6,14 +6,15 @@ import styles from './index.module.scss'
 
 export type ResourcesItemType = {
   title: string
+  titleLink?: string
   content: string
   className?: string
 }
 
-export const ResourcesItem = ({ title, content }: ResourcesItemType) => (
+export const ResourcesItem = ({ title, titleLink, content }: ResourcesItemType) => (
   <div className={styles.resourcesItem}>
     <div className={clsx(styles.itemTitle)}>
-      <StyledLink linkData={{ label: title, url: 'http://placeholder' }} isSpaced isIconed />
+      <StyledLink linkData={{ label: title, url: titleLink ?? '' }} isSpaced isIconed />
     </div>
     <div className={styles.itemContent}>{content}</div>
   </div>
