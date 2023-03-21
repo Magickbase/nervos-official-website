@@ -77,6 +77,11 @@
       flex-direction: column;
     }
 
+    .supportsItemEcosystemWrap,
+    .supportsItemParticipantsWrap {
+      padding-bottom: 80px;
+    }
+
     .supportsItemParticipantsGroup {
       border-bottom: 0.5px solid;
     }
