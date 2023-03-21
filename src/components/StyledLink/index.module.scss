@@ -3,8 +3,10 @@
 
 .styledLink {
   display: inline-flex;
+  gap: 4px;
   align-items: center;
   color: var(--colorPrimary);
+  font-weight: 600;
 
   svg path {
     stroke: var(--colorPrimary);
@@ -18,6 +20,7 @@
 
   &[data-colored='true'] {
     color: var(--colorSecond);
+    border-bottom-color: var(--colorSecond);
 
     svg path {
       stroke: var(--colorSecond);
@@ -25,15 +28,19 @@
   }
 
   &[data-underlined='true'] {
-    text-decoration: underline;
+    // The reason for not using `text-decoration: underline` is that it
+    // doesn't make the svg get underline as well.
+    line-height: 0.8;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   .label {
     &[data-spaced='true'] {
       &::after {
         display: inline-block;
-        width: 8px;
-        height: 8px;
+        width: 4px;
+        height: 4px;
         content: '';
       }
     }

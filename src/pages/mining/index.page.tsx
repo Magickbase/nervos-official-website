@@ -20,7 +20,7 @@ const title = (
 )
 const description = `Nervos launched on Nov 16, 2019, and the first CKB halving will occur at Epoch 8760 (sometime around November 2023).`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const functions = [
   {
@@ -50,11 +50,32 @@ const functions = [
           200 transactions per second but also can increase its capacity as bandwidth and latency improve over time.
         </div>
         Read the&nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'NC-max paper', url: 'http://placeholder' }} />
+        <StyledLink
+          linkData={{ label: 'NC-max paper', url: 'https://eprint.iacr.org/2020/1101' }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
         &nbsp;and this&nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'article', url: 'http://placeholder' }} />, and
-        watch this&nbsp;
-        <StyledLink isColored isUnderlined isIconed linkData={{ label: 'video', url: 'http://placeholder' }} />
+        <StyledLink
+          linkData={{
+            label: 'article',
+            url: 'https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832',
+          }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
+        , and watch this&nbsp;
+        <StyledLink
+          linkData={{ label: 'video', url: 'https://www.youtube.com/watch?v=mYS-A1CK6zc' }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
         &nbsp;to learn more.
       </>
     ),
@@ -68,11 +89,29 @@ const functions = [
         CKB&apos;s design is ASIC neutral, and the first ASIC was released four months after the mainnet launch.
         <div className="oneLineGap">
           To learn more, read our &nbsp;
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'mining guide', url: 'http://placeholder' }} />
+          <StyledLink
+            linkData={{ label: 'mining guide', url: 'https://docs.nervos.org/docs/basics/guides/mining-ckb/' }}
+            isNewTab
+            isColored
+            isUnderlined
+            isIconed
+          />
           &nbsp; and the pages dedicated to &nbsp;
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'mining rigs', url: 'http://placeholder' }} />
+          <StyledLink
+            linkData={{ label: 'mining rigs', url: 'https://minerstat.com/coin/CKB/profitability' }}
+            isNewTab
+            isColored
+            isUnderlined
+            isIconed
+          />
           &nbsp; and &nbsp;
-          <StyledLink isColored isUnderlined isIconed linkData={{ label: 'mining pools', url: 'http://placeholder' }} />
+          <StyledLink
+            linkData={{ label: 'mining pools', url: 'https://miningpoolstats.stream/nervos' }}
+            isNewTab
+            isColored
+            isUnderlined
+            isIconed
+          />
           &nbsp;.
         </div>
       </>
@@ -121,6 +160,7 @@ const Mining: NextPage = () => {
             left: 210,
           },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/mining/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

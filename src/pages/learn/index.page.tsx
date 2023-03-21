@@ -14,7 +14,7 @@ import { LearnFloatIconGroup, KnowledgeBaseIcon } from './icons'
 const title = <div>Learn.</div>
 const description = `Nervos encompasses an extensive amount of innovation, check out some resources to get started.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit' }
+const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const functions = [
   {
@@ -118,6 +118,7 @@ const Learn: NextPage = () => {
           { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
           { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
         ]}
+        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
         title={title}
         floatIcons={floatIcons}
         description={description}

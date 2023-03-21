@@ -1,6 +1,7 @@
 import React, { FC, useEffect } from 'react'
 import clsx from 'clsx'
 import { StyledLink } from 'src/components/StyledLink'
+import Image from 'next/image'
 
 import styles from './index.module.scss'
 
@@ -8,12 +9,13 @@ export type InfoType = {
   info: string | React.ReactNode
   editor?: {
     id: string
+    avatar: string
   }
+  editLink?: string
   className?: string
 }
 
-export const Info: FC<InfoType> = ({ info, editor = {}, className }) => {
-  const { id = '' } = editor
+export const Info: FC<InfoType> = ({ info, editor, editLink, className }) => {
   const time = new Date().toDateString()
 
   const ContributorsButton = () => (
@@ -24,21 +26,20 @@ export const Info: FC<InfoType> = ({ info, editor = {}, className }) => {
 
   useEffect(() => {
     // TODO: query editor Info
-  }, [id])
+  }, [editor?.id])
 
   return (
     <div className={clsx(styles.info, className)}>
       <p className={styles.content}>{info}</p>
       <div className={styles.editorWrap}>
         <div className={styles.avatarAndEditorInfo}>
-          <img src="https://avatars.githubusercontent.com/u/22511289?s=96&v=4" alt="avatar" />
+          <Image className={styles.avatar} src={editor?.avatar ?? ''} width={45} height={45} alt="avatar" />
           <div className={clsx(styles.nameAndTime)}>
             <div>
               <span className={clsx(styles.lastEdit)}>Last edit: </span>
-              {/* Todo: need turn to the homepage of the editor */}
               <StyledLink
-                linkData={{ label: id, url: 'http://pladeholder' }}
-                isSpaced
+                linkData={{ label: editor?.id ?? '', url: editLink ?? '' }}
+                isNewTab
                 isColored
                 isIconed
                 isUnderlined

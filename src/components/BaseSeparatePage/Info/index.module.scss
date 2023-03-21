@@ -3,13 +3,17 @@
 
 .info {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px 260px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 20px 0;
   font-weight: 400;
 
   .content {
-    width: 450px;
+    flex: 1 1 450px;
+    margin: 0;
     font-size: 14px;
     line-height: 160%;
     letter-spacing: 0.05em;
@@ -17,8 +21,9 @@
 
   .editorWrap {
     display: flex;
+    flex: 1 1 min-content;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 12px;
     line-height: 150%;
     letter-spacing: 0.03em;
@@ -29,12 +34,11 @@
 
       .nameAndTime {
         display: flex;
+        white-space: nowrap;
       }
     }
 
-    img {
-      width: 45px;
-      height: 45px;
+    .avatar {
       border-radius: 50%;
     }
 
@@ -50,6 +54,7 @@
   .contributorsButton {
     width: 152px;
     height: 30px;
+    white-space: nowrap;
     background: #ede3ff;
     border: 1px solid #000;
     border-radius: 3px;
@@ -58,9 +63,10 @@
 
   @media (max-width: $mobileBreakPoint) {
     flex-direction: column;
+    padding-bottom: 0;
 
     .content {
-      width: 100%;
+      flex: 1;
       padding: 60px 24px 20px;
       font-weight: 400;
       font-size: 14px;

@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import { FC, ReactNode } from 'react'
-import Image, { StaticImageData } from 'next/image'
 import { Description, DescriptionType } from './Description'
 import { Functions, FunctionsType } from './Functions'
 import { Header, HeaderType } from './Header'
@@ -23,6 +22,7 @@ export type BaseSeparatePageType = HeaderType &
       extensionTitle: string | ReactNode
       extensionTitleFunctions: FunctionsItemType[]
     }
+    editLink?: string
     isProgressBar?: boolean
     isNeedSupports?: boolean
     headerClassName?: string
@@ -57,6 +57,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     editor,
     functions,
     functionsExtensionTitle,
+    editLink,
     isProgressBar = true,
     isNeedSupports = false,
     resourceData,
@@ -75,7 +76,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     <div className={styles.functionsWrap}>
       <Functions isProgressBar={isProgressBar} functions={functions} className={className} />
       {/* Todo: progressbar need complete later*/}
-      {isProgressBar ? <ProgressBar className={clsx(styles.progressBar)} /> : null}
+      {isProgressBar ? <ProgressBar className={clsx(styles.progressBar)} editLink={editLink} /> : null}
     </div>
   )
 
@@ -97,48 +98,50 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
         ))}
       </div>
 
-      <Header className={clsx(styles.headerClassName, headerClassName)} title={title} floatIcons={floatIcons} />
-      <div className={styles.descriptionWrap}>
-        <Description className={descriptionClassName} description={description} />
+      <div className={styles.content}>
+        <Header className={clsx(styles.headerClassName, headerClassName)} title={title} floatIcons={floatIcons} />
+        <div className={styles.descriptionWrap}>
+          <Description className={descriptionClassName} description={description} />
+        </div>
+
+        {positionsData ? (
+          <div className={styles.positionsWrap}>
+            <Positions positionsData={positionsData} />
+          </div>
+        ) : null}
+        {info ? (
+          <div className={styles.infoWrap}>
+            <Info className={infoClassName} info={info} editor={editor} editLink={editLink} />
+          </div>
+        ) : null}
+
+        {functionsExtensionTitle?.extensionTitle ? (
+          <div className={clsx(styles.functionsTitleWrap, functionsTitleClassName)}>
+            {functionsExtensionTitle.extensionTitle}
+          </div>
+        ) : null}
+
+        {functionsExtensionTitle?.extensionTitleFunctions ? (
+          <FunctionsContainer
+            functions={functionsExtensionTitle.extensionTitleFunctions}
+            isProgressBar={isProgressBar}
+            className={extensionTitleFunctionsClassName}
+          />
+        ) : null}
+        {isNeedSupports ? (
+          <div className={clsx(styles.supportsWrap)}>
+            <Supports />
+          </div>
+        ) : null}
+
+        <FunctionsContainer functions={functions} isProgressBar={isProgressBar} className={functionsClassName} />
+
+        {resourceData ? (
+          <div className={styles.resourcesWrap}>
+            <Resources resourceData={resourceData} />
+          </div>
+        ) : null}
       </div>
-
-      {positionsData ? (
-        <div className={styles.positionsWrap}>
-          <Positions positionsData={positionsData} />
-        </div>
-      ) : null}
-      {info ? (
-        <div className={styles.infoWrap}>
-          <Info className={infoClassName} info={info} editor={editor} />
-        </div>
-      ) : null}
-
-      {functionsExtensionTitle?.extensionTitle ? (
-        <div className={clsx(styles.functionsTitleWrap, functionsTitleClassName)}>
-          {functionsExtensionTitle.extensionTitle}
-        </div>
-      ) : null}
-
-      {functionsExtensionTitle?.extensionTitleFunctions ? (
-        <FunctionsContainer
-          functions={functionsExtensionTitle.extensionTitleFunctions}
-          isProgressBar={isProgressBar}
-          className={extensionTitleFunctionsClassName}
-        />
-      ) : null}
-      {isNeedSupports ? (
-        <div className={clsx(styles.supportsWrap)}>
-          <Supports />
-        </div>
-      ) : null}
-
-      <FunctionsContainer functions={functions} isProgressBar={isProgressBar} className={functionsClassName} />
-
-      {resourceData ? (
-        <div className={styles.resourcesWrap}>
-          <Resources resourceData={resourceData} />
-        </div>
-      ) : null}
     </div>
   )
 }
