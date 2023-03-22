@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal } from '@headlessui/react'
 import Link from 'next/link'
-import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
+import { useElementIntersecting, useElementSize } from '../../hooks'
 import {
   ConwayGameOfLife,
   DISABLE_CGOL_MOUSE_CONTROLLER,
@@ -245,8 +245,6 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBModular)
 
 const SlideGetStarted: FC<ScreenSlideProps> = props => {
-  const isMobile = useIsMobile()
-
   return (
     <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideGetStarted}>
