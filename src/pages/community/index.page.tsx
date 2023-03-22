@@ -30,12 +30,13 @@ const InvolvedItem = ({
 )
 
 const involvedList = [
-  {
-    label: 'Nervos Meetups',
-    url: 'https://www.meetup.com/pro/nervos-community/',
-    description:
-      'Join Nervos meet-ups around the world! We love bringing our community together and regularly host meet-ups, or you can host your own in your neighborhood – just let us know.',
-  },
+  // meetups is inactive temporarily
+  // {
+  //   label: 'Nervos Meetups',
+  //   url: 'https://www.meetup.com/pro/nervos-community/',
+  //   description:
+  //     'Join Nervos meet-ups around the world! We love bringing our community together and regularly host meet-ups, or you can host your own in your neighborhood – just let us know.',
+  // },
   {
     label: 'Nervos Talk',
     url: 'https://talk.nervos.org/',
