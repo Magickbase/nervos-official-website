@@ -101,6 +101,7 @@ $blendModeHeaderZ: 2;
   bottom: 0;
   left: 0;
   z-index: 1;
+  white-space: nowrap;
   filter: invert(1);
   mix-blend-mode: difference;
 }
@@ -337,6 +338,34 @@ $blendModeHeaderZ: 2;
 
     .cards {
       flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-height: 780px) {
+  .golContainer {
+    margin-left: 100px;
+  }
+
+  .slideCKBIntro,
+  .slideCKBSecurity,
+  .slideCKBFlexibility,
+  .slideCKBSustainability,
+  .slideCKBModular,
+  .slideGetStarted {
+    margin-top: 10px;
+
+    .titleText {
+      max-width: 439px;
+      font-size: 60px;
+    }
+
+    .descriptionText {
+      margin-top: 10px;
+    }
+
+    .text4 {
+      margin-top: 6px;
     }
   }
 }
