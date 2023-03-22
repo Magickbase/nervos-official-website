@@ -1,7 +1,7 @@
 @import '../../../styles/presets.module';
 @import '../../../styles/variables.module';
 
-.progressBar {
+.tableOfContents {
   margin-top: 120px;
 
   .onThisPage {
@@ -9,10 +9,6 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 135%;
-
-    div {
-      margin: 20px 0;
-    }
   }
 
   .editPageButton {
@@ -96,4 +92,38 @@
       }
     }
   }
+}
+
+.active {
+  color: var(--colorSecond);
+}
+
+.progressBorder {
+  position: relative;
+  border-left: 0.7px solid;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--colorPrimary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+}
+
+.progressBorder.active {
+  &::after {
+    background-color: var(--colorSecond);
+  }
+}
+
+.listItem {
+  padding: 15px 0 15px 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
 }

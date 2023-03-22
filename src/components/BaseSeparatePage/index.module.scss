@@ -58,9 +58,9 @@
   }
 
   .functionsWrap {
-    .progressBar {
-      width: 195px;
-      height: 220px;
+    .tableOfContents {
+      min-width: 200px;
+      min-height: 220px;
     }
   }
 
@@ -96,7 +96,7 @@
     }
 
     .functionsWrap {
-      .progressBar {
+      .tableOfContents {
         width: 100%;
         height: unset;
       }
