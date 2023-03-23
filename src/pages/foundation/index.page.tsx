@@ -1,11 +1,9 @@
 import { type NextPage } from 'next'
-import clsx from 'clsx'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 
-import presets from 'src/styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { FoundationFloatIconGroup, FoundationMobileFloatIconGroup, LadderIcon } from './icons'
@@ -111,7 +109,7 @@ const Foundation: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
+    <Page>
       <BaseSeparatePage
         editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
         title={title}

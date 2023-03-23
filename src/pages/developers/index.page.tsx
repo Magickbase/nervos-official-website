@@ -1,11 +1,11 @@
 import { type NextPage } from 'next'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import presets from 'src/styles/presets.module.scss'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useBodyClass } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -104,6 +104,8 @@ const resourceData = {
 }
 
 const Developers: NextPage = () => {
+  useBodyClass([presets.themeDark ?? ''])
+
   const floatIcons = (
     <div className={styles.icons}>
       <div className={styles.quoteIcon}>
@@ -116,7 +118,7 @@ const Developers: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeDark)}>
+    <Page>
       <BaseSeparatePage
         embellishedElements={[
           {

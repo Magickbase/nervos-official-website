@@ -1,12 +1,10 @@
 import { type NextPage } from 'next'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import {
@@ -211,7 +209,7 @@ const Wallets: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
+    <Page>
       <BaseSeparatePage
         embellishedElements={[
           {

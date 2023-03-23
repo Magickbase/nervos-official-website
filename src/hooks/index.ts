@@ -147,3 +147,12 @@ export function useElementIntersecting(
 
   return isIntersecting
 }
+
+export function useBodyClass(tokens: string[]) {
+  useEffect(() => {
+    // TODO: The very simple way of writing, without providing a counter for each class,
+    // may lead to some unanticipated class removal behavior when the effect Destructor is executed.
+    document.body.classList.add(...tokens)
+    return () => document.body.classList.remove(...tokens)
+  }, [tokens])
+}

@@ -1,11 +1,9 @@
 import { type NextPage } from 'next'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import Embellished from './embellished.svg'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup, DataPieIcon } from './icons'
@@ -110,7 +108,7 @@ const CkbPage: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
+    <Page>
       <BaseSeparatePage
         embellishedElements={[
           {

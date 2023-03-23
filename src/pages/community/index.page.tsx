@@ -1,10 +1,10 @@
 import { type NextPage } from 'next'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useBodyClass } from '../../hooks'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -122,6 +122,8 @@ const functions = [
 ]
 
 const Community: NextPage = () => {
+  useBodyClass([presets.themeDark ?? ''])
+
   const floatIcons = (
     <div className={styles.icons}>
       <CommunityHubFloatIconGroup />
@@ -129,7 +131,7 @@ const Community: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeDark)}>
+    <Page>
       <BaseSeparatePage
         embellishedElements={[
           { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
