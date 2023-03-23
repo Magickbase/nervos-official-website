@@ -6,10 +6,10 @@ import { FooterLinkGroup, FooterLinkGroupProps } from './components/FooterLinkGr
 import styles from './index.module.scss'
 import LogoIcon from './logo.svg'
 
-export type FooterProps = ComponentProps<'div'>
+export type FooterProps = ComponentProps<'div'> & { limitMaxWidth?: number | false }
 
 export const Footer: FC<FooterProps> = props => {
-  const { className, ...divProps } = props
+  const { limitMaxWidth = 1200, className, ...divProps } = props
 
   const footerLinkGroups: FooterLinkGroupProps[] = [
     {
@@ -61,7 +61,13 @@ export const Footer: FC<FooterProps> = props => {
 
   return (
     <div className={clsx(styles.footer, className)} {...divProps}>
-      <div className={styles.content}>
+      <div
+        className={styles.content}
+        style={{
+          // You must use unset instead of the empty string, otherwise will error on hydration.
+          maxWidth: limitMaxWidth === false ? 'unset' : limitMaxWidth,
+        }}
+      >
         <div className={styles.guide}>
           <div className={styles.guideLinks}>
             {footerLinkGroups?.map(({ title, links }, index) => (

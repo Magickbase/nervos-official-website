@@ -74,7 +74,9 @@ const Home: NextPage = () => {
             <SlideCKBModular gameControllerRef={controllerRef} />
             <SlideGetStarted gameControllerRef={controllerRef} isLastSlide />
 
-            <SwiperSlide className={clsx(styles.footer, presets.themeDark)}>{renderFooter()}</SwiperSlide>
+            <SwiperSlide className={clsx(styles.footer, presets.themeDark)}>
+              {renderFooter({ limitMaxWidth: false })}
+            </SwiperSlide>
           </Swiper>
 
           <div className={styles.golContainer}>
