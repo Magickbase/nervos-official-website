@@ -246,7 +246,12 @@ allowCustomDescendantOfSwiper(SlideCKBModular)
 
 const SlideGetStarted: FC<ScreenSlideProps> = props => {
   const isMobile = useIsMobile()
+
   if (isMobile) {
+    // TODO: This is a temporary solution to the problem of not being able to
+    // view the full content of this slideshow under mobile.
+    // In the future, it is expected that the swiper's freeMode.sticky property
+    // will be used to achieve better results, but some hacking may be required.
     return (
       <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
         <div className={styles.slideGetStarted}>
@@ -255,7 +260,6 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
             <Swiper
               direction="vertical"
               slidesPerView="auto"
-              // autoHeight
               mousewheel={{
                 // Supports operations from some Portal to elements outside the swiper container, such as SlideFooter.
                 eventsTarget: 'container',
