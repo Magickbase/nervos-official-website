@@ -204,6 +204,30 @@ $defaultHeaderHeight: 90px;
   background: var(--colorPrimaryBg);
   box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
 
+  &.enter {
+    transition: opacity 0.2s, right 0.2s;
+  }
+
+  &.leave {
+    transition: opacity 0.2s, right 0.2s;
+  }
+
+  &.enterFrom,
+  &.leaveTo {
+    right: 26px;
+    opacity: 0;
+  }
+
+  &.leaveTo {
+    right: 76px;
+  }
+
+  &.enterTo,
+  &.leaveFrom {
+    right: 76px;
+    opacity: 1;
+  }
+
   .language {
     display: flex;
     flex-direction: column;

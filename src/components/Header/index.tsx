@@ -231,34 +231,44 @@ const LanguagePopover: FC<{
 
           {/* Use Portal to prevent being influenced by mix-blend-mode */}
           <Portal>
-            <Popover.Panel className={styles.languagePopoverContent}>
-              {props.languages.map((language, idx) =>
-                language == null ? (
-                  <div key={idx} className={clsx(styles.language, styles.placeholder)} />
-                ) : language.disabled ? (
-                  <div key={language.name} className={clsx(styles.language, styles.disabled)}>
-                    <div>
-                      {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
-                      <div className={styles.name}>{language.name}</div>
+            <Transition
+              as={Fragment}
+              enter={styles.enter}
+              enterFrom={styles.enterFrom}
+              enterTo={styles.enterTo}
+              leave={styles.leave}
+              leaveFrom={styles.leaveFrom}
+              leaveTo={styles.leaveTo}
+            >
+              <Popover.Panel className={styles.languagePopoverContent}>
+                {props.languages.map((language, idx) =>
+                  language == null ? (
+                    <div key={idx} className={clsx(styles.language, styles.placeholder)} />
+                  ) : language.disabled ? (
+                    <div key={language.name} className={clsx(styles.language, styles.disabled)}>
+                      <div>
+                        {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                        <div className={styles.name}>{language.name}</div>
+                      </div>
+                      <div className={styles.tip}>Coming soon</div>
                     </div>
-                    <div className={styles.tip}>Coming soon</div>
-                  </div>
-                ) : (
-                  <Link
-                    key={language.name}
-                    className={styles.language}
-                    href={{ pathname, query }}
-                    locale={language.localeName}
-                    onClick={() => close()}
-                  >
-                    <div>
-                      {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
-                      <div className={styles.name}>{language.name}</div>
-                    </div>
-                  </Link>
-                ),
-              )}
-            </Popover.Panel>
+                  ) : (
+                    <Link
+                      key={language.name}
+                      className={styles.language}
+                      href={{ pathname, query }}
+                      locale={language.localeName}
+                      onClick={() => close()}
+                    >
+                      <div>
+                        {language.englishName && <div className={styles.englishName}>{language.englishName}</div>}
+                        <div className={styles.name}>{language.name}</div>
+                      </div>
+                    </Link>
+                  ),
+                )}
+              </Popover.Panel>
+            </Transition>
           </Portal>
         </>
       )}
