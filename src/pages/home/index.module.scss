@@ -93,6 +93,30 @@ $blendModeHeaderZ: 2;
   }
 }
 
+.rightClickTip {
+  $fontSize: 9px;
+  $scale: $fontSize / 12px;
+
+  position: fixed;
+  z-index: $blendModeHeaderZ + 1;
+  padding: (4px / $scale) (8px / $scale);
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: #ecf0f0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgb(0 0 0 / 12%);
+  transform: scale($scale);
+  filter: invert(1);
+  mix-blend-mode: difference;
+
+  // Try to make it look smooth
+  transition: all 0.02s;
+}
+
 .screenSlide {
   background: var(--colorPrimaryBg);
 

@@ -4,6 +4,7 @@ import cssVars from '../styles/variables.module.scss'
 import { useMemoizedFn } from './useMemoizedFn'
 
 export * from './useMemoizedFn'
+export * from './useMouse'
 
 /**
  * copied from https://usehooks-ts.com/react-hook/use-media-query

@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
-import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
+import { useElementIntersecting, useElementSize, useIsMobile, useMouse } from '../../hooks'
 import {
   ConwayGameOfLife,
   DISABLE_CGOL_MOUSE_CONTROLLER,
@@ -34,6 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
 const Home: NextPage = () => {
   const { t } = useTranslation('home')
+  const isMobile = useIsMobile()
 
   const ref = useRef<HTMLDivElement>(null)
   const controllerRef = useRef<GameController>(null)
@@ -41,11 +42,18 @@ const Home: NextPage = () => {
   const [activeIdx, setActiveIdx] = useState(0)
   const showScrollDownTip = activeIdx === 0
 
-  const isOnOperableArea = useGameMouseHandler(controllerRef)
+  const mousePos = useMouse()
+
+  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef)
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
 
   // Default focus on body, auto-focus this to respond to keyboard events.
   useEffect(() => ref.current?.focus(), [])
+
+  const [hasDrawn, setHasDrawn] = useState(false)
+  useEffect(() => {
+    isDrawing && setHasDrawn(true)
+  }, [isDrawing])
 
   return (
     <Page
@@ -101,6 +109,12 @@ const Home: NextPage = () => {
             <ConwayGameOfLife ref={controllerRef} initializationIndicatorRef={initializationIndicatorRef} />
             <div ref={initializationIndicatorRef} className={styles.indicator}></div>
           </div>
+
+          {!isMobile && isOnOperableArea && !hasDrawn && (
+            <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
+              + RIGHT CLICK TO DRAW
+            </div>
+          )}
         </>
       )}
     </Page>
