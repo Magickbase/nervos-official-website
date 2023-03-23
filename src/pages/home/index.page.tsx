@@ -92,11 +92,12 @@ type ScreenSlideProps = PropsWithChildren<
     gameControllerRef: RefObject<GameController>
     isLastSlide?: boolean
     autoHeight?: boolean
+    containerClass?: string
   }
 >
 
 const ScreenSlide: FC<ScreenSlideProps> = props => {
-  const { children, isLastSlide, gameControllerRef, autoHeight, className, ...slideProps } = props
+  const { children, isLastSlide, gameControllerRef, autoHeight, containerClass, className, ...slideProps } = props
 
   const slideFooterContainerRef = useRef<HTMLDivElement>(null)
 
@@ -125,7 +126,7 @@ const ScreenSlide: FC<ScreenSlideProps> = props => {
       className={clsx(styles.screenSlide, { [styles.autoHeight ?? '']: autoHeight }, className)}
       {...slideProps}
     >
-      <div className={styles.container}>
+      <div className={clsx(styles.container, containerClass)}>
         <div className={styles.headerMixLayer} />
         <div className={styles.content}>{children}</div>
 
@@ -321,7 +322,12 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
   }
 
   return (
-    <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
+    <ScreenSlide
+      autoHeight
+      {...props}
+      className={clsx(presets.themeDark, props.className)}
+      containerClass={styles.slideGetStartedWrapper}
+    >
       <div className={styles.slideGetStarted}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
         <div className={styles.cards}>
