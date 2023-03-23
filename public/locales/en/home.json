@@ -1,4 +1,5 @@
 {
+  "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base.",
     "text2": "Layer 1 Built for Modularity.",
@@ -10,7 +11,6 @@
     "text2": "CKB is among the few smart contract platforms that leverage the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all circumstances. It is truly decentralized, permissionless, and uniquely resistant to capture by hostile actors."
   },
   "slide_footer": {
-    "scroll_down": "Scroll Down",
     "live_metrics": "Live Metrics",
     "live_cells": "Live Cells",
     "common_knowledge_stored": "Common Knowledge Stored",

@@ -1,11 +1,11 @@
-import { FC, PropsWithChildren, RefObject, useEffect, useMemo, useRef, useState } from 'react'
+import { FC, Fragment, PropsWithChildren, RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { GetServerSideProps, type NextPage } from 'next'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { Mousewheel } from 'swiper'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Portal } from '@headlessui/react'
+import { Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
 import {
@@ -33,9 +33,13 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 }
 
 const Home: NextPage = () => {
+  const { t } = useTranslation('home')
+
   const ref = useRef<HTMLDivElement>(null)
   const controllerRef = useRef<GameController>(null)
   const initializationIndicatorRef = useRef<HTMLDivElement>(null)
+  const [activeIdx, setActiveIdx] = useState(0)
+  const showScrollDownTip = activeIdx === 0
 
   const isOnOperableArea = useGameMouseHandler(controllerRef)
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
@@ -66,6 +70,7 @@ const Home: NextPage = () => {
             modules={[Mousewheel]}
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
+            onActiveIndexChange={swiper => setActiveIdx(swiper.activeIndex)}
           >
             <SlideCKBIntro gameControllerRef={controllerRef} />
             <SlideCKBSecurity gameControllerRef={controllerRef} />
@@ -78,6 +83,19 @@ const Home: NextPage = () => {
               {renderFooter({ limitMaxWidth: false })}
             </SwiperSlide>
           </Swiper>
+
+          <Transition
+            show={showScrollDownTip}
+            as={Fragment}
+            enter={styles.enter}
+            enterFrom={styles.enterFrom}
+            enterTo={styles.enterTo}
+            leave={styles.leave}
+            leaveFrom={styles.leaveFrom}
+            leaveTo={styles.leaveTo}
+          >
+            <div className={styles.scrollTip}>{t('scroll_down')}</div>
+          </Transition>
 
           <div className={styles.golContainer}>
             <ConwayGameOfLife ref={controllerRef} initializationIndicatorRef={initializationIndicatorRef} />
