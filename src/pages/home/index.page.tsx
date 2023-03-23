@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal } from '@headlessui/react'
 import Link from 'next/link'
-import { useElementIntersecting, useElementSize } from '../../hooks'
+import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
 import {
   ConwayGameOfLife,
   DISABLE_CGOL_MOUSE_CONTROLLER,
@@ -245,6 +245,77 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBModular)
 
 const SlideGetStarted: FC<ScreenSlideProps> = props => {
+  const isMobile = useIsMobile()
+  if (isMobile) {
+    return (
+      <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
+        <div className={styles.slideGetStarted}>
+          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
+          <div className={styles.cards}>
+            <Swiper
+              direction="vertical"
+              slidesPerView="auto"
+              // autoHeight
+              mousewheel={{
+                // Supports operations from some Portal to elements outside the swiper container, such as SlideFooter.
+                eventsTarget: 'container',
+              }}
+              nested
+              modules={[Mousewheel]}
+              // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
+              simulateTouch={false}
+              spaceBetween={10}
+              style={{ height: `calc(100vh - 280px)` }}
+            >
+              <SwiperSlide>
+                <Card
+                  title="Build on hardware, not software."
+                  actions={
+                    <Link href="/developers" className={styles.link}>
+                      DEVELOPERS <ArrowIcon />
+                    </Link>
+                  }
+                >
+                  Leverage CKB’s low-level virtual machine to build without limits.
+                </Card>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  title="Launch your own Layer 2 on CKB with Axon."
+                  actions={
+                    // TODO: need external link
+                    // https://github.com/Magickbase/nervos-official-website/issues/4
+                    <a href="/" className={styles.link} target="_blank" rel="noreferrer">
+                      AXON <ObliqueArrowIcon />
+                    </a>
+                  }
+                >
+                  Need high throughput? Pick and choose your flavor of Layer 2 and deploy it on CKB with ease.
+                </Card>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  title="Build universal decentralized applications."
+                  actions={
+                    // TODO: need external link
+                    // https://github.com/Magickbase/nervos-official-website/issues/4
+                    <a href="/" className={styles.link} target="_blank" rel="noreferrer">
+                      LEARN MORE <ObliqueArrowIcon />
+                    </a>
+                  }
+                >
+                  Build dApps accessible by all wallets, even standard authentication protocols like Apple passkeys.
+                </Card>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </ScreenSlide>
+    )
+  }
+
   return (
     <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideGetStarted}>
