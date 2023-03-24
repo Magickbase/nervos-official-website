@@ -11,7 +11,7 @@ import { CkbPowFloatIconGroup, HeartIcon } from './icons'
 const title = (
   <div style={{ maxWidth: '550px' }}>
     CKB
-    <HeartIcon />
+    <HeartIcon style={{ margin: '0 16px' }} />
     PoW.
   </div>
 )

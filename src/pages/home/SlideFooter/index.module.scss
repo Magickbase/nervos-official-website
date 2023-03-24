@@ -30,7 +30,7 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      background: var(--colorSecond);
+      background: var(--colorSlideFooter);
       border-radius: 50%;
 
       &::after {
@@ -45,9 +45,9 @@
         height: $size;
         margin-top: -$size / 2;
         margin-left: -$size / 2;
-        border: 1px solid rgb(var(--colorSecondTuple) / 20%);
+        border: 1px solid rgb(var(--colorSlideFooterTuple) / 20%);
         border-radius: 50%;
-        filter: drop-shadow(0 0 2px rgb(var(--colorSecondTuple)));
+        filter: drop-shadow(0 0 2px rgb(var(--colorSlideFooterTuple)));
         animation: zoom-in-zoom-out 1s ease infinite;
         content: '';
       }
@@ -82,7 +82,7 @@
 
     .value {
       margin-left: 8px;
-      color: var(--colorSecond);
+      color: var(--colorSlideFooter);
       letter-spacing: 0.15em;
     }
   }
