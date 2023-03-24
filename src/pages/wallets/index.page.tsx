@@ -1,6 +1,5 @@
 import { type NextPage } from 'next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -209,41 +208,39 @@ const Wallets: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: (
-              <EmbellishedLeft
-                width={744}
-                height={459}
-                style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
-              />
-            ),
-            top: 27,
-            right: 396 + 459,
-          },
-          {
-            content: (
-              <EmbellishedRight
-                width={595}
-                height={310}
-                style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
-              />
-            ),
-            top: -170,
-            left: 82,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/wallets/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <BaseSeparatePage
+      embellishedElements={[
+        {
+          content: (
+            <EmbellishedLeft
+              width={744}
+              height={459}
+              style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+            />
+          ),
+          top: 27,
+          right: 396 + 459,
+        },
+        {
+          content: (
+            <EmbellishedRight
+              width={595}
+              height={310}
+              style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
+            />
+          ),
+          top: -170,
+          left: 82,
+        },
+      ]}
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/wallets/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      info={info}
+      editor={editor}
+      functions={functions}
+    />
   )
 }
 

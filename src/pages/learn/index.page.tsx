@@ -1,6 +1,5 @@
 import { type NextPage } from 'next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -126,21 +125,19 @@ const Learn: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
-          { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <BaseSeparatePage
+      embellishedElements={[
+        { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
+        { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
+      ]}
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      info={info}
+      editor={editor}
+      functions={functions}
+    />
   )
 }
 

@@ -1,7 +1,6 @@
 import { type NextPage } from 'next'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 
 import styles from './index.module.scss'
@@ -109,23 +108,21 @@ const Foundation: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        positionsData={positionsData}
-        editor={editor}
-        functions={functions}
-        functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
-        functionsTitleClassName={styles.functionsTitleClass}
-        extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
-        functionsClassName={styles.functionsClassName}
-        isProgressBar={false}
-        isNeedSupports
-      />
-    </Page>
+    <BaseSeparatePage
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      positionsData={positionsData}
+      editor={editor}
+      functions={functions}
+      functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
+      functionsTitleClassName={styles.functionsTitleClass}
+      extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
+      functionsClassName={styles.functionsClassName}
+      isProgressBar={false}
+      isNeedSupports
+    />
   )
 }
 

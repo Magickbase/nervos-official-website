@@ -11,6 +11,8 @@ import { FunctionsItemType } from './FunctionsItem'
 
 import styles from './index.module.scss'
 import { Supports } from './Supports'
+import { Page } from '../Page'
+import { useHeaderHeight } from '../Header'
 
 export type BaseSeparatePageType = HeaderType &
   DescriptionType &
@@ -64,6 +66,8 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     ...rest
   } = props
 
+  const headerHeight = useHeaderHeight()
+
   const FunctionsContainer = ({
     functions,
     isProgressBar,
@@ -81,21 +85,23 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
   )
 
   return (
-    <div className={clsx(styles.baseSeparatePage, className)} {...rest}>
-      <div className={styles.embellishedElements}>
-        {embellishedElements?.map((embellishedElement, idx) => (
-          <div
-            key={idx}
-            className={clsx(styles.embellishedElement)}
-            style={{
-              top: embellishedElement.top,
-              right: embellishedElement.right,
-              left: embellishedElement.left,
-            }}
-          >
-            {embellishedElement.content}
-          </div>
-        ))}
+    <Page className={clsx(styles.baseSeparatePage, className)} {...rest}>
+      <div className={styles.embellishedElementsContainer}>
+        <div className={styles.embellishedElements}>
+          {embellishedElements?.map((embellishedElement, idx) => (
+            <div
+              key={idx}
+              className={clsx(styles.embellishedElement)}
+              style={{
+                top: embellishedElement.top ? embellishedElement.top + headerHeight : undefined,
+                right: embellishedElement.right,
+                left: embellishedElement.left,
+              }}
+            >
+              {embellishedElement.content}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.content}>
@@ -142,6 +148,6 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
           </div>
         ) : null}
       </div>
-    </div>
+    </Page>
   )
 }

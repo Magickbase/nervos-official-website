@@ -1,6 +1,5 @@
 import { type NextPage } from 'next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -131,25 +130,23 @@ const Community: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 478,
-            left: 344,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <BaseSeparatePage
+      embellishedElements={[
+        { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
+        {
+          content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+          top: 478,
+          left: 344,
+        },
+      ]}
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      info={info}
+      editor={editor}
+      functions={functions}
+    />
   )
 }
 

@@ -23,10 +23,12 @@ $defaultHeaderHeight: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: var(#{$headerHeightVarName});
   margin: 0 auto;
-  color: var(--colorPrimary);
-  background: var(--colorPrimaryBg);
+  color: #000;
+  filter: invert(1);
+  mix-blend-mode: difference;
   transition: color 0.2s, background-color 0.2s;
 
   .menuPopover {

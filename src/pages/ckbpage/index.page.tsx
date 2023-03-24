@@ -1,6 +1,5 @@
 import { type NextPage } from 'next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import Embellished from './embellished.svg'
 
@@ -108,25 +107,23 @@ const CkbPage: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-            top: 360,
-            right: 518,
-          },
-          { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/ckbpage/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <BaseSeparatePage
+      embellishedElements={[
+        {
+          content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+          top: 360,
+          right: 518,
+        },
+        { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
+      ]}
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/ckbpage/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      info={info}
+      editor={editor}
+      functions={functions}
+    />
   )
 }
 

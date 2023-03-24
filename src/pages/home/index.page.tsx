@@ -65,7 +65,7 @@ const Home: NextPage = () => {
     >
       {({ renderHeader, renderFooter }) => (
         <>
-          <div className={clsx(styles.blendModeHeader)}>{renderHeader()}</div>
+          {renderHeader({ className: styles.header })}
           <Swiper
             className={styles.swiper}
             direction="vertical"
@@ -161,7 +161,6 @@ const ScreenSlide: FC<ScreenSlideProps> = props => {
       {...slideProps}
     >
       <div className={clsx(styles.container, containerClass)}>
-        <div className={styles.headerMixLayer} />
         <div className={styles.content}>{children}</div>
 
         {isLastSlide && (

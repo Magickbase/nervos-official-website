@@ -2,20 +2,30 @@
 @import '../../styles/presets.module';
 
 .baseSeparatePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding: 0 min(10%, 120px);
-
-  // Avoid affecting the body by the width of the `.embellishedElement`.
-  overflow: hidden;
   color: var(--colorPrimary);
   background-color: var(--colorPrimaryBg);
 
-  // Create a new stacking context to avoid embellishedElements overwriting the header.
-  isolation: isolate;
-
   .content {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 min(10%, 120px);
+  }
+
+  .embellishedElementsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // Avoid affecting the body by the width of the `.embellishedElement`.
+    overflow: hidden;
+    pointer-events: none;
   }
 
   .embellishedElements {
@@ -79,7 +89,9 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
-    padding: 0;
+    .content {
+      padding: 0;
+    }
 
     .headerClassName,
     .descriptionWrap,

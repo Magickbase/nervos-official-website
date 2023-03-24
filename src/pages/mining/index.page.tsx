@@ -1,6 +1,5 @@
 import { type NextPage } from 'next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -148,26 +147,24 @@ const Mining: NextPage = () => {
   )
 
   return (
-    <Page>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 307,
-            left: 210,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/mining/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-        resourceData={resourceData}
-      />
-    </Page>
+    <BaseSeparatePage
+      embellishedElements={[
+        { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
+        {
+          content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+          top: 307,
+          left: 210,
+        },
+      ]}
+      editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/mining/index.page.tsx"
+      title={title}
+      floatIcons={floatIcons}
+      description={description}
+      info={info}
+      editor={editor}
+      functions={functions}
+      resourceData={resourceData}
+    />
   )
 }
 
