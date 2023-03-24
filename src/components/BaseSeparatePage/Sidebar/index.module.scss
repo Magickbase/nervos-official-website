@@ -2,7 +2,7 @@
 @import '../../../styles/presets.module';
 @import '../../../styles/variables.module';
 
-.tableOfContents {
+.sidebar {
   margin-top: 120px;
 
   .onThisPage {
@@ -95,7 +95,7 @@
   }
 }
 
-.listItem {
+.tocItem {
   --paddingTop: 10px;
 
   $lineHeight: 135%;

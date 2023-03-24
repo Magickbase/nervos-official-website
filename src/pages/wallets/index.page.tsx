@@ -36,8 +36,8 @@ const FunctionsItemTitle = ({ title, icon }: { title: string; icon: React.ReactN
 
 const functions = [
   {
-    id: 'Neuron Wallet',
-    title: <FunctionsItemTitle title="Neuron Wallet" icon={<NeuronWalletIcon />} />,
+    title: 'Neuron Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<NeuronWalletIcon />} />,
     tags: ['WINDOWS', 'MACOS', 'LINUX'],
     content: (
       <>
@@ -64,8 +64,8 @@ const functions = [
     ),
   },
   {
-    id: 'CKBull',
-    title: <FunctionsItemTitle title="CKBull" icon={<CkbBullIcon />} />,
+    title: 'CKBull',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<CkbBullIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
       <>
@@ -88,8 +88,8 @@ const functions = [
     ),
   },
   {
-    id: 'JoyID',
-    title: <FunctionsItemTitle title="JoyID" icon={<JoyIdIcon />} />,
+    title: 'JoyID',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<JoyIdIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
       <>
@@ -101,8 +101,8 @@ const functions = [
     ),
   },
   {
-    id: 'Portal Wallet',
-    title: <FunctionsItemTitle title="Portal Wallet" icon={<PortalWalletIcon />} />,
+    title: 'Portal Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<PortalWalletIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
       <>
@@ -116,8 +116,8 @@ const functions = [
     ),
   },
   {
-    id: 'SafePal',
-    title: <FunctionsItemTitle title="SafePal" icon={<SafePalIcon />} />,
+    title: 'SafePal',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<SafePalIcon />} />,
     tags: ['ANDROID', 'IOS', 'HARDWARE WALLET'],
     content: (
       <>
@@ -144,8 +144,8 @@ const functions = [
     ),
   },
   {
-    id: 'Ledger',
-    title: <FunctionsItemTitle title="Ledger" icon={<LedgerIcon />} />,
+    title: 'Ledger',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<LedgerIcon />} />,
     tags: ['HARDWARE WALLET'],
     content: (
       <>
@@ -163,8 +163,8 @@ const functions = [
     ),
   },
   {
-    id: 'Opera Wallet',
-    title: <FunctionsItemTitle title="Opera Wallet" icon={<OperaWalletIcon />} />,
+    title: 'Opera Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<OperaWalletIcon />} />,
     tags: ['ANDROID'],
     content: (
       <>
@@ -192,8 +192,8 @@ const functions = [
     ),
   },
   {
-    id: 'imToken',
-    title: <FunctionsItemTitle title="imToken" icon={<ImTokenIcon />} />,
+    title: 'imToken',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<ImTokenIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
       <>
