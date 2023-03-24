@@ -136,7 +136,7 @@ const Community: NextPage = () => {
         {
           content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
           top: 478,
-          left: 344,
+          left: 404,
         },
       ]}
       editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
