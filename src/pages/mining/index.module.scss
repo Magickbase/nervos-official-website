@@ -1,32 +1,17 @@
 @import 'src/styles/variables.module';
 @import 'src/components/Header/index.module';
 
-.blendModeHeader {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  filter: invert(1);
-  mix-blend-mode: difference;
-}
-
-.footer {
-  background: var(--colorPrimaryBg);
-}
-
 .icons {
-  transform: translate(307px, -75px);
-
-  svg > path,
-  circle {
-    stroke: var(--colorPrimary);
-  }
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(140px, -50%);
 }
 
 @media (max-width: $mobileBreakPoint) {
   .icons {
-    position: absolute;
-    top: 380px;
-    left: 24px;
+    top: calc(100% + 80px);
+    left: 0;
     transform: unset;
   }
 }

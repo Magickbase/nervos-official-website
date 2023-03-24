@@ -2,13 +2,13 @@
 @import '../../../styles/variables.module';
 
 .headerContent {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 610px;
 
   .title {
+    position: relative;
     max-width: 700px;
     margin-top: -100px;
     font-weight: 700;
@@ -16,12 +16,6 @@
     font-style: normal;
     line-height: 90%;
     letter-spacing: -0.025em;
-  }
-
-  .floatIcons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
   }
 
   @media (max-width: $mobileBreakPoint) {

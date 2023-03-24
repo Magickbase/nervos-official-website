@@ -3,15 +3,20 @@
     <g style="mix-blend-mode:difference">
         <g clip-path="url(#clip0_3149_19380)">
             <g style="mix-blend-mode:difference">
-                <path d="M85.8633 117.304H85.3633V117.804V204.667H45.3301V46.0454L116.122 117.304H85.8633Z" stroke="white"/>
-                <path d="M164.131 132.696H164.631V132.196V45.3326H204.664V203.954L133.872 132.696H164.131Z" stroke="white"/>
+                <path
+                    d="M85.8633 117.304H85.3633V117.804V204.667H45.3301V46.0454L116.122 117.304H85.8633Z"
+                    stroke="currentColor" />
+                <path
+                    d="M164.131 132.696H164.631V132.196V45.3326H204.664V203.954L133.872 132.696H164.131Z"
+                    stroke="currentColor" />
             </g>
         </g>
-        <rect x="0.5" y="0.5" width="249" height="249" stroke="white"/>
+        <rect x="0.5" y="0.5" width="249" height="249" stroke="currentColor" />
     </g>
     <defs>
         <clipPath id="clip0_3149_19380">
-            <rect width="160.334" height="160.334" fill="white" transform="translate(44.8301 44.8326)"/>
+            <rect width="160.334" height="160.334" fill="currentColor"
+                transform="translate(44.8301 44.8326)" />
         </clipPath>
     </defs>
 </svg>
