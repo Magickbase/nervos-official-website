@@ -8,6 +8,7 @@ export type ResourcesItemType = {
   title: string
   content: string
   className?: string
+  link: string
 }
 
 export type ResourcesType = {
@@ -23,8 +24,8 @@ export const Resources: FC<ResourcesType> = ({ resourceData: { resourceTitle, re
     <div className={clsx(styles.resources, className)}>
       <div className={clsx(styles.title)}>{resourceTitle}</div>
       <div className={clsx(styles.resourceItemGroup)}>
-        {resources?.map(({ title, content }, index) => (
-          <ResourcesItem title={title} content={content} key={index} />
+        {resources?.map(({ title, content, link }, index) => (
+          <ResourcesItem title={title} titleLink={link} content={content} key={index} />
         ))}
       </div>
     </div>

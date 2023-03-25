@@ -160,11 +160,7 @@ const SlideCKBIntro: FC<ScreenSlideProps> = props => {
       <div className={styles.slideCKBIntro}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
         <div className={clsx(styles.subjectTitleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
-        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          <span className={styles.bold}>Nervos</span>
-          {t('text3')}
-        </div>
-        <div className={clsx(styles.descriptionText, styles.text4, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text4')}</div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text3')}</div>
       </div>
     </ScreenSlide>
   )
@@ -194,17 +190,14 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBFlexibility}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Unbounded Flexibility and Interopera&shy;bility.
+          Unmatched Flexibility and Interoperability.
         </div>
-        <ul className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          <li>CKB supports all programming languages and current and future cryptographic primitives.</li>
-          <li>
-            Layer 2 networks built on CKB can deploy different consensus mechanisms, programming languages, execution
-            environments, and data availability storage methods.
-          </li>
-          <li>CKB can speak to and understand the languages of all heterogeneous blockchains.</li>
-          <li>Decentralized applications on CKB can be accessed from all blockchain ecosystems.</li>
-        </ul>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          Common Knowledge Base is the only blockchain on the market that supports all cryptographic primitives. It can
+          seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels,
+          and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling
+          decentralized applications boasting unmatched user experience.
+        </div>
       </div>
     </ScreenSlide>
   )
@@ -215,12 +208,11 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideCKBSustainability}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Guaranteed Long-term Sustaina&shy;bility.
-        </div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics.</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          CKB leverages a novel tokenomic model that aligns the interests of all network stakeholders. It ensures the
-          miners are paid for providing security in perpetuity, while token holders are protected from inflation.
+          Common Knowledge Base leverages a novel tokenomic model that aligns the interests of all Nervos participants
+          and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are
+          protected from inflation.
         </div>
       </div>
     </ScreenSlide>
@@ -236,7 +228,8 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
           transactions per second through many diverse Layer 2 networks without sacrificing security or
-          decentralization.
+          decentralization. Common Knowledge Base offers pristine security, while the Layer 2 networks built on top
+          ensure unbounded scalability.
         </div>
       </div>
     </ScreenSlide>
@@ -273,20 +266,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
             >
               <SwiperSlide>
                 <Card
-                  title="Build on hardware, not software."
-                  actions={
-                    <Link href="/developers" className={styles.link}>
-                      DEVELOPERS <ArrowIcon />
-                    </Link>
-                  }
-                >
-                  Leverage CKB’s low-level virtual machine to build without limits.
-                </Card>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Card
-                  title="Launch your own Layer 2 on CKB with Axon."
+                  title="Launch your own Nervos sidechain with Axon."
                   actions={
                     // TODO: need external link
                     // https://github.com/Magickbase/nervos-official-website/issues/4
@@ -295,7 +275,20 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
                     </a>
                   }
                 >
-                  Need high throughput? Pick and choose your flavor of Layer 2 and deploy it on CKB with ease.
+                  Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+                </Card>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Card
+                  title="Build on hardware, not software."
+                  actions={
+                    <Link href="/developers" className={styles.link}>
+                      DEVELOPERS <ArrowIcon />
+                    </Link>
+                  }
+                >
+                  CKB&apos;s low-level virtual machine allows you to build without limits.
                 </Card>
               </SwiperSlide>
 
@@ -310,7 +303,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
                     </a>
                   }
                 >
-                  Build dApps accessible by all wallets, even standard authentication protocols like Apple passkeys.
+                  Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains.
                 </Card>
               </SwiperSlide>
             </Swiper>
@@ -326,18 +319,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
         <div className={styles.cards}>
           <Card
-            title="Build on hardware, not software."
-            actions={
-              <Link href="/developers" className={styles.link}>
-                DEVELOPERS <ArrowIcon />
-              </Link>
-            }
-          >
-            Leverage CKB’s low-level virtual machine to build without limits.
-          </Card>
-
-          <Card
-            title="Launch your own Layer 2 on CKB with Axon."
+            title="Launch your own Nervos sidechain with Axon."
             actions={
               // TODO: need external link
               // https://github.com/Magickbase/nervos-official-website/issues/4
@@ -346,7 +328,18 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
               </a>
             }
           >
-            Need high throughput? Pick and choose your flavor of Layer 2 and deploy it on CKB with ease.
+            Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+          </Card>
+
+          <Card
+            title="Build on hardware, not software."
+            actions={
+              <Link href="/developers" className={styles.link}>
+                DEVELOPERS <ArrowIcon />
+              </Link>
+            }
+          >
+            CKB&apos;s low-level virtual machine allows you to build without limits.
           </Card>
 
           <Card
@@ -359,7 +352,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
               </a>
             }
           >
-            Build dApps accessible by all wallets, even standard authentication protocols like Apple passkeys.
+            Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains.
           </Card>
         </div>
       </div>

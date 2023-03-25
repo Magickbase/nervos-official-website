@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import presets from 'src/styles/presets.module.scss'
-import { StyledLink } from 'src/components/StyledLink'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
@@ -12,67 +11,59 @@ import styles from './index.module.scss'
 import { ArticlesIcon, BallsIcon, QuoteIcon, SunIcon } from './icons'
 
 const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
-const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes CKB the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
-const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
+const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
+const info = `As an open-source, community-driven initiative, we welcome everyone's input and encourage our community to suggest new topics, add content, and suggest improvements where they see fit.`
 const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
 
 const functions = [
   {
-    title: 'What unique features does CKB, as a smart contract platform, provide to developers?',
+    title: 'A development environment like no other.',
     tags: ['CKB-VM', 'CELL MODEL', 'RUST', 'SOLIDITY'],
     content: (
       <>
-        Due to CKB-VM&apos;s highly abstract nature, developers virtually have unlimited freedom when building
-        decentralized applications.
         <p>
-          The highly abstract CKB-VM gives developers virtually unlimited freedom when it comes to building
-          decentralized applications. On CKB, developers can use any programming language to build novel applications
-          that have never existed and can&apos;t be built on any other blockchain.
+          The highly abstract nature of the CKB-VM empowers developers to unleash their creativity and build unique
+          decentralized applications without constraints. As a development environment, Common Knowledge Base is a blank
+          canvas; it has zero precompiles baked in and supports all programming languages, cryptographic primitives,
+          algorithms, and data structures.
         </p>
-        <b>
-          <i>With flexibility comes interoperability, and CKB is a game-changer here.</i>
-        </b>
-        <div className="oneLineGap">
-          Applications that run on CKB are widely accessible to users from other blockchains. For example,
-          <StyledLink isNewTab isColored isUnderlined linkData={{ label: '.bit', url: 'https://www.did.id/' }} /> is a
-          decentralized identity running on CKB that can be accessed with Ethereum, Polygon, Dogecoin, and Bitcoin
-          wallets.
-        </div>
         <p>
-          That&apos;s because CKB understands the languages of and can speak to all existing and future heterogeneous
-          blockchains. Additionally, the CKB-VM can run other virtual machines, including EVM and WebAssembly-based
-          machines, providing developers with more execution environments to build in.
+          Common Knowledge Bases&apos; unique accounting model, called the Cell model, combines the programmability of
+          the account model with the scalability and flexibility of the UTXO model. It is a fully generalized or
+          abstract accounting model that provides unlimited freedoms to system and application contract developers.
+          Protocol-level account abstraction comes by default, meaning decentralized applications on the base layer can
+          be accessed with wallets from all other blockchain ecosystems.
         </p>
-        CKB&apos;s unique accounting model, the Cell Model, perfectly complements Nervos&apos; modular design because it
-        allows the base layer to evolve without requiring disruptive hard forks. Almost all algorithms, cryptographic
-        primitives, and data structures can be implemented on CKB as scripts stored within cells—instead of being
-        hardcoded or baked into the virtual machine like in all other blockchains—making the network more agile and
-        future-proof.
+        <p>
+          Moreover, Common Knowledge Base can understand and speak the languages of all existing and future
+          heterogeneous blockchains, allowing developers to build fully interoperable cross-chain applications. On the
+          other hand, the CKB-VM can run other virtual machines, including EVM and Web-Assembly-based ones, which
+          ensures more execution environments for developers to build in.
+        </p>
       </>
     ),
   },
   {
-    title: 'Add another topic title here.',
+    title: 'Become a part of something bigger.',
     tags: ['CKB-VM', 'CELL MODEL'],
     content: (
       <>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <b>Lorem ipsum dolor sit amet</b>
-        <p>
-          Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Beyond the advantages of building on the industry&apos;s most flexible and interoperable Layer 1, Common
+          Knowledge Base developers can expect full support from the Nervos Foundation and its team of blockchain
+          experts.
         </p>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Extensive resources, including detailed technical documentation, developer guides, and tutorials, are readily
+          available for developers looking to start their Nervos journey. Nervos also organizes regular workshops,
+          webinars, and hackathons, allowing prospective developers to hone their blockchain knowledge and stay at the
+          cutting edge of the technology. The Foundation&apos;s team of experts is always on hand to offer direct
+          assistance concerning any technical challenges application developers face.
         </p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <p>
+          Most importantly, the vibrant community of like-minded developers and community members fosters collaboration,
+          knowledge sharing, and problem-solving through dedicated forums, chat channels, and in-person meetups.
+        </p>
       </>
     ),
   },
@@ -83,23 +74,25 @@ const resourceData = {
   resources: [
     {
       title: 'CKB Docs',
-      content: 'Foundational information about CKB and technical reference materials.',
+      content: 'Foundational technical information about the Common Knowledge Base.',
+      link: 'https://docs.nervos.org/',
     },
     {
       title: 'Building on L2 Godwoken',
       content:
-        'Documentation focused on the EVM-equivalent Godwoken network, the easiest way to launch a dApp in Nervos!',
+        'Technical documentation for Godwoken, the EVM-equivalent Layer 2 network built on Common Knowledge Base.',
+      link: 'https://docs.godwoken.io/',
     },
     {
       title: 'Build Club',
-      content:
-        'Build Club provides support for teams and individuals who would like to launch a new project in Nervos.',
+      content: 'The Build Club provides support for teams and individuals looking to launch new projects on Nervos.',
+      link: 'https://www.buildclub.xyz/',
     },
-    {
-      title: 'CKB Training Course',
-      content:
-        'Detailed tutorials about creating CKB transactions and details about the structure of the Layer 1 CKB blockchain.',
-    },
+    // {
+    //   title: 'CKB Training Course',
+    //   content:
+    //     'Detailed tutorials about creating CKB transactions and details about the structure of the Layer 1 CKB blockchain.',
+    // },
   ],
 }
 

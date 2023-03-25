@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 import { StyledLink } from 'src/components/StyledLink'
 
@@ -14,7 +14,7 @@ export type ResourcesItemType = {
 export const ResourcesItem = ({ title, titleLink, content }: ResourcesItemType) => (
   <div className={styles.resourcesItem}>
     <div className={clsx(styles.itemTitle)}>
-      <StyledLink linkData={{ label: title, url: titleLink ?? '' }} isSpaced isIconed />
+      <StyledLink linkData={{ label: title, url: titleLink ?? '' }} isSpaced isIconed isNewTab />
     </div>
     <div className={styles.itemContent}>{content}</div>
   </div>

@@ -77,8 +77,8 @@ export const Footer: FC<FooterProps> = props => {
         <div className={styles.bottom}>
           <LogoIcon />
           <div className={styles.copyright}>
-            ©Nervos is an open-source project funded by the <span className={styles.bold}>Nervos Foundation</span>. All
-            Rights Reserved.
+            ©Nervos is an open-source project initiated by the <span className={styles.bold}>Nervos Foundation</span>.
+            All Rights Reserved.
           </div>
         </div>
       </div>

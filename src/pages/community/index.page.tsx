@@ -11,7 +11,7 @@ import styles from './index.module.scss'
 
 import { CommunityHubFloatIconGroup } from './icons'
 
-const title = <div>Community Hub.</div>
+const title = <div>Nervos Community Hub.</div>
 const description = `Nervos is a community-driven project that abides by the cypherpunk values of openness and decentralization across all verticals. If you're passionate about crypto and continually seeking to improve the status quo, Nervos is the perfect place to be.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
@@ -75,34 +75,29 @@ const functions = [
     tags: ['GRANTS', 'ECOSYSTEM', 'DAO'],
     content: (
       <>
-        Get grants through the CKB Community Fund DAO! It&apos;s an ecosystem fund launched by Nervos and its partners
-        to support community members that want to organize events, produce content, or build on Layer 1.
+        Apply for grants through the Community Fund DAO, Nervos’ ecosystem fund that supports community members
+        organizing events, producing content, and building on Common Knowledge Base.
       </>
     ),
   },
   {
-    title: 'RFCs (Request For Comment).',
+    title: 'Requests For Comment.',
     tags: ['COMMUNITY', 'COMMENTS', 'CONTRIBUTION'],
     content: (
       <>
-        Nervos is the product of several protocols and innovations. It&apos;s essential to have clear documentation and
-        technical specifications. For this reason, an RFC (request for comment) process is utilized. The process is open
-        and community-driven. You can learn more here! Learn
-        <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isUnderlined
-            isIconed
-            linkData={{ label: 'More', url: 'https://github.com/nervosnetwork/rfcs' }}
-          />
-          &nbsp;|&nbsp;
-          <StyledLink
-            isColored
-            isUnderlined
-            isIconed
-            linkData={{ label: 'Contribute', url: 'https://github.com/nervosnetwork/rfcs/pulls' }}
-          />
-        </div>
+        Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn
+        more about it&nbsp;
+        <StyledLink
+          linkData={{
+            label: 'here',
+            url: 'https://github.com/nervosnetwork/rfcs',
+          }}
+          isNewTab
+          isColored
+          isUnderlined
+          isIconed
+        />
+        .
       </>
     ),
   },

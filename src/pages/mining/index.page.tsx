@@ -26,16 +26,8 @@ const functions = [
   {
     title: 'Why Proof-of-Work.',
     tags: ['POW', 'LAYER 1'],
-    content: (
-      <>
-        CKB is among the few smart contract platforms that leverage the battle-tested Proof-of-Work consensus algorithm
-        to ensure exceptional security and decentralization under all circumstances.
-        <p>
-          This makes CKB truly permissionless and uniquely resistant to capture by hostile actors--precisely what a
-          Layer 1 built for modularity should be.
-        </p>
-      </>
-    ),
+    content:
+      'Common Knowledge Base leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors.',
   },
   {
     title: 'Consensus Algorithm: NC-Max.',

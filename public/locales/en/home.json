@@ -2,12 +2,11 @@
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base.",
     "text2": "Layer 1 Built for Modularity.",
-    "text3": " is a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability on the base layer and unbounded scalability on the upper layers.",
-    "text4": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable Layer 1 in the blockchain industry."
+    "text3": "Built on RISC-V and secured by Proof-of-Work, Common Knowledge Base is the most flexible and interoperable Layer 1 in the blockchain industry. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability."
   },
   "slide_ckb_security": {
     "text1": "Supreme Security and Decentrali&shy;zation.",
-    "text2": "CKB is among the few smart contract platforms that leverage the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all circumstances. It is truly decentralized, permissionless, and uniquely resistant to capture by hostile actors."
+    "text2": "Common Knowledge Base leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors."
   },
   "slide_footer": {
     "scroll_down": "Scroll Down",
