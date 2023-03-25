@@ -1,4 +1,5 @@
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
@@ -109,30 +110,35 @@ const Developers: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeDark)}>
-      <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 384,
-            right: 488,
-          },
-          {
-            content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
-            top: 12,
-            left: 96,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/developers/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-        resourceData={resourceData}
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Developers</title>
+      </Head>
+      <Page className={clsx(presets.themeDark)}>
+        <BaseSeparatePage
+          embellishedElements={[
+            {
+              content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+              top: 384,
+              right: 488,
+            },
+            {
+              content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
+              top: 12,
+              left: 96,
+            },
+          ]}
+          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/developers/index.page.tsx"
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          info={info}
+          editor={editor}
+          functions={functions}
+          resourceData={resourceData}
+        />
+      </Page>
+    </>
   )
 }
 

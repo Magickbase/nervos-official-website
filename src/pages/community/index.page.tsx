@@ -1,4 +1,5 @@
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
@@ -124,25 +125,30 @@ const Community: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeDark)}>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 478,
-            left: 344,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Community</title>
+      </Head>
+      <Page className={clsx(presets.themeDark)}>
+        <BaseSeparatePage
+          embellishedElements={[
+            { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
+            {
+              content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+              top: 478,
+              left: 344,
+            },
+          ]}
+          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/community/index.page.tsx"
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          info={info}
+          editor={editor}
+          functions={functions}
+        />
+      </Page>
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
@@ -111,23 +112,28 @@ const Foundation: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
-      <BaseSeparatePage
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        positionsData={positionsData}
-        editor={editor}
-        functions={functions}
-        functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
-        functionsTitleClassName={styles.functionsTitleClass}
-        extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
-        functionsClassName={styles.functionsClassName}
-        isProgressBar={false}
-        isNeedSupports
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Foundation</title>
+      </Head>
+      <Page className={clsx(presets.themeLight)}>
+        <BaseSeparatePage
+          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          positionsData={positionsData}
+          editor={editor}
+          functions={functions}
+          functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
+          functionsTitleClassName={styles.functionsTitleClass}
+          extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
+          functionsClassName={styles.functionsClassName}
+          isProgressBar={false}
+          isNeedSupports
+        />
+      </Page>
+    </>
   )
 }
 

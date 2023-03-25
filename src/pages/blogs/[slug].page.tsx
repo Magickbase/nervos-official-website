@@ -45,85 +45,88 @@ const Blog = ({ blog, recents, categories }: Props) => {
   }
 
   return (
-    <Page>
-      {router.isFallback ? (
-        <div>Loading…</div>
-      ) : (
-        <div className={styles.container}>
-          <div className={styles.header}>
-            <div className={styles.banner}>{t('blog_banner')}</div>
-            <div className={styles.back} onClick={handleBack}>
-              {t('back')}
+    <>
+      <Head>{blog.title ? <title>{`Nervos Network | ${blog.title}`}</title> : null}</Head>
+      <Page>
+        {router.isFallback ? (
+          <div>Loading…</div>
+        ) : (
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.banner}>{t('blog_banner')}</div>
+              <div className={styles.back} onClick={handleBack}>
+                {t('back')}
+              </div>
+            </div>
+            <div className={styles.content}>
+              <article>
+                <Head>
+                  <title>{blog.title}</title>
+                  <meta property="og:image" content={blog.coverImage} />
+                </Head>
+
+                <div className={styles.meta}>
+                  <div>
+                    <img src="/images/nervos_avatar.svg" />
+                    <b>Nervos</b>
+                    <span className={styles.separator}>·</span>
+                    <time>{formatTime(new Date(blog.date))}</time>
+                  </div>
+                  <div>
+                    <img src="/images/clock.svg" className={styles.clock} />
+                    <span>{blog.readingTime} mins</span>
+                  </div>
+                </div>
+
+                <div className={styles.title}>{blog.title}</div>
+                <div className={styles.excerpt}>{blog.excerpt}</div>
+
+                <img src={blog.coverImage} alt="cover" loading="lazy" />
+
+                <div>
+                  <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+                </div>
+                <img src="/images/article_end.svg" alt="end" className={styles.end} />
+              </article>
+              <aside>
+                <div className={styles.title}>{`${t('recent_posts')}:`}</div>
+                <div className={styles.recents}>
+                  {recents.map(b => (
+                    <Link key={b.title} href={`/blogs/${b.slug}`}>
+                      {b.title}
+                    </Link>
+                  ))}
+                </div>
+                <div className={styles.title}>{`${t('categories')}:`}</div>
+                <div className={styles.category}>
+                  {categories.map(c => (
+                    <Link key={c} href={`/blogs?sort_by=${encodeURIComponent(c)}`}>
+                      {t(c)}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className={styles.subtitle}>{`${t('share_this_post')}:`}</div>
+                <div className={styles.media}>
+                  <TwitterShareButton title={blog.title} url={`https://nervos.org${router.asPath}`}>
+                    <img src="/images/twitter.svg" alt="twitter" loading="lazy" />
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={`https://nervos.org${router.asPath}`}>
+                    <img src="/images/linkedin.svg" alt="linkedin" loading="lazy" />
+                  </LinkedinShareButton>
+                  <RedditShareButton title={blog.title} url={`https://nervos.org${router.asPath}`}>
+                    <img src="/images/reddit.svg" alt="reddit" loading="lazy" />
+                  </RedditShareButton>
+                  <FacebookShareButton quote={blog.title} url={`https://nervos.org${router.asPath}`}>
+                    <img src="/images/facebook.svg" alt="facebook" loading="lazy" />
+                  </FacebookShareButton>
+                </div>
+              </aside>
             </div>
           </div>
-          <div className={styles.content}>
-            <article>
-              <Head>
-                <title>{blog.title}</title>
-                <meta property="og:image" content={blog.coverImage} />
-              </Head>
-
-              <div className={styles.meta}>
-                <div>
-                  <img src="/images/nervos_avatar.svg" />
-                  <b>Nervos</b>
-                  <span className={styles.separator}>·</span>
-                  <time>{formatTime(new Date(blog.date))}</time>
-                </div>
-                <div>
-                  <img src="/images/clock.svg" className={styles.clock} />
-                  <span>{blog.readingTime} mins</span>
-                </div>
-              </div>
-
-              <div className={styles.title}>{blog.title}</div>
-              <div className={styles.excerpt}>{blog.excerpt}</div>
-
-              <img src={blog.coverImage} alt="cover" loading="lazy" />
-
-              <div>
-                <div dangerouslySetInnerHTML={{ __html: blog.content }} />
-              </div>
-              <img src="/images/article_end.svg" alt="end" className={styles.end} />
-            </article>
-            <aside>
-              <div className={styles.title}>{`${t('recent_posts')}:`}</div>
-              <div className={styles.recents}>
-                {recents.map(b => (
-                  <Link key={b.title} href={`/blogs/${b.slug}`}>
-                    {b.title}
-                  </Link>
-                ))}
-              </div>
-              <div className={styles.title}>{`${t('categories')}:`}</div>
-              <div className={styles.category}>
-                {categories.map(c => (
-                  <Link key={c} href={`/blogs?sort_by=${encodeURIComponent(c)}`}>
-                    {t(c)}
-                  </Link>
-                ))}
-              </div>
-
-              <div className={styles.subtitle}>{`${t('share_this_post')}:`}</div>
-              <div className={styles.media}>
-                <TwitterShareButton title={blog.title} url={`https://nervos.org${router.asPath}`}>
-                  <img src="/images/twitter.svg" alt="twitter" loading="lazy" />
-                </TwitterShareButton>
-                <LinkedinShareButton url={`https://nervos.org${router.asPath}`}>
-                  <img src="/images/linkedin.svg" alt="linkedin" loading="lazy" />
-                </LinkedinShareButton>
-                <RedditShareButton title={blog.title} url={`https://nervos.org${router.asPath}`}>
-                  <img src="/images/reddit.svg" alt="reddit" loading="lazy" />
-                </RedditShareButton>
-                <FacebookShareButton quote={blog.title} url={`https://nervos.org${router.asPath}`}>
-                  <img src="/images/facebook.svg" alt="facebook" loading="lazy" />
-                </FacebookShareButton>
-              </div>
-            </aside>
-          </div>
-        </div>
-      )}
-    </Page>
+        )}
+      </Page>
+    </>
   )
 }
 

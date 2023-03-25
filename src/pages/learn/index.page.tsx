@@ -1,4 +1,5 @@
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
@@ -106,21 +107,26 @@ const Learn: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
-          { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Learn</title>
+      </Head>
+      <Page className={clsx(presets.themeLight)}>
+        <BaseSeparatePage
+          embellishedElements={[
+            { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
+            { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
+          ]}
+          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          info={info}
+          editor={editor}
+          functions={functions}
+        />
+      </Page>
+    </>
   )
 }
 

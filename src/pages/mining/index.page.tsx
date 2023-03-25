@@ -1,4 +1,5 @@
 import { type NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
@@ -117,19 +118,25 @@ const resourceData = {
     {
       title: 'Eaglesong',
       content: 'A comprehensive introduction of Eaglesong algorithm, Nervos’s new hash function for CKB proof-of-work.',
+      link: 'https://github.com/nervosnetwork/rfcs/blob/master/rfcs/0010-eaglesong/0010-eaglesong.md',
     },
     {
       title: 'Mining Pools',
       content: 'MiningPoolStats.com provides a list of CKB mining pools and other useful statistics.',
+      link: 'https://miningpoolstats.stream/nervos',
     },
+
     {
       title: 'Mining Charts',
       content:
         'CKB Explorer provides mining charts, such as mining difficulty, hash rate, uncle rate, epoch time, epoch length, top miners, miner versions, etc.',
+      link: 'https://explorer.nervos.org/charts',
     },
+    // TODO: link of mining rigs
     {
       title: 'Mining Rigs',
       content: 'Find out popular ASIC mining rigs for CKB and their daily profits.',
+      link: '/',
     },
   ],
 }
@@ -142,26 +149,31 @@ const Mining: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
-      <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 307,
-            left: 210,
-          },
-        ]}
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/mining/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        info={info}
-        editor={editor}
-        functions={functions}
-        resourceData={resourceData}
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Mining</title>
+      </Head>
+      <Page className={clsx(presets.themeLight)}>
+        <BaseSeparatePage
+          embellishedElements={[
+            { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
+            {
+              content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+              top: 307,
+              left: 210,
+            },
+          ]}
+          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/mining/index.page.tsx"
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          info={info}
+          editor={editor}
+          functions={functions}
+          resourceData={resourceData}
+        />
+      </Page>
+    </>
   )
 }
 
