@@ -70,7 +70,7 @@ const functions = [
     tags: ['VIDEOS', 'HOW-TOs', 'EXPLAINERS'],
     content: (
       <>
-        <p>
+        <div>
           Subscribe to the official Nervos Network YouTube&nbsp;
           <StyledLink
             isColored
@@ -79,7 +79,7 @@ const functions = [
           />
           &nbsp; to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures,
           AMAs, developer workshops, and team member interviews.
-        </p>
+        </div>
       </>
     ),
   },

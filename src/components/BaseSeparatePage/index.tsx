@@ -7,14 +7,14 @@ import { Header, HeaderType } from './Header'
 import { Info, InfoType } from './Info'
 import { Resources, ResourcesType } from './Resources'
 import { Positions, PositionsType } from './Positions'
-import { TableOfContents } from './TableOfContents'
 import { ContributorsDialog } from './ContributorsDialog'
 import { FunctionsItemType } from './FunctionsItem'
 
 import styles from './index.module.scss'
 import { Supports } from './Supports'
-import { Page } from '../Page'
+import { TOCContext, TOCContextProvider } from './TableOfContents'
 import { useHeaderHeight } from '../Header'
+import { Page } from '../Page'
 
 export type BaseSeparatePageType = HeaderType &
   DescriptionType &
@@ -84,86 +84,87 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
   }) => (
     <div className={styles.functionsWrap}>
       <Functions isProgressBar={isProgressBar} functions={functions} className={className} />
-      {/* Todo: progressbar need complete later*/}
-      {isProgressBar ? <TableOfContents className={clsx(styles.tableOfContents)} editLink={editLink} /> : null}
+      {/* {isProgressBar ? <TableOfContents className={clsx(styles.tableOfContents)} editLink={editLink} /> : null} */}
     </div>
   )
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const handleContributorDialogClose = () => setIsOpen(false)
 
+  const TOCContextConsumer = TOCContext.Consumer
+
   return (
-    <Page className={clsx(styles.baseSeparatePage, className)} {...rest}>
-      <div className={styles.embellishedElementsContainer}>
-        <div className={styles.embellishedElements}>
-          {embellishedElements?.map((embellishedElement, idx) => (
-            <div
-              key={idx}
-              className={clsx(styles.embellishedElement)}
-              style={{
-                top: embellishedElement.top ? embellishedElement.top + headerHeight : undefined,
-                right: embellishedElement.right,
-                left: embellishedElement.left,
-              }}
-            >
-              {embellishedElement.content}
+    <Page>
+      <TOCContextProvider>
+        <div className={clsx(styles.baseSeparatePage, className)} {...rest}>
+          <div className={styles.embellishedElements}>
+            {embellishedElements?.map((embellishedElement, idx) => (
+              <div
+                key={idx}
+                className={clsx(styles.embellishedElement)}
+                style={{
+                  top: embellishedElement.top,
+                  right: embellishedElement.right,
+                  left: embellishedElement.left,
+                }}
+              >
+                {embellishedElement.content}
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.content}>
+            <Header className={clsx(styles.headerClassName, headerClassName)} title={title} floatIcons={floatIcons} />
+            <div className={styles.descriptionWrap}>
+              <Description className={descriptionClassName} description={description} />
             </div>
-          ))}
+
+            {positionsData ? (
+              <div className={styles.positionsWrap}>
+                <Positions positionsData={positionsData} />
+              </div>
+            ) : null}
+            {info ? (
+              <div className={styles.infoWrap}>
+                <Info
+                  className={infoClassName}
+                  info={info}
+                  author={author}
+                  editLink={editLink}
+                  onContributorsButtonClick={() => setIsOpen(true)}
+                />
+              </div>
+            ) : null}
+            {functionsExtensionTitle?.extensionTitle ? (
+              <div className={clsx(styles.functionsTitleWrap, functionsTitleClassName)}>
+                {functionsExtensionTitle.extensionTitle}
+              </div>
+            ) : null}
+            {functionsExtensionTitle?.extensionTitleFunctions ? (
+              <FunctionsContainer
+                functions={functionsExtensionTitle.extensionTitleFunctions}
+                isProgressBar={isProgressBar}
+                className={extensionTitleFunctionsClassName}
+              />
+            ) : null}
+            {isNeedSupports ? (
+              <div className={clsx(styles.supportsWrap)}>
+                <Supports />
+              </div>
+            ) : null}
+
+            <FunctionsContainer functions={functions} isProgressBar={isProgressBar} className={functionsClassName} />
+
+            {resourceData ? (
+              <div className={styles.resourcesWrap}>
+                <Resources resourceData={resourceData} />
+              </div>
+            ) : null}
+
+            <ContributorsDialog author={author!} status={isOpen} onClose={handleContributorDialogClose} />
+          </div>
         </div>
-      </div>
-
-      <div className={styles.content}>
-        <Header className={clsx(styles.headerClassName, headerClassName)} title={title} floatIcons={floatIcons} />
-        <div className={styles.descriptionWrap}>
-          <Description className={descriptionClassName} description={description} />
-        </div>
-
-        {positionsData ? (
-          <div className={styles.positionsWrap}>
-            <Positions positionsData={positionsData} />
-          </div>
-        ) : null}
-        {info ? (
-          <div className={styles.infoWrap}>
-            <Info
-              className={infoClassName}
-              info={info}
-              author={author}
-              editLink={editLink}
-              onContributorsButtonClick={() => setIsOpen(true)}
-            />
-          </div>
-        ) : null}
-
-        {functionsExtensionTitle?.extensionTitle ? (
-          <div className={clsx(styles.functionsTitleWrap, functionsTitleClassName)}>
-            {functionsExtensionTitle.extensionTitle}
-          </div>
-        ) : null}
-
-        {functionsExtensionTitle?.extensionTitleFunctions ? (
-          <FunctionsContainer
-            functions={functionsExtensionTitle.extensionTitleFunctions}
-            isProgressBar={isProgressBar}
-            className={extensionTitleFunctionsClassName}
-          />
-        ) : null}
-        {isNeedSupports ? (
-          <div className={clsx(styles.supportsWrap)}>
-            <Supports />
-          </div>
-        ) : null}
-
-        <FunctionsContainer functions={functions} isProgressBar={isProgressBar} className={functionsClassName} />
-
-        {resourceData ? (
-          <div className={styles.resourcesWrap}>
-            <Resources resourceData={resourceData} />
-          </div>
-        ) : null}
-
-        <ContributorsDialog contributors={contributors} status={isOpen} onClose={handleContributorDialogClose} />
-      </div>
+      </TOCContextProvider>
     </Page>
   )
 }

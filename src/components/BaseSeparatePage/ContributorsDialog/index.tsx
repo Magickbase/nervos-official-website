@@ -8,8 +8,9 @@ import type { Author } from '../../../utils/github'
 import styles from './index.module.scss'
 
 type ContributorsDialogType = {
-  contributors: Array<Author>
+  contributors?: Array<Author>
   status: boolean
+  author?: Author
   onClose: () => void
 }
 

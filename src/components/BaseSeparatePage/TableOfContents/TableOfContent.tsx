@@ -1,46 +1,35 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import clsx from 'clsx'
 
-import useHeadingsData, { NestedHeadingtype } from './useHeadingsData'
-import useIntersectionObserver from './useIntersectionObserver'
+import { TOCContext } from '../TableOfContents'
 
 import styles from './index.module.scss'
 
-const Headings = ({ headings, activeId }: { headings: NestedHeadingtype[]; activeId: string }) => {
+const TableOfContent = () => {
+  const { tocItems } = useContext(TOCContext)
+
   return (
-    <>
-      {headings?.map(heading => (
+    <nav aria-label="Table of contents" style={{ marginTop: '20px' }}>
+      {tocItems.map(tocItem => (
         <div
-          key={heading.id}
-          className={clsx(styles.listItem, styles.progressBorder, heading.id === activeId ? styles.active : '')}
+          key={tocItem.id}
+          className={clsx(styles.listItem, styles.progressBorder, { [styles.active ?? '']: tocItem.isActive })}
         >
           <a
-            href={`#${heading.id}`}
+            href={`#${tocItem.id}`}
             onClick={e => {
               e.preventDefault()
 
-              document.getElementById(`${heading.id}`)?.scrollIntoView({
+              document.getElementById(`${tocItem.id}`)?.scrollIntoView({
                 behavior: 'smooth',
               })
             }}
           >
             {/* if the element is not a wraped component ,it could be heading.title */}
-            {heading.id}
+            {tocItem.title}
           </a>
         </div>
       ))}
-    </>
-  )
-}
-
-const TableOfContent = () => {
-  const [activeId, setActiveId]: [string, React.Dispatch<React.SetStateAction<string>>] = useState('')
-  const { nestedHeadings } = useHeadingsData()
-  useIntersectionObserver(setActiveId)
-
-  return (
-    <nav aria-label="Table of contents" style={{ marginTop: '20px' }}>
-      <Headings headings={nestedHeadings} activeId={activeId} />
     </nav>
   )
 }

@@ -55,6 +55,10 @@
   }
 
   .infoWrap {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--colorPrimaryBg);
     border-bottom: 0.5px solid #6a7171;
   }
 
