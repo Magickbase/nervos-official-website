@@ -13,13 +13,14 @@ export type InfoType = {
   }
   editLink?: string
   className?: string
+  onContributorsButtonClick?: () => void
 }
 
-export const Info: FC<InfoType> = ({ info, editor, editLink, className }) => {
+export const Info: FC<InfoType> = ({ info, editor, editLink, className, onContributorsButtonClick }) => {
   const time = new Date().toDateString()
 
   const ContributorsButton = () => (
-    <button onClick={() => alert('SEE CONTRIBUTORS')} className={styles.contributorsButton}>
+    <button onClick={onContributorsButtonClick} className={styles.contributorsButton}>
       SEE CONTRIBUTORS
     </button>
   )

@@ -1,12 +1,13 @@
 import clsx from 'clsx'
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import { Description, DescriptionType } from './Description'
 import { Functions, FunctionsType } from './Functions'
 import { Header, HeaderType } from './Header'
 import { Info, InfoType } from './Info'
 import { Resources, ResourcesType } from './Resources'
 import { Positions, PositionsType } from './Positions'
-import { ProgressBar } from './ProgressBar'
+import { TableOfContents } from './TableOfContents'
+import { ContributorsDialog } from './ContributorsDialog'
 import { FunctionsItemType } from './FunctionsItem'
 
 import styles from './index.module.scss'
@@ -76,9 +77,12 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     <div className={styles.functionsWrap}>
       <Functions isProgressBar={isProgressBar} functions={functions} className={className} />
       {/* Todo: progressbar need complete later*/}
-      {isProgressBar ? <ProgressBar className={clsx(styles.progressBar)} editLink={editLink} /> : null}
+      {isProgressBar ? <TableOfContents className={clsx(styles.tableOfContents)} editLink={editLink} /> : null}
     </div>
   )
+
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const handleContributorDialogClose = () => setIsOpen(false)
 
   return (
     <div className={clsx(styles.baseSeparatePage, className)} {...rest}>
@@ -111,7 +115,13 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
         ) : null}
         {info ? (
           <div className={styles.infoWrap}>
-            <Info className={infoClassName} info={info} editor={editor} editLink={editLink} />
+            <Info
+              className={infoClassName}
+              info={info}
+              editor={editor}
+              editLink={editLink}
+              onContributorsButtonClick={() => setIsOpen(true)}
+            />
           </div>
         ) : null}
 
@@ -141,6 +151,8 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
             <Resources resourceData={resourceData} />
           </div>
         ) : null}
+
+        <ContributorsDialog editor={editor!} status={isOpen} onClose={handleContributorDialogClose} />
       </div>
     </div>
   )

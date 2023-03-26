@@ -6,6 +6,7 @@ import styles from './index.module.scss'
 export type FunctionsItemType = {
   title: string | React.ReactNode
   tags?: string[]
+  idx?: number
   content?: string | React.ReactNode
   isProgressBar?: boolean
   className?: string
@@ -13,8 +14,12 @@ export type FunctionsItemType = {
 
 const TagItem = ({ tag }: { tag: string }) => <div className={clsx(styles.tagItem)}>{tag}</div>
 
-export const FunctionsItem: FC<FunctionsItemType> = ({ title, tags, content, isProgressBar, className }) => (
-  <div data-is-progress-bar={isProgressBar} className={clsx(styles.functionsItem, className)}>
+export const FunctionsItem: FC<FunctionsItemType> = ({ title, tags, content, isProgressBar, idx, className }) => (
+  <div
+    data-is-progress-bar={isProgressBar}
+    id={typeof title === 'string' ? title : `functions-${idx!}`}
+    className={clsx(styles.functionsItem, 'observeTitle', className)}
+  >
     <div className={clsx(styles.titleWrap)}>
       <div className={clsx(styles.title)}>{title}</div>
       <div className={clsx(styles.tags)}>
