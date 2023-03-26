@@ -1,9 +1,10 @@
-import { type NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
+import { REPO, Author, fetchContributors, lastContributor, LastAuthor } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
@@ -21,7 +22,8 @@ const title = (
 )
 const description = `Nervos is unlike any other blockchain on the market. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
+const pagePath = '/src/pages/learn/index.page.tsx'
+const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
@@ -99,7 +101,12 @@ const functions = [
   },
 ]
 
-const Learn: NextPage = () => {
+interface PageProps {
+  contributors: Array<Author>
+  author: LastAuthor | null
+}
+
+const Learn: NextPage<PageProps> = ({ contributors, author }) => {
   const floatIcons = (
     <div className={styles.icons}>
       <LearnFloatIconGroup />
@@ -117,17 +124,29 @@ const Learn: NextPage = () => {
             { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
             { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
           ]}
-          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/learn/index.page.tsx"
+          editLink={pageLink}
           title={title}
           floatIcons={floatIcons}
           description={description}
           info={info}
-          editor={editor}
+          author={author}
+          contributors={contributors}
           functions={functions}
         />
       </Page>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const contributors = await fetchContributors()
+  const author = await lastContributor(pagePath)
+  return {
+    props: {
+      author,
+      contributors,
+    },
+  }
 }
 
 export default Learn

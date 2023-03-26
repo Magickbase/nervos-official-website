@@ -1,8 +1,9 @@
-import { type NextPage } from 'next'
+import { GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
+import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import presets from 'src/styles/presets.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -14,7 +15,9 @@ import { ArticlesIcon, BallsIcon, QuoteIcon, SunIcon } from './icons'
 const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
 const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
 const info = `As an open-source, community-driven initiative, we welcome everyone's input and encourage our community to suggest new topics, add content, and suggest improvements where they see fit.`
-const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
+
+const pagePath = '/src/pages/developers/index.page.tsx'
+const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
@@ -97,7 +100,12 @@ const resourceData = {
   ],
 }
 
-const Developers: NextPage = () => {
+interface PageProps {
+  contributors: Array<Author>
+  author: LastAuthor | null
+}
+
+const Developers: NextPage<PageProps> = ({ contributors, author }) => {
   const floatIcons = (
     <div className={styles.icons}>
       <div className={styles.quoteIcon}>
@@ -128,18 +136,30 @@ const Developers: NextPage = () => {
               left: 96,
             },
           ]}
-          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/developers/index.page.tsx"
+          editLink={pageLink}
           title={title}
           floatIcons={floatIcons}
           description={description}
           info={info}
-          editor={editor}
+          author={author}
+          contributors={contributors}
           functions={functions}
           resourceData={resourceData}
         />
       </Page>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const contributors = await fetchContributors()
+  const author = await lastContributor(pagePath)
+  return {
+    props: {
+      author,
+      contributors,
+    },
+  }
 }
 
 export default Developers

@@ -1,9 +1,10 @@
-import { type NextPage } from 'next'
+import { GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
 import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
+import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
@@ -25,7 +26,9 @@ import {
 const title = <div>Download a Wallet and Start Exploring the Nervos Ecosystem .</div>
 const description = `Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
+
+const pagePath = '/src/pages/wallets/index.page.tsx'
+const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const FunctionsItemTitle = ({ title, icon }: { title: string; icon: React.ReactNode }) => (
   <div className={styles.functionsItemTitle}>
@@ -36,6 +39,7 @@ const FunctionsItemTitle = ({ title, icon }: { title: string; icon: React.ReactN
 
 const functions = [
   {
+    id: 'Neuron Wallet',
     title: <FunctionsItemTitle title="Neuron Wallet" icon={<NeuronWalletIcon />} />,
     tags: ['WINDOWS', 'MACOS', 'LINUX'],
     content: (
@@ -63,6 +67,7 @@ const functions = [
     ),
   },
   {
+    id: 'CKBull',
     title: <FunctionsItemTitle title="CKBull" icon={<CkbBullIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
@@ -86,6 +91,7 @@ const functions = [
     ),
   },
   {
+    id: 'JoyID',
     title: <FunctionsItemTitle title="JoyID" icon={<JoyIdIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
@@ -98,6 +104,7 @@ const functions = [
     ),
   },
   {
+    id: 'Portal Wallet',
     title: <FunctionsItemTitle title="Portal Wallet" icon={<PortalWalletIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
@@ -112,6 +119,7 @@ const functions = [
     ),
   },
   {
+    id: 'SafePal',
     title: <FunctionsItemTitle title="SafePal" icon={<SafePalIcon />} />,
     tags: ['ANDROID', 'IOS', 'HARDWARE WALLET'],
     content: (
@@ -139,6 +147,7 @@ const functions = [
     ),
   },
   {
+    id: 'Ledger',
     title: <FunctionsItemTitle title="Ledger" icon={<LedgerIcon />} />,
     tags: ['HARDWARE WALLET'],
     content: (
@@ -157,6 +166,7 @@ const functions = [
     ),
   },
   {
+    id: 'Opera Wallet',
     title: <FunctionsItemTitle title="Opera Wallet" icon={<OperaWalletIcon />} />,
     tags: ['ANDROID'],
     content: (
@@ -185,6 +195,7 @@ const functions = [
     ),
   },
   {
+    id: 'imToken',
     title: <FunctionsItemTitle title="imToken" icon={<ImTokenIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
@@ -204,7 +215,12 @@ const functions = [
   },
 ]
 
-const Wallets: NextPage = () => {
+interface PageProps {
+  contributors: Array<Author>
+  author: LastAuthor | null
+}
+
+const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
   const floatIcons = (
     <div className={styles.icons}>
       <WalletIcon />
@@ -242,17 +258,29 @@ const Wallets: NextPage = () => {
               left: 82,
             },
           ]}
-          editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/wallets/index.page.tsx"
+          editLink={pageLink}
           title={title}
           floatIcons={floatIcons}
           description={description}
           info={info}
-          editor={editor}
+          author={author}
+          contributors={contributors}
           functions={functions}
         />
       </Page>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const contributors = await fetchContributors()
+  const author = await lastContributor(pagePath)
+  return {
+    props: {
+      author,
+      contributors,
+    },
+  }
 }
 
 export default Wallets

@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, ReactNode, useState } from 'react'
+import type { Author } from '../../utils/github'
 import { Description, DescriptionType } from './Description'
 import { Functions, FunctionsType } from './Functions'
 import { Header, HeaderType } from './Header'
@@ -38,6 +39,8 @@ export type BaseSeparatePageType = HeaderType &
       right?: number
       left?: number
     }[]
+    contributors: Array<Author>
+    author: Author | null
   }
 
 export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
@@ -55,13 +58,14 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     description,
     positionsData,
     info,
-    editor,
     functions,
     functionsExtensionTitle,
     editLink,
     isProgressBar = true,
     isNeedSupports = false,
     resourceData,
+    author,
+    contributors,
     ...rest
   } = props
 
@@ -118,7 +122,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
             <Info
               className={infoClassName}
               info={info}
-              editor={editor}
+              author={author}
               editLink={editLink}
               onContributorsButtonClick={() => setIsOpen(true)}
             />
@@ -152,7 +156,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
           </div>
         ) : null}
 
-        <ContributorsDialog editor={editor!} status={isOpen} onClose={handleContributorDialogClose} />
+        <ContributorsDialog contributors={contributors} status={isOpen} onClose={handleContributorDialogClose} />
       </div>
     </div>
   )

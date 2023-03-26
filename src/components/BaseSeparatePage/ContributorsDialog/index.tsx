@@ -3,39 +3,42 @@ import clsx from 'clsx'
 import { Dialog } from '@headlessui/react'
 import { StyledLink } from 'src/components/StyledLink'
 import Image from 'next/image'
+import type { Author } from '../../../utils/github'
 
 import styles from './index.module.scss'
 
-type ContributorType = {
-  editor: { id: string; avatar: string }
-}
-
 type ContributorsDialogType = {
-  editor: { id: string; avatar: string }
+  contributors: Array<Author>
   status: boolean
   onClose: () => void
 }
 
-const Contributor: FC<ContributorType> = ({ editor }) => (
+const Contributor: FC<{ author: Author }> = ({ author }) => (
   <div className={styles.avatarAndLink}>
-    <Image className={styles.avatar} width={45} height={45} alt="avatar" src={editor?.avatar ?? ''} />
-    <StyledLink linkData={{ label: editor?.id ?? '', url: editor?.avatar ?? '' }} isColored isIconed isUnderlined />
+    <Image className={styles.avatar} width={45} height={45} alt="avatar" src={author?.avatar ?? ''} />
+    <StyledLink
+      linkData={{ label: author?.username ? `@${author.username}` : '', url: author?.github }}
+      isColored
+      isIconed
+      isUnderlined
+      isNewTab
+    />
   </div>
 )
 
-export const ContributorsDialog: FC<ContributorsDialogType> = ({ editor, status, onClose }) => {
+export const ContributorsDialog: FC<ContributorsDialogType> = ({ contributors, status, onClose }) => {
   return (
     <Dialog className={clsx(styles.infoDialog)} open={status} onClose={onClose}>
       <Dialog.Panel className={styles.panel}>
-        <div className={styles.title}>Contributors</div>
+        <div className={styles.title}>Contributors.</div>
         <p>
           As a completely decentralized, open, and permissionless ecosystem, Nervos attributes all its growth and
           success to its contributors.
         </p>
         <p>To everyone who&apos;s contributed, we thank you from the bottom of our hearts. You are our lifeblood.</p>
         <div className={styles.avatarWrap}>
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <Contributor editor={editor} key={index} />
+          {contributors?.map((c, index) => (
+            <Contributor author={c} key={index} />
           ))}
         </div>
 
