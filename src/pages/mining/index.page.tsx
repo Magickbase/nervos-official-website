@@ -132,11 +132,10 @@ const resourceData = {
         'CKB Explorer provides mining charts, such as mining difficulty, hash rate, uncle rate, epoch time, epoch length, top miners, miner versions, etc.',
       link: 'https://explorer.nervos.org/charts',
     },
-    // TODO: link of mining rigs
     {
       title: 'Mining Rigs',
       content: 'Find out popular ASIC mining rigs for CKB and their daily profits.',
-      link: '/',
+      link: 'https://minerstat.com/coin/CKB/profitability',
     },
   ],
 }
