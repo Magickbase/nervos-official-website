@@ -2,26 +2,22 @@
 @import 'src/components/Header/index.module';
 
 .icons {
+  position: absolute;
+  top: calc(100% + 40px);
+  left: -48px;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, auto);
   gap: 4px;
-  transform: translate(-320px, 98px);
 
   .quoteIcon {
+    display: flex;
     grid-column-start: 2;
-  }
-
-  svg > path,
-  circle {
-    stroke: var(--colorPrimary);
   }
 }
 
 @media (max-width: $mobileBreakPoint) {
   .icons {
-    position: absolute;
-    top: 380px;
-    left: 24px;
-    transform: unset;
+    top: calc(100% + 26px);
+    left: 0;
   }
 }

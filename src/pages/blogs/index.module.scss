@@ -313,6 +313,38 @@
       &[data-selected='true'] {
         color: #000;
         background: #fff;
+        border-color: #fff;
+      }
+
+      &:hover:not([data-selected='true']) {
+        color: #000;
+        background: #fff;
+        border-color: #fff;
+
+        &[data-type='events'] {
+          background: #bb9bff;
+          border-color: #bb9bff;
+        }
+
+        &[data-type='news'] {
+          background: #98ffff;
+          border-color: #98ffff;
+        }
+
+        &[data-type='releases & updates'] {
+          background: #ffe99b;
+          border-color: #ffe99b;
+        }
+
+        &[data-type='guides & tutorials'] {
+          background: #ff90d9;
+          border-color: #ff90d9;
+        }
+
+        &[data-type='learning resources'] {
+          background: #b2ffba;
+          border-color: #b2ffba;
+        }
       }
     }
     @media screen and (max-width: $mobileBreakPoint) {

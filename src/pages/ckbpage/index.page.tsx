@@ -1,13 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import Embellished from './embellished.svg'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup } from './icons'
@@ -108,26 +105,24 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | CKB</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            {
-              content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-              top: 360,
-              right: 518,
-            },
-            { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          functions={functions}
-          contributors={contributors}
-          author={author}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={[
+          {
+            content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+            top: 360,
+            right: 518,
+          },
+          { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
+        ]}
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        contributors={contributors}
+        author={author}
+        functions={functions}
+      />
     </>
   )
 }

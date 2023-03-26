@@ -1,4 +1,4 @@
-import { ComponentProps, FC, Fragment, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ComponentProps, FC, Fragment, RefObject, useCallback, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { Dialog } from '@headlessui/react'
@@ -24,7 +24,6 @@ import { useInterval } from '../../../hooks'
 
 export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObject<GameController> }> = props => {
   const { children, gameControllerRef, className, ...divProps } = props
-  const { t } = useTranslation('home', { keyPrefix: 'slide_footer' })
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -70,7 +69,6 @@ export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObj
       <LiveMetrics />
 
       <div className={styles.scrollTip}>
-        <span>{t('scroll_down')}</span>
         <div className={styles.verticalLine} />
       </div>
 

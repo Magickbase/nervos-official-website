@@ -1,14 +1,11 @@
 import { GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import {
@@ -232,42 +229,40 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Wallets</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            {
-              content: (
-                <EmbellishedLeft
-                  width={744}
-                  height={459}
-                  style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
-                />
-              ),
-              top: 27,
-              right: 396 + 459,
-            },
-            {
-              content: (
-                <EmbellishedRight
-                  width={595}
-                  height={310}
-                  style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
-                />
-              ),
-              top: -170,
-              left: 82,
-            },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={[
+          {
+            content: (
+              <EmbellishedLeft
+                width={744}
+                height={459}
+                style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+              />
+            ),
+            top: 27,
+            right: 396 + 459,
+          },
+          {
+            content: (
+              <EmbellishedRight
+                width={595}
+                height={310}
+                style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
+              />
+            ),
+            top: -170,
+            left: 82,
+          },
+        ]}
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+      />
     </>
   )
 }

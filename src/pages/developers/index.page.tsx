@@ -1,12 +1,11 @@
 import { GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import presets from 'src/styles/presets.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useBodyClass } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -106,6 +105,8 @@ interface PageProps {
 }
 
 const Developers: NextPage<PageProps> = ({ contributors, author }) => {
+  useBodyClass([presets.themeDark ?? ''])
+
   const floatIcons = (
     <div className={styles.icons}>
       <div className={styles.quoteIcon}>
@@ -122,31 +123,29 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Developers</title>
       </Head>
-      <Page className={clsx(presets.themeDark)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            {
-              content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-              top: 384,
-              right: 488,
-            },
-            {
-              content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
-              top: 12,
-              left: 96,
-            },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-          resourceData={resourceData}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={[
+          {
+            content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+            top: 384,
+            right: 488,
+          },
+          {
+            content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
+            top: 12,
+            left: 96,
+          },
+        ]}
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+        resourceData={resourceData}
+      />
     </>
   )
 }

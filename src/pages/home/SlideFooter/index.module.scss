@@ -30,7 +30,7 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      background: var(--colorSecond);
+      background: var(--colorSlideFooter);
       border-radius: 50%;
 
       &::after {
@@ -45,9 +45,9 @@
         height: $size;
         margin-top: -$size / 2;
         margin-left: -$size / 2;
-        border: 1px solid rgb(var(--colorSecondTuple) / 20%);
+        border: 1px solid rgb(var(--colorSlideFooterTuple) / 20%);
         border-radius: 50%;
-        filter: drop-shadow(0 0 2px rgb(var(--colorSecondTuple)));
+        filter: drop-shadow(0 0 2px rgb(var(--colorSlideFooterTuple)));
         animation: zoom-in-zoom-out 1s ease infinite;
         content: '';
       }
@@ -82,7 +82,7 @@
 
     .value {
       margin-left: 8px;
-      color: var(--colorSecond);
+      color: var(--colorSlideFooter);
       letter-spacing: 0.15em;
     }
   }
@@ -105,11 +105,7 @@
 .scrollTip {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-end;
-  font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0.03em;
 
   .verticalLine {
     width: 1px;
@@ -139,10 +135,7 @@
 
 .infoDialog {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
 
   // Must be bigger than game and header.
   z-index: 3;

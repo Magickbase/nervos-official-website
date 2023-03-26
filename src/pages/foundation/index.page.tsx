@@ -1,13 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import { StyledLink } from 'src/components/StyledLink'
 
-import presets from 'src/styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { FoundationFloatIconGroup, FoundationMobileFloatIconGroup, LadderIcon } from './icons'
@@ -124,24 +121,22 @@ const Foundation: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Foundation</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          positionsData={positionsData}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-          functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
-          functionsTitleClassName={styles.functionsTitleClass}
-          extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
-          functionsClassName={styles.functionsClassName}
-          isProgressBar={false}
-          isNeedSupports
-        />
-      </Page>
+      <BaseSeparatePage
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        positionsData={positionsData}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+        functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
+        functionsTitleClassName={styles.functionsTitleClass}
+        extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
+        functionsClassName={styles.functionsClassName}
+        isProgressBar={false}
+        isNeedSupports
+      />
     </>
   )
 }

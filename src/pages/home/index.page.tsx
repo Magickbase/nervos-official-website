@@ -1,13 +1,13 @@
-import { FC, PropsWithChildren, RefObject, useEffect, useMemo, useRef, useState } from 'react'
+import { FC, Fragment, PropsWithChildren, RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { GetServerSideProps, type NextPage } from 'next'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
 import { Mousewheel } from 'swiper'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Portal } from '@headlessui/react'
+import { Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
-import { useElementIntersecting, useElementSize, useIsMobile } from '../../hooks'
+import { useElementIntersecting, useElementSize, useIsMobile, useMouse } from '../../hooks'
 import {
   ConwayGameOfLife,
   DISABLE_CGOL_MOUSE_CONTROLLER,
@@ -33,15 +33,27 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 }
 
 const Home: NextPage = () => {
+  const { t } = useTranslation('home')
+  const isMobile = useIsMobile()
+
   const ref = useRef<HTMLDivElement>(null)
   const controllerRef = useRef<GameController>(null)
   const initializationIndicatorRef = useRef<HTMLDivElement>(null)
+  const [activeIdx, setActiveIdx] = useState(0)
+  const showScrollDownTip = activeIdx === 0
 
-  const isOnOperableArea = useGameMouseHandler(controllerRef)
+  const mousePos = useMouse()
+
+  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef)
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
 
   // Default focus on body, auto-focus this to respond to keyboard events.
   useEffect(() => ref.current?.focus(), [])
+
+  const [hasDrawn, setHasDrawn] = useState(false)
+  useEffect(() => {
+    isDrawing && setHasDrawn(true)
+  }, [isDrawing])
 
   return (
     <Page
@@ -53,7 +65,7 @@ const Home: NextPage = () => {
     >
       {({ renderHeader, renderFooter }) => (
         <>
-          <div className={clsx(styles.blendModeHeader)}>{renderHeader()}</div>
+          {renderHeader({ className: styles.header })}
           <Swiper
             className={styles.swiper}
             direction="vertical"
@@ -66,6 +78,7 @@ const Home: NextPage = () => {
             modules={[Mousewheel]}
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
+            onActiveIndexChange={swiper => setActiveIdx(swiper.activeIndex)}
           >
             <SlideCKBIntro gameControllerRef={controllerRef} />
             <SlideCKBSecurity gameControllerRef={controllerRef} />
@@ -74,13 +87,34 @@ const Home: NextPage = () => {
             <SlideCKBModular gameControllerRef={controllerRef} />
             <SlideGetStarted gameControllerRef={controllerRef} isLastSlide />
 
-            <SwiperSlide className={clsx(styles.footer, presets.themeDark)}>{renderFooter()}</SwiperSlide>
+            <SwiperSlide className={clsx(styles.footer, presets.themeDark)}>
+              {renderFooter({ limitMaxWidth: false })}
+            </SwiperSlide>
           </Swiper>
+
+          <Transition
+            show={showScrollDownTip}
+            as={Fragment}
+            enter={styles.enter}
+            enterFrom={styles.enterFrom}
+            enterTo={styles.enterTo}
+            leave={styles.leave}
+            leaveFrom={styles.leaveFrom}
+            leaveTo={styles.leaveTo}
+          >
+            <div className={styles.scrollTip}>{t('scroll_down')}</div>
+          </Transition>
 
           <div className={styles.golContainer}>
             <ConwayGameOfLife ref={controllerRef} initializationIndicatorRef={initializationIndicatorRef} />
             <div ref={initializationIndicatorRef} className={styles.indicator}></div>
           </div>
+
+          {!isMobile && isOnOperableArea && !hasDrawn && (
+            <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
+              + RIGHT CLICK TO DRAW
+            </div>
+          )}
         </>
       )}
     </Page>
@@ -92,11 +126,12 @@ type ScreenSlideProps = PropsWithChildren<
     gameControllerRef: RefObject<GameController>
     isLastSlide?: boolean
     autoHeight?: boolean
+    containerClass?: string
   }
 >
 
 const ScreenSlide: FC<ScreenSlideProps> = props => {
-  const { children, isLastSlide, gameControllerRef, autoHeight, className, ...slideProps } = props
+  const { children, isLastSlide, gameControllerRef, autoHeight, containerClass, className, ...slideProps } = props
 
   const slideFooterContainerRef = useRef<HTMLDivElement>(null)
 
@@ -125,8 +160,7 @@ const ScreenSlide: FC<ScreenSlideProps> = props => {
       className={clsx(styles.screenSlide, { [styles.autoHeight ?? '']: autoHeight }, className)}
       {...slideProps}
     >
-      <div className={styles.container}>
-        <div className={styles.headerMixLayer} />
+      <div className={clsx(styles.container, containerClass)}>
         <div className={styles.content}>{children}</div>
 
         {isLastSlide && (
@@ -314,7 +348,12 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
   }
 
   return (
-    <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
+    <ScreenSlide
+      autoHeight
+      {...props}
+      className={clsx(presets.themeDark, props.className)}
+      containerClass={styles.slideGetStartedWrapper}
+    >
       <div className={styles.slideGetStarted}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
         <div className={styles.cards}>

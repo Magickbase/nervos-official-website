@@ -86,6 +86,7 @@ export function useGameMouseHandler(
   }>()
 
   const [isOnOperableArea, setIsOnOperableArea] = useState(false)
+  const [isDrawing, setIsDrawing] = useState(false)
 
   useEffect(() => {
     // The default is body instead of document, because interact does not seem
@@ -146,6 +147,7 @@ export function useGameMouseHandler(
       prevRightClickEvent = e
 
       mouseControllerData.current = { affectedCellIndexes: [] }
+      setIsDrawing(true)
       // This is just reusing the logic from the move, there is no special use for it。
       onMouseMove(e)
     }
@@ -177,6 +179,7 @@ export function useGameMouseHandler(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onMouseUp = (e: HTMLElementEventMap['mouseup']) => {
       mouseControllerData.current = undefined
+      setIsDrawing(false)
     }
     root.addEventListener('mouseup', onMouseUp)
 
@@ -209,5 +212,5 @@ export function useGameMouseHandler(
     }
   }, [gameControllerRef, opts.rootElement])
 
-  return isOnOperableArea
+  return { isOnOperableArea, isDrawing }
 }
