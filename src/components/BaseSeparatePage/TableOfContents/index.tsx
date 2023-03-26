@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import clsx from 'clsx'
 import { StyledLink } from '../../StyledLink'
+import TableOfContent from './TableOfContent'
 
-import ProgressBarIcon from './progressBar.svg'
 import GithubIcon from './githubIcon.svg'
 import DownArrow from './downArrow.svg'
 
@@ -13,7 +13,7 @@ export type FunctionsType = {
   editLink?: string
 }
 
-export const ProgressBar: FC<FunctionsType> = ({ className, editLink }) => {
+export const TableOfContents: FC<FunctionsType> = ({ className, editLink }) => {
   const EditPageButton = () => (
     <button className={clsx(styles.editPageButton)}>
       <GithubIcon className={clsx(styles.githubIcon)} />
@@ -31,12 +31,12 @@ export const ProgressBar: FC<FunctionsType> = ({ className, editLink }) => {
   )
 
   return (
-    <div className={clsx(styles.progressBar, className)}>
+    <div className={clsx(styles.tableOfContents, className)}>
       <EditPageButton />
 
       <div className={clsx(styles.onThisPage)}>
         <div>On this Page:</div>
-        <ProgressBarIcon />
+        <TableOfContent />
       </div>
 
       <div className={clsx(styles.onThisPageForMobile)}>

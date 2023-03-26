@@ -13,9 +13,8 @@ export type MediasProps = {
 }
 
 export const FooterMedia: React.FC = () => {
-  const title = 'Be a part of the journey.'
-  const description =
-    'The Nervos Network is an ambitious project with a strong mission that is always moving forward. Signing up to our monthly newsletter will give you all the updates you need.'
+  const title = 'Become a part of the journey.'
+  const description = 'Sign up to the Nervos monthly newsletter to stay ahead of the curve.'
 
   // Todo: the url is temporarily filled with placeholders
   const medias: MediasProps[] = [

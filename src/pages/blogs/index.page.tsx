@@ -39,7 +39,7 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
   return (
     <>
       <Head>
-        <title>{t('blogs')}</title>
+        <title>{`Nervos Network | ${t('blogs')}`}</title>
       </Head>
       <Page>
         <div className={styles.banner}>

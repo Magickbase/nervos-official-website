@@ -31,11 +31,11 @@ export const StyledLink: FC<StyledLinkType> = ({
     <div data-colored={isColored} data-underlined={isUnderlined} className={clsx(styles.styledLink, className)}>
       <span data-spaced={isSpaced} className={clsx(styles.label)}>
         {url.startsWith('http') ? (
-          <a href={url} target="_self" {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}>
+          <a href={url} target={isNewTab ? '_blank' : '_self'} rel="noopener noreferrer">
             {linkLabel}
           </a>
         ) : (
-          <Link href={url} {...(isNewTab && { target: '_blank', rel: 'noopener noreferrer' })}>
+          <Link href={url} target={isNewTab ? '_blank' : '_self'} rel="noopener noreferrer">
             {linkLabel}
           </Link>
         )}

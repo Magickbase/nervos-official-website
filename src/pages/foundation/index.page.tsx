@@ -1,8 +1,10 @@
-import { type NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import clsx from 'clsx'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { Page } from 'src/components/Page'
+import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import { StyledLink } from 'src/components/StyledLink'
 
 import presets from 'src/styles/presets.module.scss'
@@ -12,7 +14,9 @@ import { FoundationFloatIconGroup, FoundationMobileFloatIconGroup, LadderIcon } 
 
 const title = <div>The Nervos Foundation.</div>
 const description = `The Nervos Foundation is a non-profit organization whose mission is to support the long-term growth of the Nervos Network. We work to ensure the future success of Nervos by seeding the community to grow independently while driving meaningful innovation in the industry.`
-const editor = { id: '@neon.bit', avatar: 'https://avatars.githubusercontent.com/u/22511289?s=96&v=4' }
+const pagePath = '/src/pages/community/index.page.tsx'
+const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
+
 const positionsData = {
   positionsTitle: 'Foundation Positioning.',
   positions: [
@@ -103,7 +107,12 @@ const functions = [
 ]
 const extensionTitle = 'Vision for the Future.'
 
-const Foundation: NextPage = () => {
+interface PageProps {
+  contributors: Array<Author>
+  author: LastAuthor | null
+}
+
+const Foundation: NextPage<PageProps> = ({ contributors, author }) => {
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -111,24 +120,41 @@ const Foundation: NextPage = () => {
   )
 
   return (
-    <Page className={clsx(presets.themeLight)}>
-      <BaseSeparatePage
-        editLink="https://github.com/Magickbase/nervos-official-website/blob/develop/src/pages/foundation/index.page.tsx"
-        title={title}
-        floatIcons={floatIcons}
-        description={description}
-        positionsData={positionsData}
-        editor={editor}
-        functions={functions}
-        functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
-        functionsTitleClassName={styles.functionsTitleClass}
-        extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
-        functionsClassName={styles.functionsClassName}
-        isProgressBar={false}
-        isNeedSupports
-      />
-    </Page>
+    <>
+      <Head>
+        <title>Nervos Network | Foundation</title>
+      </Head>
+      <Page className={clsx(presets.themeLight)}>
+        <BaseSeparatePage
+          editLink={pageLink}
+          title={title}
+          floatIcons={floatIcons}
+          description={description}
+          positionsData={positionsData}
+          author={author}
+          contributors={contributors}
+          functions={functions}
+          functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
+          functionsTitleClassName={styles.functionsTitleClass}
+          extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
+          functionsClassName={styles.functionsClassName}
+          isProgressBar={false}
+          isNeedSupports
+        />
+      </Page>
+    </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const contributors = await fetchContributors()
+  const author = await lastContributor(pagePath)
+  return {
+    props: {
+      author,
+      contributors,
+    },
+  }
 }
 
 export default Foundation
