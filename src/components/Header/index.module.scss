@@ -203,7 +203,8 @@ $defaultHeaderHeight: 90px;
   grid-template-columns: repeat(2, $cardSize);
   gap: 2px;
   padding: 30px;
-  background: var(--colorPrimaryBg);
+  background: var(--colorPrimary);
+  border: 0.5px solid #484d4e;
   box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
 
   &.enter {
@@ -236,11 +237,11 @@ $defaultHeaderHeight: 90px;
     justify-content: space-between;
     height: $cardSize;
     padding: 15px;
-    color: var(--colorPrimaryBg);
+    color: var(--colorPrimary);
     font-weight: 500;
     font-size: 14px;
     line-height: 135%;
-    background: var(--colorPrimary);
+    background: var(--colorPrimaryBg);
     cursor: pointer;
 
     .tip {

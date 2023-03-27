@@ -5,6 +5,7 @@ import { StyledLink } from 'src/components/StyledLink'
 import Image from 'next/image'
 import type { Author } from '../../../utils/github'
 
+import presets from '../../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 type ContributorsDialogType = {
@@ -28,7 +29,7 @@ const Contributor: FC<{ author: Author }> = ({ author }) => (
 
 export const ContributorsDialog: FC<ContributorsDialogType> = ({ contributors, status, onClose }) => {
   return (
-    <Dialog className={clsx(styles.infoDialog)} open={status} onClose={onClose}>
+    <Dialog className={clsx(presets.themeLight, styles.infoDialog)} open={status} onClose={onClose}>
       <Dialog.Panel className={styles.panel}>
         <div className={styles.title}>Contributors.</div>
         <p>

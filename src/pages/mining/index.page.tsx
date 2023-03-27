@@ -17,7 +17,7 @@ const title = (
     PoW.
   </div>
 )
-const description = `Nervos launched on Nov 16, 2019, and the first CKB halving will occur at Epoch 8760 (sometime around November 2023).`
+const description = `Nervos launched in Nov 2019 and the first CKB halving is expected at Epoch 8760 (around Nov 2023).`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
 const pagePath = '/src/pages/mining/index.page.tsx'

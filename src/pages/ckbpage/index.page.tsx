@@ -55,7 +55,7 @@ const functions = [
             isColored
             isUnderlined
             isIconed
-          />
+          />{' '}
           smart contract.
         </p>
       </>

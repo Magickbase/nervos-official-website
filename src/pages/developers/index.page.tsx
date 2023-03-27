@@ -91,11 +91,11 @@ const resourceData = {
       content: 'The Build Club provides support for teams and individuals looking to launch new projects on Nervos.',
       link: 'https://www.buildclub.xyz/',
     },
-    // {
-    //   title: 'CKB Training Course',
-    //   content:
-    //     'Detailed tutorials about creating CKB transactions and details about the structure of the Layer 1 CKB blockchain.',
-    // },
+    {
+      title: 'Nervos Talk Forum',
+      content: 'For the community to participate and discuss developments on Nervos.',
+      link: 'https://talk.nervos.org/',
+    },
   ],
 }
 

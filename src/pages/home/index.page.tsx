@@ -79,6 +79,16 @@ const Home: NextPage = () => {
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
             onActiveIndexChange={swiper => setActiveIdx(swiper.activeIndex)}
+            // In chrome, providing a y value with a decimal point to translate3d
+            // causes a 1px gap between the footer and the previous slide,
+            // which appears to be a browser bug, so here's a simple fix.
+            onSetTranslate={swiper => {
+              // The height of the final slide (footer) is adaptive and may appear with a decimal point.
+              const val = swiper.snapGrid[swiper.snapGrid.length - 1]
+              if (val != null) {
+                swiper.snapGrid[swiper.snapGrid.length - 1] = Math.ceil(val)
+              }
+            }}
           >
             <SlideCKBIntro gameControllerRef={controllerRef} />
             <SlideCKBSecurity gameControllerRef={controllerRef} />

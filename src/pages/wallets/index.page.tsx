@@ -20,7 +20,7 @@ import {
   ImTokenIcon,
 } from './icons'
 
-const title = <div>Download a Wallet and Start Exploring the Nervos Ecosystem .</div>
+const title = <div>Download a wallet.</div>
 const description = `Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 

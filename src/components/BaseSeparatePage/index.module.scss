@@ -65,12 +65,13 @@
   .resourcesWrap {
     align-items: flex-start;
     padding: 120px 0;
-    border-top: 0.5px solid;
+    border-top: 0.5px solid #6a7171;
   }
 
   .functionsWrap {
     .tableOfContents {
-      min-width: 200px;
+      flex-shrink: 0;
+      width: 208px;
       min-height: 220px;
     }
   }
@@ -86,7 +87,7 @@
   }
 
   .supportsWrap {
-    border-bottom: 0.5px solid;
+    border-bottom: 0.5px solid #6a7171;
   }
 
   @media (max-width: $mobileBreakPoint) {

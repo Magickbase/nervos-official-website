@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../../styles/presets.module';
 @import '../../../styles/variables.module';
 
@@ -68,7 +69,7 @@
       display: flex;
       margin: 0 var(--baseMobileMargin);
       padding: 45px 0 30px;
-      border-bottom: 0.5px solid;
+      border-bottom: 0.5px solid #6a7171;
 
       span {
         display: flex;
@@ -94,17 +95,26 @@
   }
 }
 
-.active {
-  color: var(--colorSecond);
-}
+.listItem {
+  --paddingTop: 10px;
 
-.progressBorder {
+  $lineHeight: 135%;
+  $fontSize: 12px;
+
   position: relative;
+  padding: var(--paddingTop) 0 10px 25px;
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: $lineHeight;
   border-left: 0.7px solid;
+
+  &:first-child {
+    --paddingTop: 2px;
+  }
 
   &::after {
     position: absolute;
-    top: 50%;
+    top: calc(var(--paddingTop) + $fontSize * math.div($lineHeight, 200%));
     left: 0;
     width: 5px;
     height: 5px;
@@ -113,17 +123,12 @@
     transform: translate(-50%, -50%);
     content: '';
   }
-}
 
-.progressBorder.active {
-  &::after {
-    background-color: var(--colorSecond);
+  &.active {
+    color: var(--colorSecond);
+
+    &::after {
+      background-color: var(--colorSecond);
+    }
   }
-}
-
-.listItem {
-  padding: 15px 0 15px 15px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 100%;
 }

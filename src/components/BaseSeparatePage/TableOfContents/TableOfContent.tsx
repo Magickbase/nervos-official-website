@@ -10,10 +10,7 @@ const Headings = ({ headings, activeId }: { headings: NestedHeadingtype[]; activ
   return (
     <>
       {headings?.map(heading => (
-        <div
-          key={heading.id}
-          className={clsx(styles.listItem, styles.progressBorder, heading.id === activeId ? styles.active : '')}
-        >
+        <div key={heading.id} className={clsx(styles.listItem, heading.id === activeId ? styles.active : '')}>
           <a
             href={`#${heading.id}`}
             onClick={e => {

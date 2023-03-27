@@ -28,7 +28,7 @@ export const StyledLink: FC<StyledLinkType> = ({
   const linkLabel = label ?? url
 
   return (
-    <div data-colored={isColored} data-underlined={isUnderlined} className={clsx(styles.styledLink, className)}>
+    <span data-colored={isColored} data-underlined={isUnderlined} className={clsx(styles.styledLink, className)}>
       <span data-spaced={isSpaced} className={clsx(styles.label)}>
         {url.startsWith('http') ? (
           <a href={url} target={isNewTab ? '_blank' : '_self'} rel="noopener noreferrer">
@@ -41,6 +41,6 @@ export const StyledLink: FC<StyledLinkType> = ({
         )}
       </span>
       {isIconed ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}
-    </div>
+    </span>
   )
 }

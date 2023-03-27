@@ -12,7 +12,7 @@ import styles from './index.module.scss'
 
 import { CommunityHubFloatIconGroup } from './icons'
 
-const title = <div>Nervos Community Hub.</div>
+const title = <div>Nervos community hub.</div>
 const description = `Nervos is a community-driven project that abides by the cypherpunk values of openness and decentralization across all verticals. If you're passionate about crypto and continually seeking to improve the status quo, Nervos is the perfect place to be.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
