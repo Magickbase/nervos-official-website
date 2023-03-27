@@ -2,8 +2,13 @@
 @import '../../../styles/presets.module';
 @import '../../../styles/variables.module';
 
-.sidebar {
+.sidebarContainer {
   margin-top: 120px;
+
+  .sidebar {
+    position: sticky;
+    top: 120px;
+  }
 
   .onThisPage {
     margin: 20px 0 25px;

@@ -15,31 +15,33 @@ export type FunctionsType = {
 
 export const Sidebar: FC<FunctionsType> = ({ className, editLink }) => {
   return (
-    <div className={clsx(styles.sidebar, className)}>
-      <button className={clsx(styles.editPageButton)}>
-        <GithubIcon className={clsx(styles.githubIcon)} />
-        <StyledLink
-          className={styles.link}
-          linkData={{
-            label: 'EDIT PAGE',
-            url: editLink ?? 'https://github.com/Magickbase/nervos-official-website',
-          }}
-          isNewTab
-          isSpaced
-          isIconed
-        />
-      </button>
+    <div className={clsx(styles.sidebarContainer, className)}>
+      <div className={clsx(styles.sidebar, className)}>
+        <button className={clsx(styles.editPageButton)}>
+          <GithubIcon className={clsx(styles.githubIcon)} />
+          <StyledLink
+            className={styles.link}
+            linkData={{
+              label: 'EDIT PAGE',
+              url: editLink ?? 'https://github.com/Magickbase/nervos-official-website',
+            }}
+            isNewTab
+            isSpaced
+            isIconed
+          />
+        </button>
 
-      <div className={clsx(styles.onThisPage)}>
-        <div>On this Page:</div>
-        <StyledTOC />
-      </div>
+        <div className={clsx(styles.onThisPage)}>
+          <div>On this Page:</div>
+          <StyledTOC />
+        </div>
 
-      <div className={clsx(styles.onThisPageForMobile)}>
-        <span>
-          On this page
-          <DownArrow />
-        </span>
+        <div className={clsx(styles.onThisPageForMobile)}>
+          <span>
+            On this page
+            <DownArrow />
+          </span>
+        </div>
       </div>
     </div>
   )
