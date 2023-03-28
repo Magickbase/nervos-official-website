@@ -225,7 +225,7 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
                 style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
               />
             ),
-            top: 27,
+            top: 117,
             right: 396 + 459,
           },
           {
@@ -236,7 +236,7 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
                 style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
               />
             ),
-            top: -170,
+            top: -80,
             left: 82,
           },
         ]}

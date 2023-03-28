@@ -14,7 +14,6 @@ import { FunctionsItemType } from './FunctionsItem'
 import styles from './index.module.scss'
 import { Supports } from './Supports'
 import { Page } from '../Page'
-import { useHeaderHeight } from '../Header'
 import { TOCContextProvider } from '../TableOfContents'
 
 export type BaseSeparatePageType = HeaderType &
@@ -72,8 +71,6 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
     ...rest
   } = props
 
-  const headerHeight = useHeaderHeight()
-
   const FunctionsContainer = ({
     functions,
     isProgressBar,
@@ -103,7 +100,7 @@ export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
                 key={idx}
                 className={clsx(styles.embellishedElement)}
                 style={{
-                  top: embellishedElement.top ? embellishedElement.top + headerHeight : undefined,
+                  top: embellishedElement.top,
                   right: embellishedElement.right,
                   left: embellishedElement.left,
                 }}

@@ -135,10 +135,10 @@ const Community: NextPage<PageProps> = ({ contributors, author }) => {
       </Head>
       <BaseSeparatePage
         embellishedElements={[
-          { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
+          { content: <EmbellishedLeft width={940} height={503} />, top: 154, right: -204 },
           {
             content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 478,
+            top: 568,
             left: 404,
           },
         ]}

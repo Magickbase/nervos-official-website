@@ -127,12 +127,12 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
         embellishedElements={[
           {
             content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 384,
+            top: 474,
             right: 488,
           },
           {
             content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
-            top: 12,
+            top: 102,
             left: 96,
           },
         ]}

@@ -94,10 +94,10 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
         embellishedElements={[
           {
             content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-            top: 360,
+            top: 450,
             right: 518,
           },
-          { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
+          { content: <Embellished width={940} height={503} />, top: 382, left: 142 },
         ]}
         editLink={pageLink}
         title={title}

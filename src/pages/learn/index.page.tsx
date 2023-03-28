@@ -105,8 +105,8 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
       </Head>
       <BaseSeparatePage
         embellishedElements={[
-          { content: <EmbellishedLeft width={595} height={310} />, top: 435, right: 420 },
-          { content: <EmbellishedRight width={940} height={503} />, top: -130, left: 100 },
+          { content: <EmbellishedLeft width={595} height={310} />, top: 525, right: 420 },
+          { content: <EmbellishedRight width={940} height={503} />, top: -40, left: 100 },
         ]}
         editLink={pageLink}
         title={title}

@@ -137,10 +137,10 @@ const Mining: NextPage<PageProps> = ({ contributors, author }) => {
       </Head>
       <BaseSeparatePage
         embellishedElements={[
-          { content: <EmbellishedLeft width={744} height={420} />, top: 56, right: -16 },
+          { content: <EmbellishedLeft width={744} height={420} />, top: 146, right: -16 },
           {
             content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 307,
+            top: 397,
             left: 210,
           },
         ]}
