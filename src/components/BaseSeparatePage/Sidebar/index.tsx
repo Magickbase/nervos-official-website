@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 import clsx from 'clsx'
-import { StyledLink } from '../../StyledLink'
+import Link from 'next/link'
 import { StyledTOC } from './StyledTOC'
 
 import GithubIcon from './githubIcon.svg'
 import DownArrow from './downArrow.svg'
+import ObliqueArrow from './oblique_arrow.svg'
 
 import styles from './index.module.scss'
 
@@ -17,16 +18,16 @@ export const Sidebar: FC<FunctionsType> = ({ className, editLink }) => {
   return (
     <div className={clsx(styles.sidebarContainer, className)}>
       <div className={clsx(styles.sidebar, className)}>
-        <button className={clsx(styles.editPageButton)}>
-          <GithubIcon className={clsx(styles.githubIcon)} />
-          <StyledLink
-            className={styles.link}
-            href={editLink ?? 'https://github.com/Magickbase/nervos-official-website'}
-            space={8}
-          >
-            EDIT PAGE
-          </StyledLink>
-        </button>
+        <Link
+          className={clsx(styles.editPageButton)}
+          href={editLink ?? 'https://github.com/Magickbase/nervos-official-website'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GithubIcon />
+          EDIT PAGE
+          <ObliqueArrow />
+        </Link>
 
         <div className={clsx(styles.onThisPage)}>
           <div>On this Page:</div>
