@@ -27,7 +27,9 @@ const InvolvedItem = ({
   description: string
 }) => (
   <>
-    <StyledLink isIconed isSpaced linkData={{ label, url }} className={styles.involvedItemLink} />
+    <StyledLink className={styles.involvedItemLink} href={url} space={8}>
+      {label}
+    </StyledLink>
     <div>{description}</div>
   </>
 )
@@ -90,16 +92,9 @@ const functions = [
       <>
         Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn
         more about it&nbsp;
-        <StyledLink
-          linkData={{
-            label: 'here',
-            url: 'https://github.com/nervosnetwork/rfcs',
-          }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://github.com/nervosnetwork/rfcs" colored underline>
+          here
+        </StyledLink>
         .
       </>
     ),

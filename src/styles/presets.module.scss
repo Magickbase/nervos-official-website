@@ -3,6 +3,7 @@
   --colorPrimary: #fff;
   --colorPrimaryBg: #000;
   --colorSecond: #18efb1;
+  --colorSecondInvert: #5700ff;
 
   // TODO: Should be calculated automatically with sass via --colorSlideFooter
   --colorSlideFooterTuple: 168 255 00;
@@ -14,6 +15,7 @@
   --releasesAndUpdateColor: #ffe99b;
   --eventsColor: #bb9bff;
   --contributorsButtonColor: #d0fff2;
+  --linkColor: var(--colorSecond);
 }
 
 .themeLight,
@@ -21,6 +23,7 @@
   --colorPrimary: #000;
   --colorPrimaryBg: #fff;
   --colorSecond: #5700ff;
+  --colorSecondInvert: #18efb1;
   --colorSlideFooterTuple: 87 00 255;
   --colorSlideFooter: #5700ff;
   --footerInputBackground: #e7eaeb;
@@ -30,4 +33,5 @@
   --releasesAndUpdateColor: #ffe99b;
   --eventsColor: #bb9bff;
   --contributorsButtonColor: #ede3ff;
+  --linkColor: var(--colorSecond);
 }

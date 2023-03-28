@@ -47,19 +47,13 @@ const functions = [
           Neuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation,
           as you open the Neuron Wallet, the bundled Mainnet node will run.
         </p>
-        <StyledLink
-          isColored
-          isIconed
-          isNewTab
-          linkData={{ label: 'Download', url: 'https://github.com/nervosnetwork/neuron/releases' }}
-        />
+        <StyledLink href="https://github.com/nervosnetwork/neuron/releases" colored>
+          Download
+        </StyledLink>
         <br />
-        <StyledLink
-          isColored
-          isIconed
-          isNewTab
-          linkData={{ label: 'Tutorials', url: 'https://docs.nervos.org/docs/basics/guides/crypto%20wallets/neuron/' }}
-        />
+        <StyledLink href="https://docs.nervos.org/docs/basics/guides/crypto%20wallets/neuron/" colored>
+          Tutorials
+        </StyledLink>
       </>
     ),
   },
@@ -72,17 +66,16 @@ const functions = [
         CKBull is a mobile wallet that allows you to access and manage your CKB, tokens bridged from Force Bridge, NFTs,
         as well as deposits into the Nervos DAO, all in one place.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'https://ckbull.app/#download' }} />
+          <StyledLink href="https://ckbull.app/#download" colored>
+            Download
+          </StyledLink>
           <br />
           <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{
-              label: 'Tutorials',
-              url: 'https://jackylhh.notion.site/How-to-use-CKBull-wallet-89153cac673447b0bf827d1f6f7d151c',
-            }}
-          />
+            href="https://jackylhh.notion.site/How-to-use-CKBull-wallet-89153cac673447b0bf827d1f6f7d151c"
+            colored
+          >
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
@@ -95,7 +88,9 @@ const functions = [
       <>
         JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed isNewTab linkData={{ label: 'Official website', url: 'https://joy.id/' }} />
+          <StyledLink href="https://joy.id/" colored>
+            Official website
+          </StyledLink>
         </div>
       </>
     ),
@@ -110,7 +105,9 @@ const functions = [
         Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use
         their existing Ethereum addresses and wallets to receive and send CKB directly.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed isNewTab linkData={{ label: 'Portal Wallet', url: 'https://ckb.pw/' }} />
+          <StyledLink href="https://ckb.pw/" colored>
+            Portal Wallet
+          </StyledLink>
         </div>
       </>
     ),
@@ -126,19 +123,13 @@ const functions = [
         wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap,
         and trade. It is now serving more than 6 million users across the globe.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Official website', url: 'https://www.safepal.com/' }}
-          />
+          <StyledLink href="https://www.safepal.com/" colored>
+            Official website
+          </StyledLink>
           <br />
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Tutorials', url: 'https://blog.safepal.com/ckb/' }}
-          />
+          <StyledLink href="https://blog.safepal.com/ckb/" colored>
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
@@ -152,12 +143,9 @@ const functions = [
         Ledger is the most popular hardware wallet and has support for Nervos CKB. You can store, send and receive CKB
         using your Ledger Nano X and Ledger Nano S hardware wallets. Click here for the guide.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Official website', url: 'https://www.ledger.com/' }}
-          />
+          <StyledLink href="https://www.ledger.com/" colored>
+            Official website
+          </StyledLink>
         </div>
       </>
     ),
@@ -171,22 +159,16 @@ const functions = [
         Starting today, Opera’s millions of users can send and receive Nervos CKB within the crypto wallet built into
         the Opera browser on Android.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Download', url: 'https://www.opera.com/download' }}
-          />
+          <StyledLink href="https://www.opera.com/download" colored>
+            Download
+          </StyledLink>
           <br />
           <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{
-              label: 'Tutorials',
-              url: 'https://medium.com/@nervosnetwork/sending-and-receiving-ckb-via-operas-android-wallet-28bfc6481390',
-            }}
-          />
+            href="https://medium.com/@nervosnetwork/sending-and-receiving-ckb-via-operas-android-wallet-28bfc6481390"
+            colored
+          >
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
@@ -204,9 +186,13 @@ const functions = [
           As a strategic partner of Nervos, imToken provides a built-in CKB wallet that enables users to safely send,
           receive and store CKB.
         </p>
-        <StyledLink isColored isIconed isNewTab linkData={{ label: 'Official website', url: 'https://token.im/' }} />
+        <StyledLink href="https://token.im/" colored>
+          Official website
+        </StyledLink>
         <br />
-        <StyledLink isColored isIconed isNewTab linkData={{ label: 'Tutorials', url: 'https://token.im/ckb-wallet' }} />
+        <StyledLink href="https://token.im/ckb-wallet" colored>
+          Tutorials
+        </StyledLink>
       </>
     ),
   },

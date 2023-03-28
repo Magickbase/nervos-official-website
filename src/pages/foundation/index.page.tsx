@@ -91,11 +91,9 @@ const functions = [
         goals.
         <div className="oneLineGap">
           Visit this{' '}
-          <StyledLink
-            isColored
-            isUnderlined
-            linkData={{ label: 'link', url: 'https://jobs.gohire.io/nervos-network-tzqhh93f/' }}
-          />{' '}
+          <StyledLink href="https://jobs.gohire.io/nervos-network-tzqhh93f/" colored underline>
+            link
+          </StyledLink>{' '}
           to see open positions with the Nervos Foundation.
         </div>
       </>

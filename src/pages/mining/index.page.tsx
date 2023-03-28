@@ -43,32 +43,21 @@ const functions = [
           200 transactions per second but also can increase its capacity as bandwidth and latency improve over time.
         </div>
         Read the&nbsp;
-        <StyledLink
-          linkData={{ label: 'NC-max paper', url: 'https://eprint.iacr.org/2020/1101' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://eprint.iacr.org/2020/1101" colored underline>
+          NC-max paper
+        </StyledLink>
         &nbsp;and this&nbsp;
         <StyledLink
-          linkData={{
-            label: 'article',
-            url: 'https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832',
-          }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+          href="https://medium.com/nervosnetwork/breaking-the-throughput-limit-of-nakamoto-consensus-ccdf65fe0832"
+          colored
+          underline
+        >
+          article
+        </StyledLink>
         , and watch this&nbsp;
-        <StyledLink
-          linkData={{ label: 'video', url: 'https://www.youtube.com/watch?v=mYS-A1CK6zc' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://www.youtube.com/watch?v=mYS-A1CK6zc" colored underline>
+          video
+        </StyledLink>
         &nbsp;to learn more.
       </>
     ),
@@ -82,29 +71,17 @@ const functions = [
         CKB&apos;s design is ASIC neutral, and the first ASIC was released four months after the mainnet launch.
         <div className="oneLineGap">
           To learn more, read our &nbsp;
-          <StyledLink
-            linkData={{ label: 'mining guide', url: 'https://docs.nervos.org/docs/basics/guides/mining-ckb/' }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+          <StyledLink href="https://docs.nervos.org/docs/basics/guides/mining-ckb/" colored underline>
+            mining guide
+          </StyledLink>
           &nbsp; and the pages dedicated to &nbsp;
-          <StyledLink
-            linkData={{ label: 'mining rigs', url: 'https://minerstat.com/coin/CKB/profitability' }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+          <StyledLink href="https://minerstat.com/coin/CKB/profitability" colored underline>
+            mining rigs
+          </StyledLink>
           &nbsp; and &nbsp;
-          <StyledLink
-            linkData={{ label: 'mining pools', url: 'https://miningpoolstats.stream/nervos' }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+          <StyledLink href="https://miningpoolstats.stream/nervos" colored underline>
+            mining pools
+          </StyledLink>
           &nbsp;.
         </div>
       </>

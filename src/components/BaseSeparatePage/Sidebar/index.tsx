@@ -21,14 +21,11 @@ export const Sidebar: FC<FunctionsType> = ({ className, editLink }) => {
           <GithubIcon className={clsx(styles.githubIcon)} />
           <StyledLink
             className={styles.link}
-            linkData={{
-              label: 'EDIT PAGE',
-              url: editLink ?? 'https://github.com/Magickbase/nervos-official-website',
-            }}
-            isNewTab
-            isSpaced
-            isIconed
-          />
+            href={editLink ?? 'https://github.com/Magickbase/nervos-official-website'}
+            space={8}
+          >
+            EDIT PAGE
+          </StyledLink>
         </button>
 
         <div className={clsx(styles.onThisPage)}>

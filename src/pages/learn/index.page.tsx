@@ -27,11 +27,9 @@ const functions = [
           The Common Knowledge Base Education Hub is a comprehensive repository of in-depth resources on Nervos and
           blockchain technology in general.
         </p>
-        <StyledLink
-          isColored
-          isUnderlined
-          linkData={{ label: 'Start learning', url: 'https://nervos.gitbook.io/developer-training-course/' }}
-        />
+        <StyledLink href="https://nervos.gitbook.io/developer-training-course/" colored underline>
+          Start learning
+        </StyledLink>
       </>
     ),
   },
@@ -45,17 +43,13 @@ const functions = [
           to the Nervos network. The RFC process encourages active participation from users and developers, fostering
           collaboration and generating valuable feedback that ultimately defines the ecosystem’s direction.
         </p>
-        <StyledLink
-          isColored
-          isUnderlined
-          linkData={{ label: 'Learn More ', url: 'https://github.com/nervosnetwork/rfcs' }}
-        />
+        <StyledLink href="https://github.com/nervosnetwork/rfcs" colored underline>
+          Learn More
+        </StyledLink>
         &nbsp;|&nbsp;
-        <StyledLink
-          isColored
-          isUnderlined
-          linkData={{ label: 'Contribute', url: 'https://github.com/nervosnetwork/rfcs/pulls' }}
-        />
+        <StyledLink href="https://github.com/nervosnetwork/rfcs/pulls" colored underline>
+          Contribute
+        </StyledLink>
       </>
     ),
   },
@@ -66,11 +60,9 @@ const functions = [
       <>
         <p>
           Subscribe to the official Nervos Network YouTube&nbsp;
-          <StyledLink
-            isColored
-            isIconed
-            linkData={{ label: 'channel', url: 'https://www.youtube.com/c/NervosNetwork' }}
-          />
+          <StyledLink href="https://www.youtube.com/c/NervosNetwork" colored>
+            channel
+          </StyledLink>
           &nbsp; to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures,
           AMAs, developer workshops, and team member interviews.
         </p>
@@ -86,7 +78,9 @@ const functions = [
           The Nervos blog is the go-to source for updates, partnership news, announcements, and long-form articles
           illuminating the mission and vision of the Nervos network.
         </p>
-        <StyledLink isColored isIconed linkData={{ label: 'Blog page', url: '/blogs' }} />
+        <StyledLink href="/blogs" colored>
+          Blog page
+        </StyledLink>
       </>
     ),
   },
