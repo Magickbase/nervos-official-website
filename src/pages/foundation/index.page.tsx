@@ -4,6 +4,8 @@ import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import { StyledLink } from 'src/components/StyledLink'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
 import styles from './index.module.scss'
 
@@ -120,6 +122,39 @@ const Foundation: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Foundation</title>
       </Head>
       <BaseSeparatePage
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <EmbellishedLeft width={430} height={245} style={{ transform: 'scaleX(-1) scaleY(-1)' }} />,
+                  top: 21,
+                  right: -116,
+                },
+                {
+                  content: <EmbellishedRight width={430} height={267} />,
+                  top: 416,
+                  left: -73,
+                },
+              ]
+            : [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={744}
+                      height={420}
+                      style={{ transform: 'rotate(-90deg) scaleX(-1)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 150 + 744,
+                  right: 429 + 420,
+                },
+                {
+                  content: <EmbellishedRight width={744} height={459} />,
+                  top: 395,
+                  left: 346,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}
