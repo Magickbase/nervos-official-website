@@ -5,8 +5,8 @@
   width: 100%;
   height: 290px;
   padding: 28px;
-  background-color: var(--colorPrimaryBg);
-  filter: invert(1);
+  color: var(--colorPrimaryBg);
+  background-color: var(--colorPrimary);
 
   .itemTitle {
     padding-bottom: 10px;
