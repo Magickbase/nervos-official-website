@@ -19,8 +19,7 @@
   }
 
   @media (max-width: $mobileBreakPoint) {
-    height: 344px;
-    margin-bottom: 204px;
+    height: 549px;
 
     .title {
       width: calc(100% - var(--baseMobileMargin) * 2);
