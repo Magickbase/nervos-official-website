@@ -1,6 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
 import clsx from 'clsx'
+import { StyledLink } from '../../../StyledLink'
 
 import styles from './index.module.scss'
 
@@ -19,9 +19,9 @@ export const FooterLinkGroup: React.FC<FooterLinkGroupProps> = props => {
   const { title, links, ...restProps } = props
 
   const LinkNav = ({ label, url = '', className }: LinkNavProps) => (
-    <Link href={url} target={url.startsWith('/') ? '_self' : '_blank'} className={className}>
+    <StyledLink href={url} className={className}>
       {label}
-    </Link>
+    </StyledLink>
   )
 
   return (

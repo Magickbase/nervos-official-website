@@ -5,6 +5,7 @@ import { FooterLinkGroup, FooterLinkGroupProps } from './components/FooterLinkGr
 
 import styles from './index.module.scss'
 import LogoIcon from './logo.svg'
+import { StyledLink } from '../StyledLink'
 
 export type FooterProps = ComponentProps<'div'> & { limitMaxWidth?: number | false }
 
@@ -15,6 +16,7 @@ export const Footer: FC<FooterProps> = props => {
     {
       title: 'DISCOVER',
       links: [
+        { label: 'CKB', url: '/ckbpage' },
         { label: 'Mining', url: '/mining' },
         { label: 'Wallets', url: '/wallets' },
         { label: 'Wiki', url: 'https://www.wikiwand.com/en/Nervos_Network' },
@@ -22,7 +24,11 @@ export const Footer: FC<FooterProps> = props => {
       ],
     },
     {
-      title: 'DEVELOPERS',
+      title: (
+        <StyledLink className={styles.titleLink} href="/developers">
+          DEVELOPERS
+        </StyledLink>
+      ),
       links: [
         { label: 'Documentation', url: 'https://docs.nervos.org/' },
         { label: 'GitHub', url: 'https://github.com/nervosnetwork/' },
@@ -40,7 +46,11 @@ export const Footer: FC<FooterProps> = props => {
       ],
     },
     {
-      title: 'COMMUNITY',
+      title: (
+        <StyledLink className={styles.titleLink} href="/community">
+          COMMUNITY
+        </StyledLink>
+      ),
       links: [
         { label: 'Community Fund DAO', url: 'https://dao.ckb.community/' },
         { label: 'Nervos Talk Forum', url: 'https://talk.nervos.org/' },
@@ -48,7 +58,11 @@ export const Footer: FC<FooterProps> = props => {
       ],
     },
     {
-      title: 'LEARN',
+      title: (
+        <StyledLink className={styles.titleLink} href="/learn">
+          LEARN
+        </StyledLink>
+      ),
       links: [
         /* not ready yet */
         // { label: 'Knowledge Base', url: '/' },

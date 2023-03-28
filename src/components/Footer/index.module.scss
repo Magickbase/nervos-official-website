@@ -15,7 +15,7 @@
   .guide {
     display: flex;
     flex-wrap: wrap;
-    gap: 140px;
+    gap: 100px 140px;
     margin-top: 70px;
 
     .guideLinks {
@@ -24,10 +24,14 @@
       gap: 12px;
       justify-content: space-between;
       width: 100%;
+
+      .titleLink {
+        font-weight: 400;
+      }
     }
 
     .guideMedias {
-      flex: 1 1 465px;
+      flex: 1 1 187px;
     }
   }
 
