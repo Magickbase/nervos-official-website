@@ -21,6 +21,14 @@ $headerZ: 2;
   height: 100vh;
 }
 
+.swiperWrapper {
+  // Swiper in vertical mode will set the `flex-direction` of the `swiper-wrapper`
+  // to `column` via the `swiper-vertical` class, but with a delay that will cause
+  // a flickering effect on the first screen.
+  // So here is a proactive early setup to fix the problem.
+  flex-direction: column;
+}
+
 .isOnOperableArea {
   cursor: default;
 }

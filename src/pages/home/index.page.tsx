@@ -68,6 +68,7 @@ const Home: NextPage = () => {
           {renderHeader({ className: styles.header })}
           <Swiper
             className={styles.swiper}
+            wrapperClass={styles.swiperWrapper}
             direction="vertical"
             slidesPerView="auto"
             autoHeight
