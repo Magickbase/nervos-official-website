@@ -4,6 +4,7 @@ import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import Embellished from './embellished.svg'
+import { useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -79,6 +80,8 @@ interface PageProps {
 }
 
 const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <CkbPageFloatIconGroup />
@@ -91,14 +94,25 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | CKB</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-            top: 450,
-            right: 518,
-          },
-          { content: <Embellished width={940} height={503} />, top: 382, left: 142 },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <Embellished width={548} height={292} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 453,
+                  right: -8,
+                },
+                { content: <Embellished width={548} height={292} />, top: 79, left: -55 },
+              ]
+            : [
+                {
+                  content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 450,
+                  right: 518,
+                },
+                { content: <Embellished width={940} height={503} />, top: 382, left: 142 },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

@@ -5,6 +5,7 @@ import { StyledLink } from 'src/components/StyledLink'
 import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -204,6 +205,8 @@ interface PageProps {
 }
 
 const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <WalletIcon />
@@ -216,30 +219,51 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Wallets</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: (
-              <EmbellishedLeft
-                width={744}
-                height={459}
-                style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
-              />
-            ),
-            top: 117,
-            right: 396 + 459,
-          },
-          {
-            content: (
-              <EmbellishedRight
-                width={595}
-                height={310}
-                style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
-              />
-            ),
-            top: -80,
-            left: 82,
-          },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={430}
+                      height={265}
+                      style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 264,
+                  right: 8 + 265,
+                },
+                {
+                  content: (
+                    <EmbellishedRight
+                      width={374}
+                      height={196}
+                      style={{ transform: 'scaleX(-1) rotate(90deg)', transformOrigin: 'left top' }}
+                    />
+                  ),
+                  top: 70,
+                  left: 38,
+                },
+              ]
+            : [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={744}
+                      height={459}
+                      style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 117,
+                  right: 396 + 459,
+                },
+                {
+                  content: <EmbellishedRight width={595} height={310} style={{ transform: 'scaleX(-1)' }} />,
+                  top: 425,
+                  left: 114,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

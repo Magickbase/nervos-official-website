@@ -5,7 +5,7 @@ import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'sr
 import presets from 'src/styles/presets.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
-import { useBodyClass } from '../../hooks'
+import { useBodyClass, useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -105,6 +105,8 @@ interface PageProps {
 }
 
 const Developers: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   useBodyClass([presets.themeDark ?? ''])
 
   const floatIcons = (
@@ -124,18 +126,33 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Developers</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 474,
-            right: 488,
-          },
-          {
-            content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
-            top: 102,
-            left: 96,
-          },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <EmbellishedLeft width={430} height={267} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 462,
+                  right: 51,
+                },
+                {
+                  content: <EmbellishedRight width={430} height={245} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 64,
+                  left: -166,
+                },
+              ]
+            : [
+                {
+                  content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 474,
+                  right: 488,
+                },
+                {
+                  content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 102,
+                  left: 96,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

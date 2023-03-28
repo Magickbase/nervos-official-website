@@ -5,6 +5,7 @@ import { StyledLink } from 'src/components/StyledLink'
 import { REPO, Author, fetchContributors, lastContributor, LastAuthor } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -92,6 +93,8 @@ interface PageProps {
 }
 
 const Learn: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <LearnFloatIconGroup />
@@ -104,10 +107,17 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Learn</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={595} height={310} />, top: 525, right: 420 },
-          { content: <EmbellishedRight width={940} height={503} />, top: -40, left: 100 },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                { content: <EmbellishedLeft width={374} height={196} />, top: 467, right: -17 },
+                { content: <EmbellishedRight width={581} height={311} />, top: 65, left: -74 },
+              ]
+            : [
+                { content: <EmbellishedLeft width={595} height={310} />, top: 525, right: 420 },
+                { content: <EmbellishedRight width={940} height={503} />, top: -40, left: 100 },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

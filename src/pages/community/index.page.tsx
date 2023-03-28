@@ -5,7 +5,7 @@ import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
-import { useBodyClass } from '../../hooks'
+import { useBodyClass, useIsMobile } from '../../hooks'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -120,6 +120,8 @@ interface PageProps {
 }
 
 const Community: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   useBodyClass([presets.themeDark ?? ''])
 
   const floatIcons = (
@@ -134,14 +136,25 @@ const Community: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Community</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={940} height={503} />, top: 154, right: -204 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 568,
-            left: 404,
-          },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                { content: <EmbellishedLeft width={548} height={292} />, top: 52, right: -146 },
+                {
+                  content: <EmbellishedRight width={430} height={267} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 443,
+                  left: -47,
+                },
+              ]
+            : [
+                { content: <EmbellishedLeft width={940} height={503} />, top: 154, right: -204 },
+                {
+                  content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 568,
+                  left: 404,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

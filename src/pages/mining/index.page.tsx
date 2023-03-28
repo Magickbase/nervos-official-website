@@ -1,8 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { StyledLink } from 'src/components/StyledLink'
-import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
+import { BaseSeparatePage } from '../../components/BaseSeparatePage'
+import { StyledLink } from '../../components/StyledLink'
+import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from '../../utils'
+import { useIsMobile } from '../../hooks'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
@@ -124,6 +125,8 @@ interface PageProps {
 }
 
 const Mining: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <CkbPowFloatIconGroup />
@@ -136,14 +139,25 @@ const Mining: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Mining</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          { content: <EmbellishedLeft width={744} height={420} />, top: 146, right: -16 },
-          {
-            content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 397,
-            left: 210,
-          },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                { content: <EmbellishedLeft width={430} height={242} />, top: 151, right: -49 },
+                {
+                  content: <EmbellishedRight width={430} height={265} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 443,
+                  left: -81,
+                },
+              ]
+            : [
+                { content: <EmbellishedLeft width={744} height={420} />, top: 146, right: -16 },
+                {
+                  content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 397,
+                  left: 210,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}
