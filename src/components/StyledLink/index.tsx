@@ -1,46 +1,47 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import ArrowIcon from './arrow.svg'
 
 import styles from './index.module.scss'
 
-export type StyledLinkType = {
-  linkData: { label?: string | React.ReactNode; url: string }
-  isSpaced?: boolean
-  isColored?: boolean
-  isUnderlined?: boolean
-  isIconed?: boolean
-  isNewTab?: boolean
+export type StyledLinkProps = {
+  href: string
+  space?: number
+  colored?: boolean
+  underline?: boolean
+  icon?: boolean
+  openNewTab?: boolean
   className?: string
 }
 
-export const StyledLink: FC<StyledLinkType> = ({
-  linkData,
-  isSpaced = false,
-  isColored = false,
-  isUnderlined = false,
-  isIconed = false,
-  isNewTab,
+export const StyledLink: FC<PropsWithChildren<StyledLinkProps>> = ({
+  children,
+  href,
+  space = 4,
+  colored = false,
+  underline = false,
+  icon = true,
+  openNewTab,
   className,
 }) => {
-  const { label, url = '' } = linkData
-  const linkLabel = label ?? url
+  const isExternalLink = /^(https?:)?\/\//.test(href)
+  if (openNewTab == null) openNewTab = isExternalLink
+
+  const LinkComp = isExternalLink ? 'a' : Link
 
   return (
-    <div data-colored={isColored} data-underlined={isUnderlined} className={clsx(styles.styledLink, className)}>
-      <span data-spaced={isSpaced} className={clsx(styles.label)}>
-        {url.startsWith('http') ? (
-          <a href={url} target={isNewTab ? '_blank' : '_self'} rel="noopener noreferrer">
-            {linkLabel}
-          </a>
-        ) : (
-          <Link href={url} target={isNewTab ? '_blank' : '_self'} rel="noopener noreferrer">
-            {linkLabel}
-          </Link>
-        )}
-      </span>
-      {isIconed ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}
-    </div>
+    <LinkComp
+      data-colored={colored}
+      data-underlined={underline}
+      className={clsx(styles.styledLink, className)}
+      style={{ gap: space }}
+      href={href}
+      target={openNewTab ? '_blank' : '_self'}
+      rel="noopener noreferrer"
+    >
+      {children ?? href}
+      {isExternalLink && icon ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}
+    </LinkComp>
   )
 }

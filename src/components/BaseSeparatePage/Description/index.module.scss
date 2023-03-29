@@ -6,15 +6,14 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 60px;
-  padding: min(5%, 60px) min(10%, 120px);
-  color: var(--colorPrimary);
+  padding: min(5%, 60px) min(10%, 104px);
+  color: var(--colorPrimaryBg);
   font-weight: 500;
   font-size: 18px;
   line-height: 160%;
   letter-spacing: 0.03em;
-  background-color: var(--colorPrimaryBg);
+  background-color: var(--colorPrimary);
   border-radius: 35px;
-  filter: invert(1);
 
   .content {
     margin: 0;

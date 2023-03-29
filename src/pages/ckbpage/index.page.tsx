@@ -4,6 +4,7 @@ import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import Embellished from './embellished.svg'
+import { useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
@@ -28,15 +29,12 @@ const functions = [
           whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure and
           issuance schedule&nbsp;
           <StyledLink
-            linkData={{
-              label: 'here',
-              url: 'https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9',
-            }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+            href="https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9"
+            colored
+            underline
+          >
+            here
+          </StyledLink>
           .
         </p>
         <p>
@@ -49,13 +47,9 @@ const functions = [
         <p>
           Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in
           the&nbsp;
-          <StyledLink
-            linkData={{ label: 'Nervos DAO', url: 'https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c' }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+          <StyledLink href="https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c" colored underline>
+            Nervos DAO
+          </StyledLink>{' '}
           smart contract.
         </p>
       </>
@@ -67,21 +61,13 @@ const functions = [
     content: (
       <>
         You can buy and sell CKB using the cryptocurrency exchanges on&nbsp;
-        <StyledLink
-          linkData={{ label: 'this list', url: 'https://www.coingecko.com/en/coins/nervos-network#markets' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
+          this list
+        </StyledLink>
         . However, consider transferring and holding your CKB using a non-custodial cryptocurrency&nbsp;
-        <StyledLink
-          linkData={{ label: 'wallet', url: 'https://nervos-official-website.vercel.app/wallets' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
+          wallet
+        </StyledLink>
         , as holding it on centralized exchanges is risky.
       </>
     ),
@@ -94,6 +80,8 @@ interface PageProps {
 }
 
 const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <CkbPageFloatIconGroup />
@@ -106,14 +94,25 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | CKB</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-            top: 360,
-            right: 518,
-          },
-          { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <Embellished width={548} height={292} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 453,
+                  right: -8,
+                },
+                { content: <Embellished width={548} height={292} />, top: 79, left: -55 },
+              ]
+            : [
+                {
+                  content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 450,
+                  right: 518,
+                },
+                { content: <Embellished width={940} height={503} />, top: 382, left: 142 },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

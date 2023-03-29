@@ -37,7 +37,7 @@
   }
 
   .supportsItemEcosystemGroup {
-    border-bottom: 0.5px solid;
+    border-bottom: 0.5px solid #6a7171;
 
     :not(:first-child) {
       margin-top: unset;
@@ -83,7 +83,7 @@
     }
 
     .supportsItemParticipantsGroup {
-      border-bottom: 0.5px solid;
+      border-bottom: 0.5px solid #6a7171;
     }
   }
 }

@@ -24,7 +24,7 @@ export * from './useGameKeybindings'
 
 export const ConwayGameOfLife = forwardRef<GameController, { initializationIndicatorRef: RefObject<HTMLElement> }>(
   function ConwayGameOfLife(props, ref) {
-    const isMobile = useIsMobile()
+    const isMobile = useIsMobile(true)
     const canvasRef = useRef<HTMLCanvasElement>(null)
 
     const [gameStateHistory, setGameStateHistory] = useState<GameState[]>([])

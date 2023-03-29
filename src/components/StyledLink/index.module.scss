@@ -3,28 +3,20 @@
 
 .styledLink {
   display: inline-flex;
-  gap: 4px;
   align-items: center;
-  color: var(--colorPrimary);
   font-weight: 600;
 
-  svg path {
-    stroke: var(--colorPrimary);
-  }
-
   .arrowIcon {
-    path {
-      fill: unset;
-    }
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: -0.2em;
+    transform: rotate(-45deg);
   }
 
-  &[data-colored='true'] {
-    color: var(--colorSecond);
-    border-bottom-color: var(--colorSecond);
-
-    svg path {
-      stroke: var(--colorSecond);
-    }
+  &[data-colored='true'],
+  &:hover {
+    color: var(--linkColor);
+    border-bottom-color: var(--linkColor);
   }
 
   &[data-underlined='true'] {
@@ -33,16 +25,5 @@
     line-height: 0.8;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-  }
-
-  .label {
-    &[data-spaced='true'] {
-      &::after {
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        content: '';
-      }
-    }
   }
 }

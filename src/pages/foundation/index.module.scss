@@ -18,8 +18,8 @@
 
 .functionsTitleClass,
 .extensionTitleFunctionsClassName {
-  background-color: var(--colorPrimaryBg);
-  filter: invert(1);
+  color: var(--colorPrimaryBg);
+  background-color: var(--colorPrimary);
 }
 
 .functionsClassName {
