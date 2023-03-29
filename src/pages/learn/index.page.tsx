@@ -28,7 +28,7 @@ const functions = [
           The Common Knowledge Base Education Hub is a comprehensive repository of in-depth resources on Nervos and
           blockchain technology in general.
         </p>
-        <StyledLink href="https://nervos.gitbook.io/developer-training-course/" colored underline>
+        <StyledLink href="/knowledge-base" colored underline>
           Start learning
         </StyledLink>
       </>
