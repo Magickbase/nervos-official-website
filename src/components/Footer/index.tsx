@@ -38,7 +38,7 @@ export const Footer: FC<FooterProps> = props => {
     {
       title: 'ECOSYSTEM',
       links: [
-        { label: 'Nervos Foundation', url: 'https://www.nervos.org/' },
+        // { label: 'Nervos Foundation', url: 'https://www.nervos.org/' },
         { label: 'Cryptape', url: 'https://cryptape.com/' },
         { label: 'Godwoken', url: 'https://godwoken.com/' },
         { label: 'Nervina Labs', url: 'https://nervina.io/' },
@@ -64,9 +64,9 @@ export const Footer: FC<FooterProps> = props => {
         </StyledLink>
       ),
       links: [
+        { label: 'Knowledge Base', url: '/knowledge-base' },
         /* not ready yet */
-        // { label: 'Knowledge Base', url: '/' },
-        { label: 'Blog', url: '/blogs' },
+        // { label: 'Blog', url: '/blogs' },
         { label: 'Medium', url: 'https://medium.com/nervosnetwork' },
         { label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' },
       ],

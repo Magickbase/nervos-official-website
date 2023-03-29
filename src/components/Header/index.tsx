@@ -143,8 +143,8 @@ const MenuPopover: FC = () => {
                     {/* <div className={styles.link}> */}
                     {/*   Knowledge Base  */}
                     {/* </div> */}
-                    <StyledLink href="/blogs" className={styles.link}>
-                      Blog
+                    <StyledLink href="/knowledge-base" className={styles.link}>
+                      Knowledge Base
                     </StyledLink>
                     <StyledLink href="https://medium.com/nervosnetwork" className={styles.link}>
                       Medium

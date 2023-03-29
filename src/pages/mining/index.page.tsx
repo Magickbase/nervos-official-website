@@ -15,7 +15,7 @@ const title = (
   <div style={{ maxWidth: '550px' }}>
     CKB
     <HeartIcon style={{ margin: '0 16px', width: '0.846em' }} />
-    PoW.
+    PoW
   </div>
 )
 const description = `Nervos launched in Nov 2019 and the first CKB halving is expected at Epoch 8760 (around Nov 2023).`
@@ -149,7 +149,7 @@ const Mining: NextPage<PageProps> = ({ contributors, author }) => {
                 },
               ]
             : [
-                { content: <EmbellishedLeft width={744} height={420} />, top: 146, right: -16 },
+                { content: <EmbellishedLeft width={744} height={420} />, top: 146, right: 484 },
                 {
                   content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
                   top: 397,

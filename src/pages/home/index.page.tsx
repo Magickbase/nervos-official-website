@@ -235,7 +235,7 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBFlexibility}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Unmatched Flexibility and Interoperability.
+          Unmatched Flexibility and Interoperability
         </div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Common Knowledge Base is the only blockchain on the market that supports all cryptographic primitives. It can
@@ -253,7 +253,7 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideCKBSustainability}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Common Knowledge Base leverages a novel tokenomic model that aligns the interests of all Nervos participants
           and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are
@@ -269,7 +269,7 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBModular}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
           transactions per second through many diverse Layer 2 networks without sacrificing security or
@@ -293,7 +293,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
     return (
       <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
         <div className={styles.slideGetStarted}>
-          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
+          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
           <div className={styles.cards}>
             <Swiper
               direction="vertical"
@@ -366,7 +366,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
       containerClass={styles.slideGetStartedWrapper}
     >
       <div className={styles.slideGetStarted}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
         <div className={styles.cards}>
           <Card
             title="Launch your own Nervos sidechain with Axon."

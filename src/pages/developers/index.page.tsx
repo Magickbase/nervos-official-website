@@ -11,7 +11,7 @@ import styles from './index.module.scss'
 
 import { ArticlesIcon, BallsIcon, QuoteIcon, SunIcon } from './icons'
 
-const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
+const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software</div>
 const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
 const info = `As an open-source, community-driven initiative, we welcome everyone's input and encourage our community to suggest new topics, add content, and suggest improvements where they see fit.`
 
@@ -149,7 +149,7 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
                 {
                   content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
                   top: 102,
-                  left: 96,
+                  left: 596,
                 },
               ]
         }

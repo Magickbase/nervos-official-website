@@ -10,7 +10,7 @@ import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup } from './icons'
 
-const title = <div>1 CKB = 1 Byte.</div>
+const title = <div>1 CKB = 1 Byte</div>
 const description = `CKByte (CKB) is the native cryptocurrency of Common Knowledge Base. It’s used for paying transaction fees and storing data, where holding one CKB permits users to store one byte of data on Nervos’ base layer.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
