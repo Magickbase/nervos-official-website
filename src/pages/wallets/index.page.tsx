@@ -183,10 +183,7 @@ const functions = [
         Since its founding in May 2016, imToken has provided secure and trusted digital asset management services to
         millions of users in more than 150 countries and regions worldwide. In 2018, the team open-sourced the core code
         of imToken 2.0 on Github.
-        <p>
-          As a strategic partner of Nervos, imToken provides a built-in CKB wallet that enables users to safely send,
-          receive and store CKB.
-        </p>
+        <p>imToken provides a built-in CKB wallet that enables users to safely send, receive and store CKB.</p>
         <StyledLink href="https://token.im/" colored>
           Official website
         </StyledLink>

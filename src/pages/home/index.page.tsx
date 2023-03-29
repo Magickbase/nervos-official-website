@@ -238,10 +238,10 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
           Unmatched Flexibility and Interoperability
         </div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Common Knowledge Base is the only blockchain on the market that supports all cryptographic primitives. It can
-          seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels,
-          and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling
-          decentralized applications boasting unmatched user experience.
+          CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly
+          interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer
+          2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized
+          applications boasting unmatched user experience.
         </div>
       </div>
     </ScreenSlide>
@@ -255,9 +255,9 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
       <div className={styles.slideCKBSustainability}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Common Knowledge Base leverages a novel tokenomic model that aligns the interests of all Nervos participants
-          and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are
-          protected from inflation.
+          CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders.
+          It ensures the miners are paid for providing security in perpetuity, while token holders are protected from
+          inflation.
         </div>
       </div>
     </ScreenSlide>
@@ -273,8 +273,8 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
           transactions per second through many diverse Layer 2 networks without sacrificing security or
-          decentralization. Common Knowledge Base offers pristine security, while the Layer 2 networks built on top
-          ensure unbounded scalability.
+          decentralization. CKB offers pristine security, while the Layer 2 networks built on top ensure unbounded
+          scalability.
         </div>
       </div>
     </ScreenSlide>
@@ -320,7 +320,8 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
                     </a>
                   }
                 >
-                  Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+                  Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with
+                  ease.
                 </Card>
               </SwiperSlide>
 
@@ -378,7 +379,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
               </a>
             }
           >
-            Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+            Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with ease.
           </Card>
 
           <Card

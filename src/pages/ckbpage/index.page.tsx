@@ -19,7 +19,7 @@ const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
-    title: 'CKB Tokenomics.',
+    title: 'CKB Tokenomics',
     tags: ['TOKEN', 'SUPPLY', 'MINERS', 'REWARD', 'DAO'],
     content: (
       <>

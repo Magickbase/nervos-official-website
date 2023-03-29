@@ -26,13 +26,13 @@ const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
-    title: 'Why Proof-of-Work.',
+    title: 'Why Proof-of-Work',
     tags: ['POW', 'LAYER 1'],
     content:
-      'Common Knowledge Base leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors.',
+      'CKB leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors.',
   },
   {
-    title: 'Consensus Algorithm: NC-Max.',
+    title: 'Consensus Algorithm: NC-Max',
     tags: ['NC-MAX', 'PERFORMANCE'],
     content: (
       <>
@@ -64,7 +64,7 @@ const functions = [
     ),
   },
   {
-    title: 'Hash Function: Eaglesong.',
+    title: 'Hash Function: Eaglesong',
     tags: ['EAGLESONG', 'ASIC', 'MINING'],
     content: (
       <>
