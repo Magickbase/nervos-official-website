@@ -6,6 +6,7 @@ class CKBNodeService {
   }
 
   async fetchOccupiedCapacity() {
+    const BURNT_AMOUNT = BigInt('504000000000000000')
     try {
       const resp = await fetch(`${this.apiBase}`, {
         method: 'POST',
@@ -23,7 +24,7 @@ class CKBNodeService {
       if (!occupied) {
         return ''
       }
-      return `0x${occupied}`
+      return (BigInt(`0x${occupied}`) - BURNT_AMOUNT).toString()
     } catch {
       return ''
     }
