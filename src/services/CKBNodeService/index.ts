@@ -1,4 +1,4 @@
-class NodeService {
+class CKBNodeService {
   apiBase = 'https://mainnet.ckb.dev/rpc'
   commonHeaders: RequestInit['headers'] = {
     accept: 'application/json',
@@ -30,4 +30,4 @@ class NodeService {
   }
 }
 
-export const nodeService = new NodeService()
+export const ckbNodeService = new CKBNodeService()

@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { explorerService } from '../../../services/ExplorerService'
-import { nodeService } from '../../../services/NodeService'
+import { ckbNodeService } from '../../../services/CKBNodeService'
 import { createTRPCRouter, publicProcedure } from '../trpc'
 
 const DECIMAL = BigNumber(10 ** 8)
@@ -8,7 +8,7 @@ const DECIMAL = BigNumber(10 ** 8)
 export const ckbRouter = createTRPCRouter({
   // TODO: need cache?
   liveMetrics: publicProcedure.query(async () => {
-    const occupied = await nodeService.fetchOccupiedCapacity()
+    const occupied = await ckbNodeService.fetchOccupiedCapacity()
 
     const { data: cellCountRecords } = await explorerService.fetchStatisticCellCount()
     const lastCellCountRecord = cellCountRecords[cellCountRecords.length - 1]
