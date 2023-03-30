@@ -75,6 +75,10 @@ const Home: NextPage = () => {
             mousewheel={{
               // Supports operations from some Portal to elements outside the swiper container, such as SlideFooter.
               eventsTarget: 'body',
+
+              // Avoid sliding through multiple slides at once when only a small amount of scrolling has taken place.
+              thresholdDelta: 5,
+              sensitivity: 0.5,
             }}
             modules={[Mousewheel]}
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
