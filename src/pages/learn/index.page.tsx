@@ -12,14 +12,14 @@ import styles from './index.module.scss'
 import { LearnFloatIconGroup, KnowledgeBaseIcon } from './icons'
 
 const title = <div style={{ maxWidth: 528 }}>Spur your growth: It’s never too late to start learning</div>
-const description = `Nervos is unlike any other blockchain on the market. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.`
+const description = `Nervos is unlike any other blockchain. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 const pagePath = '/src/pages/learn/index.page.tsx'
 const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
-    title: 'Common Knowledge Base - Education Hub.',
+    title: 'Common Knowledge Base - Education Hub',
     tags: ['LEARN', 'BLOCKCHAIN', 'EDUCATION', 'CRYPTO'],
     content: (
       <>
@@ -35,7 +35,7 @@ const functions = [
     ),
   },
   {
-    title: 'RFC Repository.',
+    title: 'RFC Repository',
     tags: ['CONTRIBUTION', 'COMMUNITY'],
     content: (
       <>
@@ -55,7 +55,7 @@ const functions = [
     ),
   },
   {
-    title: 'Youtube.',
+    title: 'Youtube',
     tags: ['VIDEOS', 'HOW-TOs', 'EXPLAINERS'],
     content: (
       <>

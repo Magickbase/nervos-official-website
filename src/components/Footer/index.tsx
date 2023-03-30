@@ -43,6 +43,9 @@ export const Footer: FC<FooterProps> = props => {
         { label: 'Godwoken', url: 'https://godwoken.com/' },
         { label: 'Nervina Labs', url: 'https://nervina.io/' },
         { label: 'Tunnel Vision Labs', url: 'https://tunnelvisionlabs.xyz/' },
+        { label: 'Axon', url: 'https://axonweb3.io/' },
+        { label: '.bit', url: 'https://www.did.id/' },
+        { label: 'Magickbase', url: 'https://github.com/Magickbase/' },
       ],
     },
     {
