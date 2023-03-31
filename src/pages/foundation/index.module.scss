@@ -1,27 +1,13 @@
 @import 'src/styles/variables.module';
 @import 'src/components/Header/index.module';
 
-.blendModeHeader {
+.icons {
   position: absolute;
-  z-index: 2;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   filter: invert(1);
   mix-blend-mode: difference;
-}
-
-.footer {
-  background: var(--colorPrimaryBg);
-}
-
-.icons {
-  transform: translate(-50%, -50%);
-
-  svg {
-    path,
-    g {
-      stroke: var(--colorPrimary);
-    }
-  }
 }
 
 .involvedItemLink {
@@ -32,8 +18,8 @@
 
 .functionsTitleClass,
 .extensionTitleFunctionsClassName {
-  background-color: var(--colorPrimaryBg);
-  filter: invert(1);
+  color: var(--colorPrimaryBg);
+  background-color: var(--colorPrimary);
 }
 
 .functionsClassName {
@@ -46,22 +32,9 @@
 
 @media (max-width: $mobileBreakPoint) {
   .icons {
-    position: absolute;
-    top: 380px;
-    left: 24px;
+    top: calc(100% + 50px);
+    left: 0;
     transform: unset;
-
-    path,
-    g {
-      stroke: var(--colorPrimary);
-    }
-
-    svg {
-      path,
-      g {
-        filter: invert(1);
-      }
-    }
   }
 
   .extensionTitleFunctionsClassName {

@@ -2,28 +2,36 @@
 %themeDark {
   --colorPrimary: #fff;
   --colorPrimaryBg: #000;
-  --colorSecond: #{invert(#5700ff)};
+  --colorSecond: #18efb1;
+  --colorSecondInvert: #5700ff;
 
-  // TODO: Should be calculated automatically with sass via --colorSecond
-  --colorSecondTuple: 168 255 00;
+  // TODO: Should be calculated automatically with sass via --colorSlideFooter
+  --colorSlideFooterTuple: 168 255 00;
+  --colorSlideFooter: #{invert(#5700ff)};
   --footerInputBackground: #141717;
   --newsColor: #98ffff;
   --guideAndTutorialsColor: #ff90d9;
   --learnResourceColor: #b2ffba;
   --releasesAndUpdateColor: #ffe99b;
   --eventsColor: #bb9bff;
+  --contributorsButtonColor: #d0fff2;
+  --linkColor: var(--colorSecond);
 }
 
 .themeLight,
 %themeLight {
   --colorPrimary: #000;
   --colorPrimaryBg: #fff;
-  --colorSecondTuple: 87 00 255;
   --colorSecond: #5700ff;
+  --colorSecondInvert: #18efb1;
+  --colorSlideFooterTuple: 87 00 255;
+  --colorSlideFooter: #5700ff;
   --footerInputBackground: #e7eaeb;
   --newsColor: #98ffff;
   --guideAndTutorialsColor: #ff90d9;
   --learnResourceColor: #b2ffba;
   --releasesAndUpdateColor: #ffe99b;
   --eventsColor: #bb9bff;
+  --contributorsButtonColor: #ede3ff;
+  --linkColor: var(--colorSecond);
 }

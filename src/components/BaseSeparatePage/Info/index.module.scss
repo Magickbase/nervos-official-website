@@ -52,13 +52,16 @@
   }
 
   .contributorsButton {
-    width: 152px;
-    height: 30px;
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 0.11em;
     white-space: nowrap;
-    background: #ede3ff;
+    background: var(--contributorsButtonColor);
     border: 1px solid #000;
     border-radius: 3px;
-    box-shadow: 1px 1px 0 #5700ff;
+    box-shadow: 1px 1px 0 var(--colorSecond);
     cursor: pointer;
   }
 
@@ -99,10 +102,6 @@
 
       .contributorsButton {
         width: 100%;
-        background: #d0fff2;
-        border: 1px solid #000;
-        border-radius: 3px;
-        box-shadow: 1px 1px 0 #18efb1;
       }
     }
   }

@@ -1,18 +1,16 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import Embellished from './embellished.svg'
+import { useIsMobile } from '../../hooks'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup } from './icons'
 
-const title = <div>1 CKB = 1 Byte.</div>
+const title = <div>1 CKB = 1 Byte</div>
 const description = `CKByte (CKB) is the native cryptocurrency of Common Knowledge Base. It’s used for paying transaction fees and storing data, where holding one CKB permits users to store one byte of data on Nervos’ base layer.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
@@ -21,7 +19,7 @@ const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
 
 const functions = [
   {
-    title: 'CKB Tokenomics.',
+    title: 'CKB Tokenomics',
     tags: ['TOKEN', 'SUPPLY', 'MINERS', 'REWARD', 'DAO'],
     content: (
       <>
@@ -31,15 +29,12 @@ const functions = [
           whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure and
           issuance schedule&nbsp;
           <StyledLink
-            linkData={{
-              label: 'here',
-              url: 'https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9',
-            }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+            href="https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9"
+            colored
+            underline
+          >
+            here
+          </StyledLink>
           .
         </p>
         <p>
@@ -52,13 +47,9 @@ const functions = [
         <p>
           Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in
           the&nbsp;
-          <StyledLink
-            linkData={{ label: 'Nervos DAO', url: 'https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c' }}
-            isNewTab
-            isColored
-            isUnderlined
-            isIconed
-          />
+          <StyledLink href="https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c" colored underline>
+            Nervos DAO
+          </StyledLink>{' '}
           smart contract.
         </p>
       </>
@@ -70,21 +61,13 @@ const functions = [
     content: (
       <>
         You can buy and sell CKB using the cryptocurrency exchanges on&nbsp;
-        <StyledLink
-          linkData={{ label: 'this list', url: 'https://www.coingecko.com/en/coins/nervos-network#markets' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
+          this list
+        </StyledLink>
         . However, consider transferring and holding your CKB using a non-custodial cryptocurrency&nbsp;
-        <StyledLink
-          linkData={{ label: 'wallet', url: 'https://nervos-official-website.vercel.app/wallets' }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
+          wallet
+        </StyledLink>
         , as holding it on centralized exchanges is risky.
       </>
     ),
@@ -97,6 +80,8 @@ interface PageProps {
 }
 
 const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <CkbPageFloatIconGroup />
@@ -108,26 +93,35 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | CKB</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            {
-              content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
-              top: 360,
-              right: 518,
-            },
-            { content: <Embellished width={940} height={503} />, top: 292, left: 142 },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          functions={functions}
-          contributors={contributors}
-          author={author}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <Embellished width={548} height={292} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 453,
+                  right: -8,
+                },
+                { content: <Embellished width={548} height={292} />, top: 79, left: -55 },
+              ]
+            : [
+                {
+                  content: <Embellished width={940} height={503} style={{ transform: 'rotateX(180deg)' }} />,
+                  top: 450,
+                  right: 518,
+                },
+                { content: <Embellished width={940} height={503} />, top: 382, left: 142 },
+              ]
+        }
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        contributors={contributors}
+        author={author}
+        functions={functions}
+      />
     </>
   )
 }

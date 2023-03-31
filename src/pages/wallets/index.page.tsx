@@ -1,14 +1,12 @@
 import { GetStaticProps, type NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useIsMobile } from '../../hooks'
 
-import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import {
@@ -23,7 +21,7 @@ import {
   ImTokenIcon,
 } from './icons'
 
-const title = <div>Download a Wallet and Start Exploring the Nervos Ecosystem .</div>
+const title = <div>Download a wallet</div>
 const description = `Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
@@ -39,8 +37,8 @@ const FunctionsItemTitle = ({ title, icon }: { title: string; icon: React.ReactN
 
 const functions = [
   {
-    id: 'Neuron Wallet',
-    title: <FunctionsItemTitle title="Neuron Wallet" icon={<NeuronWalletIcon />} />,
+    title: 'Neuron Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<NeuronWalletIcon />} />,
     tags: ['WINDOWS', 'MACOS', 'LINUX'],
     content: (
       <>
@@ -50,62 +48,57 @@ const functions = [
           Neuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation,
           as you open the Neuron Wallet, the bundled Mainnet node will run.
         </p>
-        <StyledLink
-          isColored
-          isIconed
-          isNewTab
-          linkData={{ label: 'Download', url: 'https://github.com/nervosnetwork/neuron/releases' }}
-        />
+        <StyledLink href="https://github.com/nervosnetwork/neuron/releases" colored>
+          Download
+        </StyledLink>
         <br />
-        <StyledLink
-          isColored
-          isIconed
-          isNewTab
-          linkData={{ label: 'Tutorials', url: 'https://docs.nervos.org/docs/basics/guides/crypto%20wallets/neuron/' }}
-        />
+        <StyledLink href="https://docs.nervos.org/docs/basics/guides/crypto%20wallets/neuron/" colored>
+          Tutorials
+        </StyledLink>
       </>
     ),
   },
   {
-    id: 'CKBull',
-    title: <FunctionsItemTitle title="CKBull" icon={<CkbBullIcon />} />,
+    title: 'CKBull',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<CkbBullIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
       <>
         CKBull is a mobile wallet that allows you to access and manage your CKB, tokens bridged from Force Bridge, NFTs,
         as well as deposits into the Nervos DAO, all in one place.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed linkData={{ label: 'Download', url: 'https://ckbull.app/#download' }} />
+          <StyledLink href="https://ckbull.app/#download" colored>
+            Download
+          </StyledLink>
           <br />
           <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{
-              label: 'Tutorials',
-              url: 'https://jackylhh.notion.site/How-to-use-CKBull-wallet-89153cac673447b0bf827d1f6f7d151c',
-            }}
-          />
+            href="https://jackylhh.notion.site/How-to-use-CKBull-wallet-89153cac673447b0bf827d1f6f7d151c"
+            colored
+          >
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'JoyID',
-    title: <FunctionsItemTitle title="JoyID" icon={<JoyIdIcon />} />,
+    title: 'JoyID',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<JoyIdIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
       <>
         JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed isNewTab linkData={{ label: 'Official website', url: 'https://joy.id/' }} />
+          <StyledLink href="https://joy.id/" colored>
+            Official website
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'Portal Wallet',
-    title: <FunctionsItemTitle title="Portal Wallet" icon={<PortalWalletIcon />} />,
+    title: 'Portal Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<PortalWalletIcon />} />,
     tags: ['WEB-BASED WALLET'],
     content: (
       <>
@@ -113,14 +106,16 @@ const functions = [
         Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use
         their existing Ethereum addresses and wallets to receive and send CKB directly.
         <div className="oneLineGap">
-          <StyledLink isColored isIconed isNewTab linkData={{ label: 'Portal Wallet', url: 'https://ckb.pw/' }} />
+          <StyledLink href="https://ckb.pw/" colored>
+            Portal Wallet
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'SafePal',
-    title: <FunctionsItemTitle title="SafePal" icon={<SafePalIcon />} />,
+    title: 'SafePal',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<SafePalIcon />} />,
     tags: ['ANDROID', 'IOS', 'HARDWARE WALLET'],
     content: (
       <>
@@ -129,87 +124,73 @@ const functions = [
         wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap,
         and trade. It is now serving more than 6 million users across the globe.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Official website', url: 'https://www.safepal.com/' }}
-          />
+          <StyledLink href="https://www.safepal.com/" colored>
+            Official website
+          </StyledLink>
           <br />
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Tutorials', url: 'https://blog.safepal.com/ckb/' }}
-          />
+          <StyledLink href="https://blog.safepal.com/ckb/" colored>
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'Ledger',
-    title: <FunctionsItemTitle title="Ledger" icon={<LedgerIcon />} />,
+    title: 'Ledger',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<LedgerIcon />} />,
     tags: ['HARDWARE WALLET'],
     content: (
       <>
         Ledger is the most popular hardware wallet and has support for Nervos CKB. You can store, send and receive CKB
         using your Ledger Nano X and Ledger Nano S hardware wallets. Click here for the guide.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Official website', url: 'https://www.ledger.com/' }}
-          />
+          <StyledLink href="https://www.ledger.com/" colored>
+            Official website
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'Opera Wallet',
-    title: <FunctionsItemTitle title="Opera Wallet" icon={<OperaWalletIcon />} />,
+    title: 'Opera Wallet',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<OperaWalletIcon />} />,
     tags: ['ANDROID'],
     content: (
       <>
         Starting today, Opera’s millions of users can send and receive Nervos CKB within the crypto wallet built into
         the Opera browser on Android.
         <div className="oneLineGap">
-          <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{ label: 'Download', url: 'https://www.opera.com/download' }}
-          />
+          <StyledLink href="https://www.opera.com/download" colored>
+            Download
+          </StyledLink>
           <br />
           <StyledLink
-            isColored
-            isIconed
-            isNewTab
-            linkData={{
-              label: 'Tutorials',
-              url: 'https://medium.com/@nervosnetwork/sending-and-receiving-ckb-via-operas-android-wallet-28bfc6481390',
-            }}
-          />
+            href="https://medium.com/@nervosnetwork/sending-and-receiving-ckb-via-operas-android-wallet-28bfc6481390"
+            colored
+          >
+            Tutorials
+          </StyledLink>
         </div>
       </>
     ),
   },
   {
-    id: 'imToken',
-    title: <FunctionsItemTitle title="imToken" icon={<ImTokenIcon />} />,
+    title: 'imToken',
+    titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<ImTokenIcon />} />,
     tags: ['ANDROID', 'IOS'],
     content: (
       <>
         Since its founding in May 2016, imToken has provided secure and trusted digital asset management services to
         millions of users in more than 150 countries and regions worldwide. In 2018, the team open-sourced the core code
         of imToken 2.0 on Github.
-        <p>
-          As a strategic partner of Nervos, imToken provides a built-in CKB wallet that enables users to safely send,
-          receive and store CKB.
-        </p>
-        <StyledLink isColored isIconed isNewTab linkData={{ label: 'Official website', url: 'https://token.im/' }} />
+        <p>imToken provides a built-in CKB wallet that enables users to safely send, receive and store CKB.</p>
+        <StyledLink href="https://token.im/" colored>
+          Official website
+        </StyledLink>
         <br />
-        <StyledLink isColored isIconed isNewTab linkData={{ label: 'Tutorials', url: 'https://token.im/ckb-wallet' }} />
+        <StyledLink href="https://token.im/ckb-wallet" colored>
+          Tutorials
+        </StyledLink>
       </>
     ),
   },
@@ -221,6 +202,8 @@ interface PageProps {
 }
 
 const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   const floatIcons = (
     <div className={styles.icons}>
       <WalletIcon />
@@ -232,42 +215,61 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Wallets</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            {
-              content: (
-                <EmbellishedLeft
-                  width={744}
-                  height={459}
-                  style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
-                />
-              ),
-              top: 27,
-              right: 396 + 459,
-            },
-            {
-              content: (
-                <EmbellishedRight
-                  width={595}
-                  height={310}
-                  style={{ transform: 'rotate(90deg) scaleY(-1)', transformOrigin: 'left top' }}
-                />
-              ),
-              top: -170,
-              left: 82,
-            },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={430}
+                      height={265}
+                      style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 264,
+                  right: 8 + 265,
+                },
+                {
+                  content: (
+                    <EmbellishedRight
+                      width={374}
+                      height={196}
+                      style={{ transform: 'scaleX(-1) rotate(90deg)', transformOrigin: 'left top' }}
+                    />
+                  ),
+                  top: 70,
+                  left: 38,
+                },
+              ]
+            : [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={744}
+                      height={459}
+                      style={{ transform: 'rotate(-90deg)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 117,
+                  right: 396 + 459,
+                },
+                {
+                  content: <EmbellishedRight width={595} height={310} style={{ transform: 'scaleX(-1)' }} />,
+                  top: 425,
+                  left: 114,
+                },
+              ]
+        }
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+      />
     </>
   )
 }

@@ -1,19 +1,18 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { useBodyClass, useIsMobile } from '../../hooks'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { CommunityHubFloatIconGroup } from './icons'
 
-const title = <div>Nervos Community Hub.</div>
+const title = <div>Nervos community hub</div>
 const description = `Nervos is a community-driven project that abides by the cypherpunk values of openness and decentralization across all verticals. If you're passionate about crypto and continually seeking to improve the status quo, Nervos is the perfect place to be.`
 const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 
@@ -28,7 +27,9 @@ const InvolvedItem = ({
   description: string
 }) => (
   <>
-    <StyledLink isIconed isSpaced linkData={{ label, url }} className={styles.involvedItemLink} />
+    <StyledLink className={styles.involvedItemLink} href={url} space={8}>
+      {label}
+    </StyledLink>
     <div>{description}</div>
   </>
 )
@@ -91,16 +92,9 @@ const functions = [
       <>
         Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn
         more about it&nbsp;
-        <StyledLink
-          linkData={{
-            label: 'here',
-            url: 'https://github.com/nervosnetwork/rfcs',
-          }}
-          isNewTab
-          isColored
-          isUnderlined
-          isIconed
-        />
+        <StyledLink href="https://github.com/nervosnetwork/rfcs" colored underline>
+          here
+        </StyledLink>
         .
       </>
     ),
@@ -126,6 +120,10 @@ interface PageProps {
 }
 
 const Community: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
+  useBodyClass([presets.themeDark ?? ''])
+
   const floatIcons = (
     <div className={styles.icons}>
       <CommunityHubFloatIconGroup />
@@ -137,26 +135,35 @@ const Community: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Community</title>
       </Head>
-      <Page className={clsx(presets.themeDark)}>
-        <BaseSeparatePage
-          embellishedElements={[
-            { content: <EmbellishedLeft width={940} height={503} />, top: 64, right: -204 },
-            {
-              content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-              top: 478,
-              left: 344,
-            },
-          ]}
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          info={info}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={
+          isMobile
+            ? [
+                { content: <EmbellishedLeft width={548} height={292} />, top: 52, right: -146 },
+                {
+                  content: <EmbellishedRight width={430} height={267} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 443,
+                  left: -47,
+                },
+              ]
+            : [
+                { content: <EmbellishedLeft width={940} height={503} />, top: 154, right: 296 },
+                {
+                  content: <EmbellishedRight width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 568,
+                  left: 404,
+                },
+              ]
+        }
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        info={info}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+      />
     </>
   )
 }

@@ -12,6 +12,7 @@ const fontArticulatCF = localFont({
     { path: '../styles/fonts/ArticulatCF-Normal.woff2', weight: '400' },
     { path: '../styles/fonts/ArticulatCF-Medium.woff2', weight: '500' },
     { path: '../styles/fonts/ArticulatCF-DemiBold.woff2', weight: '600' },
+    { path: '../styles/fonts/ArticulatCF-Bold.woff2', weight: '700' },
     { path: '../styles/fonts/ArticulatCF-ExtraBold.woff2', weight: '800' },
   ],
   preload: true,
@@ -32,7 +33,7 @@ const App: AppType = ({ Component, pageProps }) => {
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="A BLOCKCHAIN PLATFORM FOR UNIVERSAL APPLICATIONS The Nervos Network is an open source public blockchain ecosystem and collection of protocols creating the foundation for a universal internet-like public network Beyond Interoperability, Towards Universal Application Early internet applications lived on segregated networks needing different ways to access and interact. Now, in today’s decentralized world we again see this segregation into different ... Read More"
+          content="A BLOCKCHAIN PLATFORM FOR UNIVERSAL APPLICATIONS The Nervos Network is an open source public blockchain ecosystem and collection of protocols creating the foundation for a universal internet-like public network Beyond Interoperability, Towards Universal Application Early internet applications lived on segregated networks needing different ways t.."
         />
         <meta property="og:url" content="https://nervos.org" />
         <meta property="og:site_name" content="Nervos Network" />

@@ -1,13 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import clsx from 'clsx'
 import { useIsMobile } from 'src/hooks'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { Page } from 'src/components/Page'
 import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
 import { StyledLink } from 'src/components/StyledLink'
+import EmbellishedLeft from './embellished_left.svg'
+import EmbellishedRight from './embellished_right.svg'
 
-import presets from 'src/styles/presets.module.scss'
 import styles from './index.module.scss'
 
 import { FoundationFloatIconGroup, FoundationMobileFloatIconGroup, LadderIcon } from './icons'
@@ -94,11 +93,9 @@ const functions = [
         goals.
         <div className="oneLineGap">
           Visit this{' '}
-          <StyledLink
-            isColored
-            isUnderlined
-            linkData={{ label: 'link', url: 'https://jobs.gohire.io/nervos-network-tzqhh93f/' }}
-          />{' '}
+          <StyledLink href="https://jobs.gohire.io/nervos-network-tzqhh93f/" colored underline>
+            link
+          </StyledLink>{' '}
           to see open positions with the Nervos Foundation.
         </div>
       </>
@@ -124,24 +121,55 @@ const Foundation: NextPage<PageProps> = ({ contributors, author }) => {
       <Head>
         <title>Nervos Network | Foundation</title>
       </Head>
-      <Page className={clsx(presets.themeLight)}>
-        <BaseSeparatePage
-          editLink={pageLink}
-          title={title}
-          floatIcons={floatIcons}
-          description={description}
-          positionsData={positionsData}
-          author={author}
-          contributors={contributors}
-          functions={functions}
-          functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
-          functionsTitleClassName={styles.functionsTitleClass}
-          extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
-          functionsClassName={styles.functionsClassName}
-          isProgressBar={false}
-          isNeedSupports
-        />
-      </Page>
+      <BaseSeparatePage
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <EmbellishedLeft width={430} height={245} style={{ transform: 'scaleX(-1) scaleY(-1)' }} />,
+                  top: 21,
+                  right: -116,
+                },
+                {
+                  content: <EmbellishedRight width={430} height={267} />,
+                  top: 416,
+                  left: -73,
+                },
+              ]
+            : [
+                {
+                  content: (
+                    <EmbellishedLeft
+                      width={744}
+                      height={420}
+                      style={{ transform: 'rotate(-90deg) scaleX(-1)', transformOrigin: 'right top' }}
+                    />
+                  ),
+                  top: 150 + 744,
+                  right: 429 + 420,
+                },
+                {
+                  content: <EmbellishedRight width={744} height={459} />,
+                  top: 395,
+                  left: 346,
+                },
+              ]
+        }
+        editLink={pageLink}
+        title={title}
+        floatIcons={floatIcons}
+        description={description}
+        positionsData={positionsData}
+        author={author}
+        contributors={contributors}
+        functions={functions}
+        functionsExtensionTitle={{ extensionTitle, extensionTitleFunctions }}
+        functionsTitleClassName={styles.functionsTitleClass}
+        extensionTitleFunctionsClassName={styles.extensionTitleFunctionsClassName}
+        functionsClassName={styles.functionsClassName}
+        isProgressBar={false}
+        isNeedSupports
+      />
     </>
   )
 }

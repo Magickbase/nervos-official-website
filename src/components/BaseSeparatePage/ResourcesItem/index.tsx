@@ -14,7 +14,13 @@ export type ResourcesItemType = {
 export const ResourcesItem = ({ title, titleLink, content }: ResourcesItemType) => (
   <div className={styles.resourcesItem}>
     <div className={clsx(styles.itemTitle)}>
-      <StyledLink linkData={{ label: title, url: titleLink ?? '' }} isSpaced isIconed isNewTab />
+      {titleLink != null ? (
+        <StyledLink href={titleLink ?? ''} space={8}>
+          {title}
+        </StyledLink>
+      ) : (
+        title
+      )}
     </div>
     <div className={styles.itemContent}>{content}</div>
   </div>

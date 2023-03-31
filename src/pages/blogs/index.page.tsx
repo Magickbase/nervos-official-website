@@ -107,6 +107,7 @@ const Index = ({ blogs, populars, categories, pageCount }: Props) => {
                   href={`/blogs?sort_by=${encodeURIComponent(category)}`}
                   className={styles.category}
                   data-selected={sort_by === category}
+                  data-type={category.toLowerCase()}
                 >
                   {t(category)}
                 </Link>

@@ -4,6 +4,7 @@ import cssVars from '../styles/variables.module.scss'
 import { useMemoizedFn } from './useMemoizedFn'
 
 export * from './useMemoizedFn'
+export * from './useMouse'
 
 /**
  * copied from https://usehooks-ts.com/react-hook/use-media-query
@@ -45,10 +46,17 @@ export function useMediaQuery(query: string): boolean {
   return matches
 }
 
-export const useIsMobile = () => {
+export const useIsMobile = (ignoreHydrated?: boolean) => {
   const { mobileBreakPoint } = cssVars
   if (mobileBreakPoint == null) throw new Error('Incorrect css variable')
-  return useMediaQuery(`(max-width: ${mobileBreakPoint})`)
+
+  const isMobile = useMediaQuery(`(max-width: ${mobileBreakPoint})`)
+
+  // This logic is used to prevent some errors when Next.js hydration.
+  // https://nextjs.org/docs/messages/react-hydration-error#possible-ways-to-fix-it
+  const [hydrated, setHydrated] = useState(ignoreHydrated ? true : false)
+  useEffect(() => setHydrated(true), [])
+  return isMobile && hydrated
 }
 
 export function useDevicePixelRatio() {
@@ -146,4 +154,13 @@ export function useElementIntersecting(
   }, [opts, ref])
 
   return isIntersecting
+}
+
+export function useBodyClass(tokens: string[]) {
+  useEffect(() => {
+    // TODO: The very simple way of writing, without providing a counter for each class,
+    // may lead to some unanticipated class removal behavior when the effect Destructor is executed.
+    document.body.classList.add(...tokens)
+    return () => document.body.classList.remove(...tokens)
+  }, [tokens])
 }

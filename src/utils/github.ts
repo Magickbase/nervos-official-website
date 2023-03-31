@@ -3,10 +3,16 @@ export type LastAuthor = Author & { editTime: string }
 
 export const REPO = process.env.NEXT_PUBLIC_REPO!
 
+const token = process.env.GITHUB_TOKEN
+
 export const fetchContributors = async (): Promise<Array<Author>> => {
   const RPC_URL = 'https://api.github.com/repos/magickbase/nervos-official-website/contributors'
   try {
-    return await fetch(RPC_URL)
+    return await fetch(RPC_URL, {
+      headers: {
+        ...(token && { Authorization: `Bearer ${token}` }),
+      },
+    })
       .then(res => res.json())
       .then((list: Array<Record<'login' | 'avatar_url' | 'html_url', string>>) =>
         list.map(item => ({
@@ -23,7 +29,11 @@ export const fetchContributors = async (): Promise<Array<Author>> => {
 export const lastContributor = async (path: string): Promise<LastAuthor | null> => {
   const RPC_URL = `https://api.github.com/repos/magickbase/nervos-official-website/commits?path=${path}`
   try {
-    const commit = await fetch(RPC_URL)
+    const commit = await fetch(RPC_URL, {
+      headers: {
+        ...(token && { Authorization: `Bearer ${token}` }),
+      },
+    })
       .then(res => res.json())
       .then(
         (

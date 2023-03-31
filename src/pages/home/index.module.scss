@@ -2,18 +2,12 @@
 @import '../../components/Header/index.module';
 
 // .swiper-wrapper z-index is 1, which is higher here than .swiper-wrapper
-$blendModeHeaderZ: 2;
+$headerZ: 2;
 
-.blendModeHeader {
+.header {
   position: absolute;
-  z-index: $blendModeHeaderZ;
+  z-index: $headerZ;
   width: 100%;
-
-  // This is to solve the problem of filter causing mix-blend-mode to fail under safari,
-  // which is solved by adding background, but the principle is not clear.
-  background: var(--colorPrimaryBg);
-  filter: invert(1);
-  mix-blend-mode: difference;
 }
 
 .footer {
@@ -27,15 +21,56 @@ $blendModeHeaderZ: 2;
   height: 100vh;
 }
 
+.swiperWrapper {
+  // Swiper in vertical mode will set the `flex-direction` of the `swiper-wrapper`
+  // to `column` via the `swiper-vertical` class, but with a delay that will cause
+  // a flickering effect on the first screen.
+  // So here is a proactive early setup to fix the problem.
+  flex-direction: column;
+}
+
 .isOnOperableArea {
   cursor: default;
+}
+
+.scrollTip {
+  position: fixed;
+  bottom: 56px;
+  z-index: 1;
+  width: 100%;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0.03em;
+  text-align: center;
+  filter: invert(1);
+  mix-blend-mode: difference;
+
+  &.enter,
+  &.leave {
+    transition: all 0.3s;
+  }
+
+  &.enterFrom,
+  &.leaveTo {
+    bottom: 80px;
+    opacity: 0;
+  }
+
+  &.enterTo,
+  &.leaveFrom {
+    opacity: 1;
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    display: none;
+  }
 }
 
 .golContainer {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $blendModeHeaderZ + 1;
+  z-index: $headerZ + 1;
   width: 100%;
   height: 100%;
   background: var(--colorPrimaryBg);
@@ -60,6 +95,30 @@ $blendModeHeaderZ: 2;
   }
 }
 
+.rightClickTip {
+  $fontSize: 9px;
+  $scale: $fontSize / 12px;
+
+  position: fixed;
+  z-index: $headerZ + 1;
+  padding: (4px / $scale) (8px / $scale);
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: #ecf0f0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgb(0 0 0 / 12%);
+  transform: scale($scale);
+  filter: invert(1);
+  mix-blend-mode: difference;
+
+  // Try to make it look smooth
+  transition: all 0.02s;
+}
+
 .screenSlide {
   background: var(--colorPrimaryBg);
 
@@ -68,15 +127,6 @@ $blendModeHeaderZ: 2;
     flex-direction: column;
     height: 100vh;
     margin: 0 auto;
-
-    .headerMixLayer {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-      flex-shrink: 0;
-      height: var(#{$headerHeightVarName});
-      background: var(--colorPrimaryBg);
-    }
 
     .content {
       position: relative;
@@ -112,10 +162,14 @@ $blendModeHeaderZ: 2;
   line-height: 80%;
   letter-spacing: -0.025em;
 
+  @media (max-height: 780px) {
+    font-size: 60px;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     font-weight: 800;
-    font-size: 50px;
-    line-height: 40px;
+    font-size: 48px;
+    line-height: 80%;
     letter-spacing: -0.025em;
   }
 }
@@ -136,7 +190,7 @@ $blendModeHeaderZ: 2;
 
 .slideCKBIntro {
   flex-grow: 1;
-  margin: 80px 0 0 12%;
+  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .texts {
     display: flex;
@@ -155,7 +209,7 @@ $blendModeHeaderZ: 2;
   }
 
   .descriptionText {
-    max-width: 440px;
+    max-width: 468px;
     margin-top: 40px;
 
     .bold {
@@ -172,7 +226,7 @@ $blendModeHeaderZ: 2;
     flex-direction: column;
     justify-content: center;
     max-width: 314px;
-    margin: -16vh auto 0;
+    margin: -10vh auto 0;
     padding: 0;
 
     .descriptionText {
@@ -183,14 +237,14 @@ $blendModeHeaderZ: 2;
 
 .slideCKBSecurity {
   flex-grow: 1;
-  margin: 80px 0 0 12%;
+  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
     max-width: 740px;
   }
 
   .descriptionText {
-    max-width: 424px;
+    max-width: 415px;
     margin-top: 40px;
   }
 
@@ -199,7 +253,7 @@ $blendModeHeaderZ: 2;
     flex-direction: column;
     justify-content: center;
     max-width: 314px;
-    margin: -8vh auto 0;
+    margin: -2vh auto 0;
     padding: 0;
 
     .descriptionText {
@@ -210,7 +264,7 @@ $blendModeHeaderZ: 2;
 
 .slideCKBFlexibility {
   flex-grow: 1;
-  margin: 80px 0 0 12%;
+  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
     max-width: 700px;
@@ -220,9 +274,8 @@ $blendModeHeaderZ: 2;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    max-width: 680px;
+    max-width: 575px;
     margin-top: 40px;
-    padding-left: 1em;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -242,14 +295,14 @@ $blendModeHeaderZ: 2;
 
 .slideCKBSustainability {
   flex-grow: 1;
-  margin: 80px 0 0 12%;
+  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
     max-width: 640px;
   }
 
   .descriptionText {
-    max-width: 380px;
+    max-width: 440px;
     margin-top: 40px;
   }
 
@@ -258,7 +311,7 @@ $blendModeHeaderZ: 2;
     flex-direction: column;
     justify-content: center;
     max-width: 314px;
-    margin: -16vh auto 0;
+    margin: -10vh auto 0;
     padding: 0;
 
     .descriptionText {
@@ -269,14 +322,14 @@ $blendModeHeaderZ: 2;
 
 .slideCKBModular {
   flex-grow: 1;
-  margin: 80px 0 0 12%;
+  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
     max-width: 640px;
   }
 
   .descriptionText {
-    max-width: 512px;
+    max-width: 460px;
     margin-top: 40px;
   }
 
@@ -285,7 +338,7 @@ $blendModeHeaderZ: 2;
     flex-direction: column;
     justify-content: center;
     max-width: 314px;
-    margin: -16vh auto 0;
+    margin: -10vh auto 0;
     padding: 0;
 
     .descriptionText {
@@ -294,9 +347,13 @@ $blendModeHeaderZ: 2;
   }
 }
 
+.slideGetStartedWrapper {
+  min-height: 100vh;
+}
+
 .slideGetStarted {
   flex-grow: 1;
-  margin: 80px 12% 0;
+  margin: calc(80px + var(#{$headerHeightVarName})) 12% 0;
 
   .titleText {
     max-width: 376px;
@@ -334,7 +391,7 @@ $blendModeHeaderZ: 2;
     display: flex;
     flex-direction: column;
     max-width: 314px;
-    margin: 88px auto 0;
+    margin: calc(88px + var(#{$headerHeightVarName})) auto 0;
 
     .cards {
       flex-direction: column;
@@ -342,7 +399,7 @@ $blendModeHeaderZ: 2;
   }
 }
 
-@media screen and (max-height: 780px) {
+@media (max-height: 780px) {
   .golContainer {
     margin-left: 100px;
   }
@@ -353,11 +410,10 @@ $blendModeHeaderZ: 2;
   .slideCKBSustainability,
   .slideCKBModular,
   .slideGetStarted {
-    margin-top: 10px;
+    margin-top: calc(10px + var(#{$headerHeightVarName}));
 
     .titleText {
       max-width: 439px;
-      font-size: 60px;
     }
 
     .descriptionText {

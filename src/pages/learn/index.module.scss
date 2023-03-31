@@ -1,25 +1,11 @@
 @import 'src/styles/variables.module';
 @import 'src/components/Header/index.module';
 
-.blendModeHeader {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  filter: invert(1);
-  mix-blend-mode: difference;
-}
-
-.footer {
-  background: var(--colorPrimaryBg);
-}
-
 .icons {
-  transform: translate(-50%, 100px);
-
-  svg > path,
-  circle {
-    stroke: var(--colorPrimary);
-  }
+  position: absolute;
+  top: calc(100% + 70px);
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .involvedItemLink {
@@ -31,8 +17,8 @@
 @media (max-width: $mobileBreakPoint) {
   .icons {
     position: absolute;
-    top: 430px;
-    left: 24px;
+    top: calc(100% + 54px);
+    left: 0;
     transform: unset;
   }
 }

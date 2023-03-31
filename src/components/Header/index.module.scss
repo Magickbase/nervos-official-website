@@ -23,10 +23,12 @@ $defaultHeaderHeight: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   height: var(#{$headerHeightVarName});
   margin: 0 auto;
-  color: var(--colorPrimary);
-  background: var(--colorPrimaryBg);
+  color: #000;
+  filter: invert(1);
+  mix-blend-mode: difference;
   transition: color 0.2s, background-color 0.2s;
 
   .menuPopover {
@@ -93,6 +95,7 @@ $defaultHeaderHeight: 90px;
   gap: 5px;
   max-width: 400px;
   padding: 30px;
+  color: var(--colorPrimaryBg);
   background: var(--colorPrimary);
   border: 0.5px solid #484d4e;
   box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
@@ -126,6 +129,7 @@ $defaultHeaderHeight: 90px;
     flex-direction: column;
     height: 150px;
     padding: 0 15px;
+    color: var(--colorPrimary);
     background: var(--colorPrimaryBg);
 
     .title {
@@ -199,8 +203,33 @@ $defaultHeaderHeight: 90px;
   grid-template-columns: repeat(2, $cardSize);
   gap: 2px;
   padding: 30px;
-  background: var(--colorPrimaryBg);
+  background: var(--colorPrimary);
+  border: 0.5px solid #484d4e;
   box-shadow: 0 0 15px 2px rgb(0 0 0 / 15%);
+
+  &.enter {
+    transition: opacity 0.2s, right 0.2s;
+  }
+
+  &.leave {
+    transition: opacity 0.2s, right 0.2s;
+  }
+
+  &.enterFrom,
+  &.leaveTo {
+    right: 26px;
+    opacity: 0;
+  }
+
+  &.leaveTo {
+    right: 76px;
+  }
+
+  &.enterTo,
+  &.leaveFrom {
+    right: 76px;
+    opacity: 1;
+  }
 
   .language {
     display: flex;
@@ -208,11 +237,11 @@ $defaultHeaderHeight: 90px;
     justify-content: space-between;
     height: $cardSize;
     padding: 15px;
-    color: var(--colorPrimaryBg);
+    color: var(--colorPrimary);
     font-weight: 500;
     font-size: 14px;
     line-height: 135%;
-    background: var(--colorPrimary);
+    background: var(--colorPrimaryBg);
     cursor: pointer;
 
     .tip {
