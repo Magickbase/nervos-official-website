@@ -3,10 +3,8 @@ import clsx from 'clsx'
 import { Popover, Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { StyledLink } from '../StyledLink'
 import styles from './index.module.scss'
-import ArrowIcon from './arrow.svg'
-import ObliqueArrowIcon from './oblique_arrow.svg'
-import ThinArrowIcon from './thin_arrow.svg'
 import CodeIcon from './code.svg'
 import CommunityIcon from './community.svg'
 import CircleIcon from './circle.svg'
@@ -29,9 +27,9 @@ export const Header: FC<HeaderProps> = props => {
   return (
     <div className={clsx(styles.header, className)} {...divProps}>
       <MenuPopover />
-      <Link className={clsx(styles.logo, DISABLE_CGOL_MOUSE_CONTROLLER)} href="/">
+      <StyledLink className={clsx(styles.logo, DISABLE_CGOL_MOUSE_CONTROLLER)} href="/">
         <LogoIcon />
-      </Link>
+      </StyledLink>
       <LanguagePopover
         languages={[
           { name: 'English', localeName: 'en' },
@@ -81,124 +79,79 @@ const MenuPopover: FC = () => {
             >
               <Popover.Panel className={styles.menuPopoverContent}>
                 <div className={styles.menu}>
-                  <Link href="/developers" className={styles.title}>
+                  <StyledLink href="/developers" className={styles.title}>
                     <CodeIcon />
                     Developers
-                    <ArrowIcon />
-                  </Link>
+                  </StyledLink>
                   <div className={styles.links}>
-                    <Link
-                      href="https://docs.nervos.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Docs <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://github.com/nervosnetwork/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Github <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://explorer.nervos.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Explorer <ObliqueArrowIcon />
-                    </Link>
+                    <StyledLink href="https://docs.nervos.org/" className={styles.link}>
+                      Docs
+                    </StyledLink>
+                    <StyledLink href="https://github.com/nervosnetwork/" className={styles.link}>
+                      Github
+                    </StyledLink>
+                    <StyledLink href="https://explorer.nervos.org/" className={styles.link}>
+                      Explorer
+                    </StyledLink>
                   </div>
                 </div>
 
                 <div className={styles.menu}>
-                  <Link href="/community" className={styles.title}>
+                  <StyledLink href="/community" className={styles.title}>
                     <CommunityIcon />
                     Community
-                    <ArrowIcon />
-                  </Link>
+                  </StyledLink>
                   <div className={styles.links}>
-                    <Link
-                      href="https://dao.ckb.community/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
+                    <StyledLink href="https://dao.ckb.community/" className={styles.link}>
                       <div>
                         Community
                         <br />
                         Fund DAO
                       </div>
-                      <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://talk.nervos.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Forum <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://github.com/nervosnetwork/rfcs"
-                      className={styles.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      RFCs <ObliqueArrowIcon />
-                    </Link>
+                    </StyledLink>
+                    <StyledLink href="https://talk.nervos.org/" className={styles.link}>
+                      Forum
+                    </StyledLink>
+                    <StyledLink href="https://github.com/nervosnetwork/rfcs" className={styles.link}>
+                      RFCs
+                    </StyledLink>
                   </div>
                 </div>
 
                 <div className={styles.menu}>
-                  <Link href="/ckbpage" className={styles.title}>
+                  <StyledLink href="/ckbpage" className={styles.title}>
                     <CircleIcon />
                     CKB <span className={styles.ckbHint}>(Token)</span>
-                    <ArrowIcon />
-                  </Link>
+                  </StyledLink>
                   <div className={styles.links}>
-                    <Link href="/mining" className={styles.link}>
-                      Mining <ThinArrowIcon />
-                    </Link>
-                    <Link href="/wallets" className={styles.link}>
-                      Wallets <ThinArrowIcon />
-                    </Link>
+                    <StyledLink href="/mining" className={styles.link}>
+                      Mining
+                    </StyledLink>
+                    <StyledLink href="/wallets" className={styles.link}>
+                      Wallets
+                    </StyledLink>
                   </div>
                 </div>
 
                 <div className={styles.menu}>
-                  <Link className={styles.title} href="/learn">
+                  <StyledLink className={styles.title} href="/learn">
                     <LearnIcon />
                     Learn
-                    <ArrowIcon />
-                  </Link>
+                  </StyledLink>
                   <div className={styles.links}>
                     {/* not ready yet */}
                     {/* <div className={styles.link}> */}
-                    {/*   Knowledge Base <ThinArrowIcon /> */}
+                    {/*   Knowledge Base  */}
                     {/* </div> */}
-                    <Link href="/blogs" className={styles.link}>
-                      Blog <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://medium.com/nervosnetwork"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Medium <ObliqueArrowIcon />
-                    </Link>
-                    <Link
-                      href="https://www.youtube.com/c/NervosNetwork"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.link}
-                    >
-                      Youtube <ObliqueArrowIcon />
-                    </Link>
+                    <StyledLink href="/knowledge-base" className={styles.link}>
+                      Knowledge Base
+                    </StyledLink>
+                    <StyledLink href="https://medium.com/nervosnetwork" className={styles.link}>
+                      Medium
+                    </StyledLink>
+                    <StyledLink href="https://www.youtube.com/c/NervosNetwork" className={styles.link}>
+                      Youtube
+                    </StyledLink>
                   </div>
                 </div>
               </Popover.Panel>

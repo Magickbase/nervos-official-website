@@ -31,13 +31,7 @@ export const Info: FC<InfoType> = ({ info, author, className, onContributorsButt
             {author ? (
               <div>
                 <span className={clsx(styles.lastEdit)}>Last edit: </span>
-                <StyledLink
-                  linkData={{ label: `@${author.username}`, url: author.github }}
-                  isNewTab
-                  isColored
-                  isIconed
-                  isUnderlined
-                />
+                <StyledLink href={author.github} colored underline>{`@${author.username}`}</StyledLink>
                 <div className={clsx(styles.timeString)}>{new Date(author?.editTime).toDateString()}</div>
               </div>
             ) : null}

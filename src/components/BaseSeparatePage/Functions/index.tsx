@@ -14,15 +14,14 @@ export const Functions: FC<FunctionsType> = ({ isProgressBar, functions, classNa
   return (
     <div className={clsx(styles.functions, className)}>
       <div className={clsx(styles.functionsItemGroup)}>
-        {functions?.map(({ id, title, tags, content }, index) => (
+        {functions?.map(({ title, titleRender, tags, content }) => (
           <FunctionsItem
             title={title}
+            titleRender={titleRender}
             tags={tags}
             content={content}
-            key={index}
+            key={title}
             isProgressBar={isProgressBar}
-            idx={index}
-            id={id}
           />
         ))}
       </div>

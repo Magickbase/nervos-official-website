@@ -9,7 +9,6 @@ import {
   GameController,
   useGameKeyboardHandler,
 } from '../../../components/ConwayGameOfLife'
-import { formatNumber } from '../../../utils/number'
 import { api } from '../../../utils/api'
 import styles from './index.module.scss'
 import PlayIcon from './play.svg'
@@ -122,7 +121,7 @@ const LiveMetrics: FC = () => {
       {dataList.map(({ name, value }) => (
         <div key={name} className={styles.data}>
           <div className={styles.name}>{name}</div>
-          <div className={styles.value}>{value == null ? t('loading') : formatNumber(value)}</div>
+          <div className={styles.value}>{value == null ? t('loading') : value}</div>
         </div>
       ))}
     </div>

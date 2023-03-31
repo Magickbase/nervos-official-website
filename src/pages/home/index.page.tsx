@@ -68,6 +68,7 @@ const Home: NextPage = () => {
           {renderHeader({ className: styles.header })}
           <Swiper
             className={styles.swiper}
+            wrapperClass={styles.swiperWrapper}
             direction="vertical"
             slidesPerView="auto"
             autoHeight
@@ -83,6 +84,16 @@ const Home: NextPage = () => {
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
             onActiveIndexChange={swiper => setActiveIdx(swiper.activeIndex)}
+            // In chrome, providing a y value with a decimal point to translate3d
+            // causes a 1px gap between the footer and the previous slide,
+            // which appears to be a browser bug, so here's a simple fix.
+            onSetTranslate={swiper => {
+              // The height of the final slide (footer) is adaptive and may appear with a decimal point.
+              const val = swiper.snapGrid[swiper.snapGrid.length - 1]
+              if (val != null) {
+                swiper.snapGrid[swiper.snapGrid.length - 1] = Math.ceil(val)
+              }
+            }}
           >
             <SlideCKBIntro gameControllerRef={controllerRef} />
             <SlideCKBSecurity gameControllerRef={controllerRef} />
@@ -228,13 +239,13 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBFlexibility}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Unmatched Flexibility and Interoperability.
+          Unmatched Flexibility and Interopera&shy;bility
         </div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Common Knowledge Base is the only blockchain on the market that supports all cryptographic primitives. It can
-          seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels,
-          and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling
-          decentralized applications boasting unmatched user experience.
+          CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly
+          interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer
+          2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized
+          applications boasting unmatched user experience.
         </div>
       </div>
     </ScreenSlide>
@@ -246,11 +257,11 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideCKBSustainability}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Common Knowledge Base leverages a novel tokenomic model that aligns the interests of all Nervos participants
-          and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are
-          protected from inflation.
+          CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders.
+          It ensures the miners are paid for providing security in perpetuity, while token holders are protected from
+          inflation.
         </div>
       </div>
     </ScreenSlide>
@@ -262,12 +273,12 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBModular}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
           transactions per second through many diverse Layer 2 networks without sacrificing security or
-          decentralization. Common Knowledge Base offers pristine security, while the Layer 2 networks built on top
-          ensure unbounded scalability.
+          decentralization. CKB offers pristine security, while the Layer 2 networks built on top ensure unbounded
+          scalability.
         </div>
       </div>
     </ScreenSlide>
@@ -286,7 +297,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
     return (
       <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
         <div className={styles.slideGetStarted}>
-          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
+          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
           <div className={styles.cards}>
             <Swiper
               direction="vertical"
@@ -313,7 +324,8 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
                     </a>
                   }
                 >
-                  Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+                  Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with
+                  ease.
                 </Card>
               </SwiperSlide>
 
@@ -359,7 +371,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
       containerClass={styles.slideGetStartedWrapper}
     >
       <div className={styles.slideGetStarted}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started.</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
         <div className={styles.cards}>
           <Card
             title="Launch your own Nervos sidechain with Axon."
@@ -371,7 +383,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
               </a>
             }
           >
-            Need high throughput? Build your own custom sidechain and deploy it on Nervos with ease.
+            Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with ease.
           </Card>
 
           <Card

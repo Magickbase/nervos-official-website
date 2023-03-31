@@ -46,10 +46,17 @@ export function useMediaQuery(query: string): boolean {
   return matches
 }
 
-export const useIsMobile = () => {
+export const useIsMobile = (ignoreHydrated?: boolean) => {
   const { mobileBreakPoint } = cssVars
   if (mobileBreakPoint == null) throw new Error('Incorrect css variable')
-  return useMediaQuery(`(max-width: ${mobileBreakPoint})`)
+
+  const isMobile = useMediaQuery(`(max-width: ${mobileBreakPoint})`)
+
+  // This logic is used to prevent some errors when Next.js hydration.
+  // https://nextjs.org/docs/messages/react-hydration-error#possible-ways-to-fix-it
+  const [hydrated, setHydrated] = useState(ignoreHydrated ? true : false)
+  useEffect(() => setHydrated(true), [])
+  return isMobile && hydrated
 }
 
 export function useDevicePixelRatio() {

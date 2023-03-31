@@ -51,16 +51,6 @@
     }
   }
 
-  .contributorsButton {
-    width: 152px;
-    height: 30px;
-    white-space: nowrap;
-    background: #ede3ff;
-    border: 1px solid #000;
-    border-radius: 3px;
-    box-shadow: 1px 1px 0 #5700ff;
-  }
-
   @media (max-width: $mobileBreakPoint) {
     flex-direction: column;
     padding-bottom: 0;
@@ -94,14 +84,6 @@
         width: 45px;
         height: 45px;
         border-radius: 50%;
-      }
-
-      .contributorsButton {
-        width: 100%;
-        background: #d0fff2;
-        border: 1px solid #000;
-        border-radius: 3px;
-        box-shadow: 1px 1px 0 #18efb1;
       }
     }
   }

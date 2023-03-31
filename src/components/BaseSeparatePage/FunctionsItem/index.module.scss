@@ -8,7 +8,7 @@
   margin-right: 70px;
   padding: 120px 0;
   font-weight: 400;
-  border-bottom: 0.5px solid;
+  border-bottom: 0.5px solid #6a7171;
 
   &:last-child {
     border-bottom: 0;
@@ -57,11 +57,15 @@
   }
 
   .content {
-    flex: 10 1 400px;
+    flex: 10 1 500px;
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
     letter-spacing: 0.05em;
+
+    & > p:first-child {
+      margin-top: 0;
+    }
   }
 
   @media (max-width: $mobileBreakPoint) {

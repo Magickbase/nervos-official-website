@@ -5,13 +5,13 @@ import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'sr
 import presets from 'src/styles/presets.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
-import { useBodyClass } from '../../hooks'
+import { useBodyClass, useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 
 import { ArticlesIcon, BallsIcon, QuoteIcon, SunIcon } from './icons'
 
-const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software.</div>
+const title = <div style={{ maxWidth: '550px' }}>Build on hardware, not software</div>
 const description = `Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.`
 const info = `As an open-source, community-driven initiative, we welcome everyone's input and encourage our community to suggest new topics, add content, and suggest improvements where they see fit.`
 
@@ -91,11 +91,11 @@ const resourceData = {
       content: 'The Build Club provides support for teams and individuals looking to launch new projects on Nervos.',
       link: 'https://www.buildclub.xyz/',
     },
-    // {
-    //   title: 'CKB Training Course',
-    //   content:
-    //     'Detailed tutorials about creating CKB transactions and details about the structure of the Layer 1 CKB blockchain.',
-    // },
+    {
+      title: 'Nervos Talk Forum',
+      content: 'For the community to participate and discuss developments on Nervos.',
+      link: 'https://talk.nervos.org/',
+    },
   ],
 }
 
@@ -105,6 +105,8 @@ interface PageProps {
 }
 
 const Developers: NextPage<PageProps> = ({ contributors, author }) => {
+  const isMobile = useIsMobile()
+
   useBodyClass([presets.themeDark ?? ''])
 
   const floatIcons = (
@@ -124,18 +126,33 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
         <title>Nervos Network | Developers</title>
       </Head>
       <BaseSeparatePage
-        embellishedElements={[
-          {
-            content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
-            top: 384,
-            right: 488,
-          },
-          {
-            content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
-            top: 12,
-            left: 96,
-          },
-        ]}
+        embellishedElements={
+          isMobile
+            ? [
+                {
+                  content: <EmbellishedLeft width={430} height={267} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 462,
+                  right: 51,
+                },
+                {
+                  content: <EmbellishedRight width={430} height={245} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 64,
+                  left: -166,
+                },
+              ]
+            : [
+                {
+                  content: <EmbellishedLeft width={744} height={459} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 474,
+                  right: 488,
+                },
+                {
+                  content: <EmbellishedRight width={744} height={420} style={{ transform: 'rotate(180deg)' }} />,
+                  top: 102,
+                  left: 596,
+                },
+              ]
+        }
         editLink={pageLink}
         title={title}
         floatIcons={floatIcons}

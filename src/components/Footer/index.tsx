@@ -5,6 +5,7 @@ import { FooterLinkGroup, FooterLinkGroupProps } from './components/FooterLinkGr
 
 import styles from './index.module.scss'
 import LogoIcon from './logo.svg'
+import { StyledLink } from '../StyledLink'
 
 export type FooterProps = ComponentProps<'div'> & { limitMaxWidth?: number | false }
 
@@ -15,6 +16,7 @@ export const Footer: FC<FooterProps> = props => {
     {
       title: 'DISCOVER',
       links: [
+        { label: 'CKB', url: '/ckbpage' },
         { label: 'Mining', url: '/mining' },
         { label: 'Wallets', url: '/wallets' },
         { label: 'Wiki', url: 'https://www.wikiwand.com/en/Nervos_Network' },
@@ -22,7 +24,11 @@ export const Footer: FC<FooterProps> = props => {
       ],
     },
     {
-      title: 'DEVELOPERS',
+      title: (
+        <StyledLink className={styles.titleLink} href="/developers">
+          DEVELOPERS
+        </StyledLink>
+      ),
       links: [
         { label: 'Documentation', url: 'https://docs.nervos.org/' },
         { label: 'GitHub', url: 'https://github.com/nervosnetwork/' },
@@ -32,15 +38,21 @@ export const Footer: FC<FooterProps> = props => {
     {
       title: 'ECOSYSTEM',
       links: [
-        { label: 'Nervos Foundation', url: 'https://www.nervos.org/' },
         { label: 'Cryptape', url: 'https://cryptape.com/' },
         { label: 'Godwoken', url: 'https://godwoken.com/' },
         { label: 'Nervina Labs', url: 'https://nervina.io/' },
         { label: 'Tunnel Vision Labs', url: 'https://tunnelvisionlabs.xyz/' },
+        { label: 'Axon', url: 'https://axonweb3.io/' },
+        { label: '.bit', url: 'https://www.did.id/' },
+        { label: 'Magickbase', url: 'https://github.com/Magickbase/' },
       ],
     },
     {
-      title: 'COMMUNITY',
+      title: (
+        <StyledLink className={styles.titleLink} href="/community">
+          COMMUNITY
+        </StyledLink>
+      ),
       links: [
         { label: 'Community Fund DAO', url: 'https://dao.ckb.community/' },
         { label: 'Nervos Talk Forum', url: 'https://talk.nervos.org/' },
@@ -48,11 +60,14 @@ export const Footer: FC<FooterProps> = props => {
       ],
     },
     {
-      title: 'LEARN',
+      title: (
+        <StyledLink className={styles.titleLink} href="/learn">
+          LEARN
+        </StyledLink>
+      ),
       links: [
+        { label: 'Knowledge Base', url: '/knowledge-base' },
         /* not ready yet */
-        // { label: 'Knowledge Base', url: '/' },
-        { label: 'Blog', url: '/blogs' },
         { label: 'Medium', url: 'https://medium.com/nervosnetwork' },
         { label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' },
       ],
