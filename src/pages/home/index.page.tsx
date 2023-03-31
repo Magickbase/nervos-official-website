@@ -239,7 +239,7 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBFlexibility}>
         <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Unmatched Flexibility and Interoperability
+          Unmatched Flexibility and Interopera&shy;bility
         </div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
           CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly

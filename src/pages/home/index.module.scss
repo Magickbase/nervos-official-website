@@ -162,9 +162,13 @@ $headerZ: 2;
   line-height: 80%;
   letter-spacing: -0.025em;
 
+  @media (max-height: 780px) {
+    font-size: 60px;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     font-weight: 800;
-    font-size: 50px;
+    font-size: 48px;
     line-height: 80%;
     letter-spacing: -0.025em;
   }
@@ -395,7 +399,7 @@ $headerZ: 2;
   }
 }
 
-@media screen and (max-height: 780px) {
+@media (max-height: 780px) {
   .golContainer {
     margin-left: 100px;
   }
@@ -410,7 +414,6 @@ $headerZ: 2;
 
     .titleText {
       max-width: 439px;
-      font-size: 60px;
     }
 
     .descriptionText {
