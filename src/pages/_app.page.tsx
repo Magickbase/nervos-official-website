@@ -33,7 +33,7 @@ const App: AppType = ({ Component, pageProps }) => {
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="A BLOCKCHAIN PLATFORM FOR UNIVERSAL APPLICATIONS The Nervos Network is an open source public blockchain ecosystem and collection of protocols creating the foundation for a universal internet-like public network Beyond Interoperability, Towards Universal Application Early internet applications lived on segregated networks needing different ways to access and interact. Now, in today’s decentralized world we again see this segregation into different ... Read More"
+          content="A BLOCKCHAIN PLATFORM FOR UNIVERSAL APPLICATIONS The Nervos Network is an open source public blockchain ecosystem and collection of protocols creating the foundation for a universal internet-like public network Beyond Interoperability, Towards Universal Application Early internet applications lived on segregated networks needing different ways t.."
         />
         <meta property="og:url" content="https://nervos.org" />
         <meta property="og:site_name" content="Nervos Network" />

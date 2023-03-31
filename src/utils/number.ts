@@ -1,10 +1,3 @@
-export function formatNumber(num: number | bigint) {
-  return num.toLocaleString('en', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })
-}
-
 export function clampNumber(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max)
 }

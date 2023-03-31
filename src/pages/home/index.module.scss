@@ -162,10 +162,14 @@ $headerZ: 2;
   line-height: 80%;
   letter-spacing: -0.025em;
 
+  @media (max-height: 780px) {
+    font-size: 60px;
+  }
+
   @media (max-width: $mobileBreakPoint) {
     font-weight: 800;
-    font-size: 50px;
-    line-height: 40px;
+    font-size: 48px;
+    line-height: 80%;
     letter-spacing: -0.025em;
   }
 }
@@ -240,7 +244,7 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 408px;
+    max-width: 415px;
     margin-top: 40px;
   }
 
@@ -270,7 +274,7 @@ $headerZ: 2;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    max-width: 560px;
+    max-width: 575px;
     margin-top: 40px;
   }
 
@@ -298,7 +302,7 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 460px;
+    max-width: 440px;
     margin-top: 40px;
   }
 
@@ -325,7 +329,7 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 512px;
+    max-width: 460px;
     margin-top: 40px;
   }
 
@@ -395,7 +399,7 @@ $headerZ: 2;
   }
 }
 
-@media screen and (max-height: 780px) {
+@media (max-height: 780px) {
   .golContainer {
     margin-left: 100px;
   }
@@ -410,7 +414,6 @@ $headerZ: 2;
 
     .titleText {
       max-width: 439px;
-      font-size: 60px;
     }
 
     .descriptionText {
