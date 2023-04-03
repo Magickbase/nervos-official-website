@@ -158,13 +158,9 @@ $headerZ: 2;
 
 .titleText {
   font-weight: 800;
-  font-size: 90px;
-  line-height: 80%;
+  font-size: 82px;
+  line-height: 87%;
   letter-spacing: -0.025em;
-
-  @media (max-height: 780px) {
-    font-size: 60px;
-  }
 
   @media (max-width: $mobileBreakPoint) {
     font-weight: 800;
@@ -176,16 +172,21 @@ $headerZ: 2;
 
 .subjectTitleText {
   font-weight: 500;
-  font-size: 23px;
+  font-size: 25px;
   line-height: 120%;
   letter-spacing: 0.03em;
 }
 
 .descriptionText {
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 15px;
   line-height: 160%;
   letter-spacing: 0.05em;
+
+  @media (max-width: $mobileBreakPoint) {
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
 
 .slideCKBIntro {
@@ -209,16 +210,8 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 468px;
-    margin-top: 40px;
-
-    .bold {
-      font-weight: 600;
-    }
-  }
-
-  .text4 {
-    margin-top: 24px;
+    max-width: 444px;
+    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -228,6 +221,10 @@ $headerZ: 2;
     max-width: 314px;
     margin: -10vh auto 0;
     padding: 0;
+
+    .subjectTitleText {
+      margin-top: 30px;
+    }
 
     .descriptionText {
       margin-top: 30px;
@@ -240,12 +237,12 @@ $headerZ: 2;
   margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
-    max-width: 740px;
+    max-width: 640px;
   }
 
   .descriptionText {
-    max-width: 415px;
-    margin-top: 40px;
+    max-width: 462px;
+    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -267,15 +264,12 @@ $headerZ: 2;
   margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
 
   .titleText {
-    max-width: 700px;
+    max-width: 664px;
   }
 
   .descriptionText {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
     max-width: 575px;
-    margin-top: 40px;
+    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -302,8 +296,8 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 440px;
-    margin-top: 40px;
+    max-width: 488px;
+    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -329,8 +323,8 @@ $headerZ: 2;
   }
 
   .descriptionText {
-    max-width: 460px;
-    margin-top: 40px;
+    max-width: 504px;
+    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
@@ -399,7 +393,7 @@ $headerZ: 2;
   }
 }
 
-@media (max-height: 780px) {
+@media (max-height: 780px) and (min-width: $mobileBreakPoint), (max-height: 620px) {
   .golContainer {
     margin-left: 100px;
   }
@@ -414,14 +408,14 @@ $headerZ: 2;
 
     .titleText {
       max-width: 439px;
+
+      @media (min-width: $mobileBreakPoint) {
+        font-size: 60px;
+      }
     }
 
     .descriptionText {
       margin-top: 10px;
-    }
-
-    .text4 {
-      margin-top: 6px;
     }
   }
 }
