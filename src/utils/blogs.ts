@@ -2,6 +2,7 @@
 import fs from 'fs'
 import { join, relative } from 'path'
 import matter from 'gray-matter'
+import sizeOf from 'image-size'
 import { omitNullValue, pick } from '.'
 
 const blogsRootDirectory = join(process.cwd(), 'public', 'education_hub_articles')
@@ -12,7 +13,11 @@ export interface Blog {
   title: string
   date: string
   readingTime: string
-  coverImage?: string
+  coverImage?: {
+    src: string
+    width?: number
+    height?: number
+  }
   excerpt?: string
   category?: string
   link?: string
@@ -40,13 +45,20 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  let coverImage = typeof data.coverImage === 'string' ? data.coverImage : undefined
-  if (coverImage != null) {
-    const isExternalLink = /^(https?:)?\/\//.test(coverImage)
+  let coverImageURL = typeof data.coverImage === 'string' ? data.coverImage : undefined
+  if (coverImageURL != null) {
+    const isExternalLink = /^(https?:)?\/\//.test(coverImageURL)
     if (!isExternalLink) {
-      coverImage = `/education_hub_articles/${slug}/${coverImage}`
+      coverImageURL = `/education_hub_articles/${slug}/${coverImageURL}`
     }
   }
+  const coverImage =
+    coverImageURL != null
+      ? {
+          src: coverImageURL,
+          ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
+        }
+      : undefined
 
   const date = typeof data.date === 'string' ? data.date : fs.statSync(fullPath).birthtime.toISOString()
   const readingTime = Math.round(content.length / 1300).toString()
@@ -104,7 +116,7 @@ export const getAllBlogs = (sortBy = 'all', fields: (keyof Blog)[] = []) => {
   return blogs
 }
 
-export const getCategoriesFromBlogs = (blogs: Array<Record<string, string>>) =>
+export const getCategoriesFromBlogs = (blogs: Blog[]) =>
   [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())]
     .filter(v => v)
     .map(v => v.toLowerCase())

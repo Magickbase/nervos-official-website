@@ -51,7 +51,7 @@ const Post = ({ post, recents, categories }: Props) => {
               <article>
                 <Head>
                   <title>{post.title}</title>
-                  <meta property="og:image" content={post.coverImage} />
+                  <meta property="og:image" content={post.coverImage?.src} />
                 </Head>
 
                 <div className={styles.meta}>
@@ -72,7 +72,14 @@ const Post = ({ post, recents, categories }: Props) => {
                 </TOCItem>
                 <div className={styles.excerpt}>{post.excerpt}</div>
 
-                <img src={post.coverImage} alt="cover" loading="lazy" />
+                {post.coverImage && (
+                  <Image
+                    src={post.coverImage.src}
+                    width={post.coverImage.width}
+                    height={post.coverImage.height}
+                    alt="cover"
+                  />
+                )}
 
                 <div>
                   <ReactMarkdown

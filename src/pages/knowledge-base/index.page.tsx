@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
 import { DOMParser } from '@xmldom/xmldom'
+import Image from 'next/image'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter, markdownToHtml } from '../../utils'
@@ -69,12 +70,15 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <div className={styles.title}>{post.title}</div>
                       <div className={styles.excerpt}>{post.excerpt}</div>
                     </div>
-                    <img
-                      src={post.coverImage}
-                      alt="cover"
-                      loading="lazy"
-                      data-type={post.category?.split(',')[0]?.toLowerCase()}
-                    />
+                    {post.coverImage && (
+                      <Image
+                        src={post.coverImage.src}
+                        width={post.coverImage.width}
+                        height={post.coverImage.height}
+                        alt="cover"
+                        data-type={post.category?.split(',')[0]?.toLowerCase()}
+                      />
+                    )}
                   </div>
                   {post.category && (
                     <div className={styles.category}>
@@ -135,7 +139,15 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
               >
                 <div className={styles.title}>{post.title}</div>
                 <div className={styles.excerpt}>{post.excerpt}</div>
-                <img src={post.coverImage} alt="cover" loading="lazy" className={styles.cover} />
+                {post.coverImage && (
+                  <Image
+                    className={styles.cover}
+                    src={post.coverImage.src}
+                    width={post.coverImage.width}
+                    height={post.coverImage.height}
+                    alt="cover"
+                  />
+                )}
                 {post.category && (
                   <div className={styles.category}>
                     <Category category={post.category} />
