@@ -58,14 +58,12 @@ const config = {
     return config
   },
   redirects: async () => {
-    const ARCHIVE_URL = 'https://www.nervos.org'
-    return [
-      {
-        source: '/blog/:slug',
-        destination: `${ARCHIVE_URL}/blog/:slug`,
-        permanent: false,
-      },
-    ]
+    const ARCHIVE_URL = 'https://archive.nervos.org'
+    return ['/blog', '/blog/:slug', '/trailblazer', '/developer/grants', '/godwoken'].map(source => ({
+      source,
+      destination: `${ARCHIVE_URL}${source}`,
+      permanent: false,
+    }))
   },
 }
 
