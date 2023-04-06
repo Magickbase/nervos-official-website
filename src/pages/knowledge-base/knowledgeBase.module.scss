@@ -11,9 +11,7 @@ $linkColor: #5700ff;
   color: #000;
 
   .header {
-    position: sticky;
-    top: 90px;
-    z-index: 1;
+    position: relative;
     background: #fff;
   }
 
@@ -135,7 +133,9 @@ $linkColor: #5700ff;
 
     aside {
       position: sticky;
-      top: 300px;
+
+      // pageHeaderHeight + headerHeight + contentMarginTop
+      top: calc(90px + 110px + 120px);
       width: 440px;
       height: min-content;
       padding-bottom: 120px;
