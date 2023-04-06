@@ -1,31 +1,20 @@
 import type { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { TwitterShareButton, LinkedinShareButton, RedditShareButton, FacebookShareButton } from 'react-share'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import ReactMarkdown from 'react-markdown'
 import { Page } from '../../components/Page'
-import { markdownToHtml, getTimeFormatter } from '../../utils'
-import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
+import { getTimeFormatter } from '../../utils'
+import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
 import styles from './knowledgeBase.module.scss'
 
-export type BlogType = {
-  slug: string
-  title: string
-  date: string
-  coverImage: string
-  excerpt: string
-  content: string
-  category: string
-  popular: string
-  readingTime: string
-  link?: string
-}
-
 type Props = {
-  post: BlogType
+  post: Blog
   recents: Array<Record<'title' | 'slug', string>>
   categories: Array<string>
 }
@@ -81,7 +70,29 @@ const Post = ({ post, recents, categories }: Props) => {
                 <img src={post.coverImage} alt="cover" loading="lazy" />
 
                 <div>
-                  <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  <ReactMarkdown
+                    components={{
+                      img: props => {
+                        if (props.src == null) return null
+
+                        const isExternalLink = /^(https?:)?\/\//.test(props.src)
+                        return (
+                          <Image
+                            src={isExternalLink ? props.src : `/education_hub_articles/${post.slug}/${props.src ?? ''}`}
+                            alt={props.alt ?? ''}
+                            // TODO: nextjs requires these two properties to solve the
+                            // problem of loading, theoretically here is indeed able to
+                            // know the width and height of the image in advance, but the
+                            // implementation of the more troublesome, first temporarily do not deal with.
+                            width={1920}
+                            height={1080}
+                          />
+                        )
+                      },
+                    }}
+                  >
+                    {post.content}
+                  </ReactMarkdown>
                 </div>
                 <img src="/images/article_end.svg" alt="end" className={styles.end} />
               </article>
@@ -144,11 +155,9 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     'content',
     'coverImage',
     'category',
-    'popular',
     'readingTime',
   ])
 
-  const content = await markdownToHtml(post.content || '')
   const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
 
   const blogs = getAllBlogs('all', ['title', 'slug', 'category'])
@@ -158,10 +167,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   return {
     props: {
       ...lng,
-      post: {
-        ...post,
-        content,
-      },
+      post,
       recents,
       categories,
     },

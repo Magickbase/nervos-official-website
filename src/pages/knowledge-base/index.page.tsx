@@ -5,19 +5,19 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
-import type { BlogType } from './[slug].page'
+import { DOMParser } from '@xmldom/xmldom'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
-import { getTimeFormatter } from '../../utils'
-import { getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
+import { getTimeFormatter, markdownToHtml } from '../../utils'
+import { Blog, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 
 type Props = {
   categories: Array<string>
-  posts: Array<BlogType>
-  populars: Array<BlogType>
+  posts: Array<Blog>
+  populars: Array<Blog>
   pageCount: number
 }
 
@@ -73,12 +73,14 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       src={post.coverImage}
                       alt="cover"
                       loading="lazy"
-                      data-type={post.category.split(',')[0]?.toLowerCase()}
+                      data-type={post.category?.split(',')[0]?.toLowerCase()}
                     />
                   </div>
-                  <div className={styles.category}>
-                    <Category category={post.category} />
-                  </div>
+                  {post.category && (
+                    <div className={styles.category}>
+                      <Category category={post.category} />
+                    </div>
+                  )}
                   <div className={styles.meta}>
                     <div>
                       <img src="/images/nervos_avatar.svg" />
@@ -86,12 +88,12 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <span className={styles.separator}>·</span>
                       <time>{formatTime(new Date(post.date))}</time>
                     </div>
-                    {+post.readingTime ? (
+                    {post.readingTime && (
                       <div>
                         <img src="/images/clock.svg" className={styles.clock} />
                         <span>{post.readingTime} mins</span>
                       </div>
-                    ) : null}
+                    )}
                   </div>
                 </Link>
               )
@@ -134,20 +136,22 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                 <div className={styles.title}>{post.title}</div>
                 <div className={styles.excerpt}>{post.excerpt}</div>
                 <img src={post.coverImage} alt="cover" loading="lazy" className={styles.cover} />
-                <div className={styles.category}>
-                  <Category category={post.category} />
-                </div>
+                {post.category && (
+                  <div className={styles.category}>
+                    <Category category={post.category} />
+                  </div>
+                )}
                 <div className={styles.meta}>
                   <img src="/images/nervos_avatar.svg" />
                   <span>Nervos</span>
                   <span className={styles.separator}>·</span>
                   <time>{formatTime(new Date(post.date))}</time>
-                  {+post.readingTime ? (
+                  {post.readingTime && (
                     <>
                       <img src="/images/clock.svg" className={styles.clock} />
                       <span>{post.readingTime} mins</span>
                     </>
-                  ) : null}
+                  )}
                 </div>
               </Link>
             ))}
@@ -164,16 +168,23 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
 
   const posts = getAllBlogs(sortBy, [
+    'content',
     'title',
     'date',
     'slug',
     'coverImage',
     'excerpt',
     'category',
-    'popular',
     'readingTime',
     'link',
   ])
+  for (const post of posts) {
+    if (post.excerpt != null) continue
+    const contentHTML = await markdownToHtml(post.content)
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(`<html><body>${contentHTML}</body></html>`, 'text/html')
+    post.excerpt = doc.documentElement.textContent?.substring(0, 160)
+  }
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(posts)
   const pageCount = Math.ceil(posts.length / PAGE_SIZE)
