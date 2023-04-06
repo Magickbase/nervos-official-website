@@ -8,10 +8,13 @@ import { TwitterShareButton, LinkedinShareButton, RedditShareButton, FacebookSha
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ReactMarkdown from 'react-markdown'
+import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
 import styles from './knowledgeBase.module.scss'
+import { TOCContextProvider, TOCItem } from '../../components/TableOfContents'
+import { StyledTOC } from './StyledTOC'
 
 type Props = {
   post: Blog
@@ -31,7 +34,7 @@ const Post = ({ post, recents, categories }: Props) => {
   }
 
   return (
-    <>
+    <TOCContextProvider>
       <Head>{post.title ? <title>{`Nervos Network | ${post.title}`}</title> : null}</Head>
       <Page>
         {router.isFallback ? (
@@ -64,7 +67,9 @@ const Post = ({ post, recents, categories }: Props) => {
                   </div>
                 </div>
 
-                <div className={styles.title}>{post.title}</div>
+                <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>
+                  {post.title}
+                </TOCItem>
                 <div className={styles.excerpt}>{post.excerpt}</div>
 
                 <img src={post.coverImage} alt="cover" loading="lazy" />
@@ -72,6 +77,12 @@ const Post = ({ post, recents, categories }: Props) => {
                 <div>
                   <ReactMarkdown
                     components={{
+                      h1: wrapHeadingWithTOCItem('h1'),
+                      h2: wrapHeadingWithTOCItem('h2'),
+                      h3: wrapHeadingWithTOCItem('h3'),
+                      h4: wrapHeadingWithTOCItem('h4'),
+                      h5: wrapHeadingWithTOCItem('h5'),
+                      h6: wrapHeadingWithTOCItem('h6'),
                       img: props => {
                         if (props.src == null) return null
 
@@ -97,6 +108,7 @@ const Post = ({ post, recents, categories }: Props) => {
                 <img src="/images/article_end.svg" alt="end" className={styles.end} />
               </article>
               <aside>
+                <StyledTOC />
                 <div className={styles.title}>{`${t('recent_posts')}:`}</div>
                 <div className={styles.recents}>
                   {recents.map(b => (
@@ -134,8 +146,21 @@ const Post = ({ post, recents, categories }: Props) => {
           </div>
         )}
       </Page>
-    </>
+    </TOCContextProvider>
   )
+}
+
+function wrapHeadingWithTOCItem(HeadingTag: string) {
+  return function tagWithTOCItem(props: HeadingProps) {
+    const content = props.children[0]
+    if (typeof content !== 'string') return <HeadingTag {...props} />
+
+    return (
+      <TOCItem id={content} titleInTOC={content}>
+        <HeadingTag {...props} />
+      </TOCItem>
+    )
+  }
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {

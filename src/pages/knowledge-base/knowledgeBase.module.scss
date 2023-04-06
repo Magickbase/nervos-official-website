@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'src/styles/variables.module';
 
 $linkColor: #5700ff;
@@ -133,22 +134,20 @@ $linkColor: #5700ff;
 
     aside {
       position: sticky;
-
-      // pageHeaderHeight + headerHeight + contentMarginTop
-      top: calc(90px + 110px + 120px);
+      top: calc(120px);
       width: 440px;
       height: min-content;
       padding-bottom: 120px;
       padding-left: 130px;
 
       a {
-        color: $linkColor;
-        text-decoration: underline;
+        color: inherit;
+        text-decoration: none;
       }
 
       .title {
         display: flex;
-        margin-bottom: 20px;
+        margin: 20px 0;
         font-weight: 400;
         font-size: 1rem;
         line-height: 1.35rem;
@@ -223,6 +222,49 @@ $linkColor: #5700ff;
         padding-bottom: 85px;
         padding-left: 0;
       }
+    }
+  }
+}
+
+.tocHeader {
+  font-size: 16px;
+  line-height: 135%;
+}
+
+.tocItem {
+  --paddingTop: 10px;
+
+  $lineHeight: 135%;
+  $fontSize: 12px;
+
+  position: relative;
+  padding: var(--paddingTop) 0 10px 25px;
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  border-left: 0.7px solid;
+
+  &:first-child {
+    --paddingTop: 2px;
+  }
+
+  &::after {
+    position: absolute;
+    top: calc(var(--paddingTop) + $fontSize * math.div($lineHeight, 200%));
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--colorPrimary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+
+  &.active {
+    color: var(--colorSecond);
+
+    &::after {
+      background-color: var(--colorSecond);
     }
   }
 }

@@ -94,7 +94,7 @@ export const TOCContextProvider: FC<PropsWithChildren> = props => {
 }
 
 export const TOCItem: FC<ComponentProps<'div'> & { id: string; titleInTOC: string }> = props => {
-  const { children, titleInTOC, ...divProps } = props
+  const { children, id, titleInTOC, ...divProps } = props
   const ref = useRef<HTMLDivElement>(null)
 
   const { addTOCItem, removeTOCItem } = useContext(TOCContext)
@@ -108,7 +108,7 @@ export const TOCItem: FC<ComponentProps<'div'> & { id: string; titleInTOC: strin
   }, [addTOCItem, removeTOCItem, titleInTOC])
 
   return (
-    <div ref={ref} {...divProps}>
+    <div ref={ref} id={encodeURIComponent(id.toLowerCase().replaceAll(' ', '_'))} {...divProps}>
       {children}
     </div>
   )

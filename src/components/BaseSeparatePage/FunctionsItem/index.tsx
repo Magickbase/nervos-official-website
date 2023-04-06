@@ -25,7 +25,7 @@ export const FunctionsItem: FC<FunctionsItemType> = ({
 }) => (
   <TOCItem
     data-is-progress-bar={isProgressBar}
-    id={encodeURIComponent(title.toLowerCase().replaceAll(' ', '_'))}
+    id={title}
     titleInTOC={title}
     className={clsx(styles.functionsItem, className)}
   >
