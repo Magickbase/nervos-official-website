@@ -195,7 +195,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
     const contentHTML = await markdownToHtml(post.content)
     const parser = new DOMParser()
     const doc = parser.parseFromString(`<html><body>${contentHTML}</body></html>`, 'text/html')
-    post.excerpt = doc.documentElement.textContent?.substring(0, 160)
+    post.excerpt = doc.documentElement.textContent?.substring(0, 200)
   }
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(posts)
