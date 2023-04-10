@@ -65,12 +65,38 @@ $linkColor: var(--colorSecond);
       margin-right: 5px;
     }
 
-    img {
-      width: 35px;
-      height: 35px;
+    .avatars {
+      display: flex;
+      flex-direction: row-reverse;
       margin-right: 10px;
-      margin-left: 0;
-      filter: invert(1);
+
+      // TODO: The handling of /images/nervos_avatar.svg here is entirely
+      // for `/images/nervos_avatar.svg` and needs to be improved
+      img[src$='.svg'] {
+        filter: invert(1);
+      }
+
+      .avatar {
+        width: 35px;
+        height: 35px;
+        margin-left: -20px;
+        border-radius: 50%;
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        /* stylelint-disable-next-line no-descending-specificity */
+        &:not(img) {
+          display: flex;
+          justify-content: center;
+          color: var(--colorPrimaryBg);
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 1.66em;
+          background: var(--colorPrimary);
+        }
+      }
     }
   }
 

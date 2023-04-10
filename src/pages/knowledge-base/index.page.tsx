@@ -72,6 +72,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     </div>
                     {post.coverImage && (
                       <Image
+                        className={styles.coverImage}
                         src={post.coverImage.src}
                         width={post.coverImage.width}
                         height={post.coverImage.height}
@@ -87,8 +88,25 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                   )}
                   <div className={styles.meta}>
                     <div>
-                      <img src="/images/nervos_avatar.svg" />
-                      <span>Nervos</span>
+                      <div className={styles.avatars}>
+                        {[...post.authors]
+                          // Here, with flex-direction: row-reverse, the preceding
+                          // elements can cover the succeeding elements.
+                          .reverse()
+                          .map(({ name, avatar }) =>
+                            avatar ? (
+                              <img key={name} className={styles.avatar} src={avatar} />
+                            ) : (
+                              <div key={name} className={styles.avatar}>
+                                {name[0]?.toUpperCase()}
+                              </div>
+                            ),
+                          )}
+                      </div>
+                      <span>
+                        {post.authors[0]?.name ?? ''}
+                        {post.authors.length > 1 ? ' etc.' : ''}
+                      </span>
                       <span className={styles.separator}>·</span>
                       <time>{formatTime(new Date(post.date))}</time>
                     </div>
@@ -154,8 +172,25 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                   </div>
                 )}
                 <div className={styles.meta}>
-                  <img src="/images/nervos_avatar.svg" />
-                  <span>Nervos</span>
+                  <div className={styles.avatars}>
+                    {[...post.authors]
+                      // Here, with flex-direction: row-reverse, the preceding
+                      // elements can cover the succeeding elements.
+                      .reverse()
+                      .map(({ name, avatar }) =>
+                        avatar ? (
+                          <img key={name} className={styles.avatar} src={avatar} />
+                        ) : (
+                          <div key={name} className={styles.avatar}>
+                            {name[0]?.toUpperCase()}
+                          </div>
+                        ),
+                      )}
+                  </div>
+                  <span>
+                    {post.authors[0]?.name ?? ''}
+                    {post.authors.length > 1 ? ' etc.' : ''}
+                  </span>
                   <span className={styles.separator}>·</span>
                   <time>{formatTime(new Date(post.date))}</time>
                   {post.readingTime && (
@@ -179,17 +214,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const pageNo = Number(query.page ?? '1')
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
 
-  const posts = getAllBlogs(sortBy, [
-    'content',
-    'title',
-    'date',
-    'slug',
-    'coverImage',
-    'excerpt',
-    'category',
-    'readingTime',
-    'link',
-  ])
+  const posts = getAllBlogs(sortBy)
   for (const post of posts) {
     if (post.excerpt != null) continue
     const contentHTML = await markdownToHtml(post.content)
@@ -202,15 +227,15 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const pageCount = Math.ceil(posts.length / PAGE_SIZE)
   const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
 
-  return {
-    props: {
-      ...lng,
-      posts: posts.slice(PAGE_SIZE * (pageNo - 1), PAGE_SIZE * pageNo),
-      populars,
-      categories: ['all', ...categories, 'newest post', 'oldest post'],
-      pageCount,
-    },
+  const props: Props = {
+    ...lng,
+    posts: posts.slice(PAGE_SIZE * (pageNo - 1), PAGE_SIZE * pageNo),
+    populars,
+    categories: ['all', ...categories, 'newest post', 'oldest post'],
+    pageCount,
   }
+
+  return { props }
 }
 
 export default Index

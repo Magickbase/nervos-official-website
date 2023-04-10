@@ -56,8 +56,25 @@ const Post = ({ post, recents, categories }: Props) => {
 
                 <div className={styles.meta}>
                   <div>
-                    <img src="/images/nervos_avatar.svg" />
-                    <b>Nervos</b>
+                    <div className={styles.avatars}>
+                      {[...post.authors]
+                        // Here, with flex-direction: row-reverse, the preceding
+                        // elements can cover the succeeding elements.
+                        .reverse()
+                        .map(({ name, avatar }) =>
+                          avatar ? (
+                            <img key={name} className={styles.avatar} src={avatar} />
+                          ) : (
+                            <div key={name} className={styles.avatar}>
+                              {name[0]?.toUpperCase()}
+                            </div>
+                          ),
+                        )}
+                    </div>
+                    <b>
+                      {post.authors[0]?.name ?? ''}
+                      {post.authors.length > 1 ? ' etc.' : ''}
+                    </b>
                     <span className={styles.separator}>·</span>
                     <time>{formatTime(new Date(post.date))}</time>
                   </div>
@@ -179,16 +196,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     }
   }
 
-  const post = getBlogBySlug(slug, [
-    'title',
-    'excerpt',
-    'date',
-    'slug',
-    'content',
-    'coverImage',
-    'category',
-    'readingTime',
-  ])
+  const post = getBlogBySlug(slug)
 
   const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
 
@@ -196,14 +204,14 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const categories = getCategoriesFromBlogs(blogs)
   const recents = blogs.slice(0, 3)
 
-  return {
-    props: {
-      ...lng,
-      post,
-      recents,
-      categories,
-    },
+  const props: Props = {
+    ...lng,
+    post,
+    recents,
+    categories,
   }
+
+  return { props }
 }
 
 export const getStaticPaths: GetStaticPaths = () => {

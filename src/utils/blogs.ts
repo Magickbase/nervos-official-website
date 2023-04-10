@@ -13,6 +13,7 @@ export interface Blog {
   title: string
   date: string
   readingTime: string
+  authors: { name: string; avatar?: string }[]
   coverImage?: {
     src: string
     width?: number
@@ -63,6 +64,22 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F
   const date = typeof data.date === 'string' ? data.date : fs.statSync(fullPath).birthtime.toISOString()
   const readingTime = Math.round(content.length / 1300).toString()
 
+  const authorNames: string[] = Array.isArray(data.author)
+    ? data.author.filter((author): author is string => typeof author === 'string')
+    : typeof data.author === 'string'
+    ? [data.author]
+    : ['Nervos']
+
+  const authors = authorNames.map(name => {
+    if (name.toLowerCase() === 'nervos') return { name, avatar: '/images/nervos_avatar.svg' }
+    if (name.startsWith('github:')) {
+      name = name.substring('github:'.length)
+      return { name, avatar: `https://avatars.githubusercontent.com/${name}` }
+    }
+
+    return { name }
+  })
+
   const title = getStringValue(data.title)
   const excerpt = getStringValue(data.excerpt)
   const category = getStringValue(data.category)
@@ -75,6 +92,7 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F
     date,
     coverImage,
     readingTime,
+    authors,
     excerpt,
     category,
     link,
@@ -83,10 +101,10 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F
   return fields == null ? blog : pick(blog, fields)
 }
 
-export const getAllBlogs = (sortBy = 'all', fields: (keyof Blog)[] = []) => {
+export function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', fields?: F) {
   const slugs = getBlogSlugs()
   const blogs = slugs
-    .map(slug => getBlogBySlug(slug, fields))
+    .map(slug => (fields == null ? getBlogBySlug(slug) : getBlogBySlug(slug, [...fields, 'date', 'category'])))
     .sort((blog1, blog2) => {
       switch (sortBy) {
         case 'oldest post': {
@@ -116,7 +134,7 @@ export const getAllBlogs = (sortBy = 'all', fields: (keyof Blog)[] = []) => {
   return blogs
 }
 
-export const getCategoriesFromBlogs = (blogs: Blog[]) =>
+export const getCategoriesFromBlogs = (blogs: Pick<Blog, 'category'>[]) =>
   [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())]
     .filter(v => v)
     .map(v => v.toLowerCase())
