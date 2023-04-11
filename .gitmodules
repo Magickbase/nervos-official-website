@@ -1,0 +1,4 @@
+[submodule "public/education_hub_articles"]
+	path = public/education_hub_articles
+	url = https://github.com/NervosEducationHub/EducationHubArticles.git
+	branch = main

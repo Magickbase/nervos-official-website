@@ -1,6 +1,7 @@
+@use 'sass:math';
 @import 'src/styles/variables.module';
 
-$linkColor: #5700ff;
+$linkColor: var(--colorSecond);
 
 .container {
   --paddingH: 120px;
@@ -11,9 +12,7 @@ $linkColor: #5700ff;
   color: #000;
 
   .header {
-    position: sticky;
-    top: 90px;
-    z-index: 1;
+    position: relative;
     background: #fff;
   }
 
@@ -66,12 +65,38 @@ $linkColor: #5700ff;
       margin-right: 5px;
     }
 
-    img {
-      width: 35px;
-      height: 35px;
+    .avatars {
+      display: flex;
+      flex-direction: row-reverse;
       margin-right: 10px;
-      margin-left: 0;
-      filter: invert(1);
+
+      // TODO: The handling of /images/nervos_avatar.svg here is entirely
+      // for `/images/nervos_avatar.svg` and needs to be improved
+      img[src$='.svg'] {
+        filter: invert(1);
+      }
+
+      .avatar {
+        width: 35px;
+        height: 35px;
+        margin-left: -20px;
+        border-radius: 50%;
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        /* stylelint-disable-next-line no-descending-specificity */
+        &:not(img) {
+          display: flex;
+          justify-content: center;
+          color: var(--colorPrimaryBg);
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 1.66em;
+          background: var(--colorPrimary);
+        }
+      }
     }
   }
 
@@ -80,16 +105,16 @@ $linkColor: #5700ff;
     margin-top: 120px;
     padding-left: 100px;
 
-    a {
-      color: $linkColor;
-      text-decoration: underline;
-    }
-
     article {
       flex: 1;
       font-size: 0.875;
       line-height: 1.4rem;
       letter-spacing: 5%;
+
+      a {
+        color: $linkColor;
+        text-decoration: underline;
+      }
 
       h1 {
         font-weight: 700;
@@ -129,25 +154,21 @@ $linkColor: #5700ff;
 
       img {
         width: 100%;
+        height: auto;
       }
     }
 
     aside {
       position: sticky;
-      top: 300px;
+      top: calc(120px);
       width: 440px;
       height: min-content;
       padding-bottom: 120px;
       padding-left: 130px;
 
-      a {
-        color: $linkColor;
-        text-decoration: underline;
-      }
-
       .title {
         display: flex;
-        margin-bottom: 20px;
+        margin: 20px 0;
         font-weight: 400;
         font-size: 1rem;
         line-height: 1.35rem;
@@ -165,9 +186,11 @@ $linkColor: #5700ff;
         a {
           display: flex;
           margin-bottom: 12px;
+          color: $linkColor;
           font-weight: 600;
           font-size: 0.75rem;
           line-height: 0.975rem;
+          text-decoration: underline;
         }
       }
 
@@ -222,6 +245,49 @@ $linkColor: #5700ff;
         padding-bottom: 85px;
         padding-left: 0;
       }
+    }
+  }
+}
+
+.tocHeader {
+  font-size: 16px;
+  line-height: 135%;
+}
+
+.tocItem {
+  --paddingTop: 10px;
+
+  $lineHeight: 135%;
+  $fontSize: 12px;
+
+  position: relative;
+  padding: var(--paddingTop) 0 10px 25px;
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  border-left: 0.7px solid;
+
+  &:first-child {
+    --paddingTop: 2px;
+  }
+
+  &::after {
+    position: absolute;
+    top: calc(var(--paddingTop) + $fontSize * math.div($lineHeight, 200%));
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: var(--colorPrimary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+
+  &.active {
+    color: var(--colorSecond);
+
+    &::after {
+      background-color: var(--colorSecond);
     }
   }
 }
