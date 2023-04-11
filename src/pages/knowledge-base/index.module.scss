@@ -127,7 +127,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 
-  img {
+  .coverImage {
     flex-shrink: 0;
     width: 200px;
     height: 112px;
@@ -179,21 +179,27 @@
   }
 
   .title {
-    height: 3.25rem;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
+    display: -webkit-box;
+    height: 2.6em;
+    margin-bottom: 5px;
+    overflow: hidden;
     font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    border-bottom: 1px solid #fff;
+    font-size: 20px;
+    line-height: 130%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .excerpt {
     display: -webkit-box;
+    box-sizing: content-box;
+    height: 1.4rem * 3;
+    padding-top: 10px;
     overflow: hidden;
     font-size: 0.875rem;
     line-height: 1.4rem;
     letter-spacing: 0.05em;
+    border-top: 1px solid #fff;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
@@ -226,13 +232,35 @@
     .clock {
       width: 12px;
       height: 12px;
+      margin-right: 5px;
     }
 
-    img {
-      width: 18px;
-      height: 18px;
+    .avatars {
+      display: flex;
+      flex-direction: row-reverse;
       margin-right: 5px;
-      margin-left: 0;
+
+      .avatar {
+        width: 18px;
+        height: 18px;
+        margin-left: -10px;
+        border-radius: 50%;
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        /* stylelint-disable-next-line no-descending-specificity */
+        &:not(img) {
+          display: flex;
+          justify-content: center;
+          color: var(--colorPrimary);
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 1.66em;
+          background: var(--colorPrimaryBg);
+        }
+      }
     }
 
     @media screen and (max-width: $mobileBreakPoint) {
@@ -422,19 +450,49 @@
     .clock {
       width: 12px;
       height: 12px;
+      margin-right: 5px;
+      filter: invert(1);
     }
 
-    img {
-      width: 18px;
-      height: 18px;
+    .avatars {
+      display: flex;
+      flex-direction: row-reverse;
       margin-right: 5px;
-      margin-left: 0;
-      filter: invert(1);
+
+      // TODO: The handling of /images/nervos_avatar.svg here is entirely
+      // for `/images/nervos_avatar.svg` and needs to be improved
+      img[src$='.svg'] {
+        filter: invert(1);
+      }
+
+      /* stylelint-disable-next-line no-descending-specificity */
+      .avatar {
+        width: 18px;
+        height: 18px;
+        margin-left: -10px;
+        border-radius: 50%;
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        /* stylelint-disable-next-line no-descending-specificity */
+        &:not(img) {
+          display: flex;
+          justify-content: center;
+          color: var(--colorPrimaryBg);
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 1.66em;
+          background: var(--colorPrimary);
+        }
+      }
     }
   }
 
   .cover {
     width: 250px;
+    height: auto;
   }
 
   .blog {
@@ -462,6 +520,7 @@
 
     .cover {
       width: 100%;
+      height: auto;
     }
   }
 
