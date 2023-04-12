@@ -317,9 +317,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
                 <Card
                   title="Launch your own Nervos sidechain with Axon."
                   actions={
-                    // TODO: need external link
-                    // https://github.com/Magickbase/nervos-official-website/issues/4
-                    <a href="/" className={styles.link} target="_blank" rel="noreferrer">
+                    <a href="https://axonweb3.io/" className={styles.link} target="_blank" rel="noreferrer">
                       AXON <ObliqueArrowIcon />
                     </a>
                   }
@@ -376,9 +374,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
           <Card
             title="Launch your own Nervos sidechain with Axon."
             actions={
-              // TODO: need external link
-              // https://github.com/Magickbase/nervos-official-website/issues/4
-              <a href="/" className={styles.link} target="_blank" rel="noreferrer">
+              <a href="https://axonweb3.io/" className={styles.link} target="_blank" rel="noreferrer">
                 AXON <ObliqueArrowIcon />
               </a>
             }
