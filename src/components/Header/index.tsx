@@ -27,9 +27,9 @@ export const Header: FC<HeaderProps> = props => {
   return (
     <div className={clsx(styles.header, className)} {...divProps}>
       <MenuPopover />
-      <StyledLink className={clsx(styles.logo, DISABLE_CGOL_MOUSE_CONTROLLER)} href="/">
+      <Link className={clsx(styles.logo, DISABLE_CGOL_MOUSE_CONTROLLER)} href="/">
         <LogoIcon />
-      </StyledLink>
+      </Link>
       <LanguagePopover
         languages={[
           { name: 'English', localeName: 'en' },
