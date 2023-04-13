@@ -234,6 +234,8 @@ $linkColor: var(--colorSecond);
 
     .content {
       flex-direction: column;
+      margin-top: 20px;
+      padding-left: 0;
 
       article {
         margin-bottom: 70px;
