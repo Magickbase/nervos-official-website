@@ -1,1 +1,15 @@
-{}
+{
+  "category": {
+    "token": "代币",
+    "supply": "供应量",
+    "miners": "矿工",
+    "reward": "奖励",
+    "dao": "DAO",
+    "exchanges": "交易所",
+    "wallet": "钱包"
+  },
+  "contribution_welcome": "作为一个开源社区驱动的倡议，我们欢迎您的贡献，并鼓励您提出新的主题，添加内容，并提供您认为有用的示例。",
+  "see_contributors": "查看贡献者",
+  "edit_page": "编辑页面",
+  "on_this_page": "本页内容"
+}

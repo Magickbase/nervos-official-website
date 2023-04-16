@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import clsx from 'clsx'
 import { StyledLink } from 'src/components/StyledLink'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 import type { LastAuthor } from '../../../utils/github'
 
 import styles from './index.module.scss'
@@ -15,9 +16,11 @@ export type InfoType = {
 }
 
 export const Info: FC<InfoType> = ({ info, author, className, onContributorsButtonClick }) => {
+  const [t] = useTranslation(['common'])
+
   const ContributorsButton = () => (
     <button onClick={onContributorsButtonClick} className={styles.contributorsButton}>
-      SEE CONTRIBUTORS
+      {t('see_contributors')}
     </button>
   )
 

@@ -1,8 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import { Trans, useTranslation } from 'next-i18next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, fetchContributors, lastContributor, Author, LastAuthor } from 'src/utils'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Embellished from './embellished.svg'
 import { useIsMobile } from '../../hooks'
 
@@ -10,69 +12,8 @@ import styles from './index.module.scss'
 
 import { CkbPageFloatIconGroup } from './icons'
 
-const title = <div>1 CKB = 1 Byte</div>
-const description = `CKByte (CKB) is the native cryptocurrency of Common Knowledge Base. It’s used for paying transaction fees and storing data, where holding one CKB permits users to store one byte of data on Nervos’ base layer.`
-const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
-
 const pagePath = '/src/pages/ckbpage/index.page.tsx'
 const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
-
-const functions = [
-  {
-    title: 'CKB Tokenomics',
-    tags: ['TOKEN', 'SUPPLY', 'MINERS', 'REWARD', 'DAO'],
-    content: (
-      <>
-        <p>
-          The CKB token launched with an initial supply of 33.6 billion coins, 8.4 billion of which were burned soon
-          thereafter. The base issuance is 33.6 billion coins per year and halves every four years until it hits zero,
-          whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure and
-          issuance schedule&nbsp;
-          <StyledLink
-            href="https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9"
-            colored
-            underline
-          >
-            here
-          </StyledLink>
-          .
-        </p>
-        <p>
-          Miners receive CKB rewards from two sources: the base and secondary issuance. The secondary issuance depends
-          on state occupation, where miners receive half of the secondary issuance reward if half of the circulating CKB
-          coins are used to store state. When the base issuance eventually ends, miners will keep earning &quot;state
-          rent&quot; income from the secondary issuance, regardless of transaction demand, which ensures they&apos;re
-          incentivized to secure the blockchain long-term.
-        </p>
-        <p>
-          Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in
-          the&nbsp;
-          <StyledLink href="https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c" colored underline>
-            Nervos DAO
-          </StyledLink>{' '}
-          smart contract.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: 'How do I get CKB?',
-    tags: ['EXCHANGES', 'WALLET'],
-    content: (
-      <>
-        You can buy and sell CKB using the cryptocurrency exchanges on&nbsp;
-        <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
-          this list
-        </StyledLink>
-        . However, consider transferring and holding your CKB using a non-custodial cryptocurrency&nbsp;
-        <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
-          wallet
-        </StyledLink>
-        , as holding it on centralized exchanges is risky.
-      </>
-    ),
-  },
-]
 
 interface PageProps {
   contributors: Array<Author>
@@ -80,6 +21,7 @@ interface PageProps {
 }
 
 const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
+  const { t } = useTranslation(['ckbpage', 'common'])
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -87,6 +29,67 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
       <CkbPageFloatIconGroup />
     </div>
   )
+
+  const title = <div>{t('title')}</div>
+  const description = t('slogan')
+  const info = t('contribution_welcome', { ns: 'common' })
+  // `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
+  const functions = [
+    {
+      title: t('tokenomics.title'),
+      tags: ['TOKEN', 'SUPPLY', 'MINERS', 'REWARD', 'DAO'],
+      content: (
+        <>
+          <p>
+            <Trans t={t} i18nKey="tokenomics.description.text1">
+              The CKB token launched with an initial supply of 33.6 billion coins, 8.4 billion of which were burned soon
+              thereafter. The base issuance is 33.6 billion coins per year and halves every four years until it hits
+              zero, whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure
+              and issuance schedule&nbsp;
+              <StyledLink
+                href="https://medium.com/@m.quinn/a-detailed-description-of-nervos-ckb-supply-and-issuance-1d55c4b101f9"
+                colored
+                underline
+              >
+                here
+              </StyledLink>
+              .
+            </Trans>
+          </p>
+
+          <p>{t('tokenomics.description.text2')}</p>
+
+          <p>
+            <Trans t={t} i18nKey="tokenomics.description.text3">
+              Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in
+              the&nbsp;
+              <StyledLink href="https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c" colored underline>
+                Nervos DAO
+              </StyledLink>
+              &nbsp; smart contract.
+            </Trans>
+          </p>
+        </>
+      ),
+    },
+    {
+      title: t('get_ckb.title'),
+      tags: ['EXCHANGES', 'WALLET'],
+      content: (
+        <>
+          {t('get_ckb.description.text1')}
+          <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
+            {t('get_ckb.description.this_list')}
+          </StyledLink>
+          {t('get_ckb.description.text2')}
+          <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
+            {t('get_ckb.description.wallet')}
+          </StyledLink>
+          {t('get_ckb.description.text3')}
+        </>
+      ),
+    },
+  ]
 
   return (
     <>
@@ -126,11 +129,13 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   const contributors = await fetchContributors()
   const author = await lastContributor(pagePath)
+  const lng = await serverSideTranslations(locale, ['common', 'ckbpage'])
   return {
     props: {
+      ...lng,
       author,
       contributors,
     },
