@@ -18,7 +18,14 @@
     "ckb-vm": "ckb-vm",
     "cell model": "cell model",
     "rust": "rust",
-    "solidity": "solidity"
+    "solidity": "solidity",
+    "bottom-up approach": "bottom-up approach",
+    "bazaar": "bazaar",
+    "new ideas": "新思路",
+    "grow": "增长",
+    "support": "支持",
+    "people of nervos": "people of nervos",
+    "guidance": "指南"
   },
   "contribution_welcome": "作为一个开源社区驱动的倡议，我们欢迎您的贡献，并鼓励您提出新的主题，添加内容，并提供您认为有用的示例。",
   "see_contributors": "查看贡献者",
