@@ -7,7 +7,7 @@
   },
   "requests_for_comment": {
     "title": "RFC。",
-    "description": "通过开放的、社区驱动的 RFC 流程影响 Nervos 网络的发展方向。了解更多信息，请点击 <1>这里<1>。"
+    "description": "通过开放的、社区驱动的 RFC 流程影响 Nervos 网络的发展方向。了解更多信息，请点击 <1>这里</1>。"
   },
   "get_involved": {
     "title": "参与其中。",

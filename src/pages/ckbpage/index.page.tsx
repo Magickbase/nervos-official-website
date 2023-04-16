@@ -77,15 +77,17 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
       tags: ['EXCHANGES', 'WALLET'],
       content: (
         <>
-          {t('get_ckb.description.text1')}
-          <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
-            {t('get_ckb.description.this_list')}
-          </StyledLink>
-          {t('get_ckb.description.text2')}
-          <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
-            {t('get_ckb.description.wallet')}
-          </StyledLink>
-          {t('get_ckb.description.text3')}
+          <Trans t={t} i18nKey="get_ckb.description">
+            You can buy and sell CKB using the cryptocurrency exchanges on
+            <StyledLink href="https://www.coingecko.com/en/coins/nervos-network#markets" colored underline>
+              this list
+            </StyledLink>
+            . However, consider transferring and holding your CKB using a non-custodial cryptocurrency
+            <StyledLink href="https://nervos-official-website.vercel.app/wallets" colored underline>
+              wallet
+            </StyledLink>
+            , as holding it on centralized exchanges is risky.
+          </Trans>
         </>
       ),
     },

@@ -11,12 +11,6 @@
   },
   "get_ckb": {
     "title": "How do I get CKB?",
-    "description": {
-      "text1": "You can buy and sell CKB using the cryptocurrency exchanges on",
-      "this_list": "this list",
-      "text2": ". However, consider transferring and holding your CKB using a non-custodial cryptocurrency ",
-      "wallet": "wallet",
-      "text3": ", as holding it on centralized exchanges is risky."
-    }
+    "description": "You can buy and sell CKB using the cryptocurrency exchanges on <1>this list</1>. However, consider transferring and holding your CKB using a non-custodial cryptocurrency <3>wallet</3>, as holding it on centralized exchanges is risky."
   }
 }

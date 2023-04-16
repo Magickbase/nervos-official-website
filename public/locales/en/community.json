@@ -7,7 +7,7 @@
   },
   "requests_for_comment": {
     "title": "Requests For Comment.",
-    "description": "Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn more about it <1>here<1>."
+    "description": "Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn more about it <1>here</1>."
   },
   "get_involved": {
     "title": "Get Involved.",
