@@ -6,7 +6,15 @@
     "reward": "奖励",
     "dao": "DAO",
     "exchanges": "交易所",
-    "wallet": "钱包"
+    "wallet": "钱包",
+    "grants": "资助",
+    "ecosystem": "生态系统",
+    "community": "社区",
+    "comments": "评论",
+    "contribution": "贡献",
+    "meetups": "聚会",
+    "social": "社交",
+    "chat": "聊天"
   },
   "contribution_welcome": "作为一个开源社区驱动的倡议，我们欢迎您的贡献，并鼓励您提出新的主题，添加内容，并提供您认为有用的示例。",
   "see_contributors": "查看贡献者",

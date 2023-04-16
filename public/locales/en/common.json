@@ -6,7 +6,15 @@
     "reward": "reward",
     "dao": "dao",
     "exchanges": "exchanges",
-    "wallet": "wallet"
+    "wallet": "wallet",
+    "grants": "grants",
+    "ecosystem": "ecosystem",
+    "community": "community",
+    "comments": "comments",
+    "contribution": "contribution",
+    "meetups": "meetups",
+    "social": "social",
+    "chat": "chat"
   },
   "contribution_welcome": "As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.",
   "see_contributors": "see contributors",
