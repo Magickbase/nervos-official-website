@@ -127,7 +127,7 @@ const Home: NextPage = () => {
 
           {!isMobile && isOnOperableArea && !hasDrawn && (
             <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
-              + RIGHT CLICK TO DRAW
+              + {t('right_click_to_draw')}
             </div>
           )}
         </>

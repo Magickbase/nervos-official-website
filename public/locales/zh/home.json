@@ -46,5 +46,6 @@
     "common_knowledge_stored": "存储的常识",
     "ckb_in_nervos_dao": "Nervos DAO 中的 CKB",
     "loading": "正在加载"
-  }
+  },
+  "right_click_to_draw": "右击绘制"
 }
