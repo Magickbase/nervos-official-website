@@ -1,0 +1,40 @@
+{
+  "title": "下载钱包",
+  "slogan": "选择您理想的钱包，开始探索和互动充满活力的 Nervos 生态系统。",
+  "neuron": {
+    "title": "Neuron Wallet",
+    "description": "Neuron 钱包是由 Nervos 基金会制作的 CKB 钱包，它保存您的密钥并可以代表您创建和广播交易。\nNeuron 钱包已经捆绑了 CKB Mainnet 节点，并配置为连接到 CKB Mainnet。安装后，打开 Neuron 钱包，捆绑的 Mainnet 节点将会运行。"
+  },
+  "ckbull": {
+    "title": "CKBull",
+    "description": "CKBull 是一款移动钱包，可以让您访问和管理 CKB、从 Force Bridge 桥接的代币、NFT，以及存入 Nervos DAO，所有这些都在一个地方管理。"
+  },
+  "joyid": {
+    "title": "JoyID",
+    "description": "JoyID 是一款无需密码、无需助记词、非托管且完全去中心化的钱包。"
+  },
+
+  "portal_wallet": {
+    "title": "Portal 钱包",
+    "description": "Portal 钱包不仅是一个基于 Web 的钱包，还是一个完整的 dApp，利用了 Nervos 的各种功能。用户无需下载新的软件或生成新的密钥/地址即可访问 Nervos CKB，因为他们可以使用现有的以太坊地址和钱包直接接收和发送 CKB。"
+  },
+  "safepal": {
+    "title": "SafePal",
+    "description": "SafePal 是一款成立于2018年的加密货币钱包，旨在为大众提供安全且用户友好的加密货币管理平台。SafePal 提供硬件钱包、软件钱包和浏览器扩展钱包产品线。所有产品均通过 SafePal 应用程序配对和管理，在此用户可以轻松地存储、交换和交易。目前，SafePal 在全球范围内为超过 600 万用户提供服务。"
+  },
+  "ledger": {
+    "title": "Ledger",
+    "description": "Ledger 是最受欢迎的硬件钱包，支持 Nervos CKB。您可以使用 Ledger Nano X 和 Ledger Nano S 硬件钱包存储、发送和接收 CKB。点击此处查看指南。"
+  },
+  "opera_wallet": {
+    "title": "Opera 钱包",
+    "description": "从今天开始，Opera 的数百万用户可以在 Android 上内置的加密钱包中发送和接收 Nervos CKB。"
+  },
+  "imtoken": {
+    "title": "imToken",
+    "description": "自2016年5月成立以来，imToken已经为全球150多个国家和地区的数百万用户提供了安全和可信的数字资产管理服务。2018年，该团队在Github上开源了imToken 2.0的核心代码。\nimToken提供了一个内置的CKB钱包，使用户可以安全地发送、接收和存储CKB。"
+  },
+  "official_website": "官方网站",
+  "tutorials": "教程",
+  "download": "下载"
+}

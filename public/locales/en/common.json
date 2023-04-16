@@ -39,7 +39,14 @@
     "performance": "performance",
     "eaglesong": "eaglesong",
     "asic": "asic",
-    "mining": "mining"
+    "mining": "mining",
+    "windows": "windows",
+    "macos": "macos",
+    "linux": "linux",
+    "android": "android",
+    "ios": "ios",
+    "web-based wallet": "web-based wallet",
+    "hardware wallet": "hardware wallet"
   },
   "contribution_welcome": "As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.",
   "see_contributors": "see contributors",
