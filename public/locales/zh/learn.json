@@ -1,0 +1,23 @@
+{
+  "title": "促进成长：学习从未晚",
+  "slogan": "Nervos 不同于其他任何区块链，它包括许多移动的元素并涵盖大量的创新。要了解它的独特之处以及如何运作，请查看以下资源。",
+  "education_hub": {
+    "title": "知识库 - 教育中心",
+    "description": {
+      "text1": "知识库教育中心是关于 Nervos 和区块链技术的详尽资源的全面存储库。",
+      "start_learning": "开始学习"
+    }
+  },
+  "rfc": {
+    "title": "RFC 仓库",
+    "description": {
+      "text1": "RFC 仓库包含与 Nervos 网络相关的社区提议、标准和文档。RFC流程鼓励用户和开发人员的积极参与，促进合作，产生有价值的反馈，最终定义生态系统的方向。",
+      "learn_more": "了解更多",
+      "contribute": "贡献"
+    }
+  },
+  "youtube": {
+    "title": "Youtube",
+    "description": "订阅官方Nervos Network YouTube <1>频道</1>，通过深入的讲座、问答、开发人员研讨会和团队成员访谈，了解 Nervos 生态系统和更广泛的区块链行业的最新动态。"
+  }
+}
