@@ -1,4 +1,5 @@
 import { ComponentProps, FC, Fragment, useMemo } from 'react'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { Popover, Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
@@ -57,6 +58,7 @@ export function useHeaderHeight(): number {
 }
 
 const MenuPopover: FC = () => {
+  const [t] = useTranslation('common', { keyPrefix: 'navigation' })
   return (
     <Popover className={styles.menuPopover}>
       {({ close }) => (
@@ -81,17 +83,17 @@ const MenuPopover: FC = () => {
                 <div className={styles.menu}>
                   <StyledLink href="/developers" className={styles.title}>
                     <CodeIcon />
-                    Developers
+                    {t('developers')}
                   </StyledLink>
                   <div className={styles.links}>
                     <StyledLink href="https://docs.nervos.org/" className={styles.link}>
-                      Docs
+                      {t('docs')}
                     </StyledLink>
                     <StyledLink href="https://github.com/nervosnetwork/" className={styles.link}>
-                      Github
+                      {t('github')}
                     </StyledLink>
                     <StyledLink href="https://explorer.nervos.org/" className={styles.link}>
-                      Explorer
+                      {t('explorer')}
                     </StyledLink>
                   </div>
                 </div>
@@ -99,21 +101,23 @@ const MenuPopover: FC = () => {
                 <div className={styles.menu}>
                   <StyledLink href="/community" className={styles.title}>
                     <CommunityIcon />
-                    Community
+                    {t('community')}
                   </StyledLink>
                   <div className={styles.links}>
                     <StyledLink href="https://dao.ckb.community/" className={styles.link}>
                       <div>
-                        Community
-                        <br />
-                        Fund DAO
+                        {t('community_fund_dao')
+                          .split('\n')
+                          .map(p => (
+                            <div key={p}>{p}</div>
+                          ))}
                       </div>
                     </StyledLink>
                     <StyledLink href="https://talk.nervos.org/" className={styles.link}>
-                      Forum
+                      {t('forum')}
                     </StyledLink>
                     <StyledLink href="https://github.com/nervosnetwork/rfcs" className={styles.link}>
-                      RFCs
+                      {t('rfcs')}
                     </StyledLink>
                   </div>
                 </div>
@@ -125,10 +129,10 @@ const MenuPopover: FC = () => {
                   </StyledLink>
                   <div className={styles.links}>
                     <StyledLink href="/mining" className={styles.link}>
-                      Mining
+                      {t('mining')}
                     </StyledLink>
                     <StyledLink href="/wallets" className={styles.link}>
-                      Wallets
+                      {t('wallets')}
                     </StyledLink>
                   </div>
                 </div>
@@ -136,21 +140,17 @@ const MenuPopover: FC = () => {
                 <div className={styles.menu}>
                   <StyledLink className={styles.title} href="/learn">
                     <LearnIcon />
-                    Learn
+                    {t('learn')}
                   </StyledLink>
                   <div className={styles.links}>
-                    {/* not ready yet */}
-                    {/* <div className={styles.link}> */}
-                    {/*   Knowledge Base  */}
-                    {/* </div> */}
                     <StyledLink href="/knowledge-base" className={styles.link}>
-                      Knowledge Base
+                      {t('knowledge_base')}
                     </StyledLink>
                     <StyledLink href="https://medium.com/nervosnetwork" className={styles.link}>
-                      Medium
+                      {t('medium')}
                     </StyledLink>
                     <StyledLink href="https://www.youtube.com/c/NervosNetwork" className={styles.link}>
-                      Youtube
+                      {t('youtube')}
                     </StyledLink>
                   </div>
                 </div>

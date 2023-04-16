@@ -51,5 +51,38 @@
   "contribution_welcome": "作为一个开源社区驱动的倡议，我们欢迎您的贡献，并鼓励您提出新的主题，添加内容，并提供您认为有用的示例。",
   "see_contributors": "查看贡献者",
   "edit_page": "编辑页面",
-  "on_this_page": "本页内容"
+  "on_this_page": "本页内容",
+  "navigation": {
+    "developers": "开发者",
+    "docs": "文档",
+    "explorer": "区块浏览器",
+    "github": "Github",
+    "community": "社区",
+    "community_fund_dao": "社区基金 DAO",
+    "forum": "论坛",
+    "rfcs": "RFCs",
+    "mining": "挖矿",
+    "wallets": "钱包",
+    "learn": "学习",
+    "knowledge_base": "知识库",
+    "medium": "Medium",
+    "youtube": "Youtube",
+    "discover": "发现",
+    "wiki": "Wiki",
+    "press_kit": "Press Kit",
+    "documentation": "文档",
+    "ecosystem": "生态系统",
+    "cryptape": "Cryptape",
+    "godwoken": "Godwoken",
+    "nervina_labs": "Nervina Labs",
+    "tunnel_vision_labs": "Tunnel Vision Labs",
+    "axon": "Axon",
+    ".bit": ".bit",
+    "magickbase": "Magickbase",
+    "nervos_talk_forum": "Nervos Talk Forum"
+  },
+  "mailchimp": {
+    "title": "成为更大的一部分。",
+    "slogan": "订阅 Nervos 月度通讯，保持领先。"
+  }
 }

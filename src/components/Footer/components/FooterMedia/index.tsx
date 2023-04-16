@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../../../../components/ConwayGameOfLife'
 import { SubscribeWrap } from './SubscribeWrap'
@@ -13,8 +14,9 @@ export type MediasProps = {
 }
 
 export const FooterMedia: React.FC = () => {
-  const title = 'Become a part of the journey.'
-  const description = 'Sign up to the Nervos monthly newsletter to stay ahead of the curve.'
+  const [t] = useTranslation('common', { keyPrefix: 'mailchimp' })
+  const title = t('title')
+  const description = t('slogan')
 
   // Todo: the url is temporarily filled with placeholders
   const medias: MediasProps[] = [
