@@ -33,7 +33,6 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
   const title = <div>{t('title')}</div>
   const description = t('slogan')
   const info = t('contribution_welcome', { ns: 'common' })
-  // `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
   const functions = [
     {
       title: t('tokenomics.title'),
