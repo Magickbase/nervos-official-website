@@ -360,7 +360,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
       containerClass={styles.slideGetStartedWrapper}
     >
       <div className={styles.slideGetStarted}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('title')}</div>
         <div className={styles.cards}>
           <Card
             title={t('axon.title')}
