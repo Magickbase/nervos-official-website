@@ -1,0 +1,42 @@
+{
+  "title": "CKB <1></1> PoW",
+  "slogan": "Nervos 于 2019 年 11 月发布，第一次 CKB 减半预计在 Epoch 8760（约为 2023 年 11 月）。",
+  "why-pow": {
+    "title": "为什么选择工作量证明",
+    "description": "CKB 采用经过实践验证的工作量证明共识算法，以确保在所有条件下都具有卓越的安全性和去中心化性。它是真正的去中心化、无需许可，并且具有抵御对手攻击的独特能力。"
+  },
+  "consensus": {
+    "title": "共识算法：NC-Max",
+    "description": {
+      "text1": "CKB 使用 NC-Max 共识机制，这是比特币的纳卡莫托共识（NC）的一个变体。在保留所有 N C优势的同时，NC-Max 通过采用两步确认过程来改进性能限制和对自私挖矿攻击的抵抗力。",
+      "text2": "NC-Max 提高了交易吞吐量，降低了确认时间。该网络可以处理大约每秒 100 到 200 笔交易，但也可以随着带宽和延迟的改善而增加其容量。",
+      "text3": "阅读 <1>NC-max论文</1> 和这篇 <3>文章</3>，观看这个 <5>视频</5> 以了解更多信息。"
+    }
+  },
+  "hash_function": {
+    "title": "哈希函数：Eaglesong",
+    "description": {
+      "text1": "CKB 使用一种新颖、简单的哈希函数，称为 Eaglesong，降低了 ASIC 制造的门槛。CKB 的设计是 ASIC 中立的，并且在主网发布后的四个月内发布了第一款 ASIC。",
+      "text2": "要了解更多信息，请阅读我们的 <1>挖矿指南</1>，以及专门介绍 <3>挖矿机</3> 和 <5>挖矿池</5> 的页面。"
+    }
+  },
+  "mining_resources": {
+    "title": "矿工资源",
+    "eagleson": {
+      "title": "Eaglesong",
+      "description": "Eaglesong 算法是 Nervos 的 CKB 工作量证明新哈希函数的全面介绍。"
+    },
+    "mining_pools": {
+      "title": "挖矿池",
+      "description": "MiningPoolStats.com 提供了 CKB 挖矿池列表和其他有用的统计信息。"
+    },
+    "mining_charts": {
+      "title": "挖矿图表",
+      "description": "CKB Explorer 提供挖矿难度、哈希率、叔块率、纪元时间、纪元长度、顶级矿工、矿工版本等挖矿相关的图表。"
+    },
+    "mining_rigs": {
+      "title": "挖矿设备",
+      "description": "了解流行的 CKB ASIC 挖矿设备及其每日收益。"
+    }
+  }
+}

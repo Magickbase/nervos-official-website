@@ -1,0 +1,42 @@
+{
+  "title": "CKB <1></1> PoW",
+  "slogan": "Nervos launched in Nov 2019 and the first CKB halving is expected at Epoch 8760 (around Nov 2023).",
+  "why-pow": {
+    "title": "Why Proof-of-Work",
+    "description": "CKB leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors."
+  },
+  "consensus": {
+    "title": "Consensus Algorithm: NC-Max",
+    "description": {
+      "text1": "CKB uses the NC-Max consensus mechanism, a variant of Bitcoin's Nakamoto Consensus (NC). While retaining all of NC's advantages, NC-Max improves the performance limit and resistance to selfish mining attacks by adopting a two-step confirmation process.",
+      "text2": "NC-Max increases transaction throughput and decreases confirmation times. The network can handle around 100 to 200 transactions per second but also can increase its capacity as bandwidth and latency improve over time.",
+      "text3": "Read the <1>NC-max paper</1> and this <3>article</3>, and watch this <5>video</5> to learn more."
+    }
+  },
+  "hash_function": {
+    "title": "Hash Function: Eaglesong",
+    "description": {
+      "text1": "CKB uses a novel, simple hash function called the Eaglesong that lowers the barrier for ASIC manufacturing. CKB's design is ASIC neutral, and the first ASIC was released four months after the mainnet launch.",
+      "text2": "To learn more, read our <1>mining guide</1> and the pages dedicated to <3>mining rigs</3> and <5>mining pools</5>."
+    }
+  },
+  "mining_resources": {
+    "title": "Miner Resources",
+    "eagleson": {
+      "title": "Eaglesong",
+      "description": "A comprehensive introduction of Eaglesong algorithm, Nervos’s new hash function for CKB proof-of-work."
+    },
+    "mining_pools": {
+      "title": "Mining Pools",
+      "description": "MiningPoolStats.com provides a list of CKB mining pools and other useful statistics."
+    },
+    "mining_charts": {
+      "title": "Mining Charts",
+      "description": "CKB Explorer provides mining charts, such as mining difficulty, hash rate, uncle rate, epoch time, epoch length, top miners, miner versions, etc."
+    },
+    "mining_rigs": {
+      "title": "Mining Rigs",
+      "description": "Find out popular ASIC mining rigs for CKB and their daily profits."
+    }
+  }
+}

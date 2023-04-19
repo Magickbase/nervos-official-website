@@ -127,7 +127,7 @@ const Home: NextPage = () => {
 
           {!isMobile && isOnOperableArea && !hasDrawn && (
             <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
-              + RIGHT CLICK TO DRAW
+              + {t('right_click_to_draw')}
             </div>
           )}
         </>
@@ -235,18 +235,16 @@ const SlideCKBSecurity: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBSecurity)
 
 const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
+  const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_flexibility' })
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBFlexibility}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Unmatched Flexibility and Interopera&shy;bility
-        </div>
-        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly
-          interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer
-          2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized
-          applications boasting unmatched user experience.
-        </div>
+        {/* html here is for the hyphen */}
+        <div
+          className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}
+          dangerouslySetInnerHTML={{ __html: t('slogan') }}
+        />
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('description')}</div>
       </div>
     </ScreenSlide>
   )
@@ -254,15 +252,12 @@ const SlideCKBFlexibility: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBFlexibility)
 
 const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
+  const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_subtainability' })
   return (
     <ScreenSlide {...props} className={clsx(presets.themeDark, props.className)}>
       <div className={styles.slideCKBSustainability}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Inventive Tokenomics</div>
-        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders.
-          It ensures the miners are paid for providing security in perpetuity, while token holders are protected from
-          inflation.
-        </div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('slogan')}</div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('description')}</div>
       </div>
     </ScreenSlide>
   )
@@ -270,16 +265,12 @@ const SlideCKBSustainability: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBSustainability)
 
 const SlideCKBModular: FC<ScreenSlideProps> = props => {
+  const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_modular' })
   return (
     <ScreenSlide {...props} className={clsx(presets.themeLight, props.className)}>
       <div className={styles.slideCKBModular}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Modular Architecture</div>
-        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
-          Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of
-          transactions per second through many diverse Layer 2 networks without sacrificing security or
-          decentralization. CKB offers pristine security, while the Layer 2 networks built on top ensure unbounded
-          scalability.
-        </div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('slogan')}</div>
+        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('description')}</div>
       </div>
     </ScreenSlide>
   )
@@ -287,6 +278,7 @@ const SlideCKBModular: FC<ScreenSlideProps> = props => {
 allowCustomDescendantOfSwiper(SlideCKBModular)
 
 const SlideGetStarted: FC<ScreenSlideProps> = props => {
+  const { t } = useTranslation('home', { keyPrefix: 'get_started' })
   const isMobile = useIsMobile()
 
   if (isMobile) {
@@ -297,7 +289,7 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
     return (
       <ScreenSlide autoHeight {...props} className={clsx(presets.themeDark, props.className)}>
         <div className={styles.slideGetStarted}>
-          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
+          <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('title')}</div>
           <div className={styles.cards}>
             <Swiper
               direction="vertical"
@@ -315,43 +307,42 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
             >
               <SwiperSlide>
                 <Card
-                  title="Launch your own Nervos sidechain with Axon."
+                  title={t('axon.title')}
                   actions={
                     <a href="https://axonweb3.io/" className={styles.link} target="_blank" rel="noreferrer">
-                      AXON <ObliqueArrowIcon />
+                      {t('axon.name')} <ObliqueArrowIcon />
                     </a>
                   }
                 >
-                  Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with
-                  ease.
+                  {t('axon.description')}
                 </Card>
               </SwiperSlide>
 
               <SwiperSlide>
                 <Card
-                  title="Build on hardware, not software."
+                  title={t('developers.title')}
                   actions={
                     <Link href="/developers" className={styles.link}>
-                      DEVELOPERS <ArrowIcon />
+                      {t('developers.name')} <ArrowIcon />
                     </Link>
                   }
                 >
-                  CKB&apos;s low-level virtual machine allows you to build without limits.
+                  {t('developers.description')}
                 </Card>
               </SwiperSlide>
 
               <SwiperSlide>
                 <Card
-                  title="Build universal decentralized applications."
+                  title={t('learn_more.title')}
                   actions={
                     // TODO: need external link
                     // https://github.com/Magickbase/nervos-official-website/issues/4
                     <a href="/" className={styles.link} target="_blank" rel="noreferrer">
-                      LEARN MORE <ObliqueArrowIcon />
+                      {t('learn_more.name')} <ObliqueArrowIcon />
                     </a>
                   }
                 >
-                  Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains.
+                  {t('learn_more.description')}
                 </Card>
               </SwiperSlide>
             </Swiper>
@@ -369,41 +360,41 @@ const SlideGetStarted: FC<ScreenSlideProps> = props => {
       containerClass={styles.slideGetStartedWrapper}
     >
       <div className={styles.slideGetStarted}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>Get Started</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('title')}</div>
         <div className={styles.cards}>
           <Card
-            title="Launch your own Nervos sidechain with Axon."
+            title={t('axon.title')}
             actions={
               <a href="https://axonweb3.io/" className={styles.link} target="_blank" rel="noreferrer">
-                AXON <ObliqueArrowIcon />
+                {t('axon.name')} <ObliqueArrowIcon />
               </a>
             }
           >
-            Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with ease.
+            {t('axon.description')}
           </Card>
 
           <Card
-            title="Build on hardware, not software."
+            title={t('developers.title')}
             actions={
               <Link href="/developers" className={styles.link}>
-                DEVELOPERS <ArrowIcon />
+                {t('developers.name')} <ArrowIcon />
               </Link>
             }
           >
-            CKB&apos;s low-level virtual machine allows you to build without limits.
+            {t('developers.description')}
           </Card>
 
           <Card
-            title="Build universal decentralized applications."
+            title={t('learn_more.title')}
             actions={
               // TODO: need external link
               // https://github.com/Magickbase/nervos-official-website/issues/4
               <a href="/" className={styles.link} target="_blank" rel="noreferrer">
-                LEARN MORE <ObliqueArrowIcon />
+                {t('learn_more.name')} <ObliqueArrowIcon />
               </a>
             }
           >
-            Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains.
+            {t('learn_more.description')}
           </Card>
         </div>
       </div>

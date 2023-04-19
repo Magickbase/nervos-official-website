@@ -1,0 +1,32 @@
+{
+  "title": "Build on hardware, not software",
+  "slogan": "Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.",
+
+  "development_environment": {
+    "title": "A development environment like no other.",
+    "description": "The highly abstract nature of the CKB-VM empowers developers to unleash their creativity and build unique decentralized applications without constraints. As a development environment, Common Knowledge Base is a blank canvas; it has zero precompiles baked in and supports all programming languages, cryptographic primitives, algorithms, and data structures.\nCommon Knowledge Bases' unique accounting model, called the Cell model, combines the programmability of the account model with the scalability and flexibility of the UTXO model. It is a fully generalized or abstract accounting model that provides unlimited freedoms to system and application contract developers. Protocol-level account abstraction comes by default, meaning decentralized applications on the base layer can be accessed with wallets from all other blockchain ecosystems.\n Moreover, Common Knowledge Base can understand and speak the languages of all existing and future heterogeneous blockchains, allowing developers to build fully interoperable cross-chain applications. On the other hand, the CKB-VM can run other virtual machines, including EVM and Web-Assembly-based ones, which ensures more execution environments for developers to build in."
+  },
+  "become_bigger": {
+    "title": "Become a part of something bigger.",
+    "description": "Beyond the advantages of building on the industry's most flexible and interoperable Layer 1, Common Knowledge Base developers can expect full support from the Nervos Foundation and its team of blockchain experts.\nExtensive resources, including detailed technical documentation, developer guides, and tutorials, are readily available for developers looking to start their Nervos journey. Nervos also organizes regular workshops, webinars, and hackathons, allowing prospective developers to hone their blockchain knowledge and stay at the cutting edge of the technology. The Foundation's team of experts is always on hand to offer direct assistance concerning any technical challenges application developers face.\nMost importantly, the vibrant community of like-minded developers and community members fosters collaboration, knowledge sharing, and problem-solving through dedicated forums, chat channels, and in-person meetups."
+  },
+  "developer_resources": {
+    "title": "Developer Resources.",
+    "docs": {
+      "title": "CKB Docs",
+      "description": "Foundational technical information about the Common Knowledge Base."
+    },
+    "godwoken": {
+      "title": "Building on L2 Godwoken",
+      "description": "Technical documentation for Godwoken, the EVM-equivalent Layer 2 network built on Common Knowledge Base."
+    },
+    "build_club": {
+      "title": "Build Club",
+      "description": "The Build Club provides support for teams and individuals looking to launch new projects on Nervos."
+    },
+    "forum": {
+      "title": "Nervos Talk Forum",
+      "description": "For the community to participate and discuss developments on Nervos."
+    }
+  }
+}

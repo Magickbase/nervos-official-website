@@ -1,0 +1,23 @@
+{
+  "title": "Spur your growth: It’s never too late to start learning",
+  "slogan": "Nervos is unlike any other blockchain. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.",
+  "education_hub": {
+    "title": "Common Knowledge Base - Education Hub",
+    "description": {
+      "text1": "The Common Knowledge Base Education Hub is a comprehensive repository of in-depth resources on Nervos and blockchain technology in general.",
+      "start_learning": "Start learning"
+    }
+  },
+  "rfc": {
+    "title": "RFC Repository",
+    "description": {
+      "text1": "The Request for Comments (RFC) repository contains community proposals, standards, and documentation relating to the Nervos network. The RFC process encourages active participation from users and developers, fostering collaboration and generating valuable feedback that ultimately defines the ecosystem’s direction.",
+      "learn_more": "Learn More",
+      "contribute": "Contribute"
+    }
+  },
+  "youtube": {
+    "title": "Youtube",
+    "description": "Subscribe to the official Nervos Network YouTube <1>channel</1> to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures, AMAs, developer workshops, and team member interviews."
+  }
+}

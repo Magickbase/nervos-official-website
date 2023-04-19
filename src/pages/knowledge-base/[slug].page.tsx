@@ -198,7 +198,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
 
   const post = getBlogBySlug(slug)
 
-  const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
+  const lng = await serverSideTranslations(locale ?? 'en', ['common', 'knowledge-base'])
 
   const blogs = getAllBlogs('all', ['title', 'slug', 'category'])
   const categories = getCategoriesFromBlogs(blogs)

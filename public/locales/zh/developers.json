@@ -1,0 +1,33 @@
+{
+  "title": "基于硬件构建，而非软件",
+  "slogan": "Nervos 的极其通用或抽象的基于 RISC-V 的虚拟机使 Common Knowledge Base 成为区块链行业中最灵活的第 1 层。 CKB-VM 没有预编译，支持所有加密原语，因此开发人员可以构建在其他地方不可能的强大去中心化应用程序。",
+
+  "development_environment": {
+    "title": "与众不同的开发环境。",
+    "description": "CKB-VM 的高度抽象性赋予开发人员释放创造力并构建独特的无约束的去中心化应用程序的能力。作为开发环境，Common Knowledge Base 是一张白纸; 它没有预编译，支持所有编程语言、加密原语、算法和数据结构。\nCommon Knowledge Base 的独特会计模型称为 Cell 模型，将账户模型的可编程性与 UTXO 模型的可扩展性和灵活性相结合。它是一个完全通用或抽象的会计模型，为系统和应用程序合约开发人员提供无限自由。协议级别的账户抽象默认支持，这意味着可以使用来自所有其他区块链生态系统的钱包访问基础层上的去中心化应用程序。\n 此外，Common Knowledge Base 可以理解并使用所有现有和未来异构区块链的语言，允许开发人员构建完全互操作的跨链应用程序。另一方面，CKB-VM 可以运行其他虚拟机，包括基于 EVM 和 WebAssembly 的虚拟机，这确保了开发人员在更多的执行环境中进行构建。"
+  },
+  "become_bigger": {
+    "title": "成为更大事物的一部分。",
+    "description": "除了在业界最灵活、最具互操作性的第1层上构建的优势之外，Common Knowledge Base 开发者还可以期待来自 Nervos 基金会及其区块链专家团队的全力支持。\n丰富的资源，包括详细的技术文档、开发者指南和教程，都为希望建立 Nervos 开发之旅的开发者准备好了。Nervos 还定期组织研讨会、网络研讨会和黑客马拉松，以便潜在的开发者磨练他们的区块链知识，并始终位于技术的前沿。基金会的专家团队始终随时为应用开发者在解决技术挑战方面提供直接协助。\n最重要的是，充满活力的志同道合的开发者和社区成员通过专门的论坛、聊天频道和线下聚会，促进了合作、知识共享和问题解决。"
+  },
+
+  "developer_resources": {
+    "title": "开发者资源。",
+    "docs": {
+      "title": "CKB 文档",
+      "description": "关于 Common Knowledge Base 的基础技术信息。"
+    },
+    "godwoken": {
+      "title": "在 L2 Godwoken 上构建",
+      "description": "Godwoken 的技术文档，它是基于 Common Knowledge Base 构建的 EVM 等效的第二层网络。"
+    },
+    "build_club": {
+      "title": "创造俱乐部",
+      "description": "创造俱乐部为团队和个人提供支持，帮助他们在 Nervos 上启动新项目。"
+    },
+    "forum": {
+      "title": "Nervos Talk 论坛",
+      "description": "供社区参与和讨论 Nervos 的发展。"
+    }
+  }
+}

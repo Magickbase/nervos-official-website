@@ -1,0 +1,40 @@
+{
+  "title": "Download a wallet",
+  "slogan": "Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.",
+  "neuron": {
+    "title": "Neuron Wallet",
+    "description": "Neuron Wallet is a CKB wallet produced by the Nervos Foundation, it holds your keys and can create and broadcast transactions on your behalf.\nNeuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run."
+  },
+  "ckbull": {
+    "title": "CKBull",
+    "description": "CKBull is a mobile wallet that allows you to access and manage your CKB, tokens bridged from Force Bridge, NFTs, as well as deposits into the Nervos DAO, all in one place."
+  },
+  "joyid": {
+    "title": "JoyID",
+    "description": "JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet."
+  },
+
+  "portal_wallet": {
+    "title": "Portal Wallet",
+    "description": "Portal Wallet is not only a web-based wallet but also a complete dApp that leverages various features of Nervos. Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use their existing Ethereum addresses and wallets to receive and send CKB directly."
+  },
+  "safepal": {
+    "title": "SafePal",
+    "description": "Founded in 2018, SafePal is a cryptocurrency wallet that aims to provide a secure and user-friendly crypto management platform for the masses. SafePal provides hardware wallet, software wallet, and browser extension wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap, and trade. It is now serving more than 6 million users across the globe."
+  },
+  "ledger": {
+    "title": "Ledger",
+    "description": "Ledger is the most popular hardware wallet and has support for Nervos CKB. You can store, send and receive CKB using your Ledger Nano X and Ledger Nano S hardware wallets. Click here for the guide."
+  },
+  "opera_wallet": {
+    "title": "Opera Wallet",
+    "description": "Starting today, Opera’s millions of users can send and receive Nervos CKB within the crypto wallet built into the Opera browser on Android."
+  },
+  "imtoken": {
+    "title": "imToken",
+    "description": "Since its founding in May 2016, imToken has provided secure and trusted digital asset management services to millions of users in more than 150 countries and regions worldwide. In 2018, the team open-sourced the core code of imToken 2.0 on Github.\n imToken provides a built-in CKB wallet that enables users to safely send, receive and store CKB."
+  },
+  "official_website": "Official website",
+  "tutorials": "Tutorials",
+  "download": "Download"
+}

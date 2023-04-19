@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { StyledTOC } from './StyledTOC'
@@ -15,6 +16,7 @@ export type FunctionsType = {
 }
 
 export const Sidebar: FC<FunctionsType> = ({ className, editLink }) => {
+  const [t] = useTranslation(['common'])
   return (
     <div className={clsx(styles.sidebarContainer, className)}>
       <div className={clsx(styles.sidebar, className)}>
@@ -25,18 +27,18 @@ export const Sidebar: FC<FunctionsType> = ({ className, editLink }) => {
           rel="noopener noreferrer"
         >
           <GithubIcon />
-          EDIT PAGE
+          {t('edit_page')}
           <ObliqueArrow />
         </Link>
 
         <div className={clsx(styles.onThisPage)}>
-          <div>On this Page:</div>
+          <div>{t('on_this_page')}:</div>
           <StyledTOC />
         </div>
 
         <div className={clsx(styles.onThisPageForMobile)}>
           <span>
-            On this page
+            {t('on_this_page')}
             <DownArrow />
           </span>
         </div>

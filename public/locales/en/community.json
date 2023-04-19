@@ -1,0 +1,39 @@
+{
+  "title": "Nervos community hub",
+  "slogan": "Nervos is a community-driven project that abides by the cypherpunk values of openness and decentralization across all verticals. If you're passionate about crypto and continually seeking to improve the status quo, Nervos is the perfect place to be.",
+  "community_fund_dao": {
+    "title": "Community Fund DAO.",
+    "description": "Apply for grants through the Community Fund DAO, Nervos’ ecosystem fund that supports community members organizing events, producing content, and building on Common Knowledge Base."
+  },
+  "requests_for_comment": {
+    "title": "Requests For Comment.",
+    "description": "Influence the development direction of the Nervos network through the open, community-driven RFC process. Learn more about it <1>here</1>."
+  },
+  "get_involved": {
+    "title": "Get Involved.",
+    "nervos_talk": {
+      "title": "Nervos Talk",
+      "description": "Participate and discuss technical developments on Nervos."
+    },
+    "twitter": {
+      "title": "Twitter",
+      "description": "Stay up to date with the latest news and updates in our ecosystem."
+    },
+    "discord": {
+      "title": "Discord",
+      "description": "Connect with Nervos core developers and contributors."
+    },
+    "telegram": {
+      "title": "Telegram",
+      "description": "Become a part of our vibrant community of meme connoisseurs."
+    },
+    "reddit": {
+      "title": "Reddit",
+      "description": "Participate in regular AMAs with Nervos project developers."
+    },
+    "youtube": {
+      "title": "Youtube",
+      "description": "Listen to podcasts and interviews with Nervos core and project developers."
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import { Trans, useTranslation } from 'next-i18next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
 import { REPO, Author, fetchContributors, lastContributor, LastAuthor } from 'src/utils'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 import { useIsMobile } from '../../hooks'
@@ -11,82 +13,8 @@ import styles from './index.module.scss'
 
 import { LearnFloatIconGroup, KnowledgeBaseIcon } from './icons'
 
-const title = <div style={{ maxWidth: 528 }}>Spur your growth: It’s never too late to start learning</div>
-const description = `Nervos is unlike any other blockchain. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.`
-const info = `As an open-source community-driven initiative, we welcome your input and encourage you to suggest new topics, add content, and provide examples where you believe it could be helpful.`
 const pagePath = '/src/pages/learn/index.page.tsx'
 const pageLink = `https://github.com/${REPO}/blob/develop${pagePath}`
-
-const functions = [
-  {
-    title: 'Common Knowledge Base - Education Hub',
-    tags: ['LEARN', 'BLOCKCHAIN', 'EDUCATION', 'CRYPTO'],
-    content: (
-      <>
-        <KnowledgeBaseIcon />
-        <p>
-          The Common Knowledge Base Education Hub is a comprehensive repository of in-depth resources on Nervos and
-          blockchain technology in general.
-        </p>
-        <StyledLink href="/knowledge-base" colored underline>
-          Start learning
-        </StyledLink>
-      </>
-    ),
-  },
-  {
-    title: 'RFC Repository',
-    tags: ['CONTRIBUTION', 'COMMUNITY'],
-    content: (
-      <>
-        <p>
-          The Request for Comments (RFC) repository contains community proposals, standards, and documentation relating
-          to the Nervos network. The RFC process encourages active participation from users and developers, fostering
-          collaboration and generating valuable feedback that ultimately defines the ecosystem’s direction.
-        </p>
-        <StyledLink href="https://github.com/nervosnetwork/rfcs" colored underline>
-          Learn More
-        </StyledLink>
-        &nbsp;|&nbsp;
-        <StyledLink href="https://github.com/nervosnetwork/rfcs/pulls" colored underline>
-          Contribute
-        </StyledLink>
-      </>
-    ),
-  },
-  {
-    title: 'Youtube',
-    tags: ['VIDEOS', 'HOW-TOs', 'EXPLAINERS'],
-    content: (
-      <>
-        <p>
-          Subscribe to the official Nervos Network YouTube&nbsp;
-          <StyledLink href="https://www.youtube.com/c/NervosNetwork" colored>
-            channel
-          </StyledLink>
-          &nbsp; to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures,
-          AMAs, developer workshops, and team member interviews.
-        </p>
-      </>
-    ),
-  },
-  /* removed temporarily */
-  // {
-  //   title: 'Blog.',
-  //   tags: ['BLOG', 'UPDATES', 'ANNOUNCEMENTS', 'RELEASES', 'TUTORIALS'],
-  //   content: (
-  //     <>
-  //       <p>
-  //         The Nervos blog is the go-to source for updates, partnership news, announcements, and long-form articles
-  //         illuminating the mission and vision of the Nervos network.
-  //       </p>
-  //       <StyledLink href="/blogs" colored>
-  //         Blog page
-  //       </StyledLink>
-  //     </>
-  //   ),
-  // },
-]
 
 interface PageProps {
   contributors: Array<Author>
@@ -94,6 +22,7 @@ interface PageProps {
 }
 
 const Learn: NextPage<PageProps> = ({ contributors, author }) => {
+  const [t] = useTranslation(['learn', 'common'])
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -101,6 +30,58 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
       <LearnFloatIconGroup />
     </div>
   )
+  const title = <div style={{ maxWidth: 528 }}>{t('title')}</div>
+  const description = t('slogan')
+  const info = t('contribution_welcome', { ns: 'common' })
+  const functions = [
+    {
+      title: t('education_hub.title'),
+      tags: ['LEARN', 'BLOCKCHAIN', 'EDUCATION', 'CRYPTO'],
+      content: (
+        <>
+          <KnowledgeBaseIcon />
+          <p>{t('education_hub.description.text1')}</p>
+          <StyledLink href="/knowledge-base" colored underline>
+            {t('education_hub.description.start_learning')}
+          </StyledLink>
+        </>
+      ),
+    },
+    {
+      title: t('rfc.title'),
+      tags: ['CONTRIBUTION', 'COMMUNITY'],
+      content: (
+        <>
+          <p>{t('rfc.description.text1')}</p>
+          <StyledLink href="https://github.com/nervosnetwork/rfcs" colored underline>
+            {t('rfc.description.learn_more')}
+          </StyledLink>
+          &nbsp;|&nbsp;
+          <StyledLink href="https://github.com/nervosnetwork/rfcs/pulls" colored underline>
+            {t('rfc.description.contribute')}
+          </StyledLink>
+        </>
+      ),
+    },
+    {
+      title: t('youtube.title'),
+      tags: ['VIDEOS', 'HOW-TOs', 'EXPLAINERS'],
+      content: (
+        <>
+          <p>
+            <Trans t={t} i18nKey="youtube.description">
+              Subscribe to the official Nervos Network YouTube&nbsp;
+              <StyledLink href="https://www.youtube.com/c/NervosNetwork" colored underline>
+                channel
+              </StyledLink>
+              &nbsp; to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures,
+              AMAs, developer workshops, and team member interviews.
+            </Trans>
+          </p>
+        </>
+      ),
+    },
+  ]
 
   return (
     <>
@@ -132,11 +113,13 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
   const contributors = await fetchContributors()
   const author = await lastContributor(pagePath)
+  const lng = await serverSideTranslations(locale, ['common', 'learn'])
   return {
     props: {
+      ...lng,
       author,
       contributors,
     },

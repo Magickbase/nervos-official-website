@@ -1,6 +1,51 @@
 {
   "scroll_down": "向下滚动",
+  "slide_ckb_intro": {
+    "text1": "共同知识库",
+    "text2": "模块化构建的第一层",
+    "text3": "CKB 基于 RISC-V 架构并由工作证明机制保障，是区块链行业中最灵活、最互操作的第一层。它是 Nervos 的终极基础设施，Nervos 是一种模块化区块链网络，从底层开始构建，以确保出色的安全性、去中心化、灵活性和互操作性。"
+  },
+  "slide_ckb_security": {
+    "text1_comment": "移动端需要自动换行",
+    "text1": "卓越的安全性和去中心化",
+    "text2": "CKB 利用经过验证的工作证明共识算法，在所有情况下确保卓越的安全性和去中心化。它是真正去中心化、开放的，对抗敌对行为的能力也是独特的。"
+  },
+  "slide_ckb_flexibility": {
+    "slogan": "无与伦比的灵活性和互操作性",
+    "description": "CKB 是市场上唯一支持所有加密原语的区块链。它可以与所有异构区块链无缝互操作，并锚定所有类型的侧链、状态通道和第二层网络。此外，它默认支持协议级账户抽象，实现了无与伦比的用户体验，使去中心化应用具备更大的可扩展性。"
+  },
+  "slide_ckb_subtainability": {
+    "slogan": "创新的代币经济模型",
+    "description": "CKB 利用了一种新型代币经济模型，使得所有 Nervos 参与者和利益相关者的利益得到了保护。它确保矿工永远为提供安全性而获得报酬，而代币持有者则免受通胀的影响。"
+  },
+  "slide_ckb_modular": {
+    "slogan": "模块化架构",
+    "description": "Nervos 从一开始就被设计为一种模块化区块链网络，这意味着它可以通过许多不同的第二层网络扩展到每秒数百万次交易，同时不会牺牲安全性或去中心化。CKB 提供了出色的安全性，而在其之上构建的第二层网络确保了无限的可扩展性。"
+  },
+  "get_started": {
+    "title": "开始",
+    "axon": {
+      "name": "AXON",
+      "title": "使用 Axon 启动您自己的 Nervos 侧链。",
+      "description": "需要高吞吐量吗？使用 Axon 构建自己的自定义 EVM 兼容侧链，并轻松部署在 Nervos 上。"
+    },
+    "developers": {
+      "name": "开发者",
+      "title": "建立在硬件上，而不是软件上。",
+      "description": "CKB 的低级虚拟机使您可以无限制地构建。"
+    },
+    "learn_more": {
+      "name": "了解更多",
+      "title": "构建通用的去中心化应用程序。",
+      "description": "体验协议级账户抽象并构建可在不同区块链之间无缝运行的 dApp。"
+    }
+  },
   "slide_footer": {
-    "loading": "加载中"
-  }
+    "live_metrics": "实时指标",
+    "live_cells": "实时单元格",
+    "common_knowledge_stored": "存储的常识",
+    "ckb_in_nervos_dao": "Nervos DAO 中的 CKB",
+    "loading": "正在加载"
+  },
+  "right_click_to_draw": "右击绘制"
 }

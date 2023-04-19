@@ -225,7 +225,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(posts)
   const pageCount = Math.ceil(posts.length / PAGE_SIZE)
-  const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
+  const lng = await serverSideTranslations(locale ?? 'en', ['common', 'knowledge-base'])
 
   const props: Props = {
     ...lng,
