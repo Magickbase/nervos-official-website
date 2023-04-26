@@ -38,7 +38,7 @@ export const Header: FC<HeaderProps> = props => {
           // TODO: This is because there is currently no full i18n translation support,
           // so switching to other languages is temporarily disabled.
           { name: '한국어', englishName: 'Korean', localeName: 'ko', disabled: true },
-          null,
+          { name: 'Español', englishName: 'Spanish', localeName: 'es', disabled: true },
         ]}
       />
     </div>
