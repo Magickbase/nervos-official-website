@@ -214,7 +214,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const pageNo = Number(query.page ?? '1')
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
 
-  const posts = getAllBlogs(sortBy)
+  const posts = getAllBlogs(sortBy, locale ?? 'en')
   for (const post of posts) {
     if (post.excerpt != null) continue
     const contentHTML = await markdownToHtml(post.content)
