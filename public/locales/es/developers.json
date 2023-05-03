@@ -1,32 +1,32 @@
 {
-  "title": "Build on hardware, not software",
-  "slogan": "Nervos' extremely generalized or abstract RISC-V-based virtual machine makes Common Knowledge Base the most flexible Layer 1 in the blockchain industry. CKB-VM has zero precompiles baked in and supports all cryptographic primitives, meaning developers can build powerful decentralized applications that aren't possible elsewhere.",
+  "title": "Construido sobre hardware, no software",
+  "slogan": "La máquina virtual de Nervos, extremadamente generalizada o abstracta basada en RISC-V, hace que Common Knowledge Base sea la Capa 1 más flexible en la industria blockchain. CKB-VM no tiene precompilaciones integradas y es compatible con todas las primitivas criptográficas, lo que significa que los desarrolladores pueden construir poderosas aplicaciones descentralizadas que no son posibles en otros lugares.",
 
   "development_environment": {
-    "title": "A development environment like no other.",
-    "description": "The highly abstract nature of the CKB-VM empowers developers to unleash their creativity and build unique decentralized applications without constraints. As a development environment, Common Knowledge Base is a blank canvas; it has zero precompiles baked in and supports all programming languages, cryptographic primitives, algorithms, and data structures.\nCommon Knowledge Bases' unique accounting model, called the Cell model, combines the programmability of the account model with the scalability and flexibility of the UTXO model. It is a fully generalized or abstract accounting model that provides unlimited freedoms to system and application contract developers. Protocol-level account abstraction comes by default, meaning decentralized applications on the base layer can be accessed with wallets from all other blockchain ecosystems.\n Moreover, Common Knowledge Base can understand and speak the languages of all existing and future heterogeneous blockchains, allowing developers to build fully interoperable cross-chain applications. On the other hand, the CKB-VM can run other virtual machines, including EVM and Web-Assembly-based ones, which ensures more execution environments for developers to build in."
+    "title": "Un entorno de desarrollo como ningún otro.",
+    "description": "La naturaleza altamente abstracta de CKB-VM permite a los desarrolladores dar rienda suelta a su creatividad y crear aplicaciones descentralizadas únicas sin restricciones. Como entorno de desarrollo, Common Knowledge Base es un lienzo en blanco; no tiene precompilaciones integradas y es compatible con todos los lenguajes de programación, primitivas criptográficas, algoritmos y estructuras de datos.\nEl modelo de contabilidad único de Common Knowledge Base, denominado modelo Cell, combina la programabilidad del modelo de cuenta con la escalabilidad y flexibilidad del modelo UTXO. Es un modelo de contabilidad totalmente generalizado o abstracto que brinda libertades ilimitadas a los desarrolladores de contratos de aplicaciones y sistemas. La abstracción de cuentas a nivel de protocolo viene de forma predeterminada, lo que significa que se puede acceder a las aplicaciones descentralizadas en la capa base con billeteras de todos los demás ecosistemas blockchain.\nAdemás, Common Knowledge Base puede comprender y hablan los idiomas de todas las cadenas de bloques heterogéneas existentes y futuras, lo que permite a los desarrolladores crear aplicaciones de cadena cruzada totalmente interoperables. Por otro lado, CKB-VM puede ejecutar otras máquinas virtuales, incluidas las basadas en EVM y Web-Assembly, lo que garantiza más entornos de ejecución para los desarrolladores."
   },
   "become_bigger": {
-    "title": "Become a part of something bigger.",
-    "description": "Beyond the advantages of building on the industry's most flexible and interoperable Layer 1, Common Knowledge Base developers can expect full support from the Nervos Foundation and its team of blockchain experts.\nExtensive resources, including detailed technical documentation, developer guides, and tutorials, are readily available for developers looking to start their Nervos journey. Nervos also organizes regular workshops, webinars, and hackathons, allowing prospective developers to hone their blockchain knowledge and stay at the cutting edge of the technology. The Foundation's team of experts is always on hand to offer direct assistance concerning any technical challenges application developers face.\nMost importantly, the vibrant community of like-minded developers and community members fosters collaboration, knowledge sharing, and problem-solving through dedicated forums, chat channels, and in-person meetups."
+    "title": "Conviértete en parte de algo más grande.",
+    "description": "Más allá de las ventajas de construir sobre la Capa 1 más flexible e interoperable de la industria, los desarrolladores de Common Knowledge Base pueden esperar un soporte completo de la Fundación Nervos y su equipo de expertos en blockchain.\nRecursos extensos, que incluyen documentación técnica detallada, guías para desarrolladores y tutoriales, están disponibles para los desarrolladores que buscan comenzar su viaje en Nervos. Nervos también organiza talleres regulares, seminarios web y hackatones, lo que permite a los posibles desarrolladores perfeccionar su conocimiento de blockchain y mantenerse a la vanguardia de la tecnología. El equipo de expertos de la Fundación está siempre disponible para ofrecer asistencia directa con respecto a cualquier desafío técnico que enfrenten los desarrolladores de aplicaciones.\nLo más importante es que la vibrante comunidad de desarrolladores y miembros de la comunidad con ideas afines fomenta la colaboración, el intercambio de conocimientos y la resolución de problemas a través de foros dedicados, canales de chat y reuniones en persona."
   },
   "developer_resources": {
-    "title": "Developer Resources.",
+    "title": "Recursos para desarrolladores.",
     "docs": {
-      "title": "CKB Docs",
-      "description": "Foundational technical information about the Common Knowledge Base."
+      "title": "Documentación de CKB",
+      "description": "Información técnica fundamental sobre Common Knowledge Base."
     },
     "godwoken": {
-      "title": "Building on L2 Godwoken",
-      "description": "Technical documentation for Godwoken, the EVM-equivalent Layer 2 network built on Common Knowledge Base."
+      "title": "Construyendo en L2 Godwoken",
+      "description": "Documentación técnica para Godwoken, la red de Capa 2 equivalente a EVM construida sobre Common Knowledge Base."
     },
     "build_club": {
       "title": "Build Club",
-      "description": "The Build Club provides support for teams and individuals looking to launch new projects on Nervos."
+      "description": "Build Club brinda apoyo a equipos e individuos que buscan lanzar nuevos proyectos en Nervos."
     },
     "forum": {
-      "title": "Nervos Talk Forum",
-      "description": "For the community to participate and discuss developments on Nervos."
+      "title": "Foro Nervos Talk",
+      "description": "Para que la comunidad participe y discuta los desarrollos en Nervos."
     }
   }
 }
