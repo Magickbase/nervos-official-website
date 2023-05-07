@@ -2,50 +2,50 @@
   "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base",
-    "text2": "Layer 1 Built for Modularity",
-    "text3": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable Layer 1 in the blockchain industry. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability."
+    "text2": "Capa 1 construida para la Modularidad",
+    "text3": "Construida sobre RISC-V y asegurada por Proof-of-Work, CKB es la capa 1 más flexible e interoperable de la industria blockchain. Constituye la base definitiva de Nervos, una red blockchain modular construida desde cero para garantizar una seguridad, descentralización, flexibilidad e interoperabilidad excepcionales."
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
-    "text1": "Supreme Security and Decentrali&shy;zation",
-    "text2": "CKB leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors."
+    "text1": "Máxima Seguridad y Descentrali&shy;zación",
+    "text2": "CKB aprovecha el algoritmo de consenso Proof-of-Work probado en batalla para garantizar una seguridad y descentralización excepcionales en todas las condiciones. Está verdaderamente descentralizado, no necesita permisos y es especialmente resistente a la captura por parte de actores adversarios."
   },
   "slide_ckb_flexibility": {
-    "slogan": "Unmatched Flexibility and Interopera&shy;bility",
-    "description": "CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized applications boasting unmatched user experience."
+    "slogan": "Flexibilidad e Interoperabilidad sin par",
+    "description": "CKB es la única cadena de bloques del mercado que admite todas las primitivas criptográficas. Puede interoperar sin problemas con todas las cadenas de bloques heterogéneas y anclar todos los tipos de cadenas laterales, canales de estado y redes de capa 2. Además, viene con abstracción de cuentas a nivel de protocolo por defecto, lo que permite aplicaciones descentralizadas con una experiencia de usuario inigualable."
   },
   "slide_ckb_subtainability": {
-    "slogan": "Inventive Tokenomics",
-    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are protected from inflation."
+    "slogan": "Tokenómica Innovadora",
+    "description": "CKB aprovecha un novedoso modelo tokenómico que alinea los intereses de todos los participantes y partes interesadas de Nervos. Garantiza que los mineros reciban un pago por proporcionar seguridad a perpetuidad, mientras que los poseedores de tokens están protegidos frente a la inflación."
   },
   "slide_ckb_modular": {
-    "slogan": "Modular Architecture",
-    "description": "Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of transactions per second through many diverse Layer 2 networks without sacrificing security or decentralization. CKB offers pristine security, while the Layer 2 networks built on top ensure unbounded scalability."
+    "slogan": "Arquitectura Modular",
+    "description": "Nervos se diseñó como una red de blockchain modular desde el principio, lo que significa que puede escalar a millones de transacciones por segundo a través de diversas redes de capa 2 sin sacrificar la seguridad o la descentralización. CKB ofrece una seguridad pura, mientras que las redes de capa 2 construidas sobre ella garantizan una escalabilidad sin límites."
   },
   "get_started": {
-    "title": "Get Started",
+    "title": "Empiza Aquí",
     "axon": {
       "name": "AXON",
-      "title": "Launch your own Nervos sidechain with Axon.",
-      "description": "Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with ease."
+      "title": "Lanza tu propia sidechain Nervos con Axon.",
+      "description": "¿Necesita un alto rendimiento? Cree su propia sidechain personalizada compatible con EVM e impleméntala en Nervos con facilidad."
     },
     "developers": {
-      "name": "DEVELOPERS",
-      "title": "Build on hardware, not software.",
-      "description": "CKB's low-level virtual machine allows you to build without limits."
+      "name": "DESARROLLADORES",
+      "title": "Construye en Hardware, no en Software",
+      "description": "La máquina virtual de bajo nivel de CKB le permite construir sin límites."
     },
     "learn_more": {
-      "name": "LEARN MORE",
-      "title": "Build universal decentralized applications.",
-      "description": "Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains."
+      "name": "MÁS INFO.",
+      "title": "Construye aplicaciones universales descentralizadas.",
+      "description": "Experimenta la abstracción de cuentas a nivel de protocolo y construya dApps que funcionen sin problemas entre blockchains."
     }
   },
   "slide_footer": {
-    "live_metrics": "Live Metrics",
-    "live_cells": "Live Cells",
-    "common_knowledge_stored": "Common Knowledge Stored",
-    "ckb_in_nervos_dao": "CKB in Nervos DAO",
-    "loading": "loading"
+    "live_metrics": "Métricas en vivo",
+    "live_cells": "Cells Vivas",
+    "common_knowledge_stored": "Conocimiento Común Almacenado",
+    "ckb_in_nervos_dao": "CKB en Nervos DAO",
+    "loading": "cargando"
   },
-  "right_click_to_draw": "RIGHT CLICK TO DRAW"
+  "right_click_to_draw": "CLIC DERECHO PARA DIBUJAR"
 }
