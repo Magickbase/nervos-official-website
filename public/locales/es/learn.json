@@ -1,23 +1,23 @@
 {
-  "title": "Spur your growth: It’s never too late to start learning",
-  "slogan": "Nervos is unlike any other blockchain. It comprises many moving elements and encompasses a huge amount of innovation. To learn what makes it unique and how it all works, check the following resources.",
+  "title": "Impulsa tu crecimiento: nunca es demasiado tarde para empezar a aprender",
+  "slogan": "Nervos es diferente a cualquier otra cadena de bloques. Se compone de muchos elementos en movimiento y abarca una gran cantidad de innovación. Para saber qué lo hace único y cómo funciona, consulta los siguientes recursos.",
   "education_hub": {
     "title": "Common Knowledge Base - Education Hub",
     "description": {
-      "text1": "The Common Knowledge Base Education Hub is a comprehensive repository of in-depth resources on Nervos and blockchain technology in general.",
-      "start_learning": "Start learning"
+      "text1": "Common Knowledge Base Education Hub es un repertorio completo de recursos detallados sobre Nervos y la tecnología blockchain en general.",
+      "start_learning": "Empieza a aprender"
     }
   },
   "rfc": {
-    "title": "RFC Repository",
+    "title": "Repositorio RFC",
     "description": {
-      "text1": "The Request for Comments (RFC) repository contains community proposals, standards, and documentation relating to the Nervos network. The RFC process encourages active participation from users and developers, fostering collaboration and generating valuable feedback that ultimately defines the ecosystem’s direction.",
-      "learn_more": "Learn More",
-      "contribute": "Contribute"
+      "text1": "El repositorio RFC (Request for Comments) contiene propuestas de la comunidad, estándares y documentación relacionada con la red Nervos. El proceso RFC fomenta la participación activa de usuarios y desarrolladores, fomentando la colaboración y generando comentarios valiosos que finalmente definen la dirección del ecosistema.",
+      "learn_more": "Más información",
+      "contribute": "Contribuye"
     }
   },
   "youtube": {
     "title": "Youtube",
-    "description": "Subscribe to the official Nervos Network YouTube <1>channel</1> to stay updated on the Nervos ecosystem and the broader blockchain industry via in-depth lectures, AMAs, developer workshops, and team member interviews."
+    "description": "Suscríbete al <1>canal</1> oficial de YouTube de Nervos Network para mantenerte actualizado sobre el ecosistema de Nervos y la industria blockchain en general a través de conferencias especializadas, AMAs, talleres para desarrolladores y entrevistas con miembros del equipo."
   }
 }
