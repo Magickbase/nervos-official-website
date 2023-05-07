@@ -1,16 +1,16 @@
 {
   "title": "1 CKB = 1 Byte",
-  "slogan": "CKByte (CKB) is the native cryptocurrency of Common Knowledge Base. It’s used for paying transaction fees and storing data, where holding one CKB permits users to store one byte of data on Nervos’ base layer.",
+  "slogan": "CKByte (CKB) es la criptomoneda nativa de Common Knowledge Base. Se usa para pagar tarifas de transacción y almacenar datos. Un CKB permite a los usuarios almacenar un byte de datos en la capa base de Nervos.",
   "tokenomics": {
-    "title": "CKB Tokenomics",
+    "title": "Tokenómica de CKB",
     "description": {
-      "text1": "The CKB token launched with an initial supply of 33.6 billion coins, 8.4 billion of which were burned soon thereafter. The base issuance is 33.6 billion coins per year and halves every four years until it hits zero, whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure and issuance schedule <1>here</1>.",
-      "text2": "Miners receive CKB rewards from two sources: the base and secondary issuance. The secondary issuance depends on state occupation, where miners receive half of the secondary issuance reward if half of the circulating CKB coins are used to store state. When the base issuance eventually ends, miners will keep earning \"state rent\" income from the secondary issuance, regardless of transaction demand, which ensures they're incentivized to secure the blockchain long-term.",
-      "text3": "Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in the <1>Nervos DAO</1> smart contract."
+      "text1": "El token CKB se lanzó con un suministro inicial de 33,6 mil millones de monedas, 8,4 mil millones de las cuales se quemaron poco después. La emisión base es de 33,6 mil millones de monedas por año y se reduce a la mitad cada cuatro años hasta llegar a cero; mientras que la emisión secundaria es fija de 1344 millones por año. Consulta la estructura detallada del suministro de CKB y el cronograma de emisión <1>aquí</1>.",
+      "text2": "Los mineros reciben recompensas en CKB de dos fuentes: la emisión base y secundaria. La emisión secundaria depende de la ocupación del estado, donde los mineros reciben la mitad de la recompensa de emisión secundaria si la mitad de las monedas CKB circulantes se usan para almacenar estado. Cuando la emisión base eventualmente finalice, los mineros seguirán obteniendo ingresos de \"alquiler estatal\" de la emisión secundaria, independientemente de la demanda de transacciones, lo que garantiza que estén incentivados para asegurar la cadena de bloques a largo plazo.",
+      "text3": "Los holders de CKB a largo plazo pueden buscar refugio contra la inflación de la emisión secundaria bloqueando sus CKB en el contrato inteligente <1>Nervos DAO</1>."
     }
   },
   "get_ckb": {
-    "title": "How do I get CKB?",
-    "description": "You can buy and sell CKB using the cryptocurrency exchanges on <1>this list</1>. However, consider transferring and holding your CKB using a non-custodial cryptocurrency <3>wallet</3>, as holding it on centralized exchanges is risky."
+    "title": "¿Cómo obtengo CKB?",
+    "description": "Puedes comprar y vender CKB usando los Exchanges en <1>esta lista</1>. Sin embargo, considera transferir y conservar tus CKB en una <3>wallet</3> de criptomonedas sin custodia, ya que mantenerlo en Exchanges centralizados es arriesgado."
   }
 }
