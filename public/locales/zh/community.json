@@ -3,7 +3,7 @@
   "slogan": "Nervos 是一个社区驱动的项目，秉承着开放和去中心化的密码朋克价值观。如果你对加密货币充满热情，并不断寻求改进现状，Nervos 是一个完美的选择。",
   "community_fund_dao": {
     "title": "社区基金 DAO。",
-    "description": "通过社区基金 DAO 申请赠款，该基金支持社区成员组织活动、制作内容和在 Common Knowledge Base 上进行构建。"
+    "description": "通过社区基金 DAO 申请资助，该基金支持社区成员组织活动、制作内容和在 Common Knowledge Base 上进行构建。"
   },
   "requests_for_comment": {
     "title": "RFC。",
@@ -21,7 +21,7 @@
     },
     "discord": {
       "title": "Discord",
-      "description": "与 Nervos 核心开发人员和贡献者联系。"
+      "description": "联系 Nervos 核心开发人员和贡献者。"
     },
     "telegram": {
       "title": "Telegram",
@@ -29,11 +29,11 @@
     },
     "reddit": {
       "title": "Reddit",
-      "description": "参加与 Nervos 项目开发人员的定期AMA活动。"
+      "description": "参加 Nervos 项目开发人员的定期 AMA 活动。"
     },
     "youtube": {
       "title": "Youtube",
-      "description": "收听与 Nervos 核心和项目开发人员的播客和访谈。"
+      "description": "收看 Nervos 核心开发者和项目开发人员的播客和访谈。"
     }
   }
 }
