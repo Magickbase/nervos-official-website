@@ -11,7 +11,7 @@
     "description": "Más allá de las ventajas de construir sobre la Capa 1 más flexible e interoperable de la industria, los desarrolladores de Common Knowledge Base pueden esperar un soporte completo de la Fundación Nervos y su equipo de expertos en blockchain.\nRecursos extensos, que incluyen documentación técnica detallada, guías para desarrolladores y tutoriales, están disponibles para los desarrolladores que buscan comenzar su viaje en Nervos. Nervos también organiza talleres regulares, seminarios web y hackatones, lo que permite a los posibles desarrolladores perfeccionar su conocimiento de blockchain y mantenerse a la vanguardia de la tecnología. El equipo de expertos de la Fundación está siempre disponible para ofrecer asistencia directa con respecto a cualquier desafío técnico que enfrenten los desarrolladores de aplicaciones.\nLo más importante es que la vibrante comunidad de desarrolladores y miembros de la comunidad con ideas afines fomenta la colaboración, el intercambio de conocimientos y la resolución de problemas a través de foros dedicados, canales de chat y reuniones en persona."
   },
   "developer_resources": {
-    "title": "Recursos para desarrolladores.",
+    "title": "Recursos para Desarrolladores.",
     "docs": {
       "title": "Documentación de CKB",
       "description": "Información técnica fundamental sobre Common Knowledge Base."
