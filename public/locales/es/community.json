@@ -6,7 +6,7 @@
     "description": "Solicita subvenciones a través de Community Fund DAO, el fondo del ecosistema de Nervos que apoya a los miembros de la comunidad en la organización de eventos, la producción de contenido y la creación de una base de conocimiento común."
   },
   "requests_for_comment": {
-    "title": "Solicitud de comentarios.",
+    "title": "Solicitud de Comentarios.",
     "description": "Influye en la dirección de desarrollo de la red Nervos a través del proceso RFC abierto e impulsado por la comunidad. Obten más información al respecto <1>aquí</1>."
   },
   "get_involved": {
