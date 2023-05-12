@@ -1,40 +1,40 @@
 {
-  "title": "Download a wallet",
-  "slogan": "Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.",
+  "title": "Descarga una wallet",
+  "slogan": "Elige tu wallet ideal y comienza a explorar e interactuar con el vibrante ecosistema de Nervos.",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "Neuron Wallet is a CKB wallet produced by the Nervos Foundation, it holds your keys and can create and broadcast transactions on your behalf.\nNeuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run."
+    "description": "Neuron Wallet es una billetera CKB producida por la Fundación Nervos, contiene tus claves y puede crear y transmitir transacciones en su nombre.\nNeuron Wallet ha incluido un nodo CKB Mainnet y está configurado para conectarse a CKB Mainnet. Después de la instalación, al abrir Neuron Wallet, se ejecutará el nodo Mainnet incluido."
   },
   "ckbull": {
     "title": "CKBull",
-    "description": "CKBull is a mobile wallet that allows you to access and manage your CKB, tokens bridged from Force Bridge, NFTs, as well as deposits into the Nervos DAO, all in one place."
+    "description": "CKBull es una billetera móvil que te permite acceder y administrar tus CKBs, utilizar Force Bridge, NFTs, así como depósitos en Nervos DAO, todo en un solo lugar."
   },
   "joyid": {
     "title": "JoyID",
-    "description": "JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet."
+    "description": "JoyID es una billetera sin contraseña, sin frase semilla, sin custodia y totalmente descentralizada."
   },
 
   "portal_wallet": {
     "title": "Portal Wallet",
-    "description": "Portal Wallet is not only a web-based wallet but also a complete dApp that leverages various features of Nervos. Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use their existing Ethereum addresses and wallets to receive and send CKB directly."
+    "description": "Portal Wallet no es solo una billetera basada en la web, sino también una dApp completa que aprovecha varias funciones de Nervos. Los usuarios no necesitan descargar un nuevo software o generar nuevas claves/direcciones para acceder a Nervos CKB, ya que pueden usar sus direcciones y billeteras de Ethereum existentes para recibir y enviar CKB directamente."
   },
   "safepal": {
     "title": "SafePal",
-    "description": "Founded in 2018, SafePal is a cryptocurrency wallet that aims to provide a secure and user-friendly crypto management platform for the masses. SafePal provides hardware wallet, software wallet, and browser extension wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap, and trade. It is now serving more than 6 million users across the globe."
+    "description": "Fundada en 2018, SafePal es una billetera de criptomonedas que tiene como objetivo proporcionar una plataforma de gestión de criptomonedas segura y fácil de usar para las masas. SafePal ofrece líneas de productos de billetera de hardware, billetera de software y billetera de extensión de navegador. Todos están emparejados y administrados a través de la aplicación SafePal, donde los usuarios pueden almacenar, intercambiar e intercambiar fácilmente. Ahora está sirviendo a más de 6 millones de usuarios en todo el mundo."
   },
   "ledger": {
     "title": "Ledger",
-    "description": "Ledger is the most popular hardware wallet and has support for Nervos CKB. You can store, send and receive CKB using your Ledger Nano X and Ledger Nano S hardware wallets. Click here for the guide."
+    "description": "Ledger es la billetera de hardware más popular y tiene soporte para Nervos CKB. Puede almacenar, enviar y recibir CKB utilizando sus carteras de hardware Ledger Nano X y Ledger Nano S. Haga clic aquí para ver la guía."
   },
   "opera_wallet": {
     "title": "Opera Wallet",
-    "description": "Starting today, Opera’s millions of users can send and receive Nervos CKB within the crypto wallet built into the Opera browser on Android."
+    "description": "A partir de hoy, los millones de usuarios de Opera pueden enviar y recibir Nervos CKB dentro de la billetera criptográfica integrada en el navegador Opera en Android."
   },
   "imtoken": {
     "title": "imToken",
-    "description": "Since its founding in May 2016, imToken has provided secure and trusted digital asset management services to millions of users in more than 150 countries and regions worldwide. In 2018, the team open-sourced the core code of imToken 2.0 on Github.\n imToken provides a built-in CKB wallet that enables users to safely send, receive and store CKB."
+    "description": "Desde su fundación en mayo de 2016, imToken ha brindado servicios de administración de activos digitales seguros y confiables a millones de usuarios en más de 150 países y regiones en todo el mundo. En 2018, el equipo abrió el código central de imToken 2.0 en Github.\n imToken proporciona una billetera CKB integrada que permite a los usuarios enviar, recibir y almacenar CKB de manera segura."
   },
-  "official_website": "Official website",
-  "tutorials": "Tutorials",
-  "download": "Download"
+  "official_website": "Sitio web oficial",
+  "tutorials": "Tutoriales",
+  "download": "Descargar"
 }
