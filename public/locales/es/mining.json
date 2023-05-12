@@ -1,42 +1,42 @@
 {
   "title": "CKB <1></1> PoW",
-  "slogan": "Nervos launched in Nov 2019 and the first CKB halving is expected at Epoch 8760 (around Nov 2023).",
+  "slogan": "Nervos se lanzó en noviembre de 2019 y se espera el primer halving de CKB en el Epoch 8760 (alrededor de noviembre de 2023).",
   "why-pow": {
-    "title": "Why Proof-of-Work",
-    "description": "CKB leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors."
+    "title": "Por qué Prueba de Trabajo",
+    "description": "CKB aprovecha el algoritmo de consenso de prueba de trabajo probado en batalla para garantizar una seguridad y descentralización excepcionales en todas las condiciones. Es verdaderamente descentralizado, no requiere permisos y es excepcionalmente resistente a la captura por parte de actores maliciosos."
   },
   "consensus": {
-    "title": "Consensus Algorithm: NC-Max",
+    "title": "Algoritmo de Consenso: NC-Max",
     "description": {
-      "text1": "CKB uses the NC-Max consensus mechanism, a variant of Bitcoin's Nakamoto Consensus (NC). While retaining all of NC's advantages, NC-Max improves the performance limit and resistance to selfish mining attacks by adopting a two-step confirmation process.",
-      "text2": "NC-Max increases transaction throughput and decreases confirmation times. The network can handle around 100 to 200 transactions per second but also can increase its capacity as bandwidth and latency improve over time.",
-      "text3": "Read the <1>NC-max paper</1> and this <3>article</3>, and watch this <5>video</5> to learn more."
+      "text1": "CKB utiliza el mecanismo de consenso NC-Max, una variante de Nakamoto Consensus (NC) de Bitcoin. Aunque conserva todas las ventajas de NC, NC-Max mejora el límite de rendimiento y la resistencia a los ataques de minería egoísta al adoptar un método de confirmación en dos pasos durante el proceso.",
+      "text2": "NC-Max aumenta el rendimiento de las transacciones y reduce los tiempos de confirmación. La red puede manejar alrededor de 100 a 200 transacciones por segundo, pero también puede aumentar su capacidad a medida que el ancho de banda y la latencia mejoran con el tiempo.",
+      "text3": "Lee el <1>documento de NC-Max</1> y este <3>artículo</3>, y mira este <5>video</5> para obtener más información."
     }
   },
   "hash_function": {
-    "title": "Hash Function: Eaglesong",
+    "title": "Función Hash: Eaglesong",
     "description": {
-      "text1": "CKB uses a novel, simple hash function called the Eaglesong that lowers the barrier for ASIC manufacturing. CKB's design is ASIC neutral, and the first ASIC was released four months after the mainnet launch.",
-      "text2": "To learn more, read our <1>mining guide</1> and the pages dedicated to <3>mining rigs</3> and <5>mining pools</5>."
+      "text1": "CKB usa una función hash novedosa y simple llamada Eaglesong que reduce la barrera para la fabricación de ASIC. El diseño de CKB es neutral para ASIC, y el primer ASIC se lanzó cuatro meses después del lanzamiento de la red principal.",
+      "text2": "Para obtener más información, lee nuestra <1>guía de minería</1> y las páginas dedicadas a <3>plataformas de minería</3> y <5>grupos de minería</5>."
     }
   },
   "mining_resources": {
-    "title": "Miner Resources",
+    "title": "Recursos de Minería",
     "eagleson": {
       "title": "Eaglesong",
-      "description": "A comprehensive introduction of Eaglesong algorithm, Nervos’s new hash function for CKB proof-of-work."
+      "description": "Una introducción completa al algoritmo Eaglesong, la nueva función hash de Nervos para la prueba de trabajo de CKB."
     },
     "mining_pools": {
-      "title": "Mining Pools",
-      "description": "MiningPoolStats.com provides a list of CKB mining pools and other useful statistics."
+      "title": "Grupos de Minería",
+      "description": "MiningPoolStats.com proporciona una lista de grupos de minería CKB y otras estadísticas útiles."
     },
     "mining_charts": {
-      "title": "Mining Charts",
-      "description": "CKB Explorer provides mining charts, such as mining difficulty, hash rate, uncle rate, epoch time, epoch length, top miners, miner versions, etc."
+      "title": "Gráficos de Minería",
+      "description": "CKB Explorer proporciona gráficos de minería, como dificultad de minería, hash rate, uncle rate, tiempo de epoch, duración de epoch, mineros principales, versiones de mineros, etc."
     },
     "mining_rigs": {
-      "title": "Mining Rigs",
-      "description": "Find out popular ASIC mining rigs for CKB and their daily profits."
+      "title": "Plataformas de Minería",
+      "description": "Descubre las plataformas de minería ASIC más populares para CKB y sus ganancias diarias."
     }
   }
 }
