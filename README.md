@@ -1,6 +1,10 @@
-## Demo
+## Nervos.org
 
-https://nervos-official-website.vercel.app/
+https://nervos.org/
+
+## EducationHub
+
+Articles at `/knowledge-base` can be found at https://github.com/NervosEducationHub/EducationHubArticles/
 
 ## Deploy your own
 
