@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { TOCItem } from '../../TableOfContents'
 
@@ -13,7 +14,11 @@ export type FunctionsItemType = {
   className?: string
 }
 
-const TagItem = ({ tag }: { tag: string }) => <div className={clsx(styles.tagItem)}>{tag}</div>
+const TagItem = ({ tag }: { tag: string }) => {
+  const [t] = useTranslation('common', { keyPrefix: 'category' })
+
+  return <div className={clsx(styles.tagItem)}>{t(tag.toLowerCase())}</div>
+}
 
 export const FunctionsItem: FC<FunctionsItemType> = ({
   title,

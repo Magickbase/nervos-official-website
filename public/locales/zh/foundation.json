@@ -1,0 +1,88 @@
+{
+  "title": "Nervos 基金会",
+  "slogan": "Nervos 基金会是一个非营利组织，其使命是支持 Nervos 网络的长期增长。我们的工作是通过培育社区独立增长并在行业中推动有意义的创新来确保 Nervos 的未来成功。",
+  "positioning": {
+    "title": "基金会定位",
+    "infrastructure": {
+      "title": "基础设施",
+      "description": "我们正在采取初始步骤来实现 Nervos 网络的愿景，这意味着投入资源进行基础技术栈的研究、开发和维护。"
+    },
+    "guidance": {
+      "title": "指导",
+      "description": "基金会由区块链和开源技术的老手组成。我们为参与者提供指导，以使他们能够自给自足，并在开发的初始阶段之后维持技术增长。"
+    },
+    "community": {
+      "title": "社区",
+      "description": "我们为启动社区提供资源，并支持其发展成为一个没有中心权力结构的去中心化实体。"
+    }
+  },
+  "vision_for_future": {
+    "title": "未来愿景",
+    "an_open_bazaar": {
+      "title": "开放式集市",
+      "description": {
+        "text1": "我们将 Nervos 网络视为一个开放的集市。任何人都可以在任何级别上参与网络。在开放市场的集市中，所有类型的参与者都受到欢迎：无论你是建设者、贡献者还是观察者。",
+        "text2": "市场本身不过是一个空间上的屋顶，但通过提供一个共同的见面地点，在那里独立的参与者可以按照自己的动机行动，一个反应灵敏、充满活力的环境就会出现，人类创造力的广度就可以在其中绽放。"
+      }
+    },
+    "exploration_and_innovation": {
+      "title": "探索与创新",
+      "description": "我们正在努力打造一个充满生机和活力的场所，以便可以发现和尝试新的想法。在开放的方式下，没有关于在其上可以构建什么样的应用程序的规则，我们相信真正的创新可以被探索，并将创建一个平台，新颖有趣的项目可以在社区的支持下生长。"
+    },
+    "nurture_and_support": {
+      "title": "培育与支持",
+      "description": "Nervos基金会扮演着支持不断发展、动态生态系统的服务角色。虽然这一努力始于基金会，但更重要的是，Nervos是以无需许可和对于想法的开放性定义的。基金会存在的目的是为发展强大的参与者社区提供支持和指导，以此体现这一精神。"
+    }
+  },
+  "ecosystem": {
+    "title": "生态系统支持计划",
+    "description": "有多个计划支持符合 Nervos Foundation 视野的项目开发：",
+    "build_club": {
+      "title": "建设俱乐部",
+      "description": "建设俱乐部是一个孵化计划，旨在帮助开发人员和企业家在 Nervos 上推出 dApps、工具或基础架构。"
+    },
+    "trailblazers": {
+      "title": "开拓者计划",
+      "description": "Nervos Trailblazers 是一个支持通过内容和社区组织超越期望，为 Nervos 网络增长贡献的个人的计划。"
+    },
+    "grant_program": {
+      "title": "资助计划",
+      "description": "Nervos Grants Program 旨在促进 Nervos 网络基础架构的创新和发展，支持多样化和繁荣的生态系统的增长。"
+    }
+  },
+  "resource_for_participants": {
+    "title": "参与者资源",
+    "description": "探索社区参与者的资源，推动 Nervos 的发展。",
+    "nervos_docs": {
+      "title": "Nervos 文档",
+      "description": "Nervos 的基本信息和技术参考材料。"
+    },
+    "developer_training_course": {
+      "title": "开发者培训课程",
+      "description": "Nervos 的基本信息和技术参考材料。"
+    },
+    "rfcs": {
+      "title": "RFCs",
+      "description": "任何有兴趣为协议改进和标准做出贡献的人，可以在 Github 上参与讨论和 RFC 过程。"
+    },
+    "forum": {
+      "title": "Nervos 论坛",
+      "description": "为社区提供讨论 Nervos 发展的平台。"
+    },
+    "build_club": {
+      "title": "创造俱乐部",
+      "description": "创造俱乐部为希望在 Nervos 上推出新项目的团队和个人提供支持。"
+    },
+    "start_with_godwoken": {
+      "title": "从 Godwoken 开始",
+      "description": "文档集中介绍与 EVM 等效的 Godwoken 网络，这是在 Nervos 上推出 dApp 的最简单方式！"
+    }
+  },
+  "team": {
+    "title": "团队.",
+    "description": {
+      "text1": "社区内的所有参与者，包括开发者、矿工、创造者和爱好者，都在网络的发展中发挥着关键作用。这些团队在愿景上是一致的，但彼此之间可以相当独立。Nervos 基金会向社区内的团队推送资源，并支持他们实现自己的目标。",
+      "text2": "访问这个 <1>链接</1>，查看 Nervos 基金会的开放职位。"
+    }
+  }
+}

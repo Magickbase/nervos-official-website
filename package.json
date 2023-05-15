@@ -37,7 +37,7 @@
     "remark-html": "15.0.2",
     "rxjs": "^7.8.0",
     "sass": "^1.58.3",
-    "superjson": "1.9.1",
+    "superjson": "1.12.3",
     "swiper": "^9.1.0",
     "zod": "^3.20.6"
   },
@@ -68,7 +68,7 @@
   "ct3aMetadata": {
     "initVersion": "7.5.9"
   },
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.5.1",
   "resolutions": {
     "swiper@^9.1.0": "patch:swiper@npm%3A9.1.0#./.yarn/patches/swiper-npm-9.1.0-44c74ddb4a.patch"
   }

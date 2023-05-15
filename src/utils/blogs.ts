@@ -39,10 +39,23 @@ export const getBlogSlugs = (dirPath = blogsRootDirectory, slugs: string[] = [])
   return slugs
 }
 
-export function getBlogBySlug(slug: string): Blog
-export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields: F): Pick<Blog, F[number]>
-export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F): Blog | Pick<Blog, F[number]> {
-  const fullPath = join(blogsRootDirectory, slug, 'index.md')
+export function getBlogBySlug(slug: string, prefLang?: string): Blog
+export function getBlogBySlug<F extends (keyof Blog)[]>(
+  slug: string,
+  prefLang: string | undefined,
+  fields: F,
+): Pick<Blog, F[number]>
+export function getBlogBySlug<F extends (keyof Blog)[]>(
+  slug: string,
+  prefLang = 'en',
+  fields?: F,
+): Blog | Pick<Blog, F[number]> {
+  const nameSuffix = prefLang === 'en' ? '' : `_${prefLang}`
+  let fullPath = join(blogsRootDirectory, slug, `index${nameSuffix}.md`)
+  if (!fs.existsSync(fullPath)) {
+    fullPath = join(blogsRootDirectory, slug, 'index.md')
+  }
+
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
@@ -101,10 +114,12 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(slug: string, fields?: F
   return fields == null ? blog : pick(blog, fields)
 }
 
-export function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', fields?: F) {
+export function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', prefLang = 'en', fields?: F) {
   const slugs = getBlogSlugs()
   const blogs = slugs
-    .map(slug => (fields == null ? getBlogBySlug(slug) : getBlogBySlug(slug, [...fields, 'date', 'category'])))
+    .map(slug =>
+      fields == null ? getBlogBySlug(slug, prefLang) : getBlogBySlug(slug, prefLang, [...fields, 'date', 'category']),
+    )
     .sort((blog1, blog2) => {
       switch (sortBy) {
         case 'oldest post': {

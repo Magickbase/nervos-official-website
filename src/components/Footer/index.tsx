@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { ComponentProps, FC } from 'react'
+import { useTranslation } from 'next-i18next'
 import { FooterMedia } from './components/FooterMedia'
 import { FooterLinkGroup, FooterLinkGroupProps } from './components/FooterLinkGroup'
 
@@ -10,66 +11,66 @@ import { StyledLink } from '../StyledLink'
 export type FooterProps = ComponentProps<'div'> & { limitMaxWidth?: number | false }
 
 export const Footer: FC<FooterProps> = props => {
+  const [t] = useTranslation('common', { keyPrefix: 'navigation' })
   const { limitMaxWidth = 1200, className, ...divProps } = props
 
   const footerLinkGroups: FooterLinkGroupProps[] = [
     {
-      title: 'DISCOVER',
+      title: t('discover'),
       links: [
         { label: 'CKB', url: '/ckbpage' },
-        { label: 'Mining', url: '/mining' },
-        { label: 'Wallets', url: '/wallets' },
-        { label: 'Wiki', url: 'https://www.wikiwand.com/en/Nervos_Network' },
-        { label: 'Press Kit', url: 'https://projects.invisionapp.com/boards/WK3VAZJUYCM/' },
+        { label: t('mining'), url: '/mining' },
+        { label: t('wallets'), url: '/wallets' },
+        { label: t('wiki'), url: 'https://www.wikiwand.com/en/Nervos_Network' },
+        { label: t('press_kit'), url: 'https://projects.invisionapp.com/boards/WK3VAZJUYCM/' },
       ],
     },
     {
       title: (
         <StyledLink className={styles.titleLink} href="/developers">
-          DEVELOPERS
+          {t('developers')}
         </StyledLink>
       ),
       links: [
-        { label: 'Documentation', url: 'https://docs.nervos.org/' },
-        { label: 'GitHub', url: 'https://github.com/nervosnetwork/' },
-        { label: 'Explorer', url: 'https://explorer.nervos.org/' },
+        { label: t('documentation'), url: 'https://docs.nervos.org/' },
+        { label: t('github'), url: 'https://github.com/nervosnetwork/' },
+        { label: t('explorer'), url: 'https://explorer.nervos.org/' },
       ],
     },
     {
-      title: 'ECOSYSTEM',
+      title: t('ecosystem'),
       links: [
-        { label: 'Cryptape', url: 'https://cryptape.com/' },
-        { label: 'Godwoken', url: 'https://godwoken.com/' },
-        { label: 'Nervina Labs', url: 'https://nervina.io/' },
-        { label: 'Tunnel Vision Labs', url: 'https://tunnelvisionlabs.xyz/' },
-        { label: 'Axon', url: 'https://axonweb3.io/' },
-        { label: '.bit', url: 'https://www.did.id/' },
-        { label: 'Magickbase', url: 'https://github.com/Magickbase/' },
+        { label: t('cryptape'), url: 'https://cryptape.com/' },
+        { label: t('godwoken'), url: 'https://godwoken.com/' },
+        { label: t('nervina_labs'), url: 'https://nervina.io/' },
+        { label: t('tunnel_vision_labs'), url: 'https://tunnelvisionlabs.xyz/' },
+        { label: t('axon'), url: 'https://axonweb3.io/' },
+        { label: t('.bit'), url: 'https://www.did.id/' },
+        { label: t('magickbase'), url: 'https://github.com/Magickbase/' },
       ],
     },
     {
       title: (
         <StyledLink className={styles.titleLink} href="/community">
-          COMMUNITY
+          {t('community')}
         </StyledLink>
       ),
       links: [
-        { label: 'Community Fund DAO', url: 'https://dao.ckb.community/' },
-        { label: 'Nervos Talk Forum', url: 'https://talk.nervos.org/' },
-        { label: 'RFCs', url: 'https://github.com/nervosnetwork/rfcs/' },
+        { label: t('community_fund_dao'), url: 'https://dao.ckb.community/' },
+        { label: t('nervos_talk_forum'), url: 'https://talk.nervos.org/' },
+        { label: t('rfcs'), url: 'https://github.com/nervosnetwork/rfcs/' },
       ],
     },
     {
       title: (
         <StyledLink className={styles.titleLink} href="/learn">
-          LEARN
+          {t('learn')}
         </StyledLink>
       ),
       links: [
-        { label: 'Knowledge Base', url: '/knowledge-base' },
-        /* not ready yet */
-        { label: 'Medium', url: 'https://medium.com/nervosnetwork' },
-        { label: 'Youtube', url: 'https://www.youtube.com/c/NervosNetwork' },
+        { label: t('knowledge_base'), url: '/knowledge-base' },
+        { label: t('medium'), url: 'https://medium.com/nervosnetwork' },
+        { label: t('youtube'), url: 'https://www.youtube.com/c/NervosNetwork' },
       ],
     },
   ]

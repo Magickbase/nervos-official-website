@@ -10,11 +10,42 @@
     "text1": "Supreme Security and Decentrali&shy;zation",
     "text2": "CKB leverages the battle-tested Proof-of-Work consensus algorithm to ensure exceptional security and decentralization under all conditions. It is truly decentralized, permissionless, and uniquely resistant to capture by adversarial actors."
   },
+  "slide_ckb_flexibility": {
+    "slogan": "Unmatched Flexibility and Interopera&shy;bility",
+    "description": "CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized applications boasting unmatched user experience."
+  },
+  "slide_ckb_subtainability": {
+    "slogan": "Inventive Tokenomics",
+    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are protected from inflation."
+  },
+  "slide_ckb_modular": {
+    "slogan": "Modular Architecture",
+    "description": "Nervos was designed as a modular blockchain network from the get-go, meaning it can scale to millions of transactions per second through many diverse Layer 2 networks without sacrificing security or decentralization. CKB offers pristine security, while the Layer 2 networks built on top ensure unbounded scalability."
+  },
+  "get_started": {
+    "title": "Get Started",
+    "axon": {
+      "name": "AXON",
+      "title": "Launch your own Nervos sidechain with Axon.",
+      "description": "Need high throughput? Build your own custom EVM-compatible sidechain and deploy it on Nervos with ease."
+    },
+    "developers": {
+      "name": "DEVELOPERS",
+      "title": "Build on hardware, not software.",
+      "description": "CKB's low-level virtual machine allows you to build without limits."
+    },
+    "learn_more": {
+      "name": "LEARN MORE",
+      "title": "Build universal decentralized applications.",
+      "description": "Experience protocol-level account abstraction and build dApps that work seamlessly across blockchains."
+    }
+  },
   "slide_footer": {
     "live_metrics": "Live Metrics",
     "live_cells": "Live Cells",
     "common_knowledge_stored": "Common Knowledge Stored",
     "ckb_in_nervos_dao": "CKB in Nervos DAO",
     "loading": "loading"
-  }
+  },
+  "right_click_to_draw": "RIGHT CLICK TO DRAW"
 }

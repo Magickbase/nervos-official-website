@@ -136,7 +136,7 @@ const Post = ({ post, recents, categories }: Props) => {
                 <div className={styles.title}>{`${t('recent_posts')}:`}</div>
                 <div className={styles.recents}>
                   {recents.map(b => (
-                    <Link key={b.title} href={`/blogs/${b.slug}`}>
+                    <Link key={b.title} href={`/knowledge-base/${b.slug}`}>
                       {b.title}
                     </Link>
                   ))}
@@ -196,11 +196,11 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     }
   }
 
-  const post = getBlogBySlug(slug)
+  const post = getBlogBySlug(slug, locale ?? 'en')
 
-  const lng = await serverSideTranslations(locale ?? 'en', ['knowledge-base'])
+  const lng = await serverSideTranslations(locale ?? 'en', ['common', 'knowledge-base'])
 
-  const blogs = getAllBlogs('all', ['title', 'slug', 'category'])
+  const blogs = getAllBlogs('all', locale ?? 'en', ['title', 'slug', 'category'])
   const categories = getCategoriesFromBlogs(blogs)
   const recents = blogs.slice(0, 3)
 
@@ -214,17 +214,13 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   return { props }
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const posts = getAllBlogs('all', ['slug'])
+export const getStaticPaths: GetStaticPaths = ({ locales }) => {
+  const posts = getAllBlogs('all', 'en', ['slug'])
+
+  const pageParams = posts.map(post => ({ slug: post.slug }))
 
   return {
-    paths: posts.map(post => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
+    paths: (locales ?? ['en']).map(locale => pageParams.map(params => ({ params, locale }))).flat(),
     fallback: false,
   }
 }

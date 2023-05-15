@@ -11,7 +11,8 @@ const path = require('path')
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh', 'ko'],
+    // TODO: 'ko' has been temporarily removed until the Korean translation file is ready.
+    locales: ['en', 'zh', 'es'],
     // TODO: This is because there is currently no full i18n translation support,
     // so switching to other languages is temporarily disabled.
     localeDetection: false,
