@@ -27,7 +27,14 @@ const Post = ({ post, recents, categories }: Props) => {
   const [t] = useTranslation(['knowledge-base'])
 
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
-  const formatTime = getTimeFormatter().format
+  const formatTime = (date: Date) => {
+    try {
+      return getTimeFormatter().format(date)
+    } catch (e) {
+      console.error(`failed to format date: ${date.toString()}`)
+      return ''
+    }
+  }
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
