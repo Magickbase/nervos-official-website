@@ -27,7 +27,14 @@ const Post = ({ post, recents, categories }: Props) => {
   const [t] = useTranslation(['knowledge-base'])
 
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
-  const formatTime = getTimeFormatter().format
+  const formatTime = (date: Date) => {
+    try {
+      return getTimeFormatter().format(date)
+    } catch (e) {
+      console.error(`failed to format date: ${date.toString()}`)
+      return ''
+    }
+  }
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -136,7 +143,7 @@ const Post = ({ post, recents, categories }: Props) => {
                 <div className={styles.title}>{`${t('recent_posts')}:`}</div>
                 <div className={styles.recents}>
                   {recents.map(b => (
-                    <Link key={b.title} href={`/blogs/${b.slug}`}>
+                    <Link key={b.title} href={`/knowledge-base/${b.slug}`}>
                       {b.title}
                     </Link>
                   ))}
