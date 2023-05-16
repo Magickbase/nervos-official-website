@@ -7,6 +7,9 @@ import Head from 'next/head'
 import { TwitterShareButton, LinkedinShareButton, RedditShareButton, FacebookShareButton } from 'react-share'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { Page } from '../../components/Page'
@@ -107,6 +110,8 @@ const Post = ({ post, recents, categories }: Props) => {
 
                 <div>
                   <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw, rehypeSanitize]}
                     components={{
                       h1: wrapHeadingWithTOCItem('h1'),
                       h2: wrapHeadingWithTOCItem('h2'),
