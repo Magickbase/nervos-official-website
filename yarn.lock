@@ -7672,7 +7672,7 @@ __metadata:
     react-dom: 18.2.0
     react-i18next: ^12.2.0
     react-markdown: ^8.0.6
-    react-resize-detector: ^8.0.4
+    react-resize-detector: ^9.0.0
     react-share: 4.4.1
     rehype-raw: ^6.1.1
     rehype-sanitize: ^5.0.1
@@ -8731,15 +8731,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-resize-detector@npm:^8.0.4":
-  version: 8.1.0
-  resolution: "react-resize-detector@npm:8.1.0"
+"react-resize-detector@npm:^9.0.0":
+  version: 9.1.0
+  resolution: "react-resize-detector@npm:9.1.0"
   dependencies:
     lodash: ^4.17.21
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 45e6b87ea7331406bed2a806d0cea98c1467d53a7cfcdf19c2dd55a3460047917d3b175d9cceea6f314b65eb54858cbb981acffd007d67aa16388e517dafb83e
+  checksum: 05b263e141fd428eea433e399f88c3e1a379b4a2293958f59b5a5c75dd86c621ce60583724257cc3dc1f5c120a664666ff3fa53d41e6c283687676dc55afa02b
   languageName: node
   linkType: hard
 
