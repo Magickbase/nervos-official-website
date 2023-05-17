@@ -1,0 +1,51 @@
+{
+  "scroll_down": "Scroll Down",
+  "slide_ckb_intro": {
+    "text1": "Common Knowledge Base",
+    "text2": "Capa 1 construida para la\nModularidad",
+    "text3": "Construida sobre RISC-V y asegurada por Proof-of-Work, CKB es la capa 1 más flexible e interoperable de la industria blockchain. Constituye la base definitiva de Nervos, una red blockchain modular construida desde cero para garantizar una seguridad, descentralización, flexibilidad e interoperabilidad excepcionales."
+  },
+  "slide_ckb_security": {
+    "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
+    "text1": "Máxima Seguridad y Descentra&shy;lización",
+    "text2": "CKB aprovecha el algoritmo de consenso Proof-of-Work probado en batalla para garantizar una seguridad y descentralización excepcionales en todas las condiciones. Está verdaderamente descentralizado, no necesita permisos y es especialmente resistente a la captura por parte de actores maliciosos."
+  },
+  "slide_ckb_flexibility": {
+    "slogan": "Flexibilidad e Interoperabi&shy;lidad sin par",
+    "description": "CKB es la única cadena de bloques del mercado que admite todas las primitivas criptográficas. Puede interoperar sin problemas con todas las cadenas de bloques heterogéneas y anclar todos los tipos de cadenas laterales, canales de estado y redes de capa 2. Además, viene con abstracción de cuentas a nivel de protocolo por defecto, lo que permite aplicaciones descentralizadas con una experiencia de usuario inigualable."
+  },
+  "slide_ckb_subtainability": {
+    "slogan": "Tokenómica Innovadora",
+    "description": "CKB aprovecha un novedoso modelo tokenómico que alinea los intereses de todos los participantes y partes interesadas de Nervos. Garantiza que los mineros reciban un pago por proporcionar seguridad a perpetuidad, mientras que los poseedores de tokens están protegidos frente a la inflación."
+  },
+  "slide_ckb_modular": {
+    "slogan": "Arquitectura Modular",
+    "description": "Nervos se diseñó como una red de blockchain modular desde el principio, lo que significa que puede escalar a millones de transacciones por segundo a través de diversas redes de capa 2 sin sacrificar la seguridad o la descentralización. CKB ofrece una seguridad pura, mientras que las redes de capa 2 construidas sobre ella garantizan una escalabilidad sin límites."
+  },
+  "get_started": {
+    "title": "Empiza Aquí",
+    "axon": {
+      "name": "AXON",
+      "title": "Lanza tu propia sidechain Nervos con Axon.",
+      "description": "¿Necesita un alto rendimiento? Cree su propia sidechain personalizada compatible con EVM e impleméntala en Nervos con facilidad."
+    },
+    "developers": {
+      "name": "DESARROLLADORES",
+      "title": "Construye en Hardware, no en Software",
+      "description": "La máquina virtual de bajo nivel de CKB le permite construir sin límites."
+    },
+    "learn_more": {
+      "name": "MÁS INFO.",
+      "title": "Construye aplicaciones universales descentralizadas.",
+      "description": "Experimenta la abstracción de cuentas a nivel de protocolo y construya dApps que funcionen sin problemas entre blockchains."
+    }
+  },
+  "slide_footer": {
+    "live_metrics": "Métricas en vivo",
+    "live_cells": "Cells Vivas",
+    "common_knowledge_stored": "Conocimiento Común Almacenado",
+    "ckb_in_nervos_dao": "CKB en Nervos DAO",
+    "loading": "cargando"
+  },
+  "right_click_to_draw": "CLIC DERECHO PARA DIBUJAR"
+}
