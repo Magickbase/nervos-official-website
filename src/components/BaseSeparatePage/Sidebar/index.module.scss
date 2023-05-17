@@ -115,7 +115,7 @@
 
   &::after {
     position: absolute;
-    top: calc(var(--paddingTop) + $fontSize * math.div($lineHeight, 200%));
+    top: calc(var(--paddingTop) + #{$fontSize * math.div($lineHeight, 200%)});
     left: 0;
     width: 5px;
     height: 5px;

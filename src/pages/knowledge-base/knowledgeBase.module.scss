@@ -225,7 +225,7 @@ $linkColor: var(--colorSecond);
       }
     }
   }
-  @media screen and (max-width: 1080px) {
+  @media screen and (width <= 1080px) {
     --paddingH: 26px;
 
     .back {
@@ -275,7 +275,7 @@ $linkColor: var(--colorSecond);
 
   &::after {
     position: absolute;
-    top: calc(var(--paddingTop) + $fontSize * math.div($lineHeight, 200%));
+    top: calc(var(--paddingTop) + #{$fontSize * math.div($lineHeight, 200%)});
     left: 0;
     width: 5px;
     height: 5px;
