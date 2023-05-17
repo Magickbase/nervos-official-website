@@ -393,7 +393,7 @@ $headerZ: 2;
   }
 }
 
-@media (max-height: 780px) and (min-width: $mobileBreakPoint), (max-height: 620px) {
+@media (height <= 780px) and (min-width: $mobileBreakPoint), (height <= 620px) {
   .golContainer {
     margin-left: 100px;
   }

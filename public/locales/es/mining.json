@@ -1,0 +1,42 @@
+{
+  "title": "CKB <1></1> PoW",
+  "slogan": "Nervos se lanzó en noviembre de 2019 y se espera el primer halving de CKB en el Epoch 8760 (alrededor de noviembre de 2023).",
+  "why-pow": {
+    "title": "Por qué Prueba de Trabajo",
+    "description": "CKB aprovecha el algoritmo de consenso de prueba de trabajo probado en batalla para garantizar una seguridad y descentralización excepcionales en todas las condiciones. Es verdaderamente descentralizado, no requiere permisos y es excepcionalmente resistente a la captura por parte de actores maliciosos."
+  },
+  "consensus": {
+    "title": "Algoritmo de Consenso: NC-Max",
+    "description": {
+      "text1": "CKB utiliza el mecanismo de consenso NC-Max, una variante de Nakamoto Consensus (NC) de Bitcoin. Aunque conserva todas las ventajas de NC, NC-Max mejora el límite de rendimiento y la resistencia a los ataques de minería egoísta al adoptar un método de confirmación en dos pasos durante el proceso.",
+      "text2": "NC-Max aumenta el rendimiento de las transacciones y reduce los tiempos de confirmación. La red puede manejar alrededor de 100 a 200 transacciones por segundo, pero también puede aumentar su capacidad a medida que el ancho de banda y la latencia mejoran con el tiempo.",
+      "text3": "Lee el <1>documento de NC-Max</1> y este <3>artículo</3>, y mira este <5>video</5> para obtener más información."
+    }
+  },
+  "hash_function": {
+    "title": "Función Hash: Eaglesong",
+    "description": {
+      "text1": "CKB usa una función hash novedosa y simple llamada Eaglesong que reduce la barrera para la fabricación de ASIC. El diseño de CKB es neutral para ASIC, y el primer ASIC se lanzó cuatro meses después del lanzamiento de la red principal.",
+      "text2": "Para obtener más información, lee nuestra <1>guía de minería</1> y las páginas dedicadas a <3>plataformas de minería</3> y <5>grupos de minería</5>."
+    }
+  },
+  "mining_resources": {
+    "title": "Recursos de Minería",
+    "eagleson": {
+      "title": "Eaglesong",
+      "description": "Una introducción completa al algoritmo Eaglesong, la nueva función hash de Nervos para la prueba de trabajo de CKB."
+    },
+    "mining_pools": {
+      "title": "Grupos de Minería",
+      "description": "MiningPoolStats.com proporciona una lista de grupos de minería CKB y otras estadísticas útiles."
+    },
+    "mining_charts": {
+      "title": "Gráficos de Minería",
+      "description": "CKB Explorer proporciona gráficos de minería, como dificultad de minería, hash rate, uncle rate, tiempo de epoch, duración de epoch, mineros principales, versiones de mineros, etc."
+    },
+    "mining_rigs": {
+      "title": "Plataformas de Minería",
+      "description": "Descubre las plataformas de minería ASIC más populares para CKB y sus ganancias diarias."
+    }
+  }
+}

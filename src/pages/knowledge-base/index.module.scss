@@ -47,7 +47,7 @@
     right: -350px;
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (width <= 1280px) {
     .left {
       left: -540px;
     }
@@ -57,7 +57,7 @@
       right: -400px;
     }
   }
-  @media screen and (max-width: 980px) {
+  @media screen and (width <= 980px) {
     height: 560px;
 
     span,
@@ -273,7 +273,7 @@
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (width <= 1200px) {
     grid-template-columns: repeat(4, 1fr);
     width: calc(100vw - 240px);
     overflow: auto;
@@ -514,7 +514,7 @@
       margin: 0 11px;
     }
   }
-  @media screen and (max-width: 1440px) {
+  @media screen and (width <= 1440px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 
@@ -524,7 +524,7 @@
     }
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (width <= 1280px) {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -33,7 +33,10 @@
     "react-markdown": "^8.0.6",
     "react-resize-detector": "^8.0.4",
     "react-share": "4.4.1",
-    "remark": "14.0.2",
+    "rehype-raw": "^6.1.1",
+    "rehype-sanitize": "^5.0.1",
+    "remark": "14.0.3",
+    "remark-gfm": "^3.0.1",
     "remark-html": "15.0.2",
     "rxjs": "^7.8.0",
     "sass": "^1.58.3",
@@ -42,7 +45,7 @@
     "zod": "^3.20.6"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1",
+    "@svgr/webpack": "^8.0.0",
     "@types/eslint": "^8.21.1",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
@@ -59,9 +62,9 @@
     "prettier": "^2.8.4",
     "stylelint": "^15.2.0",
     "stylelint-config-css-modules": "^4.2.0",
-    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-order": "^6.0.2",
     "typescript": "^4.9.5"
   },
