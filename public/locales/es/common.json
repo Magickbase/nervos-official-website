@@ -59,15 +59,15 @@
     "github": "Github",
     "community": "Comunidad",
     "community_fund_dao": "Community\nFund DAO",
-    "forum": "Forum",
+    "forum": "Foro",
     "rfcs": "RFCs",
-    "mining": "Mining",
+    "mining": "Minería",
     "wallets": "Wallets",
-    "learn": "Learn",
+    "learn": "Aprende",
     "knowledge_base": "Knowledge Base",
     "medium": "Medium",
     "youtube": "Youtube",
-    "discover": "Discover",
+    "discover": "Descubre",
     "wiki": "Wiki",
     "press_kit": "Kit de Prensa",
     "documentation": "Documentación",
@@ -79,7 +79,7 @@
     "axon": "Axon",
     ".bit": ".bit",
     "magickbase": "Magickbase",
-    "nervos_talk_forum": "Nervos Talk Forum"
+    "nervos_talk_forum": "Foro Nervos Talk"
   },
   "mailchimp": {
     "title": "Forma parte de algo grande.",
