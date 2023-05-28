@@ -1,0 +1,42 @@
+{
+  "title": "CKB <1></1> PoW",
+  "slogan": "O Nervos foi lançado em novembro de 2019 e o primeiro halving do CKB é esperado na época 8760 (por volta de novembro de 2023).",
+  "why-pow": {
+    "title": "Por que Prova de Trabalho",
+    "description": "O CKB utiliza o algoritmo de consenso Proof-of-Work testado em batalha para garantir segurança e descentralização excepcionais sob todas as condições. É verdadeiramente descentralizado, sem permissão e especialmente resistente à captura por agentes adversários."
+  },
+  "consensus": {
+    "title": "Algoritmo de Consenso: NC-Max",
+    "description": {
+      "text1": "O CKB usa o mecanismo de consenso NC-Max, uma variante do Nakamoto Consensus (NC) do Bitcoin. Mantendo todas as vantagens do NC, o NC-Max melhora o limite de desempenho e a resistência a ataques egoístas de mineração adotando um processo de confirmação em duas etapas.",
+      "text2": "O NC-Max aumenta o rendimento da transação e diminui os tempos de confirmação. A rede pode lidar com cerca de 100 a 200 transações por segundo, mas também pode aumentar sua capacidade à medida que a largura de banda e a latência melhoram com o tempo.",
+      "text3": "Leia o <1>documento NC-max</1> e este <3>artigo</3> e assista a este <5>vídeo</5> para saber mais."
+    }
+  },
+  "hash_function": {
+    "title": "Função Hash: Eaglesong",
+    "description": {
+      "text1": "O CKB usa uma nova e simples função de hash chamada Eaglesong que reduz a barreira para a fabricação de ASIC. O design do CKB é ASIC neutro, e o primeiro ASIC foi lançado quatro meses após o lançamento da rede principal.",
+      "text2": "Para saber mais, leia nosso <1>guia de mineração</1> e as páginas dedicadas a <3>equipamentos de mineração</3> e <5>pools de mineração</5>."
+    }
+  },
+  "mining_resources": {
+    "title": "Recursos do minerador",
+    "eagleson": {
+      "title": "Eaglesong",
+      "description": "Uma introdução abrangente do algoritmo Eaglesong, a nova função de hash do Nervos para prova de trabalho CKB."
+    },
+    "mining_pools": {
+      "title": "Pools de Mineração",
+      "description": "MiningPoolStats.com fornece uma lista de pools de mineração CKB e outras estatísticas úteis."
+    },
+    "mining_charts": {
+      "title": "Gráficos de Mineração",
+      "description": "O CKB Explorer fornece gráficos de mineração, como dificuldade de mineração, taxa de hash, taxa de tio, tempo de época, duração da época, principais mineradores, versões de mineradores, etc."
+    },
+    "mining_rigs": {
+      "title": "Rigs de mineração",
+      "description": "Descubra rigs de mineração ASIC populares para CKB e seus lucros diários."
+    }
+  }
+}
