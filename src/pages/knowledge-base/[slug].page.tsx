@@ -156,7 +156,7 @@ const Post = ({ post, recents, categories }: Props) => {
                 <div className={styles.title}>{`${t('categories')}:`}</div>
                 <div className={styles.category}>
                   {categories.map(c => (
-                    <Link key={c} href={`/blogs?sort_by=${encodeURIComponent(c)}`}>
+                    <Link key={c} href={`/knowledge-base?sort_by=${encodeURIComponent(c)}`}>
                       {t(c)}
                     </Link>
                   ))}
