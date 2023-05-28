@@ -1,0 +1,88 @@
+{
+  "title": "The Nervos Foundation.",
+  "slogan": "The Nervos Foundation é uma organização sem fins lucrativos cuja missão é apoiar o crescimento de longo prazo da Nervos Network. Trabalhamos para garantir o sucesso futuro da Nervos, semeando a comunidade para crescer de forma independente enquanto impulsionamos inovações significativas no setor.",
+  "positioning": {
+    "title": "Posicionamento da Fundação.",
+    "infrastructure": {
+      "title": "Infraestrutura",
+      "description": "Estamos dando os passos iniciais para realizar as ambições da Nervos Network, e isso significa colocar recursos em pesquisa, desenvolvimento e manutenção da pilha de tecnologia fundamental."
+    },
+    "guidance": {
+      "title": "Orientação",
+      "description": "A Fundação é composta por veteranos de blockchain e tecnologia de código aberto. Orientamos os participantes para que sejam autossuficientes e sustentem o crescimento tecnológico além das fases iniciais de desenvolvimento."
+    },
+    "community": {
+      "title": "Community",
+      "description": "We provide the resources to bootstrap the community and support its growth into a decentralized entity, with no central power structure."
+    }
+  },
+  "vision_for_future": {
+    "title": "Visão para o Futuro.",
+    "an_open_bazaar": {
+      "title": "Um Bazar Aberto.",
+      "description": {
+        "text1": "Vemos a Rede Nervos como um bazar aberto. Qualquer um pode vir e participar da rede em qualquer nível. Em um mercado aberto no estilo bazar, todos os tipos de participantes são bem-vindos: não importa se você é um desenvolvedor, colaborador ou apenas um observador.",
+        "text2": "O mercado em si é pouco mais que um teto sobre um espaço vazio, mas ao fornecer um ponto de encontro comum onde participantes independentes agem por suas próprias motivações, surge um ambiente responsivo e vibrante onde a amplitude da criatividade humana pode florescer."
+      }
+    },
+    "exploration_and_innovation": {
+      "title": "Exploração e Inovação.",
+      "description": "O que estamos construindo é um lugar próspero e animado, onde novas ideias podem ser descobertas e experimentadas. Com uma abordagem aberta, não há regras sobre que tipo de aplicativos você pode construir, e acreditamos que a verdadeira inovação pode ser explorada e uma plataforma será criada onde novos projetos interessantes podem crescer com o apoio de uma comunidade."
+    },
+    "nurture_and_support": {
+      "title": "Nutrir e apoiar.",
+      "description": "The Nervos Foundation desempenha um papel de serviço no apoio a um ecossistema crescente e dinâmico. Embora esse esforço tenha começado com a fundação, o mais importante é que o Nervos é definido pela falta de permissão e abertura a ideias. Com esse espírito, a fundação existe para fornecer suporte e orientação para uma comunidade robusta de participantes em desenvolvimento."
+    }
+  },
+  "ecosystem": {
+    "title": "Programas de Apoio a Ecossistemas.",
+    "description": "Existem vários programas que apoiam o desenvolvimento de projetos que se alinham com a visão da Nervos Foundation:",
+    "build_club": {
+      "title": "Build Club",
+      "description": "O Build Club é um programa de incubação para ajudar desenvolvedores e empreendedores a lançar Nervos dApps, ferramentas ou infraestrutura no Nervos."
+    },
+    "trailblazers": {
+      "title": "Trailblazers",
+      "description": "Nervos Trailblazers é um programa de apoio a indivíduos que vão além para apoiar o crescimento da Nervos Network por meio de conteúdo e organização comunitária."
+    },
+    "grant_program": {
+      "title": "Programa de Subsídios",
+      "description": "O Nervos Grants Program foi criado para capacitar a inovação e o desenvolvimento da infraestrutura da rede Nervos e para apoiar o crescimento de um ecossistema diversificado e próspero."
+    }
+  },
+  "resource_for_participants": {
+    "title": "Recursos para participantes.",
+    "description": "Explore os recursos para os participantes da comunidade para impulsionar o avanço do Nervos.",
+    "nervos_docs": {
+      "title": "Nervos Docs",
+      "description": "Informações fundamentais sobre Nervos e materiais de referência técnica."
+    },
+    "developer_training_course": {
+      "title": "Developer Training Course",
+      "description": "Informações fundamentais sobre Nervos e materiais de referência técnica."
+    },
+    "rfcs": {
+      "title": "RFCs",
+      "description": "Para quem estiver interessado em fazer contribuições para melhorias e padrões de protocolo, junte-se à discussão e participe do processo RFC no Github."
+    },
+    "forum": {
+      "title": "Nervos Talk Forum",
+      "description": "Para que a comunidade participe e discuta as novidades do Nervos."
+    },
+    "build_club": {
+      "title": "Build Club",
+      "description": "O Build Club fornece suporte para equipes e indivíduos que gostariam de lançar um novo projeto no Nervos."
+    },
+    "start_with_godwoken": {
+      "title": "Start with Godwoken",
+      "description": "Documentação focada na rede Godwoken equivalente a EVM, a maneira mais fácil de lançar um dApp no Nervos!"
+    }
+  },
+  "team": {
+    "title": "Equipe.",
+    "description": {
+      "text1": "Todos os participantes da comunidade, incluindo desenvolvedores, mineradores, criadores e entusiastas, desempenham papéis críticos no crescimento da rede. As equipes estão alinhadas na visão, mas podem ser bastante independentes umas das outras. A Nervos Foundation envia recursos para as equipes da comunidade e as ajuda a alcançar seus objetivos.",
+      "text2": "Visite este <1>link</1> para ver as vagas abertas na Nervos Foundation."
+    }
+  }
+}
