@@ -1,0 +1,39 @@
+{
+  "title": "Centro da Comunidade de Nervos",
+  "slogan": "Nervos é um projeto voltado para a comunidade que segue os valores cypherpunk de abertura e descentralização em todos os aspectos. Se você é apaixonado por cripto e busca continuamente melhorar o status quo,  Nervos é o lugar perfeito para estar.",
+  "community_fund_dao": {
+    "title": "Community Fund DAO.",
+    "description": "Inscreva-se para subsídios por meio do Community Fund DAO, o fundo do ecossistema da Nervos que apoia os membros da comunidade na organização de eventos, na produção de conteúdo e na construção da Base de Conhecimento Comum."
+  },
+  "requests_for_comment": {
+    "title": "RFC (pedidos de comentários).",
+    "description": "Influencie a direção de desenvolvimento da rede Nervos por meio do processo RFC aberto e orientado pela comunidade. Saiba mais sobre isso <1>aqui</1>."
+  },
+  "get_involved": {
+    "title": "Participe",
+    "nervos_talk": {
+      "title": "Nervos Talk",
+      "description": "Participe e discuta os desenvolvimentos técnicos do Nervos."
+    },
+    "twitter": {
+      "title": "Twitter",
+      "description": "Mantenha-se atualizado com as últimas notícias e atualizações em nosso ecossistema."
+    },
+    "discord": {
+      "title": "Discord",
+      "description": "Conecte-se com os principais desenvolvedores e colaboradores do Nervos."
+    },
+    "telegram": {
+      "title": "Telegram",
+      "description": "Torne-se parte de nossa vibrante comunidade de especialistas em memes."
+    },
+    "reddit": {
+      "title": "Reddit",
+      "description": "Participe de AMAs regulares com desenvolvedores de projetos da Nervos."
+    },
+    "youtube": {
+      "title": "Youtube",
+      "description": "Ouça podcasts e entrevistas com o núcleo Nervos e desenvolvedores de projetos."
+    }
+  }
+}
