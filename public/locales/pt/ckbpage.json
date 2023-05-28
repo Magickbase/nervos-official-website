@@ -1,0 +1,16 @@
+{
+  "title": "1 CKB = 1 Byte",
+  "slogan": "CKByte (CKB) é a criptomoeda nativa da Common Knowledge Base. É usado para pagar taxas de transação e armazenar dados. Manter um CKB permite que os usuários armazenem um byte de dados na camada base do Nervos.",
+  "tokenomics": {
+    "title": "Tokenômica do CKB",
+    "description": {
+      "text1": "O token CKB foi lançado com um suprimento inicial de 33,6 bilhões de moedas, 8,4 bilhões das quais foram queimadas logo em seguida. A emissão básica é de 33,6 bilhões de moedas por ano e diminui pela metade a cada quatro anos até chegar a zero, enquanto a emissão secundária fixa é de 1,344 bilhão. Confira a estrutura detalhada de fornecimento de CKB e o cronograma de emissão <1>aqui</1>.",
+      "text2": "Os mineradores recebem recompensas CKB de duas fontes: a emissão básica e secundária. A emissão secundária depende da ocupação do estado, onde os mineradores recebem metade da recompensa da emissão secundária se metade das moedas CKB circulantes forem usadas para armazenar o estado. Quando a emissão de base finalmente terminar, os mineradores continuarão obtendo renda de "aluguel do estado" da emissão secundária, independentemente da demanda da transação, o que garante que eles sejam incentivados a proteger o blockchain a longo prazo.",
+      "text3": "Os detentores de CKB de longo prazo podem buscar proteção contra a inflação na emissão secundária, bloqueando suas moedas no contrato inteligente da <1>Nervos DAO</1>."
+    }
+  },
+  "get_ckb": {
+    "title": "Como faço para obter CKB?",
+    "description": "Você pode comprar e vender CKB usando os exchanges de criptomoedas <1>nesta lista</1>. No entanto, considere transferir e manter seu CKB usando uma <3>carteira</3> de criptomoeda sem custódia, pois mantê-lo em trocas centralizadas é arriscado."
+  }
+}
