@@ -1,0 +1,51 @@
+{
+  "scroll_down": "Scroll Down",
+  "slide_ckb_intro": {
+    "text1": "Common Knowledge Base",
+    "text2": "Couche 1 conçue pour la modularité",
+    "text3": "Construit sur RISC-V et sécurisé par Proof-of-Work, CKB est la couche 1 la plus flexible et la plus interopérable de l'industrie de la blockchain. Il sert de base ultime à Nervos, un réseau de blockchain modulaire construit à partir de zéro pour assurer une sécurité, une décentralisation, une flexibilité et une interopérabilité exceptionnelles."
+  },
+  "slide_ckb_security": {
+    "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
+    "text1": "Sécurité suprême et décentra&shy;lisation",
+    "text2": "CKB s'appuie sur l'algorithme de consensus Proof-of-Work éprouvé pour garantir une sécurité et une décentralisation exceptionnelles dans toutes les conditions. Il est vraiment décentralisé, sans autorisation et particulièrement résistant à la capture par des acteurs adverses."
+  },
+  "slide_ckb_flexibility": {
+    "slogan": "Flexibilité et interopéra&shy;bilité inégalées",
+    "description": "CKB est la seule blockchain du marché qui prend en charge toutes les primitives cryptographiques. Il peut interagir de manière transparente avec toutes les blockchains hétérogènes et ancrer tous les types de chaînes latérales, de canaux d'état et de réseaux de couche 2. De plus, il est livré avec une abstraction de compte au niveau du protocole par défaut, permettant aux applications décentralisées d'offrir une expérience utilisateur inégalée."
+  },
+  "slide_ckb_subtainability": {
+    "slogan": "Tokenomics inventif",
+    "description": "CKB exploite un nouveau modèle tokenomique qui aligne les intérêts de tous les participants et parties prenantes de Nervos. Il garantit que les mineurs sont payés pour assurer la sécurité à perpétuité, tandis que les détenteurs de jetons sont protégés de l'inflation."
+  },
+  "slide_ckb_modular": {
+    "slogan": "Architecture Modulaire",
+    "description": "Nervos a été conçu dès le départ comme un réseau de blockchain modulaire, ce qui signifie qu'il peut évoluer jusqu'à des millions de transactions par seconde via de nombreux réseaux de couche 2 divers sans sacrifier la sécurité ou la décentralisation. CKB offre une sécurité parfaite, tandis que les réseaux de couche 2 construits au-dessus garantissent une évolutivité illimitée."
+  },
+  "get_started": {
+    "title": "Commencer",
+    "axon": {
+      "name": "AXON",
+      "title": "Lancez votre propre sidechain Nervos avec Axon.",
+      "description": "Besoin d'un haut débit ? Créez votre propre chaîne latérale compatible EVM et déployez-la facilement sur Nervos."
+    },
+    "developers": {
+      "name": "DÉVELOPPEURS",
+      "title": "Construisez sur du hardware, pas sur du software.",
+      "description": "La machine virtuelle de bas niveau de CKB vous permet de construire sans limites."
+    },
+    "learn_more": {
+      "name": "APPRENDRE ENCORE PLUS",
+      "title": "Créez des applications décentralisées universelles.",
+      "description": "Faites l'expérience de l'abstraction de compte au niveau du protocole et créez des dApps qui fonctionnent de manière transparente sur les blockchains."
+    }
+  },
+  "slide_footer": {
+    "live_metrics": "Métriques en direct",
+    "live_cells": "Cells vivantes",
+    "common_knowledge_stored": "Common Knowledge Stocké",
+    "ckb_in_nervos_dao": "CKB à Nervos DAO",
+    "loading": "en cours de chargement"
+  },
+  "right_click_to_draw": "CLIC DROIT POUR DESSINER"
+}
