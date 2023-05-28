@@ -1,0 +1,40 @@
+{
+  "title": "Baixe uma carteira",
+  "slogan": "Escolha sua carteira ideal e comece a explorar e interagir com o vibrante ecossistema Nervos.",
+  "neuron": {
+    "title": "Neuron Wallet",
+    "description": "A Neuron Wallet é uma carteira CKB produzida pela Nervos Foundation, ela contém suas chaves e pode criar e transmitir transações em seu nome.\nA Neuron Wallet empacotou um nó CKB Mainnet e configurou para se conectar à CKB Mainnet. Após a instalação, ao abrir a Carteira Neuron, o nó Mainnet incluído será executado."
+  },
+  "ckbull": {
+    "title": "CKBull",
+    "description": "CKBull é uma carteira móvel que permite acessar e gerenciar seu CKB, tokens de Force Bridge, NFTs, bem como depósitos no Nervos DAO, tudo em um só lugar."
+  },
+  "joyid": {
+    "title": "JoyID",
+    "description": "JoyID é uma carteira sem senha, sem mnemônicos, sem custódia e totalmente descentralizada."
+  },
+
+  "portal_wallet": {
+    "title": "Portal Wallet",
+    "description": "O Portal Wallet não é apenas uma carteira baseada na web, mas também um dApp completo que aproveita vários recursos do Nervos. Os usuários não precisam baixar um novo software ou gerar novas chaves/endereços para acessar o Nervos CKB, pois podem usar seus endereços e carteiras Ethereum existentes para receber e enviar CKB diretamente."
+  },
+  "safepal": {
+    "title": "SafePal",
+    "description": "Fundada em 2018, a SafePal é uma carteira de criptomoedas que visa fornecer uma plataforma de gerenciamento de criptomoedas segura e fácil de usar para as massas. SafePal fornece carteira de hardware, carteira de software e linhas de produtos de carteira de extensão de navegador. Todos são emparelhados e gerenciados por meio do aplicativo SafePal, onde os usuários podem armazenar, trocar e negociar com facilidade. Atualmente, atende a mais de 6 milhões de usuários em todo o mundo."
+  },
+  "ledger": {
+    "title": "Ledger",
+    "description": "Ledger é a carteira de hardware mais popular e tem suporte para Nervos CKB. Você pode armazenar, enviar e receber CKB usando suas carteiras de hardware Ledger Nano X e Ledger Nano S. Clique aqui para ver o guia."
+  },
+  "opera_wallet": {
+    "title": "Opera Wallet",
+    "description": "A partir de hoje, os milhões de usuários do Opera podem enviar e receber Nervos CKB dentro da carteira criptográfica incorporada ao navegador Opera no Android."
+  },
+  "imtoken": {
+    "title": "imToken",
+    "description": "Desde sua fundação em maio de 2016, a imToken fornece serviços de gerenciamento de ativos digitais seguros e confiáveis para milhões de usuários em mais de 150 países e regiões em todo o mundo. Em 2018, a equipe abriu o código principal do imToken 2.0 no Github.\n O imToken fornece uma carteira CKB integrada que permite aos usuários enviar, receber e armazenar CKB com segurança."
+  },
+  "official_website": "Website oficial",
+  "tutorials": "Tutoriais",
+  "download": "Baixar"
+}
