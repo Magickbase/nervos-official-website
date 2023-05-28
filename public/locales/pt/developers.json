@@ -1,0 +1,32 @@
+{
+  "title": "Construa em hardware, não em software",
+  "slogan": "A máquina virtual extremamente generalizada ou abstrata baseada em RISC-V da Nervos torna a Common Knowledge Base a Camada 1 mais flexível na indústria de blockchain. O CKB-VM não tem pré-compilações incorporadas e oferece suporte a todos os primitivos criptográficos, o que significa que os desenvolvedores podem criar aplicativos descentralizados poderosos que não são possíveis em outro lugar.",
+
+  "development_environment": {
+    "title": "Um ambiente de desenvolvimento como nenhum outro.",
+    "description": "A natureza altamente abstrata do CKB-VM capacita os desenvolvedores a liberar sua criatividade e criar aplicativos descentralizados exclusivos sem restrições. Como ambiente de desenvolvimento, o Common Knowledge Base é uma tela em branco; tem zero pré-compilações incorporadas e oferece suporte a todas as linguagens de programação, primitivas criptográficas, algoritmos e estruturas de dados.\nO modelo de contabilidade exclusivo do Common Knowledge Bases, chamado de modelo Cell, combina a programabilidade do modelo de conta com a escalabilidade e flexibilidade do UTXO modelo. É um modelo de contabilidade totalmente generalizado ou abstrato que fornece liberdades ilimitadas para desenvolvedores de sistemas e contratos de aplicativos. A abstração de contas em nível de protocolo vem por padrão, o que significa que aplicativos descentralizados na camada base podem ser acessados com carteiras de todos os outros ecossistemas de blockchain.\n Além disso, a Base de Conhecimento Comum pode entender e falar as línguas de todos os blockchains heterogêneos existentes e futuros, permitindo aos desenvolvedores para construir aplicativos cross-chain totalmente interoperáveis. Por outro lado, o CKB-VM pode executar outras máquinas virtuais, incluindo EVM e baseadas em Web-Assembly, o que garante mais ambientes de execução para os desenvolvedores criarem."
+  },
+  "become_bigger": {
+    "title": "Torne-se parte de algo maior.",
+    "description": "Além das vantagens de construir na Camada 1 mais flexível e interoperável do setor, os desenvolvedores da Base de Conhecimento Comum podem contar com suporte total da Nervos Foundation e sua equipe de especialistas em blockchain.\nExtensos recursos, incluindo documentação técnica detalhada, guias do desenvolvedor e tutoriais, são prontamente disponível para desenvolvedores que desejam iniciar sua jornada no Nervos. A Nervos também organiza workshops regulares, webinars e hackathons, permitindo que desenvolvedores em potencial aprimorem seus conhecimentos de blockchain e permaneçam na vanguarda da tecnologia. A equipe de especialistas da Fundação está sempre à disposição para oferecer assistência direta em relação a quaisquer desafios técnicos que os desenvolvedores de aplicativos enfrentem.\nMais importante, a vibrante comunidade de desenvolvedores e membros da comunidade com ideias semelhantes promove a colaboração, o compartilhamento de conhecimento e a solução de problemas por meio de fóruns dedicados, canais de bate-papo e encontros pessoais."
+  },
+  "developer_resources": {
+    "title": "Recursos do desenvolvedor.",
+    "docs": {
+      "title": "Documentos do CKB",
+      "description": "Informações técnicas fundamentais sobre o Common Knowledge Base."
+    },
+    "godwoken": {
+      "title": "Construindo na Camada 2 Godwoken",
+      "description": "Documentação técnica para Godwoken, a rede de Camada 2 equivalente a EVM construída na Base de Conhecimento Comum."
+    },
+    "build_club": {
+      "title": "Build Club",
+      "description": "The Build Club fornece suporte para equipes e indivíduos que desejam lançar novos projetos no Nervos."
+    },
+    "forum": {
+      "title": "Nervos Talk Forum",
+      "description": "Para que a comunidade participe e discuta as novidades do Nervos."
+    }
+  }
+}
