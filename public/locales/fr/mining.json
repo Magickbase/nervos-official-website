@@ -1,6 +1,6 @@
 {
   "title": "CKB <1></1> PoW",
-  "slogan": "Nervos a été lancé en novembre 2019 et le première halving de CKB est attendue à l'Epoch 8760 (vers novembre 2023).",
+  "slogan": "Nervos a été lancé en novembre 2019 et le premier halving de CKB est attendu à l'Epoch 8760 (vers novembre 2023).",
   "why-pow": {
     "title": "Pourquoi Proof-of-Work",
     "description": "CKB s'appuie sur l'algorithme de consensus Proof-of-Work éprouvé pour garantir une sécurité et une décentralisation exceptionnelles dans toutes les conditions. Il est vraiment décentralisé, sans autorisation et particulièrement résistant à la capture par des acteurs adverses."
