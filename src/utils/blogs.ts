@@ -111,7 +111,7 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(
     link,
   })
 
-  return fields == null ? blog : pick(blog, fields)
+  return fields == null ? blog : pick(blog, ...fields)
 }
 
 export function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', prefLang = 'en', fields?: F) {
