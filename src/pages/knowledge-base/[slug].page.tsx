@@ -42,9 +42,23 @@ const Post = ({ post, recents, categories }: Props) => {
     <TOCContextProvider>
       <Head>
         <title>{post.title}</title>
-        <meta property="og:image" content={post.coverImage?.src} />
       </Head>
-      <Page>
+      <Page
+        openGraph={props => ({
+          ...props,
+          type: 'article',
+          title: post.title,
+          description: post.excerpt ?? '',
+          ...(post.coverImage && {
+            image: {
+              alt: 'coverImage',
+              url: post.coverImage.src,
+              width: post.coverImage.width?.toString(),
+              height: post.coverImage.height?.toString(),
+            },
+          }),
+        })}
+      >
         <div className={styles.container}>
           <div className={styles.header}>
             <div className={styles.banner}>{t('knowledge_base_banner')}</div>
