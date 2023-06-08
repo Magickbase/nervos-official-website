@@ -2,7 +2,6 @@ import type { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
-import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { TwitterShareButton, LinkedinShareButton, RedditShareButton, FacebookShareButton } from 'react-share'
 import { useTranslation } from 'next-i18next'
@@ -198,11 +197,11 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     }
   }
 
-  const post = getBlogBySlug(slug, locale ?? 'en')
+  const post = await getBlogBySlug(slug, locale ?? 'en')
 
   const lng = await serverSideTranslations(locale ?? 'en', ['common', 'knowledge-base'])
 
-  const blogs = getAllBlogs('all', locale ?? 'en', ['title', 'slug', 'category'])
+  const blogs = await getAllBlogs('all', locale ?? 'en', ['title', 'slug', 'category'])
   const categories = getCategoriesFromBlogs(blogs)
   const recents = blogs.slice(0, 3)
 
@@ -216,8 +215,8 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   return { props }
 }
 
-export const getStaticPaths: GetStaticPaths = ({ locales }) => {
-  const posts = getAllBlogs('all', 'en', ['slug'])
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const posts = await getAllBlogs('all', 'en', ['slug'])
 
   const pageParams = posts.map(post => ({ slug: post.slug }))
 
