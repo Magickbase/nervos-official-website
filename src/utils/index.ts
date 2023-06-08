@@ -10,7 +10,7 @@ export const toCamelcase = <T>(object: any): T => {
 
 export const deepClone = <T>(object: unknown): T => JSON.parse(JSON.stringify(object)) as T
 
-export function pick<T extends Record<string, unknown>, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+export function pick<T extends Record<string, unknown>, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K> {
   const newObj: Partial<Pick<T, K>> = {}
   keys.forEach(key => {
     if (!(key in obj)) return
