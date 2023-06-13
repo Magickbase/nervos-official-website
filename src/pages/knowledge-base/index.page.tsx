@@ -5,11 +5,10 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
-import { DOMParser } from '@xmldom/xmldom'
 import Image from 'next/image'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
-import { getTimeFormatter, markdownToHtml } from '../../utils'
+import { getTimeFormatter } from '../../utils'
 import { Blog, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
@@ -222,14 +221,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   const pageNo = Number(query.page ?? '1')
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
 
-  const posts = getAllBlogs(sortBy, locale ?? 'en')
-  for (const post of posts) {
-    if (post.excerpt != null) continue
-    const contentHTML = await markdownToHtml(post.content)
-    const parser = new DOMParser()
-    const doc = parser.parseFromString(`<html><body>${contentHTML}</body></html>`, 'text/html')
-    post.excerpt = doc.documentElement.textContent?.substring(0, 200)
-  }
+  const posts = await getAllBlogs(sortBy, locale ?? 'en')
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(posts)
   const pageCount = Math.ceil(posts.length / PAGE_SIZE)

@@ -29,16 +29,6 @@ const App: AppType = ({ Component, pageProps }) => {
       <Head>
         <title>Nervos Network</title>
         <link rel="icon" type="image/svg" href="/favicon.svg" />
-        <meta property="og:title" content="Nervos Network" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:description"
-          content="The Nervos Network is a flexible blockchain platform, secured by proof of work, which allows developers freedom of choice in cryptographic primitives and decentralized application architecture."
-        />
-        <meta property="og:url" content="https://nervos.org" />
-        <meta property="og:site_name" content="Nervos Network" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@NervosNetwork" />
       </Head>
       <main
         // Here as redundancy in server-side rendering.

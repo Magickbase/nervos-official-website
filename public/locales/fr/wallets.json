@@ -1,0 +1,40 @@
+{
+  "title": "Télécharger un portefeuille",
+  "slogan": "Choisissez votre portefeuille idéal et commencez à explorer et à interagir avec le dynamique écosystème Nervos.",
+  "neuron": {
+    "title": "Neuron Wallet",
+    "description": "Neuron Wallet est un portefeuille CKB produit par la Fondation Nervos, il contient vos clés et peut créer et diffuser des transactions en votre nom.\nNeuron Wallet a fourni un nœud CKB Mainnet et configuré pour se connecter au CKB Mainnet. Après l'installation, lorsque vous ouvrez le portefeuille Neuron, le nœud Mainnet fourni s'exécutera."
+  },
+  "ckbull": {
+    "title": "CKBull",
+    "description": "CKBull est un portefeuille mobile qui vous permet d'accéder et de gérer votre CKB, les tokens pontés depuis Force Bridge, les NFT, ainsi que les dépôts dans le Nervos DAO, le tout en un seul endroit."
+  },
+  "joyid": {
+    "title": "JoyID",
+    "description": "JoyID est un portefeuille sans mot de passe, sans mnémonique, non dépositaire et entièrement décentralisé."
+  },
+
+  "portal_wallet": {
+    "title": "Portal Wallet",
+    "description": "Portal Wallet n'est pas seulement un portefeuille Web, mais également une dApp complète qui exploite diverses fonctionnalités de Nervos. Les utilisateurs n'ont pas besoin de télécharger de nouveaux logiciels ou de générer de nouvelles clés/adresses pour accéder à Nervos CKB, car ils peuvent utiliser leurs adresses et portefeuilles Ethereum existants pour recevoir et envoyer CKB directement."
+  },
+  "safepal": {
+    "title": "SafePal",
+    "description": "Fondé en 2018, SafePal est un portefeuille de crypto-monnaie qui vise à fournir une plate-forme de gestion de crypto sécurisée et conviviale pour les masses. SafePal fournit des gammes de produits de portefeuille matériel, de portefeuille logiciel et de portefeuille d'extension de navigateur. Tous sont couplés et gérés via l'application SafePal, où les utilisateurs peuvent facilement stocker et échanger. Il sert maintenant plus de 6 millions d'utilisateurs à travers le monde."
+  },
+  "ledger": {
+    "title": "Ledger",
+    "description": "Ledger est le portefeuille hardware le plus populaire et prend en charge Nervos CKB. Vous pouvez stocker, envoyer et recevoir des CKB à l'aide de vos portefeuilles hardware Ledger Nano X et Ledger Nano S. Cliquez ici pour le guide."
+  },
+  "opera_wallet": {
+    "title": "Opera Wallet",
+    "description": "À partir d'aujourd'hui, les millions d'utilisateurs d'Opera peuvent envoyer et recevoir Nervos CKB dans le portefeuille crypto intégré au navigateur Opera sur Android."
+  },
+  "imtoken": {
+    "title": "imToken",
+    "description": "Depuis sa création en mai 2016, imToken a fourni des services de gestion d'actifs numériques sécurisés et fiables à des millions d'utilisateurs dans plus de 150 pays et régions du monde. En 2018, l'équipe a ouvert le code principal d'imToken 2.0 sur Github.\n imToken fournit un portefeuille CKB intégré qui permet aux utilisateurs d'envoyer, de recevoir et de stocker des CKB en toute sécurité."
+  },
+  "official_website": "Site officiel",
+  "tutorials": "Tutoriels",
+  "download": "Télécharger"
+}

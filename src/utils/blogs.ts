@@ -3,7 +3,9 @@ import fs from 'fs'
 import { join, relative } from 'path'
 import matter from 'gray-matter'
 import sizeOf from 'image-size'
+import { DOMParser } from '@xmldom/xmldom'
 import { omitNullValue, pick } from '.'
+import { markdownToHtml } from './markdownToHtml'
 
 const blogsRootDirectory = join(process.cwd(), 'public', 'education_hub_articles')
 
@@ -39,17 +41,17 @@ export const getBlogSlugs = (dirPath = blogsRootDirectory, slugs: string[] = [])
   return slugs
 }
 
-export function getBlogBySlug(slug: string, prefLang?: string): Blog
-export function getBlogBySlug<F extends (keyof Blog)[]>(
+export async function getBlogBySlug(slug: string, prefLang?: string): Promise<Blog>
+export async function getBlogBySlug<F extends (keyof Blog)[]>(
   slug: string,
   prefLang: string | undefined,
   fields: F,
-): Pick<Blog, F[number]>
-export function getBlogBySlug<F extends (keyof Blog)[]>(
+): Promise<Pick<Blog, F[number]>>
+export async function getBlogBySlug<F extends (keyof Blog)[]>(
   slug: string,
   prefLang = 'en',
   fields?: F,
-): Blog | Pick<Blog, F[number]> {
+): Promise<Blog | Pick<Blog, F[number]>> {
   const nameSuffix = prefLang === 'en' ? '' : `_${prefLang}`
   let fullPath = join(blogsRootDirectory, slug, `index${nameSuffix}.md`)
   if (!fs.existsSync(fullPath)) {
@@ -94,7 +96,7 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(
   })
 
   const title = getStringValue(data.title)
-  const excerpt = getStringValue(data.excerpt)
+  const excerpt = getStringValue(data.excerpt) ?? (await getBlogExcerpt(content))
   const category = getStringValue(data.category)
   const link = getStringValue(data.link)
 
@@ -111,41 +113,42 @@ export function getBlogBySlug<F extends (keyof Blog)[]>(
     link,
   })
 
-  return fields == null ? blog : pick(blog, fields)
+  return fields == null ? blog : pick(blog, ...fields)
 }
 
-export function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', prefLang = 'en', fields?: F) {
+export async function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', prefLang = 'en', fields?: F) {
   const slugs = getBlogSlugs()
-  const blogs = slugs
-    .map(slug =>
+  const blogs = await Promise.all(
+    slugs.map(slug =>
       fields == null ? getBlogBySlug(slug, prefLang) : getBlogBySlug(slug, prefLang, [...fields, 'date', 'category']),
-    )
-    .sort((blog1, blog2) => {
-      switch (sortBy) {
-        case 'oldest post': {
-          if (blog1?.date && blog2?.date) {
-            return blog1?.date > blog2?.date ? 1 : -1
-          }
-          break
+    ),
+  )
+  blogs.sort((blog1, blog2) => {
+    switch (sortBy) {
+      case 'oldest post': {
+        if (blog1?.date && blog2?.date) {
+          return blog1?.date > blog2?.date ? 1 : -1
         }
-        case 'newest post':
-        case 'all': {
-          if (blog1?.date && blog2?.date) {
-            return blog1?.date > blog2?.date ? -1 : 1
-          }
-        }
-        default: {
-          if (blog1?.category?.startsWith(sortBy) && !blog2?.category?.startsWith(sortBy)) {
-            return -1
-          } else if (!blog1?.category?.startsWith(sortBy) && blog2?.category?.startsWith(sortBy)) {
-            return 1
-          } else if (blog1?.date && blog2?.date) {
-            return blog1?.date > blog2?.date ? -1 : 1
-          }
+        break
+      }
+      case 'newest post':
+      case 'all': {
+        if (blog1?.date && blog2?.date) {
+          return blog1?.date > blog2?.date ? -1 : 1
         }
       }
-      return 0
-    })
+      default: {
+        if (blog1?.category?.startsWith(sortBy) && !blog2?.category?.startsWith(sortBy)) {
+          return -1
+        } else if (!blog1?.category?.startsWith(sortBy) && blog2?.category?.startsWith(sortBy)) {
+          return 1
+        } else if (blog1?.date && blog2?.date) {
+          return blog1?.date > blog2?.date ? -1 : 1
+        }
+      }
+    }
+    return 0
+  })
   return blogs
 }
 
@@ -154,6 +157,13 @@ export const getCategoriesFromBlogs = (blogs: Pick<Blog, 'category'>[]) =>
     .filter(v => v)
     .map(v => v.toLowerCase())
     .sort()
+
+async function getBlogExcerpt(content: Blog['content']): Promise<Blog['excerpt']> {
+  const contentHTML = await markdownToHtml(content)
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(`<html><body>${contentHTML}</body></html>`, 'text/html')
+  return doc.documentElement.textContent?.substring(0, 200)
+}
 
 function getStringValue(data: unknown): string | undefined {
   return typeof data === 'string' ? data : undefined
