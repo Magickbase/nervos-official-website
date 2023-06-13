@@ -48,7 +48,7 @@ const Post = ({ post, recents, categories }: Props) => {
           ...props,
           type: 'article',
           title: post.title,
-          description: post.excerpt ?? '',
+          description: post.excerpt,
           ...(post.coverImage && {
             image: {
               alt: 'coverImage',
@@ -101,7 +101,7 @@ const Post = ({ post, recents, categories }: Props) => {
               <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>
                 {post.title}
               </TOCItem>
-              <div className={styles.excerpt}>{post.excerpt}</div>
+              <div className={styles.subtitle}>{post.subtitle}</div>
 
               {post.coverImage && (
                 <Image
