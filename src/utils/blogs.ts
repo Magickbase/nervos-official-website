@@ -13,6 +13,7 @@ export interface Blog {
   slug: string
   content: string
   title: string
+  subtitle?: string
   date: string
   readingTime: string
   authors: { name: string; avatar?: string }[]
@@ -21,7 +22,7 @@ export interface Blog {
     width?: number
     height?: number
   }
-  excerpt?: string
+  excerpt: string
   category?: string
   link?: string
 }
@@ -96,6 +97,7 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   })
 
   const title = getStringValue(data.title)
+  const subtitle = getStringValue(data.subtitle)
   const excerpt = getStringValue(data.excerpt) ?? (await getBlogExcerpt(content))
   const category = getStringValue(data.category)
   const link = getStringValue(data.link)
@@ -103,6 +105,7 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const blog = omitNullValue({
     slug,
     title: title ?? slug,
+    subtitle,
     content,
     date,
     coverImage,
@@ -162,7 +165,7 @@ async function getBlogExcerpt(content: Blog['content']): Promise<Blog['excerpt']
   const contentHTML = await markdownToHtml(content)
   const parser = new DOMParser()
   const doc = parser.parseFromString(`<html><body>${contentHTML}</body></html>`, 'text/html')
-  return doc.documentElement.textContent?.substring(0, 200)
+  return (doc.documentElement.textContent ?? content).substring(0, 200)
 }
 
 function getStringValue(data: unknown): string | undefined {
