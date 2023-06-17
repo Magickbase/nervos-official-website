@@ -12,7 +12,7 @@ module.exports = {
   i18n: {
     defaultLocale: 'en',
     // TODO: 'ko' has been temporarily removed until the Korean translation file is ready.
-    locales: ['en', 'zh', 'es'],
+    locales: ['en', 'zh', 'es', 'kh'],
     // TODO: This is because there is currently no full i18n translation support,
     // so switching to other languages is temporarily disabled.
     localeDetection: false,
