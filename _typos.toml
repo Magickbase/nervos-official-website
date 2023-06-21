@@ -1,0 +1,4 @@
+[default]
+
+[files]
+extend-exclude = ["public/locales/pt", "public/locales/fr", "public/locales/es"]
