@@ -57,7 +57,6 @@ export const OpenGraph: FC<{ properties: OGProperties }> = ({ properties }) => {
       'image:height': image.height,
       'image:alt': image.alt,
       'image:type': image.type,
-      'twitter:image': image.url,
     }).forEach(([key, value]) => {
       if (value == null) return
       ogTags.push([`og:${key}`, value])
@@ -65,6 +64,7 @@ export const OpenGraph: FC<{ properties: OGProperties }> = ({ properties }) => {
   }
 
   Object.entries({
+    image: image?.url,
     card: twitter?.card,
     url,
     domain: twitter?.domain,
