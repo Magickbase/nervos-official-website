@@ -52,7 +52,8 @@ const Post = ({ post, recents, categories }: Props) => {
           ...(post.coverImage && {
             image: {
               alt: 'coverImage',
-              url: post.coverImage.src,
+              // `twitter:image` need full path to the protocol.
+              url: post.coverImage.fullPath,
               width: post.coverImage.width?.toString(),
               height: post.coverImage.height?.toString(),
             },
