@@ -26,6 +26,9 @@ const defaultOpenGraph: OGProperties = {
     card: 'summary_large_image',
     site: '@NervosNetwork',
   },
+  image: {
+    url: `${process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : ''}/images/logo.png`,
+  },
 }
 
 export const Page = forwardRef<HTMLDivElement, PageProps>(function Page(props, ref) {

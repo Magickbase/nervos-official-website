@@ -18,6 +18,7 @@ export interface Blog {
   readingTime: string
   authors: { name: string; avatar?: string }[]
   coverImage?: {
+    fullPath: string
     src: string
     width?: number
     height?: number
@@ -62,20 +63,23 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
+  let coverImage: Blog['coverImage'] = undefined
   let coverImageURL = typeof data.coverImage === 'string' ? data.coverImage : undefined
   if (coverImageURL != null) {
     const isExternalLink = /^(https?:)?\/\//.test(coverImageURL)
     if (!isExternalLink) {
+      // Some places need to include the full path to the protocol, such as `twitter:image`.
+      const prefix = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ''
       coverImageURL = `/education_hub_articles/${slug}/${coverImageURL}`
+      coverImage = {
+        fullPath: `${prefix}${coverImageURL}`,
+        src: coverImageURL,
+        ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
+      }
+    } else {
+      // TODO: support external link
     }
   }
-  const coverImage =
-    coverImageURL != null
-      ? {
-          src: coverImageURL,
-          ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
-        }
-      : undefined
 
   const date = typeof data.date === 'string' ? data.date : fs.statSync(fullPath).birthtime.toISOString()
   const readingTime = Math.round(content.length / 1300).toString()
