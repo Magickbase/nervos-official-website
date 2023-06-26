@@ -7704,7 +7704,7 @@ __metadata:
     stylelint-config-rational-order: ^0.1.2
     stylelint-config-standard-scss: ^9.0.0
     stylelint-order: ^6.0.2
-    superjson: 1.12.3
+    superjson: 1.12.4
     swiper: ^9.1.0
     typescript: ^4.9.5
     zod: ^3.20.6
@@ -10216,12 +10216,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superjson@npm:1.12.3":
-  version: 1.12.3
-  resolution: "superjson@npm:1.12.3"
+"superjson@npm:1.12.4":
+  version: 1.12.4
+  resolution: "superjson@npm:1.12.4"
   dependencies:
     copy-anything: ^3.0.2
-  checksum: 3549cc1d03e93745632d8114f91ed1668d81a0cf4c618f8f89a1b06f426a9cd1a2879f0e79469a6a193fd19dcea9a8fecff6215d12527b98c40c67cd98f185d3
+  checksum: fcf37714f734cd51af018b78fd7f630952a0682fc3cb060d00b824e5d0cd49f0206b8e23829469c99972fd7fcd6e468b9492abb1c4e258ea5ec7f45c345a56f2
   languageName: node
   linkType: hard
 
