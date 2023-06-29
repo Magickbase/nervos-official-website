@@ -159,11 +159,13 @@ export async function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', pref
   return blogs
 }
 
-export const getCategoriesFromBlogs = (blogs: Pick<Blog, 'category'>[]) =>
-  [...new Set(blogs.map(blog => blog.category?.split(',') ?? []).flat())]
-    .filter(v => v)
-    .map(v => v.toLowerCase())
-    .sort()
+export const getCategoriesFromBlogs = (blogs: Pick<Blog, 'category'>[]) => {
+  const categories = blogs
+    .map(blog => blog.category?.split(',') ?? [])
+    .flat()
+    .map(v => v.trim().toLowerCase())
+  return [...new Set(categories)]
+}
 
 async function getBlogExcerpt(content: Blog['content']): Promise<Blog['excerpt']> {
   const contentHTML = await markdownToHtml(content)
