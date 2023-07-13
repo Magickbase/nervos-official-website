@@ -207,7 +207,10 @@ const SlideCKBIntro: FC<ScreenSlideProps> = props => {
   return (
     <ScreenSlide {...props}>
       <div className={styles.slideCKBIntro}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
+        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          {t('text1')}
+          <div className={styles.ckbBadge}>CKB</div>
+        </div>
         <div className={clsx(styles.subjectTitleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
         <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text3')}</div>
       </div>

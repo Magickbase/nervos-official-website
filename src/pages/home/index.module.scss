@@ -170,6 +170,25 @@ $headerZ: 2;
   }
 }
 
+.ckbBadge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px 10px 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  background-color: black;
+
+  @media (max-width: $mobileBreakPoint) {
+    font-size: 28px;
+    line-height: 80%;
+    letter-spacing: 1px;
+  }
+}
+
 .subjectTitleText {
   font-weight: 500;
   font-size: 25px;
