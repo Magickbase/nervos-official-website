@@ -34,9 +34,7 @@ export const ContributorsDialog: FC<ContributorsDialogType> = ({ contributors, s
         </p>
         <p>To everyone who&apos;s contributed, we thank you from the bottom of our hearts. You are our lifeblood.</p>
         <div className={styles.avatarWrap}>
-          {contributors?.map((c, index) => (
-            <Contributor author={c} key={index} />
-          ))}
+          {contributors?.map((c, index) => <Contributor author={c} key={index} />)}
         </div>
 
         <div className={styles.actions}>

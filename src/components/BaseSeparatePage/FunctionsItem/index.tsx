@@ -36,11 +36,7 @@ export const FunctionsItem: FC<FunctionsItemType> = ({
   >
     <div className={clsx(styles.titleWrap)}>
       <div className={clsx(styles.title)}>{titleRender ? titleRender(title) : title}</div>
-      <div className={clsx(styles.tags)}>
-        {tags?.map((tag, index) => (
-          <TagItem tag={tag} key={index} />
-        ))}
-      </div>
+      <div className={clsx(styles.tags)}>{tags?.map((tag, index) => <TagItem tag={tag} key={index} />)}</div>
     </div>
     <div className={clsx(styles.content)}>{content}</div>
   </TOCItem>
