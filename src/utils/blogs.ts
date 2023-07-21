@@ -6,6 +6,7 @@ import sizeOf from 'image-size'
 import { DOMParser } from '@xmldom/xmldom'
 import { omitNullValue, pick } from '.'
 import { markdownToHtml } from './markdownToHtml'
+import { BASE_URL } from './env'
 
 const blogsRootDirectory = join(process.cwd(), 'public', 'education_hub_articles')
 
@@ -69,7 +70,7 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
     const isExternalLink = /^(https?:)?\/\//.test(coverImageURL)
     if (!isExternalLink) {
       // Some places need to include the full path to the protocol, such as `twitter:image`.
-      const prefix = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ''
+      const prefix = BASE_URL ?? ''
       coverImageURL = `/education_hub_articles/${slug}/${coverImageURL}`
       coverImage = {
         fullPath: `${prefix}${coverImageURL}`,
