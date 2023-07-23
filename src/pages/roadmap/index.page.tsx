@@ -7,7 +7,7 @@ import { useBodyClass } from '../../hooks'
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
 
-import { Badges, inprogress, upcoming, achivements } from './icons'
+import { Badges, inprogress, upcoming, achievements } from './icons'
 import { Section } from './Section'
 
 const Roadmap: NextPage = () => {
@@ -33,7 +33,7 @@ const Roadmap: NextPage = () => {
     },
     {
       title: <div className={clsx(styles.sectionTitle, styles.achievementsTitle)}>Achievements</div>,
-      icon: achivements,
+      icon: achievements,
       iconPosition: 'left' as const,
       subtitle: 'SUDT',
       descriptionText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more`,
@@ -72,7 +72,7 @@ const Roadmap: NextPage = () => {
             <div className={styles.sloganTitle}>Get involved</div>
             <div className={styles.sloganText}>
               Nervos is an open source project to build the primitives necessary for a robust, permissionless digital
-              economy. The path to realize this ambition is windy, full of quiet triumps and suprising turns.
+              economy. The path to realize this ambition is windy, full of quiet triumps and surprising turns.
             </div>
             <div className={styles.sloganText}>
               Above all, Nervos is a community-driven endeavor, and anything that is accomplished is done through a
