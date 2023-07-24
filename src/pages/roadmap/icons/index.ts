@@ -1,5 +1,5 @@
 import Badges from './badges.svg'
-import * as inprogressPng  from './inprogress.png'
+import * as inprogressPng  from './in_progress.png'
 import * as upcomingPng from './upcoming.png'
 import * as achievementsPng from './achievements.png'
 
