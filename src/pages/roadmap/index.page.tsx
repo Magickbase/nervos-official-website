@@ -99,9 +99,13 @@ const Roadmap: NextPage = () => {
               Neuron Talk Forum
             </StyledLink>
           </div>
-          {sections.map(section => (
-            <Section key={section.subtitle} {...section} />
-          ))}
+          {sections.map((section, index) => {
+            if(isDesktop && index === 1) {
+              // when on desktop, background color for the second section is different
+              return  <Section key={section.subtitle} {...section} className={styles.darkerBg}/>
+            }
+            return <Section key={section.subtitle} {...section} />
+          })}
         </div>
       </Page>
     </>

@@ -10,6 +10,7 @@ type SectionProps = {
     descriptionText: string,
     descriptionLink: string,
     projects: string[],
+    className?: string,
 }
 
 export const Section: React.FC<SectionProps> = ({
@@ -20,8 +21,9 @@ export const Section: React.FC<SectionProps> = ({
     descriptionText,
     descriptionLink,
     projects,
+    className
 }) => {
-    return <div className={clsx(styles.container, iconPosition==='right' && styles.reverse)}>
+    return <div className={clsx(styles.container, iconPosition==='right' && styles.reverse, className)}>
         <div className={styles.iconWrapper}>
           <div className={styles.icon} >
             <img src={icon} alt=''/>
