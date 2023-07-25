@@ -96,7 +96,7 @@ const Roadmap: NextPage = () => {
             </StyledLink>{' '}
             |{' '}
             <StyledLink className={styles.link} href={''} colored>
-              Neuron Talk Forum
+              Nervos Talk Forum
             </StyledLink>
           </div>
           {sections.map((section, index) => {
