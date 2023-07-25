@@ -13,36 +13,37 @@
   margin-bottom: 30px;
   padding: 0 min(10%, 120px);
   font-family: "Articulat CF", sans-serif;
-}
-
-.embellishedElementsWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  mix-blend-mode: exclusion;
 }
 
 .embellishedElements {
   position: absolute;
-  top: -150px;
-  left: 0;
   z-index: 1;
-  width: 30vw;
-  height: 50vh;
-  background: url('./embellished.png') no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
-  transform: rotate(180deg);
+}
 
-  &>img {
-    width: 100px;
-    height: 100px;
-  }
+.embellishedElementLeft {
+  top: 0;
+  left: 0;
+  width: 485px;
+  height: 530px;
+  background-image: url('./embellished_left.png');
+}
+
+.embellishedElementRight {
+  top: -60px;
+  right: 0;
+  width: 600px;
+  height: 1130px;
+  background-image: url('./embellished_right.png');
+  background-position: right;
 }
 
 .title {
-  margin-top: 100px;
+  margin-top: 200px;
   font-weight: 700;
-  font-size: 45px;
+  font-size: 65px;
 }
 
 .subTitleWrapper {
@@ -51,18 +52,23 @@
   gap: 5px;
 }
 
+.link {
+  text-decoration: underline;
+}
+
 .subTitleItem {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 21px;
   line-height: 100%;
 }
 
 .badges {
-  margin-top: 30px;
+  margin-top: 130px;
+  margin-bottom: 100px;
 }
 
 .slogan {
-  padding: 30px;
+  padding: 60px 120px;
   background: #484D4E;
   border: 0.5px solid #000;
   border-radius: 35px;
@@ -70,7 +76,7 @@
   .sloganTitle {
     color: #FFF;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 39px;
   }
 
   .sloganText {
@@ -84,7 +90,7 @@
 
 .sectionTitle {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 39px;
   font-style: normal;
   line-height: 160%;
 }
@@ -98,18 +104,54 @@
 }
 
 .achievementsTitle {
-  color: white;
+  color: #DDE3E3;
 }
 
 @media (max-width: $mobileBreakPoint) {
-  .embellishedElements {
-    top: -110px;
-    width: 100vw;
+  .content {
+    mix-blend-mode: normal;
+  }
+
+  .embellishedElementMobileUp {
+    width: 425px;
+    height: 500px;
+    background-image: url('./embellished_mobile_up.png');
+  }
+
+  .embellishedElementMobileDown {
+    top: 580px;
+    width: 120px;
+    height: 500px;
+    background-image: url('./embellished_mobile_down.png');
   }
 
   .title,
   .badges {
     align-self: self-start;
+  }
 
+  .title {
+    font-size: 48px;
+  }
+
+  .subTitleItem {
+    font-size: 22px;
+  }
+
+  .badges {
+    margin-top: 30px;
+    margin-bottom: 180px;
+  }
+
+  .slogan {
+    padding: 60px 40px;
+
+    .sloganTitle {
+      font-size: 22px;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 18px;
   }
 }

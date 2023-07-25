@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { Page } from 'src/components/Page'
 import clsx from 'clsx'
 import { StyledLink } from '../../components/StyledLink'
-import { useBodyClass } from '../../hooks'
+import { useBodyClass, useIsMobile } from '../../hooks'
 
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
@@ -12,6 +12,8 @@ import { Section } from './Section'
 
 const Roadmap: NextPage = () => {
   useBodyClass([presets.themeDark ?? ''])
+  const isMobile = useIsMobile()
+  const isDesktop = !isMobile
   const sections = [
     {
       title: <div className={clsx(styles.sectionTitle, styles.inProgressTitle)}>In Progress</div>,
@@ -57,7 +59,18 @@ const Roadmap: NextPage = () => {
   return (
     <>
       <Page className={styles.baseSeparatePage}>
-        <div className={styles.embellishedElements} />
+        {isDesktop && (
+          <>
+            <div className={clsx(styles.embellishedElements, styles.embellishedElementLeft)} />
+            <div className={clsx(styles.embellishedElements, styles.embellishedElementRight)} />
+          </>
+        )}
+        {isMobile && (
+          <>
+           <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileUp)} />
+           <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileDown)} />
+           </>
+        )}
         <div className={styles.content}>
           <div className={styles.title}>The journey</div>
           <div className={styles.subTitleWrapper}>
@@ -78,11 +91,11 @@ const Roadmap: NextPage = () => {
               Above all, Nervos is a community-driven endeavor, and anything that is accomplished is done through a
               galvanized genuine interest in the brilliant minds that contribute to the network&apos;s development.
             </div>
-            <StyledLink href={''} colored>
+            <StyledLink className={styles.link} href={''} colored>
               RFCs
             </StyledLink>{' '}
             |{' '}
-            <StyledLink href={''} colored>
+            <StyledLink className={styles.link} href={''} colored>
               Neuron Talk Forum
             </StyledLink>
           </div>

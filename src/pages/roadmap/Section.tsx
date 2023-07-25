@@ -21,7 +21,7 @@ export const Section: React.FC<SectionProps> = ({
     descriptionLink,
     projects,
 }) => {
-    return <div className={clsx(styles.container, iconPosition==='right' &&styles.reverse)}>
+    return <div className={clsx(styles.container, iconPosition==='right' && styles.reverse)}>
         <div className={styles.iconWrapper}>
           <div className={styles.icon} >
             <img src={icon} alt=''/>
@@ -31,7 +31,7 @@ export const Section: React.FC<SectionProps> = ({
             <div>{title}</div>
             <div className={styles.divider}/> 
             <div className={styles.subtitle}>{subtitle}</div>
-            <div className={styles.descriptionText}>{descriptionText}{' '}<StyledLink href={''} colored >{descriptionLink}</StyledLink></div>
+            <div className={styles.descriptionText}>{descriptionText}{' '}<StyledLink className={styles.link} href={''} colored >{descriptionLink}</StyledLink></div>
             {projects.map((project) => <div className={styles.project} key={project}>{project}</div>)}
         </div>
     </div>
