@@ -16,6 +16,10 @@ $defaultHeaderHeight: 90px;
   }
 }
 
+.focusInvisible:focus-visible {
+  outline: none;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -58,10 +62,6 @@ $defaultHeaderHeight: 90px;
         letter-spacing: 0.15em;
         transform: scale($scale);
       }
-
-      &:focus-visible {
-        outline: none;
-      }
     }
 
   }
@@ -80,10 +80,6 @@ $defaultHeaderHeight: 90px;
       background: transparent;
       border: none;
       cursor: pointer;
-
-      &:focus-visible {
-        outline: none;
-      }
     }
 
   }
