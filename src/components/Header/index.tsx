@@ -178,7 +178,7 @@ const LanguagePopover: FC<{
     <Popover className={styles.languagePopover}>
       {({ close }) => (
         <>
-          <Popover.Button as={'div'} className={clsx(styles.trigger, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          <Popover.Button className={clsx(styles.trigger, DISABLE_CGOL_MOUSE_CONTROLLER)}>
             <LanguageIcon />
           </Popover.Button>
 

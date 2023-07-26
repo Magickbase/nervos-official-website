@@ -58,11 +58,12 @@ $defaultHeaderHeight: 90px;
         letter-spacing: 0.15em;
         transform: scale($scale);
       }
+
+      &:focus-visible {
+        outline: none;
+      }
     }
 
-    .trigger:focus-visible {
-      outline: none;
-    }
   }
 
   .logo {
@@ -75,8 +76,16 @@ $defaultHeaderHeight: 90px;
 
     .trigger {
       display: flex;
+      color: #000;
+      background: transparent;
+      border: none;
       cursor: pointer;
+
+      &:focus-visible {
+        outline: none;
+      }
     }
+
   }
 
   @media (max-width: $mobileBreakPoint) {
