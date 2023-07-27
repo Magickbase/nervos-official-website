@@ -17,7 +17,7 @@
   }
 }
 
-.link{
+.link {
   font-size: 18px;
   text-decoration: underline;
 }
@@ -55,7 +55,7 @@
   width: fit-content;
   font-weight: 600;
   font-size: 20px;
-  background: linear-gradient(268deg, #1D61F0 0%, #18EFB1 100%);
+  background: linear-gradient(268deg, #1d61f0 0%, #18efb1 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -65,9 +65,11 @@
   padding-left: 10px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 160%; /* 28.8px */
+  line-height: 160%;
+  
+  /* 28.8px */
   letter-spacing: 0.54px;
-  border-left: 1px solid #D9D9D9;
+  border-left: 1px solid #d9d9d9;
 }
 
 .project {
@@ -85,7 +87,7 @@
     width: 100%;
   }
 
-  .iconWrapper{
+  .iconWrapper {
     height: 150px;
   }
 
@@ -100,7 +102,7 @@
 
   .reverse {
     flex-direction: row;
-  
+
     .icon {
       transform: translate(55px, -74px);
     }
@@ -113,5 +115,4 @@
   .descriptionText {
     font-size: 14px;
   }
-
 }
