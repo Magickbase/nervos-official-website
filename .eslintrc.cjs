@@ -18,6 +18,7 @@ const config = {
   rules: {
     'import/order': ['error', { groups: [['builtin', 'external', 'internal']] }],
     'import/newline-after-import': 'error',
+    'eol-last': ["error", "always"],
   },
   // This is because `next.config.mjs` is excluded from tsconfig.
   ignorePatterns: ['next.config.mjs', 'next-i18next.config.js'],
