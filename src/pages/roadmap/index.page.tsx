@@ -22,7 +22,7 @@ const Roadmap: NextPage = () => {
       subtitle: 'CKB Hardfork 2023',
       descriptionText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more`,
       descriptionLink: 'Find out more',
-      projects: ['Kuai', 'Force Relay', 'Open Transactions', 'Composable Lock Script', 'CKB Light Client'],
+      projects: ['Kuai', 'ForceRelay', 'Open Transactions', 'Composable Lock Script', 'CKB Light Client'],
     },
     {
       title: <div className={clsx(styles.sectionTitle, styles.upcomingTitle)}>Upcoming</div>,
