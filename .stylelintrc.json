@@ -35,6 +35,7 @@
       {
         "message": "Expected placeholder to be lowerCamelCase"
       }
-    ]
+    ],
+    "no-missing-end-of-source-newline": true
   }
 }
