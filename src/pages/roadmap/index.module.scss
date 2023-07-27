@@ -3,7 +3,6 @@
 
 .content {
   position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -12,13 +11,12 @@
   margin: 0 auto;
   margin-bottom: 30px;
   padding: 0 min(10%, 120px);
-  font-family: "Articulat CF", sans-serif;
+  font-family: 'Articulat CF', sans-serif;
   mix-blend-mode: exclusion;
 }
 
 .embellishedElements {
   position: absolute;
-  z-index: 1;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -70,12 +68,12 @@
 
 .slogan {
   padding: 60px 120px;
-  background: #484D4E;
+  background: #484d4e;
   border: 0.5px solid #000;
   border-radius: 35px;
 
   .sloganTitle {
-    color: #FFF;
+    color: #fff;
     font-weight: 700;
     font-size: 39px;
   }
@@ -101,15 +99,15 @@
 }
 
 .inProgressTitle {
-  color: #BCFFEC;
+  color: #bcffec;
 }
 
 .upcomingTitle {
-  color: #E0D0FF;
+  color: #e0d0ff;
 }
 
 .achievementsTitle {
-  color: #DDE3E3;
+  color: #dde3e3;
 }
 
 @media (max-width: $mobileBreakPoint) {

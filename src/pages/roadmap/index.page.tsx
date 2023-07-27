@@ -5,10 +5,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
-
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
-
 import { Badges, inprogress, upcoming, achievements } from './icons'
 import { Section } from './Section'
 
@@ -61,7 +59,7 @@ const Roadmap: NextPage = () => {
         t('achievements.bit_launches'),
         t('achievements.force_bridge_launch'),
         t('achievements.opera_integration'),
-      ]
+      ],
     },
   ]
 
@@ -103,11 +101,16 @@ const Roadmap: NextPage = () => {
             </StyledLink>
           </div>
           {sections.map((section, index) => {
-            if (isDesktop && index === 1) {
-              // when on desktop, background color for the second section is different
-              return <Section key={section.subtitle} {...section} className={styles.darkerBg} />
-            }
-            return <Section key={section.subtitle} {...section} />
+            return (
+              <Section
+                key={section.subtitle}
+                {...section}
+                className={clsx({
+                  // when on desktop, background color for the second section is different
+                  [styles.darkerBg ?? '']: isDesktop && index === 1,
+                })}
+              />
+            )
           })}
         </div>
       </Page>
