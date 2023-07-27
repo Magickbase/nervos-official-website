@@ -63,7 +63,6 @@ $defaultHeaderHeight: 90px;
         transform: scale($scale);
       }
     }
-
   }
 
   .logo {
@@ -81,7 +80,6 @@ $defaultHeaderHeight: 90px;
       border: none;
       cursor: pointer;
     }
-
   }
 
   @media (max-width: $mobileBreakPoint) {
