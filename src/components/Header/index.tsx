@@ -63,7 +63,7 @@ const MenuPopover: FC = () => {
     <Popover className={styles.menuPopover}>
       {({ close }) => (
         <>
-          <Popover.Button className={clsx(styles.trigger, styles.focusInvisible, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          <Popover.Button className={clsx(styles.trigger, styles.noFocusOutline, DISABLE_CGOL_MOUSE_CONTROLLER)}>
             <MenuIcon />
             <span className={styles.text}>MENU</span>
           </Popover.Button>
@@ -178,7 +178,7 @@ const LanguagePopover: FC<{
     <Popover className={styles.languagePopover}>
       {({ close }) => (
         <>
-          <Popover.Button className={clsx(styles.trigger, styles.focusInvisible, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+          <Popover.Button className={clsx(styles.trigger, styles.noFocusOutline, DISABLE_CGOL_MOUSE_CONTROLLER)}>
             <LanguageIcon />
           </Popover.Button>
 
