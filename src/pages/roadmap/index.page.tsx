@@ -7,8 +7,9 @@ import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
-import { Badges, inprogress, upcoming, achievements } from './icons'
+import { Badges, inprogress, upcoming, achievements, journey } from './icons'
 import { Section } from './Section'
+import { Journey } from './Journey'
 
 const Roadmap: NextPage = () => {
   useBodyClass([presets.themeDark ?? ''])
@@ -63,6 +64,16 @@ const Roadmap: NextPage = () => {
     },
   ]
 
+  const jouneySectionData = {
+    title: <div className={clsx(styles.sectionTitle)}>{t('journey.title')}</div>,
+    icon: journey,
+    iconPosition: 'right' as const,
+    description: t('journey.description'),
+    // TODO: add join button href here
+    joinLink: '',
+    joinLinkText: t('journey.link_text'),
+  }
+
   return (
     <>
       <Page className={styles.baseSeparatePage}>
@@ -112,6 +123,14 @@ const Roadmap: NextPage = () => {
               />
             )
           })}
+          <Journey
+            title={jouneySectionData.title}
+            icon={jouneySectionData.icon}
+            iconPosition={jouneySectionData.iconPosition}
+            description={jouneySectionData.description}
+            joinLink={jouneySectionData.joinLink}
+            joinLinkText={jouneySectionData.joinLinkText}
+          />
         </div>
       </Page>
     </>

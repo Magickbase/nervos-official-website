@@ -44,5 +44,10 @@
     "bit_launches": ".bit launches",
     "force_bridge_launch": "Force bridge launch",
     "opera_integration": "Opera integration"
+  },
+  "journey": {
+    "title" : "Join the journey",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip",
+    "link_text": "join"
   }
 }

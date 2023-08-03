@@ -35,7 +35,7 @@ export const Section: React.FC<SectionProps> = ({
         <div className={styles.divider} />
         <div className={styles.subtitle}>{subtitle}</div>
         <div className={styles.descriptionText}>
-          {descriptionText}{' '}
+          {descriptionText} {/* TODO: add real href here */}
           <StyledLink className={styles.link} href={''} colored>
             {descriptionLink}
           </StyledLink>
