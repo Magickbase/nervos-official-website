@@ -103,10 +103,11 @@ const Roadmap: NextPage = () => {
             <div className={styles.sloganTitle}>{t('get_involved.title')}</div>
             <div className={styles.sloganText}>{t('get_involved.description_1')}</div>
             <div className={styles.sloganText}>{t('get_involved.description_2')}</div>
+            {/* // TODO: add join button href here */}
             <StyledLink className={styles.link} href={''} colored>
               {t('get_involved.rfcs')}
             </StyledLink>{' '}
-            |{' '}
+            | {/* // TODO: add join button href here */}
             <StyledLink className={styles.link} href={''} colored>
               {t('get_involved.nervos_talk_forum')}
             </StyledLink>
