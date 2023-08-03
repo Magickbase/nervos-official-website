@@ -64,7 +64,7 @@ const Roadmap: NextPage = () => {
     },
   ]
 
-  const jouneySectionData = {
+  const journeySectionData = {
     title: <div className={clsx(styles.sectionTitle)}>{t('journey.title')}</div>,
     icon: journey,
     iconPosition: 'right' as const,
@@ -124,12 +124,12 @@ const Roadmap: NextPage = () => {
             )
           })}
           <Journey
-            title={jouneySectionData.title}
-            icon={jouneySectionData.icon}
-            iconPosition={jouneySectionData.iconPosition}
-            description={jouneySectionData.description}
-            joinLink={jouneySectionData.joinLink}
-            joinLinkText={jouneySectionData.joinLinkText}
+            title={journeySectionData.title}
+            icon={journeySectionData.icon}
+            iconPosition={journeySectionData.iconPosition}
+            description={journeySectionData.description}
+            joinLink={journeySectionData.joinLink}
+            joinLinkText={journeySectionData.joinLinkText}
           />
         </div>
       </Page>
