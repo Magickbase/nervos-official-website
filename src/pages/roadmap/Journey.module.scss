@@ -9,11 +9,11 @@
 }
 
 .icon {
-  transform: translate(-140px, -20px);
+  transform: translate(-120px, -20px);
 
   img {
-    width: 450px;
-    height: 388px;
+    width: 405px;
+    height: 348.81px;
   }
 }
 
@@ -34,7 +34,7 @@
   }
 
   .icon {
-    transform: translate(130px, -20px);
+    transform: translate(125px, -20px);
   }
 }
 
@@ -55,6 +55,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 160%;
+  letter-spacing: 0.54px;
 }
 
 .joinLink {
@@ -62,17 +63,14 @@
   padding: 10px;
   color: #000;
   font-size: 12px;
+  font-style: normal;
+  line-height: 105%;
+  letter-spacing: 1.32px;
   text-transform: uppercase;
   background: #d0fff2;
   border: 1px solid #000;
   border-radius: 3px;
   box-shadow: 1px 1px 0 0 #18efb1;
-
-  .arrowIcon {
-    width: 0.9em;
-    height: 0.9em;
-    transform: rotate(-45deg);
-  }
 }
 
 @media (max-width: $mobileBreakPoint) {
@@ -102,7 +100,7 @@
     flex-direction: row;
 
     .icon {
-      transform: translate(55px, -74px);
+      transform: translate(55px, -56px);
     }
   }
 
@@ -111,6 +109,7 @@
   }
 
   .joinLink {
-    padding: 6px;
+    width: 100%;
+    text-align: center;
   }
 }

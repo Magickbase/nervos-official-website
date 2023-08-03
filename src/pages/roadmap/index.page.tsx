@@ -20,6 +20,10 @@ const Roadmap: NextPage = () => {
     {
       title: <div className={clsx(styles.sectionTitle, styles.inProgressTitle)}>{t('in_progress.title')}</div>,
       icon: inprogress,
+      iconSize: {
+        with: '430px',
+        height: '430px',
+      },
       iconPosition: 'left' as const,
       subtitle: t('in_progress.subtitle'),
       descriptionText: t('in_progress.description'),
@@ -35,6 +39,10 @@ const Roadmap: NextPage = () => {
     {
       title: <div className={clsx(styles.sectionTitle, styles.upcomingTitle)}>{t('upcoming.title')}</div>,
       icon: upcoming,
+      iconSize: {
+        with: '480px',
+        height: '476.24px',
+      },
       iconPosition: 'right' as const,
       subtitle: t('upcoming.subtitle'),
       descriptionText: t('upcoming.description'),
@@ -44,6 +52,10 @@ const Roadmap: NextPage = () => {
     {
       title: <div className={clsx(styles.sectionTitle, styles.achievementsTitle)}>{t('achievements.title')}</div>,
       icon: achievements,
+      iconSize: {
+        with: '480px',
+        height: '456.98px',
+      },
       iconPosition: 'left' as const,
       subtitle: t('achievements.description'),
       descriptionText: t('achievements.description'),

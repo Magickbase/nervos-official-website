@@ -10,11 +10,6 @@
 
 .icon {
   transform: translate(-140px, -20px);
-
-  img {
-    width: 450px;
-    height: 450px;
-  }
 }
 
 .link {
@@ -95,8 +90,8 @@
     transform: translate(-55px, -75px);
 
     img {
-      width: 184px;
-      height: 184px;
+      width: 184px !important;
+      height: 184px !important;
     }
   }
 

@@ -5,6 +5,10 @@ import styles from './Section.module.scss'
 type SectionProps = {
   title: React.ReactElement
   icon: string
+  iconSize: {
+    with: string
+    height: string
+  }
   iconPosition: 'left' | 'right'
   subtitle: string
   descriptionText: string
@@ -16,6 +20,7 @@ type SectionProps = {
 export const Section: React.FC<SectionProps> = ({
   title,
   icon,
+  iconSize,
   iconPosition,
   subtitle,
   descriptionText,
@@ -27,7 +32,7 @@ export const Section: React.FC<SectionProps> = ({
     <div className={clsx(styles.container, iconPosition === 'right' && styles.reverse, className)}>
       <div className={styles.iconWrapper}>
         <div className={styles.icon}>
-          <img src={icon} alt="" />
+          <img src={icon} alt="" style={{ width: iconSize.with, height: iconSize.height }} />
         </div>
       </div>
       <div className={styles.detailWrapper}>
