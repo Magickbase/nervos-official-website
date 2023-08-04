@@ -1749,10 +1749,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@interactjs/types@npm:1.10.17":
-  version: 1.10.17
-  resolution: "@interactjs/types@npm:1.10.17"
-  checksum: 7e2d5e9448c714b4b2e00a423c33c259719bec3be87914cba1c80058eaecc8d5a587dcb29dcbb837d8832a4cf0eb26d9456f00d800f66717984952fb731891ec
+"@interactjs/types@npm:1.10.18":
+  version: 1.10.18
+  resolution: "@interactjs/types@npm:1.10.18"
+  checksum: 5479ba9ef0055ad03a78b9194388d11c7d8b3d17dcdf3b98dc47faed9dc1ef980dedb4f1a63287f4201fefca5a4eb62672fd8e420ff9586c43a905d909d6d166
   languageName: node
   linkType: hard
 
@@ -5747,11 +5747,11 @@ __metadata:
   linkType: hard
 
 "interactjs@npm:^1.10.17":
-  version: 1.10.17
-  resolution: "interactjs@npm:1.10.17"
+  version: 1.10.18
+  resolution: "interactjs@npm:1.10.18"
   dependencies:
-    "@interactjs/types": 1.10.17
-  checksum: a3754aa1ca5600084b33902097051f435ea0c89e96992e0a54bb3c780bd59e10f95997bc6b2c98fcfc2f7289ef0a7df192e93e83cceec7e5612e8d5912d74720
+    "@interactjs/types": 1.10.18
+  checksum: 24921834b50a3b8cdcebb905c90cf7922a4830b8aac4fa1836a90d1c32131505eeb6fbbc4cf5d7eb492a806958a0138bedb559b1ab11eb40d7ec1f48dbb21a4a
   languageName: node
   linkType: hard
 
