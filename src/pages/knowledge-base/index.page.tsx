@@ -23,6 +23,13 @@ type Props = {
 
 const PAGE_SIZE = 24
 
+const patchCover = (src: string) => {
+  if (!src.startsWith('/')) {
+    return src
+  }
+  return `/_next/image?url=${encodeURIComponent(src)}&w=384&q=75`
+}
+
 const Index = ({ posts, populars, categories, pageCount }: Props) => {
   const [t] = useTranslation(['knowledge-base'])
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
@@ -80,7 +87,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     {post.coverImage && (
                       <Image
                         className={styles.coverImage}
-                        src={post.coverImage.src}
+                        src={patchCover(post.coverImage.src)}
                         width={post.coverImage.width}
                         height={post.coverImage.height}
                         alt="cover"
@@ -167,7 +174,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                 {post.coverImage && (
                   <Image
                     className={styles.cover}
-                    src={post.coverImage.src}
+                    src={patchCover(post.coverImage.src)}
                     width={post.coverImage.width}
                     height={post.coverImage.height}
                     alt="cover"
