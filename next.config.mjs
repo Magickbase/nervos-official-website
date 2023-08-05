@@ -69,6 +69,9 @@ const config = {
       permanent: false,
     }))
   },
+  experimental: {
+    outputFileTracingIgnores: ['public/education_hub_articles'],
+  },
 }
 
 /**
