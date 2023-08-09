@@ -22,7 +22,10 @@ export const Footer: FC<FooterProps> = props => {
         { label: t('mining'), url: '/mining' },
         { label: t('wallets'), url: '/wallets' },
         { label: t('wiki'), url: 'https://www.wikiwand.com/en/Nervos_Network' },
-        { label: t('press_kit'), url: 'https://projects.invisionapp.com/boards/WK3VAZJUYCM/' },
+        {
+          label: t('media_kit'),
+          url: 'https://www.figma.com/proto/PbqKEC0DvJBp4eT4jgv8EN/Nervos-Brand-Kit?page-id=0%3A1&type=design&node-id=1-35&viewport=662%2C31%2C0.74&t=4nViQP5esfOcPCoM-1&scaling=min-zoom&mode=design',
+        },
       ],
     },
     {
