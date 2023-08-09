@@ -16,6 +16,10 @@ $defaultHeaderHeight: 90px;
   }
 }
 
+.noFocusOutline:focus-visible {
+  outline: none;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -43,6 +47,9 @@ $defaultHeaderHeight: 90px;
 
       // This is to prevent the actual width deviation caused by `transform: scale` from affecting the layout.
       max-width: 32px;
+      color: #000;
+      background: transparent;
+      border: none;
       cursor: pointer;
 
       .text {
@@ -68,6 +75,9 @@ $defaultHeaderHeight: 90px;
 
     .trigger {
       display: flex;
+      color: #000;
+      background: transparent;
+      border: none;
       cursor: pointer;
     }
   }

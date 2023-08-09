@@ -69,6 +69,14 @@ const config = {
       permanent: false,
     }))
   },
+  experimental: {
+    outputFileTracingIgnores: [
+      'public/education_hub_articles/.git',
+      'public/education_hub_articles/.github',
+      'public/education_hub_articles/README.md',
+      'public/education_hub_articles/**/*.png',
+    ],
+  },
 }
 
 /**

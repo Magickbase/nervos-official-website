@@ -75,7 +75,14 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
       coverImage = {
         fullPath: `${prefix}${coverImageURL}`,
         src: coverImageURL,
-        ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
+      }
+      try {
+        coverImage = {
+          ...coverImage,
+          ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
+        }
+      } catch {
+        console.warn('failed to fetch image size')
       }
     } else {
       // TODO: support external link
