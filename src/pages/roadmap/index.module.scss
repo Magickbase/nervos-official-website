@@ -74,6 +74,7 @@
   background: #484d4e;
   border: 0.5px solid #000;
   border-radius: 35px;
+  mix-blend-mode: exclusion;
 
   .sloganTitle {
     color: #fff;
@@ -132,7 +133,6 @@
     width: 120px;
     height: 500px;
     background-image: url('./embellished_mobile_down.png');
-    mix-blend-mode: normal;
   }
 
   .title,
@@ -156,6 +156,7 @@
   .slogan {
     margin-bottom: 10px;
     padding: 60px 40px;
+    mix-blend-mode: normal;
 
     .sloganTitle {
       font-size: 22px;
