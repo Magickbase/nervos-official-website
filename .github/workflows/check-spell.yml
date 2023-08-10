@@ -14,5 +14,5 @@ jobs:
         uses: tj-actions/changed-files@v37
 
       - uses: crate-ci/typos@master
-        with:
-          files: ${{ steps.changed-files.outputs.all_changed_files }}
+        # with:
+        #   files: ${{ steps.changed-files.outputs.all_changed_files }}
