@@ -50,6 +50,7 @@
   width: fit-content;
   font-weight: 600;
   font-size: 20px;
+  letter-spacing: 1px;
   background: linear-gradient(268deg, #1d61f0 0%, #18efb1 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -70,6 +71,7 @@
 .project {
   font-weight: 600;
   font-size: 18px;
+  letter-spacing: 1px;
 }
 
 @media (max-width: $mobileBreakPoint) {
