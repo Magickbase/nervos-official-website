@@ -1,5 +1,6 @@
 import ArrowIcon from './arrow.svg'
-import Badges from './badges.svg'
+import BadgeLeft from './badge-left.svg'
+import BadgeRight from './badge-right.svg'
 import * as inprogressPng from './in_progress.png'
 import * as upcomingPng from './upcoming.png'
 import * as achievementsPng from './achievements.png'
@@ -10,4 +11,4 @@ const upcoming = upcomingPng.default.src
 const achievements = achievementsPng.default.src
 const journey = journeyPng.default.src
 
-export { ArrowIcon, Badges, inprogress, upcoming, achievements, journey }
+export { ArrowIcon, BadgeLeft, BadgeRight, inprogress, upcoming, achievements, journey }

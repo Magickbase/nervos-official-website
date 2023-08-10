@@ -30,7 +30,7 @@
 }
 
 .embellishedElementRight {
-  top: -150px;
+  top: -230px;
   right: 0;
   width: 600px;
   height: 1130px;
@@ -63,8 +63,23 @@
 }
 
 .badges {
-  margin-top: 74px;
-  margin-bottom: 122px;
+  position: relative;
+  width: 107px;
+  height: 47px;
+  margin-top: 2px;
+  margin-bottom: 174px;
+
+  .badgeLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .badgeRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .slogan {

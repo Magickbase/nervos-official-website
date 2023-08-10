@@ -7,7 +7,7 @@ import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
 import styles from './index.module.scss'
 import presets from '../../styles/presets.module.scss'
-import { Badges, inprogress, upcoming, achievements, journey } from './icons'
+import { BadgeLeft, BadgeRight, inprogress, upcoming, achievements, journey } from './icons'
 import { Section } from './Section'
 import { Journey } from './Journey'
 
@@ -111,8 +111,14 @@ const Roadmap: NextPage = () => {
           </div>
 
           <div className={styles.badges}>
-            <Badges />
+            <div className={styles.badgeLeft}>
+              <BadgeLeft />
+            </div>
+            <div className={styles.badgeRight}>
+              <BadgeRight />
+            </div>
           </div>
+
           <div className={styles.slogan}>
             <div className={styles.sloganTitle}>{t('get_involved.title')}</div>
             <div className={styles.sloganText}>{t('get_involved.description_1')}</div>
