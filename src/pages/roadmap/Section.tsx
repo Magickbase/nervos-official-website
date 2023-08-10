@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { StyledLink } from 'src/components/StyledLink'
+import { useIsMobile } from 'src/hooks'
 import styles from './Section.module.scss'
 
 type SectionProps = {
@@ -28,11 +29,16 @@ export const Section: React.FC<SectionProps> = ({
   projects,
   className,
 }) => {
+  const isMobile = useIsMobile()
   return (
     <div className={clsx(styles.container, iconPosition === 'right' && styles.reverse, className)}>
       <div className={styles.iconWrapper}>
         <div className={styles.icon}>
-          <img src={icon} alt="" style={{ width: iconSize.with, height: iconSize.height }} />
+          <img
+            src={icon}
+            alt=""
+            style={isMobile ? { width: 184, height: 184 } : { width: iconSize.with, height: iconSize.height }}
+          />
         </div>
       </div>
       <div className={styles.detailWrapper}>
