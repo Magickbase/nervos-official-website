@@ -12,17 +12,17 @@
   margin-bottom: 30px;
   padding: 0 min(10%, 120px);
   font-family: 'Articulat CF', sans-serif;
-  mix-blend-mode: exclusion;
 }
 
 .embellishedElements {
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
+  mix-blend-mode: exclusion;
 }
 
 .embellishedElementLeft {
-  top: 0;
+  top: -90px;
   left: 0;
   width: 485px;
   height: 530px;
@@ -30,7 +30,7 @@
 }
 
 .embellishedElementRight {
-  top: -60px;
+  top: -150px;
   right: 0;
   width: 600px;
   height: 1130px;
@@ -40,6 +40,7 @@
 
 .title {
   margin-top: 200px;
+  margin-bottom: 17px;
   font-weight: 700;
   font-size: 65px;
 }
@@ -62,11 +63,13 @@
 }
 
 .badges {
-  margin-top: 130px;
-  margin-bottom: 100px;
+  margin-top: 74px;
+  margin-bottom: 122px;
 }
 
 .slogan {
+  z-index: 2;
+  margin-bottom: 66px;
   padding: 60px 120px;
   background: #484d4e;
   border: 0.5px solid #000;
@@ -123,10 +126,13 @@
   }
 
   .embellishedElementMobileDown {
-    top: 580px;
+    top: 467px;
+    left: 0;
+    z-index: 1;
     width: 120px;
     height: 500px;
     background-image: url('./embellished_mobile_down.png');
+    mix-blend-mode: normal;
   }
 
   .title,
@@ -143,11 +149,12 @@
   }
 
   .badges {
-    margin-top: 30px;
-    margin-bottom: 180px;
+    margin-top: 2px;
+    margin-bottom: 174px;
   }
 
   .slogan {
+    margin-bottom: 10px;
     padding: 60px 40px;
 
     .sloganTitle {

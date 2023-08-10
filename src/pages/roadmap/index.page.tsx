@@ -89,23 +89,25 @@ const Roadmap: NextPage = () => {
   return (
     <>
       <Page className={styles.baseSeparatePage}>
-        {isDesktop && (
-          <>
-            <div className={clsx(styles.embellishedElements, styles.embellishedElementLeft)} />
-            <div className={clsx(styles.embellishedElements, styles.embellishedElementRight)} />
-          </>
-        )}
-        {isMobile && (
-          <>
-            <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileUp)} />
-            <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileDown)} />
-          </>
-        )}
         <div className={styles.content}>
-          <div className={styles.title}>{t('title')}</div>
-          <div className={styles.subTitleWrapper}>
-            <div className={styles.subTitleItem}>{t('subtitle.never_finished')},</div>
-            <div className={styles.subTitleItem}>{t('subtitle.always_building')}</div>
+          {isDesktop && (
+            <>
+              <div className={clsx(styles.embellishedElements, styles.embellishedElementLeft)} />
+              <div className={clsx(styles.embellishedElements, styles.embellishedElementRight)} />
+            </>
+          )}
+          {isMobile && (
+            <>
+              <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileUp)} />
+              <div className={clsx(styles.embellishedElements, styles.embellishedElementMobileDown)} />
+            </>
+          )}
+          <div>
+            <div className={styles.title}>{t('title')}</div>
+            <div className={styles.subTitleWrapper}>
+              <div className={styles.subTitleItem}>{t('subtitle.never_finished')},</div>
+              <div className={styles.subTitleItem}>{t('subtitle.always_building')}</div>
+            </div>
           </div>
 
           <div className={styles.badges}>
