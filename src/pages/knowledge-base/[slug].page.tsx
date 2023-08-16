@@ -102,7 +102,11 @@ const Post = ({ post, recents, categories }: Props) => {
               <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>
                 {post.title}
               </TOCItem>
-              <div className={styles.subtitle}>{post.subtitle}</div>
+              <div className={styles.subtitle}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw, rehypeSanitize]}>
+                  {post.subtitle || ''}
+                </ReactMarkdown>
+              </div>
 
               {post.coverImage && (
                 <Image
