@@ -8,7 +8,9 @@ import { omitNullValue, pick } from '.'
 import { markdownToHtml } from './markdownToHtml'
 import { BASE_URL } from './env'
 
-const blogsRootDirectory = join(process.cwd(), 'public', 'education_hub_articles')
+const blogsRootDirectory = join(process.cwd(), 'src', 'pages', 'knowledge-base', 'education_hub_articles')
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+const eduContext: any = (require as any).context('../pages/knowledge-base/education_hub_articles/', true, /\.png$/)
 
 export interface Blog {
   slug: string
@@ -65,25 +67,29 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const { data, content } = matter(fileContents)
 
   let coverImage: Blog['coverImage'] = undefined
+  // eslint-disable-next-line prefer-const
   let coverImageURL = typeof data.coverImage === 'string' ? data.coverImage : undefined
   if (coverImageURL != null) {
     const isExternalLink = /^(https?:)?\/\//.test(coverImageURL)
     if (!isExternalLink) {
       // Some places need to include the full path to the protocol, such as `twitter:image`.
       const prefix = BASE_URL ?? ''
-      coverImageURL = `/education_hub_articles/${slug}/${coverImageURL}`
-      coverImage = {
-        fullPath: `${prefix}${coverImageURL}`,
-        src: coverImageURL,
-      }
-      try {
-        coverImage = {
-          ...coverImage,
-          ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
-        }
-      } catch {
-        console.warn('failed to fetch image size')
-      }
+      // console.log('cover', eduContext(`./${slug}/${coverImageURL}`).default)
+      // coverImageURL = `/education_hub_articles/${slug}/${coverImageURL}`
+      // coverImageURL = eduContext(`./${slug}/${coverImageURL}`).default.src
+      // console.log('cover', await import(`../pages/knowledge-base/${coverImageURL}`))
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+      coverImage = eduContext(`./${slug}/${coverImageURL}`).default
+      coverImage!.fullPath = `${prefix}${coverImage!.src}`
+      // console.log('coverImage', coverImage)
+      // try {
+      //   coverImage = {
+      //     ...coverImage,
+      //     ...sizeOf(join(process.cwd(), 'public', coverImageURL)),
+      //   }
+      // } catch {
+      //   console.warn('failed to fetch image size')
+      // }
     } else {
       // TODO: support external link
     }
