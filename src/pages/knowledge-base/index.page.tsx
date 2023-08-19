@@ -116,6 +116,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                         alt="cover"
                         data-type={post.category?.split(',')[0]?.toLowerCase()}
                         loading="lazy"
+                        data-src={post.coverImage.src}
                         onError={handleCoverNotFound}
                       />
                     )}
@@ -204,6 +205,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     height={post.coverImage.height}
                     alt="cover"
                     loading="lazy"
+                    data-src={post.coverImage.src}
                     onError={handleCoverNotFound}
                   />
                 )}
