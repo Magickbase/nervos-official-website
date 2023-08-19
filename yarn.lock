@@ -8111,13 +8111,13 @@ __metadata:
   linkType: hard
 
 "observable-hooks@npm:^4.2.1":
-  version: 4.2.2
-  resolution: "observable-hooks@npm:4.2.2"
+  version: 4.2.3
+  resolution: "observable-hooks@npm:4.2.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     rxjs: ">=6.0.0"
-  checksum: 0e617793c7f87ad043dd50c5c87f8a7ff5cb6cf21828a95e212851c1a491e7971aede9fb53bb5297ffa13bedd211bee4522d9b2893d56758d10f158d57c98506
+  checksum: 1c1b75175e43ef02efa8ba980af5e3ae9aa4b3accff7ffd58d6041572bc98c02d2fc2e9b081ba0f628933b94569cfb1bc293b8a6d9cca02e52fa4115fce5706c
   languageName: node
   linkType: hard
 
