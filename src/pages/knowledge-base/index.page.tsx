@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
-import Image from 'next/image'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
@@ -27,7 +26,31 @@ const patchCover = (src: string) => {
   if (!src.startsWith('/')) {
     return src
   }
+  /*
+   * This is a patch to point cover thumbnail to the one generated on the article page
+   * It returns 404 if the article page has not been visited and the thumbnail has not been generated
+   */
   return `/_next/image?url=${encodeURIComponent(src)}&w=384&q=75`
+}
+
+const handleCoverNotFound = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  const img = e.currentTarget
+  const { src } = img.dataset
+
+  if (!src || !src.startsWith('/')) {
+    return
+  }
+
+  /*
+   * This is a patch to point thumbnail to raw image on github
+   * https://github.com/Magickbase/nervos-official-website/issues/297#issuecomment-1682495769
+   */
+  const RAW_GITHUB_URL = 'https://raw.githubusercontent.com/NervosEducationHub/EducationHubArticles/main'
+  if (img.src.startsWith(RAW_GITHUB_URL)) {
+    return
+  }
+  const rawImageUrl = `${RAW_GITHUB_URL}${src.replace('/education_hub_articles', '')}`
+  img.src = rawImageUrl
 }
 
 const Index = ({ posts, populars, categories, pageCount }: Props) => {
@@ -85,13 +108,15 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <div className={styles.excerpt}>{post.excerpt}</div>
                     </div>
                     {post.coverImage && (
-                      <Image
+                      <img
                         className={styles.coverImage}
                         src={patchCover(post.coverImage.src)}
                         width={post.coverImage.width}
                         height={post.coverImage.height}
                         alt="cover"
                         data-type={post.category?.split(',')[0]?.toLowerCase()}
+                        loading="lazy"
+                        onError={handleCoverNotFound}
                       />
                     )}
                   </div>
@@ -172,12 +197,14 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                 <div className={styles.title}>{post.title}</div>
                 <div className={styles.excerpt}>{post.excerpt}</div>
                 {post.coverImage && (
-                  <Image
+                  <img
                     className={styles.cover}
                     src={patchCover(post.coverImage.src)}
                     width={post.coverImage.width}
                     height={post.coverImage.height}
                     alt="cover"
+                    loading="lazy"
+                    onError={handleCoverNotFound}
                   />
                 )}
                 {post.category && (
