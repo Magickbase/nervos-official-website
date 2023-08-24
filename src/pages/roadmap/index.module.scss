@@ -1,0 +1,189 @@
+@import 'src/styles/variables.module';
+@import 'src/components/Header/index.module';
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 0 min(10%, 120px);
+  font-family: 'Articulat CF', sans-serif;
+}
+
+.embellishedElements {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  mix-blend-mode: exclusion;
+}
+
+.embellishedElementLeft {
+  top: -90px;
+  left: 0;
+  width: 485px;
+  height: 530px;
+  background-image: url('./embellished_left.png');
+}
+
+.embellishedElementRight {
+  top: -230px;
+  right: 0;
+  width: 600px;
+  height: 1130px;
+  background-image: url('./embellished_right.png');
+  background-position: right;
+}
+
+.title {
+  margin-top: 200px;
+  margin-bottom: 17px;
+  font-weight: 700;
+  font-size: 65px;
+  letter-spacing: -1.625px;
+  text-align: center;
+}
+
+.subTitleWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.link {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.subTitleItem {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 100%;
+  letter-spacing: 1.05px;
+}
+
+.badges {
+  position: relative;
+  width: 107px;
+  height: 47px;
+  margin-top: 2px;
+  margin-bottom: 174px;
+
+  .badgeLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .badgeRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.slogan {
+  z-index: 2;
+  margin-bottom: 66px;
+  padding: 60px 120px;
+  background: #484d4e;
+  border: 0.5px solid #000;
+  border-radius: 35px;
+  mix-blend-mode: exclusion;
+
+  .sloganTitle {
+    color: #fff;
+    font-weight: 700;
+    font-size: 39px;
+  }
+
+  .sloganText {
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.54px;
+  }
+}
+
+.sectionTitle {
+  font-weight: 700;
+  font-size: 39px;
+  font-style: normal;
+  line-height: 160%;
+}
+
+.darkerBg {
+  background-color: #161616;
+}
+
+.inProgressTitle {
+  color: #bcffec;
+}
+
+.upcomingTitle {
+  color: #e0d0ff;
+}
+
+.achievementsTitle {
+  color: #dde3e3;
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .content {
+    mix-blend-mode: normal;
+  }
+
+  .embellishedElementMobileUp {
+    right: 0;
+    width: 425px;
+    height: 500px;
+    background-image: url('./embellished_mobile_up.png');
+  }
+
+  .embellishedElementMobileDown {
+    top: 467px;
+    left: 0;
+    z-index: 1;
+    width: 120px;
+    height: 500px;
+    background-image: url('./embellished_mobile_down.png');
+  }
+
+  .title,
+  .badges {
+    align-self: self-start;
+  }
+
+  .title {
+    font-size: 48px;
+    text-align: left;
+  }
+
+  .subTitleItem {
+    font-size: 22px;
+  }
+
+  .badges {
+    width: 98px;
+    margin-top: 2px;
+    margin-bottom: 174px;
+  }
+
+  .slogan {
+    margin-bottom: 10px;
+    padding: 60px 40px;
+    mix-blend-mode: normal;
+
+    .sloganTitle {
+      font-size: 22px;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,115 @@
+@import 'src/styles/variables.module';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 80px 100px;
+  background: #232323;
+}
+
+.icon {
+  transform: translate(-120px, -20px);
+
+  img {
+    width: 405px;
+    height: 348.81px;
+  }
+}
+
+.link {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.iconWrapper {
+  width: 50%;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+
+  .iconWrapper {
+    text-align: right;
+  }
+
+  .icon {
+    transform: translate(125px, -20px);
+  }
+}
+
+.detailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgb(255 255 255 / 30%);
+}
+
+.description {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.54px;
+}
+
+.joinLink {
+  width: fit-content;
+  padding: 10px;
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 105%;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  background: #d0fff2;
+  border: 1px solid #000;
+  border-radius: 3px;
+  box-shadow: 1px 1px 0 0 #18efb1;
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .container {
+    padding: 60px 40px;
+  }
+
+  .iconWrapper,
+  .detailWrapper {
+    width: 100%;
+  }
+
+  .iconWrapper {
+    height: 150px;
+  }
+
+  .icon {
+    transform: translate(-55px, -75px);
+
+    img {
+      width: 184px;
+      height: 159px;
+    }
+  }
+
+  .reverse {
+    flex-direction: row;
+
+    .icon {
+      transform: translate(55px, -56px);
+    }
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .joinLink {
+    width: 100%;
+    text-align: center;
+  }
+}

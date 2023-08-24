@@ -2,3 +2,7 @@
 
 [files]
 extend-exclude = ["public/locales/pt", "public/locales/fr", "public/locales/es"]
+
+[type.po]
+extend-glob = ["*.png"]
+check-file = false
