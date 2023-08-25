@@ -157,7 +157,7 @@ const Roadmap: NextPage = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   return {
     notFound: true,
   }
