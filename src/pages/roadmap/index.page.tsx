@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { Page } from 'src/components/Page'
 import clsx from 'clsx'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
@@ -158,12 +157,9 @@ const Roadmap: NextPage = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
-  const lng = await serverSideTranslations(locale, ['common', 'roadmap'])
+export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: {
-      ...lng,
-    },
+    notFound: true,
   }
 }
 
