@@ -28,7 +28,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "light_client": "Light client soft fork"
   },
-  "achievements" :{
+  "achievements": {
     "title": "Achievements",
     "subtitle": "SUDT",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
@@ -46,8 +46,8 @@
     "opera_integration": "Opera integration"
   },
   "journey": {
-    "title" : "Join the journey",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip",
+    "title": "Join the journey",
+    "description": "In the spirit of the cypherpunks, guided by the values of permissonlessness, decentralization, and transparency, the Nervos project is driven by a diverse and dispersed community, not anointed leaders. Anyone who wants to participate, can and is highly encouraged to. So, join us, contribute, learn and shape the future of Nervos.",
     "link_text": "join"
   }
 }

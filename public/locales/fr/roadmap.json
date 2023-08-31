@@ -1,0 +1,53 @@
+{
+  "title": "Le voyage",
+  "subtitle": {
+    "never_finished": "JAMAIS TERMINÉ",
+    "always_building": "TOUJOURS EN CONSTRUCTION"
+  },
+  "get_involved": {
+    "title": "Participez",
+    "description_1": "Nervos est un projet open source visant à construire les éléments nécessaires à une économie numérique robuste et sans autorisation. Le chemin pour réaliser cette ambition est sinueux, ponctué de triomphes silencieux et de virages surprenants.",
+    "description_2": "Avant tout, Nervos est une entreprise pilotée par la communauté, et tout ce qui est accompli l'est grâce à un intérêt authentique galvanisé des esprits brillants qui contribuent au développement du réseau.",
+    "rfcs": "RFCs",
+    "nervos_talk_forum": "Forum Nervos Talk"
+  },
+  "in_progress": {
+    "title": "En cours",
+    "subtitle": "Hardfork CKB 2023",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. En savoir plus",
+    "link": "En savoir plus",
+    "kuai": "Kuai",
+    "force_relay": "ForceRelay",
+    "open_transactions": "Transactions ouvertes",
+    "composable_lock_script": "Script de verrouillage composable",
+    "ckb_light_client": "Client léger CKB"
+  },
+  "upcoming": {
+    "title": "À venir",
+    "subtitle": "Hardfork 2023",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. En savoir plus",
+    "light_client": "Soft fork du client léger"
+  },
+  "achievements": {
+    "title": "Réalisations",
+    "subtitle": "SUDT",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. En savoir plus",
+    "link": "En savoir plus",
+    "cota": "Token.citv (CoTA)",
+    "light_client_soft_fork": "Soft fork du client léger",
+    "light_client_implementation": "Implémentation du client léger",
+    "neuron": "Neuron",
+    "axon_beta": "Version bêta d'Axon",
+    "godwoken_launches": "Lancements de Godwoken",
+    "godwoken_v1_ethereum_equivalence": "Équivalence de Godwoken v1 avec Ethereum",
+    "joyid_testnet": "Testnet JoyID",
+    "bit_launches": "Lancements de .bit",
+    "force_bridge_launch": "Lancement de Force Bridge",
+    "opera_integration": "Intégration avec Opera"
+  },
+  "journey": {
+    "title": "Rejoignez le voyage",
+    "description": "Dans l'esprit des cypherpunks, guidé par les valeurs de l'absence d'autorisation, de la décentralisation et de la transparence, le projet Nervos est porté par une communauté diverse et dispersée, et non par des leaders désignés. Toute personne désirant participer le peut et est fortement encouragée à le faire. Alors, rejoignez-nous, contribuez, apprenez et participez à façonner l'avenir de Nervos.",
+    "link_text": "rejoignez"
+  }
+}
