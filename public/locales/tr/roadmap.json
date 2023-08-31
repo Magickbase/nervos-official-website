@@ -1,0 +1,53 @@
+{
+  "title": "Yolculuk",
+  "subtitle": {
+    "never_finished": "ASLA BİTMEYEN",
+    "always_building": "HER ZAMAN İNŞA"
+  },
+  "get_involved": {
+    "title": "Katılın",
+    "description_1": "Nervos, güçlü, izinsiz dijital bir ekonomi için gerekli temel bileşenleri inşa etmek için açık kaynaklı bir projedir. Bu amacı gerçekleştirmenin yolu rüzgârlı, sessiz zaferlerle dolu ve şaşırtıcı dönüşlerle doludur.",
+    "description_2": "En önemlisi, Nervos topluluk destekli bir çabadır ve elde edilen her şey, ağın gelişimine katkıda bulunan parlak zihinlerde galvanize edilen gerçek bir ilgiyle yapılır.",
+    "rfcs": "RFC'ler",
+    "nervos_talk_forum": "Nervos Tartışma Forumu"
+  },
+  "in_progress": {
+    "title": "Devam Eden",
+    "subtitle": "CKB Hardfork 2023",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
+    "link": "Daha fazlasını öğren",
+    "kuai": "Kuai",
+    "force_relay": "ForceRelay",
+    "open_transactions": "Açık İşlemler",
+    "composable_lock_script": "Birleştirilebilir Kilit Betiği",
+    "ckb_light_client": "CKB Hafif İstemci"
+  },
+  "upcoming": {
+    "title": "Yaklaşan",
+    "subtitle": "2023 Hardfork",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
+    "light_client": "Hafif istemci yumuşak çatalı"
+  },
+  "achievements": {
+    "title": "Başarılar",
+    "subtitle": "SUDT",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
+    "link": "Daha fazlasını öğren",
+    "cota": "Token.citv (CoTA)",
+    "light_client_soft_fork": "Hafif istemci yumuşak çatalı",
+    "light_client_implementation": "Hafif istemci uygulaması",
+    "neuron": "Nöron",
+    "axon_beta": "Axon beta",
+    "godwoken_launches": "Godwoken Başlatmaları",
+    "godwoken_v1_ethereum_equivalence": "Godwoken v1 Ethereum Eşdeğerliği",
+    "joyid_testnet": "JoyID test ağı",
+    "bit_launches": ".bit Başlatmaları",
+    "force_bridge_launch": "Force köprüsü başlatması",
+    "opera_integration": "Opera entegrasyonu"
+  },
+  "journey": {
+    "title": "Yolculuğa Katılın",
+    "description": "Siber punkların ruhuna uygun olarak, izin verilmeme, merkezi olmama ve şeffaflık değerleriyle yönlendirilen Nervos projesi, çeşitli ve yayılmış bir topluluk tarafından yönlendiriliyor; tayin edilmiş liderler tarafından değil. Katılmak isteyen herkes katılabilir ve katılmaları güçlü bir şekilde teşvik edilir. Dolayısıyla, bize katılın, katkıda bulunun, öğrenin ve Nervos'un geleceğini şekillendirin.",
+    "link_text": "katılın"
+  }
+}

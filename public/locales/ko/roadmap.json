@@ -1,0 +1,53 @@
+{
+  "title": "여정",
+  "subtitle": {
+    "never_finished": "영원히 끝나지 않음",
+    "always_building": "항상 건설 중"
+  },
+  "get_involved": {
+    "title": "참여하기",
+    "description_1": "네르보스는 견고하고 허가 없는 디지털 경제를 위한 기본 요소를 구축하기 위한 오픈 소스 프로젝트입니다. 이 야망을 실현하기 위한 길은 복잡하며, 조용한 승리와 놀라운 전환으로 가득합니다.",
+    "description_2": "무엇보다도, 네르보스는 커뮤니티 중심의 노력입니다. 어떤 성취도 네트워크 개발에 기여하는 뛰어난 마음에 의해 강화된 진정한 관심을 통해 이루어집니다.",
+    "rfcs": "RFCs",
+    "nervos_talk_forum": "네르보스 톡 포럼"
+  },
+  "in_progress": {
+    "title": "진행 중",
+    "subtitle": "CKB 하드포크 2023",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "link": "자세히 알아보기",
+    "kuai": "Kuai",
+    "force_relay": "ForceRelay",
+    "open_transactions": "개방형 거래",
+    "composable_lock_script": "구성 가능한 잠금 스크립트",
+    "ckb_light_client": "CKB 경량 클라이언트"
+  },
+  "upcoming": {
+    "title": "다가오는",
+    "subtitle": "2023 하드포크",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "light_client": "경량 클라이언트 소프트 포크"
+  },
+  "achievements": {
+    "title": "성과",
+    "subtitle": "SUDT",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "link": "자세히 알아보기",
+    "cota": "Token.citv (CoTA)",
+    "light_client_soft_fork": "경량 클라이언트 소프트 포크",
+    "light_client_implementation": "경량 클라이언트 구현",
+    "neuron": "뉴런",
+    "axon_beta": "Axon 베타",
+    "godwoken_launches": "Godwoken 출시",
+    "godwoken_v1_ethereum_equivalence": "Godwoken v1 이더리움 동등성",
+    "joyid_testnet": "JoyID 테스트넷",
+    "bit_launches": ".bit 출시",
+    "force_bridge_launch": "Force 브릿지 출시",
+    "opera_integration": "Opera 통합"
+  },
+  "journey": {
+    "title": "여정에 참여하세요",
+    "description": "암호펑크의 정신을 따라 허가 없음, 분산화 및 투명성의 가치를 안내로 삼아 네르보스 프로젝트는 다양하고 분산된 커뮤니티에 의해 주도되며, 임명된 지도자가 아닙니다. 참여하고자 하는 누구나 가능하며, 적극적으로 참여할 것을 강력히 권장합니다. 그러니 저희와 함께하고 기여하며, 배우며 네르보스의 미래를 함께 형성해보세요.",
+    "link_text": "참여하기"
+  }
+}
