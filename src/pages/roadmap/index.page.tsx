@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Page } from 'src/components/Page'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
 import styles from './index.module.scss'
@@ -131,18 +132,20 @@ const Roadmap: NextPage = () => {
               {t('get_involved.nervos_talk_forum')}
             </StyledLink>
           </div>
-          {sections.map((section, index) => {
-            return (
-              <Section
-                key={section.subtitle}
-                {...section}
-                className={clsx({
-                  // when on desktop, background color for the second section is different
-                  [styles.darkerBg ?? '']: isDesktop && index === 1,
-                })}
-              />
-            )
-          })}
+          {sections
+            .filter(section => !section.descriptionText.startsWith('Lorem'))
+            .map((section, index) => {
+              return (
+                <Section
+                  key={section.subtitle}
+                  {...section}
+                  className={clsx({
+                    // when on desktop, background color for the second section is different
+                    [styles.darkerBg ?? '']: isDesktop && index === 1,
+                  })}
+                />
+              )
+            })}
           <Journey
             title={journeySectionData.title}
             icon={journeySectionData.icon}
@@ -157,9 +160,10 @@ const Roadmap: NextPage = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
+  const lng = await serverSideTranslations(locale, ['common', 'roadmap'])
   return {
-    notFound: true,
+    props: lng,
   }
 }
 
