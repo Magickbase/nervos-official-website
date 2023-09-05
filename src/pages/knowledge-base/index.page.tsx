@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
+import { SyntheticEvent, useState } from 'react'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
@@ -19,6 +20,8 @@ type Props = {
   populars: Array<Blog>
   pageCount: number
 }
+
+type BlogType = 'popular' | 'list'
 
 const PAGE_SIZE = 24
 
@@ -54,6 +57,10 @@ const handleCoverNotFound = (e: React.SyntheticEvent<HTMLImageElement>) => {
 }
 
 const Index = ({ posts, populars, categories, pageCount }: Props) => {
+  const [postsToExpandAuthorList, setPostsToExpandAuthorList] = useState<string[]>([])
+  const getBlogKey = (post: Blog, type: BlogType) => `${type}-${post.slug}`
+  const shouldExpandAuthorList = (post: Blog, type: BlogType) =>
+    postsToExpandAuthorList.findIndex(item => item === getBlogKey(post, type)) !== -1
   const [t] = useTranslation(['knowledge-base'])
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
   const formatTime = (date: Date) => {
@@ -70,24 +77,41 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     push,
   } = useRouter()
 
+  // only one post has expanded author list at most
+  const handleBlogAuthorClicked = (post: Blog, type: BlogType, e: SyntheticEvent) => {
+    console.log('handleBlogAuthorClicked')
+
+    e.preventDefault()
+    const oldValue = shouldExpandAuthorList(post, type)
+    if (oldValue) {
+      setPostsToExpandAuthorList([])
+    } else {
+      setPostsToExpandAuthorList([getBlogKey(post, type)])
+    }
+  }
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
   }
-  const renderExpandedAuthors = (post: Blog) => (
-    <div className={styles.expandedAuthors}>
-      {[...post.authors].map(({ name, avatar }) => (
-        <div className={styles.expandedAuthorItem} key={`expanded-author-item-${name}`}>
-          <img src={avatar} />
-          <div>{name}</div>
-        </div>
-      ))}
-    </div>
-  )
-
-  const renderBlogMeta = (post: Blog) => {
+  const renderExpandedAuthors = (post: Blog, type: BlogType) => {
+    if (!shouldExpandAuthorList(post, type)) {
+      return null
+    }
     return (
-      <div className={styles.meta}>
-        {renderExpandedAuthors(post)}
+      <div className={styles.expandedAuthors}>
+        {[...post.authors].map(({ name, avatar }) => (
+          <div className={styles.expandedAuthorItem} key={`expanded-author-item-${name}`}>
+            <img src={avatar} />
+            <div>{name}</div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  const renderBlogMeta = (post: Blog, type: BlogType) => {
+    return (
+      <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, type, e)}>
+        {renderExpandedAuthors(post, type)}
         <div className={styles.metaItem}>
           <div className={styles.avatars}>
             {[...post.authors]
@@ -173,7 +197,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <Category category={post.category} />
                     </div>
                   )}
-                  {renderBlogMeta(post)}
+                  {renderBlogMeta(post, 'popular')}
                 </Link>
               )
             })}
@@ -231,8 +255,8 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     <Category category={post.category} />
                   </div>
                 )}
-                <div className={styles.meta}>
-                  {renderExpandedAuthors(post)}
+                <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, 'list', e)}>
+                  {renderExpandedAuthors(post, 'list')}
                   <div className={styles.avatars}>
                     {[...post.authors]
                       // Here, with flex-direction: row-reverse, the preceding
