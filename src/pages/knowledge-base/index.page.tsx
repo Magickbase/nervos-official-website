@@ -73,6 +73,53 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
   }
+  const renderExpandedAuthors = (post: Blog) => (
+    <div className={styles.expandedAuthors}>
+      {[...post.authors].map(({ name, avatar }) => (
+        <div className={styles.expandedAuthorItem} key={`expanded-author-item-${name}`}>
+          <img src={avatar} />
+          <div>{name}</div>
+        </div>
+      ))}
+    </div>
+  )
+
+  const renderBlogMeta = (post: Blog) => {
+    return (
+      <div className={styles.meta}>
+        {renderExpandedAuthors(post)}
+        <div className={styles.metaItem}>
+          <div className={styles.avatars}>
+            {[...post.authors]
+              // Here, with flex-direction: row-reverse, the preceding
+              // elements can cover the succeeding elements.
+              .reverse()
+              .map(({ name, avatar }) =>
+                avatar ? (
+                  <img key={name} className={styles.avatar} src={avatar} />
+                ) : (
+                  <div key={name} className={styles.avatar}>
+                    {name[0]?.toUpperCase()}
+                  </div>
+                ),
+              )}
+          </div>
+          <span>
+            {post.authors[0]?.name ?? ''}
+            {post.authors.length > 1 ? ' etc.' : ''}
+          </span>
+          <span className={styles.separator}>·</span>
+          <time>{formatTime(new Date(post.date))}</time>
+        </div>
+        {post.readingTime && (
+          <div className={styles.metaItem}>
+            <img src="/images/clock.svg" className={styles.clock} />
+            <span>{post.readingTime} mins</span>
+          </div>
+        )}
+      </div>
+    )
+  }
 
   return (
     <>
@@ -126,37 +173,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <Category category={post.category} />
                     </div>
                   )}
-                  <div className={styles.meta}>
-                    <div>
-                      <div className={styles.avatars}>
-                        {[...post.authors]
-                          // Here, with flex-direction: row-reverse, the preceding
-                          // elements can cover the succeeding elements.
-                          .reverse()
-                          .map(({ name, avatar }) =>
-                            avatar ? (
-                              <img key={name} className={styles.avatar} src={avatar} />
-                            ) : (
-                              <div key={name} className={styles.avatar}>
-                                {name[0]?.toUpperCase()}
-                              </div>
-                            ),
-                          )}
-                      </div>
-                      <span>
-                        {post.authors[0]?.name ?? ''}
-                        {post.authors.length > 1 ? ' etc.' : ''}
-                      </span>
-                      <span className={styles.separator}>·</span>
-                      <time>{formatTime(new Date(post.date))}</time>
-                    </div>
-                    {post.readingTime && (
-                      <div>
-                        <img src="/images/clock.svg" className={styles.clock} />
-                        <span>{post.readingTime} mins</span>
-                      </div>
-                    )}
-                  </div>
+                  {renderBlogMeta(post)}
                 </Link>
               )
             })}
@@ -215,6 +232,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                   </div>
                 )}
                 <div className={styles.meta}>
+                  {renderExpandedAuthors(post)}
                   <div className={styles.avatars}>
                     {[...post.authors]
                       // Here, with flex-direction: row-reverse, the preceding
