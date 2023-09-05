@@ -79,8 +79,6 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
 
   // only one post has expanded author list at most
   const handleBlogAuthorClicked = (post: Blog, type: BlogType, e: SyntheticEvent) => {
-    console.log('handleBlogAuthorClicked')
-
     e.preventDefault()
     const oldValue = shouldExpandAuthorList(post, type)
     if (oldValue) {
