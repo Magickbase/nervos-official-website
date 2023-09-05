@@ -132,20 +132,18 @@ const Roadmap: NextPage = () => {
               {t('get_involved.nervos_talk_forum')}
             </StyledLink>
           </div>
-          {sections
-            .filter(section => !section.descriptionText.startsWith('Lorem'))
-            .map((section, index) => {
-              return (
-                <Section
-                  key={section.subtitle}
-                  {...section}
-                  className={clsx({
-                    // when on desktop, background color for the second section is different
-                    [styles.darkerBg ?? '']: isDesktop && index === 1,
-                  })}
-                />
-              )
-            })}
+          {sections.map((section, index) => {
+            return (
+              <Section
+                key={section.subtitle}
+                {...section}
+                className={clsx({
+                  // when on desktop, background color for the second section is different
+                  [styles.darkerBg ?? '']: isDesktop && index === 1,
+                })}
+              />
+            )
+          })}
           <Journey
             title={journeySectionData.title}
             icon={journeySectionData.icon}

@@ -10,6 +10,24 @@
 
 .icon {
   transform: translate(-140px, -20px);
+
+  img {
+    @media screen and (max-width: 1080px) {
+      width: 244px !important;
+      height: 244px !important;
+      object-fit: contain;
+    }
+    @media screen and (max-width: 850px) {
+      width: 224px !important;
+      height: 224px !important;
+      object-fit: contain;
+    }
+    @media screen and (max-width: 720px) {
+      width: 184px !important;
+      height: 184px !important;
+      object-fit: contain;
+    }
+  }
 }
 
 .link {
