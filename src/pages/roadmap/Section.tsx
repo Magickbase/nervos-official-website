@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import { StyledLink } from 'src/components/StyledLink'
-import { useIsMobile } from 'src/hooks'
 import styles from './Section.module.scss'
 
 type SectionProps = {
@@ -14,7 +13,7 @@ type SectionProps = {
   subtitle: string
   descriptionText: string
   descriptionLink: string
-  projects: string[]
+  projects: Record<'label' | 'url', string>[]
   className?: string
 }
 
@@ -29,7 +28,6 @@ export const Section: React.FC<SectionProps> = ({
   projects,
   className,
 }) => {
-  const isMobile = useIsMobile()
   return (
     <div className={clsx(styles.container, iconPosition === 'right' && styles.reverse, className)}>
       <div className={styles.iconWrapper}>
@@ -50,9 +48,9 @@ export const Section: React.FC<SectionProps> = ({
           </div>
         )}
         {projects.map(project => (
-          <div className={styles.project} key={project}>
-            {project}
-          </div>
+          <StyledLink className={styles.project} key={project.label} href={project.url}>
+            {project.label}
+          </StyledLink>
         ))}
       </div>
     </div>
