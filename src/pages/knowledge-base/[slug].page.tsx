@@ -12,6 +12,7 @@ import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { useState } from 'react'
+import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
@@ -42,21 +43,6 @@ const Post = ({ post, recents, categories }: Props) => {
   const [isAuthorListExpanded, setIsAuthorListExpanded] = useState<boolean>(false)
   const toggleAuthorListExpanded = () => {
     setIsAuthorListExpanded(!isAuthorListExpanded)
-  }
-  const ExpandedAuthors = () => {
-    if (!isAuthorListExpanded) {
-      return null
-    }
-    return (
-      <div className={styles.expandedAuthors}>
-        {[...post.authors].map(({ name, avatar }) => (
-          <div className={styles.expandedAuthorItem} key={`expanded-author-item-${name}`}>
-            <img src={avatar} className={styles.expandedAuthorAvatar} alt="avatar" />
-            <div>{name}</div>
-          </div>
-        ))}
-      </div>
-    )
   }
 
   return (
@@ -91,7 +77,7 @@ const Post = ({ post, recents, categories }: Props) => {
           <div className={styles.content}>
             <article>
               <div className={styles.meta} onClick={toggleAuthorListExpanded}>
-                <ExpandedAuthors />
+                <ExpandedAuthors post={post} isShow={isAuthorListExpanded} className={styles.expandedAuthors} />
                 <div>
                   <div className={styles.avatars}>
                     {[...post.authors]

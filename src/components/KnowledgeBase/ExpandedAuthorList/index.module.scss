@@ -1,0 +1,42 @@
+@import 'src/styles/variables.module';
+
+.expandedAuthors {
+  position: absolute;
+  bottom: 24px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  width: 130px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px 0 rgb(0 0 0 / 15%);
+
+  @media screen and (max-width: $mobileBreakPoint) {
+    bottom: 51px;
+  }
+}
+
+.expandedAuthorItem {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  .expandedAuthorAvatar {
+    width: 18px;
+    height: 18px;
+  }
+
+  img {
+    border-radius: 24px;
+  }
+
+  width: 100%;
+  height: 18px;
+  color: #000;
+  font-size: 10px;
+  line-height: 160%;
+  letter-spacing: 0.5px;
+}

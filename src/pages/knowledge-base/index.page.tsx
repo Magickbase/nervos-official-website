@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
+import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { SyntheticEvent, useState } from 'react'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
@@ -90,26 +91,11 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
   }
-  const ExpandedAuthors = ({ post, type }: { post: Blog; type: BlogType }) => {
-    if (!shouldExpandAuthorList(post, type)) {
-      return null
-    }
-    return (
-      <div className={styles.expandedAuthors}>
-        {[...post.authors].map(({ name, avatar }) => (
-          <div className={styles.expandedAuthorItem} key={`expanded-author-item-${name}`}>
-            <img src={avatar} />
-            <div>{name}</div>
-          </div>
-        ))}
-      </div>
-    )
-  }
 
   const BlogMeta = ({ post, type }: { post: Blog; type: BlogType }) => {
     return (
       <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, type, e)}>
-        <ExpandedAuthors post={post} type={type} />
+        <ExpandedAuthors post={post} isShow={shouldExpandAuthorList(post, type)} />
         <div className={styles.metaItem}>
           <div className={styles.avatars}>
             {[...post.authors]
@@ -254,7 +240,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                   </div>
                 )}
                 <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, 'list', e)}>
-                  <ExpandedAuthors post={post} type="list" />
+                  <ExpandedAuthors post={post} isShow={shouldExpandAuthorList(post, 'list')} />
                   <div className={styles.avatars}>
                     {[...post.authors]
                       // Here, with flex-direction: row-reverse, the preceding
