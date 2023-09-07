@@ -39,11 +39,10 @@ const Post = ({ post, recents, categories }: Props) => {
     }
   }
 
-  const [isAuthorListExpanded, setIsAuthorListExpanded] = useState<boolean>(true)
+  const [isAuthorListExpanded, setIsAuthorListExpanded] = useState<boolean>(false)
   const toggleAuthorListExpanded = () => {
     setIsAuthorListExpanded(!isAuthorListExpanded)
   }
-
   const renderExpandedAuthors = () => {
     if (!isAuthorListExpanded) {
       return null

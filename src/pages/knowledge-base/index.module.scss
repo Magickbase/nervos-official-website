@@ -134,6 +134,7 @@
   padding: 8px;
   background-color: white;
   border-radius: 8px;
+  box-shadow: 0 2px 15px 0 rgb(0 0 0 / 15%);
 
   @media screen and (max-width: $mobileBreakPoint) {
     bottom: 51px;
