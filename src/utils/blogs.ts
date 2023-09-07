@@ -99,16 +99,12 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const date = typeof data.date === 'string' ? data.date : fs.statSync(fullPath).birthtime.toISOString()
   const readingTime = Math.round(content.length / 1300).toString()
   const authorStringFilter = (author: unknown): author is string => typeof author === 'string'
-  const authorWithDetailFilter = (author: unknown): author is AuthorDetail =>
-    Object.prototype.toString.call(author) === '[object Object]' &&
-    typeof (author as AuthorDetail).name === 'string' &&
-    typeof (author as AuthorDetail).url === 'string' &&
-    (author as AuthorDetail).platform === 'github'
+  const authorWithDetailFilter = (author: unknown): author is AuthorDetail => !!(author as AuthorDetail)?.name
 
   const authorArray = Array.isArray(data.author) ? data.author : [data.author]
-  const stringAuthors = authorArray.filter(authorStringFilter)
-  const objectAuthors = authorArray.filter(authorWithDetailFilter)
-  const filteredAuthors = [...stringAuthors, ...objectAuthors]
+  const filteredAuthors = authorArray.filter(
+    (author): author is string | AuthorDetail => authorStringFilter(author) || authorWithDetailFilter(author),
+  )
   const validAuthors = filteredAuthors.length > 0 ? filteredAuthors : ['Nervos']
 
   const authors = validAuthors.map(author => {
