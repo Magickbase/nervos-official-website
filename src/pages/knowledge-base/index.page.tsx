@@ -90,7 +90,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
   }
-  const renderExpandedAuthors = (post: Blog, type: BlogType) => {
+  const ExpandedAuthors = ({ post, type }: { post: Blog; type: BlogType }) => {
     if (!shouldExpandAuthorList(post, type)) {
       return null
     }
@@ -106,10 +106,10 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     )
   }
 
-  const renderBlogMeta = (post: Blog, type: BlogType) => {
+  const BlogMeta = ({ post, type }: { post: Blog; type: BlogType }) => {
     return (
       <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, type, e)}>
-        {renderExpandedAuthors(post, type)}
+        <ExpandedAuthors post={post} type={type} />
         <div className={styles.metaItem}>
           <div className={styles.avatars}>
             {[...post.authors]
@@ -195,7 +195,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <Category category={post.category} />
                     </div>
                   )}
-                  {renderBlogMeta(post, 'popular')}
+                  <BlogMeta post={post} type="popular" />
                 </Link>
               )
             })}
@@ -254,7 +254,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                   </div>
                 )}
                 <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, 'list', e)}>
-                  {renderExpandedAuthors(post, 'list')}
+                  <ExpandedAuthors post={post} type="list" />
                   <div className={styles.avatars}>
                     {[...post.authors]
                       // Here, with flex-direction: row-reverse, the preceding

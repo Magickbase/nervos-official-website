@@ -43,7 +43,7 @@ const Post = ({ post, recents, categories }: Props) => {
   const toggleAuthorListExpanded = () => {
     setIsAuthorListExpanded(!isAuthorListExpanded)
   }
-  const renderExpandedAuthors = () => {
+  const ExpandedAuthors = () => {
     if (!isAuthorListExpanded) {
       return null
     }
@@ -91,7 +91,7 @@ const Post = ({ post, recents, categories }: Props) => {
           <div className={styles.content}>
             <article>
               <div className={styles.meta} onClick={toggleAuthorListExpanded}>
-                {renderExpandedAuthors()}
+                <ExpandedAuthors />
                 <div>
                   <div className={styles.avatars}>
                     {[...post.authors]
