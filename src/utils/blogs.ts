@@ -113,12 +113,10 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
           // default string author
           return { name: author }
         }
-      } else if (Object.prototype.toString.call(author) === '[object Object]') {
+      } else {
         // object authors
         const name = (author as AuthorDetail).name
         return { name, avatar: `https://avatars.githubusercontent.com/${name}` }
-      } else {
-        return { name: author as string }
       }
     })
 
