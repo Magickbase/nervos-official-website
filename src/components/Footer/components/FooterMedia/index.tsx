@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../../../../components/ConwayGameOfLife'
 import { SubscribeWrap } from './SubscribeWrap'
-import { TwitterIcon, DiscordIcon, TelegramIcon, LinkedInIcon, RedditIcon, YoutubeIcon, TIcon } from './icons'
+import { XIcon, DiscordIcon, TelegramIcon, LinkedInIcon, RedditIcon, YoutubeIcon, TIcon } from './icons'
 
 import styles from './index.module.scss'
 
@@ -21,8 +21,8 @@ export const FooterMedia: React.FC = () => {
   // Todo: the url is temporarily filled with placeholders
   const medias: MediasProps[] = [
     {
-      label: <TwitterIcon />,
-      url: 'https://twitter.com/NervosNetwork',
+      label: <XIcon />,
+      url: 'https://x.com/NervosNetwork',
     },
     {
       label: <DiscordIcon />,

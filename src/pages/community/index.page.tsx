@@ -53,9 +53,9 @@ const Community: NextPage<PageProps> = ({ contributors, author }) => {
       description: t('get_involved.nervos_talk.description'),
     },
     {
-      label: 'Twitter',
-      url: 'https://twitter.com/NervosNetwork',
-      description: t('get_involved.twitter.description'),
+      label: 'X',
+      url: 'https://x.com/NervosNetwork',
+      description: t('get_involved.X.description'),
     },
     {
       label: t('get_involved.discord.title'),
