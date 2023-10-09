@@ -1,0 +1,177 @@
+.container {
+  position: relative;
+  box-sizing: border-box;
+  width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  @media screen and (max-width: 1670px) {
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 1440px) {
+    max-width: 100vw;
+  }
+  @media screen and (max-width: 750px) {
+    padding: 0 24px;
+  }
+}
+
+.embellished {
+  position: absolute;
+  &[data-position='left'] {
+    top: -45px;
+    left: 20px;
+    @media screen and (max-width: 980px) {
+      left: -80px;
+    }
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  &[data-position='right'] {
+    top: -90px;
+    right: -5px;
+    @media screen and (max-width: 1180px) {
+      left: 45vw;
+    }
+  }
+}
+.banner {
+  text-align: center;
+  padding-top: 213px;
+  padding-bottom: 303px;
+
+  h1,
+  h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 0.9;
+  }
+
+  h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    padding-bottom: 17px;
+  }
+
+  h2 {
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  @media screen and (max-width: 750px) {
+    padding-top: 152px;
+    text-align: left;
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+
+.description {
+  color: #fff;
+  background-color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 60px 260px;
+  border-radius: 35px;
+  line-height: 1.6;
+  @media screen and (max-width: 1400px) {
+    padding: 60px 200px;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 60px 100px;
+  }
+  @media screen and (max-width: 980px) {
+    padding: 60px;
+  }
+  @media screen and (max-width: 750px) {
+    padding: 60px 40px;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  padding: 120px 0;
+  &:not(:last-child) {
+    border-bottom: 0.5px solid #6a7171;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a {
+    margin-bottom: 16px;
+  }
+
+  .assets {
+    padding-left: 220px;
+    flex-basis: 850px;
+    flex-shrink: 0;
+    text-align: center;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: -30px;
+      img {
+        margin-bottom: 30px;
+        box-sizing: border-box;
+      }
+    }
+
+    .vertical {
+      flex-direction: column;
+    }
+
+    img[alt^='light'] {
+      border: 1px solid #e0e0e0;
+    }
+  }
+
+  .merchAssets {
+    @media screen and (min-width: 1140px) and (max-width: 1240px) {
+      &:after {
+        content: '';
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+    .assets {
+      flex-basis: auto;
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    .assets {
+      & > div {
+        justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .assets {
+      img {
+        max-width: 400px;
+      }
+    }
+  }
+}
