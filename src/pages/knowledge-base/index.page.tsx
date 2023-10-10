@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
+import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
+import { SyntheticEvent, useState } from 'react'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
@@ -19,6 +21,8 @@ type Props = {
   populars: Array<Blog>
   pageCount: number
 }
+
+type BlogType = 'popular' | 'list'
 
 const PAGE_SIZE = 24
 
@@ -54,6 +58,10 @@ const handleCoverNotFound = (e: React.SyntheticEvent<HTMLImageElement>) => {
 }
 
 const Index = ({ posts, populars, categories, pageCount }: Props) => {
+  const [postsToExpandAuthorList, setPostsToExpandAuthorList] = useState<string[]>([])
+  const getBlogKey = (post: Blog, type: BlogType) => `${type}-${post.slug}`
+  const shouldExpandAuthorList = (post: Blog, type: BlogType) =>
+    postsToExpandAuthorList.findIndex(item => item === getBlogKey(post, type)) !== -1
   const [t] = useTranslation(['knowledge-base'])
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
   const formatTime = (date: Date) => {
@@ -70,8 +78,55 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     push,
   } = useRouter()
 
+  // only one post has expanded author list at most
+  const handleBlogAuthorClicked = (post: Blog, type: BlogType, e: SyntheticEvent) => {
+    e.preventDefault()
+    const oldValue = shouldExpandAuthorList(post, type)
+    if (oldValue) {
+      setPostsToExpandAuthorList([])
+    } else {
+      setPostsToExpandAuthorList([getBlogKey(post, type)])
+    }
+  }
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
+  }
+
+  const BlogMeta = ({ post, type }: { post: Blog; type: BlogType }) => {
+    return (
+      <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, type, e)}>
+        <ExpandedAuthors post={post} isShow={shouldExpandAuthorList(post, type)} />
+        <div className={styles.metaItem}>
+          <div className={styles.avatars}>
+            {[...post.authors]
+              // Here, with flex-direction: row-reverse, the preceding
+              // elements can cover the succeeding elements.
+              .reverse()
+              .map(({ name, avatar }) =>
+                avatar ? (
+                  <img key={name} className={styles.avatar} src={avatar} />
+                ) : (
+                  <div key={name} className={styles.avatar}>
+                    {name[0]?.toUpperCase()}
+                  </div>
+                ),
+              )}
+          </div>
+          <span>
+            {post.authors[0]?.name ?? ''}
+            {post.authors.length > 1 ? ' etc.' : ''}
+          </span>
+          <span className={styles.separator}>·</span>
+          <time>{formatTime(new Date(post.date))}</time>
+        </div>
+        {post.readingTime && (
+          <div className={styles.metaItem}>
+            <img src="/images/clock.svg" className={styles.clock} />
+            <span>{post.readingTime} mins</span>
+          </div>
+        )}
+      </div>
+    )
   }
 
   return (
@@ -126,37 +181,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <Category category={post.category} />
                     </div>
                   )}
-                  <div className={styles.meta}>
-                    <div>
-                      <div className={styles.avatars}>
-                        {[...post.authors]
-                          // Here, with flex-direction: row-reverse, the preceding
-                          // elements can cover the succeeding elements.
-                          .reverse()
-                          .map(({ name, avatar }) =>
-                            avatar ? (
-                              <img key={name} className={styles.avatar} src={avatar} />
-                            ) : (
-                              <div key={name} className={styles.avatar}>
-                                {name[0]?.toUpperCase()}
-                              </div>
-                            ),
-                          )}
-                      </div>
-                      <span>
-                        {post.authors[0]?.name ?? ''}
-                        {post.authors.length > 1 ? ' etc.' : ''}
-                      </span>
-                      <span className={styles.separator}>·</span>
-                      <time>{formatTime(new Date(post.date))}</time>
-                    </div>
-                    {post.readingTime && (
-                      <div>
-                        <img src="/images/clock.svg" className={styles.clock} />
-                        <span>{post.readingTime} mins</span>
-                      </div>
-                    )}
-                  </div>
+                  <BlogMeta post={post} type="popular" />
                 </Link>
               )
             })}
@@ -214,7 +239,8 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     <Category category={post.category} />
                   </div>
                 )}
-                <div className={styles.meta}>
+                <div className={styles.meta} onClick={e => handleBlogAuthorClicked(post, 'list', e)}>
+                  <ExpandedAuthors post={post} isShow={shouldExpandAuthorList(post, 'list')} />
                   <div className={styles.avatars}>
                     {[...post.authors]
                       // Here, with flex-direction: row-reverse, the preceding

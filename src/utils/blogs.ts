@@ -10,6 +10,13 @@ import { BASE_URL } from './env'
 
 const blogsRootDirectory = join(process.cwd(), 'public', 'education_hub_articles')
 
+export interface AuthorDetail {
+  name: string
+  url: string
+  // TODO: only support github platform for now
+  platform: 'github'
+}
+
 export interface Blog {
   slug: string
   content: string
@@ -92,21 +99,31 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const date = typeof data.date === 'string' ? data.date : fs.statSync(fullPath).birthtime.toISOString()
   const readingTime = Math.round(content.length / 1300).toString()
 
-  const authorNames: string[] = Array.isArray(data.author)
-    ? data.author.filter((author): author is string => typeof author === 'string')
-    : typeof data.author === 'string'
-    ? [data.author]
-    : ['Nervos']
+  const list = Array.isArray(data.author) ? data.author : [data.author]
+  const authors: { name: string; avatar?: string }[] = list
+    .filter(item => !!item)
+    .map(author => {
+      if (typeof author === 'string') {
+        // string authors
+        if (author.startsWith('github:')) {
+          // github author
+          const name = author.substring('github:'.length)
+          return { name, avatar: `https://avatars.githubusercontent.com/${name}` }
+        } else {
+          // default string author
+          return { name: author }
+        }
+      } else {
+        // object authors
+        const name = (author as AuthorDetail).name
+        return { name, avatar: `https://avatars.githubusercontent.com/${name}` }
+      }
+    })
 
-  const authors = authorNames.map(name => {
-    if (name.toLowerCase() === 'nervos') return { name, avatar: '/images/nervos_avatar.svg' }
-    if (name.startsWith('github:')) {
-      name = name.substring('github:'.length)
-      return { name, avatar: `https://avatars.githubusercontent.com/${name}` }
-    }
-
-    return { name }
-  })
+  if (authors.length === 0) {
+    // add default author if no authors found
+    authors.push({ name: 'Nervos', avatar: '/images/nervos_avatar.svg' })
+  }
 
   const title = getStringValue(data.title)
   const subtitle = getStringValue(data.subtitle)

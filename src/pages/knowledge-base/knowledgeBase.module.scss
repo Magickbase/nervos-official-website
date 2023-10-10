@@ -35,12 +35,15 @@ $linkColor: var(--colorSecond);
   }
 
   .meta {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 25px;
     font-size: 0.75rem;
     white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
 
     b {
       font-weight: 600;
@@ -53,6 +56,10 @@ $linkColor: var(--colorSecond);
     & > div {
       display: flex;
       align-items: center;
+    }
+
+    .expandedAuthors {
+      bottom: 41px;
     }
 
     time {

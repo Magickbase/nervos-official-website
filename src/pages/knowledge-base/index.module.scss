@@ -210,6 +210,7 @@
   }
 
   .meta {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -220,7 +221,7 @@
       padding: 0 5px;
     }
 
-    & > div {
+    .metaItem {
       display: flex;
       align-items: center;
     }
@@ -433,6 +434,7 @@
   }
 
   .meta {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;

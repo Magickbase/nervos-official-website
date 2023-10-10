@@ -11,6 +11,8 @@ import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
+import { useState } from 'react'
+import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
@@ -36,6 +38,11 @@ const Post = ({ post, recents, categories }: Props) => {
       console.error(`failed to format date: ${date.toString()}`)
       return ''
     }
+  }
+
+  const [isAuthorListExpanded, setIsAuthorListExpanded] = useState<boolean>(false)
+  const toggleAuthorListExpanded = () => {
+    setIsAuthorListExpanded(!isAuthorListExpanded)
   }
 
   return (
@@ -69,7 +76,8 @@ const Post = ({ post, recents, categories }: Props) => {
           </div>
           <div className={styles.content}>
             <article>
-              <div className={styles.meta}>
+              <div className={styles.meta} onClick={toggleAuthorListExpanded}>
+                <ExpandedAuthors post={post} isShow={isAuthorListExpanded} className={styles.expandedAuthors} />
                 <div>
                   <div className={styles.avatars}>
                     {[...post.authors]
