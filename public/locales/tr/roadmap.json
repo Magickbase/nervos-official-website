@@ -19,12 +19,11 @@
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
     "open_transactions": "Açık İşlemler",
-    "composable_lock_script": "Birleştirilebilir Kilit Betiği",
     "ckb_light_client": "CKB Hafif İstemci"
   },
   "upcoming": {
     "title": "Yaklaşan",
-    "subtitle": "2023 Hardfork",
+    "subtitle": "CKB Hardfork 2023",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
     "light_client": "Hafif istemci yumuşak çatalı"
   },
@@ -33,11 +32,11 @@
     "subtitle": "SUDT",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
     "link": "Daha fazlasını öğren",
-    "cota": "Token.citv (CoTA)",
+    "cota": "Token.city (CoTA)",
     "light_client_soft_fork": "Hafif istemci yumuşak çatalı",
     "light_client_implementation": "Hafif istemci uygulaması",
     "neuron": "Nöron",
-    "axon_beta": "Axon beta",
+    "axon_beta_release": "Axon Beta Release",
     "godwoken_launches": "Godwoken Başlatmaları",
     "godwoken_v1_ethereum_equivalence": "Godwoken v1 Ethereum Eşdeğerliği",
     "joyid_testnet": "JoyID test ağı",

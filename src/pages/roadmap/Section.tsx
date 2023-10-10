@@ -10,7 +10,7 @@ type SectionProps = {
     height: string
   }
   iconPosition: 'left' | 'right'
-  subtitle: string
+  subtitle: React.ReactNode
   descriptionText: string
   descriptionLink: string
   projects: Record<'label' | 'url', string>[]

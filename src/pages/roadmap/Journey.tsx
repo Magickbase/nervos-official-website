@@ -33,8 +33,8 @@ export const Journey: React.FC<JourneyProps> = ({
         <div className={styles.divider} />
         <div className={styles.description}>{description}</div>
         <div className={styles.joinLink}>
-          <a href={joinLink}>
-            {joinLinkText} <ArrowIcon className={styles.arrowIcon} />{' '}
+          <a href={joinLink} target="_blank" rel="noopener noreferrer">
+            {joinLinkText} <ArrowIcon className={styles.arrowIcon} />
           </a>
         </div>
       </div>
