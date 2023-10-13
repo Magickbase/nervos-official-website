@@ -72,6 +72,9 @@
   background: linear-gradient(268deg, #1d61f0 0%, #18efb1 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  svg {
+    color: #1d61f0;
+  }
 }
 
 .descriptionText {

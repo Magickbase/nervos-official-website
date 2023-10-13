@@ -27,9 +27,9 @@ const Roadmap: NextPage = () => {
       },
       iconPosition: 'left' as const,
       subtitle: (
-        <a href="https://github.com/nervosnetwork/ckb/discussions/3827" target="_blank" rel="noopener noreferrer">
+        <StyledLink href="https://github.com/nervosnetwork/ckb/discussions/3827">
           {t('in_progress.subtitle')}
-        </a>
+        </StyledLink>
       ),
       descriptionText: t('in_progress.description'),
       descriptionLink: t('in_progress.link'),
@@ -60,9 +60,7 @@ const Roadmap: NextPage = () => {
       },
       iconPosition: 'right' as const,
       subtitle: (
-        <a href="https://github.com/nervosnetwork/ckb/discussions/3827" target="_blank" rel="noopener noreferrer">
-          {t('upcoming.subtitle')}
-        </a>
+        <StyledLink href="https://github.com/nervosnetwork/ckb/discussions/3827">{t('upcoming.subtitle')}</StyledLink>
       ),
       descriptionText: t('upcoming.description'),
       descriptionLink: t('upcoming.link'),
