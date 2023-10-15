@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
+import Image from 'next/image'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -28,7 +29,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <div>
           {['light', 'dark'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-logo`}
               src={`/images/media-kit/logo/${type}.png`}
@@ -50,7 +51,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <div>
           {['light', 'dark'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-symbol`}
               src={`/images/media-kit/symbol/${type}.png`}
@@ -72,7 +73,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <div>
           {['light', 'dark'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-wordmark`}
               src={`/images/media-kit/wordmark/${type}.png`}
@@ -90,7 +91,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <div>
           {['light', 'dark'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-primary-color`}
               src={`/images/media-kit/primary-colors/${type}.png`}
@@ -112,12 +113,13 @@ const MediaKit: NextPage = () => {
       assets: (
         <div className={styles.vertical}>
           {['grey', 'colors'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-secondary-color`}
               src={`/images/media-kit/secondary-colors/${type}.png`}
               loading="lazy"
               width="630"
+              height="236"
             />
           ))}
         </div>
@@ -138,12 +140,13 @@ const MediaKit: NextPage = () => {
       assets: (
         <div className={styles.vertical}>
           {['dark', 'light'].map(type => (
-            <img
+            <Image
               key={type}
               alt={`${type}-cell-model`}
               src={`/images/media-kit/cell-model/${type}.png`}
               loading="lazy"
               width="630"
+              height="327"
             />
           ))}
         </div>
@@ -163,7 +166,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <div className={styles.merchAssets}>
           {Array.from({ length: 8 }).map((_, idx) => (
-            <img
+            <Image
               key={idx}
               alt={`merch-${idx}`}
               src={`/images/media-kit/merch-assets/${idx}.png`}
