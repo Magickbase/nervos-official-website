@@ -42,6 +42,7 @@ export const StyledLink: FC<PropsWithChildren<StyledLinkProps>> = ({
       href={href}
       target={openNewTab ? '_blank' : '_self'}
       rel="noopener noreferrer"
+      download={download}
     >
       {children ?? href}
       {isExternalLink && icon ? <ArrowIcon className={clsx(styles.arrowIcon)} /> : null}
