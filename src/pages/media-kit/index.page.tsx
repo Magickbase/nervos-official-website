@@ -7,7 +7,10 @@ import { Page } from '../../components/Page'
 import { StyledLink } from '../../components/StyledLink'
 import EmbellishedLeft from './embellished/left.svg'
 import EmbellishedRight from './embellished/right.svg'
+import renderings from './renderings'
 import styles from './index.module.scss'
+
+const LightDark: Readonly<['light', 'dark']> = ['light', 'dark']
 
 const MediaKit: NextPage = () => {
   const { t } = useTranslation(['media-kit', 'common'])
@@ -28,11 +31,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDark.map(type => (
             <Image
               key={type}
               alt={`${type}-logo`}
-              src={`/images/media-kit/logo/${type}.png`}
+              src={renderings.logo[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -50,11 +53,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDark.map(type => (
             <Image
               key={type}
               alt={`${type}-symbol`}
-              src={`/images/media-kit/symbol/${type}.png`}
+              src={renderings.symbol[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -72,11 +75,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDark.map(type => (
             <Image
               key={type}
               alt={`${type}-wordmark`}
-              src={`/images/media-kit/wordmark/${type}.png`}
+              src={renderings.wordmark[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -90,11 +93,11 @@ const MediaKit: NextPage = () => {
       description: t('primaryColors.description'),
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDark.map(type => (
             <Image
               key={type}
               alt={`${type}-primary-color`}
-              src={`/images/media-kit/primary-colors/${type}.png`}
+              src={renderings.primaryColors[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -112,11 +115,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.vertical}>
-          {['grey', 'colors'].map(type => (
+          {(['grey', 'colors'] as const).map(type => (
             <Image
               key={type}
               alt={`${type}-secondary-color`}
-              src={`/images/media-kit/secondary-colors/${type}.png`}
+              src={renderings.secondaryColors[type]}
               loading="lazy"
               width="630"
               height="236"
@@ -128,7 +131,7 @@ const MediaKit: NextPage = () => {
     {
       title: t('typography.title'),
       description: t('typography.description'),
-      assets: <img alt="typography" src={`/images/media-kit/typography/articulat_cf.png`} loading="lazy" width="630" />,
+      assets: <img alt="typography" src={renderings.typography.articulatCF.toString()} loading="lazy" width="630" />,
     },
     {
       title: t('cellModel.title'),
@@ -139,11 +142,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.vertical}>
-          {['dark', 'light'].map(type => (
+          {(['dark', 'light'] as const).map(type => (
             <Image
               key={type}
               alt={`${type}-cell-model`}
-              src={`/images/media-kit/cell-model/${type}.png`}
+              src={renderings.cellModel[type]}
               loading="lazy"
               width="630"
               height="327"
@@ -169,7 +172,8 @@ const MediaKit: NextPage = () => {
             <Image
               key={idx}
               alt={`merch-${idx}`}
-              src={`/images/media-kit/merch-assets/${idx}.png`}
+              // src={`/images/media-kit/merch-assets/${idx}.png`}
+              src={renderings.merchAssets[idx] as any}
               loading="lazy"
               width="300"
               height="300"
