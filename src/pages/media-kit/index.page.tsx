@@ -128,7 +128,16 @@ const MediaKit: NextPage = () => {
     {
       title: t('typography.title'),
       description: t('typography.description'),
-      assets: <img alt="typography" src={`/images/media-kit/typography/articulat_cf.png`} loading="lazy" width="630" />,
+      assets: (
+        <Image
+          alt="typography"
+          src={`/images/media-kit/typography/articulat_cf.png`}
+          loading="lazy"
+          layout="responsive"
+          width="630"
+          height="402"
+        />
+      ),
     },
     {
       title: t('cellModel.title'),
