@@ -1,5 +1,5 @@
 {
-  "title": "旅程",
+  "title": "旅途",
   "subtitle": {
     "never_finished": "永不完结",
     "always_building": "始终建设"
@@ -52,7 +52,7 @@
     "sudt": "Simple User Defined Tokens (sUDT)"
   },
   "journey": {
-    "title": "加入旅程",
+    "title": "加入旅途",
     "description": "在密码朋克的精神指引下，以无需许可、去中心化和透明为价值观，Nervos 项目由一个多元且分散的社区推动，而非指定的领导人。任何想要参与的人都可以，并且强烈鼓励这样做。因此，加入我们，贡献力量，学习并共同塑造 Nervos 的未来。",
     "link_text": "加入"
   }
