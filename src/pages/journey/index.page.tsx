@@ -13,7 +13,7 @@ import { Journey } from './Journey'
 
 const Roadmap: NextPage = () => {
   useBodyClass([presets.themeDark ?? ''])
-  const [t] = useTranslation(['roadmap', 'common'])
+  const [t] = useTranslation(['journey', 'common'])
   const isMobile = useIsMobile()
   const isDesktop = !isMobile
   const sections = [
@@ -211,7 +211,7 @@ const Roadmap: NextPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
-  const lng = await serverSideTranslations(locale, ['common', 'roadmap'])
+  const lng = await serverSideTranslations(locale, ['common', 'journey'])
   return {
     props: lng,
   }
