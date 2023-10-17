@@ -62,6 +62,7 @@ export const Footer: FC<FooterProps> = props => {
         { label: t('community_fund_dao'), url: 'https://dao.ckb.community/' },
         { label: t('nervos_talk_forum'), url: 'https://talk.nervos.org/' },
         { label: t('rfcs'), url: 'https://github.com/nervosnetwork/rfcs/' },
+        { label: t('ckb_nodes'), url: 'https://nodes.ckb.dev/' },
       ],
     },
     {

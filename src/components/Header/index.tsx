@@ -119,6 +119,9 @@ const MenuPopover: FC = () => {
                     <StyledLink href="https://github.com/nervosnetwork/rfcs" className={styles.link}>
                       {t('rfcs')}
                     </StyledLink>
+                    <StyledLink href="https://nodes.ckb.dev/" className={styles.link}>
+                      {t('ckb_nodes')}
+                    </StyledLink>
                   </div>
                 </div>
 
