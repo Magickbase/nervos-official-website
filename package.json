@@ -41,7 +41,7 @@
     "rxjs": "^7.8.0",
     "sass": "^1.58.3",
     "superjson": "1.13.1",
-    "swiper": "^9.1.0",
+    "swiper": "^10.0.0",
     "zod": "^3.22.3"
   },
   "devDependencies": {
