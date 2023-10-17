@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "prepare": "husky install"
+    "afterInstall": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -42,7 +42,7 @@
     "sass": "^1.58.3",
     "superjson": "1.13.1",
     "swiper": "^9.1.0",
-    "zod": "^3.20.6"
+    "zod": "^3.22.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.0",
