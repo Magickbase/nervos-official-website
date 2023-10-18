@@ -13,18 +13,18 @@
 
   img {
     @media screen and (max-width: 1080px) {
-      width: 244px !important;
-      height: 244px !important;
+      max-width: 244px;
+      max-height: 244px;
       object-fit: contain;
     }
     @media screen and (max-width: 850px) {
-      width: 224px !important;
-      height: 224px !important;
+      max-width: 224px;
+      max-height: 224px;
       object-fit: contain;
     }
     @media screen and (max-width: 720px) {
-      width: 184px !important;
-      height: 184px !important;
+      max-width: 184px;
+      max-height: 184px;
       object-fit: contain;
     }
   }
