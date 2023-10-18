@@ -39,7 +39,7 @@ export const Section: React.FC<SectionProps> = ({
         <div>{title}</div>
         <div className={styles.divider} />
         <div className={styles.subtitle}>{subtitle}</div>
-        {descriptionText.startsWith('Lorem') ? null : (
+        {descriptionText.startsWith('__hidden__description') ? null : (
           <div className={styles.descriptionText}>
             {descriptionText} {/* TODO: add real href here */}
             <StyledLink className={styles.link} href={''} colored>

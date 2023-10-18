@@ -14,7 +14,7 @@
   "in_progress": {
     "title": "进行中",
     "subtitle": "CKB 硬分叉 2023",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "link": "了解更多",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
@@ -24,13 +24,13 @@
   "upcoming": {
     "title": "即将到来",
     "subtitle": "CKB 硬分叉 2023",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "light_client": "轻客户端软分叉"
   },
   "achievements": {
     "title": "成就",
     "subtitle": "SUDT",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "link": "了解更多",
     "cota": "Token.city（CoTA）",
     "light_client_soft_fork": "轻客户端软分叉",

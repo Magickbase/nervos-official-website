@@ -14,7 +14,7 @@
   "in_progress": {
     "title": "In progress",
     "subtitle": "CKB Hardfork 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "Find out more",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
@@ -27,13 +27,13 @@
   "upcoming": {
     "title": "Upcoming",
     "subtitle": "CKB Hardfork 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "light_client": "Light Client Soft Fork"
   },
   "achievements": {
     "title": "Achievements",
     "subtitle": "SUDT",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "Find out more",
     "cota": "Token.city (CoTA)",
     "light_client_soft_fork": "Light Client Soft Fork",

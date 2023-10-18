@@ -14,7 +14,7 @@
   "in_progress": {
     "title": "진행 중",
     "subtitle": "CKB 하드포크 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
     "link": "자세히 알아보기",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
@@ -24,13 +24,13 @@
   "upcoming": {
     "title": "다가오는",
     "subtitle": "CKB 하드포크 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
     "light_client": "경량 클라이언트 소프트 포크"
   },
   "achievements": {
     "title": "성과",
     "subtitle": "SUDT",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. 자세히 알아보기",
     "link": "자세히 알아보기",
     "cota": "Token.city (CoTA)",
     "light_client_soft_fork": "경량 클라이언트 소프트 포크",
