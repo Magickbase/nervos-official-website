@@ -128,7 +128,7 @@ const MenuPopover: FC = () => {
                 <div className={styles.menu}>
                   <StyledLink href="/ckbpage" className={styles.title}>
                     <CircleIcon />
-                    CKB <span className={styles.ckbHint}>(Token)</span>
+                    CKB
                   </StyledLink>
                   <div className={styles.links}>
                     <StyledLink href="/mining" className={styles.link}>
@@ -136,6 +136,9 @@ const MenuPopover: FC = () => {
                     </StyledLink>
                     <StyledLink href="/wallets" className={styles.link}>
                       {t('wallets')}
+                    </StyledLink>
+                    <StyledLink href="/journey" className={styles.link}>
+                      {t('journey')}
                     </StyledLink>
                   </div>
                 </div>

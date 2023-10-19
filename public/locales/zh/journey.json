@@ -1,5 +1,5 @@
 {
-  "title": "旅程",
+  "title": "旅途",
   "subtitle": {
     "never_finished": "永不完结",
     "always_building": "始终建设"
@@ -13,40 +13,46 @@
   },
   "in_progress": {
     "title": "进行中",
-    "subtitle": "CKB 2023 分叉",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "subtitle": "CKB 硬分叉 2023",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "link": "了解更多",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
     "open_transactions": "开放式交易",
-    "composable_lock_script": "可组合锁定脚本",
     "ckb_light_client": "CKB 轻客户端"
   },
   "upcoming": {
     "title": "即将到来",
-    "subtitle": "2023 年分叉",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "subtitle": "CKB 硬分叉 2023",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "light_client": "轻客户端软分叉"
   },
   "achievements": {
     "title": "成就",
     "subtitle": "SUDT",
-    "description": "Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
     "link": "了解更多",
-    "cota": "Token.citv（CoTA）",
+    "cota": "Token.city（CoTA）",
     "light_client_soft_fork": "轻客户端软分叉",
     "light_client_implementation": "轻客户端实现",
     "neuron": "Neuron",
-    "axon_beta": "Axon beta",
+    "axon_beta_release": "Axon Beta Release",
     "godwoken_launches": "Godwoken 发布",
     "godwoken_v1_ethereum_equivalence": "Godwoken v1 以太坊等效性",
     "joyid_testnet": "JoyID 测试网",
     "bit_launches": ".bit 发布",
     "force_bridge_launch": "Force Bridge 发布",
-    "opera_integration": "Opera 集成"
+    "opera_integration": "Opera 集成",
+    "light_client_testnet_activation": "轻客户端测试网激活",
+    "quantum_resistant_sphincs": "Quantum Resistant SPHINCS+ lock-script",
+    "mirana_hardfork": "Mirana 硬分叉",
+    "taproot_on_ckb": "Taproot on CKB",
+    "lua_on_ckb": "Lua on CKB",
+    "xudt": "eXtensidble User Defined Tokens",
+    "sudt": "Simple User Defined Tokens (sUDT)"
   },
   "journey": {
-    "title": "加入旅程",
+    "title": "加入旅途",
     "description": "在密码朋克的精神指引下，以无需许可、去中心化和透明为价值观，Nervos 项目由一个多元且分散的社区推动，而非指定的领导人。任何想要参与的人都可以，并且强烈鼓励这样做。因此，加入我们，贡献力量，学习并共同塑造 Nervos 的未来。",
     "link_text": "加入"
   }
