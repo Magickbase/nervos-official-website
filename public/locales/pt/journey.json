@@ -1,5 +1,5 @@
 {
-  "title": "A jornada",
+  "title": "Viagem",
   "subtitle": {
     "never_finished": "NUNCA TERMINADA",
     "always_building": "SEMPRE EM CONSTRUÇÃO"
@@ -13,31 +13,30 @@
   },
   "in_progress": {
     "title": "Em progresso",
-    "subtitle": "Hardfork CKB 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
+    "subtitle": "CKB Hardfork 2023",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
     "link": "Saiba mais",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
     "open_transactions": "Transações abertas",
-    "composable_lock_script": "Script de bloqueio componível",
     "ckb_light_client": "Cliente leve CKB"
   },
   "upcoming": {
     "title": "Próximos",
-    "subtitle": "Hardfork 2023",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
+    "subtitle": "CKB Hardfork 2023",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
     "light_client": "Fork suave do cliente leve"
   },
   "achievements": {
     "title": "Conquistas",
     "subtitle": "SUDT",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Saiba mais",
     "link": "Saiba mais",
-    "cota": "Token.citv (CoTA)",
+    "cota": "Token.city (CoTA)",
     "light_client_soft_fork": "Fork suave do cliente leve",
     "light_client_implementation": "Implementação do cliente leve",
     "neuron": "Neuron",
-    "axon_beta": "Axon beta",
+    "axon_beta_releaes": "Axon Beta Release",
     "godwoken_launches": "Lançamentos do Godwoken",
     "godwoken_v1_ethereum_equivalence": "Equivalência do Godwoken v1 com Ethereum",
     "joyid_testnet": "Testnet JoyID",

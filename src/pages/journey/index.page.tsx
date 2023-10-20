@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Page } from 'src/components/Page'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
 import styles from './index.module.scss'
@@ -12,11 +13,12 @@ import { Journey } from './Journey'
 
 const Roadmap: NextPage = () => {
   useBodyClass([presets.themeDark ?? ''])
-  const [t] = useTranslation(['roadmap', 'common'])
+  const [t] = useTranslation(['journey', 'common'])
   const isMobile = useIsMobile()
   const isDesktop = !isMobile
   const sections = [
     {
+      key: 'in_progress',
       title: <div className={clsx(styles.sectionTitle, styles.inProgressTitle)}>{t('in_progress.title')}</div>,
       icon: inprogress,
       iconSize: {
@@ -24,18 +26,32 @@ const Roadmap: NextPage = () => {
         height: '430px',
       },
       iconPosition: 'left' as const,
-      subtitle: t('in_progress.subtitle'),
+      subtitle: (
+        <StyledLink href="https://github.com/nervosnetwork/ckb/discussions/3827">
+          {t('in_progress.subtitle')}
+        </StyledLink>
+      ),
       descriptionText: t('in_progress.description'),
       descriptionLink: t('in_progress.link'),
       projects: [
-        t('in_progress.kuai'),
-        t('in_progress.force_relay'),
-        t('in_progress.open_transactions'),
-        t('in_progress.composable_lock_script'),
-        t('in_progress.ckb_light_client'),
+        { label: t('in_progress.ckb_auth'), url: 'https://github.com/nervosnetwork/ckb-auth' },
+        {
+          label: t('in_progress.perun_channel'),
+          url: 'https://medium.com/perunnetwork/perun-channels-coming-to-nervos-ckb-1d72081ee887',
+        },
+        {
+          label: t('in_progress.spore_nft'),
+          url: 'https://www.spore.pro',
+        },
+        { label: t('in_progress.kuai'), url: 'https://github.com/ckb-js/kuai/' },
+        {
+          label: t('in_progress.open_transactions'),
+          url: 'https://talk.nervos.org/t/exploring-the-ckb-otx-paradigm-accomplishments-and-insights-from-building-a-transaction-streaming-prototype/7346',
+        },
       ],
     },
     {
+      key: 'upcoming',
       title: <div className={clsx(styles.sectionTitle, styles.upcomingTitle)}>{t('upcoming.title')}</div>,
       icon: upcoming,
       iconSize: {
@@ -43,12 +59,15 @@ const Roadmap: NextPage = () => {
         height: '476.24px',
       },
       iconPosition: 'right' as const,
-      subtitle: t('upcoming.subtitle'),
+      subtitle: (
+        <StyledLink href="https://github.com/nervosnetwork/ckb/discussions/3827">{t('upcoming.subtitle')}</StyledLink>
+      ),
       descriptionText: t('upcoming.description'),
       descriptionLink: t('upcoming.link'),
-      projects: [t('upcoming.light_client')],
+      projects: [{ label: t('upcoming.light_client'), url: 'https://github.com/nervosnetwork/ckb/issues/4085' }],
     },
     {
+      key: 'achievements',
       title: <div className={clsx(styles.sectionTitle, styles.achievementsTitle)}>{t('achievements.title')}</div>,
       icon: achievements,
       iconSize: {
@@ -56,21 +75,55 @@ const Roadmap: NextPage = () => {
         height: '456.98px',
       },
       iconPosition: 'left' as const,
-      subtitle: t('achievements.description'),
+      subtitle: null,
       descriptionText: t('achievements.description'),
       descriptionLink: t('achievements.link'),
       projects: [
-        t('achievements.cota'),
-        t('achievements.light_client_soft_fork'),
-        t('achievements.light_client_implementation'),
-        t('achievements.neuron'),
-        t('achievements.axon_beta'),
-        t('achievements.godwoken_launches'),
-        t('achievements.godwoken_v1_ethereum_equivalence'),
-        t('achievements.joyid_testnet'),
-        t('achievements.bit_launches'),
-        t('achievements.force_bridge_launch'),
-        t('achievements.opera_integration'),
+        { label: t('achievements.axon_beta_release'), url: 'https://x.com/AxonWeb3/status/1663898512281735169?s=20' },
+        {
+          label: t('achievements.light_client_testnet_activation'),
+          url: 'https://twitter.com/busyforking/status/1609169117097127937',
+        },
+        {
+          label: t('achievements.quantum_resistant_sphincs'),
+          url: 'https://github.com/cryptape/quantum-resistant-lock-script',
+        },
+        {
+          label: t('achievements.joyid_testnet'),
+          url: 'https://archive.nervos.org/blog/joyid-a-passwordless-web3-wallet-that-will-accelerate-the-mass-adoption-for-nervos',
+        },
+        {
+          label: t('achievements.mirana_hardfork'),
+          url: 'https://archive.nervos.org/blog/nervos-layer-1-a-major-protocol-upgrade-is-rolling-out',
+        },
+        {
+          label: t('achievements.godwoken_v1_ethereum_equivalence'),
+          url: 'https://archive.nervos.org/blog/nervos-network-godwoken-announcement',
+        },
+        {
+          label: t('achievements.taproot_on_ckb'),
+          url: 'https://blog.cryptape.com/enable-bitcoin-taproot-on-ckb-part-ii',
+        },
+        {
+          label: t('achievements.lua_on_ckb'),
+          url: 'https://blog.cryptape.com/enhancing-ergonomics-and-extensibility-of-ckb-contract-development-with-lua',
+        },
+        {
+          label: t('achievements.xudt'),
+          url: 'https://blog.cryptape.com/enhance-sudts-programmability-with-xudt',
+        },
+        { label: t('achievements.bit_launches'), url: 'https://twitter.com/NervosNetwork/status/1416051952908124161' },
+        { label: t('achievements.cota'), url: 'https://token.city/login' },
+        {
+          label: t('achievements.godwoken_launches'),
+          url: 'https://archive.nervos.org/blog/nervos-launches-godwoken-mainnet-beta',
+        },
+        { label: t('achievements.sudt'), url: 'https://decrypt.co/48538/nervos-network-sudt-ethereum-token-erc-20/' },
+        {
+          label: t('achievements.opera_integration'),
+          url: 'https://press.opera.com/2022/02/22/opera-nervos-blockchain-ckb/',
+        },
+        { label: t('achievements.force_bridge_launch'), url: 'https://archive.nervos.org/blog/force-bridge-mainnet' },
       ],
     },
   ]
@@ -81,7 +134,7 @@ const Roadmap: NextPage = () => {
     iconPosition: 'right' as const,
     description: t('journey.description'),
     // TODO: add join button href here
-    joinLink: '',
+    joinLink: 'https://discord.gg/FKh8Zzvwqa',
     joinLinkText: t('journey.link_text'),
   }
 
@@ -123,19 +176,19 @@ const Roadmap: NextPage = () => {
             <div className={styles.sloganText}>{t('get_involved.description_1')}</div>
             <div className={styles.sloganText}>{t('get_involved.description_2')}</div>
             {/* // TODO: add join button href here */}
-            <StyledLink className={styles.link} href={''} colored>
+            <StyledLink className={styles.link} href="https://github.com/nervosnetwork/rfcs/" colored>
               {t('get_involved.rfcs')}
             </StyledLink>{' '}
             | {/* // TODO: add join button href here */}
-            <StyledLink className={styles.link} href={''} colored>
+            <StyledLink className={styles.link} href="https://talk.nervos.org" colored>
               {t('get_involved.nervos_talk_forum')}
             </StyledLink>
           </div>
           {sections.map((section, index) => {
             return (
               <Section
-                key={section.subtitle}
                 {...section}
+                key={section.key}
                 className={clsx({
                   // when on desktop, background color for the second section is different
                   [styles.darkerBg ?? '']: isDesktop && index === 1,
@@ -157,9 +210,10 @@ const Roadmap: NextPage = () => {
   )
 }
 
-export const getStaticProps: GetStaticProps = () => {
+export const getStaticProps: GetStaticProps = async ({ locale = 'en' }) => {
+  const lng = await serverSideTranslations(locale, ['common', 'journey'])
   return {
-    notFound: true,
+    props: lng,
   }
 }
 

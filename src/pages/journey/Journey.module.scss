@@ -14,6 +14,10 @@
   img {
     width: 405px;
     height: 348.81px;
+    @media screen and (width <= 1080px) {
+      width: 30vw;
+      height: 25.8vw;
+    }
   }
 }
 

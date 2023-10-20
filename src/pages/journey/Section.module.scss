@@ -10,6 +10,24 @@
 
 .icon {
   transform: translate(-140px, -20px);
+
+  img {
+    @media screen and (width <= 1080px) {
+      max-width: 244px;
+      max-height: 244px;
+      object-fit: contain;
+    }
+    @media screen and (width <= 850px) {
+      max-width: 224px;
+      max-height: 224px;
+      object-fit: contain;
+    }
+    @media screen and (width <= 720px) {
+      max-width: 184px;
+      max-height: 184px;
+      object-fit: contain;
+    }
+  }
 }
 
 .link {
@@ -54,6 +72,10 @@
   background: linear-gradient(268deg, #1d61f0 0%, #18efb1 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  svg {
+    color: #1d61f0;
+  }
 }
 
 .descriptionText {
