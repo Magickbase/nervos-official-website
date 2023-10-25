@@ -166,7 +166,7 @@ const MediaKit: NextPage = () => {
       description: t('merchAssets.description'),
       download: {
         label: t('merchAssets.download'),
-        link: '/assets/media-kit/Nervos Merch Assets.zip',
+        link: 'https://drive.google.com/uc?export=download&id=1Mq1pCwcK0JoRe6zfEaiSxh3Ng9FVGLfV',
       },
       link: {
         label: t('merchAssets.link'),
