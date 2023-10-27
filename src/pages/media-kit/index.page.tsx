@@ -170,7 +170,7 @@ const MediaKit: NextPage = () => {
       },
       link: {
         label: t('merchAssets.link'),
-        link: '/',
+        link: 'https://w3w.ai/main/nervosnetwork',
       },
       assets: (
         <div className={styles.merchAssets}>
