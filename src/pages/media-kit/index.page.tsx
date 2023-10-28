@@ -166,7 +166,7 @@ const MediaKit: NextPage = () => {
       description: t('merchAssets.description'),
       download: {
         label: t('merchAssets.download'),
-        link: 'https://drive.google.com/uc?export=download&id=1Mq1pCwcK0JoRe6zfEaiSxh3Ng9FVGLfV',
+        link: 'https://drive.google.com/drive/folders/1ZSnT39fv1OoZ9ABUfDxt9SayQ2AEes22',
       },
       link: {
         label: t('merchAssets.link'),
