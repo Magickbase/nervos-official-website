@@ -146,16 +146,6 @@
     }
   }
 
-  .merchAssets {
-    @media screen and (width >= 1140px) and (width <= 1240px) {
-      &::after {
-        width: 300px;
-        height: 300px;
-        content: '';
-      }
-    }
-  }
-
   @media screen and (width <= 1240px) {
     flex-direction: column;
 

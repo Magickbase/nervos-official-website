@@ -174,7 +174,7 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.merchAssets}>
-          {Array.from({ length: 8 }).map((_, idx) => (
+          {Array.from({ length: 2 }).map((_, idx) => (
             <Image
               key={idx}
               alt={`merch-${idx}`}
