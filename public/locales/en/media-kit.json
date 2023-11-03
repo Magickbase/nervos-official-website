@@ -1,0 +1,45 @@
+{
+  "title": "Nervos Network | Media Kit",
+  "banner": "Nervos media kit",
+  "slogan": "BRAND SYSTEM & GUIDES",
+  "description": "The following is a visual brand guide when using and/or issuing the Nervos brand. Always refer to this brand standards guide for placement and usage.",
+  "logo": {
+    "title": "Nervos Logo",
+    "description": "The Nervos logo is a vertical arrangement of the Nervos symbol and the Nervos wordmark. This vertical arrangement is the primary logo to be used across almost all touchpoints.\nIt is important that the appearance of the Nervos logo remains consistent. —Please don’t edit, change, distort, recolor, or reconfigure it.",
+    "download": "Download"
+  },
+  "symbol": {
+    "title": "Nervos symbol and token asset",
+    "description": "The Nervos symbol and token may be used alone in small spaces in digital UI and in presentations as a soft introduction or sign-off.\nPlease don’t edit, change, distort, recolor, or reconfigure it.",
+    "download": "Download"
+  },
+  "wordmark": {
+    "title": "Nervos wordmark",
+    "description": "The Nervos wordmark should only be utilized when application of the primary logo is not possible. Typical application consists of narrow horizontal formats (banners, pencils, tape).",
+    "download": "Download"
+  },
+  "primaryColors": {
+    "title": "Nervos primary brand colors",
+    "description": "Our primary brand colors are how we express ourselves in the most direct, Nervos way possible."
+  },
+  "secondaryColors": {
+    "title": "Nervos secondary colors",
+    "description": "The majority of brand visuals are black and white with minimal usage of secondary colors when necessary. It is important to follow the rules of our proportions below when creating any brand communication in order to maintain brand consistency.",
+    "download": "Download Nervos color"
+  },
+  "typography": {
+    "title": "Nervos typography",
+    "description": "Nervos uses the \"Articulat CF\" for online and printed communications."
+  },
+  "cellModel": {
+    "title": "Nervos Cell Model",
+    "description": "Inspired by the multitude of cells in the Nervos Blockchain, the brand identity comprises a grid of square shapes meant to metaphorically represent the myriad possibilities available in Nervos technology, both today and into the future.\nVariation in pattern and movement hints at the continual addition, re-creation, and dismantling of cells in the network.",
+    "link": "Conway’s game of life"
+  },
+  "merchAssets": {
+    "title": "Nervos merch assets",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "download": "Download all merch assets",
+    "link": "Visit our W3W merch store"
+  }
+}

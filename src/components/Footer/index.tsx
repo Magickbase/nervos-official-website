@@ -25,7 +25,7 @@ export const Footer: FC<FooterProps> = props => {
         { label: t('wiki'), url: 'https://www.wikiwand.com/en/Nervos_Network' },
         {
           label: t('media_kit'),
-          url: 'https://projects.invisionapp.com/boards/WK3VAZJUYCM/',
+          url: '/media-kit',
         },
       ],
     },
