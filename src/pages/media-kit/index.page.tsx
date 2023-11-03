@@ -7,7 +7,11 @@ import { Page } from '../../components/Page'
 import { StyledLink } from '../../components/StyledLink'
 import EmbellishedLeft from './embellished/left.svg'
 import EmbellishedRight from './embellished/right.svg'
+import illustration from './illustration'
 import styles from './index.module.scss'
+
+const LightDarkList = ['light', 'dark'] as const
+const SecondaryColorList = ['grey', 'colors'] as const
 
 const MediaKit: NextPage = () => {
   const { t } = useTranslation(['media-kit', 'common'])
@@ -28,11 +32,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDarkList.map(type => (
             <Image
               key={type}
               alt={`${type}-logo`}
-              src={`/images/media-kit/logo/${type}.png`}
+              src={illustration.logo[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -50,11 +54,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDarkList.map(type => (
             <Image
               key={type}
               alt={`${type}-symbol`}
-              src={`/images/media-kit/symbol/${type}.png`}
+              src={illustration.symbol[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -72,11 +76,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDarkList.map(type => (
             <Image
               key={type}
               alt={`${type}-wordmark`}
-              src={`/images/media-kit/wordmark/${type}.png`}
+              src={illustration.wordmark[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -90,11 +94,11 @@ const MediaKit: NextPage = () => {
       description: t('primaryColors.description'),
       assets: (
         <div>
-          {['light', 'dark'].map(type => (
+          {LightDarkList.map(type => (
             <Image
               key={type}
               alt={`${type}-primary-color`}
-              src={`/images/media-kit/primary-colors/${type}.png`}
+              src={illustration.primaryColors[type]}
               loading="lazy"
               width="300"
               height="300"
@@ -112,11 +116,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.vertical}>
-          {['grey', 'colors'].map(type => (
+          {SecondaryColorList.map(type => (
             <Image
               key={type}
               alt={`${type}-secondary-color`}
-              src={`/images/media-kit/secondary-colors/${type}.png`}
+              src={illustration.secondaryColors[type]}
               loading="lazy"
               width="630"
               height="236"
@@ -131,7 +135,7 @@ const MediaKit: NextPage = () => {
       assets: (
         <Image
           alt="typography"
-          src={`/images/media-kit/typography/articulat_cf.png`}
+          src={illustration.typography.articulatCF}
           loading="lazy"
           layout="responsive"
           width="630"
@@ -148,11 +152,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.vertical}>
-          {['dark', 'light'].map(type => (
+          {[...LightDarkList].reverse().map(type => (
             <Image
               key={type}
               alt={`${type}-cell-model`}
-              src={`/images/media-kit/cell-model/${type}.png`}
+              src={illustration.cellModel[type]}
               loading="lazy"
               width="630"
               height="327"
@@ -174,11 +178,11 @@ const MediaKit: NextPage = () => {
       },
       assets: (
         <div className={styles.merchAssets}>
-          {Array.from({ length: 2 }).map((_, idx) => (
+          {illustration.merchAssets.map(asset => (
             <Image
-              key={idx}
-              alt={`merch-${idx}`}
-              src={`/images/media-kit/merch-assets/${idx}.png`}
+              key={asset.toString()}
+              alt={`merch-${asset.toString()}`}
+              src={asset}
               loading="lazy"
               width="300"
               height="300"
