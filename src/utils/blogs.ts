@@ -170,9 +170,11 @@ export async function getAllBlogs<F extends (keyof Blog)[]>(sortBy = 'all', pref
         }
       }
       default: {
-        if (blog1?.category?.startsWith(sortBy) && !blog2?.category?.startsWith(sortBy)) {
+        const b1Categories = blog1?.category?.split(',').map(c => c.trim().toLowerCase()) ?? []
+        const b2Categories = blog2?.category?.split(',').map(c => c.trim().toLowerCase()) ?? []
+        if (b1Categories.includes(sortBy) && !b2Categories?.includes(sortBy)) {
           return -1
-        } else if (!blog1?.category?.startsWith(sortBy) && blog2?.category?.startsWith(sortBy)) {
+        } else if (!b1Categories.includes(sortBy) && b2Categories.includes(sortBy)) {
           return 1
         } else if (blog1?.date && blog2?.date) {
           return blog1?.date > blog2?.date ? -1 : 1
