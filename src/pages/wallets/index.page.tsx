@@ -64,7 +64,7 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
               <div key={p}>{p}</div>
             ))}
           <div className="oneLineGap">
-            <StyledLink href="https://github.com/nervosnetwork/neuron/releases" colored>
+            <StyledLink href="https://neuron.magickbase.com" colored>
               {t('download')}
             </StyledLink>
             <br />
