@@ -34,6 +34,7 @@ export function mouseEventOffset(ev: { clientX: number; clientY: number }, targe
   return { x: cx - rect.left, y: cy - rect.top }
 }
 
+export * from './env'
 export * from './markdownToHtml'
 export * from './api'
 export * from './number'
