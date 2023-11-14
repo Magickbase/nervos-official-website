@@ -2,4 +2,5 @@
 // VERCEL_URL doesn't work on custom domains, so we need NEXT_BASE_URL
 
 const DOMAIN = process.env.NEXT_BASE_URL || process.env.VERCEL_URL
+export const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 export const BASE_URL = DOMAIN ? `https://${DOMAIN}` : '/'
