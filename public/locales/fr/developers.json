@@ -20,10 +20,6 @@
       "title": "Construire sur L2 Godwoken",
       "description": "Documentation technique pour Godwoken, le réseau de couche 2 équivalent à EVM basé sur la base de connaissances commune."
     },
-    "build_club": {
-      "title": "Build Club",
-      "description": "The Build Club offre un soutien aux équipes et aux particuliers qui souhaitent lancer de nouveaux projets sur Nervos."
-    },
     "forum": {
       "title": "Nervos Talk Forum",
       "description": "Pour que la communauté participe et discute des développements sur Nervos."
