@@ -20,10 +20,6 @@
       "title": "Construyendo en L2 Godwoken",
       "description": "Documentación técnica para Godwoken, la red de Capa 2 equivalente a EVM construida sobre Common Knowledge Base."
     },
-    "build_club": {
-      "title": "Build Club",
-      "description": "Build Club brinda apoyo a equipos e individuos que buscan lanzar nuevos proyectos en Nervos."
-    },
     "forum": {
       "title": "Foro Nervos Talk",
       "description": "Para que la comunidad participe y discuta los desarrollos en Nervos."
