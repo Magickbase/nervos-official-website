@@ -84,11 +84,6 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
         link: 'https://docs.godwoken.io/',
       },
       {
-        title: t('developer_resources.build_club.title'),
-        content: t('developer_resources.build_club.description'),
-        link: 'https://www.buildclub.xyz/',
-      },
-      {
         title: t('developer_resources.forum.title'),
         content: t('developer_resources.forum.description'),
         link: 'https://talk.nervos.org/',
