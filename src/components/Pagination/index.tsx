@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styles from './index.module.scss'
 
 const INDICATOR_COUNT = 5
-const SIBLING_COUNT = (INDICATOR_COUNT - 1) / 2
+const SIBLING_COUNT = Math.ceil((INDICATOR_COUNT - 1) / 2)
 
 const Pagination: FC<{ pageCount: number }> = ({ pageCount }) => {
   const { query, pathname } = useRouter()
@@ -14,14 +14,13 @@ const Pagination: FC<{ pageCount: number }> = ({ pageCount }) => {
   const next = `${page + 1}`
   const getHref = (p: string) => `${pathname}?${new URLSearchParams({ ...query, page: p }).toString()}`
 
-  let indicators: Array<number> = []
-  if (page <= SIBLING_COUNT) {
-    indicators = Array.from({ length: Math.min(pageCount, INDICATOR_COUNT) }, (_, idx) => idx + 1)
-  } else if (page >= pageCount - SIBLING_COUNT) {
-    indicators = Array.from({ length: INDICATOR_COUNT }, (_, idx) => idx + pageCount - INDICATOR_COUNT)
-  } else {
-    indicators = Array.from({ length: INDICATOR_COUNT }, (_, idx) => idx + page - 2)
-  }
+  const indicators = Array.from({ length: INDICATOR_COUNT })
+    .map((_, idx) => {
+      if (page <= SIBLING_COUNT) return idx + 1
+      if (page >= pageCount - SIBLING_COUNT) return pageCount - INDICATOR_COUNT + idx + 1
+      return page - SIBLING_COUNT + idx
+    })
+    .filter(i => i > 0 && i <= pageCount)
 
   return (
     <div className={styles.container}>
