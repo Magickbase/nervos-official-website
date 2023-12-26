@@ -10629,16 +10629,16 @@ __metadata:
   linkType: hard
 
 "stylelint-config-css-modules@npm:^4.2.0":
-  version: 4.3.0
-  resolution: "stylelint-config-css-modules@npm:4.3.0"
+  version: 4.4.0
+  resolution: "stylelint-config-css-modules@npm:4.4.0"
   dependencies:
-    stylelint-scss: ^5.0.0 || ^6.0.0
+    stylelint-scss: ^6.0.0
   peerDependencies:
-    stylelint: ^14.5.1 || ^15.0.0
+    stylelint: ^14.5.1 || ^15.0.0 || ^16.0.0
   dependenciesMeta:
     stylelint-scss:
       optional: true
-  checksum: e2b2dc083a10b0861781495b5839bbacce6642f47d25f333658f1fc69f1ca132af296e2717dd489e55d093f0b618c133d1472ba35bc9841e3b9321ce8599955d
+  checksum: 2a085528dde5e06737a6a62722b3ba531dbd07d0d209bca8da78bffc7ccc0d8f24fc8c6b50e5e6a898086aace4f306144ff8bdd3530562364e189db4b31e5785
   languageName: node
   linkType: hard
 
@@ -10742,20 +10742,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-scss@npm:^5.0.0 || ^6.0.0":
-  version: 5.0.1
-  resolution: "stylelint-scss@npm:5.0.1"
-  dependencies:
-    postcss-media-query-parser: ^0.2.3
-    postcss-resolve-nested-selector: ^0.1.1
-    postcss-selector-parser: ^6.0.13
-    postcss-value-parser: ^4.2.0
-  peerDependencies:
-    stylelint: ^14.5.1 || ^15.0.0
-  checksum: a3c99cb27682e2b3381359f2a25998340203622b7f08166113aa90ce5111fafcf0af32765b546be31968afb6f17e83c4a9a7f1819c228540c5f5773b574a9216
-  languageName: node
-  linkType: hard
-
 "stylelint-scss@npm:^5.1.0":
   version: 5.1.0
   resolution: "stylelint-scss@npm:5.1.0"
@@ -10767,6 +10753,21 @@ __metadata:
   peerDependencies:
     stylelint: ^14.5.1 || ^15.0.0
   checksum: 9ddcb78cef194ff084890a96bcbb4ad056e5a9d795bf4d62f1244be89e1bdf8ff534b45a5fa77ca1a506ad5cd508f96749d77ff41df9d8846d2a10bd70ec96ca
+  languageName: node
+  linkType: hard
+
+"stylelint-scss@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "stylelint-scss@npm:6.0.0"
+  dependencies:
+    known-css-properties: ^0.29.0
+    postcss-media-query-parser: ^0.2.3
+    postcss-resolve-nested-selector: ^0.1.1
+    postcss-selector-parser: ^6.0.13
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    stylelint: ^16.0.2
+  checksum: 89d86fee3929ae30c456beae20b6ca1035c96f916e14a68f72d91f69c4458e1973f3b65314d7abed6955f1c4d1db74fe76df4ff13ef3d77ed4e6b0d7c7473104
   languageName: node
   linkType: hard
 
