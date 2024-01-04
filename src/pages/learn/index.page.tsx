@@ -1,9 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { Trans, useTranslation } from 'next-i18next'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
-import { REPO, Author, fetchContributors, lastContributor, LastAuthor } from 'src/utils'
+import { REPO, Author, fetchContributors, lastContributor, LastAuthor, BASE_URL } from 'src/utils'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -22,7 +23,8 @@ interface PageProps {
 }
 
 const Learn: NextPage<PageProps> = ({ contributors, author }) => {
-  const [t] = useTranslation(['learn', 'common'])
+  const [t, { language }] = useTranslation(['learn', 'common'])
+  const { pathname } = useRouter()
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -83,10 +85,12 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
     },
   ]
 
+  const pageTitle = 'Nervos Network | Learn'
+
   return (
     <>
       <Head>
-        <title>Nervos Network | Learn</title>
+        <title>{pageTitle}</title>
       </Head>
       <BaseSeparatePage
         embellishedElements={
@@ -108,6 +112,18 @@ const Learn: NextPage<PageProps> = ({ contributors, author }) => {
         author={author}
         contributors={contributors}
         functions={functions}
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('title'),
+          description: t('slogan'),
+          site_name: pageTitle,
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Learn.png`,
+          },
+        })}
       />
     </>
   )

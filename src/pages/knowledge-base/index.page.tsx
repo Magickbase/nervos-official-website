@@ -9,7 +9,7 @@ import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { SyntheticEvent, useState } from 'react'
 import Category from '../../components/Category'
 import { Page } from '../../components/Page'
-import { getTimeFormatter } from '../../utils'
+import { BASE_URL, getTimeFormatter } from '../../utils'
 import { Blog, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
 import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
@@ -62,7 +62,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
   const getBlogKey = (post: Blog, type: BlogType) => `${type}-${post.slug}`
   const shouldExpandAuthorList = (post: Blog, type: BlogType) =>
     postsToExpandAuthorList.findIndex(item => item === getBlogKey(post, type)) !== -1
-  const [t] = useTranslation(['knowledge-base'])
+  const [t, { language }] = useTranslation(['knowledge-base'])
   /* eslint-disable-next-line @typescript-eslint/unbound-method */
   const formatTime = (date: Date) => {
     try {
@@ -74,6 +74,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
   }
 
   const {
+    pathname,
     query: { sort_by = 'all' },
     push,
   } = useRouter()
@@ -129,12 +130,26 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     )
   }
 
+  const pageTitle = `Nervos Network | ${t('knowledge_base')}`
+
   return (
     <>
       <Head>
-        <title>{`Nervos Network | ${t('knowledge_base')}`}</title>
+        <title>{pageTitle}</title>
       </Head>
-      <Page>
+      <Page
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('knowledge_base'),
+          site_name: pageTitle,
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Knowledge_Base.png`,
+          },
+        })}
+      >
         <div className={styles.banner}>
           <EmbellishedLeft width={906} height={527} className={styles.left} />
           <EmbellishedRight width={906} height={521} className={styles.right} />

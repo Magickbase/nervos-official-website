@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal, Transition } from '@headlessui/react'
 import Link from 'next/link'
+import { BASE_URL } from 'src/utils'
 import { useElementIntersecting, useElementSize, useIsMobile, useMouse } from '../../hooks'
 import {
   ConwayGameOfLife,
@@ -33,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 }
 
 const Home: NextPage = () => {
-  const { t } = useTranslation('home')
+  const [t, { language }] = useTranslation('home')
   const isMobile = useIsMobile()
 
   const ref = useRef<HTMLDivElement>(null)
@@ -62,6 +63,15 @@ const Home: NextPage = () => {
       tabIndex={0}
       onKeyDown={onKeyDown}
       className={clsx({ [styles.isOnOperableArea ?? '']: isOnOperableArea })}
+      openGraph={props => ({
+        ...props,
+        type: 'website',
+        url: `${BASE_URL}/${language}`,
+        image: {
+          alt: 'coverImage',
+          url: `${BASE_URL}/images/topics/Homepage.png`,
+        },
+      })}
     >
       {({ renderHeader, renderFooter }) => (
         <>

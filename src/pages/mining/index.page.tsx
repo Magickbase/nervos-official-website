@@ -1,10 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useTranslation, Trans } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { BaseSeparatePage } from '../../components/BaseSeparatePage'
 import { StyledLink } from '../../components/StyledLink'
-import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from '../../utils'
+import { Author, BASE_URL, fetchContributors, LastAuthor, lastContributor, REPO } from '../../utils'
 import { useIsMobile } from '../../hooks'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -22,7 +23,8 @@ interface PageProps {
 }
 
 const Mining: NextPage<PageProps> = ({ contributors, author }) => {
-  const [t] = useTranslation(['mining', 'common'])
+  const [t, { language }] = useTranslation(['mining', 'common'])
+  const { pathname } = useRouter()
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -134,10 +136,12 @@ const Mining: NextPage<PageProps> = ({ contributors, author }) => {
     ],
   }
 
+  const pageTitle = 'Nervos Network | Mining'
+
   return (
     <>
       <Head>
-        <title>Nervos Network | Mining</title>
+        <title>{pageTitle}</title>
       </Head>
       <BaseSeparatePage
         embellishedElements={
@@ -168,6 +172,18 @@ const Mining: NextPage<PageProps> = ({ contributors, author }) => {
         contributors={contributors}
         functions={functions}
         resourceData={resourceData}
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: 'CKB POW',
+          description: t('slogan'),
+          site_name: pageTitle,
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Mining.png`,
+          },
+        })}
       />
     </>
   )

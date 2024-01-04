@@ -1,10 +1,11 @@
 import { GetStaticProps, type NextPage } from 'next'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { useTranslation, Trans } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
 import { StyledLink } from 'src/components/StyledLink'
-import { Author, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
+import { Author, BASE_URL, fetchContributors, LastAuthor, lastContributor, REPO } from 'src/utils'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 import { useIsMobile } from '../../hooks'
@@ -39,7 +40,8 @@ interface PageProps {
 }
 
 const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
-  const [t] = useTranslation(['wallets', 'common'])
+  const [t, { language }] = useTranslation(['wallets', 'common'])
+  const { pathname } = useRouter()
   const isMobile = useIsMobile()
 
   const floatIcons = (
@@ -207,10 +209,12 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
     },
   ]
 
+  const pageTitle = 'Nervos Network | Wallets'
+
   return (
     <>
       <Head>
-        <title>Nervos Network | Wallets</title>
+        <title>{pageTitle}</title>
       </Head>
       <BaseSeparatePage
         embellishedElements={
@@ -266,6 +270,18 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
         author={author}
         contributors={contributors}
         functions={functions}
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('title'),
+          description: t('slogan'),
+          site_name: pageTitle,
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Wallets.png`,
+          },
+        })}
       />
     </>
   )

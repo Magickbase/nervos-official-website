@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, ReactNode, useState } from 'react'
+import type { OGProperties } from '../OpenGraph'
 import type { Author } from '../../utils/github'
 import { Description, DescriptionType } from './Description'
 import { Functions, FunctionsType } from './Functions'
@@ -43,6 +44,7 @@ export type BaseSeparatePageType = HeaderType &
     }[]
     contributors: Array<Author>
     author: Author | null
+    openGraph?: OGProperties | ((props: OGProperties) => OGProperties)
   }
 
 export const BaseSeparatePage: FC<BaseSeparatePageType> = props => {
