@@ -1,8 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 import { Page } from 'src/components/Page'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { BASE_URL } from 'src/utils'
 import { StyledLink } from '../../components/StyledLink'
 import { useBodyClass, useIsMobile } from '../../hooks'
 import styles from './index.module.scss'
@@ -13,7 +16,8 @@ import { Journey } from './Journey'
 
 const Roadmap: NextPage = () => {
   useBodyClass([presets.themeDark ?? ''])
-  const [t] = useTranslation(['journey', 'common'])
+  const [t, { language }] = useTranslation(['journey', 'common'])
+  const { pathname } = useRouter()
   const isMobile = useIsMobile()
   const isDesktop = !isMobile
   const sections = [
@@ -138,9 +142,28 @@ const Roadmap: NextPage = () => {
     joinLinkText: t('journey.link_text'),
   }
 
+  const pageTitle = 'Nervos Network | Journey'
+
   return (
     <>
-      <Page className={styles.baseSeparatePage}>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
+      <Page
+        className={styles.baseSeparatePage}
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('title'),
+          description: `${t('subtitle.never_finished')}, ${t('subtitle.always_building')}`,
+          url: `${BASE_URL}/${language}${pathname}`,
+          site_name: pageTitle,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Journey.png`,
+          },
+        })}
+      >
         <div className={styles.content}>
           {isDesktop && (
             <>

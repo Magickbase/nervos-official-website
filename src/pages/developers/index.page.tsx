@@ -1,7 +1,8 @@
 import { GetStaticProps, type NextPage } from 'next'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { BaseSeparatePage } from 'src/components/BaseSeparatePage'
-import { REPO, Author, fetchContributors, LastAuthor, lastContributor } from 'src/utils'
+import { REPO, Author, fetchContributors, LastAuthor, lastContributor, BASE_URL } from 'src/utils'
 import presets from 'src/styles/presets.module.scss'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
@@ -22,7 +23,8 @@ interface PageProps {
 }
 
 const Developers: NextPage<PageProps> = ({ contributors, author }) => {
-  const [t] = useTranslation(['developers', 'common'])
+  const [t, { language }] = useTranslation(['developers', 'common'])
+  const { pathname } = useRouter()
   const isMobile = useIsMobile()
 
   useBodyClass([presets.themeDark ?? ''])
@@ -91,10 +93,12 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
     ],
   }
 
+  const pageTitle = 'Nervos Network | Developers'
+
   return (
     <>
       <Head>
-        <title>Nervos Network | Developers</title>
+        <title>{pageTitle}</title>
       </Head>
       <BaseSeparatePage
         embellishedElements={
@@ -133,6 +137,18 @@ const Developers: NextPage<PageProps> = ({ contributors, author }) => {
         contributors={contributors}
         functions={functions}
         resourceData={resourceData}
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('title'),
+          description: t('slogan'),
+          site_name: pageTitle,
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Developers.png`,
+          },
+        })}
       />
     </>
   )

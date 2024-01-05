@@ -1,8 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { BASE_URL } from 'src/utils'
 import { Page } from '../../components/Page'
 import { StyledLink } from '../../components/StyledLink'
 import EmbellishedLeft from './embellished/left.svg'
@@ -14,7 +16,8 @@ const LightDarkList = ['light', 'dark'] as const
 const SecondaryColorList = ['grey', 'colors'] as const
 
 const MediaKit: NextPage = () => {
-  const { t } = useTranslation(['media-kit', 'common'])
+  const [t, { language }] = useTranslation(['media-kit', 'common'])
+  const { pathname } = useRouter()
 
   const sections: Array<{
     title: string
@@ -198,7 +201,20 @@ const MediaKit: NextPage = () => {
       <Head>
         <title>{t('title')}</title>
       </Head>
-      <Page>
+      <Page
+        openGraph={props => ({
+          ...props,
+          type: 'website',
+          title: t('banner'),
+          description: t('slogan'),
+          site_name: t('title'),
+          url: `${BASE_URL}/${language}${pathname}`,
+          image: {
+            alt: 'coverImage',
+            url: `${BASE_URL}/images/topics/Media_Kit.png`,
+          },
+        })}
+      >
         <div className={styles.container}>
           <EmbellishedLeft className={styles.embellished} data-position="left" />
           <EmbellishedRight className={styles.embellished} data-position="right" />
