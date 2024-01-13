@@ -3489,14 +3489,14 @@ __metadata:
   linkType: hard
 
 "camelcase-keys@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "camelcase-keys@npm:9.0.0"
+  version: 9.1.3
+  resolution: "camelcase-keys@npm:9.1.3"
   dependencies:
     camelcase: ^8.0.0
     map-obj: 5.0.0
     quick-lru: ^6.1.1
-    type-fest: ^4.2.0
-  checksum: 34a35e6b89816cbb35539e6ea0e5b9dc7a09db9c78d94a81c9ae50705b62cfd91d982e07f4096c3aef54a604d1a6e6de964df5a128d61e6c40506b05b2c31f68
+    type-fest: ^4.3.2
+  checksum: 2da83e6b7a162e9b7e6d94a5874ed8b580e6f78e50cb2b8137c00f3d5adb42fdae2691bd3587018cabcd489626c52e38ca3a7f6706b28521717b12e149322e64
   languageName: node
   linkType: hard
 
@@ -11217,10 +11217,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.2.0":
-  version: 4.3.1
-  resolution: "type-fest@npm:4.3.1"
-  checksum: 04e0f073dcc31c113c1b8856c089b388e7e9f4383a9ed72cc1466a89ec50d9d67678844eeec342b5a1ce71b21e817764d4f067aa148f6bcb5df9005ff3803382
+"type-fest@npm:^4.3.2":
+  version: 4.9.0
+  resolution: "type-fest@npm:4.9.0"
+  checksum: 73383de23237b399a70397a53101152548846d919aebcc7d8733000c6c354dc2632fe37c4a70b8571b79fdbfa099e2d8304c5ac56b3254780acff93e4c7a797f
   languageName: node
   linkType: hard
 
