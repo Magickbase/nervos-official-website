@@ -140,6 +140,9 @@ const MenuPopover: FC = () => {
                     <StyledLink href="/journey" className={styles.link}>
                       {t('journey')}
                     </StyledLink>
+                    <StyledLink href="https://ckbdapps.com/ecosystem" className={styles.link}>
+                      {t('ecosystem')}
+                    </StyledLink>
                   </div>
                 </div>
 
