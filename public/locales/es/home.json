@@ -2,8 +2,7 @@
   "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base",
-    "text2": "Capa 1 construida para la\nModularidad",
-    "text3": "Construida sobre RISC-V y asegurada por Proof-of-Work, CKB es la capa 1 más flexible e interoperable de la industria blockchain. Constituye la base definitiva de Nervos, una red blockchain modular construida desde cero para garantizar una seguridad, descentralización, flexibilidad e interoperabilidad excepcionales."
+    "text2": "Construida sobre RISC-V y asegurada por Proof-of-Work, CKB es la capa 1 más flexible e interoperable de la industria blockchain. Constituye la base definitiva de Nervos, una red blockchain modular construida desde cero para garantizar una seguridad, descentralización, flexibilidad e interoperabilidad excepcionales."
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
