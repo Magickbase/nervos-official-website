@@ -63,11 +63,17 @@ const config = {
   },
   redirects: async () => {
     const ARCHIVE_URL = 'https://archive.nervos.org'
-    return ['/blog', '/blog/:slug', '/trailblazer', '/developer/grants', '/godwoken'].map(source => ({
+    const archivedPages = ['/blog', '/blog/:slug', '/trailblazer', '/developer/grants', '/godwoken'].map(source => ({
       source,
       destination: `${ARCHIVE_URL}${source}`,
       permanent: false,
     }))
+    const roadmap = {
+      source: `/about/roadmap`,
+      destination: `/journey`,
+      permanent: true,
+    }
+    return [...archivedPages, roadmap]
   },
   experimental: {
     outputFileTracingIgnores: [

@@ -32,7 +32,7 @@ const Pagination: FC<{ pageCount: number }> = ({ pageCount }) => {
           {i}
         </Link>
       ))}
-      <Link href={getHref(next)} className={styles.next} data-disabled={+next >= pageCount}>
+      <Link href={getHref(next)} className={styles.next} data-disabled={+next > pageCount}>
         <img src="/images/left.svg" alt="next" />
       </Link>
     </div>
