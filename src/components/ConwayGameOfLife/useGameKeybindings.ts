@@ -142,8 +142,8 @@ export function useGameMouseHandler(
     let prevRightClickEvent: MouseEvent | null = null
 
     const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
-      const isRightClick = e.button === 2
-      if (!isAllowedGameControlEvent(e) || !isRightClick) return
+      const isLeftClick = e.button === 0
+      if (!isAllowedGameControlEvent(e) || !isLeftClick) return
       prevRightClickEvent = e
 
       mouseControllerData.current = { affectedCellIndexes: [] }

@@ -151,8 +151,8 @@ const Home: NextPage = () => {
           </div>
 
           {!isMobile && isOnOperableArea && !hasDrawn && (
-            <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
-              + {t('right_click_to_draw')}
+            <div className={styles.clickDrawTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
+              + {t('click_to_draw')}
             </div>
           )}
         </>
