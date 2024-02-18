@@ -45,7 +45,7 @@ const Home: NextPage = () => {
 
   const mousePos = useMouse()
 
-  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef)
+  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef, { drag: false })
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
 
   // Default focus on body, auto-focus this to respond to keyboard events.

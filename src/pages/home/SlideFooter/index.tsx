@@ -131,10 +131,7 @@ const LiveMetrics: FC = () => {
 const InfoDialog: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const mouseBindings = [
-    { key: 'Left button', bind: 'Move around' },
-    { key: 'Left button', bind: 'Create / Delete cells' },
-  ]
+  const mouseBindings = [{ key: 'Left button', bind: 'Create / Delete cells' }]
 
   const keyboardBindings = [
     { key: 'Arrow keys', bind: 'Move around' },

@@ -78,6 +78,7 @@ export function useGameMouseHandler(
   gameControllerRef?: RefObject<GameController>,
   opts: {
     rootElement?: HTMLElement
+    drag?: boolean
   } = {},
 ) {
   const mouseControllerData = useRef<{
@@ -97,6 +98,9 @@ export function useGameMouseHandler(
       // Avoid not being able to select the text of sub-level elements.
       preventDefault: 'never',
     }).draggable({
+      enabled: opts.drag ?? true,
+      // Right mouse button.
+      mouseButtons: 2,
       // Default cursor is `move`, here empty string means no setting.
       cursorChecker: () => '',
       listeners: {
@@ -142,9 +146,9 @@ export function useGameMouseHandler(
     let prevRightClickEvent: MouseEvent | null = null
 
     const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
+      prevRightClickEvent = e
       const isLeftClick = e.button === 0
       if (!isAllowedGameControlEvent(e) || !isLeftClick) return
-      prevRightClickEvent = e
 
       mouseControllerData.current = { affectedCellIndexes: [] }
       setIsDrawing(true)
@@ -193,7 +197,7 @@ export function useGameMouseHandler(
         prevRightClickEvent.target === e.target &&
         prevRightClickEvent.clientX === e.clientX &&
         prevRightClickEvent.clientY === e.clientY
-      if (!isTriggeredByPrevRightClick) return
+      if (isTriggeredByPrevRightClick) return
 
       e.preventDefault()
     }
@@ -210,7 +214,7 @@ export function useGameMouseHandler(
       root.removeEventListener('mouseup', onMouseUp)
       root.removeEventListener('contextmenu', onContextMenu)
     }
-  }, [gameControllerRef, opts.rootElement])
+  }, [gameControllerRef, opts.drag, opts.rootElement])
 
   return { isOnOperableArea, isDrawing }
 }
