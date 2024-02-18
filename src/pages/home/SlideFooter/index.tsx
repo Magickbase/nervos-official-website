@@ -112,7 +112,6 @@ const InfoDialog: FC = () => {
   const mouseBindings = [{ key: 'Left button', bind: 'Create / Delete cells' }]
 
   const keyboardBindings = [
-    { key: 'Arrow keys', bind: 'Move around' },
     { key: '+, -', bind: 'Zoom In and out' },
     { key: 'Space', bind: 'One generation forward' },
     { key: 'Tab', bind: 'Many generation forward' },

@@ -17,21 +17,7 @@ export function useGameKeyboardHandler(
       const ctl = controllerRef.current
       if (ctl == null) return
 
-      const stepDistance = 24
-
       switch (e.code) {
-        case 'ArrowUp':
-          ctl.addCameraOffset(0, -stepDistance)
-          break
-        case 'ArrowRight':
-          ctl.addCameraOffset(stepDistance, 0)
-          break
-        case 'ArrowDown':
-          ctl.addCameraOffset(0, stepDistance)
-          break
-        case 'ArrowLeft':
-          ctl.addCameraOffset(-stepDistance, 0)
-          break
         case 'Equal':
           ctl.zoomIn()
           break
