@@ -65,12 +65,6 @@ export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObj
         <span title="CLEAR">
           <StopIcon onClick={() => gameControllerRef?.current?.clear()} />
         </span>
-        <span title="ZOOM IN">
-          <PlusIcon onClick={() => gameControllerRef?.current?.zoomIn()} />
-        </span>
-        <span title="ZOOM OUT">
-          <MinusIcon onClick={() => gameControllerRef?.current?.zoomOut()} />
-        </span>
         <span title="RANDOMIZE PATTERN">
           <RandomizeIcon onClick={() => gameControllerRef?.current?.randomPattern()} />
         </span>
