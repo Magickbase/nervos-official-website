@@ -146,7 +146,11 @@ const Home: NextPage = () => {
           </Transition>
 
           <div className={styles.golContainer}>
-            <ConwayGameOfLife ref={controllerRef} initializationIndicatorRef={initializationIndicatorRef} />
+            <ConwayGameOfLife
+              ref={controllerRef}
+              initializationIndicatorRef={initializationIndicatorRef}
+              defaultRunning
+            />
             <div ref={initializationIndicatorRef} className={styles.indicator}></div>
           </div>
 

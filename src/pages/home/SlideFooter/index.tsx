@@ -19,40 +19,24 @@ import PlusIcon from './plus.svg'
 import MinusIcon from './minus.svg'
 import RandomizeIcon from './randomize.svg'
 import InfoIcon from './info.svg'
-import { useInterval } from '../../../hooks'
 
 export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObject<GameController> }> = props => {
   const { children, gameControllerRef, className, ...divProps } = props
 
   const ref = useRef<HTMLDivElement>(null)
 
-  const [autoMode, setAutoMode] = useState(true)
   const [paused] = useObservableState(() => gameControllerRef.current?.paused$ ?? of(true))
 
-  const toggleRunning = useCallback(
-    (isByAuto?: boolean) => {
-      if (!isByAuto) setAutoMode(false)
+  const toggleRunning = useCallback(() => {
+    const ctl = gameControllerRef?.current
+    if (ctl == null) return
 
-      const ctl = gameControllerRef?.current
-      if (ctl == null) return
-
-      if (ctl.paused) {
-        ctl.play()
-      } else {
-        ctl.pause()
-      }
-    },
-    [gameControllerRef],
-  )
-
-  useInterval(
-    () => {
-      if (!autoMode) return
-      toggleRunning(true)
-    },
-    5e3,
-    [autoMode, toggleRunning],
-  )
+    if (ctl.paused) {
+      ctl.play()
+    } else {
+      ctl.pause()
+    }
+  }, [gameControllerRef])
 
   const onKeyDown = useGameKeyboardHandler(gameControllerRef, e => e.target === ref.current)
 
