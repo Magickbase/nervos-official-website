@@ -1,4 +1,4 @@
-import type { GetServerSideProps } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Pagination from 'src/components/Pagination'
 import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { SyntheticEvent, useState } from 'react'
+import { ParsedUrlQuery } from 'querystring'
 import Category from '../../../components/Category'
 import { Page } from '../../../components/Page'
 import { BASE_URL, getTimeFormatter } from '../../../utils'
@@ -14,8 +15,10 @@ import { Blog, getAllBlogs, getCategoriesFromBlogs } from '../../../utils/blogs'
 import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
+import { range } from '../../../utils/array'
 
 type Props = {
+  opts: PageOpts
   categories: Array<string>
   posts: Array<Blog>
   populars: Array<Blog>
@@ -57,7 +60,29 @@ const handleCoverNotFound = (e: React.SyntheticEvent<HTMLImageElement>) => {
   img.src = rawImageUrl
 }
 
-const Index = ({ posts, populars, categories, pageCount }: Props) => {
+interface PageOpts {
+  sortBy: string
+  page: number
+}
+
+function pageOptsToParams(opts: PageOpts): ParsedUrlQuery & { opts: string[] } {
+  const listOpts = [opts.sortBy].map(opt => opt.replaceAll('-', '%2D')).join('-')
+  return { opts: [listOpts, opts.page.toString()] }
+}
+
+function getPageOptsFromParams(params?: ParsedUrlQuery): PageOpts {
+  const [listOpts, page] = params?.opts ?? []
+  const [sortBy = 'all'] = listOpts?.split('-').map(opt => opt.replaceAll('%2D', '-')) ?? []
+  const pageNo = Number(page ?? '1')
+  return { sortBy, page: pageNo }
+}
+
+export function getPostListPageURL(opts: PageOpts): string {
+  const params = pageOptsToParams(opts)
+  return `/knowledge-base/list/${params.opts.map(opt => encodeURIComponent(opt)).join('/')}`
+}
+
+const List = ({ opts, posts, populars, categories, pageCount }: Props) => {
   const [postsToExpandAuthorList, setPostsToExpandAuthorList] = useState<string[]>([])
   const getBlogKey = (post: Blog, type: BlogType) => `${type}-${post.slug}`
   const shouldExpandAuthorList = (post: Blog, type: BlogType) =>
@@ -73,11 +98,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     }
   }
 
-  const {
-    pathname,
-    query: { sort_by = 'all' },
-    push,
-  } = useRouter()
+  const { pathname, push } = useRouter()
 
   // only one post has expanded author list at most
   const handleBlogAuthorClicked = (post: Blog, type: BlogType, e: SyntheticEvent) => {
@@ -90,7 +111,9 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
     }
   }
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    push(`/knowledge-base?sort_by=${e.currentTarget.value.toString()}`).catch((e: Error) => console.error(e.message))
+    push(getPostListPageURL({ sortBy: e.currentTarget.value.toString(), page: 1 })).catch((e: Error) =>
+      console.error(e.message),
+    )
   }
 
   const BlogMeta = ({ post, type }: { post: Blog; type: BlogType }) => {
@@ -208,9 +231,9 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
               {categories.map(category => (
                 <Link
                   key={category}
-                  href={`/knowledge-base?sort_by=${encodeURIComponent(category)}`}
+                  href={getPostListPageURL({ sortBy: category, page: 1 })}
                   className={styles.category}
-                  data-selected={sort_by === category}
+                  data-selected={opts.sortBy === category}
                   data-type={category.toLowerCase()}
                 >
                   {t(category)}
@@ -219,7 +242,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
             </div>
           </div>
 
-          <select className={styles.categorySelect} onChange={handleSortChange} value={sort_by}>
+          <select className={styles.categorySelect} onChange={handleSortChange} value={opts.sortBy}>
             {categories.map(category => (
               <option key={category} value={category}>
                 {t(category)}
@@ -287,16 +310,20 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
               </Link>
             ))}
           </div>
-          <Pagination pageCount={pageCount} />
+          <Pagination
+            page={opts.page}
+            pageCount={pageCount}
+            getPageLink={page => getPostListPageURL({ sortBy: opts.sortBy, page })}
+          />
         </div>
       </Page>
     </>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
-  const pageNo = Number(query.page ?? '1')
-  const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+  const pageOpts = getPageOptsFromParams(params)
+  const { sortBy, page } = pageOpts
 
   const posts = await getAllBlogs(sortBy, locale ?? 'en')
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
@@ -306,7 +333,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
 
   const props: Props = {
     ...lng,
-    posts: posts.slice(PAGE_SIZE * (pageNo - 1), PAGE_SIZE * pageNo),
+    opts: pageOpts,
+    posts: posts.slice(PAGE_SIZE * (page - 1), PAGE_SIZE * page),
     populars,
     categories: ['all', ...categories, 'newest post', 'oldest post'],
     pageCount,
@@ -315,4 +343,22 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, query }) 
   return { props }
 }
 
-export default Index
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const posts = await getAllBlogs('all', 'en', [])
+  const categories = getCategoriesFromBlogs(posts)
+  const sortByOpts = categories.concat('all', 'newest post', 'oldest post')
+
+  const pageParams = sortByOpts
+    .map(sortBy => {
+      const pageCount = Math.ceil(posts.length / PAGE_SIZE)
+      return range(1, pageCount + 1).map(page => pageOptsToParams({ sortBy, page }))
+    })
+    .flat()
+
+  return {
+    paths: (locales ?? ['en']).map(locale => pageParams.map(params => ({ params, locale }))).flat(),
+    fallback: false,
+  }
+}
+
+export default List

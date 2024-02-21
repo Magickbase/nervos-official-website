@@ -19,6 +19,7 @@ import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../
 import styles from './knowledgeBase.module.scss'
 import { TOCContextProvider, TOCItem } from '../../components/TableOfContents'
 import { StyledTOC } from './StyledTOC'
+import { getPostListPageURL } from './list/[[...opts]].page'
 
 type Props = {
   post: Blog
@@ -172,9 +173,9 @@ const Post = ({ post, recents, categories }: Props) => {
               </div>
               <div className={styles.title}>{`${t('categories')}:`}</div>
               <div className={styles.category}>
-                {categories.map(c => (
-                  <Link key={c} href={`/knowledge-base?sort_by=${encodeURIComponent(c)}`}>
-                    {t(c)}
+                {categories.map(category => (
+                  <Link key={category} href={getPostListPageURL({ sortBy: category, page: 1 })}>
+                    {t(category)}
                   </Link>
                 ))}
               </div>
