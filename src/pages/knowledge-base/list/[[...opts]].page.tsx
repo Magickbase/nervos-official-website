@@ -16,6 +16,7 @@ import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
 import { range } from '../../../utils/array'
+import { env } from '../../../env.mjs'
 
 type Props = {
   opts: PageOpts
@@ -66,13 +67,30 @@ interface PageOpts {
 }
 
 function pageOptsToParams(opts: PageOpts): ParsedUrlQuery & { opts: string[] } {
-  const listOpts = [opts.sortBy].map(opt => opt.replaceAll('-', '%2D')).join('-')
+  const listOpts = [opts.sortBy]
+    .map(opt =>
+      opt.replaceAll(
+        '-',
+        // The encodeURIComponent is used to address the issue mentioned in getPageOptsFromParams,
+        // avoiding the `%2D` from being directly converted back to `-` by decodeURIComponent during the build.
+        encodeURIComponent('%2D'),
+      ),
+    )
+    .join('-')
   return { opts: [listOpts, opts.page.toString()] }
 }
 
 function getPageOptsFromParams(params?: ParsedUrlQuery): PageOpts {
   const [listOpts, page] = params?.opts ?? []
-  const [sortBy = 'all'] = listOpts?.split('-').map(opt => opt.replaceAll('%2D', '-')) ?? []
+  const [sortBy = 'all'] =
+    listOpts?.split('-').map(opt =>
+      opt.replaceAll(
+        // During the `next build`, the params provided by Next.js are decoded with decodeURIComponent,
+        // which is different from `next dev` for unknown reasons. Here we introduce a simple logical branch to fix this.
+        env.NODE_ENV === 'development' ? encodeURIComponent('%2D') : '%2D',
+        '-',
+      ),
+    ) ?? []
   const pageNo = Number(page ?? '1')
   return { sortBy, page: pageNo }
 }
