@@ -19,40 +19,24 @@ import PlusIcon from './plus.svg'
 import MinusIcon from './minus.svg'
 import RandomizeIcon from './randomize.svg'
 import InfoIcon from './info.svg'
-import { useInterval } from '../../../hooks'
 
 export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObject<GameController> }> = props => {
   const { children, gameControllerRef, className, ...divProps } = props
 
   const ref = useRef<HTMLDivElement>(null)
 
-  const [autoMode, setAutoMode] = useState(true)
   const [paused] = useObservableState(() => gameControllerRef.current?.paused$ ?? of(true))
 
-  const toggleRunning = useCallback(
-    (isByAuto?: boolean) => {
-      if (!isByAuto) setAutoMode(false)
+  const toggleRunning = useCallback(() => {
+    const ctl = gameControllerRef?.current
+    if (ctl == null) return
 
-      const ctl = gameControllerRef?.current
-      if (ctl == null) return
-
-      if (ctl.paused) {
-        ctl.play()
-      } else {
-        ctl.pause()
-      }
-    },
-    [gameControllerRef],
-  )
-
-  useInterval(
-    () => {
-      if (!autoMode) return
-      toggleRunning(true)
-    },
-    5e3,
-    [autoMode, toggleRunning],
-  )
+    if (ctl.paused) {
+      ctl.play()
+    } else {
+      ctl.pause()
+    }
+  }, [gameControllerRef])
 
   const onKeyDown = useGameKeyboardHandler(gameControllerRef, e => e.target === ref.current)
 
@@ -80,12 +64,6 @@ export const SlideFooter: FC<ComponentProps<'div'> & { gameControllerRef: RefObj
         </span>
         <span title="CLEAR">
           <StopIcon onClick={() => gameControllerRef?.current?.clear()} />
-        </span>
-        <span title="ZOOM IN">
-          <PlusIcon onClick={() => gameControllerRef?.current?.zoomIn()} />
-        </span>
-        <span title="ZOOM OUT">
-          <MinusIcon onClick={() => gameControllerRef?.current?.zoomOut()} />
         </span>
         <span title="RANDOMIZE PATTERN">
           <RandomizeIcon onClick={() => gameControllerRef?.current?.randomPattern()} />
@@ -131,13 +109,9 @@ const LiveMetrics: FC = () => {
 const InfoDialog: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const mouseBindings = [
-    { key: 'Left button', bind: 'Move around' },
-    { key: 'Right button', bind: 'Create / Delete cells' },
-  ]
+  const mouseBindings = [{ key: 'Left button', bind: 'Create / Delete cells' }]
 
   const keyboardBindings = [
-    { key: 'Arrow keys', bind: 'Move around' },
     { key: '+, -', bind: 'Zoom In and out' },
     { key: 'Space', bind: 'One generation forward' },
     { key: 'Tab', bind: 'Many generation forward' },

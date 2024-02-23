@@ -2,7 +2,7 @@ import { FC, Fragment, PropsWithChildren, RefObject, useEffect, useMemo, useRef,
 import { GetServerSideProps, type NextPage } from 'next'
 import clsx from 'clsx'
 import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react'
-import { Mousewheel } from 'swiper'
+import { Keyboard, Mousewheel } from 'swiper'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Portal, Transition } from '@headlessui/react'
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
 
   const mousePos = useMouse()
 
-  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef)
+  const { isOnOperableArea, isDrawing } = useGameMouseHandler(controllerRef, { drag: false })
   const onKeyDown = useGameKeyboardHandler(controllerRef, e => e.target === ref.current)
 
   // Default focus on body, auto-focus this to respond to keyboard events.
@@ -82,6 +82,7 @@ const Home: NextPage = () => {
             direction="vertical"
             slidesPerView="auto"
             autoHeight
+            modules={[Mousewheel, Keyboard]}
             mousewheel={{
               // Supports operations from some Portal to elements outside the swiper container, such as SlideFooter.
               eventsTarget: 'body',
@@ -90,7 +91,21 @@ const Home: NextPage = () => {
               thresholdDelta: 5,
               sensitivity: 0.5,
             }}
-            modules={[Mousewheel]}
+            keyboard={{
+              enabled: true,
+            }}
+            onKeyPress={(swiper, keyCodeString) => {
+              // Here is a type error with swiper, which should actually be a number. So, let's handle this simply.
+              // This issue remains unresolved in swiper@11.0.6.
+              const keyCode = Number(keyCodeString)
+              const isHomeKeyPress = keyCode === 36
+              const isEndKeyPress = keyCode === 35
+              if (isHomeKeyPress) {
+                swiper.slideTo(0)
+              } else if (isEndKeyPress) {
+                swiper.slideTo(swiper.slides.length - 1)
+              }
+            }}
             // https://stackoverflow.com/questions/53367064/how-to-enable-select-text-in-swiper-js
             simulateTouch={false}
             onActiveIndexChange={swiper => setActiveIdx(swiper.activeIndex)}
@@ -131,13 +146,17 @@ const Home: NextPage = () => {
           </Transition>
 
           <div className={styles.golContainer}>
-            <ConwayGameOfLife ref={controllerRef} initializationIndicatorRef={initializationIndicatorRef} />
+            <ConwayGameOfLife
+              ref={controllerRef}
+              initializationIndicatorRef={initializationIndicatorRef}
+              defaultRunning
+            />
             <div ref={initializationIndicatorRef} className={styles.indicator}></div>
           </div>
 
           {!isMobile && isOnOperableArea && !hasDrawn && (
-            <div className={styles.rightClickTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
-              + {t('right_click_to_draw')}
+            <div className={styles.clickDrawTip} style={{ left: mousePos.clientX, top: mousePos.clientY }}>
+              + {t('click_to_draw')}
             </div>
           )}
         </>

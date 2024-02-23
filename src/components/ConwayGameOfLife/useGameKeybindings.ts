@@ -17,21 +17,7 @@ export function useGameKeyboardHandler(
       const ctl = controllerRef.current
       if (ctl == null) return
 
-      const stepDistance = 24
-
       switch (e.code) {
-        case 'ArrowUp':
-          ctl.addCameraOffset(0, -stepDistance)
-          break
-        case 'ArrowRight':
-          ctl.addCameraOffset(stepDistance, 0)
-          break
-        case 'ArrowDown':
-          ctl.addCameraOffset(0, stepDistance)
-          break
-        case 'ArrowLeft':
-          ctl.addCameraOffset(-stepDistance, 0)
-          break
         case 'Equal':
           ctl.zoomIn()
           break
@@ -78,6 +64,7 @@ export function useGameMouseHandler(
   gameControllerRef?: RefObject<GameController>,
   opts: {
     rootElement?: HTMLElement
+    drag?: boolean
   } = {},
 ) {
   const mouseControllerData = useRef<{
@@ -97,6 +84,9 @@ export function useGameMouseHandler(
       // Avoid not being able to select the text of sub-level elements.
       preventDefault: 'never',
     }).draggable({
+      enabled: opts.drag ?? true,
+      // Right mouse button.
+      mouseButtons: 2,
       // Default cursor is `move`, here empty string means no setting.
       cursorChecker: () => '',
       listeners: {
@@ -142,9 +132,9 @@ export function useGameMouseHandler(
     let prevRightClickEvent: MouseEvent | null = null
 
     const onMouseDown = (e: HTMLElementEventMap['mousedown']) => {
-      const isRightClick = e.button === 2
-      if (!isAllowedGameControlEvent(e) || !isRightClick) return
       prevRightClickEvent = e
+      const isLeftClick = e.button === 0
+      if (!isAllowedGameControlEvent(e) || !isLeftClick) return
 
       mouseControllerData.current = { affectedCellIndexes: [] }
       setIsDrawing(true)
@@ -193,7 +183,7 @@ export function useGameMouseHandler(
         prevRightClickEvent.target === e.target &&
         prevRightClickEvent.clientX === e.clientX &&
         prevRightClickEvent.clientY === e.clientY
-      if (!isTriggeredByPrevRightClick) return
+      if (isTriggeredByPrevRightClick) return
 
       e.preventDefault()
     }
@@ -210,7 +200,7 @@ export function useGameMouseHandler(
       root.removeEventListener('mouseup', onMouseUp)
       root.removeEventListener('contextmenu', onContextMenu)
     }
-  }, [gameControllerRef, opts.rootElement])
+  }, [gameControllerRef, opts.drag, opts.rootElement])
 
   return { isOnOperableArea, isDrawing }
 }
