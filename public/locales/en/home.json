@@ -2,7 +2,7 @@
   "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base",
-    "text2": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable Layer 1 in the blockchain industry. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability."
+    "text2": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable blockchain. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability."
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
