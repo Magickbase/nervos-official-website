@@ -1,8 +1,15 @@
 {
   "title": "The Nervos Foundation.",
-  "slogan": "The Nervos Foundation est une organisation à but non lucratif dont la mission est de soutenir la croissance à long terme du Réseau Nervos. Nous travaillons pour assurer le succès futur de Nervos en permettant à la communauté de se développer de manière indépendante tout en favorisant une innovation significative dans l'industrie.",
+  "foundation": "Foundation",
+  "slogan": "<tag1>The Nervos Foundation</tag1> est une organisation à but non lucratif dont la mission est de soutenir la croissance à long terme du <tag2>Réseau Nervos</tag2>. Nous travaillons pour assurer le succès futur de Nervos en permettant à la communauté de se développer de manière indépendante tout en favorisant une innovation significative dans l'industrie.",
+  "menu": {
+    "positioning": "Positionnement",
+    "vision": "Vision pour l'Avenir",
+    "resources": "Ressources",
+    "teams": "Équipes"
+  },
   "positioning": {
-    "title": "Positionnement de la fondation.",
+    "title": "Positionnement de la fondation",
     "infrastructure": {
       "title": "Infrastructure",
       "description": "Nous prenons les premières mesures pour réaliser les ambitions du réseau Nervos, ce qui signifie investir des ressources dans la recherche, le développement et la maintenance de la pile technologique fondamentale."
@@ -17,25 +24,25 @@
     }
   },
   "vision_for_future": {
-    "title": "Vision pour l'Avenir.",
+    "title": "Vision pour l'Avenir",
     "an_open_bazaar": {
-      "title": "Un bazar ouvert.",
+      "title": "Un bazar ouvert",
       "description": {
         "text1": "Nous voyons le réseau Nervos comme un bazar ouvert. N'importe qui peut venir et participer au réseau à n'importe quel niveau. Dans un marché ouvert de style bazar, tous les types de participants sont les bienvenus : que vous soyez un bâtisseur, un contributeur ou simplement un observateur.",
         "text2": "Le marché lui-même n'est guère plus qu'un toit sur un espace vide, mais en fournissant un terrain de rencontre commun où les participants indépendants agissent selon leurs propres motivations, un environnement réactif et dynamique émerge où l'étendue de la créativité humaine peut s'épanouir."
       }
     },
     "exploration_and_innovation": {
-      "title": "Recherche et innovation.",
+      "title": "Recherche et innovation",
       "description": "Ce vers quoi nous nous dirigeons est un lieu prospère et vivant où de nouvelles idées peuvent être découvertes et expérimentées. Avec une approche ouverte, il n'y a pas de règles sur le type d'applications que vous pouvez développer, et nous pensons qu'une véritable innovation peut être explorée et qu'une plate-forme sera créée où de nouveaux projets intéressants pourront se développer avec le soutien d'une communauté."
     },
     "nurture_and_support": {
-      "title": "Nourrir et soutenir.",
+      "title": "Nourrir et soutenir",
       "description": "The Nervos Foundation joue un rôle au service du soutien d'un écosystème dynamique et en pleine croissance. Bien que cet effort ait commencé avec la fondation, le plus important, Nervos, est défini par l'absence de permission et une ouverture aux idées. Dans cet esprit, la fondation existe pour fournir un soutien et des conseils à une solide communauté de participants en développement."
     }
   },
   "ecosystem": {
-    "title": "Programmes de soutien à l'écosystème.",
+    "title": "Programmes de soutien à l'écosystème",
     "description": "Il existe plusieurs programmes qui soutiennent le développement de projets qui s'alignent sur la vision de la Nervos Foundation:",
     "build_club": {
       "title": "Build Club",
@@ -51,7 +58,7 @@
     }
   },
   "resource_for_participants": {
-    "title": "Ressources pour les participants.",
+    "title": "Ressources pour les participants",
     "description": "Explorez les ressources pour les participants au sein de la communauté afin de favoriser l'avancement de Nervos.",
     "nervos_docs": {
       "title": "Nervos Docs",
@@ -60,6 +67,14 @@
     "developer_training_course": {
       "title": "Cours de formation pour développeurs",
       "description": "Informations de base sur Nervos et documents de référence techniques."
+    },
+    "nervos_dao": {
+      "title": "Nervos DAO",
+      "description": "La DAO Nervos permet aux utilisateurs de bloquer des CKBytes et de recevoir des récompenses de l'émission secondaire."
+    },
+    "ecosystem_fund": {
+      "title": "Fonds CKB pour l'écosystème",
+      "description": "Le CKB Eco Fund a pour mission d'encourager les innovations dans le domaine du CKB. Nous investissons dans des startups en phase de démarrage et de croissance qui favorisent l'adoption, l'évolutivité et l'accessibilité de CKB."
     },
     "rfcs": {
       "title": "RFCs",
@@ -79,7 +94,9 @@
     }
   },
   "team": {
-    "title": "l' Équipe.",
+    "title": "Équipes de base",
+    "friends": "Nos amis",
+    "see": "Voir les postes à pourvoir",
     "description": {
       "text1": "Tous les participants au sein de la communauté, y compris les développeurs, les mineurs, les créateurs et les passionnés, jouent un rôle essentiel dans la croissance du réseau. Les équipes sont alignées sur la vision mais peuvent être assez indépendantes les unes des autres. La Fondation Nervos distribue des ressources aux équipes de la communauté et les aide à atteindre leurs objectifs.",
       "text2": "Visitez ce <1>lien</1> pour voir les postes vacants au sein de la Fondation Nervos."
