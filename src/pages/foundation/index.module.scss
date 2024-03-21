@@ -20,6 +20,7 @@
     background-color 0.2s;
 
   button {
+    color: #000;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -628,4 +629,14 @@
   position: relative;
   color: #00cc9b;
   white-space: nowrap;
+}
+
+.headerShadow {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--headerHeight);
+  margin-top: calc(-1 * var(--headerHeight));
+  background: white;
+  mix-blend-mode: difference;
 }

@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import clsx from 'clsx'
 import Head from 'next/head'
+import { isSafari, isIOS } from 'react-device-detect'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { LanguagePopover } from 'src/components/Header'
@@ -138,6 +139,7 @@ const Foundation: NextPage = () => {
           ]}
         />
       </div>
+      {(isSafari || isIOS) && <div className={styles.headerShadow} />}
       <div className={styles.container}>
         <div className={styles.banner} style={{ marginBottom: 80, marginTop: 32 }}>
           <NervosLogoIcon className={styles.foundationLogo} />
