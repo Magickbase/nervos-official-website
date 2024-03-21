@@ -172,7 +172,7 @@ const MenuPopover: FC = () => {
   )
 }
 
-const LanguagePopover: FC<{
+export const LanguagePopover: FC<{
   languages: ({
     name: string
     englishName?: string

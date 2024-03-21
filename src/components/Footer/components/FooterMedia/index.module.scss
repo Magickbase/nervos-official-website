@@ -26,12 +26,10 @@
 
   .medias {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     margin-top: 26px;
-
-    svg path {
-      fill: var(--colorPrimary);
-    }
+    color: var(--colorPrimary);
 
     @media screen and (max-width: $mobileBreakPoint) {
       gap: 25px;

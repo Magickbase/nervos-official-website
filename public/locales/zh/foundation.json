@@ -1,6 +1,13 @@
 {
   "title": "Nervos 基金会",
-  "slogan": "Nervos 基金会是一家非营利组织，其使命是支持 Nervos 网络的长期增长。我们的工作是培育社区自主发展和在行业中推动有意义的创新，确保 Nervos 的未来成功。",
+  "foundation": "基金会",
+  "slogan": "<tag1>Nervos 基金会</tag1>是一家非营利组织，其使命是支持 <tag2>Nervos 网络</tag2>的长期增长。我们的工作是培育社区自主发展和在行业中推动有意义的创新，确保网络的未来成功。",
+  "menu": {
+    "positioning": "定位",
+    "vision": "未来愿景",
+    "resources": "资源",
+    "teams": "团队"
+  },
   "positioning": {
     "title": "基金会定位",
     "infrastructure": {
@@ -61,6 +68,14 @@
       "title": "开发者培训课程",
       "description": "Nervos 的基本信息和技术参考材料。"
     },
+    "nervos_dao": {
+      "title": "Nervos DAO",
+      "description": "Nervos DAO 允许用户锁定 CKBytes 并从二次发行中获得奖励。"
+    },
+    "ecosystem_fund": {
+      "title": "CKB 生态基金",
+      "description": "CKB 生态基金致力于促进 CKB 的创新。我们投资于处于早期和成长期的初创企业，以推动 CKB 的采用、可扩展性和可访问性。"
+    },
     "rfcs": {
       "title": "RFCs",
       "description": "任何有兴趣为协议改进和标准做出贡献的人，请加入讨论并参与 GitHub 上的 RFC 流程。"
@@ -79,7 +94,9 @@
     }
   },
   "team": {
-    "title": "团队.",
+    "title": "核心团队",
+    "friends": "合作伙伴",
+    "see": "查看开放职位",
     "description": {
       "text1": "社区内的所有参与者，包括开发者、矿工、创造者和爱好者，都在 Nervos 网络的发展中发挥着关键作用。这些群体在愿景上是一致的，但彼此之间可以相互独立。Nervos 基金会向社区中的团队提供资源，支持他们实现自己的目标。",
       "text2": "访问这个 <1>链接</1>，查看 Nervos 基金会的开放职位。"
