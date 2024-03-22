@@ -194,6 +194,13 @@ export const getCategoriesFromBlogs = (blogs: Pick<Blog, 'category'>[]) => {
   return [...new Set(categories)]
 }
 
+export function filterBlogsByCategory(blogs: Pick<Blog, 'category'>[], category: string) {
+  return blogs.filter(blog => {
+    const categories = blog.category?.split(',').map(c => c.trim().toLowerCase()) ?? []
+    return categories.includes(category)
+  })
+}
+
 async function getBlogExcerpt(content: Blog['content']): Promise<Blog['excerpt']> {
   const contentHTML = await markdownToHtml(content)
   const parser = new DOMParser()
