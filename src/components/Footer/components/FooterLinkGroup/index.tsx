@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { StyledLink } from '../../../StyledLink'
+import { DISABLE_CGOL_MOUSE_CONTROLLER } from '../../../../components/ConwayGameOfLife'
 
 import styles from './index.module.scss'
 
@@ -29,7 +30,7 @@ export const FooterLinkGroup: React.FC<FooterLinkGroupProps> = props => {
       <div className={clsx(styles.title)}>{title}</div>
       <div className={clsx(styles.links)}>
         {links?.map(({ label, url }) => (
-          <LinkNav className={clsx(styles.linksNav)} label={label} url={url} key={url} />
+          <LinkNav className={clsx(styles.linksNav, DISABLE_CGOL_MOUSE_CONTROLLER)} label={label} url={url} key={url} />
         ))}
       </div>
     </div>
