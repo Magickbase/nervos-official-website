@@ -1,8 +1,15 @@
 {
   "title": "Nervos Foundation.",
-  "slogan": "Nervos Foundation es una organización sin ánimo de lucro cuya misión es apoyar el crecimiento a largo plazo de la red Nervos. Trabajamos para garantizar el éxito futuro de Nervos fomentando el crecimiento independiente de la comunidad mientras impulsamos una innovación significativa en la industria.",
+  "foundation": "Foundation",
+  "slogan": "<tag1>Nervos Foundation</tag1> es una organización sin ánimo de lucro cuya misión es apoyar el crecimiento a largo plazo de la <tag2>red Nervos</tag2>. Trabajamos para garantizar el éxito futuro de Nervos fomentando el crecimiento independiente de la comunidad mientras impulsamos una innovación significativa en la industria.",
+  "menu": {
+    "positioning": "Posicionamiento",
+    "vision": "Visión para el Futuro",
+    "resources": "Recursos",
+    "teams": "Equipo"
+  },
   "positioning": {
-    "title": "Posicionamiento de la Fundación.",
+    "title": "Posicionamiento de la Fundación",
     "infrastructure": {
       "title": "Infraestructura",
       "description": "Estamos dando los pasos iniciales para hacer realidad las ambiciones de la red Nervos, y esto significa destinar recursos a la investigación, el desarrollo y el mantenimiento de la pila tecnológica fundamental. "
@@ -17,20 +24,20 @@
     }
   },
   "vision_for_future": {
-    "title": "Visión para el Futuro.",
+    "title": "Visión para el Futuro",
     "an_open_bazaar": {
-      "title": "Un Bazar Abierto.",
+      "title": "Un Bazar Abierto",
       "description": {
         "text1": "Vemos la red Nervos como un bazar abierto. Cualquiera puede venir y participar en la red a cualquier nivel. En un mercado abierto estilo bazar, todos los tipos de participantes son bienvenidos: no importa si eres un desarrollador, colaborador o simplemente un observador.",
         "text2": "El mercado en sí es poco más que un techo sobre un espacio vacío, pero al proporcionar un lugar de encuentro común donde los participantes independientes actúan según sus propias motivaciones, surge un entorno vibrante y receptivo donde puede florecer la amplitud de la creatividad humana."
       }
     },
     "exploration_and_innovation": {
-      "title": "Exploración e Innovación.",
+      "title": "Exploración e Innovación",
       "description": "Lo que estamos construyendo es un lugar próspero y animado donde se pueden descubrir y experimentar nuevas ideas. Con un enfoque abierto, no hay reglas sobre qué tipo de aplicaciones se pueden desarrollar, y creemos que se puede explorar la verdadera innovación y crear una plataforma en la que puedan crecer nuevos proyectos interesantes con el apoyo de una comunidad."
     },
     "nurture_and_support": {
-      "title": "Fortalecer y Apoyar.",
+      "title": "Fortalecer y Apoyar",
       "description": "Nervos Foundation desempeña un papel de servicio en el apoyo de un ecosistema dinámico y en crecimiento. Si bien este esfuerzo comenzó con la fundación, lo más importante es que Nervos se define por la ausencia de permisos y la apertura a las ideas. Con este espíritu, la fundación existe para brindar apoyo y orientación para una sólida comunidad de participantes en desarrollo."
     }
   },
@@ -51,7 +58,7 @@
     }
   },
   "resource_for_participants": {
-    "title": "Recursos para los Participantes.",
+    "title": "Recursos para los Participantes",
     "description": "Explora los recursos para que los participantes dentro de la comunidad impulsen el avance de Nervos.",
     "nervos_docs": {
       "title": "Documentación de Nervos",
@@ -60,6 +67,14 @@
     "developer_training_course": {
       "title": "Curso de Formación para Desarrolladores",
       "description": "Información básica sobre Nervos y materiales de referencia técnica."
+    },
+    "nervos_dao": {
+      "title": "Nervos DAO",
+      "description": "La DAO Nervos permite a los usuarios bloquear CKBytes y recibir recompensas de la emisión secundaria."
+    },
+    "ecosystem_fund": {
+      "title": "Fondo CKB para el Ecosistema",
+      "description": "CKB Eco Fund se dedica a fomentar las innovaciones en CKB. Invertimos en startups en fase inicial y de crecimiento que impulsen la adopción, escalabilidad y accesibilidad de CKB."
     },
     "rfcs": {
       "title": "RFCs",
@@ -79,7 +94,9 @@
     }
   },
   "team": {
-    "title": "Equipo.",
+    "title": "Equipos centrales",
+    "friends": "Nuestros amigos",
+    "see": "Ver puestos vacantes",
     "description": {
       "text1": "Todos los participantes dentro de la comunidad, incluidos desarrolladores, mineros, creadores y entusiastas, desempeñan un papel fundamental en el crecimiento de la red. Los equipos están alineados en cuanto a la visión de la red, pero pueden ser bastante independientes entre sí. Nervos Foundation brinda recursos a los equipos de la comunidad y los ayuda a alcanzar sus objetivos.",
       "text2": "Visita este <1>enlace</1> para ver los puestos vacantes en Nervos Foundation."
