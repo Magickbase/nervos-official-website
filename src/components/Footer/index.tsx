@@ -50,7 +50,7 @@ export const Footer: FC<FooterProps> = props => {
         { label: t('tunnel_vision_labs'), url: 'https://tunnelvisionlabs.xyz/' },
         { label: t('axon'), url: 'https://axonweb3.io/' },
         { label: t('.bit'), url: 'https://www.did.id/' },
-        { label: t('magickbase'), url: 'https://github.com/Magickbase/' },
+        { label: t('magickbase'), url: 'https://www.magickbase.com/' },
       ],
     },
     {
