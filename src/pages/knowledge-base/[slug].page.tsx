@@ -12,6 +12,7 @@ import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { useState } from 'react'
+import { getPageViewCount } from 'src/utils/gadata'
 import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
@@ -105,6 +106,11 @@ const Post = ({ post, recents, categories }: Props) => {
                   <img src="/images/clock.svg" className={styles.clock} />
                   <span>{post.readingTime} mins</span>
                 </div>
+                {Boolean(post.pageView) && post.pageView !== 0 && (
+                  <div style={{ marginLeft: 5 }}>
+                    <span>{post.pageView} views</span>
+                  </div>
+                )}
               </div>
 
               <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>
@@ -225,6 +231,8 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   }
 
   const post = await getBlogBySlug(slug, locale ?? 'en')
+  const viewCount = await getPageViewCount(`/knowledge-base/`)
+  post.pageView = viewCount[slug] ?? 0
 
   const lng = await serverSideTranslations(locale ?? 'en', ['common', 'knowledge-base'])
 

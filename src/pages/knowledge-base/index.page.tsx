@@ -11,6 +11,7 @@ import Category from '../../components/Category'
 import { Page } from '../../components/Page'
 import { BASE_URL, getTimeFormatter } from '../../utils'
 import { Blog, getAllBlogs, getCategoriesFromBlogs } from '../../utils/blogs'
+import { getPageViewCount } from '../../utils/gadata'
 import styles from './index.module.scss'
 import EmbellishedLeft from './embellished_left.svg'
 import EmbellishedRight from './embellished_right.svg'
@@ -124,6 +125,11 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
           <div className={styles.metaItem}>
             <img src="/images/clock.svg" className={styles.clock} />
             <span>{post.readingTime} mins</span>
+          </div>
+        )}
+        {Boolean(post.pageView) && post.pageView !== 0 && (
+          <div className={styles.metaItem}>
+            <span>{post.pageView} views</span>
           </div>
         )}
       </div>
@@ -283,6 +289,8 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                       <span>{post.readingTime} mins</span>
                     </>
                   )}
+
+                  {post.pageView && post.pageView !== 0 && <span style={{ marginLeft: 5 }}>{post.pageView} views</span>}
                 </div>
               </Link>
             ))}
@@ -297,8 +305,14 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
 export const getServerSideProps: GetServerSideProps = async ({ locale, query }) => {
   const pageNo = Number(query.page ?? '1')
   const sortBy = typeof query.sort_by === 'string' ? query.sort_by : 'all'
+  const pageViewCount = await getPageViewCount('/knowledge-base/')
+  const posts = await getAllBlogs(sortBy, locale ?? 'en').then(post =>
+    post.map(p => ({
+      ...p,
+      pageView: pageViewCount[p.slug] ?? 0,
+    })),
+  )
 
-  const posts = await getAllBlogs(sortBy, locale ?? 'en')
   const populars = posts.filter(post => post.category?.toLowerCase().includes('popular'))
   const categories = getCategoriesFromBlogs(posts)
   const pageCount = Math.ceil(posts.length / PAGE_SIZE)

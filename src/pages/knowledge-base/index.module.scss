@@ -212,6 +212,7 @@
   .meta {
     position: relative;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
     justify-content: flex-start;
     font-size: 0.625rem;
@@ -224,10 +225,6 @@
     .metaItem {
       display: flex;
       align-items: center;
-    }
-
-    time {
-      padding-right: 5px;
     }
 
     .clock {
