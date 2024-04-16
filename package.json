@@ -10,6 +10,7 @@
     "afterInstall": "husky install"
   },
   "dependencies": {
+    "@google-analytics/data": "^4.4.0",
     "@headlessui/react": "^1.7.13",
     "@tanstack/react-query": "^4.20.2",
     "@trpc/client": "^10.9.0",

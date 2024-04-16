@@ -32,6 +32,7 @@ export interface Blog {
     height?: number
   }
   excerpt: string
+  pageView?: number
   category?: string
   link?: string
 }
@@ -130,6 +131,7 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
   const excerpt = getStringValue(data.excerpt) ?? (await getBlogExcerpt(content))
   const category = getStringValue(data.category)
   const link = getStringValue(data.link)
+  const pageView = 0
 
   const blog = omitNullValue({
     slug,
@@ -143,6 +145,7 @@ export async function getBlogBySlug<F extends (keyof Blog)[]>(
     excerpt,
     category,
     link,
+    pageView,
   })
 
   return fields == null ? blog : pick(blog, ...fields)
