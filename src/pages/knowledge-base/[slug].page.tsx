@@ -106,7 +106,7 @@ const Post = ({ post, recents, categories }: Props) => {
                   <img src="/images/clock.svg" className={styles.clock} />
                   <span>{post.readingTime} mins</span>
                 </div>
-                {Boolean(post.pageView) && post.pageView !== 0 && (
+                {Boolean(post.pageView) && (
                   <div style={{ marginLeft: 5 }}>
                     <span>{post.pageView} views</span>
                   </div>
