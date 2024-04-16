@@ -106,11 +106,11 @@ const Post = ({ post, recents, categories }: Props) => {
                   <img src="/images/clock.svg" className={styles.clock} />
                   <span>{post.readingTime} mins</span>
                 </div>
-                {Boolean(post.pageView) && (
+                {Boolean(post.pageView) ? (
                   <div style={{ marginLeft: 5 }}>
                     <span>{post.pageView} views</span>
                   </div>
-                )}
+                ) : null}
               </div>
 
               <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>

@@ -127,11 +127,11 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
             <span>{post.readingTime} mins</span>
           </div>
         )}
-        {Boolean(post.pageView) && (
+        {Boolean(post.pageView) ? (
           <div className={styles.metaItem}>
             <span>{post.pageView} views</span>
           </div>
-        )}
+        ) : null}
       </div>
     )
   }
@@ -290,7 +290,7 @@ const Index = ({ posts, populars, categories, pageCount }: Props) => {
                     </>
                   )}
 
-                  {Boolean(post.pageView) && <span style={{ marginLeft: 5 }}>{post.pageView} views</span>}
+                  {Boolean(post.pageView) ? <span style={{ marginLeft: 5 }}>{post.pageView} views</span> : null}
                 </div>
               </Link>
             ))}
