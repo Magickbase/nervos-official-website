@@ -34,6 +34,14 @@
     "title": "imToken",
     "description": "Depuis sa création en mai 2016, imToken a fourni des services de gestion d'actifs numériques sécurisés et fiables à des millions d'utilisateurs dans plus de 150 pays et régions du monde. En 2018, l'équipe a ouvert le code principal d'imToken 2.0 sur Github.\n imToken fournit un portefeuille CKB intégré qui permet aux utilisateurs d'envoyer, de recevoir et de stocker des CKB en toute sécurité."
   },
+  "gate_web3_wallet": {
+    "title": "Gate Web3 Wallet",
+    "description": "Gate Web3 Wallet est un puissant outil de gestion d'actifs numériques non-custodial et d'agrégation multi-chaîne conçu pour permettre aux utilisateurs de contrôler et gérer facilement leurs actifs sur différentes chaînes de manière indépendante."
+  },
+  "onekey": {
+    "title": "OneKey",
+    "description": "OneKey est un projet open source d'un portefeuille décentralisé qui permet aux utilisateurs de conserver eux-mêmes leurs actifs numériques."
+  },
   "official_website": "Site officiel",
   "tutorials": "Tutoriels",
   "download": "Télécharger"

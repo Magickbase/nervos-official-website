@@ -22,6 +22,8 @@ import {
   LedgerIcon,
   OperaWalletIcon,
   ImTokenIcon,
+  OneKey,
+  GateWeb3Wallet,
 } from './icons'
 
 const pagePath = '/src/pages/wallets/index.page.tsx'
@@ -201,6 +203,52 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
             </StyledLink>
             <br />
             <StyledLink href="https://token.im/ckb-wallet" colored>
+              {t('download')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: '',
+      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<GateWeb3Wallet />} />,
+      tags: ['WINDOWS', 'MACOS', 'IOS', 'ANDROID'],
+      content: (
+        <>
+          {t('gate_web3_wallet.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://www.gate.io/web3" colored>
+              {t('official_website')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://www.gate.io/mobileapp" colored>
+              {t('download')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: t('onekey.title'),
+      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<OneKey />} />,
+      tags: ['WINDOWS', 'MACOS', 'LINUX', 'IOS', 'ANDROID', 'EXTENSION'],
+      content: (
+        <>
+          {t('onekey.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://onekey.so/" colored>
+              {t('official_website')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://onekey.so/download/" colored>
               {t('download')}
             </StyledLink>
           </div>
