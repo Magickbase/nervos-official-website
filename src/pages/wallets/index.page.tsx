@@ -210,8 +210,8 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
       ),
     },
     {
-      title: '',
-      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<GateWeb3Wallet />} />,
+      title: t('gate_web3_wallet.title'),
+      titleRender: (title: string) => <FunctionsItemTitle title={''} icon={<GateWeb3Wallet />} />,
       tags: ['WINDOWS', 'MACOS', 'IOS', 'ANDROID'],
       content: (
         <>
