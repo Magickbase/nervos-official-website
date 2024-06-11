@@ -2361,6 +2361,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:^0.5.3":
+  version: 0.5.11
+  resolution: "@swc/helpers@npm:0.5.11"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: 5d85e641d993264f38871bf53e7509da959cdff7646a40d876153291146b9d0aa701518546e5bfef18fa17c5944333bbeb66c2f0d7a570e8c5535d0937d76bd9
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:4.36.1":
   version: 4.36.1
   resolution: "@tanstack/query-core@npm:4.36.1"
@@ -8599,6 +8608,7 @@ __metadata:
     react-markdown: ^8.0.6
     react-resize-detector: ^9.0.0
     react-share: 4.4.1
+    react-tweet: ^3.2.1
     rehype-raw: ^6.1.1
     rehype-sanitize: ^6.0.0
     remark: 14.0.3
@@ -9724,6 +9734,20 @@ __metadata:
   peerDependencies:
     react: ^16.3.0 || ^17 || ^18
   checksum: f86bf7415f9fe98243b1ea58bf9df53503de7fb2235b1e633dd25c8cef68e59070b3cd20fab6ec5286eccbd30d27ce6c458ac532c4fdf7b6f12f4048bbea24d3
+  languageName: node
+  linkType: hard
+
+"react-tweet@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "react-tweet@npm:3.2.1"
+  dependencies:
+    "@swc/helpers": ^0.5.3
+    clsx: ^2.0.0
+    swr: ^2.2.4
+  peerDependencies:
+    react: ">= 18.0.0"
+    react-dom: ">= 18.0.0"
+  checksum: 072625a9561913f653a9d2c86dd8b96cf7c67d48f684e2e3404533d675558ba482cf8a62e62135e2c876c70396df23d1ac8bf7a2b1dd705e85a483d22266da16
   languageName: node
   linkType: hard
 
@@ -11395,6 +11419,18 @@ __metadata:
   dependencies:
     ssr-window: ^4.0.2
   checksum: 3e29acd335599ab74b7487bf451d8d0d9c78879cbf077401e74debb0a99197b6294e406596009a8591b0e769fb477c757ca243a1e1466287c80f6936261a4932
+  languageName: node
+  linkType: hard
+
+"swr@npm:^2.2.4":
+  version: 2.2.5
+  resolution: "swr@npm:2.2.5"
+  dependencies:
+    client-only: ^0.0.1
+    use-sync-external-store: ^1.2.0
+  peerDependencies:
+    react: ^16.11.0 || ^17.0.0 || ^18.0.0
+  checksum: c6e6a5bd254951b22e5fd0930a95c7f79b5d0657f803c41ba1542cd6376623fb70b1895049d54ddde26da63b91951ae9d62a06772f82be28c1014d421e5b7aa9
   languageName: node
   linkType: hard
 

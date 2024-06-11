@@ -12,8 +12,10 @@ import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { useState } from 'react'
+import { Tweet } from 'react-tweet'
 import { getPageViewCount } from 'src/utils/gadata'
 import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
+import { getStatusId } from 'src/utils/twitter'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
@@ -158,6 +160,27 @@ const Post = ({ post, recents, categories }: Props) => {
                           height={1080}
                         />
                       )
+                    },
+                    blockquote: props => {
+                      const children = props.node.children
+                      let twitter: string | null = null
+
+                      for (const child of children) {
+                        if (
+                          child.type === 'element' &&
+                          child.tagName === 'a' &&
+                          typeof child.properties?.href === 'string'
+                        ) {
+                          const id = getStatusId(child.properties.href)
+                          if (id) {
+                            twitter = id
+                            break
+                          }
+                        }
+                      }
+                      if (!twitter) return <blockquote>{props.children}</blockquote>
+
+                      return <Tweet id={twitter} />
                     },
                   }}
                 >
