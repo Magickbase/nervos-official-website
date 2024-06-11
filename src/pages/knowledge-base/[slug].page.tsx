@@ -180,7 +180,11 @@ const Post = ({ post, recents, categories }: Props) => {
                       }
                       if (!twitter) return <blockquote>{props.children}</blockquote>
 
-                      return <Tweet id={twitter} />
+                      return (
+                        <div className="light">
+                          <Tweet id={twitter} />
+                        </div>
+                      )
                     },
                   }}
                 >
