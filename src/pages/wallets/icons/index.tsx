@@ -8,6 +8,7 @@ import OperaWalletIcon from './operaWallet.svg'
 import ImTokenIcon from './imToken.svg'
 import GateWeb3Wallet from './GateWeb3Wallet.svg'
 import OneKey from './onekey.svg'
+import ReiWallet from './reiwallet.svg'
 
 const CkbBullIcon = () => (
   <img src="/images/ckbull_logo.jpg" alt="ckbull" width="45" height="45" style={{ borderRadius: '50%' }} />
@@ -24,5 +25,6 @@ export {
   OperaWalletIcon,
   ImTokenIcon,
   OneKey,
+  ReiWallet,
   GateWeb3Wallet,
 }

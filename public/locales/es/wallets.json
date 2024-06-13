@@ -42,6 +42,10 @@
     "title": "OneKey",
     "description": "OneKey es un proyecto de código abierto de una cartera descentralizada que permite a los usuarios custodiar sus propios activos digitales."
   },
+  "reiwallet": {
+    "title": "Rei Wallet",
+    "description": "Rei Wallet es una billetera de extensión de navegador de código abierto desarrollada para Nervos CKB y enfocada en brindar una forma simple y segura de interactuar con Nervos CKB."
+  },
   "official_website": "Sitio web oficial",
   "tutorials": "Tutoriales",
   "download": "Descargar"
