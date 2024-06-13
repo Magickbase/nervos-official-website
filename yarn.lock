@@ -1815,11 +1815,11 @@ __metadata:
   linkType: hard
 
 "@google-analytics/data@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "@google-analytics/data@npm:4.4.0"
+  version: 4.7.0
+  resolution: "@google-analytics/data@npm:4.7.0"
   dependencies:
     google-gax: ^4.0.3
-  checksum: 6f01528e5c7b6c429cc12ab50911a928cda625cca26738a5bf53c4b28290f3560085d2880387cf352595bb67f8ed0a065e0c51de135337f14fc333336b2f4349
+  checksum: e61a92c01d338de61ca185daf122b0762e0263cb64ce48c1a5c2da2dba7d2260333ca2cd72a67a95cd0acbd9c008335355adf8bdc1c97cb1a5d3c6c02bd5fe2b
   languageName: node
   linkType: hard
 
