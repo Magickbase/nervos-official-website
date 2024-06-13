@@ -42,6 +42,10 @@
     "title": "OneKey",
     "description": "OneKey est un projet open source d'un portefeuille décentralisé qui permet aux utilisateurs de conserver eux-mêmes leurs actifs numériques."
   },
+  "reiwallet": {
+    "title": "Rei Wallet",
+    "description": "Rei Wallet est une extension de portefeuille de navigateur open source développée pour Nervos CKB et axée sur la fourniture d'un moyen simple et sécurisé d'interagir avec Nervos CKB."
+  },
   "official_website": "Site officiel",
   "tutorials": "Tutoriels",
   "download": "Télécharger"

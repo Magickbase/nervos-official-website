@@ -23,6 +23,7 @@ import {
   OperaWalletIcon,
   ImTokenIcon,
   OneKey,
+  ReiWallet,
   GateWeb3Wallet,
 } from './icons'
 
@@ -250,6 +251,36 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
             <br />
             <StyledLink href="https://onekey.so/download/" colored>
               {t('download')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: t('reiwallet.title'),
+      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<ReiWallet />} />,
+      tags: ['CHROME', 'EXTENSION'],
+      content: (
+        <>
+          {t('reiwallet.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://reiwallet.io/" colored>
+              {t('official_website')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://chromewebstore.google.com/detail/rei-wallet/jacbgghlojlggfgljfhhlcddicacmbek" colored>
+              {t('download')}
+            </StyledLink>
+            <br />
+            <StyledLink
+              href="https://docs.reiwallet.io/"
+              colored
+            >
+              {t('tutorials')}
             </StyledLink>
           </div>
         </>

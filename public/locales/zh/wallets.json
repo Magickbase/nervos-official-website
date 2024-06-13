@@ -42,6 +42,10 @@
     "title": "OneKey",
     "description": "OneKey 是一个开源项目，提供去中心化钱包，允许用户自行保管数字资产。"
   },
+  "reiwallet": {
+    "title": "Rei Wallet",
+    "description": "Rei Wallet 是一款为 Nervos CKB 开发的开源浏览器扩展钱包，专注于提供一种简单、安全的方式与 Nervos CKB 交互。"
+  },
   "official_website": "官网",
   "tutorials": "教程",
   "download": "下载"
