@@ -16,10 +16,6 @@
       "title": "CKB Docs",
       "description": "Informations techniques de base sur la Common Knowledge Base."
     },
-    "godwoken": {
-      "title": "Construire sur L2 Godwoken",
-      "description": "Documentation technique pour Godwoken, le réseau de couche 2 équivalent à EVM basé sur la base de connaissances commune."
-    },
     "forum": {
       "title": "Nervos Talk Forum",
       "description": "Pour que la communauté participe et discute des développements sur Nervos."
