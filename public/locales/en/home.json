@@ -14,8 +14,8 @@
     "description": "CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized applications boasting unmatched user experience."
   },
   "slide_ckb_subtainability": {
-    "slogan": "Inventive Tokenomics",
-    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are protected from inflation."
+    "slogan": "Utility-driven Tokenomics",
+    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security to the network in perpetuity."
   },
   "slide_ckb_modular": {
     "slogan": "Modular Architecture",
