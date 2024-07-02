@@ -62,12 +62,12 @@ const CkbPage: NextPage<PageProps> = ({ contributors, author }) => {
 
           <p>
             <Trans t={t} i18nKey="tokenomics.description.text3">
-              Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in
+              CKB holders receive rewards from the secondary issuance by locking their coins in
               the&nbsp;
               <StyledLink href="https://medium.com/nervosnetwork/nervos-dao-explained-95e33898b1c" colored underline>
                 Nervos DAO
               </StyledLink>
-              &nbsp; smart contract.
+              &nbsp; smart contract, which is a mechanism incentivizes the removal of unnecessary data, ensuring long-term manageability of the blockchain.
             </Trans>
           </p>
         </>
