@@ -6,7 +6,7 @@
     "description": {
       "text1": "The CKB token launched with an initial supply of 33.6 billion coins, 8.4 billion of which were burned soon thereafter. The base issuance is 33.6 billion coins per year and halves every four years until it hits zero, whereas the fixed secondary issuance is 1.344 billion. Check out the detailed CKB supply structure and issuance schedule <1>here</1>.",
       "text2": "Miners receive CKB rewards from two sources: the base and secondary issuance. The secondary issuance depends on state occupation, where miners receive half of the secondary issuance reward if half of the circulating CKB coins are used to store state. When the base issuance eventually ends, miners will keep earning \"state rent\" income from the secondary issuance, regardless of transaction demand, which ensures they're incentivized to secure the blockchain long-term.",
-      "text3": "Long-term CKB holders can seek inflation shelter from the secondary issuance by locking their coins in the <1>Nervos DAO</1> smart contract."
+      "text3": "CKB holders receive rewards from the secondary issuance by locking their coins in the <1>Nervos DAO</1> smart contract, which is a mechanism incentivizes the removal of unnecessary data, ensuring long-term manageability of the blockchain"
     }
   },
   "get_ckb": {
