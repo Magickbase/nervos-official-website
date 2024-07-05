@@ -1,5 +1,6 @@
 import { createTRPCRouter } from './trpc'
 import { ckbRouter } from './routers/ckb'
+import { newsLetterRouter } from './routers/newsletter'
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { ckbRouter } from './routers/ckb'
  */
 export const appRouter = createTRPCRouter({
   ckb: ckbRouter,
+  newsLetter: newsLetterRouter,
 })
 
 // export type definition of API
