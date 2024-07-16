@@ -14,23 +14,26 @@
   "in_progress": {
     "title": "Devam Eden",
     "subtitle": "CKB Hardfork 2023",
-    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "Daha fazlasını öğren",
-    "kuai": "Kuai",
     "force_relay": "ForceRelay",
     "open_transactions": "Açık İşlemler",
-    "ckb_light_client": "CKB Hafif İstemci"
+    "ckb_light_client": "CKB Hafif İstemci",
+    "ckb_auth": "CKB Kimlik Doğrulama",
+    "perun_channel": "Perun Ödeme Kanalları",
+    "ckb_fiber_network": "CKB Fiber (Lightning Network + CKB)"
   },
   "upcoming": {
     "title": "Yaklaşan",
     "subtitle": "CKB Hardfork 2023",
     "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
-    "light_client": "Hafif istemci yumuşak çatalı"
+    "utxo_stack_launch": "UTXO Yığını Başlatma",
+    "ckb_fiber_testnet": "CKB Fiber Testnet"
   },
   "achievements": {
     "title": "Başarılar",
     "subtitle": "SUDT",
-    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Daha fazlasını öğren",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "Daha fazlasını öğren",
     "cota": "Token.city (CoTA)",
     "light_client_soft_fork": "Hafif istemci yumuşak çatalı",
@@ -42,7 +45,19 @@
     "joyid_testnet": "JoyID test ağı",
     "bit_launches": ".bit Başlatmaları",
     "force_bridge_launch": "Force köprüsü başlatması",
-    "opera_integration": "Opera entegrasyonu"
+    "light_client_testnet_activation": "Hafif İstemci Testnet Aktivasyonu",
+    "quantum_resistant_sphincs": "Kuantum Dayanıklı SPHINCS+ kilit-skript",
+    "mirana_hardfork": "Mirana Hardfork",
+    "taproot_on_ckb": "CKB'de Taproot",
+    "lua_on_ckb": "CKB'de Lua",
+    "xudt": "eXtensible Kullanıcı Tanımlı Token'lar",
+    "sudt": "Basit Kullanıcı Tanımlı Token'lar (sUDT)",
+    "opera_integration": "Opera entegrasyonu",
+    "spore_nft": "Spore NFT Protokolü",
+    "light_client": "Hafif İstemci Yumuşak Çatal",
+    "bitcoin_spv": "Bitcoin SPV Doğrulaması",
+    "rgbpp_launch": "RGB++ Başlatma",
+    "cobuild": "Cobuild"
   },
   "journey": {
     "title": "Yolculuğa Katılın",
