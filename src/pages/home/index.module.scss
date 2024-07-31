@@ -191,7 +191,49 @@ $headerZ: 2;
 
 .slideCKBIntro {
   flex-grow: 1;
-  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
+  min-height: 100vh;
+  margin-top: calc(10px + var(#{$headerHeightVarName}));
+
+  .slideCKBIntroContent {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+  }
+
+  .introBlock {
+    position: relative;
+    display: flex;
+    padding: 40px;
+
+    .introBlockContent {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 54px;
+      border: 5px solid black;
+      border-right-width: 0;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 54px;
+      border: 5px solid black;
+      border-left-width: 0;
+      content: '';
+    }
+  }
 
   .texts {
     display: flex;
@@ -199,8 +241,26 @@ $headerZ: 2;
     flex-grow: 1;
   }
 
+  .introLink {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 10px;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+
   .titleText {
-    max-width: 512px;
+    max-width: 380px !important;
+    font-size: 60px;
   }
 
   .subjectTitleText {
@@ -211,23 +271,14 @@ $headerZ: 2;
 
   .descriptionText {
     max-width: 444px;
-    margin-top: 25px;
   }
 
   @media (max-width: $mobileBreakPoint) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     max-width: 314px;
-    margin: -10vh auto 0;
-    padding: 0;
+    margin: calc(20px + var(#{$headerHeightVarName})) auto 0;
 
-    .subjectTitleText {
-      margin-top: 30px;
-    }
-
-    .descriptionText {
-      margin-top: 30px;
+    .titleText {
+      font-size: 42px;
     }
   }
 }
@@ -398,7 +449,6 @@ $headerZ: 2;
     margin-left: 100px;
   }
 
-  .slideCKBIntro,
   .slideCKBSecurity,
   .slideCKBFlexibility,
   .slideCKBSustainability,
