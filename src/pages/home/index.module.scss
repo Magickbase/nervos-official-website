@@ -260,7 +260,7 @@ $headerZ: 2;
   }
 
   .titleText {
-    max-width: 380px !important;
+    max-width: 380px;
     font-size: 60px;
   }
 
@@ -291,6 +291,17 @@ $headerZ: 2;
     .descriptionText {
       max-width: 600px;
       font-size: 24px;
+    }
+  }
+
+  @media (width <= 1024px) {
+    .titleText {
+      max-width: 180px;
+      font-size: 42px;
+    }
+
+    .slideCKBIntroContent {
+      gap: 20px;
     }
   }
 
