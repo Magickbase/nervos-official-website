@@ -192,7 +192,7 @@ $headerZ: 2;
 .slideCKBIntro {
   flex-grow: 1;
   min-height: 100vh;
-  margin-top: calc(10px + var(#{$headerHeightVarName}));
+  margin: calc(10px + var(#{$headerHeightVarName})) 12% 0;
 
   .slideCKBIntroContent {
     display: flex;
