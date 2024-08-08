@@ -21,6 +21,7 @@ import { SlideFooter } from './SlideFooter'
 import { Card } from './Card'
 import ArrowIcon from './arrow.svg'
 import ObliqueArrowIcon from './oblique_arrow.svg'
+import OpenIcon from './open.svg'
 
 import presets from '../../styles/presets.module.scss'
 import styles from './index.module.scss'
@@ -232,12 +233,68 @@ allowCustomDescendantOfSwiper(ScreenSlide)
 
 const SlideCKBIntro: FC<ScreenSlideProps> = props => {
   const { t } = useTranslation('home', { keyPrefix: 'slide_ckb_intro' })
+  const isMobile = useIsMobile()
+
+  if (isMobile) {
+    return (
+      <>
+        <ScreenSlide {...props}>
+          <div className={styles.slideCKBIntro}>
+            <div className={styles.slideCKBIntroContent}>
+              <div className={clsx(styles.introBlock, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+                <div className={styles.introBlockContent}>
+                  <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
+                  <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
+                  <a href="https://docs.nervos.org/" className={styles.introLink} target="_blank" rel="noreferrer">
+                    {t('nervos_ckb_docs')} <OpenIcon width={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScreenSlide>
+        <ScreenSlide {...props}>
+          <div className={styles.slideCKBIntro}>
+            <div className={styles.slideCKBIntroContent}>
+              <div className={clsx(styles.introBlock, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+                <div className={styles.introBlockContent}>
+                  <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('l2_text1')}</div>
+                  <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('l2_text2')}</div>
+                  <a href="https://ckbeco.fund/" className={styles.introLink} target="_blank" rel="noreferrer">
+                    {t('nervos_eco_fund')} <OpenIcon width={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScreenSlide>
+      </>
+    )
+  }
 
   return (
     <ScreenSlide {...props}>
       <div className={styles.slideCKBIntro}>
-        <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
-        <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
+        <div className={styles.slideCKBIntroContent}>
+          <div className={clsx(styles.introBlock, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+            <div className={styles.introBlockContent}>
+              <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text1')}</div>
+              <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('text2')}</div>
+              <a href="https://docs.nervos.org/" className={styles.introLink} target="_blank" rel="noreferrer">
+                {t('nervos_ckb_docs')} <OpenIcon width={16} />
+              </a>
+            </div>
+          </div>
+          <div className={clsx(styles.introBlock, DISABLE_CGOL_MOUSE_CONTROLLER)}>
+            <div className={styles.introBlockContent}>
+              <div className={clsx(styles.titleText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('l2_text1')}</div>
+              <div className={clsx(styles.descriptionText, DISABLE_CGOL_MOUSE_CONTROLLER)}>{t('l2_text2')}</div>
+              <a href="https://ckbeco.fund/" className={styles.introLink} target="_blank" rel="noreferrer">
+                {t('nervos_eco_fund')} <OpenIcon width={16} />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </ScreenSlide>
   )

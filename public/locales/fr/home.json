@@ -2,7 +2,11 @@
   "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base",
-    "text2": "Construite sur RISC-V et sécurisée par Proof-of-Work, CKB est la couche 1 la plus flexible et la plus interopérable de l'industrie de la blockchain. Elle sert de base ultime à Nervos, un réseau de blockchain modulaire construit à partir de zéro pour assurer une sécurité, une décentralisation, une flexibilité et une interopérabilité exceptionnelles."
+    "text2": "Construite sur RISC-V et sécurisée par Proof-of-Work, CKB est la couche 1 la plus flexible et la plus interopérable de l'industrie de la blockchain. Elle sert de base ultime à Nervos, un réseau de blockchain modulaire construit à partir de zéro pour assurer une sécurité, une décentralisation, une flexibilité et une interopérabilité exceptionnelles.",
+    "nervos_ckb_docs": "NERVOS CKB DOCS",
+    "l2_text1": "Contract Kernel of Bitcoin",
+    "l2_text2": "Nervos CKB est la première solution de couche 2 entièrement isomorphe à Bitcoin, utilisant les modèles de preuve de travail (PoW) et UTXO. Son principal objectif est d'améliorer Bitcoin en ajoutant de la programmabilité et de l'évolutivité grâce au protocole RGB++, à la pile UTXO et au réseau CKB Lightning Network, sans s'appuyer sur des ponts inter-chaînes. Il s'agit de favoriser un écosystème bitcoin prospère.",
+    "nervos_eco_fund": "NERVOS ECO FUND"
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",

@@ -2,7 +2,11 @@
   "scroll_down": "向下滚动",
   "slide_ckb_intro": {
     "text1": "共同知识库",
-    "text2": "CKB 是一个基于 RISC-V 架构，采用工作证明机制的 Layer 1 区块链。它是区块链行业中最为灵活和互操作性最强的方案之一，是 Nervos 最核心的基础设施。Nervos 是一个从头开始构建的模块化区块链网络，以确保出色的安全性、去中心化、灵活性和互操作性。"
+    "text2": "CKB 是一个基于 RISC-V 架构，采用工作证明机制的 Layer 1 区块链。它是区块链行业中最为灵活和互操作性最强的方案之一，是 Nervos 最核心的基础设施。Nervos 是一个从头开始构建的模块化区块链网络，以确保出色的安全性、去中心化、灵活性和互操作性。",
+    "nervos_ckb_docs": "NERVOS CKB 文档",
+    "l2_text1": "Bitcoin 合约层",
+    "l2_text2": "Nervos CKB 是首个完全比特币同构的第 2 层解决方案，采用了工作量证明（PoW）和UTXO 模型。其主要目标是通过 RGB++ 协议、UTXO 堆栈和 CKB 闪电网络增加可编程性和可扩展性来增强比特币，而不依赖跨链桥接。这样做的目的是促进比特币生态系统的繁荣发展。",
+    "nervos_eco_fund": "CKB 生态基金"
   },
   "slide_ckb_security": {
     "text1_comment": "移动端需要自动换行",
