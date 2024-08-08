@@ -196,8 +196,9 @@ $headerZ: 2;
 
   .slideCKBIntroContent {
     display: flex;
-    gap: 80px;
-    justify-content: center;
+    gap: 40px;
+    justify-content: space-around;
+    width: 100%;
   }
 
   .introBlock {
@@ -271,6 +272,26 @@ $headerZ: 2;
 
   .descriptionText {
     max-width: 444px;
+  }
+
+  @media (min-width: $wideBreakPoint) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: calc(80px + var(#{$headerHeightVarName})) 12%;
+
+    .titleText {
+      font-weight: 800;
+      font-size: 82px;
+      line-height: 87%;
+      letter-spacing: -0.025em;
+    }
+
+    .descriptionText {
+      max-width: 600px;
+      font-size: 24px;
+    }
   }
 
   @media (max-width: $mobileBreakPoint) {
