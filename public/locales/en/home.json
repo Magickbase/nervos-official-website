@@ -2,7 +2,11 @@
   "scroll_down": "Scroll Down",
   "slide_ckb_intro": {
     "text1": "Common Knowledge Base",
-    "text2": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable blockchain. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability."
+    "text2": "Built on RISC-V and secured by Proof-of-Work, CKB is the most flexible and interoperable blockchain. It serves as the ultimate foundation of Nervos, a modular blockchain network built from the ground up to ensure outstanding security, decentralization, flexibility, and interoperability.",
+    "nervos_ckb_docs": "NERVOS CKB DOCS",
+    "l2_text1": "Contract Kernel of Bitcoin",
+    "l2_text2": "Nervos CKB is the first fully Bitcoin-isomorphic Layer2 solution, utilizing Proof of Work (PoW) and UTXO models. Its main goal is to enhance Bitcoin by adding programmability and scalability through the RGB++ protocol, the UTXO Stack, and the CKB Lightning Network, without relying on cross-chain bridges. This aims to foster a thriving Bitcoin ecosystem.",
+    "nervos_eco_fund": "NERVOS ECO FUND"
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
@@ -14,8 +18,8 @@
     "description": "CKB is the only blockchain on the market that supports all cryptographic primitives. It can seamlessly interoperate with all heterogeneous blockchains and anchor all types of sidechains, state channels, and Layer 2 networks. Moreover, it comes with protocol-level account abstraction by default, enabling decentralized applications boasting unmatched user experience."
   },
   "slide_ckb_subtainability": {
-    "slogan": "Inventive Tokenomics",
-    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security in perpetuity, while token holders are protected from inflation."
+    "slogan": "Utility-driven Tokenomics",
+    "description": "CKB leverages a novel tokenomic model that aligns the interests of all Nervos participants and stakeholders. It ensures the miners are paid for providing security to the network in perpetuity."
   },
   "slide_ckb_modular": {
     "slogan": "Modular Architecture",

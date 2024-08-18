@@ -35,9 +35,7 @@ export const Header: FC<HeaderProps> = props => {
         languages={[
           { name: 'English', localeName: 'en' },
           { name: '中文', englishName: 'Chinese', localeName: 'zh' },
-          // TODO: This is because there is currently no full i18n translation support,
-          // so switching to other languages is temporarily disabled.
-          { name: '한국어', englishName: 'Korean', localeName: 'ko', disabled: true },
+          { name: 'Français', englishName: 'French', localeName: 'fr' },
           { name: 'Español', englishName: 'Spanish', localeName: 'es' },
         ]}
       />

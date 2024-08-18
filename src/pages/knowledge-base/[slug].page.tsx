@@ -12,8 +12,10 @@ import rehypeSanitize from 'rehype-sanitize'
 import ReactMarkdown from 'react-markdown'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 import { useState } from 'react'
+import { Tweet } from 'react-tweet'
 import { getPageViewCount } from 'src/utils/gadata'
 import ExpandedAuthors from 'src/components/KnowledgeBase/ExpandedAuthorList'
+import { getStatusId } from 'src/utils/twitter'
 import { Page } from '../../components/Page'
 import { getTimeFormatter } from '../../utils'
 import { getBlogBySlug, getAllBlogs, getCategoriesFromBlogs, Blog } from '../../utils/blogs'
@@ -106,11 +108,11 @@ const Post = ({ post, recents, categories }: Props) => {
                   <img src="/images/clock.svg" className={styles.clock} />
                   <span>{post.readingTime} mins</span>
                 </div>
-                {Boolean(post.pageView) && post.pageView !== 0 && (
+                {Boolean(post.pageView) ? (
                   <div style={{ marginLeft: 5 }}>
                     <span>{post.pageView} views</span>
                   </div>
-                )}
+                ) : null}
               </div>
 
               <TOCItem id="post_title" className={styles.title} titleInTOC={post.title}>
@@ -157,6 +159,31 @@ const Post = ({ post, recents, categories }: Props) => {
                           width={1920}
                           height={1080}
                         />
+                      )
+                    },
+                    blockquote: props => {
+                      const children = props.node.children
+                      let twitter: string | null = null
+
+                      for (const child of children) {
+                        if (
+                          child.type === 'element' &&
+                          child.tagName === 'a' &&
+                          typeof child.properties?.href === 'string'
+                        ) {
+                          const id = getStatusId(child.properties.href)
+                          if (id) {
+                            twitter = id
+                            break
+                          }
+                        }
+                      }
+                      if (!twitter) return <blockquote>{props.children}</blockquote>
+
+                      return (
+                        <div className="light">
+                          <Tweet id={twitter} />
+                        </div>
                       )
                     },
                   }}

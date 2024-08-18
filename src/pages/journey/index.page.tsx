@@ -44,13 +44,12 @@ const Roadmap: NextPage = () => {
           url: 'https://medium.com/perunnetwork/perun-channels-coming-to-nervos-ckb-1d72081ee887',
         },
         {
-          label: t('in_progress.spore_nft'),
-          url: 'https://www.spore.pro',
-        },
-        { label: t('in_progress.kuai'), url: 'https://github.com/ckb-js/kuai/' },
-        {
           label: t('in_progress.open_transactions'),
           url: 'https://talk.nervos.org/t/exploring-the-ckb-otx-paradigm-accomplishments-and-insights-from-building-a-transaction-streaming-prototype/7346',
+        },
+        {
+          label: t('in_progress.ckb_fiber_network'),
+          url: 'https://github.com/nervosnetwork/cfn-node',
         },
       ],
     },
@@ -68,7 +67,10 @@ const Roadmap: NextPage = () => {
       ),
       descriptionText: t('upcoming.description'),
       descriptionLink: t('upcoming.link'),
-      projects: [{ label: t('upcoming.light_client'), url: 'https://github.com/nervosnetwork/ckb/issues/4085' }],
+      projects: [
+        { label: t('upcoming.utxo_stack_launch'), url: 'https://utxostack.network' },
+        { label: t('upcoming.ckb_fiber_testnet'), url: 'https://github.com/nervosnetwork/cfn-node' },
+      ],
     },
     {
       key: 'achievements',
@@ -128,6 +130,17 @@ const Roadmap: NextPage = () => {
           url: 'https://press.opera.com/2022/02/22/opera-nervos-blockchain-ckb/',
         },
         { label: t('achievements.force_bridge_launch'), url: 'https://archive.nervos.org/blog/force-bridge-mainnet' },
+        { label: t('achievements.spore_nft'), url: 'https://www.spore.pro' },
+        { label: t('achievements.light_client'), url: 'https://github.com/nervosnetwork/ckb/issues/4085' },
+        { label: t('achievements.bitcoin_spv'), url: 'https://x.com/utxostack/status/1803024147842511112' },
+        {
+          label: t('achievements.rgbpp_launch'),
+          url: 'https://hackernoon.com/building-on-bitcoin-a-beginners-guide-to-using-the-rgb-protocol',
+        },
+        {
+          label: t('achievements.cobuild'),
+          url: 'https://talk.nervos.org/t/ckb-transaction-cobuild-protocol-overview/7702',
+        },
       ],
     },
   ]

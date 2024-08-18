@@ -17,10 +17,6 @@
       "title": "CKB 文档",
       "description": "关于 Common Knowledge Base 的基础技术信息。"
     },
-    "godwoken": {
-      "title": "在 L2 Godwoken 上构建",
-      "description": "Godwoken 的技术文档，它是基于 Common Knowledge Base 构建的兼容 EVM 的 Layer 2 网络。"
-    },
     "build_club": {
       "title": "Build Club",
       "description": "Build Club 为团队和个人提供支持，帮助他们在 Nervos 上启动新项目。"

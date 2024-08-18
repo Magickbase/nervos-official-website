@@ -22,13 +22,14 @@
     "ckb_light_client": "CKB Light Client",
     "ckb_auth": "CKB Auth",
     "perun_channel": "Perun Payment Channels",
-    "spore_nft": "Spore NFT Protocol"
+    "ckb_fiber_network": "CKB Fiber (Lightning Network + CKB)"
   },
   "upcoming": {
     "title": "Upcoming",
     "subtitle": "CKB Hardfork 2023",
     "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
-    "light_client": "Light Client Soft Fork"
+    "utxo_stack_launch": "UTXO Stack Launch",
+    "ckb_fiber_testnet": "CKB Fiber Testnet"
   },
   "achievements": {
     "title": "Achievements",
@@ -51,8 +52,13 @@
     "mirana_hardfork": "Mirana Hardfork",
     "taproot_on_ckb": "Taproot on CKB",
     "lua_on_ckb": "Lua on CKB",
-    "xudt": "eXtensidble User Defined Tokens",
-    "sudt": "Simple User Defined Tokens (sUDT)"
+    "xudt": "eXtensible User Defined Tokens",
+    "sudt": "Simple User Defined Tokens (sUDT)",
+    "spore_nft": "Spore NFT Protocol",
+    "light_client": "Light Client Soft Fork",
+    "bitcoin_spv": "Bitcoin SPV Verification",
+    "rgbpp_launch": "RGB++ Launch",
+    "cobuild": "Cobuild"
   },
   "journey": {
     "title": "Join the journey",

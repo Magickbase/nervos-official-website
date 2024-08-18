@@ -14,23 +14,24 @@
   "in_progress": {
     "title": "进行中",
     "subtitle": "CKB 硬分叉 2023",
-    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "了解更多",
     "kuai": "Kuai",
     "force_relay": "ForceRelay",
     "open_transactions": "开放式交易",
-    "ckb_light_client": "CKB 轻客户端"
+    "ckb_fiber_network": "CKB Fiber (Lightning Network + CKB)"
   },
   "upcoming": {
     "title": "即将到来",
     "subtitle": "CKB 硬分叉 2023",
-    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
-    "light_client": "轻客户端软分叉"
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
+    "utxo_stack_launch": "UTXO Stack Launch",
+    "ckb_fiber_testnet": "CKB Fiber Testnet"
   },
   "achievements": {
     "title": "成就",
     "subtitle": "SUDT",
-    "description": "__hidden__description__Lorem ipsum 钜热卫克尔多尔 sit amet，adipiscing优乐多克尔，色德杜艾乌斯蒂珀鲁斯inco努特labore艾特dolore磨嘎aliqua。了解更多",
+    "description": "__hidden__description__Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore magna aliqua. Find out more",
     "link": "了解更多",
     "cota": "Token.city（CoTA）",
     "light_client_soft_fork": "轻客户端软分叉",
@@ -48,8 +49,13 @@
     "mirana_hardfork": "Mirana 硬分叉",
     "taproot_on_ckb": "Taproot on CKB",
     "lua_on_ckb": "Lua on CKB",
-    "xudt": "eXtensidble User Defined Tokens",
-    "sudt": "Simple User Defined Tokens (sUDT)"
+    "xudt": "eXtensible User Defined Tokens",
+    "sudt": "Simple User Defined Tokens (sUDT)",
+    "spore_nft": "Spore NFT 协议",
+    "light_client": "轻客户端软分叉",
+    "bitcoin_spv": "Bitcoin SPV Verification",
+    "rgbpp_launch": "RGB++ 上线",
+    "cobuild": "Cobuild"
   },
   "journey": {
     "title": "加入旅途",

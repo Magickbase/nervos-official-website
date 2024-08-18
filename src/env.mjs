@@ -6,6 +6,8 @@ import { z } from 'zod'
  */
 const server = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']),
+  SENDGRID_LIST_ID: z.string().min(1),
+  SENDGRID_API_TOKEN: z.string().min(1),
 })
 
 /**
@@ -24,6 +26,8 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
+  SENDGRID_LIST_ID: process.env.SENDGRID_LIST_ID,
+  SENDGRID_API_TOKEN: process.env.SENDGRID_API_TOKEN,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 }
 

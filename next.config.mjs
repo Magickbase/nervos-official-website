@@ -9,6 +9,7 @@ const i18nConfig = (await import('./next-i18next.config.js')).default
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  transpilePackages: ['react-tweet'],
 
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].map(suffix => `page.${suffix}`),
 

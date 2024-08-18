@@ -16,10 +16,6 @@
       "title": "Documentos do CKB",
       "description": "Informações técnicas fundamentais sobre o Common Knowledge Base."
     },
-    "godwoken": {
-      "title": "Construindo na Camada 2 Godwoken",
-      "description": "Documentação técnica para Godwoken, a rede de Camada 2 equivalente a EVM construída na Base de Conhecimento Comum."
-    },
     "forum": {
       "title": "Nervos Talk Forum",
       "description": "Para que a comunidade participe e discuta as novidades do Nervos."

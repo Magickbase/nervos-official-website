@@ -34,6 +34,18 @@
     "title": "imToken",
     "description": "Desde sua fundação em maio de 2016, a imToken fornece serviços de gerenciamento de ativos digitais seguros e confiáveis para milhões de usuários em mais de 150 países e regiões em todo o mundo. Em 2018, a equipe abriu o código principal do imToken 2.0 no Github.\n O imToken fornece uma carteira CKB integrada que permite aos usuários enviar, receber e armazenar CKB com segurança."
   },
+  "gate_web3_wallet": {
+    "title": "Gate Web3 Wallet",
+    "description": "Gate Web3 Wallet é uma poderosa ferramenta de gestão de ativos digitais não custodial e de agregação multi-cadeia, projetada para capacitar os usuários a controlar e gerir seus ativos em diferentes cadeias de forma independente e fácil."
+  },
+  "onekey": {
+    "title": "OneKey",
+    "description": "OneKey é um projeto open source de uma carteira descentralizada que permite aos usuários custodiar seus próprios ativos digitais."
+  },
+  "reiwallet": {
+    "title": "Rei Wallet",
+    "description": "Rei Wallet é uma carteira de extensão de navegador de código aberto desenvolvida para o Nervos CKB e focada em fornecer uma maneira simples e segura de interagir com o Nervos CKB."
+  },
   "official_website": "Website oficial",
   "tutorials": "Tutoriais",
   "download": "Baixar"

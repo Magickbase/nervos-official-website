@@ -1,5 +1,7 @@
 $mobileBreakPoint: 750px;
+$wideBreakPoint: 1800px;
 
 :export {
   mobileBreakPoint: $mobileBreakPoint;
+  wideBreakPoint: $wideBreakPoint;
 }

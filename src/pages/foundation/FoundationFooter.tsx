@@ -58,10 +58,9 @@ export const Footer: FC<FooterProps> = props => {
       title: t('ecosystem'),
       links: [
         { label: t('cryptape'), url: 'https://cryptape.com/' },
-        { label: t('godwoken'), url: 'https://godwoken.com/' },
-        { label: t('nervina_labs'), url: 'https://nervina.io/' },
+        { label: t('cell_studio'), url: 'https://cell.studio/' },
+        { label: t('ckb_eco_fund'), url: 'https://ckbeco.fund/' },
         { label: t('tunnel_vision_labs'), url: 'https://tunnelvisionlabs.xyz/' },
-        { label: t('axon'), url: 'https://axonweb3.io/' },
         { label: t('.bit'), url: 'https://www.did.id/' },
         { label: t('magickbase'), url: 'https://github.com/Magickbase/' },
       ],

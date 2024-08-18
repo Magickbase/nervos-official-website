@@ -65,7 +65,6 @@
     "mining": "挖矿",
     "wallets": "钱包",
     "journey": "旅途",
-    "ecosystem": "生态",
     "learn": "学习",
     "knowledge_base": "知识库",
     "medium": "Medium",
@@ -82,7 +81,9 @@
     "axon": "Axon",
     ".bit": ".bit",
     "magickbase": "Magickbase",
-    "nervos_talk_forum": "Nervos Talk Forum"
+    "nervos_talk_forum": "Nervos Talk Forum",
+    "cell_studio": "Cell Studio",
+    "ckb_eco_fund": "CKB ECO Fund"
   },
   "mailchimp": {
     "title": "成为更大的一部分。",

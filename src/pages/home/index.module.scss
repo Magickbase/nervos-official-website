@@ -192,7 +192,50 @@ $headerZ: 2;
 
 .slideCKBIntro {
   flex-grow: 1;
-  margin: calc(80px + var(#{$headerHeightVarName})) 0 0 12%;
+  min-height: 100vh;
+  margin: calc(10px + var(#{$headerHeightVarName})) 12% 0;
+
+  .slideCKBIntroContent {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .introBlock {
+    position: relative;
+    display: flex;
+    padding: 40px;
+
+    .introBlockContent {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 54px;
+      border: 5px solid black;
+      border-right-width: 0;
+      content: '';
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 54px;
+      border: 5px solid black;
+      border-left-width: 0;
+      content: '';
+    }
+  }
 
   .texts {
     display: flex;
@@ -200,8 +243,26 @@ $headerZ: 2;
     flex-grow: 1;
   }
 
+  .introLink {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 10px;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+
   .titleText {
-    max-width: 512px;
+    max-width: 380px;
+    font-size: 60px;
   }
 
   .subjectTitleText {
@@ -212,23 +273,45 @@ $headerZ: 2;
 
   .descriptionText {
     max-width: 444px;
-    margin-top: 25px;
   }
 
-  @media (max-width: $mobileBreakPoint) {
+  @media (min-width: $wideBreakPoint) {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    max-width: 314px;
-    margin: -10vh auto 0;
-    padding: 0;
+    margin: 0;
+    padding: calc(80px + var(#{$headerHeightVarName})) 12%;
 
-    .subjectTitleText {
-      margin-top: 30px;
+    .titleText {
+      font-weight: 800;
+      font-size: 82px;
+      line-height: 87%;
+      letter-spacing: -0.025em;
     }
 
     .descriptionText {
-      margin-top: 30px;
+      max-width: 600px;
+      font-size: 24px;
+    }
+  }
+
+  @media (width <= 1024px) {
+    .titleText {
+      max-width: 180px;
+      font-size: 42px;
+    }
+
+    .slideCKBIntroContent {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: $mobileBreakPoint) {
+    max-width: 314px;
+    margin: calc(20px + var(#{$headerHeightVarName})) auto 0;
+
+    .titleText {
+      font-size: 42px;
     }
   }
 }
@@ -399,7 +482,6 @@ $headerZ: 2;
     margin-left: 100px;
   }
 
-  .slideCKBIntro,
   .slideCKBSecurity,
   .slideCKBFlexibility,
   .slideCKBSustainability,
