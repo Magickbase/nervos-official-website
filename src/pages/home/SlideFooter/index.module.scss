@@ -126,6 +126,7 @@
   & > span {
     display: flex;
     cursor: pointer;
+    pointer-events: auto;
 
     &:hover {
       color: #666;
