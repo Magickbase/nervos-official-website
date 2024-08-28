@@ -9047,13 +9047,13 @@ __metadata:
   linkType: hard
 
 "observable-hooks@npm:^4.2.1":
-  version: 4.2.3
-  resolution: "observable-hooks@npm:4.2.3"
+  version: 4.2.4
+  resolution: "observable-hooks@npm:4.2.4"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     rxjs: ">=6.0.0"
-  checksum: 1c1b75175e43ef02efa8ba980af5e3ae9aa4b3accff7ffd58d6041572bc98c02d2fc2e9b081ba0f628933b94569cfb1bc293b8a6d9cca02e52fa4115fce5706c
+  checksum: 04a5ab34ab3ee4ef1ab4454e1cffda46ca6ad8c3cdb4c4f3c15e8a51c74a4827dd1f8141abd691b7c0d033a0656dd9a43efad612f0bdd13956e3bf723e28af02
   languageName: node
   linkType: hard
 
