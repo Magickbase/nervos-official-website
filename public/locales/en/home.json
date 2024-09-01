@@ -6,7 +6,7 @@
     "nervos_ckb_docs": "NERVOS CKB DOCS",
     "l2_text1": "Contract Kernel of Bitcoin",
     "l2_text2": "Nervos CKB is the first fully Bitcoin-isomorphic Layer2 solution, utilizing Proof of Work (PoW) and UTXO models. Its main goal is to enhance Bitcoin by adding programmability and scalability through the RGB++ protocol, the UTXO Stack, and the CKB Lightning Network, without relying on cross-chain bridges. This aims to foster a thriving Bitcoin ecosystem.",
-    "nervos_eco_fund": "NERVOS ECO FUND"
+    "nervos_eco_fund": "CKB ECO FUND"
   },
   "slide_ckb_security": {
     "text1_comment": "`&shy;` is required for automatic line feeds on mobile",
