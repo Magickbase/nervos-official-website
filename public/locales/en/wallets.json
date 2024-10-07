@@ -46,6 +46,10 @@
     "title": "Rei Wallet",
     "description": "Rei Wallet is an open source browser extension wallet which is developed for Nervos CKB, and focused on providing a simple and secure way to interact with the Nervos CKB."
   },
+  "utxo_global_wallet": {
+    "title": "UTXO Global Wallet",
+    "description": "#UTXO Wallet built on #CKB. Make the #UTXO model more scalable, secure & interoperable."
+  },
   "official_website": "Official website",
   "tutorials": "Tutorials",
   "download": "Download"
