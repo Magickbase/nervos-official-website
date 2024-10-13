@@ -46,7 +46,7 @@
   "slide_footer": {
     "live_metrics": "实时指标",
     "live_cells": "未花费 Cell",
-    "common_knowledge_stored": "存储的共同知识",
+    "bytes_stored": "存储字节数",
     "ckb_in_nervos_dao": "Nervos DAO 中的 CKB",
     "loading": "正在加载"
   },

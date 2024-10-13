@@ -46,7 +46,7 @@
   "slide_footer": {
     "live_metrics": "Métricas ao vivo",
     "live_cells": "Cells vivas",
-    "common_knowledge_stored": "Conhecimento Comum Armazenado",
+    "bytes_stored": "Número de bytes armazenados",
     "ckb_in_nervos_dao": "CKB em Nervos DAO",
     "loading": "carregando"
   },

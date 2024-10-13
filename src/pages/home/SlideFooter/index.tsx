@@ -83,7 +83,7 @@ const LiveMetrics: FC = () => {
   const dataList = useMemo(
     () => [
       { name: t('live_cells'), value: liveCells },
-      { name: t('common_knowledge_stored'), value: stored },
+      { name: t('bytes_stored'), value: stored },
       { name: t('ckb_in_nervos_dao'), value: daoDeposit },
     ],
     [daoDeposit, liveCells, stored, t],

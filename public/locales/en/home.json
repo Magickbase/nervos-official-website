@@ -46,7 +46,7 @@
   "slide_footer": {
     "live_metrics": "Live Metrics",
     "live_cells": "Live Cells",
-    "common_knowledge_stored": "Common Knowledge Stored",
+    "bytes_stored": "Bytes Stored",
     "ckb_in_nervos_dao": "CKB in Nervos DAO",
     "loading": "loading"
   },
