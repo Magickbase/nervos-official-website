@@ -25,6 +25,7 @@ import {
   OneKey,
   ReiWallet,
   GateWeb3Wallet,
+  UTXOGlobalWallet,
 } from './icons'
 
 const pagePath = '/src/pages/wallets/index.page.tsx'
@@ -272,14 +273,44 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
               {t('official_website')}
             </StyledLink>
             <br />
-            <StyledLink href="https://chromewebstore.google.com/detail/rei-wallet/jacbgghlojlggfgljfhhlcddicacmbek" colored>
+            <StyledLink
+              href="https://chromewebstore.google.com/detail/rei-wallet/jacbgghlojlggfgljfhhlcddicacmbek"
+              colored
+            >
               {t('download')}
             </StyledLink>
             <br />
+            <StyledLink href="https://docs.reiwallet.io/" colored>
+              {t('tutorials')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: t('utxo_global_wallet.title'),
+      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<UTXOGlobalWallet />} />,
+      tags: ['CHROME', 'EXTENSION'],
+      content: (
+        <>
+          {t('utxo_global_wallet.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://utxo.global/" colored>
+              {t('official_website')}
+            </StyledLink>
+            <br />
             <StyledLink
-              href="https://docs.reiwallet.io/"
+              href="https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle"
               colored
             >
+              {t('download')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://utxo-global.gitbook.io/utxo-global" colored>
               {t('tutorials')}
             </StyledLink>
           </div>
