@@ -13,7 +13,6 @@
     "title": "JoyID",
     "description": "JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet."
   },
-
   "portal_wallet": {
     "title": "Portal Wallet",
     "description": "Portal Wallet is not only a web-based wallet but also a complete dApp that leverages various features of Nervos. Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use their existing Ethereum addresses and wallets to receive and send CKB directly."
@@ -49,6 +48,10 @@
   "utxo_global_wallet": {
     "title": "UTXO Global Wallet",
     "description": "#UTXO Wallet built on #CKB. Make the #UTXO model more scalable, secure & interoperable."
+  },
+  "imkey": {
+    "title": "imKey",
+    "description": "Founded in 2018, imKey is a steadily growing company focused on providing blockchain security services for Web3 users. The imKey Pro hardware cold wallet allows secure storage, free sending, and receiving of CKB, and is one of the earliest hardware wallets to support Nervos CKB."
   },
   "official_website": "Official website",
   "tutorials": "Tutorials",

@@ -26,6 +26,7 @@ import {
   ReiWallet,
   GateWeb3Wallet,
   UTXOGlobalWallet,
+  ImKey,
 } from './icons'
 
 const pagePath = '/src/pages/wallets/index.page.tsx'
@@ -312,6 +313,25 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
             <br />
             <StyledLink href="https://utxo-global.gitbook.io/utxo-global" colored>
               {t('tutorials')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: t('imkey.title'),
+      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<ImKey />} />,
+      tags: ['WINDOWS', 'MACOS', 'IOS', 'ANDROID', 'EXTENSION', 'HARDWARE WALLET'],
+      content: (
+        <>
+          {t('imkey.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://imkey.im/" colored>
+              {t('official_website')}
             </StyledLink>
           </div>
         </>

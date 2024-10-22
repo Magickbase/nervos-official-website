@@ -10,6 +10,7 @@ import GateWeb3Wallet from './GateWeb3Wallet.svg'
 import OneKey from './onekey.svg'
 import ReiWallet from './reiwallet.svg'
 import UTXOGlobalWallet from './utxoGlobal.svg'
+import ImKey from './imKey.svg'
 
 const CkbBullIcon = () => (
   <img src="/images/ckbull_logo.jpg" alt="ckbull" width="45" height="45" style={{ borderRadius: '50%' }} />
@@ -29,4 +30,5 @@ export {
   ReiWallet,
   GateWeb3Wallet,
   UTXOGlobalWallet,
+  ImKey,
 }
