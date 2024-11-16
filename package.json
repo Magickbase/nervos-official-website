@@ -74,7 +74,7 @@
   "ct3aMetadata": {
     "initVersion": "7.5.9"
   },
-  "packageManager": "yarn@3.8.5",
+  "packageManager": "yarn@3.8.6",
   "resolutions": {
     "swiper@^9.1.0": "patch:swiper@npm%3A9.1.0#./.yarn/patches/swiper-npm-9.1.0-44c74ddb4a.patch"
   }
