@@ -13,11 +13,6 @@
     "title": "JoyID",
     "description": "JoyID é uma carteira sem senha, sem mnemônicos, sem custódia e totalmente descentralizada."
   },
-
-  "portal_wallet": {
-    "title": "Portal Wallet",
-    "description": "O Portal Wallet não é apenas uma carteira baseada na web, mas também um dApp completo que aproveita vários recursos do Nervos. Os usuários não precisam baixar um novo software ou gerar novas chaves/endereços para acessar o Nervos CKB, pois podem usar seus endereços e carteiras Ethereum existentes para receber e enviar CKB diretamente."
-  },
   "safepal": {
     "title": "SafePal",
     "description": "Fundada em 2018, a SafePal é uma carteira de criptomoedas que visa fornecer uma plataforma de gerenciamento de criptomoedas segura e fácil de usar para as massas. SafePal fornece carteira de hardware, carteira de software e linhas de produtos de carteira de extensão de navegador. Todos são emparelhados e gerenciados por meio do aplicativo SafePal, onde os usuários podem armazenar, trocar e negociar com facilidade. Atualmente, atende a mais de 6 milhões de usuários em todo o mundo."

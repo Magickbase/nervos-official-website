@@ -13,11 +13,6 @@
     "title": "JoyID",
     "description": "JoyID es una billetera sin contraseña, sin frase semilla, sin custodia y totalmente descentralizada."
   },
-
-  "portal_wallet": {
-    "title": "Portal Wallet",
-    "description": "Portal Wallet no es solo una billetera basada en la web, sino también una dApp completa que aprovecha varias funciones de Nervos. Los usuarios no necesitan descargar un nuevo software o generar nuevas claves/direcciones para acceder a Nervos CKB, ya que pueden usar sus direcciones y billeteras de Ethereum existentes para recibir y enviar CKB directamente."
-  },
   "safepal": {
     "title": "SafePal",
     "description": "Fundada en 2018, SafePal es una billetera de criptomonedas que tiene como objetivo proporcionar una plataforma de gestión de criptomonedas segura y fácil de usar para las masas. SafePal ofrece líneas de productos de billetera de hardware, billetera de software y billetera de extensión de navegador. Todos están emparejados y administrados a través de la aplicación SafePal, donde los usuarios pueden almacenar, intercambiar e intercambiar fácilmente. Ahora está sirviendo a más de 6 millones de usuarios en todo el mundo."

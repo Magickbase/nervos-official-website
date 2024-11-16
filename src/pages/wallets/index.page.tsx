@@ -17,7 +17,6 @@ import {
   NeuronWalletIcon,
   CkbBullIcon,
   JoyIdIcon,
-  PortalWalletIcon,
   SafePalIcon,
   LedgerIcon,
   OperaWalletIcon,
@@ -114,21 +113,6 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
           <div className="oneLineGap">
             <StyledLink href="https://joy.id/" colored>
               {t('official_website')}
-            </StyledLink>
-          </div>
-        </>
-      ),
-    },
-    {
-      title: t('portal_wallet.title'),
-      titleRender: (title: string) => <FunctionsItemTitle title={title} icon={<PortalWalletIcon />} />,
-      tags: ['WEB-BASED WALLET'],
-      content: (
-        <>
-          {t('portal_wallet.description')}
-          <div className="oneLineGap">
-            <StyledLink href="https://ckb.pw/" colored>
-              Portal Wallet
             </StyledLink>
           </div>
         </>
