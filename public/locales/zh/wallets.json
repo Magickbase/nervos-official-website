@@ -13,11 +13,6 @@
     "title": "JoyID",
     "description": "JoyID 是一款无需密码、无需助记词、非托管且完全去中心化的钱包。"
   },
-
-  "portal_wallet": {
-    "title": "Portal Wallet",
-    "description": "Portal Wallet 不仅是一款网页版钱包，还是一个完整的 dApp，它利用了 Nervos 的各种优势，实现了用户无需下载软件，无需生成新的密钥/地址即可访问 Nervos CKB，因为用户可以使用现有的以太坊地址和钱包直接收发 CKB。"
-  },
   "safepal": {
     "title": "SafePal",
     "description": "SafePal 是一款成立于 2018 年的加密货币钱包，旨在为大众提供安全且用户友好的加密货币管理平台。SafePal 拥有硬件钱包、软件钱包和浏览器扩展钱包等产品线。所有产品均通过 SafePal 应用程序配对和管理，让用户可以轻松地存储、交换和交易加密资产。目前，SafePal 在全球范围内为超过 600 万用户提供服务。"

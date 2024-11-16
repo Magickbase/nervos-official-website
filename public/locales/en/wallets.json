@@ -13,10 +13,6 @@
     "title": "JoyID",
     "description": "JoyID is a passwordless, mnemonic-free, non-custodial, and fully decentralized wallet."
   },
-  "portal_wallet": {
-    "title": "Portal Wallet",
-    "description": "Portal Wallet is not only a web-based wallet but also a complete dApp that leverages various features of Nervos. Users do not need to download new software or generate new keys/addresses to access Nervos CKB, as they can use their existing Ethereum addresses and wallets to receive and send CKB directly."
-  },
   "safepal": {
     "title": "SafePal",
     "description": "Founded in 2018, SafePal is a cryptocurrency wallet that aims to provide a secure and user-friendly crypto management platform for the masses. SafePal provides hardware wallet, software wallet, and browser extension wallet product lines. All are paired and managed through the SafePal App, where users can easily store, swap, and trade. It is now serving more than 6 million users across the globe."
