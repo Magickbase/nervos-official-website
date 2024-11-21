@@ -49,6 +49,10 @@
     "title": "imKey",
     "description": "Founded in 2018, imKey is a steadily growing company focused on providing blockchain security services for Web3 users. The imKey Pro hardware cold wallet allows secure storage, sending, and receiving of CKB, and is one of the earliest hardware wallets to support Nervos CKB."
   },
+  "coinex": {
+    "title": "CoinEx Wallet",
+    "description": "CoinEx Wallet is a one-stop Web3 wallet for managing multi-crypto assets. Allowing users to manage assets of 1,000,000+ tokens on 55+ networks, such as BTC, ETH, TRX, CKB, etc., and providing swap, staking, transaction accelerator, DApp explorer and more."
+  },
   "official_website": "Official website",
   "tutorials": "Tutorials",
   "download": "Download"

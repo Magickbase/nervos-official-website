@@ -26,6 +26,7 @@ import {
   GateWeb3Wallet,
   UTXOGlobalWallet,
   ImKey,
+  CoinEx,
 } from './icons'
 
 const pagePath = '/src/pages/wallets/index.page.tsx'
@@ -316,6 +317,33 @@ const Wallets: NextPage<PageProps> = ({ contributors, author }) => {
           <div className="oneLineGap">
             <StyledLink href="https://imkey.im/" colored>
               {t('official_website')}
+            </StyledLink>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: t('coinex.title'),
+      titleRender: () => <FunctionsItemTitle title={''} icon={<CoinEx />} />,
+      tags: ['IOS', 'ANDROID'],
+      content: (
+        <>
+          {t('coinex.description')
+            .split('\n')
+            .map(p => (
+              <div key={p}>{p}</div>
+            ))}
+          <div className="oneLineGap">
+            <StyledLink href="https://wallet.coinex.com/" colored>
+              {t('official_website')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://wallet.coinex.com/download" colored>
+              {t('download')}
+            </StyledLink>
+            <br />
+            <StyledLink href="https://support.wallet.coinex.com/hc/en-us" colored>
+              {t('tutorials')}
             </StyledLink>
           </div>
         </>
