@@ -3,7 +3,7 @@
   "slogan": "选择您理想的钱包，开始探索和畅玩充满活力的 Nervos 生态系统。",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "Neuron 钱包是由 Nervos 基金会出品的 CKB 钱包，它保存您的密钥并可以替您创建和广播交易。\nNeuron 钱包已经绑定了 CKB Mainnet 节点，并配置为连接到 CKB Mainnet。安装后，打开 Neuron 钱包，绑定的 Mainnet 节点将会自动运行。"
+    "description": "Neuron Wallet 是一款由 Nervos 基金会支持、Magickbase 维护的自托管 CKB 钱包。此桌面钱包可以存储您的密钥，并能在无需第三方协助的情况下，为您创建并广播交易。\nNeuron Wallet 已集成 CKB 主网节点，并已配置为连接到 CKB 主网。安装后，当您打开 Neuron Wallet 时，集成的主网节点将自动运行。"
   },
   "ckbull": {
     "title": "CKBull",
