@@ -3,7 +3,7 @@
   "slogan": "Elige tu wallet ideal y comienza a explorar e interactuar con el vibrante ecosistema de Nervos.",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "Neuron Wallet es una billetera CKB producida por la Fundación Nervos, contiene tus claves y puede crear y transmitir transacciones en su nombre.\nNeuron Wallet ha incluido un nodo CKB Mainnet y está configurado para conectarse a CKB Mainnet. Después de la instalación, al abrir Neuron Wallet, se ejecutará el nodo Mainnet incluido."
+    "description": "Neuron Wallet es una billetera CKB de autocustodia respaldada por la Fundación Nervos y mantenida por Magickbase. Esta billetera de escritorio almacena tus claves y puede crear y transmitir transacciones en tu nombre sin la ayuda de terceros.\nNeuron Wallet incluye un nodo de CKB Mainnet y está configurado para conectarse a la red principal de CKB. Después de la instalación, al abrir Neuron Wallet, el nodo de la red principal se ejecutará automáticamente."
   },
   "ckbull": {
     "title": "CKBull",
