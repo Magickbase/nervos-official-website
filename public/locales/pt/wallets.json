@@ -3,7 +3,7 @@
   "slogan": "Escolha sua carteira ideal e comece a explorar e interagir com o vibrante ecossistema Nervos.",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "A Neuron Wallet é uma carteira CKB produzida pela Nervos Foundation, ela contém suas chaves e pode criar e transmitir transações em seu nome.\nA Neuron Wallet empacotou um nó CKB Mainnet e configurou para se conectar à CKB Mainnet. Após a instalação, ao abrir a Carteira Neuron, o nó Mainnet incluído será executado."
+    "description": "O Neuron Wallet é uma carteira CKB de autocustódia, apoiada pela Fundação Nervos e mantida pela Magickbase. Esta carteira de desktop armazena suas chaves e pode criar e transmitir transações em seu nome sem a necessidade de terceiros.\nO Neuron Wallet inclui um nó da Mainnet do CKB e está configurado para se conectar à Mainnet do CKB. Após a instalação, ao abrir o Neuron Wallet, o nó da Mainnet integrado será executado automaticamente."
   },
   "ckbull": {
     "title": "CKBull",

@@ -3,7 +3,7 @@
   "slogan": "Choose your ideal wallet and start exploring and interacting with the vibrant Nervos ecosystem.",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "Neuron Wallet is a CKB wallet produced by the Nervos Foundation, it holds your keys and can create and broadcast transactions on your behalf.\nNeuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run."
+    "description": "Neuron Wallet is a self-custodial CKB wallet supported by the Nervos Foundation and maintained by Magickbase. This desktop wallet holds your keys and can create and broadcast transactions on your behalf without any assistance from third parties.\nNeuron Wallet has bundled a CKB Mainnet node and configured to connect to the CKB Mainnet. After installation, as you open the Neuron Wallet, the bundled Mainnet node will run."
   },
   "ckbull": {
     "title": "CKBull",

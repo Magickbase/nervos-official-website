@@ -3,7 +3,7 @@
   "slogan": "Choisissez votre portefeuille idéal et commencez à explorer et à interagir avec le dynamique écosystème Nervos.",
   "neuron": {
     "title": "Neuron Wallet",
-    "description": "Neuron Wallet est un portefeuille CKB produit par la Fondation Nervos, il contient vos clés et peut créer et diffuser des transactions en votre nom.\nNeuron Wallet a fourni un nœud CKB Mainnet et configuré pour se connecter au CKB Mainnet. Après l'installation, lorsque vous ouvrez le portefeuille Neuron, le nœud Mainnet fourni s'exécutera."
+    "description": "Neuron Wallet est un portefeuille CKB auto-détenu, soutenu par la Fondation Nervos et maintenu par Magickbase. Ce portefeuille de bureau conserve vos clés et peut créer et diffuser des transactions en votre nom sans aucune assistance de tiers.\nNeuron Wallet est fourni avec un nœud CKB Mainnet et est configuré pour se connecter au Mainnet CKB. Après l’installation, à l’ouverture de Neuron Wallet, le nœud Mainnet intégré s’exécutera automatiquement."
   },
   "ckbull": {
     "title": "CKBull",
