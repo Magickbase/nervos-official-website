@@ -175,10 +175,6 @@ const MediaKit: NextPage = () => {
         label: t('merchAssets.download'),
         link: 'https://drive.google.com/drive/folders/1ZSnT39fv1OoZ9ABUfDxt9SayQ2AEes22',
       },
-      link: {
-        label: t('merchAssets.link'),
-        link: 'https://w3w.ai/main/nervosnetwork',
-      },
       assets: (
         <div className={styles.merchAssets}>
           {illustration.merchAssets.map(asset => (
