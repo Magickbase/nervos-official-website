@@ -23,7 +23,7 @@
     "clsx": "^2.0.0",
     "gray-matter": "4.0.3",
     "i18next": "^23.0.0",
-    "image-size": "^1.0.2",
+    "image-size": "^1.2.1",
     "interactjs": "^1.10.17",
     "next": "^14.0.0",
     "next-i18next": "^14.0.0",
