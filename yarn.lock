@@ -6753,12 +6753,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^23.0.0":
-  version: 23.16.8
-  resolution: "i18next@npm:23.16.8"
-  dependencies:
-    "@babel/runtime": ^7.23.2
-  checksum: 288dab98225d769c6ad7835e9c534a184a2a8fb28485000f35b10c467439478047b367d39015c1920ac9c5cfc33572ffd75ecf1778edcd96536024bf594f4ca9
+"i18next@npm:^26.0.0":
+  version: 26.7.2
+  resolution: "i18next@npm:26.7.2"
+  peerDependencies:
+    typescript: ^5 || ^6 || ^7
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: d97dfcaa1519fd3487736d14e178efc18e76fa429c35c29d27f162e001d78af1abfff284f249dcef0da3c76620d4cbf42bc4cd98403823d774caa9acd6b34969
   languageName: node
   linkType: hard
 
@@ -9004,7 +9007,7 @@ __metadata:
     eslint-config-prettier: ^9.0.0
     gray-matter: 4.0.3
     husky: ^9.0.0
-    i18next: ^23.0.0
+    i18next: ^26.0.0
     image-size: ^1.0.2
     interactjs: ^1.10.17
     lint-staged: ^15.0.0
