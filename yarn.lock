@@ -2897,21 +2897,30 @@ __metadata:
   linkType: hard
 
 "@types/react-dom@npm:^18.0.11":
-  version: 18.3.1
-  resolution: "@types/react-dom@npm:18.3.1"
-  dependencies:
-    "@types/react": "*"
-  checksum: ad28ecce3915d30dc76adc2a1373fda1745ba429cea290e16c6628df9a05fd80b6403c8e87d78b45e6c60e51df7a67add389ab62b90070fbfdc9bda8307d9953
+  version: 18.3.7
+  resolution: "@types/react-dom@npm:18.3.7"
+  peerDependencies:
+    "@types/react": ^18.0.0
+  checksum: c8b63ec944d2a68992b4dba474003fe55ee1d949c4b9c8fe97eecb2290de23f76acfb670b2f7ceb46a5fc8e46808d1745369b03edda48a7a0cf730eff4c5d315
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.28":
-  version: 18.3.12
-  resolution: "@types/react@npm:18.3.12"
+"@types/react@npm:*":
+  version: 19.3.3
+  resolution: "@types/react@npm:19.3.3"
+  dependencies:
+    csstype: ^3.2.2
+  checksum: 9be36f93a7334a6a3e0efec5aa600ea3ef85a553687eae7b7f644f80dc90ff376c5483ea1d4474bfce55873ceb07171348bce52178c6c7a7cea70d9549ec93c7
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.28":
+  version: 18.3.32
+  resolution: "@types/react@npm:18.3.32"
   dependencies:
     "@types/prop-types": "*"
-    csstype: ^3.0.2
-  checksum: 4ab1577a8c2105a5e316536f724117c90eee5f4bd5c137fc82a2253d8c1fd299dedaa07e8dfc95d6e2f04a4be3cb8b0e1b06098c6233ebd55c508d88099395b7
+    csstype: ^3.2.2
+  checksum: e05486d510d6740541c52c08fb92893d237f26ff3ecbd46b216b03edb1f510abba378b1a6ce2f5aab11e8a37221ffb2d6ac7b35886bcf5293dbd27c17344a0d4
   languageName: node
   linkType: hard
 
@@ -4482,10 +4491,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2":
-  version: 3.1.1
-  resolution: "csstype@npm:3.1.1"
-  checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
+"csstype@npm:^3.2.2":
+  version: 3.2.4
+  resolution: "csstype@npm:3.2.4"
+  checksum: 8a7c7b6f39bf83064773e90b12dbba23bb9619637ddf71779522489780a5ce1b534323c1dda17be7bb4df5e431e09f6ec0277570ab6b70fb7714034a90a54f1d
   languageName: node
   linkType: hard
 
